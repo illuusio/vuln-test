@@ -1,0 +1,125 @@
+{
+    "schema_version": "1.7.0",
+    "modified": "2024-09-12T00:00:00Z",
+    "published": "2024-09-12T00:00:00Z",
+    "id": "FBSD-2024-09-12",
+    "summary": "Gitlab -- vulnerabilities",
+    "details": "<description xmlns=\"http://www.vuxml.org/apps/vuxml-1\">\n\t<body xmlns=\"http://www.w3.org/1999/xhtml\">\n\t<p>Gitlab reports:</p>\n\t<blockquote cite=\"https://about.gitlab.com/releases/2024/09/11/patch-release-gitlab-17-3-2-released/\">\n\t  <p>Execute environment stop actions as the owner of the stop action job</p>\n\t  <p>Prevent code injection in Product Analytics funnels YAML</p>\n\t  <p>SSRF via Dependency Proxy</p>\n\t  <p>Denial of Service via sending a large glm_source parameter</p>\n\t  <p>CI_JOB_TOKEN can be used to obtain GitLab session token</p>\n\t  <p>Variables from settings are not overwritten by PEP if a template is included</p>\n\t  <p>Guests can disclose the full source code of projects using custom group-level templates</p>\n\t  <p>IdentitiesController allows linking of arbitrary unclaimed provider identities</p>\n\t  <p>Open redirect in repo/tree/:id endpoint can lead to account takeover through broken OAuth flow</p>\n\t  <p>Open redirect in release permanent links can lead to account takeover through broken OAuth flow</p>\n\t  <p>Guest user with Admin group member permission can edit custom role to gain other permissions</p>\n\t  <p>Exposure of protected and masked CI/CD variables by abusing on-demand DAST</p>\n\t  <p>Credentials disclosed when repository mirroring fails</p>\n\t  <p>Commit information visible through release atom endpoint for guest users</p>\n\t  <p>Dependency Proxy Credentials are Logged in Plaintext in graphql Logs</p>\n\t  <p>User Application can spoof the redirect url</p>\n\t  <p>Group Developers can view group runners information</p>\n\t</blockquote>\n\t</body>\n    </description>",
+    "references": [
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2024-6678"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2024-8640"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2024-8635"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2024-8124"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2024-8641"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2024-8311"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2024-4660"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2024-4283"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2024-4612"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2024-8631"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2024-2743"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2024-5435"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2024-6389"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2024-4472"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2024-6446"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2024-6685"
+        },
+        {
+            "type": "WEB",
+            "url": "https://about.gitlab.com/releases/2024/09/11/patch-release-gitlab-17-3-2-released/"
+        }
+    ],
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "gitlab-ee"
+            },
+            "ranges": [
+                {
+                    "type": "ECOSYSTEM",
+                    "events": [
+                        {
+                            "introduced": "17.3.0"
+                        },
+                        {
+                            "fixed": "17.3.2"
+                        }
+                    ]
+                },
+                {
+                    "type": "ECOSYSTEM",
+                    "events": [
+                        {
+                            "introduced": "17.2.0"
+                        },
+                        {
+                            "fixed": "17.2.5"
+                        }
+                    ]
+                },
+                {
+                    "type": "ECOSYSTEM",
+                    "events": [
+                        {
+                            "introduced": "8.14.0"
+                        },
+                        {
+                            "fixed": "17.1.7"
+                        }
+                    ]
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "vid": "bcc8b21e-7122-11ef-bece-2cf05da270f3",
+        "discovery": "2024-09-11T00:00:00Z"
+    }
+}

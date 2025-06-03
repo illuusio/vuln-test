@@ -1,0 +1,62 @@
+{
+    "schema_version": "1.7.0",
+    "modified": "2025-04-13T00:00:00Z",
+    "published": "2025-04-13T00:00:00Z",
+    "id": "FBSD-2025-04-13",
+    "summary": "mozilla -- double free error",
+    "details": "<description xmlns=\"http://www.vuxml.org/apps/vuxml-1\">\n\t<body xmlns=\"http://www.w3.org/1999/xhtml\">\n\t<p>security@mozilla.org reports:</p>\n\t<blockquote cite=\"https://bugzilla.mozilla.org/show_bug.cgi?id=1899402\">\n\t  <p>A double-free issue could have occurred in\n\t  `sec_pkcs7_decoder_start_decrypt()` when handling an error\n\t  path. Under specific conditions, the same symmetric key\n\t  could have been freed twice, potentially leading to memory\n\t  corruption.</p>\n\t</blockquote>\n\t</body>\n    </description>",
+    "references": [
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2024-11704"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://nvd.nist.gov/vuln/detail/CVE-2024-11704"
+        }
+    ],
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "firefox-esr"
+            },
+            "ranges": [
+                {
+                    "type": "ECOSYSTEM",
+                    "events": [
+                        {
+                            "fixed": "128.7.0"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "thunderbird"
+            },
+            "ranges": [
+                {
+                    "type": "ECOSYSTEM",
+                    "events": [
+                        {
+                            "fixed": "133.0"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ]
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "vid": "b65b1217-1887-11f0-a8ce-b42e991fc52e",
+        "discovery": "2024-11-26T00:00:00Z"
+    }
+}

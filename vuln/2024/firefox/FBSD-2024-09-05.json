@@ -1,0 +1,79 @@
+{
+    "schema_version": "1.7.0",
+    "modified": "2024-09-05T00:00:00Z",
+    "published": "2024-09-05T00:00:00Z",
+    "id": "FBSD-2024-09-05",
+    "summary": "firefox -- multiple vulnerabilities",
+    "details": "<description xmlns=\"http://www.vuxml.org/apps/vuxml-1\">\n\t<body xmlns=\"http://www.w3.org/1999/xhtml\">\n\t<p>security@mozilla.org reports:</p>\n\t<blockquote cite=\"https://bugzilla.mozilla.org/show_bug.cgi?id=1908496\">\n\t<p>This entry contains 8 vulnerabilities:</p>\n\t<ul>\n\t<li>CVE-2024-8381: A potentially exploitable type\n\tconfusion could be triggered when looking up a property\n\tname on an object being used as the `with` environment.</li>\n\t<li>CVE-2024-8382: Internal browser event interfaces were\n\texposed to web content when privileged EventHandler listener\n\tcallbacks ran for those events. Web content that tried to\n\tuse those interfaces would not be able to use them with\n\televated privileges, but their presence would indicate\n\tcertain browser features had been used, such as when a user\n\topened the Dev Tools console.</li>\n\t<li>CVE-2024-8383: Firefox normally asks for confirmation\n\tbefore asking the operating system to find an application to\n\thandle a scheme that the browser does not support. It did not\n\task before doing so for the Usenet-related schemes news: and\n\tsnews:.  Since most operating systems don't have a\n\ttrusted newsreader installed by default, an unscrupulous\n\tprogram that the user downloaded could register itself as a\n\thandler. The website that served the application download\n\tcould then launch that application at will.</li>\n\t<li>CVE-2024-8384: The JavaScript garbage collector could\n\tmis-color cross-compartment objects if OOM conditions were\n\tdetected at the right point between two passes. This could have\n\tled to memory corruption.</li>\n\t<li>CVE-2024-8385: A difference in the handling of\n\tStructFields and ArrayTypes in WASM could be used to trigger\n\tan exploitable type confusion vulnerability.</li>\n\t<li>CVE-2024-8386: If a site had been granted the permission\n\tto open popup windows, it could cause Select elements to\n\tappear on top of another site to perform a spoofing attack.</li>\n\t<li>CVE-2024-8387: Memory safety bugs present in Firefox 129,\n\tFirefox ESR 128.1, and Thunderbird 128.1. Some of these bugs\n\tshowed evidence of memory corruption and we presume that with\n\tenough effort some of these could have been exploited to run\n\tarbitrary code.</li>\n\t<li>CVE-2024-8389: Memory safety bugs present in Firefox 129.\n\tSome of these bugs showed evidence of memory corruption and we\n\tpresume that with enough effort some of these could have been\n\texploited to run arbitrary code.</li>\n  </ul>\n\t</blockquote>\n\t</body>\n    </description>",
+    "references": [
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2024-8381"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://nvd.nist.gov/vuln/detail/CVE-2024-8381"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2024-8382"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://nvd.nist.gov/vuln/detail/CVE-2024-8382"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2024-8383"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://nvd.nist.gov/vuln/detail/CVE-2024-8383"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2024-8384"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://nvd.nist.gov/vuln/detail/CVE-2024-8384"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2024-8385"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://nvd.nist.gov/vuln/detail/CVE-2024-8385"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2024-8386"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://nvd.nist.gov/vuln/detail/CVE-2024-8386"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2024-8387"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://nvd.nist.gov/vuln/detail/CVE-2024-8387"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2024-8389"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://nvd.nist.gov/vuln/detail/CVE-2024-8389"
+        }
+    ],
+    "affected": [],
+    "database_specific": {
+        "vid": "a3a1caf5-6ba1-11ef-b9e8-b42e991fc52e",
+        "discovery": "2024-09-03T00:00:00Z"
+    }
+}

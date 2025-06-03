@@ -1,0 +1,43 @@
+{
+    "schema_version": "1.7.0",
+    "modified": "2024-05-13T00:00:00Z",
+    "published": "2024-05-13T00:00:00Z",
+    "id": "FBSD-2024-05-13",
+    "summary": "go -- net: malformed DNS message can cause infinite loop",
+    "details": "<description xmlns=\"http://www.vuxml.org/apps/vuxml-1\">\n\t<body xmlns=\"http://www.w3.org/1999/xhtml\">\n\t<p>The Go project reports:</p>\n\t<blockquote cite=\"https://go.dev/issue/66754\">\n\t  <p>net: malformed DNS message can cause infinite loop</p>\n\t  <p>A malformed DNS message in response to a query can cause\n\t  the Lookup functions to get stuck in an infinite loop.</p>\n\t</blockquote>\n\t</body>\n    </description>",
+    "references": [
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2024-24788"
+        },
+        {
+            "type": "WEB",
+            "url": "https://go.dev/issue/66754"
+        }
+    ],
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "go121"
+            },
+            "ranges": [
+                {
+                    "type": "ECOSYSTEM",
+                    "events": [
+                        {
+                            "fixed": "1.21.10"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ]
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "vid": "d3847eba-114b-11ef-9c21-901b0e9408dc",
+        "discovery": "2024-04-25T00:00:00Z"
+    }
+}

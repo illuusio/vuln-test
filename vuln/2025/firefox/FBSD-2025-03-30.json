@@ -1,0 +1,124 @@
+{
+    "schema_version": "1.7.0",
+    "modified": "2025-03-30T00:00:00Z",
+    "published": "2025-03-30T00:00:00Z",
+    "id": "FBSD-2025-03-30",
+    "summary": "mozilla -- multiple vulnerabilities",
+    "details": "<description xmlns=\"http://www.vuxml.org/apps/vuxml-1\">\n\t<body xmlns=\"http://www.w3.org/1999/xhtml\">\n\t<p>security@mozilla.org reports:</p>\n\t<blockquote cite=\"https://bugzilla.mozilla.org/show_bug.cgi?id=1945392\">\n\t  <p>An inconsistent comparator in xslt/txNodeSorter could have resulted\n\tin potentially exploitable out-of-bounds access.  Only affected\n\tversion 122 and later.  This vulnerability affects Firefox &lt;\n\t136, Firefox ESR &lt; 128.8, Thunderbird &lt; 136, and Thunderbird\n\t&lt; 128.8.</p>\n\t  <p>Under certain circumstances, a user opt-in setting that Focus should\n\trequire authentication before use could have been be bypassed\n\t(distinct from CVE-2025-0245).  This vulnerability affects Firefox\n\t&lt; 136.</p>\n\t  <p>When String.toUpperCase() caused a string to get longer it was\n\tpossible for uninitialized memory to be incorporated into the result\n\tstring This vulnerability affects Firefox &lt; 136 and Thunderbird\n\t&lt; 136.</p>\n\t  <p>Websites redirecting to a non-HTTP scheme URL could allow a website\n\taddress to be spoofed for a malicious page This vulnerability affects\n\tFirefox for iOS &lt; 136.</p>\n\t</blockquote>\n\t</body>\n    </description>",
+    "references": [
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2025-1932"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://nvd.nist.gov/vuln/detail/CVE-2025-1932"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2025-1941"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://nvd.nist.gov/vuln/detail/CVE-2025-1941"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2025-1942"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://nvd.nist.gov/vuln/detail/CVE-2025-1942"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2025-27424"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://nvd.nist.gov/vuln/detail/CVE-2025-27424"
+        }
+    ],
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "firefox-esr"
+            },
+            "ranges": [
+                {
+                    "type": "ECOSYSTEM",
+                    "events": [
+                        {
+                            "fixed": "128.8,1"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "thunderbird"
+            },
+            "ranges": [
+                {
+                    "type": "ECOSYSTEM",
+                    "events": [
+                        {
+                            "fixed": "136.0"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "thunderbird"
+            },
+            "ranges": [
+                {
+                    "type": "ECOSYSTEM",
+                    "events": [
+                        {
+                            "fixed": "128.8"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "librewolf"
+            },
+            "ranges": [
+                {
+                    "type": "ECOSYSTEM",
+                    "events": [
+                        {
+                            "fixed": "136.0"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ]
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "vid": "1a67144d-0d86-11f0-8542-b42e991fc52e",
+        "discovery": "2025-03-04T00:00:00Z"
+    }
+}

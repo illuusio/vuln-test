@@ -1,0 +1,81 @@
+{
+    "schema_version": "1.7.0",
+    "modified": "2025-03-05T00:00:00Z",
+    "published": "2025-03-05T00:00:00Z",
+    "id": "FBSD-2025-03-05",
+    "summary": "Spotipy -- Spotipy's cache file, containing spotify auth token, is created with overly broad permissions",
+    "details": "<description xmlns=\"http://www.vuxml.org/apps/vuxml-1\">\n\t<body xmlns=\"http://www.w3.org/1999/xhtml\">\n\t<p>security-advisories@github.com reports:</p>\n\t<blockquote cite=\"https://github.com/spotipy-dev/spotipy/blob/master/spotipy/cache_handler.py#L93-L98\">\n\t  <p>Spotipy is a lightweight Python library for the Spotify Web API.\n\tThe `CacheHandler` class creates a cache file to store the auth\n\ttoken.  Prior to version 2.25.1, the file created has `rw-r--r--`\n\t(644) permissions by default, when it could be locked down to\n\t`rw-------` (600) permissions.  This leads to overly broad exposure\n\tof the spotify auth token.  If this token can be read by an attacker\n\t(another user on the machine, or a process running as another user),\n\tit can be used to perform administrative actions on the Spotify\n\taccount, depending on the scope granted to the token.  Version\n\t2.25.1 tightens the cache file permissions.</p>\n\t</blockquote>\n\t</body>\n    </description>",
+    "references": [
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2025-27154"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://nvd.nist.gov/vuln/detail/CVE-2025-27154"
+        }
+    ],
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "py39-spotipy"
+            },
+            "ranges": [
+                {
+                    "type": "ECOSYSTEM",
+                    "events": [
+                        {
+                            "fixed": "2.25.1"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "py310-spotipy"
+            },
+            "ranges": [
+                {
+                    "type": "ECOSYSTEM",
+                    "events": [
+                        {
+                            "fixed": "2.25.1"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "py311-spotipy"
+            },
+            "ranges": [
+                {
+                    "type": "ECOSYSTEM",
+                    "events": [
+                        {
+                            "fixed": "2.25.1"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ]
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "vid": "475d1968-f99d-11ef-b382-b0416f0c4c67",
+        "discovery": "2025-02-27T00:00:00Z"
+    }
+}

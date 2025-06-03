@@ -1,0 +1,47 @@
+{
+    "schema_version": "1.7.0",
+    "modified": "2025-03-30T00:00:00Z",
+    "published": "2025-03-30T00:00:00Z",
+    "id": "FBSD-2025-03-30",
+    "summary": "suricata -- Multiple vulnerabilities",
+    "details": "<description xmlns=\"http://www.vuxml.org/apps/vuxml-1\">\n\t<body xmlns=\"http://www.w3.org/1999/xhtml\">\n\t<p>Suricate team reports:</p>\n\t<blockquote cite=\"https://forum.suricata.io/t/suricata-7-0-9-released/5495\">\n\t  <p>Multiple vulnerabilities</p>\n\t</blockquote>\n\t<ul>\n\t<li>\n\tCVE-2025-29915: Severity HIGH. The AF_PACKET defrag option\n\tis enabled by default and allows AF_PACKET to re-assemble\n\tfragmented packets before reaching Suricata. However the\n\tdefault packet size in Suricata is based on the network\n\tinterface MTU which leads to Suricata seeing truncated\n\tpackets.\n\t</li>\n\t<li>\n\tCVE-2025-29916: Severity Moderate. Datasets declared in\n\trules have an option to specify the `hashsize` to use.\n\tThis size setting isn't properly limited, so the hash\n\ttable allocation can be large. Untrusted rules can lead to\n\tlarge memory allocations, potentially leading to denial of\n\tservice due to resource starvation\n\t</li>\n\t<li>\n\tCVE-2025-29917: Severity HIGH. The bytes setting in the\n\tdecode_base64 keyword is not properly limited. Due to\n\tthis, signatures using the keyword and setting can cause\n\tlarge memory allocations of up to 4 GiB per thread.\n\t</li>\n\t<li>\n\tCVE-2025-29918: Severity HIGH. A PCRE rule can be written\n\tthat leads to an infinite loop when negated PCRE is used.\n\tPacket processing thread becomes stuck in infinite loop\n\tlimiting visibility and availability in inline mode.\n\t</li>\n\t</ul>\n\t</body>\n    </description>",
+    "references": [
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2025-29915"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2025-29915"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2025-29916"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2025-29916"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2025-29917"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2025-29917"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2025-29918"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2025-29918"
+        }
+    ],
+    "affected": [],
+    "database_specific": {
+        "vid": "1d53db32-0d60-11f0-8542-b42e991fc52e",
+        "discovery": "2025-03-12T00:00:00Z"
+    }
+}

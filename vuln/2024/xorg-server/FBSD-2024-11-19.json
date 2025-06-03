@@ -1,0 +1,43 @@
+{
+    "schema_version": "1.7.0",
+    "modified": "2024-11-19T00:00:00Z",
+    "published": "2024-11-19T00:00:00Z",
+    "id": "FBSD-2024-11-19",
+    "summary": "xorg server -- _XkbSetCompatMap vulnerability",
+    "details": "<description xmlns=\"http://www.vuxml.org/apps/vuxml-1\">\n\t<body xmlns=\"http://www.w3.org/1999/xhtml\">\n\t<p>The X.Org project reports:</p>\n\t<blockquote cite=\"https://lists.x.org/archives/xorg-announce/2024-October/003545.html\">\n\t  <ul>\n\t    <li>\n\t      CVE-2024-9632: Heap buffer Heap-based buffer overflow\n\t\tprivilege escalation in _XkbSetCompatMap\n\n\t      <p>The _XkbSetCompatMap() function attempts to resize\n\t\tthe `sym_interpret` buffer.\n\n\t\tHowever, It didn't update its size properly.\n\t\tIt updated `num_si` only, without updating `size_si`.\n\n\t\tThis may lead to local privilege escalation if the\n\t\tserver is run as root or remote code execution\n\t\t(e.g. x11 over ssh).</p>\n\t    </li>\n\t  </ul>\n\t</blockquote>\n\t</body>\n    </description>",
+    "references": [
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2024-9632"
+        },
+        {
+            "type": "WEB",
+            "url": "https://lists.x.org/archives/xorg-announce/2024-October/003545.html"
+        }
+    ],
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "xwayland"
+            },
+            "ranges": [
+                {
+                    "type": "ECOSYSTEM",
+                    "events": [
+                        {
+                            "fixed": "24.1.4,1"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ]
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "vid": "141f2a22-a6a7-11ef-b282-0c9d92850f7a",
+        "discovery": "2024-10-29T00:00:00Z"
+    }
+}

@@ -1,0 +1,43 @@
+{
+    "schema_version": "1.7.0",
+    "modified": "2024-09-06T00:00:00Z",
+    "published": "2024-09-06T00:00:00Z",
+    "id": "FBSD-2024-09-06",
+    "summary": "forgejo -- multiple vulnerabilities",
+    "details": "<description xmlns=\"http://www.vuxml.org/apps/vuxml-1\">\n       <body xmlns=\"http://www.w3.org/1999/xhtml\">\n       <h1>Problem Description:</h1>\n       <ul>\n       <li>Replace v-html with v-text in search inputbox</li>\n       <li>Upgrade webpack to v5.94.0 as a precaution to mitigate\n       CVE-2024-43788, although we were not yet able to confirm that this\n       can be exploited in Forgejo.</li>\n       </ul>\n      </body>\n    </description>",
+    "references": [
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2024-43788"
+        },
+        {
+            "type": "WEB",
+            "url": "https://codeberg.org/forgejo/forgejo/milestone/8231"
+        }
+    ],
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "forgejo7"
+            },
+            "ranges": [
+                {
+                    "type": "ECOSYSTEM",
+                    "events": [
+                        {
+                            "fixed": "7.0.9"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ]
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "vid": "a5e13973-6c75-11ef-858b-23eeba13701a",
+        "discovery": "2024-09-03T00:00:00Z"
+    }
+}

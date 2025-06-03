@@ -1,0 +1,59 @@
+{
+    "schema_version": "1.7.0",
+    "modified": "2024-03-06T00:00:00Z",
+    "published": "2024-03-06T00:00:00Z",
+    "id": "FBSD-2024-03-06",
+    "summary": "go -- multiple vulnerabilities",
+    "details": "<description xmlns=\"http://www.vuxml.org/apps/vuxml-1\">\n\t<body xmlns=\"http://www.w3.org/1999/xhtml\">\n\t<p>The Go project reports reports:</p>\n\t<blockquote cite=\"https://go.dev/issue/65390\">\n\t  <p>crypto/x509: Verify panics on certificates with an\n\t  unknown public key algorithm</p>\n\t  <p>Verifying a certificate chain which contains a\n\t  certificate with an unknown public key algorithm will\n\t  cause Certificate.Verify to panic.</p>\n\t</blockquote>\n\t<blockquote cite=\"https://go.dev/issue/65383\">\n\t  <p>net/http: memory exhaustion in Request.ParseMultipartForm</p>\n\t  <p>When parsing a multipart form (either explicitly with\n\t  Request.ParseMultipartForm or implicitly with Request.FormValue,\n\t  Request.PostFormValue, or Request.FormFile), limits on the total\n\t  size of the parsed form were not applied to the memory consumed\n\t  while reading a single form line. This permitted a maliciously\n\t  crafted input containing very long lines to cause allocation of\n\t  arbitrarily large amounts of memory, potentially leading to memory\n\t  exhaustion.</p>\n\t</blockquote>\n\t<blockquote cite=\"https://go.dev/issue/65065\">\n\t  <p>net/http, net/http/cookiejar: incorrect forwarding\n\t  of sensitive headers and cookies on HTTP redirect</p>\n\t  <p>When following an HTTP redirect to a domain which\n\t  is not a subdomain match or exact match of the initial\n\t  domain, an http.Client does not forward sensitive headers\n\t  such as \"Authorization\" or \"Cookie\". For example, a\n\t  redirect from foo.com to www.foo.com will forward the\n\t  Authorization header, but a redirect to bar.com will not.</p>\n\t</blockquote>\n\t<blockquote cite=\"https://go.dev/issue/65697\">\n\t  <p>html/template: errors returned from MarshalJSON methods\n\t  may break template escaping</p>\n\t  <p>If errors returned from MarshalJSON methods contain user\n\t  controlled data, they may be used to break the contextual\n\t  auto-escaping behavior of the html/template package, allowing\n\t  for subsequent actions to inject unexpected content into\n\t  templates.</p>\n\t</blockquote>\n\t<blockquote cite=\"https://go.dev/issue/65083\">\n\t  <p>net/mail: comments in display names are incorrectly handled</p>\n\t  <p>The ParseAddressList function incorrectly handles comments\n\t  (text within parentheses) within display names. Since this is a\n\t  misalignment with conforming address parsers, it can result in\n\t  different trust decisions being made by programs using different\n\t  parsers.</p>\n\t</blockquote>\n\t</body>\n    </description>",
+    "references": [
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2023-45289"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2023-45290"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2024-24783"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2024-24784"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2024-24785"
+        },
+        {
+            "type": "WEB",
+            "url": "https://groups.google.com/g/golang-announce/c/5pwGVUPoMbg/m/46oA5yPABQAJ"
+        }
+    ],
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "go121"
+            },
+            "ranges": [
+                {
+                    "type": "ECOSYSTEM",
+                    "events": [
+                        {
+                            "fixed": "1.21.8"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ]
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "vid": "b1b039ec-dbfc-11ee-9165-901b0e9408dc",
+        "discovery": "2024-03-05T00:00:00Z"
+    }
+}

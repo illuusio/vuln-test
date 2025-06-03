@@ -1,0 +1,119 @@
+{
+    "schema_version": "1.7.0",
+    "modified": "2024-10-19T00:00:00Z",
+    "published": "2024-10-19T00:00:00Z",
+    "id": "FBSD-2024-10-19",
+    "summary": "OpenSSL -- OOB memory access vulnerability",
+    "details": "<description xmlns=\"http://www.vuxml.org/apps/vuxml-1\">\n\t<body xmlns=\"http://www.w3.org/1999/xhtml\">\n\t<p>The OpenSSL project reports:</p>\n\t<blockquote cite=\"https://openssl-library.org/news/secadv/20241016.txt\">\n\t  <p>Low-level invalid GF(2^m) parameters lead to OOB memory access\n\t   (CVE-2024-9143) (Low)</p>\n\t  <p> Use of the low-level GF(2^m) elliptic curve APIs with untrusted\n\t    explicit values for the field polynomial can lead to out-of-bounds\n\t    memory reads or writes.</p>\n\t</blockquote>\n\t</body>\n    </description>",
+    "references": [
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2024-9143"
+        },
+        {
+            "type": "WEB",
+            "url": "https://openssl-library.org/news/secadv/20241016.txt"
+        }
+    ],
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "openssl31"
+            },
+            "ranges": [
+                {
+                    "type": "ECOSYSTEM",
+                    "events": [
+                        {
+                            "fixed": "3.1.7_1"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "openssl32"
+            },
+            "ranges": [
+                {
+                    "type": "ECOSYSTEM",
+                    "events": [
+                        {
+                            "fixed": "3.2.3_1"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "openssl33"
+            },
+            "ranges": [
+                {
+                    "type": "ECOSYSTEM",
+                    "events": [
+                        {
+                            "fixed": "3.3.2_1"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "openssl-quictls"
+            },
+            "ranges": [
+                {
+                    "type": "ECOSYSTEM",
+                    "events": [
+                        {
+                            "fixed": "3.0.15_1,1"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "openssl31-quictls"
+            },
+            "ranges": [
+                {
+                    "type": "ECOSYSTEM",
+                    "events": [
+                        {
+                            "fixed": "3.1.7_1"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ]
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "vid": "c6f4177c-8e29-11ef-98e7-84a93843eb75",
+        "discovery": "2024-10-16T00:00:00Z"
+    }
+}

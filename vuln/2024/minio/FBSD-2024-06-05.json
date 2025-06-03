@@ -1,0 +1,23 @@
+{
+    "schema_version": "1.7.0",
+    "modified": "2024-06-05T00:00:00Z",
+    "published": "2024-06-05T00:00:00Z",
+    "id": "FBSD-2024-06-05",
+    "summary": "minio -- privilege escalation via permissions inheritance",
+    "details": "<description xmlns=\"http://www.vuxml.org/apps/vuxml-1\">\n      <body xmlns=\"http://www.w3.org/1999/xhtml\">\n\t<p>Minio security advisory GHSA-xx8w-mq23-29g4 ports:</p>\n\t<blockquote cite=\"https://github.com/minio/minio/security/advisories/GHSA-xx8w-mq23-29g4\">\n\t<p>\n\t  When someone creates an access key, it inherits the\n\t  permissions of the parent key. Not only for s3:* actions,\n\t  but also admin:* actions. Which means unless somewhere\n\t  above in the access-key hierarchy, the admin rights are\n\t  denied, access keys will be able to simply override their\n\t  own s3 permissions to something more permissive.\n\t</p>\n\t</blockquote>\n      </body>\n    </description>",
+    "references": [
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2024-24747"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2024-24747"
+        }
+    ],
+    "affected": [],
+    "database_specific": {
+        "vid": "144836e3-2358-11ef-996e-40b034455553",
+        "discovery": "2024-01-31T00:00:00Z"
+    }
+}

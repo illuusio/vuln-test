@@ -1,0 +1,62 @@
+{
+    "schema_version": "1.7.0",
+    "modified": "2024-09-29T00:00:00Z",
+    "published": "2024-09-29T00:00:00Z",
+    "id": "FBSD-2024-09-29",
+    "summary": "sqlite -- use-after-free bug in jsonparseaddnodearray",
+    "details": "<description xmlns=\"http://www.vuxml.org/apps/vuxml-1\">\n\t<body xmlns=\"http://www.w3.org/1999/xhtml\">\n\t<p>secalert@redhat.com reports:</p>\n\t<blockquote cite=\"https://access.redhat.com/security/cve/CVE-2024-0232\">\n\t  <p>A heap use-after-free issue has been identified in SQLite in the\n\tjsonParseAddNodeArray() function in sqlite3.c.  This flaw allows a\n\tlocal attacker to leverage a victim to pass specially crafted\n\tmalicious input to the application, potentially causing a crash and\n\tleading to a denial of service.</p>\n\t</blockquote>\n\t</body>\n    </description>",
+    "references": [
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2024-0232"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://nvd.nist.gov/vuln/detail/CVE-2024-0232"
+        }
+    ],
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "linux-rl9-sqlite"
+            },
+            "ranges": [
+                {
+                    "type": "ECOSYSTEM",
+                    "events": [
+                        {
+                            "introduced": "3.43.0"
+                        },
+                        {
+                            "fixed": "3.43.2"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "linux-c7-sqlite"
+            },
+            "ranges": [
+                {
+                    "type": "ECOSYSTEM",
+                    "events": [
+                        {
+                            "introduced": "3.43.0"
+                        },
+                        {
+                            "fixed": "3.43.2"
+                        }
+                    ]
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "vid": "42ec2207-7e85-11ef-89a4-b42e991fc52e",
+        "discovery": "2024-01-16T00:00:00Z"
+    }
+}

@@ -1,0 +1,110 @@
+{
+    "schema_version": "1.7.0",
+    "modified": "2024-06-05T00:00:00Z",
+    "published": "2024-06-05T00:00:00Z",
+    "id": "FBSD-2024-06-05",
+    "summary": "cyrus-imapd -- unbounded memory allocation",
+    "details": "<description xmlns=\"http://www.vuxml.org/apps/vuxml-1\">\n      <body xmlns=\"http://www.w3.org/1999/xhtml\">\n\t<p>Cyrus IMAP 3.8.3 Release Notes states:</p>\n\t<blockquote cite=\"https://www.cyrusimap.org/3.8/imap/download/release-notes/3.8/x/3.8.3.html\">\n\t  <p>Fixed CVE-2024-34055: Cyrus-IMAP through 3.8.2 and 3.10.0-beta2 allow authenticated attackers to cause unbounded memory allocation by sending many LITERALs in a single command.</p>\n\t  <p>The IMAP protocol allows for command arguments to be LITERALs of negotiated length, and for these the server allocates memory to receive the content before instructing the client to proceed. The allocated memory is released when the whole command has been received and processed.</p>\n\t  <p>The IMAP protocol has a number commands that specify an unlimited number of arguments, for example SEARCH. Each of these arguments can be a LITERAL, for which memory will be allocated and not released until the entire command has been received and processed. This can run a server out of memory, with varying consequences depending on the server's OOM policy.</p>\n\t</blockquote>\n      </body>\n    </description>",
+    "references": [
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2024-34055"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2024-34055"
+        }
+    ],
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "cyrus-imapd36"
+            },
+            "ranges": [
+                {
+                    "type": "ECOSYSTEM",
+                    "events": [
+                        {
+                            "fixed": "3.6.4_1"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "cyrus-imapd34"
+            },
+            "ranges": [
+                {
+                    "type": "ECOSYSTEM",
+                    "events": [
+                        {
+                            "fixed": "3.4.7_1"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "cyrus-imapd32"
+            },
+            "ranges": [
+                {
+                    "type": "ECOSYSTEM",
+                    "events": [
+                        {
+                            "introduced": "0,1"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "cyrus-imapd30"
+            },
+            "ranges": [
+                {
+                    "type": "ECOSYSTEM",
+                    "events": [
+                        {
+                            "introduced": "0,1"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "cyrus-imapd25"
+            },
+            "ranges": [
+                {
+                    "type": "ECOSYSTEM",
+                    "events": [
+                        {
+                            "introduced": "0,1"
+                        }
+                    ]
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "vid": "14908bda-232b-11ef-b621-00155d645102",
+        "discovery": "2024-04-30T00:00:00Z"
+    }
+}

@@ -1,0 +1,108 @@
+{
+    "schema_version": "1.7.0",
+    "modified": "2025-02-07T00:00:00Z",
+    "published": "2025-02-07T00:00:00Z",
+    "id": "FBSD-2025-02-07",
+    "summary": "mozilla -- multiple vulnerabilities",
+    "details": "<description xmlns=\"http://www.vuxml.org/apps/vuxml-1\">\n\t<body xmlns=\"http://www.w3.org/1999/xhtml\">\n\t<p>security@mozilla.org reports:</p>\n\t<blockquote cite=\"https://bugzilla.mozilla.org/buglist.cgi?bug_id=1936601%2C1936844%2C1937694%2C1938469%2C1939583%2C1940994\">\n\t<p>An attacker could have caused a use-after-free via crafted XSLT\n\tdata, leading to a potentially exploitable crash.</p>\n\t<p>An attacker could have caused a use-after-free via the Custom\n\tHighlight API, leading to a potentially exploitable crash.</p>\n\t<p>A race during concurrent delazification could have led to a\n\tuse-after-free.</p>\n\t<p>Memory safety bugs present in Firefox 134, Thunderbird 134, Firefox\n\tESR 115.19, Firefox ESR 128.6, Thunderbird 115.19, and Thunderbird\n\t128.6.  Some of these bugs showed evidence of memory corruption and\n\twe presume that with enough effort some of these could have been\n\texploited to run arbitrary code.</p>\n\t</blockquote>\n\t</body>\n    </description>",
+    "references": [
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2025-1009"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://nvd.nist.gov/vuln/detail/CVE-2025-1009"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2025-1010"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://nvd.nist.gov/vuln/detail/CVE-2025-1010"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2025-1012"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://nvd.nist.gov/vuln/detail/CVE-2025-1012"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2025-1016"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://nvd.nist.gov/vuln/detail/CVE-2025-1016"
+        }
+    ],
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "firefox-esr"
+            },
+            "ranges": [
+                {
+                    "type": "ECOSYSTEM",
+                    "events": [
+                        {
+                            "fixed": "115.20,1"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ]
+                },
+                {
+                    "type": "ECOSYSTEM",
+                    "events": [
+                        {
+                            "introduced": "116.0,1,1"
+                        },
+                        {
+                            "fixed": "128.6,1"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "thunderbird"
+            },
+            "ranges": [
+                {
+                    "type": "ECOSYSTEM",
+                    "events": [
+                        {
+                            "fixed": "128.7"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ]
+                },
+                {
+                    "type": "ECOSYSTEM",
+                    "events": [
+                        {
+                            "introduced": "129,1"
+                        },
+                        {
+                            "fixed": "135"
+                        }
+                    ]
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "vid": "e54a1413-e539-11ef-a845-b42e991fc52e",
+        "discovery": "2025-02-04T00:00:00Z"
+    }
+}

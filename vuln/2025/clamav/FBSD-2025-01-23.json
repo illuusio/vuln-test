@@ -1,0 +1,43 @@
+{
+    "schema_version": "1.7.0",
+    "modified": "2025-01-23T00:00:00Z",
+    "published": "2025-01-23T00:00:00Z",
+    "id": "FBSD-2025-01-23",
+    "summary": "clamav -- Possbile denial-of-service vulnerability",
+    "details": "<description xmlns=\"http://www.vuxml.org/apps/vuxml-1\">\n\t<body xmlns=\"http://www.w3.org/1999/xhtml\">\n\t<p>The ClamAV project reports:</p>\n\t<blockquote cite=\"https://blog.clamav.net/2025/01/clamav-142-and-108-security-patch.html\">\n\t  <p>\n\t    A possible buffer overflow read bug is found in the OLE2\n\t    file parser that could cause a denial-of-service (DoS)\n\t    condition.\n\t  </p>\n\t</blockquote>\n\t</body>\n    </description>",
+    "references": [
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2025-20128"
+        },
+        {
+            "type": "WEB",
+            "url": "https://blog.clamav.net/2025/01/clamav-142-and-108-security-patch.html"
+        }
+    ],
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "clamav-lts"
+            },
+            "ranges": [
+                {
+                    "type": "ECOSYSTEM",
+                    "events": [
+                        {
+                            "introduced": "1.0.0,1"
+                        },
+                        {
+                            "fixed": "1.0.8,1"
+                        }
+                    ]
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "vid": "1e109b60-d92e-11ef-a661-08002784c58d",
+        "discovery": "2025-01-22T00:00:00Z"
+    }
+}

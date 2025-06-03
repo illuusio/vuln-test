@@ -1,0 +1,43 @@
+{
+    "schema_version": "1.7.0",
+    "modified": "2024-04-15T00:00:00Z",
+    "published": "2024-04-15T00:00:00Z",
+    "id": "FBSD-2024-04-15",
+    "summary": "go -- http2: close connections when receiving too many headers",
+    "details": "<description xmlns=\"http://www.vuxml.org/apps/vuxml-1\">\n\t<body xmlns=\"http://www.w3.org/1999/xhtml\">\n\t<p>The Go project reports:</p>\n\t<blockquote cite=\"https://go.dev/issue/65051\">\n\t  <p>http2: close connections when receiving too many headers</p>\n\t  <p>Maintaining HPACK state requires that we parse and\n\t  process all HEADERS and CONTINUATION frames on a\n\t  connection. When a request's headers exceed MaxHeaderBytes,\n\t  we don't allocate memory to store the excess headers but we\n\t  do parse them. This permits an attacker to cause an HTTP/2\n\t  endpoint to read arbitrary amounts of header data, all\n\t  associated with a request which is going to be\n\t  rejected. These headers can include Huffman-encoded data\n\t  which is significantly more expensive for the receiver to\n\t  decode than for an attacker to send.</p>\n\t</blockquote>\n\t</body>\n    </description>",
+    "references": [
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2023-45288"
+        },
+        {
+            "type": "WEB",
+            "url": "https://groups.google.com/g/golang-announce/c/YgW0sx8mN3M/m/khALNYGdAAAJ"
+        }
+    ],
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "go121"
+            },
+            "ranges": [
+                {
+                    "type": "ECOSYSTEM",
+                    "events": [
+                        {
+                            "fixed": "1.21.9"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ]
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "vid": "cdb5e0e3-fafc-11ee-9c21-901b0e9408dc",
+        "discovery": "2024-04-03T00:00:00Z"
+    }
+}

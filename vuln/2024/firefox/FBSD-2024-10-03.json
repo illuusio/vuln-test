@@ -1,0 +1,102 @@
+{
+    "schema_version": "1.7.0",
+    "modified": "2024-10-03T00:00:00Z",
+    "published": "2024-10-03T00:00:00Z",
+    "id": "FBSD-2024-10-03",
+    "summary": "firefox -- multiple vulnerabilities",
+    "details": "<description xmlns=\"http://www.vuxml.org/apps/vuxml-1\">\n\t<body xmlns=\"http://www.w3.org/1999/xhtml\">\n\t<p>security@mozilla.org reports:</p>\n\t<blockquote cite=\"https://bugzilla.mozilla.org/buglist.cgi?bug_id=1872744%2C1897792%2C1911317%2C1913445%2C1914106%2C1914475%2C1914963%2C1915008%2C1916476\">\n\t<ul>\n\t<li>CVE-2024-9392: A compromised content process could have\n\tallowed for the arbitrary loading of cross-origin pages.</li>\n\t<li>CVE-2024-9396: It is currently unknown if this issue is\n\texploitable but a condition may arise where the structured\n\tclone of certain objects could lead to memory corruption.</li>\n\t<li>CVE-2024-9400: A potential memory corruption vulnerability\n\tcould be triggered if an attacker had the ability to trigger\n\tan OOM at a specific moment during JIT compilation.</li>\n\t<li>CVE-2024-9401: Memory safety bugs present in Firefox 130,\n\tFirefox ESR 115.15, Firefox ESR 128.2, and Thunderbird 128.2.\n\tSome of these bugs showed evidence of memory corruption and we\n\tpresume that with enough effort some of these could have been\n\texploited to run arbitrary code.</li>\n\t<li>CVE-2024-9402: Memory safety bugs present in Firefox 130,\n\tFirefox ESR 128.2, and Thunderbird 128.2.  Some of these bugs\n\tshowed evidence of memory corruption and we presume that with\n\tenough effort some of these could have been exploited to run\n\tarbitrary code.</li>\n\t<li>CVE-2024-9403: Memory safety bugs present in Firefox 130.\n\tSome of these bugs showed evidence of memory corruption and we\n\tpresume that with enough effort some of these could have been\n\texploited to run arbitrary code.</li>\n\t</ul>\n\t</blockquote>\n\t</body>\n    </description>",
+    "references": [
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2024-9392"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://nvd.nist.gov/vuln/detail/CVE-2024-9392"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2024-9396"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://nvd.nist.gov/vuln/detail/CVE-2024-9396"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2024-9400"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://nvd.nist.gov/vuln/detail/CVE-2024-9400"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2024-9401"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://nvd.nist.gov/vuln/detail/CVE-2024-9401"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2024-9402"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://nvd.nist.gov/vuln/detail/CVE-2024-9402"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2024-9403"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://nvd.nist.gov/vuln/detail/CVE-2024-9403"
+        }
+    ],
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "firefox-esr"
+            },
+            "ranges": [
+                {
+                    "type": "ECOSYSTEM",
+                    "events": [
+                        {
+                            "fixed": "128.3.0,1"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "thunderbird"
+            },
+            "ranges": [
+                {
+                    "type": "ECOSYSTEM",
+                    "events": [
+                        {
+                            "fixed": "128.3.0"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ]
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "vid": "0417d41a-8175-11ef-a5dc-b42e991fc52e",
+        "discovery": "2024-10-01T00:00:00Z"
+    }
+}

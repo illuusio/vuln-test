@@ -1,0 +1,23 @@
+{
+    "schema_version": "1.7.0",
+    "modified": "2024-02-14T00:00:00Z",
+    "published": "2024-02-14T00:00:00Z",
+    "id": "FBSD-2024-02-14",
+    "summary": "FreeBSD -- jail(2) information leak",
+    "details": "<description xmlns=\"http://www.vuxml.org/apps/vuxml-1\">\n\t<body xmlns=\"http://www.w3.org/1999/xhtml\">\n\t<h1>Problem Description:</h1>\n\t<p>The jail(2) system call has not limited a visiblity of allocated\n\tTTYs (the kern.ttys sysctl).  This gives rise to an information\n\tleak about processes outside the current jail.</p>\n\t<h1>Impact:</h1>\n\t<p>Attacker can get information about TTYs allocated on the host\n\tor in other jails.  Effectively, the information printed by \"pstat\n\t-t\" may be leaked.</p>\n      </body>\n    </description>",
+    "references": [
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2024-25941"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://www.freebsd.org/security/advisories/FreeBSD-SA-24:02.tty.asc"
+        }
+    ],
+    "affected": [],
+    "database_specific": {
+        "vid": "46a29f83-cb47-11ee-b609-002590c1f29c",
+        "discovery": "2024-02-14T00:00:00Z"
+    }
+}

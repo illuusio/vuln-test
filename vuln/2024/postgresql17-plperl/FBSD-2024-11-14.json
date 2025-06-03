@@ -1,0 +1,119 @@
+{
+    "schema_version": "1.7.0",
+    "modified": "2024-11-14T00:00:00Z",
+    "published": "2024-11-14T00:00:00Z",
+    "id": "FBSD-2024-11-14",
+    "summary": "PostgreSQL -- PL/Perl environment variable changes execute arbitrary code",
+    "details": "<description xmlns=\"http://www.vuxml.org/apps/vuxml-1\">\n\t<body xmlns=\"http://www.w3.org/1999/xhtml\">\n\t<p>PostgreSQL project reports:</p>\n\t<blockquote cite=\"https://www.postgresql.org/support/security/CVE-2024-10979/\">\n\t<p>\n\tIncorrect control of environment variables in PostgreSQL\n\tPL/Perl allows an unprivileged database user to change\n\tsensitive process environment variables (e.g. PATH).\n\tThat often suffices to enable arbitrary code execution,\n\teven if the attacker lacks a database server operating\n\tsystem user.\n\t</p>\n\t</blockquote>\n\t</body>\n    </description>",
+    "references": [
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2024-10979"
+        },
+        {
+            "type": "WEB",
+            "url": "https://www.postgresql.org/support/security/CVE-2024-10979/"
+        }
+    ],
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "postgresql16-plperl"
+            },
+            "ranges": [
+                {
+                    "type": "ECOSYSTEM",
+                    "events": [
+                        {
+                            "fixed": "16.5"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "postgresql15-plperl"
+            },
+            "ranges": [
+                {
+                    "type": "ECOSYSTEM",
+                    "events": [
+                        {
+                            "fixed": "15.9"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "postgresql14-plperl"
+            },
+            "ranges": [
+                {
+                    "type": "ECOSYSTEM",
+                    "events": [
+                        {
+                            "fixed": "14.14"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "postgresql13-plperl"
+            },
+            "ranges": [
+                {
+                    "type": "ECOSYSTEM",
+                    "events": [
+                        {
+                            "fixed": "13.17"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "postgresql12-plperl"
+            },
+            "ranges": [
+                {
+                    "type": "ECOSYSTEM",
+                    "events": [
+                        {
+                            "fixed": "12.21"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ]
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "vid": "a03636f4-a29f-11ef-af48-6cc21735f730",
+        "discovery": "2024-11-14T00:00:00Z"
+    }
+}

@@ -1,0 +1,128 @@
+{
+    "schema_version": "1.7.0",
+    "modified": "2025-03-06T00:00:00Z",
+    "published": "2025-03-06T00:00:00Z",
+    "id": "FBSD-2025-03-06",
+    "summary": "xorg server -- Multiple vulnerabilities",
+    "details": "<description xmlns=\"http://www.vuxml.org/apps/vuxml-1\">\n\t<body xmlns=\"http://www.w3.org/1999/xhtml\">\n\t<p>The X.Org project reports:</p>\n\t<blockquote cite=\"https://lists.x.org/archives/xorg-announce/2025-February/003584.html\">\n\t  <ul>\n\t    <li>\n\t      CVE-2025-26594: Use-after-free of the root cursor\n\n\t      <p>The root cursor is referenced in the xserver as a global variable. If\n\t      a client manages to free the root cursor, the internal reference points\n\t      to freed memory and causes a use-after-free.</p>\n\t    </li>\n\t    <li>\n\t      CVE-2025-26595: Buffer overflow in XkbVModMaskText()\n\n\t      <p>The code in XkbVModMaskText() allocates a fixed sized buffer on the\n\t      stack and copies the names of the virtual modifiers to that buffer.\n\t      The code however fails to check the bounds of the buffer correctly and\n\t      would copy the data regardless of the size, which may lead to a buffer\n\t      overflow.</p>\n\t    </li>\n\t    <li>\n\t      CVE-2025-26596: Heap overflow in XkbWriteKeySyms()\n\n\t      <p>The computation of the length in XkbSizeKeySyms() differs from what is\n\t      actually written in XkbWriteKeySyms(), which may lead to a heap based\n\t      buffer overflow.</p>\n\t    </li>\n\t    <li>\n\t      CVE-2025-26597: Buffer overflow in XkbChangeTypesOfKey()\n\n\t      <p>If XkbChangeTypesOfKey() is called with 0 group, it will resize the key\n\t      symbols table to 0 but leave the key actions unchanged.\n\t      If later, the same function is called with a non-zero value of groups,\n\t      this will cause a buffer overflow because the key actions are of the wrong\n\t      size.</p>\n\t    </li>\n\t    <li>\n\t      CVE-2025-26598: Out-of-bounds write in CreatePointerBarrierClient()\n\n\t      <p>The function GetBarrierDevice() searches for the pointer device based on\n\t      its device id and returns the matching value, or supposedly NULL if no\n\t      match was found.\n\t      However the code will return the last element of the list if no matching\n\t      device id was found which can lead to out of bounds memory access.</p>\n\t    </li>\n\t    <li>\n\t      CVE-2025-26599: Use of uninitialized pointer in compRedirectWindow()\n\n\t      <p>The function compCheckRedirect() may fail if it cannot allocate the backing\n\t      pixmap. In that case, compRedirectWindow() will return a BadAlloc error\n\t      without the validation of the window tree marked just before, which leaves\n\t      the validate data partly initialized, and the use of an uninitialized pointer\n\t      later.</p>\n\t    </li>\n\t    <li>\n\t      CVE-2025-26600: Use-after-free in PlayReleasedEvents()\n\n\t      <p>When a device is removed while still frozen, the events queued for that\n\t      device remain while the device itself is freed and replaying the events\n\t      will cause a use after free.</p>\n\t    </li>\n\t    <li>\n\t      CVE-2025-26601: Use-after-free in SyncInitTrigger()\n\n\t      <p>When changing an alarm, the values of the change mask are evaluated one\n\t      after the other, changing the trigger values as requested and eventually,\n\t      SyncInitTrigger() is called.\n\t      If one of the changes triggers an error, the function will return early,\n\t      not adding the new sync object.\n\t      This can be used to cause a use after free when the alarm eventually\n\t      triggers.</p>\n\t    </li>\n\t  </ul>\n\t</blockquote>\n\t</body>\n    </description>",
+    "references": [
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2025-26594"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2025-26595"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2025-26596"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2025-26597"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2025-26598"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2025-26599"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2025-26600"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2025-26601"
+        },
+        {
+            "type": "WEB",
+            "url": "https://lists.x.org/archives/xorg-announce/2025-February/003584.html"
+        }
+    ],
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "xephyr"
+            },
+            "ranges": [
+                {
+                    "type": "ECOSYSTEM",
+                    "events": [
+                        {
+                            "fixed": "21.1.16,1"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "xorg-vfbserver"
+            },
+            "ranges": [
+                {
+                    "type": "ECOSYSTEM",
+                    "events": [
+                        {
+                            "fixed": "21.1.16,1"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "xorg-nextserver"
+            },
+            "ranges": [
+                {
+                    "type": "ECOSYSTEM",
+                    "events": [
+                        {
+                            "fixed": "21.1.16,2"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "xwayland"
+            },
+            "ranges": [
+                {
+                    "type": "ECOSYSTEM",
+                    "events": [
+                        {
+                            "fixed": "24.1.6"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ]
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "vid": "f4297478-fa62-11ef-b597-001fc69cd6dc",
+        "discovery": "2025-02-25T00:00:00Z"
+    }
+}

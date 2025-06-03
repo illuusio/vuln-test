@@ -1,0 +1,62 @@
+{
+    "schema_version": "1.7.0",
+    "modified": "2025-04-03T00:00:00Z",
+    "published": "2025-04-03T00:00:00Z",
+    "id": "FBSD-2025-04-03",
+    "summary": "MongoDB -- Unauthorized access to underlying data",
+    "details": "<description xmlns=\"http://www.vuxml.org/apps/vuxml-1\">\n\t<body xmlns=\"http://www.w3.org/1999/xhtml\">\n\t<p>cna@mongodb.com reports:</p>\n\t<blockquote cite=\"https://jira.mongodb.org/browse/SERVER-103151\">\n\t  <p>A user authorized to access a view may be able to alter the intended\n\tcollation, allowing them to access to a different or unintended\n\tview of underlying data.  This issue affects MongoDB Server v5.0\n\tversion prior to 5.0.31, MongoDB Server v6.0 version prior to 6.0.20,\n\tMongoDB Server v7.0 version prior to 7.0.14 and MongoDB Server v7.3\n\tversions prior to 7.3.4.</p>\n\t</blockquote>\n\t</body>\n    </description>",
+    "references": [
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2025-3082"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://nvd.nist.gov/vuln/detail/CVE-2025-3082"
+        }
+    ],
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "mongodb60"
+            },
+            "ranges": [
+                {
+                    "type": "ECOSYSTEM",
+                    "events": [
+                        {
+                            "fixed": "6.0.20"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "mongodb70"
+            },
+            "ranges": [
+                {
+                    "type": "ECOSYSTEM",
+                    "events": [
+                        {
+                            "fixed": "7.0.16"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ]
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "vid": "30418b26-107f-11f0-8195-b42e991fc52e",
+        "discovery": "2025-04-01T00:00:00Z"
+    }
+}

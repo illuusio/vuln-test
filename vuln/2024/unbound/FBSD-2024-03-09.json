@@ -1,0 +1,23 @@
+{
+    "schema_version": "1.7.0",
+    "modified": "2024-03-09T00:00:00Z",
+    "published": "2024-03-09T00:00:00Z",
+    "id": "FBSD-2024-03-09",
+    "summary": "Unbound -- Denial-of-Service vulnerability",
+    "details": "<description xmlns=\"http://www.vuxml.org/apps/vuxml-1\">\n\t<body xmlns=\"http://www.w3.org/1999/xhtml\">\n\t<p>NLNet Labs reports:</p>\n\t<blockquote cite=\"https://www.nlnetlabs.nl/downloads/unbound/CVE-2024-1931.txt\">\n\t  <p>Unbound 1.18.0 introduced a feature that removes EDE records from\n\t    responses with size higher than the client's advertised buffer size.\n\t    Before removing all the EDE records however, it would try to see if\n\t    trimming the extra text fields on those records would result in an\n\t    acceptable size while still retaining the EDE codes. Due to an\n\t    unchecked condition, the code that trims the text of the EDE records\n\t    could loop indefinitely. This happens when Unbound would reply with\n\t    attached EDE information on a positive reply and the client's buffer\n\t    size is smaller than the needed space to include EDE records.\n\n\t    The vulnerability can only be triggered when the 'ede: yes' option\n\t    is used; non default configuration.</p>\n\t</blockquote>\n\t</body>\n    </description>",
+    "references": [
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2024-1931"
+        },
+        {
+            "type": "WEB",
+            "url": "https://www.nlnetlabs.nl/downloads/unbound/CVE-2024-1931.txt"
+        }
+    ],
+    "affected": [],
+    "database_specific": {
+        "vid": "c2ad8700-de25-11ee-9190-84a93843eb75",
+        "discovery": "2024-03-07T00:00:00Z"
+    }
+}

@@ -1,0 +1,23 @@
+{
+    "schema_version": "1.7.0",
+    "modified": "2024-12-17T00:00:00Z",
+    "published": "2024-12-17T00:00:00Z",
+    "id": "FBSD-2024-12-17",
+    "summary": "forgejo -- multiple vulnerabilities",
+    "details": "<description xmlns=\"http://www.vuxml.org/apps/vuxml-1\">\n       <body xmlns=\"http://www.w3.org/1999/xhtml\">\n       <h1>Problem Description:</h1>\n       <ul>\n       <li>When Forgejo is configured to run the internal ssh server with\n       [server].START_SSH_SERVER=true, it was possible for a registered user\n       to impersonate another user.  The rootless container image uses the\n       internal ssh server by default and was vulnerable.  A Forgejo\n       instance running from a binary or from a root container image does\n       not use the internal ssh server by default and was not vulnerable.\n       The incorrect use of the crypto package is the root cause of the\n       vulnerability and was fixed for the internal ssh server.</li>\n       <li>Revert \"allow synchronizing user status from OAuth2 login\n       providers\"</li>\n       </ul>\n      </body>\n    </description>",
+    "references": [
+        {
+            "type": "WEB",
+            "url": "https://codeberg.org/forgejo/forgejo/pulls/6248"
+        },
+        {
+            "type": "WEB",
+            "url": "https://codeberg.org/forgejo/forgejo/pulls/6249"
+        }
+    ],
+    "affected": [],
+    "database_specific": {
+        "vid": "6dcf6fc6-bca0-11ef-8926-9b4f2d14eb53",
+        "discovery": "2024-12-12T00:00:00Z"
+    }
+}

@@ -1,0 +1,51 @@
+{
+    "schema_version": "1.7.0",
+    "modified": "2025-01-21T00:00:00Z",
+    "published": "2025-01-21T00:00:00Z",
+    "id": "FBSD-2025-01-21",
+    "summary": "go -- multiple vulnerabilities",
+    "details": "<description xmlns=\"http://www.vuxml.org/apps/vuxml-1\">\n\t<body xmlns=\"http://www.w3.org/1999/xhtml\">\n\t<p>The Go project reports:</p>\n\t<blockquote cite=\"https://go.dev/issue/71156\">\n\t  <p>crypto/x509: usage of IPv6 zone IDs can bypass URI name constraints</p>\n\t  <p>A certificate with a URI which has a IPv6 address with a\n\t  zone ID may incorrectly satisfy a URI name constraint that\n\t  applies to the certificate chain.</p>\n\t</blockquote>\n\t<blockquote cite=\"https://go.dev/issue/70530\">\n\t  <p>net/http: sensitive headers incorrectly sent after cross-domain redirect</p>\n\t  <p>The HTTP client drops sensitive headers after following a\n\t  cross-domain redirect.  For example, a request to a.com/\n\t  containing an Authorization header which is redirected to\n\t  b.com/ will not send that header to b.com.</p>\n\t</blockquote>\n\t</body>\n    </description>",
+    "references": [
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2024-45341"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2024-45336"
+        },
+        {
+            "type": "WEB",
+            "url": "https://go.dev/issue/71156"
+        },
+        {
+            "type": "WEB",
+            "url": "https://go.dev/issue/70530"
+        }
+    ],
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "go123"
+            },
+            "ranges": [
+                {
+                    "type": "ECOSYSTEM",
+                    "events": [
+                        {
+                            "fixed": "1.23.5"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ]
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "vid": "704aa72a-d840-11ef-a205-901b0e9408dc",
+        "discovery": "2025-01-07T00:00:00Z"
+    }
+}

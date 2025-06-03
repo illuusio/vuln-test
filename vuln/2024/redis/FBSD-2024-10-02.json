@@ -1,0 +1,100 @@
+{
+    "schema_version": "1.7.0",
+    "modified": "2024-10-02T00:00:00Z",
+    "published": "2024-10-02T00:00:00Z",
+    "id": "FBSD-2024-10-02",
+    "summary": "redis,valkey -- Multiple vulnerabilities",
+    "details": "<description xmlns=\"http://www.vuxml.org/apps/vuxml-1\">\n\t<body xmlns=\"http://www.w3.org/1999/xhtml\">\n\t<p>Redis core team reports:</p>\n\t<blockquote cite=\"https://github.com/redis/redis/releases/tag/7.4.1\">\n\t  <dl>\n\t    <dt>CVE-2024-31449</dt>\n\t    <dd>Lua library commands may lead to stack overflow and potential RCE.</dd>\n\t    <dt>CVE-2024-31227</dt>\n\t    <dd>Potential Denial-of-service due to malformed ACL selectors.</dd>\n\t    <dt>CVE-2024-31228</dt>\n\t    <dd>Potential Denial-of-service due to unbounded pattern matching.</dd>\n\t  </dl>\n\t</blockquote>\n\t</body>\n    </description>",
+    "references": [
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2024-31449"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2024-31227"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2024-31228"
+        },
+        {
+            "type": "WEB",
+            "url": "https://github.com/redis/redis/releases/tag/7.4.1"
+        }
+    ],
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "redis72"
+            },
+            "ranges": [
+                {
+                    "type": "ECOSYSTEM",
+                    "events": [
+                        {
+                            "introduced": "7.2.0"
+                        },
+                        {
+                            "fixed": "7.2.6"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "redis62"
+            },
+            "ranges": [
+                {
+                    "type": "ECOSYSTEM",
+                    "events": [
+                        {
+                            "introduced": "6.2.0"
+                        },
+                        {
+                            "fixed": "6.2.16"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "valkey"
+            },
+            "ranges": [
+                {
+                    "type": "ECOSYSTEM",
+                    "events": [
+                        {
+                            "introduced": "8,0,0"
+                        },
+                        {
+                            "fixed": "8.0.1"
+                        }
+                    ]
+                },
+                {
+                    "type": "ECOSYSTEM",
+                    "events": [
+                        {
+                            "introduced": "7.2.0"
+                        },
+                        {
+                            "fixed": "7.2.7"
+                        }
+                    ]
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "vid": "8b20f21a-8113-11ef-b988-08002784c58d",
+        "discovery": "2024-10-02T00:00:00Z"
+    }
+}
