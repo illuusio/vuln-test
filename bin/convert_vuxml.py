@@ -34,6 +34,8 @@ import datetime
 import getopt
 import json
 from lxml import etree
+import os
+from pathlib import Path
 import re
 import sys
 
@@ -87,7 +89,12 @@ class PrefixResolver(etree.Resolver):
 
 # dateof
 def dateof(string):
-    return datetime.datetime.strptime(string, "%Y-%m-%d").isoformat() + "Z"
+    return datetime.datetime.strptime(string, "%Y-%m-%d")
+
+
+def formatdate(date):
+    # RFC 3339 ending with Z
+    return date.strftime("%Y-%m-%dT%H:%M:%SZ")
 
 
 # error
@@ -144,7 +151,8 @@ def main():
 
         # id
         vid = vuln.get("vid")
-        entry = {"schema_version": "1.7.0", "id": vid}
+        entry = {"schema_version": "1.7.0"}
+        dates = {"modified": None, "published": None}
 
         # modified
         try:
@@ -166,11 +174,15 @@ def main():
         except Exception as e:
             dates_modified = None
         if dates_modified is not None:
-            entry["modified"] = dates_modified
+            entry["modified"] = formatdate(dates_modified)
+            dates["modified"] = dates_modified
         elif dates_entry is not None:
-            entry["modified"] = dates_entry
+            entry["modified"] = formatdate(dates_entry)
+            dates["modified"] = dates_entry
         if dates_entry is not None:
-            entry["published"] = dates_entry
+            entry["published"] = formatdate(dates_entry)
+            dates["published"] = dates_entry
+            entry["id"] = "FBSD-" + dates["published"].strftime("%Y-%m-%d")
 
         # summary
         try:
@@ -187,7 +199,9 @@ def main():
             ret = error(f"{vid} has no description")
         else:
             try:
-                details = etree.tostring(details, encoding="unicode", method="text")
+                details = etree.tostring(
+                    details, encoding="unicode", method="html"
+                ).strip()
                 if len(details) > DESCRIPTION_LENGTH:
                     warn("%s: description truncated (> %s)" % (vid, DESCRIPTION_LENGTH))
                     details = details[0:DESCRIPTION_LENGTH]
@@ -258,7 +272,7 @@ def main():
                     versions = []
                     for e in package.findall(namespace + "range"):
                         events = []
-                        semver = {"type": "SEMVER"}
+                        semver = {"type": "ECOSYSTEM"}
 
                         # affected: ranges
                         event = {}
@@ -303,7 +317,7 @@ def main():
                 entry["affected"] = affected
 
         # database_specific
-        database_specific = {}
+        database_specific = {"vid": vid}
         try:
             d = vuln.find(namespace + "dates").find(namespace + "discovery").text
             if not re_date.match(d):
@@ -314,14 +328,73 @@ def main():
         except Exception as e:
             dates_discovery = None
         if dates_discovery is not None:
-            database_specific["discovery"] = dates_discovery
+            database_specific["discovery"] = formatdate(dates_discovery)
         if len(database_specific) > 0:
             entry["database_specific"] = database_specific
 
         if output is not None:
             try:
-                with open(output + f"/{vid}.json", "w") as f:
+                date_str = None
+                date_obj = None
+                year_str = None
+                if dates["published"] is not None:
+                    date_str = dates["published"].strftime("%Y-%m-%d")
+                    year_str = dates["published"].strftime("%Y")
+                    date_obj = dates["published"]
+                elif dates["modified"] is not None:
+                    date_str = dates["modified"].strftime("%Y-%m-%d")
+                    year_str = dates["published"].strftime("%Y")
+                    date_obj = dates["modified"]
+
+                if date_str is None:
+                    raise Exception("There is no date in " + str(entry["affected"]))
+
+                output_file = f"FBSD-" + date_str + ".json"
+                output_year_path = output + "/" + year_str
+
+                if os.path.isdir(output_year_path) is False:
+                    os.mkdir(output_year_path)
+                    year_date = datetime.date(int(year_str), 1, 1)
+                    year_time_ts = int(year_date.strftime("%s"))
+                    os.utime(output_year_path, (year_time_ts, year_time_ts))
+
+                affected_array = entry["affected"]
+
+                output_name = affected_array[0]["package"]["name"]
+
+                del affected_array[0]
+
+                output_path_with_name = output_year_path + "/" + output_name
+
+                if os.path.isdir(output_path_with_name) is False:
+                    os.mkdir(output_path_with_name)
+
+                output_full_path = output_path_with_name + "/" + output_file
+
+                with open(output_full_path, "w") as f:
                     print(json.dumps(entry, indent=4), file=f)
+
+                if os.path.isfile(output_full_path):
+                    timeint = int(date_obj.strftime("%s"))
+                    os.utime(output_full_path, (timeint, timeint))
+
+                for affected in affected_array:
+                    affected_year_with_name = (
+                        output_year_path + "/" + affected["package"]["name"]
+                    )
+
+                    if os.path.isdir(affected_year_with_name) is False:
+                        os.mkdir(affected_year_with_name)
+
+                    src_path = "../" + output_name + "/" + output_file
+                    to_path = affected_year_with_name + "/" + output_file
+
+                    if (
+                        os.path.isfile(to_path) is False
+                        and os.path.islink(to_path) is False
+                    ):
+                        os.symlink(src_path, to_path)
+
             except Exception as e:
                 ret = error(e)
         else:
