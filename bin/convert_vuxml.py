@@ -108,7 +108,7 @@ def usage(e=None):
     if e is not None:
         print(e, file=sys.stderr)
     print(
-        "Usage: %s [-e ecosystem][-o output_directory] vuln.xml" % sys.argv[0],
+        "Usage: %s [-e ecosystem][-o output_directory][-F][-r] vuln.xml" % sys.argv[0],
         file=sys.stderr,
     )
     return 1
@@ -122,16 +122,25 @@ def warn(string):
 # main
 def main():
     try:
-        opts, args = getopt.getopt(sys.argv[1:], "e:o:")
+        opts, args = getopt.getopt(sys.argv[1:], "e:o:Fr")
     except getopt.GetoptError as e:
         return usage(e)
     ecosystem = "FreeBSD:ports"
     output = None
+    output_flat = False
+    output_running = False
+
+    output_id = {}
+
     for name, optarg in opts:
         if name == "-e":
             ecosystem = optarg
         elif name == "-o":
             output = optarg
+        elif name == "-F":
+            output_flat = True
+        elif name == "-r":
+            output_running = True
         else:
             return usage("%s: Unsupported option" % name)
 
@@ -182,7 +191,6 @@ def main():
         if dates_entry is not None:
             entry["published"] = formatdate(dates_entry)
             dates["published"] = dates_entry
-            entry["id"] = "FBSD-" + dates["published"].strftime("%Y-%m-%d")
 
         # summary
         try:
@@ -346,11 +354,38 @@ def main():
                     year_str = dates["published"].strftime("%Y")
                     date_obj = dates["modified"]
 
+                # File name can be with date of release:
+                # FBSD-20250101.json
+                # or just running number
+                # FBSD-2025-0001.json
+                # When using running id then there won't be yearly
+                # subdirs
+                if output_running is False:
+                    if date_str not in output_id:
+                        output_id[date_str] = 0
+                    output_id[date_str] += 1
+                    output_file = (
+                        f"FBSD-" + date_str + "-" + str(output_id[date_str]).zfill(2)
+                    )
+                else:
+                    if year_str not in output_id:
+                        output_id[year_str] = 0
+                    output_id[year_str] += 1
+                    output_file = (
+                        f"FBSD-" + year_str + "-" + str(output_id[year_str]).zfill(4)
+                    )
+
+                # Make sure that is same as filename
+                entry["id"] = output_file
+
                 if date_str is None:
                     raise Exception("There is no date in " + str(entry["affected"]))
 
-                output_file = f"FBSD-" + date_str + ".json"
-                output_year_path = output + "/" + year_str
+                if output_flat is False:
+                    output_year_path = output + "/" + year_str
+                    print(output_year_path)
+                else:
+                    output_year_path = output
 
                 if os.path.isdir(output_year_path) is False:
                     os.mkdir(output_year_path)
@@ -364,37 +399,49 @@ def main():
 
                 del affected_array[0]
 
-                output_path_with_name = output_year_path + "/" + output_name
+                # If output is not flat then output path will be like
+                # 2025/somepackage/ with flat only 2025/
+                if output_flat is False:
+                    output_path_with_name = output_year_path + "/" + output_name
+                else:
+                    output_path_with_name = output_year_path
 
                 if os.path.isdir(output_path_with_name) is False:
                     os.mkdir(output_path_with_name)
 
-                output_full_path = output_path_with_name + "/" + output_file
+                output_with_suffix = output_file + ".json"
+
+                output_full_path = output_path_with_name + "/" + output_with_suffix
+
+                if os.path.isfile(output_full_path) is True:
+                    print("already here: " + output_full_path)
 
                 with open(output_full_path, "w") as f:
-                    print(json.dumps(entry, indent=4), file=f)
+                    print(json.dumps(entry, indent=4, sort_keys=True), file=f)
 
                 if os.path.isfile(output_full_path):
                     timeint = int(date_obj.strftime("%s"))
                     os.utime(output_full_path, (timeint, timeint))
 
-                for affected in affected_array:
-                    affected_year_with_name = (
-                        output_year_path + "/" + affected["package"]["name"]
-                    )
+                # If we are not havin flat system then for saving space link
+                # to original file do not make duplicates
+                if output_flat is False:
+                    for affected in affected_array:
+                        affected_year_with_name = (
+                            output_year_path + "/" + affected["package"]["name"]
+                        )
 
-                    if os.path.isdir(affected_year_with_name) is False:
-                        os.mkdir(affected_year_with_name)
+                        if os.path.isdir(affected_year_with_name) is False:
+                            os.mkdir(affected_year_with_name)
 
-                    src_path = "../" + output_name + "/" + output_file
-                    to_path = affected_year_with_name + "/" + output_file
+                        src_path = "../" + output_name + "/" + output_with_suffix
+                        to_path = affected_year_with_name + "/" + output_with_suffix
 
-                    if (
-                        os.path.isfile(to_path) is False
-                        and os.path.islink(to_path) is False
-                    ):
-                        os.symlink(src_path, to_path)
-
+                        if (
+                            os.path.isfile(to_path) is False
+                            and os.path.islink(to_path) is False
+                        ):
+                            os.symlink(src_path, to_path)
             except Exception as e:
                 ret = error(e)
         else:
