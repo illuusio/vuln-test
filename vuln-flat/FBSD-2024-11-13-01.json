@@ -1,0 +1,23 @@
+{
+    "affected": [],
+    "database_specific": {
+        "discovery": "2024-10-29T00:00:00Z",
+        "vid": "ce0f52e1-a174-11ef-9a62-002590c1f29c"
+    },
+    "details": "<description xmlns=\"http://www.vuxml.org/apps/vuxml-1\">\n\t<body xmlns=\"http://www.w3.org/1999/xhtml\">\n\t<h1>Problem Description:</h1>\n\t<p>The fetch(3) library uses environment variables for passing\n\tcertain information, including the revocation file pathname.  The\n\tenvironment variable name used by fetch(1) to pass the filename to\n\tthe library was incorrect, in effect ignoring the option.</p>\n\t<h1>Impact:</h1>\n\t<p>Fetch would still connect to a host presenting a certificate\n\tincluded in the revocation file passed to the --crl option.</p>\n      </body>\n    </description>",
+    "id": "FBSD-2024-11-13-01",
+    "modified": "2024-11-13T00:00:00Z",
+    "published": "2024-11-13T00:00:00Z",
+    "references": [
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2024-45289"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://www.freebsd.org/security/advisories/FreeBSD-SA-24:19.fetch.asc"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "FreeBSD -- Certificate revocation list fetch(1) option fails"
+}
