@@ -1,29 +1,63 @@
+> [!WARNING]
+> 💥 Attention please! You've entered our testing ground! ☠ The contents of this repo are purely for testing purposes. Please don't use the files or information here for any other reason. Thank you for your cooperation! 🌟
+
 # vuln-test
-This repository contains a snapshot from a trivial [VuXML](https://vuxml.freebsd.org/freebsd/index.html) converted to an [OSVF](https://ossf.github.io/osv-schema/) database.
 
-## The idea behind the database
-The vulnerabilities are stored in the `vuln` directory, which is divided into yearly subdirectories.
-This structure aims to reduce the size of the directory. Each yearly subdirectory contains all affected
-packages that were spotted in that year, organized under a package-named directory, with an OSVF-formatted
-file named after the tagging `FBSD-YYYY-MM-DD.json`.
+This repository contains vulnerability data converted from [VuXML](https://vuxml.freebsd.org/freebsd/index.html) to the 
+[OSVF](https://ossf.github.io/osv-schema/) format.
 
-For example:
+## Database Structures
 
-```
-vuln/
-    2025/
-        somepackage/
-                    FBSD-2025-06-03.json
-```
+### Non-flat Database (`vuln-noflat`-directory)
+- Organized by yearly subdirectories
+- Each year has a directory for affected packages with OSVF-formatted JSON files named `FBSD-YYYY-MM-DD-??.json`
+- Example:
+  ```
+  vuln-noflat/
+              2025/
+                   somepackage/
+                              FBSD-2025-06-03-00.json
+  ```
 
-## Why use Git?
-Using Git makes it easy to get a local copy of the database. If you want to have a local first  database,
-cloning and updating the repository is straightforward. Additionally, if you know the package name and year,
-you can easily search backward yearly and check if there are any vulnerabilities that year.
+### Flat Database (`vuln-flat`-directory)
+- All files in a single directory (can be organized by year)
+- Files named `FBSD-YYYY-MM-DD-??.json`, with running numbers for same-date vulnerabilities
+- Example:
+  ```
+  vuln-flat/
+            FBSD-2025-06-03-00.json
+            FBSD-2025-06-03-01.json
+            FBSD-2025-06-04-00.json
+  ```
 
-# How to convert
-Do this with Python 3.11 and above:
-```
+### Flat Running ID Database (`vuln-flatid`-directory)
+- Similar to flat database, but files have running IDs starting yearly from `0001`
+- Example:
+  ```
+  vuln-flatid/
+            FBSD-2025-0001.json
+            FBSD-2025-0002.json
+            FBSD-2025-0003.json
+            FBSD-2025-0004.json
+  ```
+
+## Why Use Git?
+- Easy local database copy with `git clone`
+- Simple yearly vulnerability lookup by package name and year
+
+## Conversion Instructions
+Use Python 3.11+ (requires the `lxml` module):
+```bash
+# Download VuXML data
 wget https://vuxml.freebsd.org/freebsd/vuln.xml
-python3 bin/convert_vuxml.py -o vuln vuln.xml`
+
+# Convert to Non-flat Database:
+python3 bin/convert_vuxml.py -o vuln vuln.xml
+
+# Convert to Flat Database:
+python3 bin/convert_vuxml.py -F -o vuln vuln.xml
+
+# Convert to Flat Running ID Database:
+python3 bin/convert_vuxml.py -F -r -o vuln vuln.xml
+
 ```
