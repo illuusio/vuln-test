@@ -1,0 +1,119 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "postgresql16-server"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "16.5"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        },
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "postgresql15-server"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "15.9"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        },
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "postgresql14-server"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "14.14"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        },
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "postgresql13-server"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "13.17"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        },
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "postgresql12-server"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "12.21"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "discovery": "2024-11-14T00:00:00Z",
+        "vid": "12e3feab-a29f-11ef-af48-6cc21735f730"
+    },
+    "details": "<description xmlns=\"http://www.vuxml.org/apps/vuxml-1\">\n\t<body xmlns=\"http://www.w3.org/1999/xhtml\">\n\t<p>PostgreSQL project reports:</p>\n\t<blockquote cite=\"https://www.postgresql.org/support/security/CVE-2024-10978/\">\n\t<p>\n\tIncorrect privilege assignment in PostgreSQL allows a\n\tless-privileged application user to view or change\n\tdifferent rows from those intended. An attack requires\n\tthe application to use SET ROLE, SET SESSION\n\tAUTHORIZATION, or an equivalent feature. The problem\n\tarises when an application query uses parameters from\n\tthe attacker or conveys query results to the attacker.\n\tIf that query reacts to current_setting('role') or the\n\tcurrent user ID, it may modify or return data as though\n\tthe session had not used SET ROLE or SET SESSION\n\tAUTHORIZATION. The attacker does not control which\n\tincorrect user ID applies. Query text from\n\tless-privileged sources is not a concern here, because\n\tSET ROLE and SET SESSION AUTHORIZATION are not sandboxes\n\tfor unvetted queries\n\t</p>\n\t</blockquote>\n\t</body>\n    </description>",
+    "id": "FBSD-2024-0041",
+    "modified": "2024-11-14T00:00:00Z",
+    "published": "2024-11-14T00:00:00Z",
+    "references": [
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2024-10978"
+        },
+        {
+            "type": "WEB",
+            "url": "https://www.postgresql.org/support/security/CVE-2024-10978/"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "PostgreSQL -- SET ROLE, SET SESSION AUTHORIZATION reset to wrong user ID"
+}

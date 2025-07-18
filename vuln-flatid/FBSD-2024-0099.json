@@ -1,0 +1,23 @@
+{
+    "affected": [],
+    "database_specific": {
+        "discovery": "2024-08-07T00:00:00Z",
+        "vid": "8fb61d94-771b-11ef-9a62-002590c1f29c"
+    },
+    "details": "<description xmlns=\"http://www.vuxml.org/apps/vuxml-1\">\n\t<body xmlns=\"http://www.w3.org/1999/xhtml\">\n\t<h1>Problem Description:</h1>\n\t<p>A logic bug in the code which disables kernel tracing for setuid\n\tprograms meant that tracing was not disabled when it should have,\n\tallowing unprivileged users to trace and inspect the behavior of\n\tsetuid programs.</p>\n\t<h1>Impact:</h1>\n\t<p>The bug may be used by an unprivileged user to read the contents\n\tof files to which they would not otherwise have access, such as the\n\tlocal password database.</p>\n      </body>\n    </description>",
+    "id": "FBSD-2024-0099",
+    "modified": "2024-09-20T00:00:00Z",
+    "published": "2024-09-20T00:00:00Z",
+    "references": [
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2024-6760"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://www.freebsd.org/security/advisories/FreeBSD-SA-24:06.ktrace.asc"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "FreeBSD -- ktrace(2) fails to detach when executing a setuid binary"
+}
