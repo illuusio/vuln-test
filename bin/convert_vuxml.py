@@ -38,6 +38,7 @@ import os
 from pathlib import Path
 import re
 import sys
+from markdownify import markdownify as md
 
 re_date = re.compile(r"^(19|20)[0-9]{2}-[0-9]{2}-[0-9]{2}$")
 re_invalid_package_name = re.compile("[@!#$%^&*()<>?/\\|}{~:]")
@@ -207,9 +208,13 @@ def main():
             ret = error(f"{vid} has no description")
         else:
             try:
-                details = etree.tostring(
+                details_html = etree.tostring(
                     details, encoding="unicode", method="html"
                 ).strip()
+                # Documentatio states that:
+                # The details field is CommonMark markdown (a subset of GitHub-Flavored Markdown).
+                # Input is in HTML5. Make conversion with markdownify.
+                details = str(md(details_html))
                 if len(details) > DESCRIPTION_LENGTH:
                     warn("%s: description truncated (> %s)" % (vid, DESCRIPTION_LENGTH))
                     details = details[0:DESCRIPTION_LENGTH]
