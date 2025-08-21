@@ -1,0 +1,23 @@
+{
+    "affected": [],
+    "database_specific": {
+        "discovery": "2024-02-08T00:00:00Z",
+        "vid": "19e6dd1b-c6a5-11ee-9cd0-6cc21735f730"
+    },
+    "details": "PostgreSQL Project reports:\n\n> One step of a concurrent refresh command was run under\n> weak security restrictions. If a materialized view's\n> owner could persuade a superuser or other\n> high-privileged user to perform a concurrent refresh on\n> that view, the view's owner could control code executed\n> with the privileges of the user running REFRESH. The fix\n> for the vulnerability makes is so that all\n> user-determined code is run as the view's owner, as\n> expected.",
+    "id": "FBSD-2024-02-08-01",
+    "modified": "2024-02-08T00:00:00Z",
+    "published": "2024-02-08T00:00:00Z",
+    "references": [
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2024-0985"
+        },
+        {
+            "type": "WEB",
+            "url": "https://www.postgresql.org/support/security/CVE-2024-0985/"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "postgresql-server -- non-owner REFRESH MATERIALIZED VIEW CONCURRENTLY executes arbitrary SQL"
+}

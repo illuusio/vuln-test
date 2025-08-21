@@ -1,0 +1,23 @@
+{
+    "affected": [],
+    "database_specific": {
+        "discovery": "2024-09-04T00:00:00Z",
+        "vid": "56d76414-6b50-11ef-9a62-002590c1f29c"
+    },
+    "details": "Problem Description:\n====================\n\nbhyve can be configured to provide access to the host's TPM\ndevice, where it passes the communication through an emulated device\nprovided to the guest. This may be performed on the command-line\nby starting bhyve with the `-l tpm,passthru,/dev/tpmX` parameters.\n\nThe MMIO handler for the emulated device did not validate the offset\nand size of the memory access correctly, allowing guests to read\nand write memory contents outside of the memory area effectively\nallocated.\n\nImpact:\n=======\n\nMalicious software running in a guest VM can exploit the buffer\noverflow to achieve code execution on the host in the bhyve userspace\nprocess, which typically runs as root. Note that bhyve runs in a\nCapsicum sandbox, so malicious code is constrained by the capabilities\navailable to the bhyve process.",
+    "id": "FBSD-2024-09-05-07",
+    "modified": "2024-09-05T00:00:00Z",
+    "published": "2024-09-05T00:00:00Z",
+    "references": [
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2024-41928"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://www.freebsd.org/security/advisories/FreeBSD-SA-24:10.bhyve.asc"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "FreeBSD -- bhyve(8) privileged guest escape via TPM device passthrough"
+}
