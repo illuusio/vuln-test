@@ -1,0 +1,43 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "go121"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "1.21.9"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "discovery": "2024-04-03T00:00:00Z",
+        "vid": "cdb5e0e3-fafc-11ee-9c21-901b0e9408dc"
+    },
+    "details": "The Go project reports:\n\n> http2: close connections when receiving too many headers\n>\n> Maintaining HPACK state requires that we parse and\n> process all HEADERS and CONTINUATION frames on a\n> connection. When a request's headers exceed MaxHeaderBytes,\n> we don't allocate memory to store the excess headers but we\n> do parse them. This permits an attacker to cause an HTTP/2\n> endpoint to read arbitrary amounts of header data, all\n> associated with a request which is going to be\n> rejected. These headers can include Huffman-encoded data\n> which is significantly more expensive for the receiver to\n> decode than for an attacker to send.",
+    "id": "FBSD-2024-04-15-01",
+    "modified": "2024-04-15T00:00:00Z",
+    "published": "2024-04-15T00:00:00Z",
+    "references": [
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2023-45288"
+        },
+        {
+            "type": "WEB",
+            "url": "https://groups.google.com/g/golang-announce/c/YgW0sx8mN3M/m/khALNYGdAAAJ"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "go -- http2: close connections when receiving too many headers"
+}

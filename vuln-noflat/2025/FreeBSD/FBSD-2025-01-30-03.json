@@ -1,0 +1,23 @@
+{
+    "affected": [],
+    "database_specific": {
+        "discovery": "2025-01-29T00:00:00Z",
+        "vid": "fa9ae646-debc-11ef-87ba-002590c1f29c"
+    },
+    "details": "Problem Description:\n====================\n\nWhen etcupdate encounters conflicts while merging files, it\nsaves a version containing conflict markers in /var/db/etcupdate/conflicts.\nThis version does not preserve the mode of the input file, and is\nworld-readable. This applies to files that would normally have\nrestricted visibility, such as /etc/master.passwd.\n\nImpact:\n=======\n\nAn unprivileged local user may be able to read encrypted root\nand user passwords from the temporary master.passwd file created\nin /var/db/etcupdate/conflicts. This is possible only when conflicts\nwithin the password file arise during an update, and the unprotected\nfile is deleted when conflicts are resolved.",
+    "id": "FBSD-2025-01-30-03",
+    "modified": "2025-01-30T00:00:00Z",
+    "published": "2025-01-30T00:00:00Z",
+    "references": [
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2025-0374"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://www.freebsd.org/security/advisories/FreeBSD-SA-25:03.etcupdate.asc"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "FreeBSD -- Unprivileged access to system files"
+}

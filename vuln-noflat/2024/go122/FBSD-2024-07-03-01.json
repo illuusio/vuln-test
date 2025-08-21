@@ -1,0 +1,43 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "go121"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "1.21.12"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "discovery": "2024-07-02T00:00:00Z",
+        "vid": "b0374722-3912-11ef-a77e-901b0e9408dc"
+    },
+    "details": "The Go project reports:\n\n> net/http: denial of service due to improper 100-continue handling\n>\n> The net/http HTTP/1.1 client mishandled the case where a\n> server responds to a request with an \"Expect: 100-continue\"\n> header with a non-informational (200 or higher) status. This\n> mishandling could leave a client connection in an invalid\n> state, where the next request sent on the connection will\n> fail.\n>\n> An attacker sending a request to a\n> net/http/httputil.ReverseProxy proxy can exploit this\n> mishandling to cause a denial of service by sending \"Expect:\n> 100-continue\" requests which elicit a non-informational\n> response from the backend. Each such request leaves the\n> proxy with an invalid connection, and causes one subsequent\n> request using that connection to fail.",
+    "id": "FBSD-2024-07-03-01",
+    "modified": "2024-07-03T00:00:00Z",
+    "published": "2024-07-03T00:00:00Z",
+    "references": [
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2024-24791"
+        },
+        {
+            "type": "WEB",
+            "url": "https://go.dev/issue/67555"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "go -- net/http: denial of service due to improper 100-continue handling"
+}

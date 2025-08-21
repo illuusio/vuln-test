@@ -1,0 +1,115 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "vim-gtk2"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "9.1.1164"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        },
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "vim-gtk3"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "9.1.1164"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        },
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "vim-motif"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "9.1.1164"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        },
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "vim-x11"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "9.1.1164"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        },
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "vim-tiny"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "9.1.1164"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "discovery": "2025-03-02T00:00:00Z",
+        "vid": "398d1ec1-f7e6-11ef-bb15-002590af0794"
+    },
+    "details": "vim reports:\n\n> Summary\n> =======\n>\n> Potential code execution with tar.vim and special crafted tar files\n>\n> Description\n> ===========\n>\n> Vim is distributed with the tar.vim plugin, that allows easy\n> editing and viewing of (compressed or uncompressed) tar files.\n>\n> Since commit 129a844 (Nov 11, 2024 runtime(tar): Update tar.vim to\n> support permissions), the tar.vim plugin uses the \":read \" ex command\n> line to append below the cursor position, however the is not sanitized\n> and is taken literaly from the tar archive. This allows to execute\n> shell commands via special crafted tar archives. Whether this really\n> happens, depends on the shell being used ('shell' option, which is set\n> using $SHELL).\n>\n> Impact\n> ======\n>\n> Impact is high but a user must be convinced to edit such a file\n> using Vim which will reveal the filename, so a careful user may suspect\n> some strange things going on.",
+    "id": "FBSD-2025-03-02-01",
+    "modified": "2025-03-02T00:00:00Z",
+    "published": "2025-03-02T00:00:00Z",
+    "references": [
+        {
+            "type": "WEB",
+            "url": "https://github.com/vim/vim/security/advisories/GHSA-wfmf-8626-q3r3"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "vim -- Potential code execution"
+}

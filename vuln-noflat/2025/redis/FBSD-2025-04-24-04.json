@@ -1,0 +1,81 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "redis72"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "7.2.8"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        },
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "redis62"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "6.2.18"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        },
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "valkey"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "8.1.1"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "discovery": "2025-04-23T00:00:00Z",
+        "vid": "af8d043f-20df-11f0-b9c5-000c295725e4"
+    },
+    "details": "Axel Mierczuk reports:\n\n> By default, the Redis configuration does not limit the\n> output buffer of normal clients (see\n> client-output-buffer-limit). Therefore, the output buffer\n> can grow unlimitedly over time. As a result, the service\n> is exhausted and the memory is unavailable.\n>\n> When password authentication is enabled on the Redis\n> server, but no password is provided, the client can still\n> cause the output buffer to grow from \"NOAUTH\" responses\n> until the system will run out of memory.",
+    "id": "FBSD-2025-04-24-04",
+    "modified": "2025-04-24T00:00:00Z",
+    "published": "2025-04-24T00:00:00Z",
+    "references": [
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2025-21605"
+        },
+        {
+            "type": "WEB",
+            "url": "https://github.com/redis/redis/security/advisories/GHSA-r67f-p999-2gff"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "redis,valkey -- DoS Vulnerability due to unlimited growth of output buffers abused by unauthenticated client"
+}

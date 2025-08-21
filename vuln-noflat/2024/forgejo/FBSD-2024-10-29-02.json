@@ -1,0 +1,47 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "forgejo7"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "7.0.10"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "discovery": "2024-10-28T00:00:00Z",
+        "vid": "f07c8f87-8e65-11ef-81b8-659bf0027d16"
+    },
+    "details": "Problem Description:\n====================\n\n* Forgejo generates a token which is used to authenticate web\n  endpoints that are only meant to be used internally, for instance\n  when the SSH daemon is used to push a commit with Git. The\n  verification of this token was not done in constant time and was\n  susceptible to timing attacks. A pre-condition for such an attack is\n  the precise measurements of the time for each operation. Since it\n  requires observing the timing of network operations, the issue is\n  mitigated when a Forgejo instance is accessed over the internet\n  because the ISP introduce unpredictable random delays.\n* Because of a missing permission check, the branch used to propose\n  a pull request to a repository can always be deleted by the user\n  performing the merge. It was fixed so that such a deletion is only\n  allowed if the user performing the merge has write permission to the\n  repository from which the pull request was made.",
+    "id": "FBSD-2024-10-29-02",
+    "modified": "2024-10-29T00:00:00Z",
+    "published": "2024-10-29T00:00:00Z",
+    "references": [
+        {
+            "type": "WEB",
+            "url": "https://codeberg.org/forgejo/forgejo/milestone/8544"
+        },
+        {
+            "type": "WEB",
+            "url": "https://codeberg.org/forgejo/forgejo/pulls/5719"
+        },
+        {
+            "type": "WEB",
+            "url": "https://codeberg.org/forgejo/forgejo/pulls/5718"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "forgejo -- multiple vulnerabilities"
+}
