@@ -1,0 +1,43 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "plasma6-plasma-workspace"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "6.0.4_2"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "discovery": "2024-05-31T00:00:00Z",
+        "vid": "479df73e-2838-11ef-9cab-4ccc6adda413"
+    },
+    "details": "David Edmundson reports:\n\n> KSmserver, KDE's XSMP manager, incorrectly allows connections via ICE\n> based purely on the host, allowing all local connections. This allows\n> another user on the same machine to gain access to the session\n> manager.\n>\n> A well crafted client could use the session restore feature to execute\n> arbitrary code as the user on the next boot.",
+    "id": "FBSD-2024-0191",
+    "modified": "2024-06-11T00:00:00Z",
+    "published": "2024-06-11T00:00:00Z",
+    "references": [
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2024-36041"
+        },
+        {
+            "type": "WEB",
+            "url": "https://kde.org/info/security/advisory-20240531-1.txt"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "plasma[56]-plasma-workspace -- Unauthorized users can access session manager"
+}

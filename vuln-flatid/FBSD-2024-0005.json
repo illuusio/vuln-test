@@ -1,0 +1,23 @@
+{
+    "affected": [],
+    "database_specific": {
+        "discovery": "2024-11-29T00:00:00Z",
+        "vid": "dc087dad-bd71-11ef-b5a1-000ec6d40964"
+    },
+    "details": "The Open Quantum Safe project reports:\n\n> A correctness error has been identified in the reference implementation of the HQC key encapsulation mechanism. Due to an indexing error, part of the secret key is incorrectly treated as non-secret data. This results in an incorrect shared secret value being returned when the decapsulation function is called with a malformed ciphertext.\n>\n> No concrete attack exploiting the error has been identified at this point. However, the error involves mishandling of the secret key, and in principle this presents a security vulnerability.",
+    "id": "FBSD-2024-0005",
+    "modified": "2024-12-18T00:00:00Z",
+    "published": "2024-12-18T00:00:00Z",
+    "references": [
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2024-54137"
+        },
+        {
+            "type": "WEB",
+            "url": "https://github.com/open-quantum-safe/liboqs/security/advisories/GHSA-gpf4-vrrw-r8v7"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "liboqs -- Correctness error in HQC decapsulation"
+}

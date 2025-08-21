@@ -1,0 +1,97 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "firefox-esr"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "128.7,1"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        },
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "thunderbird"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "128.7"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                },
+                {
+                    "events": [
+                        {
+                            "introduced": "129,1"
+                        },
+                        {
+                            "fixed": "135"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "discovery": "2025-02-04T00:00:00Z",
+        "vid": "20485d27-e540-11ef-a845-b42e991fc52e"
+    },
+    "details": "security@mozilla.org reports:\n\n> A bug in WebAssembly code generation could have lead to a crash.\n> It may have been possible for an attacker to leverage this to achieve\n> code execution.\n>\n> A race condition could have led to private browsing tabs being\n> opened in normal browsing windows. This could have resulted in a\n> potential privacy leak.\n>\n> Certificate length was not properly checked when added to a certificate\n> store. In practice only trusted data was processed.\n>\n> Memory safety bugs present in Firefox 134, Thunderbird 134, Firefox\n> ESR 128.6, and Thunderbird 128.6. Some of these bugs showed evidence\n> of memory corruption and we presume that with enough effort some\n> of these could have been exploited to run arbitrary code.",
+    "id": "FBSD-2025-0101",
+    "modified": "2025-02-07T00:00:00Z",
+    "published": "2025-02-07T00:00:00Z",
+    "references": [
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2025-1011"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://nvd.nist.gov/vuln/detail/CVE-2025-1011"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2025-1013"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://nvd.nist.gov/vuln/detail/CVE-2025-1013"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2025-1014"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://nvd.nist.gov/vuln/detail/CVE-2025-1014"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2025-1017"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://nvd.nist.gov/vuln/detail/CVE-2025-1017"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "mozilla -- multiple vulnerabilities"
+}

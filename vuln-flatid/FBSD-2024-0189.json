@@ -1,0 +1,47 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "go121"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "1.21.11"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "discovery": "2024-06-04T00:00:00Z",
+        "vid": "a5c64f6f-2af3-11ef-a77e-901b0e9408dc"
+    },
+    "details": "The Go project reports:\n\n> archive/zip: mishandling of corrupt central directory record\n>\n> The archive/zip package's handling of certain types of\n> invalid zip files differed from the behavior of most zip\n> implementations. This misalignment could be exploited to\n> create an zip file with contents that vary depending on the\n> implementation reading the file. The archive/zip package now\n> rejects files containing these errors.\n\n> net/netip: unexpected behavior from Is methods for\n> IPv4-mapped IPv6 addresses\n>\n> The various Is methods (IsPrivate, IsLoopback, etc) did\n> not work as expected for IPv4-mapped IPv6 addresses,\n> returning false for addresses which would return true in\n> their traditional IPv4 forms.",
+    "id": "FBSD-2024-0189",
+    "modified": "2024-06-15T00:00:00Z",
+    "published": "2024-06-15T00:00:00Z",
+    "references": [
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2024-24789"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2024-24790"
+        },
+        {
+            "type": "WEB",
+            "url": "https://groups.google.com/g/golang-announce/c/XbxouI9gY7k/m/TuoGEhxIEwAJ"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "go -- multiple vulnerabilities"
+}

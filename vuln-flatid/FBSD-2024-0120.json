@@ -1,0 +1,23 @@
+{
+    "affected": [],
+    "database_specific": {
+        "discovery": "2024-09-04T00:00:00Z",
+        "vid": "7e079ce2-6b51-11ef-9a62-002590c1f29c"
+    },
+    "details": "Problem Description:\n====================\n\nConcurrent removals of such a mapping by using the UMTX\\_SHM\\_DESTROY\nsub-request of UMTX\\_OP\\_SHM can lead to decreasing the reference\ncount of the object representing the mapping too many times, causing\nit to be freed too early.\n\nImpact:\n=======\n\nA malicious code exercizing the UMTX\\_SHM\\_DESTROY sub-request\nin parallel can panic the kernel or enable further Use-After-Free\nattacks, potentially including code execution or Capsicum sandbox\nescape.",
+    "id": "FBSD-2024-0120",
+    "modified": "2024-09-05T00:00:00Z",
+    "published": "2024-09-05T00:00:00Z",
+    "references": [
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2024-43102"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://www.freebsd.org/security/advisories/FreeBSD-SA-24:14.umtx.asc"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "FreeBSD -- umtx Kernel panic or Use-After-Free"
+}

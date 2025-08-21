@@ -1,0 +1,81 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "perl5.38"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "5.38.4"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        },
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "perl5.40"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "5.40.2"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        },
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "perl5-devel"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "5.41.10"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "discovery": "2025-04-13T00:00:00Z",
+        "vid": "a380f43e-19e5-11f0-9568-b42e991fc52e"
+    },
+    "details": "9b29abf9-4ab0-4765-b253-1875cd9b441e reports:\n\n> A heap buffer overflow vulnerability was discovered in Perl.\n> When there are non-ASCII bytes in the left-hand-side of the `tr`\n> operator, `S\\_do\\_trans\\_invmap` can overflow the destination pointer\n> `d`.\n> $ perl -e '$\\_ = \"\\x{FF}\" x 1000000; tr/\\xFF/\\x{100}/;'\n> Segmentation fault (core dumped)\n> It is believed that this vulnerability can enable Denial of\n> Service and possibly Code Execution attacks on platforms that\n> lack sufficient defenses.",
+    "id": "FBSD-2025-0136",
+    "modified": "2025-04-15T00:00:00Z",
+    "published": "2025-04-15T00:00:00Z",
+    "references": [
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2024-56406"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://nvd.nist.gov/vuln/detail/CVE-2024-56406"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "Perl -- heap buffer overflow when transliterating non-ASCII bytes"
+}

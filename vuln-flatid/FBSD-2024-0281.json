@@ -1,0 +1,23 @@
+{
+    "affected": [],
+    "database_specific": {
+        "discovery": "2024-01-31T00:00:00Z",
+        "vid": "02e33cd1-c655-11ee-8613-08002784c58d"
+    },
+    "details": "Hiroki Kurosawa reports:\n\n> curl inadvertently kept the SSL session ID for connections\n> in its cache even when the verify status (OCSP stapling)\n> test failed. A subsequent transfer to the same hostname\n> could then succeed if the session ID cache was still\n> fresh, which then skipped the verify status check.",
+    "id": "FBSD-2024-0281",
+    "modified": "2024-02-28T00:00:00Z",
+    "published": "2024-02-28T00:00:00Z",
+    "references": [
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2024-0853"
+        },
+        {
+            "type": "WEB",
+            "url": "https://curl.se/docs/CVE-2024-0853.html"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "curl -- OCSP verification bypass with TLS session reuse"
+}

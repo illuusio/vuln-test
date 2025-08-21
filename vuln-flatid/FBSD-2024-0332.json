@@ -1,0 +1,23 @@
+{
+    "affected": [],
+    "database_specific": {
+        "discovery": "2023-12-19T00:00:00Z",
+        "vid": "13d83980-9f18-11ee-8e38-002590c1f29c"
+    },
+    "details": "Problem Description:\n====================\n\nThe SSH protocol executes an initial handshake between the\nserver and the client. This protocol handshake includes the\npossibility of several extensions allowing different options to be\nselected. Validation of the packets in the handshake is done through\nsequence numbers.\n\nImpact:\n=======\n\nA man in the middle attacker can silently manipulate handshake\nmessages to truncate extension negotiation messages potentially\nleading to less secure client authentication algorithms or deactivating\nkeystroke timing attack countermeasures.",
+    "id": "FBSD-2024-0332",
+    "modified": "2024-01-02T00:00:00Z",
+    "published": "2024-01-02T00:00:00Z",
+    "references": [
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2023-48795"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://www.freebsd.org/security/advisories/FreeBSD-SA-23:19.openssh.asc"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "FreeBSD -- Prefix Truncation Attack in the SSH protocol"
+}

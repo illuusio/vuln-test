@@ -1,0 +1,56 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "grafana8"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "introduced": "8.0.0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        },
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "grafana9"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "introduced": "9.0.0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "discovery": "2025-03-25T00:00:00Z",
+        "vid": "310f5923-211c-11f0-8ca6-6c3be5272acd"
+    },
+    "details": "Grafana Labs reports:\n\n> This vulnerability, which was discovered while reviewing a pull\n> request from an external contributor, effects Grafana\u2019s data source\n> proxy API and allows authorization checks to be bypassed by adding\n> an extra slash character (/) in the URL path. Among Grafana-maintained\n> data sources, the vulnerability only affects the read paths\n> of Prometheus (all flavors) and Alertmanager when configured with\n> basic authorization.\n>\n> The CVSS score for this vulnerability is\n> [5.0 MEDIUM](https://www.first.org/cvss/calculator/3-1#CVSS:3.1/AV:N/AC:L/PR:L/UI:N/S:C/C:L/I:N/A:N).",
+    "id": "FBSD-2025-0017",
+    "modified": "2025-04-24T00:00:00Z",
+    "published": "2025-04-24T00:00:00Z",
+    "references": [
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2025-3454"
+        },
+        {
+            "type": "WEB",
+            "url": "https://grafana.com/blog/2025/04/22/grafana-security-release-medium-and-high-severity-fixes-for-cve-2025-3260-cve-2025-2703-cve-2025-3454/"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "Grafana -- Authorization bypass in data source proxy API"
+}

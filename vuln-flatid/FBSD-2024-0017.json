@@ -1,0 +1,97 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "firefox-esr"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "128.5,1"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        },
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "thunderbird"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "128.5"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                },
+                {
+                    "events": [
+                        {
+                            "introduced": "129"
+                        },
+                        {
+                            "fixed": "133"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "discovery": "2024-11-26T00:00:00Z",
+        "vid": "0e20e42c-b728-11ef-805a-b42e991fc52e"
+    },
+    "details": "security@mozilla.org reports:\n\n> * CVE-2024-11692: An attacker could cause a select dropdown\n>   to be shown over another tab; this could have led to user\n>   confusion and possible spoofing attacks.\n> * CVE-2024-11696: The application failed to account for\n>   exceptions thrown by the `loadManifestFromFile` method during\n>   add-on signature verification. This flaw, triggered by an\n>   invalid or unsupported extension manifest, could have caused\n>   runtime errors that disrupted the signature validation process.\n>   As a result, the enforcement of signature validation for\n>   unrelated add-ons may have been bypassed. Signature validation\n>   in this context is used to ensure that third-party\n>   applications on the user's computer have not tampered\n>   with the user's extensions, limiting the impact of this\n>   issue.\n> * CVE-2024-11697: When handling keypress events, an attacker\n>   may have been able to trick a user into bypassing the \"\n>   Open Executable File?\" confirmation dialog. This could\n>   have led to malicious code execution.\n> * CVE-2024-11699: Memory safety bugs present in Firefox 132,\n>   Firefox ESR 128.4, and Thunderbird 128.4. Some of these bugs\n>   showed evidence of memory corruption and we presume that with\n>   enough effort some of these could have been exploited to run\n>   arbitrary code.",
+    "id": "FBSD-2024-0017",
+    "modified": "2024-12-10T00:00:00Z",
+    "published": "2024-12-10T00:00:00Z",
+    "references": [
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2024-11692"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://nvd.nist.gov/vuln/detail/CVE-2024-11692"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2024-11696"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://nvd.nist.gov/vuln/detail/CVE-2024-11696"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2024-11697"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://nvd.nist.gov/vuln/detail/CVE-2024-11697"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2024-11699"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://nvd.nist.gov/vuln/detail/CVE-2024-11699"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "firefox -- multiple vulnerabilities"
+}

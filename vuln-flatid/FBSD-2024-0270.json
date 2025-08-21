@@ -1,0 +1,43 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "grafana9"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "9.5.17"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "discovery": "2024-02-12T00:00:00Z",
+        "vid": "6d31ef38-df85-11ee-abf1-6c3be5272acd"
+    },
+    "details": "Grafana Labs reports:\n\n> The vulnerability impacts Grafana Cloud and Grafana Enterprise instances,\n> and it is exploitable if a user who should not be able to access all data\n> sources is granted permissions to create a data source.\n>\n> By default, only organization Administrators are allowed to create a data\n> source and have full access to all data sources. All other users need to be\n> explicitly granted permission to create a data source, which then means they\n> could exploit this vulnerability.\n>\n> When a user creates a data source via the\n> [API](https://grafana.com/docs/grafana/latest/developers/http_api/data_source/#create-a-data-source),\n> they can specify data source UID. If the UID is set to an asterisk (\\*),\n> the user gains permissions to query, update, and delete all data sources\n> in the organization. The exploit, however, does not stretch across\n> organizations \u2014 to exploit the vulnerability in several organizations, a user\n> would need permissions to create data sources in each organization.\n>\n> The vulnerability comes from a lack of UID validation. When evaluating\n> permissions, we interpret an asterisk (\\*) as a wild card for all resources.\n> Therefore, we should treat it as a reserved value, and not allow the creation\n> of a resource with the UID set to an asterisk.\n>\n> The CVSS score for this vulnerability is\n> [6 Medium](https://nvd.nist.gov/vuln-metrics/cvss/v3-calculator?vector=AV:N/AC:L/PR:H/UI:N/S:U/C:H/I:L/A:L&version=3.1).",
+    "id": "FBSD-2024-0270",
+    "modified": "2024-03-26T00:00:00Z",
+    "published": "2024-03-11T00:00:00Z",
+    "references": [
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2024-1442"
+        },
+        {
+            "type": "WEB",
+            "url": "https://grafana.com/security/security-advisories/cve-2024-1442/"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "Grafana -- Data source permission escalation"
+}

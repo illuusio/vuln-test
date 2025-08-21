@@ -1,0 +1,81 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "py39-Jinja2"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "3.1.6"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        },
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "py310-Jinja2"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "3.1.6"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        },
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "py311-Jinja2"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "3.1.6"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "discovery": "2025-03-05T00:00:00Z",
+        "vid": "3299cbfd-fa6e-11ef-929d-b0416f0c4c67"
+    },
+    "details": "security-advisories@github.com reports:\n\n> Jinja is an extensible templating engine. Prior to 3.1.6, an\n> oversight in how the Jinja sandboxed environment interacts with the\n> |attr filter allows an attacker that controls the content of a\n> template to execute arbitrary Python code. To exploit the\n> vulnerability, an attacker needs to control the content of a template.\n> Whether that is the case depends on the type of application using\n> Jinja. This vulnerability impacts users of applications which\n> execute untrusted templates. Jinja's sandbox does catch calls\n> to str.format and ensures they don't escape the sandbox.\n> However, it's possible to use the |attr filter to get a reference\n> to a string's plain format method, bypassing the sandbox.\n> After the fix, the |attr filter no longer bypasses the environment's\n> attribute lookup. This vulnerability is fixed in 3.1.6.",
+    "id": "FBSD-2025-0076",
+    "modified": "2025-03-06T00:00:00Z",
+    "published": "2025-03-06T00:00:00Z",
+    "references": [
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2025-27516"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://nvd.nist.gov/vuln/detail/CVE-2025-27516"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "Jinja2 -- Sandbox breakout through attr filter selecting format method"
+}

@@ -1,0 +1,47 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "clamav-lts"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "introduced": "1.0.0,1"
+                        },
+                        {
+                            "fixed": "1.0.6,1"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "discovery": "2024-09-04T00:00:00Z",
+        "vid": "996518f3-6ef9-11ef-b01b-08002784c58d"
+    },
+    "details": "The ClamAV project reports:\n\n> CVE-2024-20505\n> :   A vulnerability in the PDF parsing module of Clam\n>     AntiVirus (ClamAV) could allow an unauthenticated,\n>     remote attacker to cause a denial of service (DoS)\n>     condition on an affected device. The vulnerability is\n>     due to an out of bounds read. An attacker could exploit\n>     this vulnerability by submitting a crafted PDF file to\n>     be scanned by ClamAV on an affected device. An exploit\n>     could allow the attacker to terminate the scanning\n>     process.\n>\n> CVE-2024-20506\n> :   A vulnerability in the ClamD service module of Clam\n>     AntiVirus (ClamAV) could allow an authenticated, local\n>     attacker to corrupt critical system files. The\n>     vulnerability is due to allowing the ClamD process to\n>     write to its log file while privileged without checking\n>     if the logfile has been replaced with a symbolic\n>     link. An attacker could exploit this vulnerability if\n>     they replace the ClamD log file with a symlink to a\n>     critical system file and then find a way to restart the\n>     ClamD process. An exploit could allow the attacker to\n>     corrupt a critical system file by appending ClamD log\n>     messages after restart.",
+    "id": "FBSD-2024-0109",
+    "modified": "2024-09-09T00:00:00Z",
+    "published": "2024-09-09T00:00:00Z",
+    "references": [
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2024-20505"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2024-20506"
+        },
+        {
+            "type": "WEB",
+            "url": "https://blog.clamav.net/2024/09/clamav-141-132-107-and-010312-security.html"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "clamav -- Multiple vulnerabilities"
+}

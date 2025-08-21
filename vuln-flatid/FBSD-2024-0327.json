@@ -1,0 +1,43 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "qt6-base"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "6.6.1_2"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "discovery": "2023-12-14T00:00:00Z",
+        "vid": "e2f981f1-ad9e-11ee-8b55-4ccc6adda413"
+    },
+    "details": "Andy Shaw reports:\n\n> A potential integer overflow has been discovered in Qt's HTTP2\n> implementation. If the HTTP2 implementation receives more than 4GiB\n> in total headers, or more than 2GiB for any given header pair, then\n> the internal buffers may overflow.",
+    "id": "FBSD-2024-0327",
+    "modified": "2024-01-07T00:00:00Z",
+    "published": "2024-01-07T00:00:00Z",
+    "references": [
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2023-51714"
+        },
+        {
+            "type": "WEB",
+            "url": "https://www.qt.io/blog/security-advisory-potential-integer-overflow-in-qts-http2-implementation"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "QtNetwork -- potential buffer overflow"
+}
