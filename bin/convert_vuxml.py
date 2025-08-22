@@ -39,6 +39,9 @@ from pathlib import Path
 import re
 import sys
 from markdownify import markdownify as md
+# ruamel.yaml is a YAML 1.2 loader/dumper package for Python.
+from ruamel.yaml import YAML
+from ruamel.yaml.scalarstring import LiteralScalarString
 
 re_date = re.compile(r"^(19|20)[0-9]{2}-[0-9]{2}-[0-9]{2}$")
 re_invalid_package_name = re.compile("[@!#$%^&*()<>?/\\|}{~:]")
@@ -123,13 +126,15 @@ def warn(string):
 # main
 def main():
     try:
-        opts, args = getopt.getopt(sys.argv[1:], "e:o:Fr")
+        opts, args = getopt.getopt(sys.argv[1:], "e:o:FrY")
     except getopt.GetoptError as e:
         return usage(e)
     ecosystem = "FreeBSD:ports"
     output = None
     output_flat = False
     output_running = False
+    output_yaml = False
+    yaml = None
 
     output_id = {}
 
@@ -142,6 +147,9 @@ def main():
             output_flat = True
         elif name == "-r":
             output_running = True
+        elif name == "-Y":
+            output_yaml = True
+            yaml = YAML()
         else:
             return usage("%s: Unsupported option" % name)
 
@@ -214,7 +222,15 @@ def main():
                 # Documentatio states that:
                 # The details field is CommonMark markdown (a subset of GitHub-Flavored Markdown).
                 # Input is in HTML5. Make conversion with markdownify.
-                details = str(md(details_html))
+                if output_yaml == False:
+                    details = str(md(details_html))
+                else:
+                    # With YAML we like to have output:
+                    # details: |-
+                    #    Some text here
+                    #    > Some quatation here
+                    details = LiteralScalarString(str(md(details_html)))
+
                 if len(details) > DESCRIPTION_LENGTH:
                     warn("%s: description truncated (> %s)" % (vid, DESCRIPTION_LENGTH))
                     details = details[0:DESCRIPTION_LENGTH]
@@ -414,7 +430,10 @@ def main():
                 if os.path.isdir(output_path_with_name) is False:
                     os.mkdir(output_path_with_name)
 
-                output_with_suffix = output_file + ".json"
+                if output_yaml == False:
+                    output_with_suffix = output_file + ".json"
+                else:
+                    output_with_suffix = output_file + ".yaml"
 
                 output_full_path = output_path_with_name + "/" + output_with_suffix
 
@@ -422,7 +441,10 @@ def main():
                     print("already here: " + output_full_path)
 
                 with open(output_full_path, "w") as f:
-                    print(json.dumps(entry, indent=4, sort_keys=True), file=f)
+                    if output_yaml == False:
+                        print(json.dumps(entry, indent=4, sort_keys=True), file=f)
+                    else:
+                        yaml.dump(entry, f)
 
                 if os.path.isfile(output_full_path):
                     timeint = int(date_obj.strftime("%s"))
@@ -453,10 +475,13 @@ def main():
             entries.append(entry)
 
     if output is None:
-        if len(entries) == 1:
-            print(json.dumps(entries[0], indent=4))
+        if output_yaml == False:
+            if len(entries) == 1:
+                print(json.dumps(entries[0], indent=4))
+            else:
+                print(json.dumps(entries, indent=4))
         else:
-            print(json.dumps(entries, indent=4))
+            yaml.dump(entries, sys.stdout)
 
     return ret
 
