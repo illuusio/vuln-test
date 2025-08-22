@@ -1,0 +1,62 @@
+schema_version: 1.7.0
+modified: '2025-04-03T00:00:00Z'
+published: '2025-04-03T00:00:00Z'
+summary: mozilla -- memory corruption
+details: |-
+  security@mozilla.org reports:
+
+  > CVE-2025-1938: Memory safety bugs present in Firefox 135,
+  > Thunderbird 135, Firefox ESR 128.7, and Thunderbird 128.7.
+  > Some of these bugs showed evidence of memory corruption and
+  > we presume that with enough effort some of these could have
+  > been exploited to run arbitrary code.
+  >
+  > CVE-2025-1935: A web page could trick a user into setting
+  > that site as the default handler for a custom URL protocol.
+  >
+  > CVE-2025-1934: It was possible to interrupt the processing
+  > of a RegExp bailout and run additional JavaScript, potentially
+  > triggering garbage collection when the engine was not
+  > expecting it.
+references:
+- type: ADVISORY
+  url: https://api.osv.dev/v1/vulns/CVE-2025-1938
+- type: ADVISORY
+  url: https://nvd.nist.gov/vuln/detail/CVE-2025-1938
+- type: ADVISORY
+  url: https://api.osv.dev/v1/vulns/CVE-2025-1935
+- type: ADVISORY
+  url: https://nvd.nist.gov/vuln/detail/CVE-2025-1935
+- type: ADVISORY
+  url: https://api.osv.dev/v1/vulns/CVE-2025-1934
+- type: ADVISORY
+  url: https://nvd.nist.gov/vuln/detail/CVE-2025-1934
+affected:
+- package:
+    ecosystem: FreeBSD:ports
+    name: librewolf
+  ranges:
+  - type: ECOSYSTEM
+    events:
+    - fixed: '136.0'
+    - introduced: '0'
+- package:
+    ecosystem: FreeBSD:ports
+    name: firefox-esr
+  ranges:
+  - type: ECOSYSTEM
+    events:
+    - fixed: 128.8,1
+    - introduced: '0'
+- package:
+    ecosystem: FreeBSD:ports
+    name: thunderbird
+  ranges:
+  - type: ECOSYSTEM
+    events:
+    - fixed: '136.0'
+    - introduced: '0'
+database_specific:
+  vid: b31a4e74-109d-11f0-8195-b42e991fc52e
+  discovery: '2025-03-04T00:00:00Z'
+id: FBSD-2025-0178

@@ -1,0 +1,91 @@
+schema_version: 1.7.0
+modified: '2025-07-01T00:00:00Z'
+published: '2025-07-01T00:00:00Z'
+summary: xorg server -- Multiple vulnerabilities
+details: |-
+  The X.Org project reports:
+
+  > * CVE-2025-49175: Out-of-bounds access in X Rendering extension (Animated cursors)
+  >
+  >   The X Rendering extension allows creating animated cursors providing a
+  >   list of cursors.
+  >   By default, the Xserver assumes at least one cursor is provided while a
+  >   client may actually pass no cursor at all, which causes an out-of-bound
+  >   read creating the animated cursor and a crash of the Xserver.
+  > * CVE-2025-49177: Data leak in XFIXES Extension 6 (XFixesSetClientDisconnectMode)
+  >
+  >   The handler of XFixesSetClientDisconnectMode does not check the client
+  >   request length.
+  >   A client could send a shorter request and read data from a former
+  >   request.
+  > * CVE-2025-49178: Unprocessed client request via bytes to ignore
+  >
+  >   When reading requests from the clients, the input buffer might be shared
+  >   and used between different clients.
+  >   If a given client sends a full request with non-zero bytes to ignore,
+  >   the bytes to ignore may still be non-zero even though the request is
+  >   full, in which case the buffer could be shared with another client who's
+  >   request will not be processed because of those bytes to ignore, leading
+  >   to a possible hang of the other client request.
+  > * CVE-2025-49179: Integer overflow in X Record extension
+  >
+  >   The RecordSanityCheckRegisterClients() function in the X Record extension
+  >   implementation of the Xserver checks for the request length, but does not
+  >   check for integer overflow.
+  >   A client might send a very large value for either the number of clients
+  >   or the number of protocol ranges that will cause an integer overflow in
+  >   the request length computation, defeating the check for request length.
+  > * CVE-2025-49180: Integer overflow in RandR extension (RRChangeProviderProperty)
+  >
+  >   A client might send a request causing an integer overflow when computing
+  >   the total size to allocate in RRChangeProviderProperty().
+references:
+- type: ADVISORY
+  url: https://api.osv.dev/v1/vulns/CVE-2025-49175
+- type: ADVISORY
+  url: https://api.osv.dev/v1/vulns/CVE-2025-49177
+- type: ADVISORY
+  url: https://api.osv.dev/v1/vulns/CVE-2025-49178
+- type: ADVISORY
+  url: https://api.osv.dev/v1/vulns/CVE-2025-49179
+- type: ADVISORY
+  url: https://api.osv.dev/v1/vulns/CVE-2025-49180
+- type: WEB
+  url: https://lists.x.org/archives/xorg/2025-June/062055.html
+affected:
+- package:
+    ecosystem: FreeBSD:ports
+    name: xephyr
+  ranges:
+  - type: ECOSYSTEM
+    events:
+    - fixed: 21.1.17,1
+    - introduced: '0'
+- package:
+    ecosystem: FreeBSD:ports
+    name: xorg-vfbserver
+  ranges:
+  - type: ECOSYSTEM
+    events:
+    - fixed: 21.1.17,1
+    - introduced: '0'
+- package:
+    ecosystem: FreeBSD:ports
+    name: xorg-nextserver
+  ranges:
+  - type: ECOSYSTEM
+    events:
+    - fixed: 21.1.17,2
+    - introduced: '0'
+- package:
+    ecosystem: FreeBSD:ports
+    name: xwayland
+  ranges:
+  - type: ECOSYSTEM
+    events:
+    - fixed: 24.1.7,1
+    - introduced: '0'
+database_specific:
+  vid: b14cabf7-5663-11f0-943a-18c04d5ea3dc
+  discovery: '2025-06-17T00:00:00Z'
+id: FBSD-2025-0066

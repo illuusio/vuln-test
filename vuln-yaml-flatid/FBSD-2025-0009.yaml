@@ -1,0 +1,28 @@
+schema_version: 1.7.0
+modified: '2025-08-08T00:00:00Z'
+published: '2025-08-08T00:00:00Z'
+summary: FreeBSD -- Integer overflow in libarchive leading to double free
+details: |-
+  Problem Description:
+  ====================
+
+  An integer overflow in the archive\_read\_format\_rar\_seek\_data()
+  function may lead to a double free problem.
+
+  Impact:
+  =======
+
+  Exploiting a double free vulnerability can cause memory corruption.
+  This in turn could enable a threat actor to execute arbitrary code.
+  It might also result in denial of service.
+references:
+- type: ADVISORY
+  url: https://api.osv.dev/v1/vulns/CVE-2025-5914
+- type: ADVISORY
+  url: 
+    https://www.freebsd.org/security/advisories/FreeBSD-SA-25:07.libarchive.asc
+affected: []
+database_specific:
+  vid: 66f35fd9-73f5-11f0-8e0e-002590c1f29c
+  discovery: '2025-08-08T00:00:00Z'
+id: FBSD-2025-0009

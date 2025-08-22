@@ -1,0 +1,40 @@
+schema_version: 1.7.0
+modified: '2024-08-07T00:00:00Z'
+published: '2024-08-07T00:00:00Z'
+summary: jenkins -- multiple vulnerabilities
+details: |-
+  Jenkins Security Advisory:
+
+  > Description
+  > ===========
+  >
+  > ##### (Critical) SECURITY-3430 / CVE-2024-43044
+  >
+  > Arbitrary file read vulnerability through agent connections can lead to RCE
+  >
+  > Description
+  > ===========
+  >
+  > ##### (Medium) SECURITY-3349 / CVE-2024-43045
+  >
+  > Missing permission check allows accessing other users' "My Views"
+references:
+- type: ADVISORY
+  url: https://api.osv.dev/v1/vulns/CVE-2024-43044
+- type: ADVISORY
+  url: https://api.osv.dev/v1/vulns/CVE-2024-43045
+- type: WEB
+  url: https://www.jenkins.io/security/advisory/2024-08-07/
+affected:
+- package:
+    ecosystem: FreeBSD:ports
+    name: jenkins-lts
+  ranges:
+  - type: ECOSYSTEM
+    events:
+    - fixed: 2.462.1
+    - introduced: '0'
+database_specific:
+  vid: db8fa362-0ccb-4aa8-9220-72b7763e9a4a
+  discovery: '2024-08-07T00:00:00Z'
+id: FBSD-2024-0152

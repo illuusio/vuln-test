@@ -1,0 +1,69 @@
+schema_version: 1.7.0
+modified: '2025-07-24T00:00:00Z'
+published: '2025-07-24T00:00:00Z'
+summary: Mozilla -- Incorrect computation of branch address
+details: |-
+  security@mozilla.org reports:
+
+  > On arm64, a WASM `br\_table` instruction with a lot of
+  > entries could lead to the label being too far from the
+  > instruction causing truncation and incorrect computation of
+  > the branch address.
+references:
+- type: ADVISORY
+  url: https://api.osv.dev/v1/vulns/CVE-2025-8028
+- type: ADVISORY
+  url: https://nvd.nist.gov/vuln/detail/CVE-2025-8028
+affected:
+- package:
+    ecosystem: FreeBSD:ports
+    name: firefox-esr
+  ranges:
+  - type: ECOSYSTEM
+    events:
+    - fixed: '140.1'
+    - introduced: '0'
+- package:
+    ecosystem: FreeBSD:ports
+    name: firefox-esr
+  ranges:
+  - type: ECOSYSTEM
+    events:
+    - fixed: '128.13'
+    - introduced: '0'
+- package:
+    ecosystem: FreeBSD:ports
+    name: firefox-esr
+  ranges:
+  - type: ECOSYSTEM
+    events:
+    - fixed: '115.26'
+    - introduced: '0'
+- package:
+    ecosystem: FreeBSD:ports
+    name: thunderbird
+  ranges:
+  - type: ECOSYSTEM
+    events:
+    - fixed: '141.0'
+    - introduced: '0'
+- package:
+    ecosystem: FreeBSD:ports
+    name: thunderbird-esr
+  ranges:
+  - type: ECOSYSTEM
+    events:
+    - fixed: '140.1'
+    - introduced: '0'
+- package:
+    ecosystem: FreeBSD:ports
+    name: thunderbird
+  ranges:
+  - type: ECOSYSTEM
+    events:
+    - fixed: '128.13'
+    - introduced: '0'
+database_specific:
+  vid: 3e9406a7-685e-11f0-a12d-b42e991fc52e
+  discovery: '2025-07-22T00:00:00Z'
+id: FBSD-2025-0029

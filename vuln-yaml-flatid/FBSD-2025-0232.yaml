@@ -1,0 +1,67 @@
+schema_version: 1.7.0
+modified: '2025-02-07T00:00:00Z'
+published: '2025-02-07T00:00:00Z'
+summary: mozilla -- multiple vulnerabilities
+details: |-
+  security@mozilla.org reports:
+
+  > An attacker could have caused a use-after-free via crafted XSLT
+  > data, leading to a potentially exploitable crash.
+  >
+  > An attacker could have caused a use-after-free via the Custom
+  > Highlight API, leading to a potentially exploitable crash.
+  >
+  > A race during concurrent delazification could have led to a
+  > use-after-free.
+  >
+  > Memory safety bugs present in Firefox 134, Thunderbird 134, Firefox
+  > ESR 115.19, Firefox ESR 128.6, Thunderbird 115.19, and Thunderbird
+  > 128.6. Some of these bugs showed evidence of memory corruption and
+  > we presume that with enough effort some of these could have been
+  > exploited to run arbitrary code.
+references:
+- type: ADVISORY
+  url: https://api.osv.dev/v1/vulns/CVE-2025-1009
+- type: ADVISORY
+  url: https://nvd.nist.gov/vuln/detail/CVE-2025-1009
+- type: ADVISORY
+  url: https://api.osv.dev/v1/vulns/CVE-2025-1010
+- type: ADVISORY
+  url: https://nvd.nist.gov/vuln/detail/CVE-2025-1010
+- type: ADVISORY
+  url: https://api.osv.dev/v1/vulns/CVE-2025-1012
+- type: ADVISORY
+  url: https://nvd.nist.gov/vuln/detail/CVE-2025-1012
+- type: ADVISORY
+  url: https://api.osv.dev/v1/vulns/CVE-2025-1016
+- type: ADVISORY
+  url: https://nvd.nist.gov/vuln/detail/CVE-2025-1016
+affected:
+- package:
+    ecosystem: FreeBSD:ports
+    name: firefox-esr
+  ranges:
+  - type: ECOSYSTEM
+    events:
+    - fixed: 115.20,1
+    - introduced: '0'
+  - type: ECOSYSTEM
+    events:
+    - introduced: 116.0,1,1
+    - fixed: 128.6,1
+- package:
+    ecosystem: FreeBSD:ports
+    name: thunderbird
+  ranges:
+  - type: ECOSYSTEM
+    events:
+    - fixed: '128.7'
+    - introduced: '0'
+  - type: ECOSYSTEM
+    events:
+    - introduced: 129,1
+    - fixed: '135'
+database_specific:
+  vid: e54a1413-e539-11ef-a845-b42e991fc52e
+  discovery: '2025-02-04T00:00:00Z'
+id: FBSD-2025-0232

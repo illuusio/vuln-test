@@ -1,0 +1,26 @@
+schema_version: 1.7.0
+modified: '2024-07-17T00:00:00Z'
+published: '2024-07-17T00:00:00Z'
+summary: Apache httpd -- Source code disclosure with handlers configured via 
+  AddType
+details: |-
+  The Apache httpd project reports:
+
+  > source code disclosure with handlers configured via AddType
+  > (CVE-2024-40725) (Important): A partial fix for CVE-2024-39884
+  > in the core of Apache HTTP Server 2.4.61 ignores some use of the
+  > legacy content-type based configuration of handlers. "AddType"
+  > and similar configuration, under some circumstances where files
+  > are requested indirectly, result in source code disclosure of
+  > local content. For example, PHP scripts may be served instead
+  > of interpreted.
+references:
+- type: ADVISORY
+  url: https://api.osv.dev/v1/vulns/CVE-2024-40725
+- type: WEB
+  url: https://httpd.apache.org/security/vulnerabilities_24.html
+affected: []
+database_specific:
+  vid: 088b8b7d-446c-11ef-b611-84a93843eb75
+  discovery: '2024-07-17T00:00:00Z'
+id: FBSD-2024-0162

@@ -1,0 +1,35 @@
+schema_version: 1.7.0
+modified: '2025-02-11T00:00:00Z'
+published: '2025-02-11T00:00:00Z'
+summary: OpenSSL -- Man-in-the-Middle vulnerability
+details: |-
+  The OpenSSL project reports:
+
+  > RFC7250 handshakes with unauthenticated servers don't abort as expected (High).
+  > Clients using RFC7250 Raw Public Keys (RPKs) to authenticate a server may fail to notice that the server was not authenticated, because handshakes don't abort as expected when the SSL\_VERIFY\_PEER verification mode is set.
+references:
+- type: ADVISORY
+  url: https://api.osv.dev/v1/vulns/CVE-2024-12797
+- type: WEB
+  url: https://openssl-library.org/news/secadv/20250211.txt
+affected:
+- package:
+    ecosystem: FreeBSD:ports
+    name: openssl33
+  ranges:
+  - type: ECOSYSTEM
+    events:
+    - fixed: 3.3.2
+    - introduced: '0'
+- package:
+    ecosystem: FreeBSD:ports
+    name: openssl34
+  ranges:
+  - type: ECOSYSTEM
+    events:
+    - fixed: 3.4.1
+    - introduced: '0'
+database_specific:
+  vid: a64761a1-e895-11ef-873e-8447094a420f
+  discovery: '2025-02-11T00:00:00Z'
+id: FBSD-2025-0229

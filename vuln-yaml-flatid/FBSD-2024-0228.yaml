@@ -1,0 +1,46 @@
+schema_version: 1.7.0
+modified: '2024-04-24T00:00:00Z'
+published: '2024-04-24T00:00:00Z'
+summary: py-matrix-synapse -- weakness in auth chain indexing allows DoS
+details: |-
+  Matrix developers report:
+
+  > Weakness in auth chain indexing allows DoS from remote
+  > room members through disk fill and high CPU usage. (High severity)
+references:
+- type: ADVISORY
+  url: https://api.osv.dev/v1/vulns/CVE-2024-31208
+- type: WEB
+  url: https://element.io/blog/security-release-synapse-1-105-1/
+- type: WEB
+  url: 
+    https://github.com/element-hq/synapse/security/advisories/GHSA-3h7q-rfh9-xm4v
+affected:
+- package:
+    ecosystem: FreeBSD:ports
+    name: py39-matrix-synapse
+  ranges:
+  - type: ECOSYSTEM
+    events:
+    - fixed: 1.105.1
+    - introduced: '0'
+- package:
+    ecosystem: FreeBSD:ports
+    name: py310-matrix-synapse
+  ranges:
+  - type: ECOSYSTEM
+    events:
+    - fixed: 1.105.1
+    - introduced: '0'
+- package:
+    ecosystem: FreeBSD:ports
+    name: py311-matrix-synapse
+  ranges:
+  - type: ECOSYSTEM
+    events:
+    - fixed: 1.105.1
+    - introduced: '0'
+database_specific:
+  vid: bdfa6c04-027a-11ef-9c21-901b0e9408dc
+  discovery: '2024-04-23T00:00:00Z'
+id: FBSD-2024-0228

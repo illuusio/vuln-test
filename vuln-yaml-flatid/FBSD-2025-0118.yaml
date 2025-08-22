@@ -1,0 +1,49 @@
+schema_version: 1.7.0
+modified: '2025-05-24T00:00:00Z'
+published: '2025-05-24T00:00:00Z'
+summary: cpython -- Use-after-free in "unicode_escape" decoder with error 
+  handler
+details: |-
+  cna@python.org reports:
+
+  > There is an issue in CPython when using
+  > `bytes.decode("unicode\_escape",
+  > error="ignore|replace")`. If you are not using the
+  > "unicode\_escape" encoding or an error handler your
+  > usage is not affected. To work-around this issue you may stop
+  > using the error= handler and instead wrap the bytes.decode()
+  > call in a try-except catching the DecodeError.
+references:
+- type: ADVISORY
+  url: https://api.osv.dev/v1/vulns/CVE-2025-4516
+- type: ADVISORY
+  url: https://nvd.nist.gov/vuln/detail/CVE-2025-4516
+affected:
+- package:
+    ecosystem: FreeBSD:ports
+    name: python310
+  ranges:
+  - type: ECOSYSTEM
+    events:
+    - fixed: 3.10.17_1
+    - introduced: '0'
+- package:
+    ecosystem: FreeBSD:ports
+    name: python311
+  ranges:
+  - type: ECOSYSTEM
+    events:
+    - fixed: 3.11.12_1
+    - introduced: '0'
+- package:
+    ecosystem: FreeBSD:ports
+    name: python312
+  ranges:
+  - type: ECOSYSTEM
+    events:
+    - fixed: 3.12.10_1
+    - introduced: '0'
+database_specific:
+  vid: e587b52d-38ac-11f0-b7b6-dcfe074bd614
+  discovery: '2025-05-15T00:00:00Z'
+id: FBSD-2025-0118

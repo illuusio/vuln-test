@@ -1,0 +1,35 @@
+schema_version: 1.7.0
+modified: '2025-02-20T00:00:00Z'
+published: '2025-02-20T00:00:00Z'
+summary: chromium -- multiple security fixes
+details: |-
+  Chrome Releases reports:
+
+  > This update includes 3 security fixes:
+  >
+  > * [394350433] High CVE-2025-0999: Heap buffer overflow in V8. Reported by Seunghyun Lee (@0x10n) on 2025-02-04
+  > * [383465163] High CVE-2025-1426: Heap buffer overflow in GPU. Reported by un3xploitable and GF on 2024-12-11
+  > * [390590778] Medium CVE-2025-1006: Use after free in Network. Reported by Tal Keren, Sam Agranat, Eran Rom, Edouard Bochin, Adam Hatsir of Palo Alto Networks on 2025-01-18
+references:
+- type: ADVISORY
+  url: https://api.osv.dev/v1/vulns/CVE-2025-0999
+- type: ADVISORY
+  url: https://api.osv.dev/v1/vulns/CVE-2025-1426
+- type: ADVISORY
+  url: https://api.osv.dev/v1/vulns/CVE-2025-1006
+- type: WEB
+  url: 
+    https://chromereleases.googleblog.com/2025/02/stable-channel-update-for-desktop_18.html
+affected:
+- package:
+    ecosystem: FreeBSD:ports
+    name: ungoogled-chromium
+  ranges:
+  - type: ECOSYSTEM
+    events:
+    - fixed: 133.0.6943.126
+    - introduced: '0'
+database_specific:
+  vid: 2a3be628-ef6e-11ef-85f3-a8a1599412c6
+  discovery: '2025-02-18T00:00:00Z'
+id: FBSD-2025-0221

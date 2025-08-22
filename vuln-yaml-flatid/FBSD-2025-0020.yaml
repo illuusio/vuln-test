@@ -1,0 +1,45 @@
+schema_version: 1.7.0
+modified: '2025-07-24T00:00:00Z'
+published: '2025-07-24T00:00:00Z'
+summary: Mozilla -- cookie shadowing
+details: |-
+  security@mozilla.org reports:
+
+  > Setting a nameless cookie with an equals sign in the
+  > value shadowed other cookies. Even if the nameless cookie
+  > was set over HTTP and the shadowed cookie included the
+  > `Secure` attribute.
+references:
+- type: ADVISORY
+  url: https://api.osv.dev/v1/vulns/CVE-2025-8037
+- type: ADVISORY
+  url: https://nvd.nist.gov/vuln/detail/CVE-2025-8037
+affected:
+- package:
+    ecosystem: FreeBSD:ports
+    name: firefox-esr
+  ranges:
+  - type: ECOSYSTEM
+    events:
+    - fixed: '140.1'
+    - introduced: '0'
+- package:
+    ecosystem: FreeBSD:ports
+    name: thunderbird
+  ranges:
+  - type: ECOSYSTEM
+    events:
+    - fixed: '141.0'
+    - introduced: '0'
+- package:
+    ecosystem: FreeBSD:ports
+    name: thunderbird-esr
+  ranges:
+  - type: ECOSYSTEM
+    events:
+    - fixed: '140.1'
+    - introduced: '0'
+database_specific:
+  vid: 5abc2187-685e-11f0-a12d-b42e991fc52e
+  discovery: '2025-07-22T00:00:00Z'
+id: FBSD-2025-0020

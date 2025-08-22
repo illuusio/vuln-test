@@ -1,0 +1,31 @@
+schema_version: 1.7.0
+modified: '2025-05-19T00:00:00Z'
+published: '2025-05-19T00:00:00Z'
+summary: firefox -- out-of-bounds read/write
+details: |-
+  security@mozilla.org reports:
+
+  > An attacker was able to perform an out-of-bounds read or
+  > write on a JavaScript object by confusing array index sizes.
+references:
+- type: ADVISORY
+  url: https://api.osv.dev/v1/vulns/CVE-2025-4918
+- type: ADVISORY
+  url: https://nvd.nist.gov/vuln/detail/CVE-2025-4918
+- type: ADVISORY
+  url: https://api.osv.dev/v1/vulns/CVE-2025-4919
+- type: ADVISORY
+  url: https://nvd.nist.gov/vuln/detail/CVE-2025-4919
+affected:
+- package:
+    ecosystem: FreeBSD:ports
+    name: firefox-esr
+  ranges:
+  - type: ECOSYSTEM
+    events:
+    - fixed: 128.10.1
+    - introduced: '0'
+database_specific:
+  vid: 07560111-34cc-11f0-af94-b42e991fc52e
+  discovery: '2025-05-17T00:00:00Z'
+id: FBSD-2025-0123

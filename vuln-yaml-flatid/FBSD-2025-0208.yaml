@@ -1,0 +1,58 @@
+schema_version: 1.7.0
+modified: '2025-03-05T00:00:00Z'
+published: '2025-03-05T00:00:00Z'
+summary: jenkins -- multiple vulnerabilities
+details: |-
+  Jenkins Security Advisory:
+
+  > Description
+  > ===========
+  >
+  > ##### (Medium) SECURITY-3495 / CVE-2025-27622
+  >
+  > Encrypted values of secrets stored in agent configuration revealed to users with Agent/Extended Read permission
+  >
+  > Description
+  > ===========
+  >
+  > ##### (Medium) SECURITY-3496 / CVE-2025-27623
+  >
+  > Encrypted values of secrets stored in view configuration revealed to users with View/Read permission
+  >
+  > Description
+  > ===========
+  >
+  > ##### (Medium) SECURITY-3498 / CVE-2025-27624
+  >
+  > CSRF vulnerability
+  >
+  > Description
+  > ===========
+  >
+  > ##### (Medium) SECURITY-3501 / CVE-2025-27625
+  >
+  > Open redirect vulnerability
+references:
+- type: ADVISORY
+  url: https://api.osv.dev/v1/vulns/CVE-2025-27622
+- type: ADVISORY
+  url: https://api.osv.dev/v1/vulns/CVE-2025-27623
+- type: ADVISORY
+  url: https://api.osv.dev/v1/vulns/CVE-2025-27624
+- type: ADVISORY
+  url: https://api.osv.dev/v1/vulns/CVE-2025-27625
+- type: WEB
+  url: https://www.jenkins.io/security/advisory/2025-03-05/
+affected:
+- package:
+    ecosystem: FreeBSD:ports
+    name: jenkins-lts
+  ranges:
+  - type: ECOSYSTEM
+    events:
+    - fixed: 2.492.2
+    - introduced: '0'
+database_specific:
+  vid: cb98d018-f9f5-11ef-a398-00e081b7aa2d
+  discovery: '2025-03-05T00:00:00Z'
+id: FBSD-2025-0208

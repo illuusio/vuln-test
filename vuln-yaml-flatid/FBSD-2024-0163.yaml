@@ -1,0 +1,60 @@
+schema_version: 1.7.0
+modified: '2024-07-16T00:00:00Z'
+published: '2024-07-16T00:00:00Z'
+summary: MySQL -- Multiple vulnerabilities
+details: |-
+  Oracle reports:
+
+  > 36 new security patches for Oracle MySQL. 11 of these vulnerabilities
+  > may be remotely exploitable without authentication, i.e., may be
+  > exploited over a network without requiring user credentials.
+  > The highest CVSS v3.1 Base Score of vulnerabilities affecting Oracle
+  > MySQL is 9.8.
+references:
+- type: WEB
+  url: https://www.oracle.com/security-alerts/cpujul2024.html#MySQL
+affected:
+- package:
+    ecosystem: FreeBSD:ports
+    name: mysql80-server
+  ranges:
+  - type: ECOSYSTEM
+    events:
+    - fixed: 8.0.38
+    - introduced: '0'
+- package:
+    ecosystem: FreeBSD:ports
+    name: mysql81-client
+  ranges:
+  - type: ECOSYSTEM
+    events:
+    - fixed: 8.1.1
+    - introduced: '0'
+- package:
+    ecosystem: FreeBSD:ports
+    name: mysql81-server
+  ranges:
+  - type: ECOSYSTEM
+    events:
+    - fixed: 8.1.1
+    - introduced: '0'
+- package:
+    ecosystem: FreeBSD:ports
+    name: mysql84-client
+  ranges:
+  - type: ECOSYSTEM
+    events:
+    - fixed: 8.4.1
+    - introduced: '0'
+- package:
+    ecosystem: FreeBSD:ports
+    name: mysql84-server
+  ranges:
+  - type: ECOSYSTEM
+    events:
+    - fixed: 8.4.1
+    - introduced: '0'
+database_specific:
+  vid: 3b018063-4358-11ef-b611-84a93843eb75
+  discovery: '2024-07-16T00:00:00Z'
+id: FBSD-2024-0163

@@ -1,0 +1,41 @@
+schema_version: 1.7.0
+modified: '2025-01-21T00:00:00Z'
+published: '2025-01-21T00:00:00Z'
+summary: go -- multiple vulnerabilities
+details: |-
+  The Go project reports:
+
+  > crypto/x509: usage of IPv6 zone IDs can bypass URI name constraints
+  >
+  > A certificate with a URI which has a IPv6 address with a
+  > zone ID may incorrectly satisfy a URI name constraint that
+  > applies to the certificate chain.
+
+  > net/http: sensitive headers incorrectly sent after cross-domain redirect
+  >
+  > The HTTP client drops sensitive headers after following a
+  > cross-domain redirect. For example, a request to a.com/
+  > containing an Authorization header which is redirected to
+  > b.com/ will not send that header to b.com.
+references:
+- type: ADVISORY
+  url: https://api.osv.dev/v1/vulns/CVE-2024-45341
+- type: ADVISORY
+  url: https://api.osv.dev/v1/vulns/CVE-2024-45336
+- type: WEB
+  url: https://go.dev/issue/71156
+- type: WEB
+  url: https://go.dev/issue/70530
+affected:
+- package:
+    ecosystem: FreeBSD:ports
+    name: go123
+  ranges:
+  - type: ECOSYSTEM
+    events:
+    - fixed: 1.23.5
+    - introduced: '0'
+database_specific:
+  vid: 704aa72a-d840-11ef-a205-901b0e9408dc
+  discovery: '2025-01-07T00:00:00Z'
+id: FBSD-2025-0254

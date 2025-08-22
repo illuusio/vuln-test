@@ -1,0 +1,33 @@
+schema_version: 1.7.0
+modified: '2024-10-06T00:00:00Z'
+published: '2024-10-06T00:00:00Z'
+summary: Unbound -- Denial of service attack
+details: |-
+  NLnet labs report:
+
+  > A vulnerability has been discovered in Unbound when handling
+  > replies with very large RRsets that Unbound needs to perform name
+  > compression for.
+  >
+  > Malicious upstreams responses with very large RRsets can cause
+  > Unbound to spend a considerable time applying name compression to
+  > downstream replies. This can lead to degraded performance and
+  > eventually denial of service in well orchestrated attacks.
+  >
+  > Unbound version 1.21.1 introduces a hard limit on the number of
+  > name compression calculations it is willing to do per packet.
+  > Packets that need more compression will result in semi-compressed
+  > packets or truncated packets, even on TCP for huge messages, to
+  > avoid locking the CPU for long.
+  >
+  > This change should not affect normal DNS traffic.
+references:
+- type: ADVISORY
+  url: https://api.osv.dev/v1/vulns/CVE-2024-8508
+- type: WEB
+  url: https://nlnetlabs.nl/news/2024/Oct/03/unbound-1.21.1-released/
+affected: []
+database_specific:
+  vid: 2368755b-83f6-11ef-8d2e-a04a5edf46d9
+  discovery: '2024-10-03T00:00:00Z'
+id: FBSD-2024-0084

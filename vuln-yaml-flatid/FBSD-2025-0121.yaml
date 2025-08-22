@@ -1,0 +1,71 @@
+schema_version: 1.7.0
+modified: '2025-05-23T00:00:00Z'
+published: '2025-05-23T00:00:00Z'
+summary: Gitlab -- vulnerabilities
+details: |-
+  Gitlab reports:
+
+  > Unprotected large blob endpoint in GitLab allows Denial of Service
+  >
+  > Improper XPath validation allows modified SAML response to bypass 2FA requirement
+  >
+  > A Discord webhook integration may cause DoS
+  >
+  > Unbounded Kubernetes cluster tokens may lead to DoS
+  >
+  > Unvalidated notes position may lead to Denial of Service
+  >
+  > Hidden/masked variables may get exposed in the UI
+  >
+  > Two-factor authentication requirement bypass
+  >
+  > View full email addresses that should be partially obscured
+  >
+  > Branch name confusion in confidential MRs
+  >
+  > Unauthorized access to job data via a GraphQL query
+references:
+- type: ADVISORY
+  url: https://api.osv.dev/v1/vulns/CVE-2025-0993
+- type: ADVISORY
+  url: https://api.osv.dev/v1/vulns/CVE-2024-12093
+- type: ADVISORY
+  url: https://api.osv.dev/v1/vulns/CVE-2024-7803
+- type: ADVISORY
+  url: https://api.osv.dev/v1/vulns/CVE-2025-3111
+- type: ADVISORY
+  url: https://api.osv.dev/v1/vulns/CVE-2025-2853
+- type: ADVISORY
+  url: https://api.osv.dev/v1/vulns/CVE-2025-4979
+- type: ADVISORY
+  url: https://api.osv.dev/v1/vulns/CVE-2025-0605
+- type: ADVISORY
+  url: https://api.osv.dev/v1/vulns/CVE-2025-0679
+- type: ADVISORY
+  url: https://api.osv.dev/v1/vulns/CVE-2024-9163
+- type: ADVISORY
+  url: https://api.osv.dev/v1/vulns/CVE-2025-1110
+- type: WEB
+  url: 
+    https://about.gitlab.com/releases/2025/05/21/patch-release-gitlab-18-0-1-released/
+affected:
+- package:
+    ecosystem: FreeBSD:ports
+    name: gitlab-ee
+  ranges:
+  - type: ECOSYSTEM
+    events:
+    - introduced: 18.0.0
+    - fixed: 18.0.1
+  - type: ECOSYSTEM
+    events:
+    - introduced: 17.11.0
+    - fixed: 17.11.3
+  - type: ECOSYSTEM
+    events:
+    - introduced: 10.2.0
+    - fixed: 17.10.7
+database_specific:
+  vid: a1a1b0c2-3791-11f0-8600-2cf05da270f3
+  discovery: '2025-05-21T00:00:00Z'
+id: FBSD-2025-0121

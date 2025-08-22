@@ -1,0 +1,38 @@
+schema_version: 1.7.0
+modified: '2025-04-13T00:00:00Z'
+published: '2025-04-13T00:00:00Z'
+summary: mozilla -- double free error
+details: |-
+  security@mozilla.org reports:
+
+  > A double-free issue could have occurred in
+  > `sec\_pkcs7\_decoder\_start\_decrypt()` when handling an error
+  > path. Under specific conditions, the same symmetric key
+  > could have been freed twice, potentially leading to memory
+  > corruption.
+references:
+- type: ADVISORY
+  url: https://api.osv.dev/v1/vulns/CVE-2024-11704
+- type: ADVISORY
+  url: https://nvd.nist.gov/vuln/detail/CVE-2024-11704
+affected:
+- package:
+    ecosystem: FreeBSD:ports
+    name: firefox-esr
+  ranges:
+  - type: ECOSYSTEM
+    events:
+    - fixed: 128.7.0
+    - introduced: '0'
+- package:
+    ecosystem: FreeBSD:ports
+    name: thunderbird
+  ranges:
+  - type: ECOSYSTEM
+    events:
+    - fixed: '133.0'
+    - introduced: '0'
+database_specific:
+  vid: b65b1217-1887-11f0-a8ce-b42e991fc52e
+  discovery: '2024-11-26T00:00:00Z'
+id: FBSD-2025-0268

@@ -1,0 +1,38 @@
+schema_version: 1.7.0
+modified: '2025-05-30T00:00:00Z'
+published: '2025-05-30T00:00:00Z'
+summary: Mozilla -- Memory safety bugs
+details: |-
+  security@mozilla.org reports:
+
+  > Memory safety bugs present in Firefox 138, Thunderbird
+  > 138, Firefox ESR 128.10, and Thunderbird 128.10.
+  > Some of these bugs showed evidence of memory corruption and
+  > we presume that with enough effort some of these could have
+  > been exploited to run arbitrary code.
+references:
+- type: ADVISORY
+  url: https://api.osv.dev/v1/vulns/CVE-2025-5268
+- type: ADVISORY
+  url: https://nvd.nist.gov/vuln/detail/CVE-2025-5268
+affected:
+- package:
+    ecosystem: FreeBSD:ports
+    name: firefox-esr
+  ranges:
+  - type: ECOSYSTEM
+    events:
+    - fixed: '128.11'
+    - introduced: '0'
+- package:
+    ecosystem: FreeBSD:ports
+    name: thunderbird
+  ranges:
+  - type: ECOSYSTEM
+    events:
+    - fixed: '128.11'
+    - introduced: '0'
+database_specific:
+  vid: a5b553e5-3d7c-11f0-9a55-b42e991fc52e
+  discovery: '2025-05-27T00:00:00Z'
+id: FBSD-2025-0108

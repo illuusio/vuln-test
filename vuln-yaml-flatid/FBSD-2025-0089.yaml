@@ -1,0 +1,28 @@
+schema_version: 1.7.0
+modified: '2025-06-12T00:00:00Z'
+published: '2025-06-12T00:00:00Z'
+summary: PostgreSQL JDBC library -- Improper Authentication
+details: |-
+  PostgreSQL JDBC Driver project reports:
+
+  > Client Allows Fallback to Insecure Authentication Despite
+  > channelBinding=require configuration. Fix channel binding
+  > required handling to reject non-SASL authentication Previously,
+  > when channel binding was set to "require", the driver
+  > would silently ignore this requirement for non-SASL
+  > authentication methods. This could lead to a false sense of
+  > security when channel binding was explicitly requested but not
+  > actually enforced. The fix ensures that when channel binding is
+  > set to "require", the driver will reject connections that use
+  > non-SASL authentication methods or when SASL authentication has
+  > not completed properly.
+references:
+- type: ADVISORY
+  url: https://api.osv.dev/v1/vulns/CVE-2025-49146
+- type: ADVISORY
+  url: https://nvd.nist.gov/vuln/detail/CVE-2025-49146
+affected: []
+database_specific:
+  vid: 2a220a73-4759-11f0-a44a-6cc21735f730
+  discovery: '2025-06-12T00:00:00Z'
+id: FBSD-2025-0089

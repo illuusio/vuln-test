@@ -1,0 +1,42 @@
+schema_version: 1.7.0
+modified: '2024-10-29T00:00:00Z'
+published: '2024-10-29T00:00:00Z'
+summary: forgejo -- multiple vulnerabilities
+details: |-
+  Problem Description:
+  ====================
+
+  * Forgejo generates a token which is used to authenticate web
+    endpoints that are only meant to be used internally, for instance
+    when the SSH daemon is used to push a commit with Git. The
+    verification of this token was not done in constant time and was
+    susceptible to timing attacks. A pre-condition for such an attack is
+    the precise measurements of the time for each operation. Since it
+    requires observing the timing of network operations, the issue is
+    mitigated when a Forgejo instance is accessed over the internet
+    because the ISP introduce unpredictable random delays.
+  * Because of a missing permission check, the branch used to propose
+    a pull request to a repository can always be deleted by the user
+    performing the merge. It was fixed so that such a deletion is only
+    allowed if the user performing the merge has write permission to the
+    repository from which the pull request was made.
+references:
+- type: WEB
+  url: https://codeberg.org/forgejo/forgejo/milestone/8544
+- type: WEB
+  url: https://codeberg.org/forgejo/forgejo/pulls/5719
+- type: WEB
+  url: https://codeberg.org/forgejo/forgejo/pulls/5718
+affected:
+- package:
+    ecosystem: FreeBSD:ports
+    name: forgejo7
+  ranges:
+  - type: ECOSYSTEM
+    events:
+    - fixed: 7.0.10
+    - introduced: '0'
+database_specific:
+  vid: f07c8f87-8e65-11ef-81b8-659bf0027d16
+  discovery: '2024-10-28T00:00:00Z'
+id: FBSD-2024-0066

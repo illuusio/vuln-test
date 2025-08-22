@@ -1,0 +1,43 @@
+schema_version: 1.7.0
+modified: '2025-03-26T00:00:00Z'
+published: '2025-03-26T00:00:00Z'
+summary: py-matrix-synapse -- federation denial of service via malformed events
+details: |-
+  element-hq/synapse developers report:
+
+  > A malicious server can craft events which, when received, prevent Synapse version up to 1.127.0 from federating with other servers. The vulnerability has been exploited in the wild.
+references:
+- type: ADVISORY
+  url: https://api.osv.dev/v1/vulns/CVE-2025-30355
+- type: WEB
+  url: 
+    https://github.com/element-hq/synapse/security/advisories/GHSA-v56r-hwv5-mxg6
+affected:
+- package:
+    ecosystem: FreeBSD:ports
+    name: py39-matrix-synapse
+  ranges:
+  - type: ECOSYSTEM
+    events:
+    - fixed: 1.127.1
+    - introduced: '0'
+- package:
+    ecosystem: FreeBSD:ports
+    name: py310-matrix-synapse
+  ranges:
+  - type: ECOSYSTEM
+    events:
+    - fixed: 1.127.1
+    - introduced: '0'
+- package:
+    ecosystem: FreeBSD:ports
+    name: py311-matrix-synapse
+  ranges:
+  - type: ECOSYSTEM
+    events:
+    - fixed: 1.127.1
+    - introduced: '0'
+database_specific:
+  vid: e9b8e519-0d50-11f0-86d8-901b0e934d69
+  discovery: '2025-03-26T00:00:00Z'
+id: FBSD-2025-0157

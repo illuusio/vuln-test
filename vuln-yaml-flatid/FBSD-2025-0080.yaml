@@ -1,0 +1,51 @@
+schema_version: 1.7.0
+modified: '2025-05-23T00:00:00Z'
+published: '2025-05-23T00:00:00Z'
+summary: Grafana -- User deletion issue
+details: |-
+  Grafana Labs reports:
+
+  > On April 15, we discovered a vulnerability that stems from the user
+  > deletion logic associated with organization administrators.
+  > An organization admin could remove any user from the specific
+  > organization they manage. Additionally, they have the power to delete
+  > users entirely from the system if they have no other org membership.
+  > This leads to two situations:
+  >
+  > 1. They can delete a server admin if the organization
+  >    the Organization Admin manages is the server admin’s final
+  >    organizational membership.
+  > 2. They can delete any user (regardless of whether they are a server
+  >    admin or not) if that user currently belongs to no organizations.
+  >
+  > These two situations allow an organization manager to disrupt
+  > instance-wide activity by continually deleting server administrators
+  > if there is only one organization or if the server administrators are
+  > not part of any organization.
+  >
+  > The CVSS score for this vulnerability is 5.5 Medium.
+references:
+- type: ADVISORY
+  url: https://api.osv.dev/v1/vulns/CVE-2025-3580
+- type: WEB
+  url: 
+    https://grafana.com/blog/2025/05/23/grafana-security-release-medium-and-high-severity-security-fixes-for-cve-2025-4123-and-cve-2025-3580/
+affected:
+- package:
+    ecosystem: FreeBSD:ports
+    name: grafana8
+  ranges:
+  - type: ECOSYSTEM
+    events:
+    - introduced: 8.0.0
+- package:
+    ecosystem: FreeBSD:ports
+    name: grafana9
+  ranges:
+  - type: ECOSYSTEM
+    events:
+    - introduced: 9.0.0
+database_specific:
+  vid: ee046f5d-37a8-11f0-baaa-6c3be5272acd
+  discovery: '2025-04-15T00:00:00Z'
+id: FBSD-2025-0080

@@ -1,0 +1,82 @@
+schema_version: 1.7.0
+modified: '2025-07-25T00:00:00Z'
+published: '2025-07-25T00:00:00Z'
+summary: rubygem-resolv -- Possible denial of service
+details: |-
+  Manu reports:
+
+  > The vulnerability is caused by an insufficient check on
+  > the length of a decompressed domain name within a DNS
+  > packet.
+  >
+  > An attacker can craft a malicious DNS packet containing a
+  > highly compressed domain name. When the resolv library
+  > parses such a packet, the name decompression process
+  > consumes a large amount of CPU resources, as the library
+  > does not limit the resulting length of the name.
+  >
+  > This resource consumption can cause the application thread
+  > to become unresponsive, resulting in a Denial of Service
+  > condition.
+references:
+- type: ADVISORY
+  url: https://api.osv.dev/v1/vulns/CVE-2025-24294
+- type: WEB
+  url: https://www.ruby-lang.org/en/news/2025/07/08/dos-resolv-cve-2025-24294/
+affected:
+- package:
+    ecosystem: FreeBSD:ports
+    name: ruby
+  ranges:
+  - type: ECOSYSTEM
+    events:
+    - introduced: 3.2.0.p1,1
+    - fixed: 3.2.9,1
+  - type: ECOSYSTEM
+    events:
+    - introduced: 3.3.0.p1,1
+    - fixed: 3.3.9,1
+  - type: ECOSYSTEM
+    events:
+    - introduced: 3.4.0.p1,1
+    - fixed: 3.4.5,1
+  - type: ECOSYSTEM
+    events:
+    - introduced: 3.5.0.p1,1
+    - fixed: 3.5.0.p2,1
+- package:
+    ecosystem: FreeBSD:ports
+    name: ruby32
+  ranges:
+  - type: ECOSYSTEM
+    events:
+    - fixed: 3.2.9,1
+    - introduced: '0'
+- package:
+    ecosystem: FreeBSD:ports
+    name: ruby33
+  ranges:
+  - type: ECOSYSTEM
+    events:
+    - fixed: 3.3.9,1
+    - introduced: '0'
+- package:
+    ecosystem: FreeBSD:ports
+    name: ruby34
+  ranges:
+  - type: ECOSYSTEM
+    events:
+    - fixed: 3.4.5,1
+    - introduced: '0'
+- package:
+    ecosystem: FreeBSD:ports
+    name: ruby35
+  ranges:
+  - type: ECOSYSTEM
+    events:
+    - fixed: 3.5.0.p2,1
+    - introduced: '0'
+database_specific:
+  vid: eed1a411-699b-11f0-91fe-000c295725e4
+  discovery: '2025-07-08T00:00:00Z'
+id: FBSD-2025-0015

@@ -1,0 +1,58 @@
+schema_version: 1.7.0
+modified: '2025-07-01T00:00:00Z'
+published: '2025-07-01T00:00:00Z'
+summary: xorg server -- Multiple vulnerabilities
+details: |-
+  The X.Org project reports:
+
+  > * CVE-2025-49176: Integer overflow in Big Requests Extension
+  >
+  >   The Big Requests extension allows requests larger than the 16-bit length
+  >   limit.
+  >   It uses integers for the request length and checks for the size not to
+  >   exceed the maxBigRequestSize limit, but does so after translating the
+  >   length to integer by multiplying the given size in bytes by 4.
+  >   In doing so, it might overflow the integer size limit before actually
+  >   checking for the overflow, defeating the purpose of the test.
+references:
+- type: ADVISORY
+  url: https://api.osv.dev/v1/vulns/CVE-2025-49176
+- type: WEB
+  url: https://lists.x.org/archives/xorg/2025-June/062055.html
+affected:
+- package:
+    ecosystem: FreeBSD:ports
+    name: xephyr
+  ranges:
+  - type: ECOSYSTEM
+    events:
+    - fixed: 21.1.18,1
+    - introduced: '0'
+- package:
+    ecosystem: FreeBSD:ports
+    name: xorg-vfbserver
+  ranges:
+  - type: ECOSYSTEM
+    events:
+    - fixed: 21.1.18,1
+    - introduced: '0'
+- package:
+    ecosystem: FreeBSD:ports
+    name: xorg-nextserver
+  ranges:
+  - type: ECOSYSTEM
+    events:
+    - fixed: 21.1.18,2
+    - introduced: '0'
+- package:
+    ecosystem: FreeBSD:ports
+    name: xwayland
+  ranges:
+  - type: ECOSYSTEM
+    events:
+    - fixed: 24.1.8,1
+    - introduced: '0'
+database_specific:
+  vid: 8df49466-5664-11f0-943a-18c04d5ea3dc
+  discovery: '2025-06-17T00:00:00Z'
+id: FBSD-2025-0065

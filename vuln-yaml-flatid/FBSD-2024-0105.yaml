@@ -1,0 +1,49 @@
+schema_version: 1.7.0
+modified: '2024-09-16T00:00:00Z'
+published: '2024-09-16T00:00:00Z'
+summary: SnappyMail -- multiple mXSS in HTML sanitizer
+details: |-
+  Oskar reports:
+
+  > SnappyMail uses the `cleanHtml()` function to cleanup HTML
+  > and CSS in emails. Research discovered that the function
+  > has a few bugs which cause an mXSS exploit. Because the
+  > function allowed too many (invalid) HTML elements, it was
+  > possible (with incorrect markup) to trick the browser to
+  > "fix" the broken markup into valid markup. As a result a
+  > motivated attacker may be able to inject javascript.
+references:
+- type: ADVISORY
+  url: https://api.osv.dev/v1/vulns/CVE-2024-45800
+- type: WEB
+  url: 
+    https://github.com/the-djmaze/snappymail/security/advisories/GHSA-2rq7-79vp-ffxm
+affected:
+- package:
+    ecosystem: FreeBSD:ports
+    name: snappymail-php82
+  ranges:
+  - type: ECOSYSTEM
+    events:
+    - fixed: 2.38.0
+    - introduced: '0'
+- package:
+    ecosystem: FreeBSD:ports
+    name: snappymail-php83
+  ranges:
+  - type: ECOSYSTEM
+    events:
+    - fixed: 2.38.0
+    - introduced: '0'
+- package:
+    ecosystem: FreeBSD:ports
+    name: snappymail-php84
+  ranges:
+  - type: ECOSYSTEM
+    events:
+    - fixed: 2.38.0
+    - introduced: '0'
+database_specific:
+  vid: bd940aba-7467-11ef-a5c4-08002784c58d
+  discovery: '2024-09-16T00:00:00Z'
+id: FBSD-2024-0105

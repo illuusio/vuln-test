@@ -1,0 +1,32 @@
+schema_version: 1.7.0
+modified: '2025-03-06T00:00:00Z'
+published: '2025-03-06T00:00:00Z'
+summary: caldera -- Remote Code Execution
+details: |-
+  MITRE Caldera contributor report:
+
+  > In MITRE Caldera through 4.2.0 and 5.0.0 before 35bc06e,
+  > a Remote Code Execution (RCE) vulnerability was found in the dynamic
+  > agent (implant) compilation functionality of the server. This allows
+  > remote attackers to execute arbitrary code on the server that Caldera
+  > is running on via a crafted web request to the Caldera server API used
+  > for compiling and downloading of Caldera's Sandcat or Manx agent
+  > (implants). This web request can use the gcc -extldflags linker flag
+  > with sub-commands.
+references:
+- type: ADVISORY
+  url: https://api.osv.dev/v1/vulns/CVE-2025-27364
+- type: ADVISORY
+  url: https://nvd.nist.gov/vuln/detail/CVE-2025-27364
+affected:
+- package:
+    ecosystem: FreeBSD:ports
+    name: caldera4
+  ranges:
+  - type: ECOSYSTEM
+    events:
+    - last_affected: 4.2.0
+database_specific:
+  vid: d8bd20ae-fa48-11ef-ab7a-ace2d30de67a
+  discovery: '2025-02-16T00:00:00Z'
+id: FBSD-2025-0207

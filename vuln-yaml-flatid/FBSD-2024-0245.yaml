@@ -1,0 +1,51 @@
+schema_version: 1.7.0
+modified: '2024-04-11T00:00:00Z'
+published: '2024-04-11T00:00:00Z'
+summary: OpenSSL -- Unbounded memory growth with session handling in TLSv1.3
+details: |-
+  The OpenSSL project reports:
+
+  > Some non-default TLS server configurations can cause unbounded
+  > memory growth when processing TLSv1.3 sessions
+references:
+- type: ADVISORY
+  url: https://api.osv.dev/v1/vulns/CVE-2024-2511
+- type: WEB
+  url: https://www.openssl.org/news/secadv/20240408.txt
+affected:
+- package:
+    ecosystem: FreeBSD:ports
+    name: openssl31
+  ranges:
+  - type: ECOSYSTEM
+    events:
+    - fixed: 3.1.5_3
+    - introduced: '0'
+- package:
+    ecosystem: FreeBSD:ports
+    name: openssl32
+  ranges:
+  - type: ECOSYSTEM
+    events:
+    - fixed: 3.2.1_2
+    - introduced: '0'
+- package:
+    ecosystem: FreeBSD:ports
+    name: openssl-quictls
+  ranges:
+  - type: ECOSYSTEM
+    events:
+    - fixed: 3.0.13_3
+    - introduced: '0'
+- package:
+    ecosystem: FreeBSD:ports
+    name: openssl31-quictls
+  ranges:
+  - type: ECOSYSTEM
+    events:
+    - fixed: 3.1.5_1
+    - introduced: '0'
+database_specific:
+  vid: 7c217849-f7d7-11ee-a490-84a93843eb75
+  discovery: '2024-04-08T00:00:00Z'
+id: FBSD-2024-0245

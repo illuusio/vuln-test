@@ -1,0 +1,29 @@
+schema_version: 1.7.0
+modified: '2024-10-10T00:00:00Z'
+published: '2024-10-10T00:00:00Z'
+summary: firefox -- use-after-free code execution
+details: |-
+  security@mozilla.org reports:
+
+  > An attacker was able to achieve code execution in the
+  > content process by exploiting a use-after-free in Animation
+  > timelines. We have had reports of this vulnerability being
+  > exploited in the wild.
+references:
+- type: ADVISORY
+  url: https://api.osv.dev/v1/vulns/CVE-2024-9680
+- type: ADVISORY
+  url: https://nvd.nist.gov/vuln/detail/CVE-2024-9680
+affected:
+- package:
+    ecosystem: FreeBSD:ports
+    name: firefox-esr
+  ranges:
+  - type: ECOSYSTEM
+    events:
+    - fixed: 128.3.1,1
+    - introduced: '0'
+database_specific:
+  vid: 2fb13238-872d-11ef-bd1e-b42e991fc52e
+  discovery: '2024-10-09T00:00:00Z'
+id: FBSD-2024-0078

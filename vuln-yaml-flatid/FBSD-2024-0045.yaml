@@ -1,0 +1,53 @@
+schema_version: 1.7.0
+modified: '2024-11-14T00:00:00Z'
+published: '2024-11-14T00:00:00Z'
+summary: Gitlab -- vulnerabilities
+details: |-
+  Gitlab reports:
+
+  > Unauthorized access to Kubernetes cluster agent
+  >
+  > Device OAuth flow allows for cross window forgery
+  >
+  > Denial of Service by importing malicious crafted FogBugz import payload
+  >
+  > Stored XSS through javascript URL in Analytics dashboards
+  >
+  > HTML injection in vulnerability Code flow could lead to XSS on self hosted instances
+  >
+  > Information disclosure through an API endpoint
+references:
+- type: ADVISORY
+  url: https://api.osv.dev/v1/vulns/CVE-2024-9693
+- type: ADVISORY
+  url: https://api.osv.dev/v1/vulns/CVE-2024-7404
+- type: ADVISORY
+  url: https://api.osv.dev/v1/vulns/CVE-2024-8648
+- type: ADVISORY
+  url: https://api.osv.dev/v1/vulns/CVE-2024-8180
+- type: ADVISORY
+  url: https://api.osv.dev/v1/vulns/CVE-2024-10240
+- type: WEB
+  url: 
+    https://about.gitlab.com/releases/2024/11/13/patch-release-gitlab-17-5-2-released/
+affected:
+- package:
+    ecosystem: FreeBSD:ports
+    name: gitlab-ee
+  ranges:
+  - type: ECOSYSTEM
+    events:
+    - introduced: 17.5.0
+    - fixed: 17.5.2
+  - type: ECOSYSTEM
+    events:
+    - introduced: 17.4.0
+    - fixed: 17.4.4
+  - type: ECOSYSTEM
+    events:
+    - introduced: 16.0.0
+    - fixed: 17.3.7
+database_specific:
+  vid: 1eb4d32c-a245-11ef-998c-2cf05da270f3
+  discovery: '2024-11-13T00:00:00Z'
+id: FBSD-2024-0045

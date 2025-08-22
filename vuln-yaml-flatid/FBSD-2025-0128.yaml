@@ -1,0 +1,21 @@
+schema_version: 1.7.0
+modified: '2025-05-14T00:00:00Z'
+published: '2025-05-14T00:00:00Z'
+summary: vscode -- security feature bypass vulnerability
+details: |-
+  VSCode developers report:
+
+  > A security feature bypass vulnerability exists in VS Code 1.100.0 and earlier versions where a maliciously crafted URL could be considered trusted when it should not have due to how VS Code handled glob patterns in the trusted domains feature. When paired with the #fetch tool in Chat, this scenario would require the attacker to convince an LLM (via prompt injection) to fetch the maliciously crafted URL but when fetched, the user would have no moment to confirm the flighting of the request.
+references:
+- type: ADVISORY
+  url: https://api.osv.dev/v1/vulns/CVE-2025-21264
+- type: WEB
+  url: 
+    https://github.com/microsoft/vscode/security/advisories/GHSA-742r-ggwg-vqxm
+- type: WEB
+  url: https://msrc.microsoft.com/update-guide/vulnerability/CVE-2025-21264
+affected: []
+database_specific:
+  vid: 6f10b49d-07b1-4be4-8abf-edf880b16ad2
+  discovery: '2025-05-13T00:00:00Z'
+id: FBSD-2025-0128

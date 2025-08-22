@@ -1,0 +1,56 @@
+schema_version: 1.7.0
+modified: '2024-08-20T00:00:00Z'
+published: '2024-08-20T00:00:00Z'
+summary: Jinja2 -- Vulnerable to HTML attribute injection when passing user 
+  input as keys to xmlattr filter
+details: |-
+  security-advisories@github.com reports:
+
+  > Jinja is an extensible templating engine. The `xmlattr` filter in
+  > affected versions of Jinja accepts keys containing non-attribute
+  > characters. XML/HTML attributes cannot contain spaces, `/`, `>`,
+  > or `=`, as each would then be interpreted as starting a separate
+  > attribute. If an application accepts keys (as opposed to only
+  > values) as user input, and renders these in pages that other users
+  > see as well, an attacker could use this to inject other attributes
+  > and perform XSS. The fix for CVE-2024-22195 only addressed spaces
+  > but not other characters. Accepting keys as user input is now
+  > explicitly considered an unintended use case of the `xmlattr` filter,
+  > and code that does so without otherwise validating the input should
+  > be flagged as insecure, regardless of Jinja version. Accepting
+  > \_values\_ as user input continues to be safe. This vulnerability
+  > is fixed in 3.1.4.
+references:
+- type: ADVISORY
+  url: https://api.osv.dev/v1/vulns/CVE-2024-34064
+- type: ADVISORY
+  url: https://nvd.nist.gov/vuln/detail/CVE-2024-34064
+affected:
+- package:
+    ecosystem: FreeBSD:ports
+    name: py39-Jinja2
+  ranges:
+  - type: ECOSYSTEM
+    events:
+    - fixed: 3.1.4
+    - introduced: '0'
+- package:
+    ecosystem: FreeBSD:ports
+    name: py310-Jinja2
+  ranges:
+  - type: ECOSYSTEM
+    events:
+    - fixed: 3.1.4
+    - introduced: '0'
+- package:
+    ecosystem: FreeBSD:ports
+    name: py311-Jinja2
+  ranges:
+  - type: ECOSYSTEM
+    events:
+    - fixed: 3.1.4
+    - introduced: '0'
+database_specific:
+  vid: 04c9c3f8-5ed3-11ef-8262-b0416f0c4c67
+  discovery: '2024-05-06T00:00:00Z'
+id: FBSD-2024-0138

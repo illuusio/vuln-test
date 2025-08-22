@@ -1,0 +1,21 @@
+schema_version: 1.7.0
+modified: '2025-02-13T00:00:00Z'
+published: '2025-02-13T00:00:00Z'
+summary: security/openvpn-auth-ldap -- Fix buffer overflow in challenge/response
+details: |-
+  Graham Northup reports:
+
+  > A buffer overflow in extract\_openvpn\_cr allows attackers with a valid
+  > LDAP username and who can control the challenge/response password field
+  > to pass a string with more than 14 colons into this field and cause a
+  > buffer overflow.
+references:
+- type: ADVISORY
+  url: https://api.osv.dev/v1/vulns/CVE-2024-28820
+- type: ADVISORY
+  url: https://nvd.nist.gov/vuln/detail/CVE-2024-28820
+affected: []
+database_specific:
+  vid: e915b60e-ea25-11ef-a1c0-0050569f0b83
+  discovery: '2024-06-27T00:00:00Z'
+id: FBSD-2025-0225

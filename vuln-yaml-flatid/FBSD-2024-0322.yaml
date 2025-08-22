@@ -1,0 +1,101 @@
+schema_version: 1.7.0
+modified: '2024-01-16T00:00:00Z'
+published: '2024-01-16T00:00:00Z'
+summary: xorg server -- Multiple vulnerabilities
+details: |-
+  The X.Org project reports:
+
+  > * CVE-2023-6816: Heap buffer overflow in DeviceFocusEvent
+  >   and ProcXIQueryPointer
+  >
+  >   Both DeviceFocusEvent and the XIQueryPointer reply contain a bit
+  >   for each logical button currently down. Buttons can be arbitrarily
+  >   mapped to any value up to 255 but the X.Org Server was only
+  >   allocating space for the device's number of buttons,
+  >   leading to a heap overflow if a bigger value was used.
+  > * CVE-2024-0229: Reattaching to different master device may lead
+  >   to out-of-bounds memory access
+  >
+  >   If a device has both a button class and a key class and
+  >   numButtons is zero, we can get an out-of-bounds write due
+  >   to event under-allocation in the DeliverStateNotifyEvent
+  >   function.
+  > * CVE-2024-21885: Heap buffer overflow in
+  >   XISendDeviceHierarchyEvent
+  >
+  >   The XISendDeviceHierarchyEvent() function allocates space to
+  >   store up to MAXDEVICES (256) xXIHierarchyInfo structures in info.
+  >   If a device with a given ID was removed and a new device with
+  >   the same ID added both in the same operation,
+  >   the single device ID will lead to two info structures being
+  >   written to info.
+  >   Since this case can occur for every device ID at once,
+  >   a total of two times MAXDEVICES info structures might be written
+  >   to the allocation, leading to a heap buffer overflow.
+  > * CVE-2024-21886: Heap buffer overflow in DisableDevice
+  >
+  >   The DisableDevice() function is called whenever an enabled device
+  >   is disabled and it moves the device from the inputInfo.devices
+  >   linked list to the inputInfo.off\_devices linked list.
+  >   However, its link/unlink operation has an issue during the recursive
+  >   call to DisableDevice() due to the prev pointer pointing to a
+  >   removed device.
+  >   This issue leads to a length mismatch between the total number of
+  >   devices and the number of device in the list, leading to a heap
+  >   overflow and, possibly, to local privilege escalation.
+references:
+- type: ADVISORY
+  url: https://api.osv.dev/v1/vulns/CVE-2023-6816
+- type: ADVISORY
+  url: https://api.osv.dev/v1/vulns/CVE-2024-0229
+- type: ADVISORY
+  url: https://api.osv.dev/v1/vulns/CVE-2024-21885
+- type: ADVISORY
+  url: https://api.osv.dev/v1/vulns/CVE-2024-21886
+- type: WEB
+  url: https://lists.x.org/archives/xorg/2024-January/061525.html
+affected:
+- package:
+    ecosystem: FreeBSD:ports
+    name: xephyr
+  ranges:
+  - type: ECOSYSTEM
+    events:
+    - fixed: 21.1.11,1
+    - introduced: '0'
+- package:
+    ecosystem: FreeBSD:ports
+    name: xorg-vfbserver
+  ranges:
+  - type: ECOSYSTEM
+    events:
+    - fixed: 21.1.11,1
+    - introduced: '0'
+- package:
+    ecosystem: FreeBSD:ports
+    name: xorg-nextserver
+  ranges:
+  - type: ECOSYSTEM
+    events:
+    - fixed: 21.1.11,2
+    - introduced: '0'
+- package:
+    ecosystem: FreeBSD:ports
+    name: xwayland
+  ranges:
+  - type: ECOSYSTEM
+    events:
+    - fixed: 23.2.4
+    - introduced: '0'
+- package:
+    ecosystem: FreeBSD:ports
+    name: xwayland-devel
+  ranges:
+  - type: ECOSYSTEM
+    events:
+    - fixed: 21.0.99.1.653
+    - introduced: '0'
+database_specific:
+  vid: 7467c611-b490-11ee-b903-001fc69cd6dc
+  discovery: '2024-01-16T00:00:00Z'
+id: FBSD-2024-0322

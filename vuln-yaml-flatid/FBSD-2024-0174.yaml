@@ -1,0 +1,40 @@
+schema_version: 1.7.0
+modified: '2024-09-20T00:00:00Z'
+published: '2024-07-01T00:00:00Z'
+summary: OpenSSH -- Race condition resulting in potential remote code execution
+details: |-
+  The OpenSSH project reports:
+
+  > A race condition in sshd(8) could allow remote code execution as root on non-OpenBSD systems.
+references:
+- type: ADVISORY
+  url: https://api.osv.dev/v1/vulns/CVE-2024-6387
+- type: WEB
+  url: https://www.openssh.com/security.html
+- type: ADVISORY
+  url: https://www.freebsd.org/security/advisories/FreeBSD-SA-24:04.openssh.asc
+affected:
+- package:
+    ecosystem: FreeBSD:ports
+    name: FreeBSD
+  ranges:
+  - type: ECOSYSTEM
+    events:
+    - introduced: '14.1'
+    - fixed: '14.1_2'
+  - type: ECOSYSTEM
+    events:
+    - introduced: '14.0'
+    - fixed: '14.0_8'
+  - type: ECOSYSTEM
+    events:
+    - introduced: '13.3'
+    - fixed: '13.3_4'
+  - type: ECOSYSTEM
+    events:
+    - introduced: '13.2'
+    - fixed: '13.2_12'
+database_specific:
+  vid: f1a00122-3797-11ef-b611-84a93843eb75
+  discovery: '2024-07-01T00:00:00Z'
+id: FBSD-2024-0174

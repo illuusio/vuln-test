@@ -1,0 +1,28 @@
+schema_version: 1.7.0
+modified: '2025-07-06T00:00:00Z'
+published: '2025-07-06T00:00:00Z'
+summary: FreeBSD -- Use-after-free in multi-threaded xz decoder
+details: |-
+  Problem Description:
+  ====================
+
+  A worker thread could free its input buffer after decoding,
+  while the main thread might still be writing to it. This leads to
+  an use-after-free condition on heap memory.
+
+  Impact:
+  =======
+
+  An attacker may use specifically crafted .xz file to cause
+  multi-threaded xz decoder to crash, or potentially run arbitrary
+  code under the credential the decoder was executed.
+references:
+- type: ADVISORY
+  url: https://api.osv.dev/v1/vulns/CVE-2025-31115
+- type: ADVISORY
+  url: https://www.freebsd.org/security/advisories/FreeBSD-SA-25:06.xz.asc
+affected: []
+database_specific:
+  vid: 7642ba72-5abf-11f0-87ba-002590c1f29c
+  discovery: '2025-07-02T00:00:00Z'
+id: FBSD-2025-0055
