@@ -46,10 +46,10 @@ This repository contains vulnerability data converted from [VuXML](https://vuxml
 - Simple yearly vulnerability lookup by package name and year
 
 ## Conversion Instructions
-Use Python 3.11+ (requires the `lxml`, `markdownify` (for convert HTML to CommonMark) and `ruamel.yaml` (for YAML) module):
+Use Python 3.11+ (requires the `lxml`, `markdownify` (for convert HTML to CommonMark), `tomli_w` (for TOML writing) and `ruamel.yaml` (for YAML) module):
 
 > [!TIP]
-> If you like to have YAML output add `-Y` in parameters.
+> If you like to have YAML output add `-Y` in parameters. For TOML output add `-T`.
 
 ```bash
 # Download VuXML data

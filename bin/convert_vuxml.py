@@ -39,9 +39,11 @@ from pathlib import Path
 import re
 import sys
 from markdownify import markdownify as md
+
 # ruamel.yaml is a YAML 1.2 loader/dumper package for Python.
 from ruamel.yaml import YAML
 from ruamel.yaml.scalarstring import LiteralScalarString
+import tomli_w
 
 re_date = re.compile(r"^(19|20)[0-9]{2}-[0-9]{2}-[0-9]{2}$")
 re_invalid_package_name = re.compile("[@!#$%^&*()<>?/\\|}{~:]")
@@ -126,14 +128,16 @@ def warn(string):
 # main
 def main():
     try:
-        opts, args = getopt.getopt(sys.argv[1:], "e:o:FrY")
+        opts, args = getopt.getopt(sys.argv[1:], "e:o:FrYT")
     except getopt.GetoptError as e:
         return usage(e)
     ecosystem = "FreeBSD:ports"
     output = None
     output_flat = False
     output_running = False
+    output_json = False
     output_yaml = False
+    output_toml = False
     yaml = None
 
     output_id = {}
@@ -150,11 +154,16 @@ def main():
         elif name == "-Y":
             output_yaml = True
             yaml = YAML()
+        elif name == "-T":
+            output_toml = True
         else:
             return usage("%s: Unsupported option" % name)
 
     if len(args) != 1:
         return usage()
+
+    if output_yaml == False and output_toml == False:
+        output_json = True
 
     parser = etree.XMLParser(dtd_validation=False)
     tree = etree.parse(args[0], parser)
@@ -222,9 +231,9 @@ def main():
                 # Documentatio states that:
                 # The details field is CommonMark markdown (a subset of GitHub-Flavored Markdown).
                 # Input is in HTML5. Make conversion with markdownify.
-                if output_yaml == False:
+                if output_json or output_toml:
                     details = str(md(details_html))
-                else:
+                elif output_yaml == True:
                     # With YAML we like to have output:
                     # details: |-
                     #    Some text here
@@ -430,21 +439,30 @@ def main():
                 if os.path.isdir(output_path_with_name) is False:
                     os.mkdir(output_path_with_name)
 
-                if output_yaml == False:
+                if output_json:
                     output_with_suffix = output_file + ".json"
-                else:
+                elif output_yaml:
                     output_with_suffix = output_file + ".yaml"
+                else:
+                    output_with_suffix = output_file + ".toml"
 
                 output_full_path = output_path_with_name + "/" + output_with_suffix
 
                 if os.path.isfile(output_full_path) is True:
                     print("already here: " + output_full_path)
 
-                with open(output_full_path, "w") as f:
-                    if output_yaml == False:
-                        print(json.dumps(entry, indent=4, sort_keys=True), file=f)
-                    else:
-                        yaml.dump(entry, f)
+                # JSON and YAML take string but with TOML dump
+                # one have to open file with binary to write
+                # as bytes
+                if output_json or output_yaml:
+                    with open(output_full_path, "w") as f:
+                        if output_json:
+                            print(json.dumps(entry, indent=4, sort_keys=True), file=f)
+                        elif output_yaml:
+                            yaml.dump(entry, f)
+                else:
+                    with open(output_full_path, "wb") as f:
+                        tomli_w.dump(entry, f, indent=4, multiline_strings=True)
 
                 if os.path.isfile(output_full_path):
                     timeint = int(date_obj.strftime("%s"))
@@ -470,18 +488,22 @@ def main():
                         ):
                             os.symlink(src_path, to_path)
             except Exception as e:
+                print("There was an error: ", e)
                 ret = error(e)
         else:
             entries.append(entry)
 
     if output is None:
-        if output_yaml == False:
+        if output_json:
             if len(entries) == 1:
                 print(json.dumps(entries[0], indent=4))
             else:
                 print(json.dumps(entries, indent=4))
-        else:
+        elif output_yaml:
             yaml.dump(entries, sys.stdout)
+        else:
+            for item in entries:
+                print(tomli_w.dumps(item, indent=4, multiline_strings=True))
 
     return ret
 
