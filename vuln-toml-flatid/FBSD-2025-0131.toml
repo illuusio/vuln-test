@@ -1,0 +1,33 @@
+schema_version = "1.7.0"
+modified = "2025-05-11T00:00:00Z"
+published = "2025-05-11T00:00:00Z"
+summary = "Mozilla -- memory corruption"
+details = """
+security@mozilla.org reports:
+
+> Memory safety bugs present in Firefox 137 and Thunderbird 137.
+> Some of these bugs showed evidence of memory corruption and
+> we presume that with enough effort some of these could have
+> been exploited to run arbitrary code."""
+references = [
+    { type = "ADVISORY", url = "https://api.osv.dev/v1/vulns/CVE-2025-4092" },
+    { type = "ADVISORY", url = "https://nvd.nist.gov/vuln/detail/CVE-2025-4092" },
+]
+id = "FBSD-2025-0131"
+
+[[affected]]
+
+[affected.package]
+ecosystem = "FreeBSD:ports"
+name = "thunderbird"
+
+[[affected.ranges]]
+type = "ECOSYSTEM"
+events = [
+    { fixed = "138.0" },
+    { introduced = "0" },
+]
+
+[database_specific]
+vid = "a8a1a8e7-2e85-11f0-a989-b42e991fc52e"
+discovery = "2025-04-29T00:00:00Z"

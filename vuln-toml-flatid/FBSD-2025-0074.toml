@@ -1,0 +1,29 @@
+schema_version = "1.7.0"
+modified = "2025-06-22T00:00:00Z"
+published = "2025-06-22T00:00:00Z"
+summary = "cisco -- OpenH264 Decoding Functions Heap Overflow Vulnerability"
+details = """
+Cisco reports:
+
+> A vulnerability in the decoding functions
+> of OpenH264 codec library could allow a remote, unauthenticated
+> attacker to trigger a heap overflow. This vulnerability is due to
+> a race condition between a Sequence Parameter Set (SPS) memory
+> allocation and a subsequent non Instantaneous Decoder Refresh
+> (non-IDR) Network Abstraction Layer (NAL) unit memory usage. An
+> attacker could exploit this vulnerability by crafting a malicious
+> bitstream and tricking a victim user into processing an arbitrary
+> video containing the malicious bistream. An exploit could allow
+> the attacker to cause an unexpected crash in the victim's user
+> decoding client and, possibly, perform arbitrary commands on the
+> victim's host by abusing the heap overflow."""
+references = [
+    { type = "ADVISORY", url = "https://api.osv.dev/v1/vulns/CVE-2025-27091" },
+    { type = "ADVISORY", url = "https://nvd.nist.gov/vuln/detail/CVE-2025-27091" },
+]
+affected = []
+id = "FBSD-2025-0074"
+
+[database_specific]
+vid = "03ba1cdd-4faf-11f0-af06-00a098b42aeb"
+discovery = "2025-02-20T00:00:00Z"

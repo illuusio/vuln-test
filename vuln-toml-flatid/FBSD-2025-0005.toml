@@ -1,0 +1,27 @@
+schema_version = "1.7.0"
+modified = "2025-08-13T00:00:00Z"
+published = "2025-08-13T00:00:00Z"
+summary = "www/varnish7 -- Denial of Service in HTTP/2"
+details = """
+Varnish Development Team reports:
+
+> A denial of service attack can be performed on Varnish Cache servers
+> that have the HTTP/2 protocol turned on. An attacker can create a
+> large number of streams and immediately reset them without ever
+> reaching the maximum number of concurrent streams allowed for the
+> session, causing the Varnish server to consume unnecessary
+> resources processing requests for which the response will not be
+> delivered.
+>
+> This attack is a variant of the HTTP/2 Rapid Reset Attack, which was
+> partially handled as VSV00013."""
+references = [
+    { type = "ADVISORY", url = "https://api.osv.dev/v1/vulns/CVE-2025-8671" },
+    { type = "ADVISORY", url = "https://nvd.nist.gov/vuln/detail/CVE-2025-8671" },
+]
+affected = []
+id = "FBSD-2025-0005"
+
+[database_specific]
+vid = "e2d49973-785a-11f0-a1c0-0050569f0b83"
+discovery = "2025-08-13T00:00:00Z"

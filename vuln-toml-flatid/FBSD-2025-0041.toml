@@ -1,0 +1,119 @@
+schema_version = "1.7.0"
+modified = "2025-07-15T00:00:00Z"
+published = "2025-07-12T00:00:00Z"
+summary = "libxml2 -- multiple vulnerabilities"
+details = """
+Alan Coopersmith reports:
+
+> As discussed in
+> <https://gitlab.gnome.org/GNOME/libxml2/-/issues/913> the
+> security policy of libxml2 has been changed to disclose vulnerabilities
+> before fixes are available so that people other than the maintainer can
+> contribute to fixing security issues in this library.
+>
+> As part of this, the following 5 CVE's have been disclosed recently:
+>
+> (CVE-2025-49794) Heap use after free (UAF) leads to Denial of service (DoS)
+> <https://gitlab.gnome.org/GNOME/libxml2/-/issues/931> [...]
+>
+> (CVE-2025-49795) Null pointer dereference leads to Denial of service (DoS)
+> <https://gitlab.gnome.org/GNOME/libxml2/-/issues/932> [...]
+>
+> (CVE-2025-49796) Type confusion leads to Denial of service (DoS)
+> <https://gitlab.gnome.org/GNOME/libxml2/-/issues/933> [...]
+>
+> For all three of the above, note that upstream is considering removing Schematron support completely, as discussed in
+> <https://gitlab.gnome.org/GNOME/libxml2/-/issues/935>.
+>
+> (CVE-2025-6021) Integer Overflow Leading to Buffer Overflow in xmlBuildQName()
+> <https://gitlab.gnome.org/GNOME/libxml2/-/issues/926> [...]
+>
+> (CVE-2025-6170) Stack-based Buffer Overflow in xmllint Shell
+> <https://gitlab.gnome.org/GNOME/libxml2/-/issues/941> [...]"""
+id = "FBSD-2025-0041"
+
+[[references]]
+type = "ADVISORY"
+url = "https://api.osv.dev/v1/vulns/CVE-2025-6021"
+
+[[references]]
+type = "ADVISORY"
+url = "https://api.osv.dev/v1/vulns/CVE-2025-6170"
+
+[[references]]
+type = "ADVISORY"
+url = "https://api.osv.dev/v1/vulns/CVE-2025-49794"
+
+[[references]]
+type = "ADVISORY"
+url = "https://api.osv.dev/v1/vulns/CVE-2025-49795"
+
+[[references]]
+type = "ADVISORY"
+url = "https://api.osv.dev/v1/vulns/CVE-2025-49795"
+
+[[references]]
+type = "WEB"
+url = "https://www.openwall.com/lists/oss-security/2025/06/16/6"
+
+[[references]]
+type = "WEB"
+url = "https://gitlab.gnome.org/Teams/Releng/security/-/wikis/2025#libxml2-and-libxslt"
+
+[[references]]
+type = "WEB"
+url = "https://gitlab.gnome.org/GNOME/libxml2/-/issues/913"
+
+[[references]]
+type = "WEB"
+url = "https://gitlab.gnome.org/GNOME/libxml2/-/issues/931"
+
+[[references]]
+type = "WEB"
+url = "https://gitlab.gnome.org/GNOME/libxml2/-/issues/932"
+
+[[references]]
+type = "WEB"
+url = "https://gitlab.gnome.org/GNOME/libxml2/-/issues/933"
+
+[[references]]
+type = "WEB"
+url = "https://gitlab.gnome.org/GNOME/libxml2/-/issues/935"
+
+[[references]]
+type = "WEB"
+url = "https://gitlab.gnome.org/GNOME/libxml2/-/issues/926"
+
+[[references]]
+type = "WEB"
+url = "https://gitlab.gnome.org/GNOME/libxml2/-/issues/941"
+
+[[affected]]
+
+[affected.package]
+ecosystem = "FreeBSD:ports"
+name = "linux-c7-libxml2"
+
+[[affected.ranges]]
+type = "ECOSYSTEM"
+events = [
+    { fixed = "2.14.5" },
+    { introduced = "0" },
+]
+
+[[affected]]
+
+[affected.package]
+ecosystem = "FreeBSD:ports"
+name = "linux-rl9-libxml2"
+
+[[affected.ranges]]
+type = "ECOSYSTEM"
+events = [
+    { fixed = "2.14.5" },
+    { introduced = "0" },
+]
+
+[database_specific]
+vid = "abbc8912-5efa-11f0-ae84-99047d0a6bcc"
+discovery = "2025-05-27T00:00:00Z"

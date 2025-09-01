@@ -1,0 +1,54 @@
+schema_version = "1.7.0"
+modified = "2024-10-24T00:00:00Z"
+published = "2024-10-24T00:00:00Z"
+summary = "Gitlab -- vulnerabilities"
+details = """
+Gitlab reports:
+
+> HTML injection in Global Search may lead to XSS
+>
+> DoS via XML manifest file import"""
+id = "FBSD-2024-0071"
+
+[[references]]
+type = "ADVISORY"
+url = "https://api.osv.dev/v1/vulns/CVE-2024-8312"
+
+[[references]]
+type = "ADVISORY"
+url = "https://api.osv.dev/v1/vulns/CVE-2024-6826"
+
+[[references]]
+type = "WEB"
+url = "https://about.gitlab.com/releases/2024/10/23/patch-release-gitlab-17-5-1-released/"
+
+[[affected]]
+
+[affected.package]
+ecosystem = "FreeBSD:ports"
+name = "gitlab-ee"
+
+[[affected.ranges]]
+type = "ECOSYSTEM"
+events = [
+    { introduced = "17.5.0" },
+    { fixed = "17.5.1" },
+]
+
+[[affected.ranges]]
+type = "ECOSYSTEM"
+events = [
+    { introduced = "17.4.0" },
+    { fixed = "17.4.3" },
+]
+
+[[affected.ranges]]
+type = "ECOSYSTEM"
+events = [
+    { introduced = "11.2.0" },
+    { fixed = "17.3.6" },
+]
+
+[database_specific]
+vid = "78e6c113-91c1-11ef-a904-2cf05da270f3"
+discovery = "2024-10-23T00:00:00Z"

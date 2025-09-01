@@ -1,0 +1,35 @@
+schema_version = "1.7.0"
+modified = "2024-04-19T00:00:00Z"
+published = "2024-04-19T00:00:00Z"
+summary = "jenkins -- Terrapin SSH vulnerability in Jenkins CLI client"
+details = """
+Jenkins Security Advisory:
+
+> Description
+> ===========
+>
+> ##### (Medium) SECURITY-3386 / CVE-2023-48795
+>
+> Terrapin SSH vulnerability in Jenkins CLI client"""
+references = [
+    { type = "ADVISORY", url = "https://api.osv.dev/v1/vulns/CVE-2023-48795" },
+    { type = "WEB", url = "https://www.jenkins.io/security/advisory/2024-04-17/" },
+]
+id = "FBSD-2024-0238"
+
+[[affected]]
+
+[affected.package]
+ecosystem = "FreeBSD:ports"
+name = "jenkins-lts"
+
+[[affected.ranges]]
+type = "ECOSYSTEM"
+events = [
+    { fixed = "2.440.3" },
+    { introduced = "0" },
+]
+
+[database_specific]
+vid = "4ebdd56b-fe72-11ee-bc57-00e081b7aa2d"
+discovery = "2024-04-17T00:00:00Z"

@@ -1,0 +1,40 @@
+schema_version = "1.7.0"
+modified = "2024-01-23T00:00:00Z"
+published = "2024-01-23T00:00:00Z"
+summary = "TinyMCE -- mXSS in multiple plugins"
+details = """
+TinyMCE reports:
+
+> Special characters in unescaped text nodes can trigger mXSS
+> when using TinyMCE undo/redo, getContentAPI, resetContentAPI,
+> and Autosave plugin"""
+id = "FBSD-2024-0317"
+
+[[references]]
+type = "ADVISORY"
+url = "https://api.osv.dev/v1/vulns/CVE-2023-48219"
+
+[[references]]
+type = "WEB"
+url = "https://github.com/tinymce/tinymce/security/advisories/GHSA-v626-r774-j7f8"
+
+[[references]]
+type = "WEB"
+url = "https://github.com/roundcube/roundcubemail/releases/tag/1.6.6"
+
+[[affected]]
+
+[affected.package]
+ecosystem = "FreeBSD:ports"
+name = "roundcube"
+
+[[affected.ranges]]
+type = "ECOSYSTEM"
+events = [
+    { fixed = "1.6.6,1" },
+    { introduced = "0" },
+]
+
+[database_specific]
+vid = "9532a361-b84d-11ee-b0d7-84a93843eb75"
+discovery = "2023-11-15T00:00:00Z"

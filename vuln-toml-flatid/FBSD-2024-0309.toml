@@ -1,0 +1,36 @@
+schema_version = "1.7.0"
+modified = "2024-01-31T00:00:00Z"
+published = "2024-01-31T00:00:00Z"
+summary = "qt6-webengine -- Multiple vulnerabilities"
+details = """
+Qt qtwebengine-chromium repo reports:
+
+> Backports for 3 security bugs in Chromium:
+>
+> * [1505080] High CVE-2024-0807: Use after free in WebAudio
+> * [1504936] Critical CVE-2024-0808: Integer underflow in WebUI
+> * [1496250] Medium CVE-2024-0810: Insufficient policy enforcement in DevTools"""
+references = [
+    { type = "ADVISORY", url = "https://api.osv.dev/v1/vulns/CVE-2024-0807" },
+    { type = "ADVISORY", url = "https://api.osv.dev/v1/vulns/CVE-2024-0808" },
+    { type = "ADVISORY", url = "https://api.osv.dev/v1/vulns/CVE-2024-0810" },
+    { type = "WEB", url = "https://code.qt.io/cgit/qt/qtwebengine-chromium.git/log/?h=112-based" },
+]
+id = "FBSD-2024-0309"
+
+[[affected]]
+
+[affected.package]
+ecosystem = "FreeBSD:ports"
+name = "qt6-webengine"
+
+[[affected.ranges]]
+type = "ECOSYSTEM"
+events = [
+    { fixed = "6.6.1_4" },
+    { introduced = "0" },
+]
+
+[database_specific]
+vid = "bbcb1584-c068-11ee-bdd6-4ccc6adda413"
+discovery = "2024-01-30T00:00:00Z"

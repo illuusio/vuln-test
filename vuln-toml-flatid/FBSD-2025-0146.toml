@@ -1,0 +1,54 @@
+schema_version = "1.7.0"
+modified = "2025-04-24T00:00:00Z"
+published = "2025-04-24T00:00:00Z"
+summary = "Grafana -- Authorization bypass in data source proxy API"
+details = """
+Grafana Labs reports:
+
+> This vulnerability, which was discovered while reviewing a pull
+> request from an external contributor, effects Grafana’s data source
+> proxy API and allows authorization checks to be bypassed by adding
+> an extra slash character (/) in the URL path. Among Grafana-maintained
+> data sources, the vulnerability only affects the read paths
+> of Prometheus (all flavors) and Alertmanager when configured with
+> basic authorization.
+>
+> The CVSS score for this vulnerability is
+> [5.0 MEDIUM](https://www.first.org/cvss/calculator/3-1#CVSS:3.1/AV:N/AC:L/PR:L/UI:N/S:C/C:L/I:N/A:N)."""
+id = "FBSD-2025-0146"
+
+[[references]]
+type = "ADVISORY"
+url = "https://api.osv.dev/v1/vulns/CVE-2025-3454"
+
+[[references]]
+type = "WEB"
+url = "https://grafana.com/blog/2025/04/22/grafana-security-release-medium-and-high-severity-fixes-for-cve-2025-3260-cve-2025-2703-cve-2025-3454/"
+
+[[affected]]
+
+[affected.package]
+ecosystem = "FreeBSD:ports"
+name = "grafana8"
+
+[[affected.ranges]]
+type = "ECOSYSTEM"
+events = [
+    { introduced = "8.0.0" },
+]
+
+[[affected]]
+
+[affected.package]
+ecosystem = "FreeBSD:ports"
+name = "grafana9"
+
+[[affected.ranges]]
+type = "ECOSYSTEM"
+events = [
+    { introduced = "9.0.0" },
+]
+
+[database_specific]
+vid = "310f5923-211c-11f0-8ca6-6c3be5272acd"
+discovery = "2025-03-25T00:00:00Z"

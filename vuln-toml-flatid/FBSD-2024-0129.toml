@@ -1,0 +1,38 @@
+schema_version = "1.7.0"
+modified = "2024-08-30T00:00:00Z"
+published = "2024-08-30T00:00:00Z"
+summary = "firefox -- multiple vulnerabilities"
+details = """
+security@mozilla.org reports:
+
+> * Firefox adds web-compatibility shims in place of some
+>   tracking scripts blocked by Enhanced Tracking Protection.
+>   On a site protected by Content Security Policy in
+>   \"strict-dynamic\" mode, an attacker able to
+>   inject an HTML element could have used a DOM
+>   Clobbering attack on some of the shims and achieved XSS,
+>   bypassing the CSP strict-dynamic protection.
+> * Form validation popups could capture escape key presses.
+>   Therefore, spamming form validation messages could be used
+>   to prevent users from exiting full-screen mode.
+> * When almost out-of-memory an elliptic curve key which
+>   was never allocated could have been freed again.
+> * It was possible to move the cursor using pointerlock
+>   from an iframe. This allowed moving the cursor outside
+>   of the viewport and the Firefox window."""
+references = [
+    { type = "ADVISORY", url = "https://api.osv.dev/v1/vulns/CVE-2024-7524" },
+    { type = "ADVISORY", url = "https://nvd.nist.gov/vuln/detail/CVE-2024-7524" },
+    { type = "ADVISORY", url = "https://api.osv.dev/v1/vulns/CVE-2024-6610" },
+    { type = "ADVISORY", url = "https://nvd.nist.gov/vuln/detail/CVE-2024-6610" },
+    { type = "ADVISORY", url = "https://api.osv.dev/v1/vulns/CVE-2024-6609" },
+    { type = "ADVISORY", url = "https://nvd.nist.gov/vuln/detail/CVE-2024-6609" },
+    { type = "ADVISORY", url = "https://api.osv.dev/v1/vulns/CVE-2024-6608" },
+    { type = "ADVISORY", url = "https://nvd.nist.gov/vuln/detail/CVE-2024-6608" },
+]
+affected = []
+id = "FBSD-2024-0129"
+
+[database_specific]
+vid = "5e4d7172-66b8-11ef-b104-b42e991fc52e"
+discovery = "2024-08-06T00:00:00Z"

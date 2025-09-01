@@ -1,0 +1,24 @@
+schema_version = "1.7.0"
+modified = "2024-07-04T00:00:00Z"
+published = "2024-07-04T00:00:00Z"
+summary = "Apache httpd -- source code disclosure"
+details = """
+The Apache httpd project reports:
+
+> isource code disclosure with handlers configured via AddType
+> (CVE-2024-39884) (Important). A regression in the core of Apache HTTP
+> Server 2.4.60 ignores some use of the legacy content-type based
+> configuration of handlers. \"AddType\" and similar configuration,
+> under some circumstances where files are requested indirectly, result
+> in source code disclosure of local content. For example, PHP scripts
+> may be served instead of interpreted."""
+references = [
+    { type = "ADVISORY", url = "https://api.osv.dev/v1/vulns/CVE-2024-39884" },
+    { type = "WEB", url = "https://httpd.apache.org/security/vulnerabilities_24.html" },
+]
+affected = []
+id = "FBSD-2024-0170"
+
+[database_specific]
+vid = "5d921a8c-3a43-11ef-b611-84a93843eb75"
+discovery = "2024-07-04T00:00:00Z"

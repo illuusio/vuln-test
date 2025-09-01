@@ -1,0 +1,22 @@
+schema_version = "1.7.0"
+modified = "2024-02-11T00:00:00Z"
+published = "2024-02-11T00:00:00Z"
+summary = "p5-Spreadsheet-ParseExcel -- Remote Code Execution Vulnerability"
+details = """
+Spreadsheet-ParseExcel reports:
+
+> Spreadsheet::ParseExcel version 0.65 is a Perl module used for parsing Excel files.
+> Spreadsheet::ParseExcel is vulnerable to an arbitrary code execution (ACE) vulnerability
+> due to passing unvalidated input from a file into a string-type eval \"eval\".
+> Specifically, the issue stems from the evaluation of Number format strings
+> (not to be confused with printf-style format strings) within the Excel parsing logic."""
+references = [
+    { type = "ADVISORY", url = "https://api.osv.dev/v1/vulns/CVE-2023-7101" },
+    { type = "ADVISORY", url = "https://nvd.nist.gov/vuln/detail/CVE-2023-7101" },
+]
+affected = []
+id = "FBSD-2024-0298"
+
+[database_specific]
+vid = "cb22a9a6-c907-11ee-8d1c-40b034429ecf"
+discovery = "2023-12-29T00:00:00Z"

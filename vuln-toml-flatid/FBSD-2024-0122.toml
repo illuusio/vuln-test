@@ -1,0 +1,62 @@
+schema_version = "1.7.0"
+modified = "2024-09-05T00:00:00Z"
+published = "2024-09-05T00:00:00Z"
+summary = "FreeBSD -- Multiple issues in ctl(4) CAM Target Layer"
+details = """
+Problem Description:
+====================
+
+Several vulnerabilities were found in the ctl subsystem.
+
+The function ctl\\_write\\_buffer incorrectly set a flag which resulted
+in a kernel Use-After-Free when a command finished processing
+(CVE-2024-45063). The ctl\\_write\\_buffer and ctl\\_read\\_buffer functions
+allocated memory to be returned to userspace, without initializing
+it (CVE-2024-8178). The ctl\\_report\\_supported\\_opcodes function did
+not sufficiently validate a field provided by userspace, allowing
+an arbitrary write to a limited amount of kernel help memory
+(CVE-2024-42416). The ctl\\_request\\_sense function could expose up
+to three bytes of the kernel heap to userspace (CVE-2024-43110).
+
+Guest virtual machines in the bhyve hypervisor can send SCSI commands
+to the corresponding kernel driver via the virtio\\_scsi interface.
+This provides guests with direct access to the vulnerabilities
+covered by this advisory.
+
+The CAM Target Layer iSCSI target daemon ctld(8) accepts incoming
+iSCSI connections, performs authentication and passes connections
+to the kernel ctl(4) target layer.
+
+Impact:
+=======
+
+Malicious software running in a guest VM that exposes virtio\\_scsi
+can exploit the vulnerabilities to achieve code execution on the
+host in the bhyve userspace process, which typically runs as root.
+Note that bhyve runs in a Capsicum sandbox, so malicious code is
+constrained by the capabilities available to the bhyve process.
+
+A malicious iSCSI initiator could achieve remote code execution on
+the iSCSI target host."""
+affected = []
+id = "FBSD-2024-0122"
+
+[[references]]
+type = "ADVISORY"
+url = "https://api.osv.dev/v1/vulns/CVE-2024-8178"
+
+[[references]]
+type = "ADVISORY"
+url = "https://api.osv.dev/v1/vulns/CVE-2024-42416"
+
+[[references]]
+type = "ADVISORY"
+url = "https://api.osv.dev/v1/vulns/CVE-2024-43110"
+
+[[references]]
+type = "ADVISORY"
+url = "https://www.freebsd.org/security/advisories/FreeBSD-SA-24:11.ctl.asc"
+
+[database_specific]
+vid = "9bd5e47b-6b50-11ef-9a62-002590c1f29c"
+discovery = "2024-09-04T00:00:00Z"

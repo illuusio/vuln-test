@@ -1,0 +1,52 @@
+schema_version = "1.7.0"
+modified = "2025-03-29T00:00:00Z"
+published = "2025-03-29T00:00:00Z"
+summary = "qt6-webengine -- Multiple vulnerabilities"
+details = """
+Qt qtwebengine-chromium repo reports:
+
+> Backports for 11 security bugs in Chromium:
+>
+> * CVE-2024-11477: 7-Zip Zstd decompression integer underflow
+> * CVE-2025-0762: Use after free in DevTools
+> * CVE-2025-0996: Inappropriate implementation in Browser UI
+> * CVE-2025-0998: Out of bounds memory access in V8
+> * CVE-2025-0999: Heap buffer overflow in V8
+> * CVE-2025-1006: Use after free in Network
+> * CVE-2025-1426: Heap buffer overflow in GPU
+> * CVE-2025-1918: Out of bounds read in Pdfium
+> * CVE-2025-1919: Out of bounds read in Media
+> * CVE-2025-1921: Inappropriate implementation in Media
+> * CVE-2025-2036: Use after free in Inspector"""
+references = [
+    { type = "ADVISORY", url = "https://api.osv.dev/v1/vulns/CVE-2024-11477" },
+    { type = "ADVISORY", url = "https://api.osv.dev/v1/vulns/CVE-2025-0762" },
+    { type = "ADVISORY", url = "https://api.osv.dev/v1/vulns/CVE-2025-0996" },
+    { type = "ADVISORY", url = "https://api.osv.dev/v1/vulns/CVE-2025-0998" },
+    { type = "ADVISORY", url = "https://api.osv.dev/v1/vulns/CVE-2025-0999" },
+    { type = "ADVISORY", url = "https://api.osv.dev/v1/vulns/CVE-2025-1006" },
+    { type = "ADVISORY", url = "https://api.osv.dev/v1/vulns/CVE-2025-1426" },
+    { type = "ADVISORY", url = "https://api.osv.dev/v1/vulns/CVE-2025-1918" },
+    { type = "ADVISORY", url = "https://api.osv.dev/v1/vulns/CVE-2025-1919" },
+    { type = "ADVISORY", url = "https://api.osv.dev/v1/vulns/CVE-2025-1921" },
+    { type = "ADVISORY", url = "https://api.osv.dev/v1/vulns/CVE-2025-2036" },
+    { type = "WEB", url = "https://code.qt.io/cgit/qt/qtwebengine-chromium.git/log/?h=122-based" },
+]
+id = "FBSD-2025-0189"
+
+[[affected]]
+
+[affected.package]
+ecosystem = "FreeBSD:ports"
+name = "qt6-webengine"
+
+[[affected.ranges]]
+type = "ECOSYSTEM"
+events = [
+    { fixed = "6.8.3" },
+    { introduced = "0" },
+]
+
+[database_specific]
+vid = "7cb6642c-0c5a-11f0-8688-4ccc6adda413"
+discovery = "2025-02-20T00:00:00Z"

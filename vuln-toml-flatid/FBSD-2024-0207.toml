@@ -1,0 +1,31 @@
+schema_version = "1.7.0"
+modified = "2024-05-18T00:00:00Z"
+published = "2024-05-18T00:00:00Z"
+summary = "Arti -- Security issues related to circuit construction"
+details = """
+Tor Project reports:
+
+> When building anonymizing circuits to or from an onion
+> service with 'lite' vanguards (the default) enabled, the
+> circuit manager code would build the circuits with one
+> hop too few.
+>
+> When 'full' vanguards are enabled, some circuits are
+> supposed to be built with an extra hop to minimize the
+> linkability of the guard nodes. In some circumstances,
+> the circuit manager would build circuits with one hop
+> too few, making it easier for an adversary to discover
+> the L2 and L3 guards of the affected clients and
+> services."""
+references = [
+    { type = "ADVISORY", url = "https://api.osv.dev/v1/vulns/CVE-2024-35313" },
+    { type = "WEB", url = "https://gitlab.torproject.org/tpo/core/arti/-/issues/1400" },
+    { type = "ADVISORY", url = "https://api.osv.dev/v1/vulns/CVE-2024-35312" },
+    { type = "WEB", url = "https://gitlab.torproject.org/tpo/core/arti/-/issues/1409" },
+]
+affected = []
+id = "FBSD-2024-0207"
+
+[database_specific]
+vid = "f393b5a7-1535-11ef-8064-c5610a6efffb"
+discovery = "2024-05-14T00:00:00Z"

@@ -1,0 +1,36 @@
+schema_version = "1.7.0"
+modified = "2024-02-14T00:00:00Z"
+published = "2024-02-14T00:00:00Z"
+summary = "FreeBSD -- bhyveload(8) host file access"
+details = """
+Problem Description:
+====================
+
+`bhyveload -h <host-path>` may be used to grant loader access
+to the <host-path> directory tree on the host. Affected versions
+of bhyveload(8) do not make any attempt to restrict loader's access
+to <host-path>, allowing the loader to read any file the host user
+has access to.
+
+Impact:
+=======
+
+In the bhyveload(8) model, the host supplies a userboot.so to
+boot with, but the loader scripts generally come from the guest
+image. A maliciously crafted script could be used to exfiltrate
+sensitive data from the host accessible to the user running
+bhyhveload(8), which is often the system root."""
+affected = []
+id = "FBSD-2024-0292"
+
+[[references]]
+type = "ADVISORY"
+url = "https://api.osv.dev/v1/vulns/CVE-2024-25940"
+
+[[references]]
+type = "ADVISORY"
+url = "https://www.freebsd.org/security/advisories/FreeBSD-SA-24:01.bhyveload.asc"
+
+[database_specific]
+vid = "c62285cb-cb46-11ee-b609-002590c1f29c"
+discovery = "2024-02-14T00:00:00Z"

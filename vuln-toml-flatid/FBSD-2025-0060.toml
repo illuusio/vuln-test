@@ -1,0 +1,59 @@
+schema_version = "1.7.0"
+modified = "2025-07-03T00:00:00Z"
+published = "2025-07-03T00:00:00Z"
+summary = "php -- Multiple vulnerabilities"
+details = """
+php.net reports:
+
+> * CVE-2025-1735: pgsql extension does not check for errors during escaping
+> * CVE-2025-6491: NULL Pointer Dereference in PHP SOAP Extension via Large XML Namespace Prefix
+> * CVE-2025-1220: Null byte termination in hostnames"""
+references = [
+    { type = "ADVISORY", url = "https://api.osv.dev/v1/vulns/CVE-2025-1735" },
+    { type = "ADVISORY", url = "https://api.osv.dev/v1/vulns/CVE-2025-6491" },
+    { type = "ADVISORY", url = "https://api.osv.dev/v1/vulns/CVE-2025-1220" },
+]
+id = "FBSD-2025-0060"
+
+[[affected]]
+
+[affected.package]
+ecosystem = "FreeBSD:ports"
+name = "php82"
+
+[[affected.ranges]]
+type = "ECOSYSTEM"
+events = [
+    { fixed = "8.2.29" },
+    { introduced = "0" },
+]
+
+[[affected]]
+
+[affected.package]
+ecosystem = "FreeBSD:ports"
+name = "php83"
+
+[[affected.ranges]]
+type = "ECOSYSTEM"
+events = [
+    { fixed = "8.3.23" },
+    { introduced = "0" },
+]
+
+[[affected]]
+
+[affected.package]
+ecosystem = "FreeBSD:ports"
+name = "php84"
+
+[[affected.ranges]]
+type = "ECOSYSTEM"
+events = [
+    { fixed = "8.4.10" },
+    { introduced = "0" },
+]
+
+[database_specific]
+vid = "d607b12c-5821-11f0-ab92-f02f7497ecda"
+discovery = "2025-02-27T00:00:00Z"

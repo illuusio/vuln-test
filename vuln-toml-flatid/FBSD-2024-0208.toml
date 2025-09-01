@@ -1,0 +1,85 @@
+schema_version = "1.7.0"
+modified = "2024-05-17T00:00:00Z"
+published = "2024-05-17T00:00:00Z"
+summary = "OpenSSL -- Denial of Service vulnerability"
+details = """
+The OpenSSL project reports:
+
+> Excessive time spent checking DSA keys and parameters (Low)
+>
+> Checking excessively long DSA keys or parameters may be very
+> slow."""
+references = [
+    { type = "ADVISORY", url = "https://api.osv.dev/v1/vulns/CVE-2024-4603" },
+    { type = "WEB", url = "https://www.openssl.org/news/secadv/20240516.txt" },
+]
+id = "FBSD-2024-0208"
+
+[[affected]]
+
+[affected.package]
+ecosystem = "FreeBSD:ports"
+name = "openssl31"
+
+[[affected.ranges]]
+type = "ECOSYSTEM"
+events = [
+    { fixed = "3.1.5_4" },
+    { introduced = "0" },
+]
+
+[[affected]]
+
+[affected.package]
+ecosystem = "FreeBSD:ports"
+name = "openssl32"
+
+[[affected.ranges]]
+type = "ECOSYSTEM"
+events = [
+    { fixed = "3.2.1_4" },
+    { introduced = "0" },
+]
+
+[[affected]]
+
+[affected.package]
+ecosystem = "FreeBSD:ports"
+name = "openssl33"
+
+[[affected.ranges]]
+type = "ECOSYSTEM"
+events = [
+    { fixed = "3.3.0_1" },
+    { introduced = "0" },
+]
+
+[[affected]]
+
+[affected.package]
+ecosystem = "FreeBSD:ports"
+name = "openssl-quictls"
+
+[[affected.ranges]]
+type = "ECOSYSTEM"
+events = [
+    { fixed = "3.0.13_4" },
+    { introduced = "0" },
+]
+
+[[affected]]
+
+[affected.package]
+ecosystem = "FreeBSD:ports"
+name = "openssl31-quictls"
+
+[[affected.ranges]]
+type = "ECOSYSTEM"
+events = [
+    { fixed = "3.1.5_4" },
+    { introduced = "0" },
+]
+
+[database_specific]
+vid = "b88aa380-1442-11ef-a490-84a93843eb75"
+discovery = "2024-05-16T00:00:00Z"

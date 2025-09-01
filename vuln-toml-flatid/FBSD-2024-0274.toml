@@ -1,0 +1,93 @@
+schema_version = "1.7.0"
+modified = "2024-03-06T00:00:00Z"
+published = "2024-03-06T00:00:00Z"
+summary = "go -- multiple vulnerabilities"
+details = """
+The Go project reports reports:
+
+> crypto/x509: Verify panics on certificates with an
+> unknown public key algorithm
+>
+> Verifying a certificate chain which contains a
+> certificate with an unknown public key algorithm will
+> cause Certificate.Verify to panic.
+
+> net/http: memory exhaustion in Request.ParseMultipartForm
+>
+> When parsing a multipart form (either explicitly with
+> Request.ParseMultipartForm or implicitly with Request.FormValue,
+> Request.PostFormValue, or Request.FormFile), limits on the total
+> size of the parsed form were not applied to the memory consumed
+> while reading a single form line. This permitted a maliciously
+> crafted input containing very long lines to cause allocation of
+> arbitrarily large amounts of memory, potentially leading to memory
+> exhaustion.
+
+> net/http, net/http/cookiejar: incorrect forwarding
+> of sensitive headers and cookies on HTTP redirect
+>
+> When following an HTTP redirect to a domain which
+> is not a subdomain match or exact match of the initial
+> domain, an http.Client does not forward sensitive headers
+> such as \"Authorization\" or \"Cookie\". For example, a
+> redirect from foo.com to www.foo.com will forward the
+> Authorization header, but a redirect to bar.com will not.
+
+> html/template: errors returned from MarshalJSON methods
+> may break template escaping
+>
+> If errors returned from MarshalJSON methods contain user
+> controlled data, they may be used to break the contextual
+> auto-escaping behavior of the html/template package, allowing
+> for subsequent actions to inject unexpected content into
+> templates.
+
+> net/mail: comments in display names are incorrectly handled
+>
+> The ParseAddressList function incorrectly handles comments
+> (text within parentheses) within display names. Since this is a
+> misalignment with conforming address parsers, it can result in
+> different trust decisions being made by programs using different
+> parsers."""
+id = "FBSD-2024-0274"
+
+[[references]]
+type = "ADVISORY"
+url = "https://api.osv.dev/v1/vulns/CVE-2023-45289"
+
+[[references]]
+type = "ADVISORY"
+url = "https://api.osv.dev/v1/vulns/CVE-2023-45290"
+
+[[references]]
+type = "ADVISORY"
+url = "https://api.osv.dev/v1/vulns/CVE-2024-24783"
+
+[[references]]
+type = "ADVISORY"
+url = "https://api.osv.dev/v1/vulns/CVE-2024-24784"
+
+[[references]]
+type = "ADVISORY"
+url = "https://api.osv.dev/v1/vulns/CVE-2024-24785"
+
+[[references]]
+type = "WEB"
+url = "https://groups.google.com/g/golang-announce/c/5pwGVUPoMbg/m/46oA5yPABQAJ"
+
+[[affected]]
+
+[affected.package]
+ecosystem = "FreeBSD:ports"
+name = "go121"
+
+[[affected.ranges]]
+type = "ECOSYSTEM"
+events = [
+    { fixed = "1.21.8" },
+    { introduced = "0" },
+]
+
+[database_specific]
+vid = "b1b039ec-dbfc-11ee-9165-901b0e9408dc"
+discovery = "2024-03-05T00:00:00Z"

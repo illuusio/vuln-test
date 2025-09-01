@@ -1,0 +1,48 @@
+schema_version = "1.7.0"
+modified = "2024-09-18T00:00:00Z"
+published = "2024-09-18T00:00:00Z"
+summary = "Gitlab -- vulnerabilities"
+details = """
+Gitlab reports:
+
+> SAML authentication bypass"""
+id = "FBSD-2024-0103"
+
+[[references]]
+type = "ADVISORY"
+url = "https://api.osv.dev/v1/vulns/CVE-2024-45409"
+
+[[references]]
+type = "WEB"
+url = "https://about.gitlab.com/releases/2024/09/17/patch-release-gitlab-17-3-3-released/"
+
+[[affected]]
+
+[affected.package]
+ecosystem = "FreeBSD:ports"
+name = "gitlab-ee"
+
+[[affected.ranges]]
+type = "ECOSYSTEM"
+events = [
+    { introduced = "17.3.0" },
+    { fixed = "17.3.3" },
+]
+
+[[affected.ranges]]
+type = "ECOSYSTEM"
+events = [
+    { introduced = "17.2.0" },
+    { fixed = "17.2.7" },
+]
+
+[[affected.ranges]]
+type = "ECOSYSTEM"
+events = [
+    { introduced = "0" },
+    { fixed = "17.1.8" },
+]
+
+[database_specific]
+vid = "3e738678-7582-11ef-bece-2cf05da270f3"
+discovery = "2024-09-17T00:00:00Z"

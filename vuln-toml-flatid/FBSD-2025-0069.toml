@@ -1,0 +1,58 @@
+schema_version = "1.7.0"
+modified = "2025-06-26T00:00:00Z"
+published = "2025-06-26T00:00:00Z"
+summary = "MongoDB -- Race condition in privilege cache invalidation cycle"
+details = """
+NVD reports:
+
+> Under certain conditions, an authenticated user request
+> may execute with stale privileges following an intentional
+> change by an authorized administrator."""
+references = [
+    { type = "ADVISORY", url = "https://api.osv.dev/v1/vulns/CVE-2025-6707" },
+    { type = "ADVISORY", url = "https://nvd.nist.gov/vuln/detail/CVE-2025-6707" },
+]
+id = "FBSD-2025-0069"
+
+[[affected]]
+
+[affected.package]
+ecosystem = "FreeBSD:ports"
+name = "mongodb60"
+
+[[affected.ranges]]
+type = "ECOSYSTEM"
+events = [
+    { fixed = "6.0.24" },
+    { introduced = "0" },
+]
+
+[[affected]]
+
+[affected.package]
+ecosystem = "FreeBSD:ports"
+name = "mongodb70"
+
+[[affected.ranges]]
+type = "ECOSYSTEM"
+events = [
+    { fixed = "7.0.21" },
+    { introduced = "0" },
+]
+
+[[affected]]
+
+[affected.package]
+ecosystem = "FreeBSD:ports"
+name = "mongodb80"
+
+[[affected.ranges]]
+type = "ECOSYSTEM"
+events = [
+    { fixed = "8.0.5" },
+    { introduced = "0" },
+]
+
+[database_specific]
+vid = "5cd2bd2b-52aa-11f0-b522-b42e991fc52e"
+discovery = "2025-06-26T00:00:00Z"

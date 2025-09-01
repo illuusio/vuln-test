@@ -1,0 +1,37 @@
+schema_version = "1.7.0"
+modified = "2024-05-29T00:00:00Z"
+published = "2024-05-29T00:00:00Z"
+summary = "nginx -- Multiple Vulnerabilities in HTTP/3"
+details = """
+The nginx development team reports:
+
+> This update fixes the following vulnerabilities:
+>
+> * Stack overflow and use-after-free in HTTP/3
+> * Buffer overwrite in HTTP/3
+> * Memory disclosure in HTTP/3
+> * NULL pointer dereference in HTTP/3"""
+references = [
+    { type = "ADVISORY", url = "https://api.osv.dev/v1/vulns/CVE-2024-31079" },
+    { type = "ADVISORY", url = "https://api.osv.dev/v1/vulns/CVE-2024-32760" },
+    { type = "ADVISORY", url = "https://api.osv.dev/v1/vulns/CVE-2024-34161" },
+    { type = "ADVISORY", url = "https://api.osv.dev/v1/vulns/CVE-2024-35200" },
+]
+id = "FBSD-2024-0196"
+
+[[affected]]
+
+[affected.package]
+ecosystem = "FreeBSD:ports"
+name = "nginx"
+
+[[affected.ranges]]
+type = "ECOSYSTEM"
+events = [
+    { introduced = "1.26.0" },
+    { fixed = "1.26.1" },
+]
+
+[database_specific]
+vid = "320a19f7-1ddd-11ef-a2ae-8c164567ca3c"
+discovery = "2024-05-29T00:00:00Z"

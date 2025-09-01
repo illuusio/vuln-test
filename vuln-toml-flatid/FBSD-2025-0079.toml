@@ -1,0 +1,49 @@
+schema_version = "1.7.0"
+modified = "2025-06-18T00:00:00Z"
+published = "2025-06-18T00:00:00Z"
+summary = "Grafana -- DingDing contact points exposed in Grafana Alerting"
+details = """
+Grafana Labs reports:
+
+> An incident occurred where the DingDing alerting integration URL
+> was inadvertently exposed to viewers due to a setting oversight,
+> which we learned about through a [bug bounty report](https://grafana.com/blog/2023/05/04/introducing-the-grafana-labs-bug-bounty-program/).
+>
+> The CVSS 3.0 score for this vulnerability is 4.3 (Medium)."""
+id = "FBSD-2025-0079"
+
+[[references]]
+type = "ADVISORY"
+url = "https://api.osv.dev/v1/vulns/CVE-2025-3415"
+
+[[references]]
+type = "WEB"
+url = "https://grafana.com/blog/2025/06/13/grafana-security-update-medium-severity-security-release-for-cve-2025-3415/"
+
+[[affected]]
+
+[affected.package]
+ecosystem = "FreeBSD:ports"
+name = "grafana8"
+
+[[affected.ranges]]
+type = "ECOSYSTEM"
+events = [
+    { introduced = "8.0.0" },
+]
+
+[[affected]]
+
+[affected.package]
+ecosystem = "FreeBSD:ports"
+name = "grafana9"
+
+[[affected.ranges]]
+type = "ECOSYSTEM"
+events = [
+    { introduced = "9.0.0" },
+]
+
+[database_specific]
+vid = "6548cb01-4c33-11f0-8a97-6c3be5272acd"
+discovery = "2025-04-05T00:00:00Z"

@@ -1,0 +1,90 @@
+schema_version = "1.7.0"
+modified = "2024-11-14T00:00:00Z"
+published = "2024-11-14T00:00:00Z"
+summary = "PostgreSQL -- libpq retains an error message from man-in-the-middle"
+details = """
+PostgreSQL project reports:
+
+> Client use of server error message in PostgreSQL allows
+> a server not trusted under current SSL or GSS settings
+> to furnish arbitrary non-NUL bytes to the libpq
+> application. For example, a man-in-the-middle attacker
+> could send a long error message that a human or
+> screen-scraper user of psql mistakes for valid query
+> results. This is probably not a concern for clients
+> where the user interface unambiguously indicates the
+> boundary between one error message and other text."""
+references = [
+    { type = "ADVISORY", url = "https://api.osv.dev/v1/vulns/CVE-2024-10977" },
+    { type = "WEB", url = "https://www.postgresql.org/support/security/CVE-2024-10977/" },
+]
+id = "FBSD-2024-0042"
+
+[[affected]]
+
+[affected.package]
+ecosystem = "FreeBSD:ports"
+name = "postgresql16-client"
+
+[[affected.ranges]]
+type = "ECOSYSTEM"
+events = [
+    { fixed = "16.5" },
+    { introduced = "0" },
+]
+
+[[affected]]
+
+[affected.package]
+ecosystem = "FreeBSD:ports"
+name = "postgresql15-client"
+
+[[affected.ranges]]
+type = "ECOSYSTEM"
+events = [
+    { fixed = "15.9" },
+    { introduced = "0" },
+]
+
+[[affected]]
+
+[affected.package]
+ecosystem = "FreeBSD:ports"
+name = "postgresql14-client"
+
+[[affected.ranges]]
+type = "ECOSYSTEM"
+events = [
+    { fixed = "14.14" },
+    { introduced = "0" },
+]
+
+[[affected]]
+
+[affected.package]
+ecosystem = "FreeBSD:ports"
+name = "postgresql13-client"
+
+[[affected.ranges]]
+type = "ECOSYSTEM"
+events = [
+    { fixed = "13.17" },
+    { introduced = "0" },
+]
+
+[[affected]]
+
+[affected.package]
+ecosystem = "FreeBSD:ports"
+name = "postgresql12-client"
+
+[[affected.ranges]]
+type = "ECOSYSTEM"
+events = [
+    { fixed = "12.21" },
+    { introduced = "0" },
+]
+
+[database_specific]
+vid = "a61ef21b-a29e-11ef-af48-6cc21735f730"
+discovery = "2024-11-14T00:00:00Z"

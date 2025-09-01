@@ -1,0 +1,72 @@
+schema_version = "1.7.0"
+modified = "2024-06-13T00:00:00Z"
+published = "2024-06-13T00:00:00Z"
+summary = "Gitlab -- Vulnerabilities"
+details = """
+Gitlab reports:
+
+> ReDoS in gomod dependency linker
+>
+> ReDoS in CI interpolation (fix bypass)
+>
+> ReDoS in Asana integration issue mapping when webhook is called
+>
+> XSS and content injection when viewing raw XHTML files on iOS devices
+>
+> Missing agentk request validation could cause KAS to panic"""
+id = "FBSD-2024-0190"
+
+[[references]]
+type = "ADVISORY"
+url = "https://api.osv.dev/v1/vulns/CVE-2024-1495"
+
+[[references]]
+type = "ADVISORY"
+url = "https://api.osv.dev/v1/vulns/CVE-2024-1736"
+
+[[references]]
+type = "ADVISORY"
+url = "https://api.osv.dev/v1/vulns/CVE-2024-1963"
+
+[[references]]
+type = "ADVISORY"
+url = "https://api.osv.dev/v1/vulns/CVE-2024-4201"
+
+[[references]]
+type = "ADVISORY"
+url = "https://api.osv.dev/v1/vulns/CVE-2024-5469"
+
+[[references]]
+type = "WEB"
+url = "https://about.gitlab.com/releases/2024/06/12/patch-release-gitlab-17-0-2-released/"
+
+[[affected]]
+
+[affected.package]
+ecosystem = "FreeBSD:ports"
+name = "gitlab-ee"
+
+[[affected.ranges]]
+type = "ECOSYSTEM"
+events = [
+    { introduced = "17.0.0" },
+    { fixed = "17.0.2" },
+]
+
+[[affected.ranges]]
+type = "ECOSYSTEM"
+events = [
+    { introduced = "16.11.0" },
+    { fixed = "16.11.4" },
+]
+
+[[affected.ranges]]
+type = "ECOSYSTEM"
+events = [
+    { introduced = "5.1" },
+    { fixed = "16.10.7" },
+]
+
+[database_specific]
+vid = "92cd1c03-2940-11ef-bc02-001b217b3468"
+discovery = "2024-06-12T00:00:00Z"

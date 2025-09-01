@@ -1,0 +1,66 @@
+schema_version = "1.7.0"
+modified = "2025-03-13T00:00:00Z"
+published = "2025-03-13T00:00:00Z"
+summary = "php -- Multiple vulnerabilities"
+details = """
+php.net reports:
+
+> * CVE-2024-11235: Core: Fixed GHSA-rwp7-7vc6-8477 (Reference counting in php\\_request\\_shutdown causes Use-After-Free).
+> * CVE-2025-1219: LibXML: Fixed GHSA-p3x9-6h7p-cgfc (libxml streams use wrong `content-type` header when requesting a redirected resource).
+> * CVE-2025-1736: Streams: Fixed GHSA-hgf5-96fm-v528 (Stream HTTP wrapper header check might omit basic auth header).
+> * CVE-2025-1861: Streams: Fixed GHSA-52jp-hrpf-2jff (Stream HTTP wrapper truncate redirect location to 1024 bytes).
+> * CVE-2025-1734: Streams: Fixed GHSA-pcmh-g36c-qc44 (Streams HTTP wrapper does not fail for headers without colon).
+> * CVE-2025-1217: Streams: Fixed GHSA-v8xr-gpvj-cx9g (Header parser of `http` stream wrapper does not handle folded headers)."""
+references = [
+    { type = "ADVISORY", url = "https://api.osv.dev/v1/vulns/CVE-2024-11235" },
+    { type = "ADVISORY", url = "https://api.osv.dev/v1/vulns/CVE-2025-1219" },
+    { type = "ADVISORY", url = "https://api.osv.dev/v1/vulns/CVE-2025-1736" },
+    { type = "ADVISORY", url = "https://api.osv.dev/v1/vulns/CVE-2025-1861" },
+    { type = "ADVISORY", url = "https://api.osv.dev/v1/vulns/CVE-2025-1734" },
+    { type = "ADVISORY", url = "https://api.osv.dev/v1/vulns/CVE-2025-1217" },
+    { type = "WEB", url = "https://www.php.net/ChangeLog-8.php" },
+]
+id = "FBSD-2025-0196"
+
+[[affected]]
+
+[affected.package]
+ecosystem = "FreeBSD:ports"
+name = "php82"
+
+[[affected.ranges]]
+type = "ECOSYSTEM"
+events = [
+    { fixed = "8.2.28" },
+    { introduced = "0" },
+]
+
+[[affected]]
+
+[affected.package]
+ecosystem = "FreeBSD:ports"
+name = "php83"
+
+[[affected.ranges]]
+type = "ECOSYSTEM"
+events = [
+    { fixed = "8.3.19" },
+    { introduced = "0" },
+]
+
+[[affected]]
+
+[affected.package]
+ecosystem = "FreeBSD:ports"
+name = "php84"
+
+[[affected.ranges]]
+type = "ECOSYSTEM"
+events = [
+    { fixed = "8.4.5" },
+    { introduced = "0" },
+]
+
+[database_specific]
+vid = "2ac2ddc2-0051-11f0-8673-f02f7432cf97"
+discovery = "2025-03-13T00:00:00Z"

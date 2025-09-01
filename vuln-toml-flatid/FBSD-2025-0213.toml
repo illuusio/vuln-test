@@ -1,0 +1,105 @@
+schema_version = "1.7.0"
+modified = "2025-03-02T00:00:00Z"
+published = "2025-03-02T00:00:00Z"
+summary = "vim -- Potential code execution"
+details = """
+vim reports:
+
+> Summary
+> =======
+>
+> Potential code execution with tar.vim and special crafted tar files
+>
+> Description
+> ===========
+>
+> Vim is distributed with the tar.vim plugin, that allows easy
+> editing and viewing of (compressed or uncompressed) tar files.
+>
+> Since commit 129a844 (Nov 11, 2024 runtime(tar): Update tar.vim to
+> support permissions), the tar.vim plugin uses the \":read \" ex command
+> line to append below the cursor position, however the is not sanitized
+> and is taken literaly from the tar archive. This allows to execute
+> shell commands via special crafted tar archives. Whether this really
+> happens, depends on the shell being used ('shell' option, which is set
+> using $SHELL).
+>
+> Impact
+> ======
+>
+> Impact is high but a user must be convinced to edit such a file
+> using Vim which will reveal the filename, so a careful user may suspect
+> some strange things going on."""
+references = [
+    { type = "WEB", url = "https://github.com/vim/vim/security/advisories/GHSA-wfmf-8626-q3r3" },
+]
+id = "FBSD-2025-0213"
+
+[[affected]]
+
+[affected.package]
+ecosystem = "FreeBSD:ports"
+name = "vim-gtk2"
+
+[[affected.ranges]]
+type = "ECOSYSTEM"
+events = [
+    { fixed = "9.1.1164" },
+    { introduced = "0" },
+]
+
+[[affected]]
+
+[affected.package]
+ecosystem = "FreeBSD:ports"
+name = "vim-gtk3"
+
+[[affected.ranges]]
+type = "ECOSYSTEM"
+events = [
+    { fixed = "9.1.1164" },
+    { introduced = "0" },
+]
+
+[[affected]]
+
+[affected.package]
+ecosystem = "FreeBSD:ports"
+name = "vim-motif"
+
+[[affected.ranges]]
+type = "ECOSYSTEM"
+events = [
+    { fixed = "9.1.1164" },
+    { introduced = "0" },
+]
+
+[[affected]]
+
+[affected.package]
+ecosystem = "FreeBSD:ports"
+name = "vim-x11"
+
+[[affected.ranges]]
+type = "ECOSYSTEM"
+events = [
+    { fixed = "9.1.1164" },
+    { introduced = "0" },
+]
+
+[[affected]]
+
+[affected.package]
+ecosystem = "FreeBSD:ports"
+name = "vim-tiny"
+
+[[affected.ranges]]
+type = "ECOSYSTEM"
+events = [
+    { fixed = "9.1.1164" },
+    { introduced = "0" },
+]
+
+[database_specific]
+vid = "398d1ec1-f7e6-11ef-bb15-002590af0794"
+discovery = "2025-03-02T00:00:00Z"

@@ -1,0 +1,79 @@
+schema_version = "1.7.0"
+modified = "2024-08-07T00:00:00Z"
+published = "2024-08-07T00:00:00Z"
+summary = "Django -- multiple vulnerabilities"
+details = """
+Django reports:
+
+> CVE-2024-41989: Memory exhaustion in django.utils.numberformat.floatformat().
+>
+> CVE-2024-41990: Potential denial-of-service in django.utils.html.urlize().
+>
+> CVE-2024-41991: Potential denial-of-service vulnerability in
+> django.utils.html.urlize() and AdminURLFieldWidget.
+>
+> CVE-2024-42005: Potential SQL injection in QuerySet.values() and values\\_list()."""
+references = [
+    { type = "ADVISORY", url = "https://api.osv.dev/v1/vulns/CVE-2024-41989" },
+    { type = "ADVISORY", url = "https://api.osv.dev/v1/vulns/CVE-2024-41990" },
+    { type = "ADVISORY", url = "https://api.osv.dev/v1/vulns/CVE-2024-41991" },
+    { type = "ADVISORY", url = "https://api.osv.dev/v1/vulns/CVE-2024-42005" },
+    { type = "WEB", url = "https://www.djangoproject.com/weblog/2024/aug/06/security-releases/" },
+]
+id = "FBSD-2024-0154"
+
+[[affected]]
+
+[affected.package]
+ecosystem = "FreeBSD:ports"
+name = "py310-django42"
+
+[[affected.ranges]]
+type = "ECOSYSTEM"
+events = [
+    { fixed = "4.2.15" },
+    { introduced = "0" },
+]
+
+[[affected]]
+
+[affected.package]
+ecosystem = "FreeBSD:ports"
+name = "py311-django42"
+
+[[affected.ranges]]
+type = "ECOSYSTEM"
+events = [
+    { fixed = "4.2.15" },
+    { introduced = "0" },
+]
+
+[[affected]]
+
+[affected.package]
+ecosystem = "FreeBSD:ports"
+name = "py310-django50"
+
+[[affected.ranges]]
+type = "ECOSYSTEM"
+events = [
+    { fixed = "5.0.8" },
+    { introduced = "0" },
+]
+
+[[affected]]
+
+[affected.package]
+ecosystem = "FreeBSD:ports"
+name = "py311-django50"
+
+[[affected.ranges]]
+type = "ECOSYSTEM"
+events = [
+    { fixed = "5.0.8" },
+    { introduced = "0" },
+]
+
+[database_specific]
+vid = "94d441d2-5497-11ef-9d2f-080027836e8b"
+discovery = "2024-08-01T00:00:00Z"

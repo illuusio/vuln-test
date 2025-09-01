@@ -1,0 +1,35 @@
+schema_version = "1.7.0"
+modified = "2024-11-29T00:00:00Z"
+published = "2024-11-29T00:00:00Z"
+summary = "jenkins -- Denial of service vulnerability in bundled json-lib"
+details = """
+Jenkins Security Advisory:
+
+> Description
+> ===========
+>
+> ##### (High) SECURITY-3463 / CVE-2024-47855
+>
+> Denial of service vulnerability in bundled json-lib"""
+references = [
+    { type = "ADVISORY", url = "https://api.osv.dev/v1/vulns/CVE-2024-47855" },
+    { type = "WEB", url = "https://www.jenkins.io/security/advisory/2024-11-27/" },
+]
+id = "FBSD-2024-0028"
+
+[[affected]]
+
+[affected.package]
+ecosystem = "FreeBSD:ports"
+name = "jenkins-lts"
+
+[[affected.ranges]]
+type = "ECOSYSTEM"
+events = [
+    { fixed = "2.479.2" },
+    { introduced = "0" },
+]
+
+[database_specific]
+vid = "c5dafd73-adfd-11ef-af27-00e081b7aa2d"
+discovery = "2024-11-27T00:00:00Z"

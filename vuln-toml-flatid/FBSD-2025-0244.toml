@@ -1,0 +1,31 @@
+schema_version = "1.7.0"
+modified = "2025-01-30T00:00:00Z"
+published = "2025-01-30T00:00:00Z"
+summary = "FreeBSD -- OpenSSH Keystroke Obfuscation Bypass"
+details = """
+Problem Description:
+====================
+
+A logic error in the ssh(1) ObscureKeystrokeTiming feature (on
+by default) rendered this feature ineffective.
+
+Impact:
+=======
+
+A passive observer could detect which network packets contain
+real keystrokes, and infer the specific characters being transmitted
+from packet timing."""
+affected = []
+id = "FBSD-2025-0244"
+
+[[references]]
+type = "ADVISORY"
+url = "https://api.osv.dev/v1/vulns/CVE-2024-39894"
+
+[[references]]
+type = "ADVISORY"
+url = "https://www.freebsd.org/security/advisories/FreeBSD-SA-25:01.openssh.asc"
+
+[database_specific]
+vid = "69e19c0b-debc-11ef-87ba-002590c1f29c"
+discovery = "2025-01-29T00:00:00Z"

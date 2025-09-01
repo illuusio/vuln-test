@@ -1,0 +1,41 @@
+schema_version = "1.7.0"
+modified = "2025-06-17T00:00:00Z"
+published = "2025-06-17T00:00:00Z"
+summary = "chromium -- multiple security fixes"
+details = """
+Chrome Releases reports:
+
+> This update includes 3 security fixes:
+>
+> * [420636529] High CVE-2025-5419: Out of bounds read and write in V8. Reported by Clement Lecigne and Benoît Sevens of Google Threat Analysis Group on 2025-05-27. This issue was mitigated on 2025-05-28 by a configuration change pushed out to Stable across all Chrome platforms.
+> * [409059706] Medium CVE-2025-5068: Use after free in Blink. Reported by Walkman on 2025-04-07"""
+id = "FBSD-2025-0083"
+
+[[references]]
+type = "ADVISORY"
+url = "https://api.osv.dev/v1/vulns/CVE-2025-5419"
+
+[[references]]
+type = "ADVISORY"
+url = "https://api.osv.dev/v1/vulns/CVE-2025-5068"
+
+[[references]]
+type = "WEB"
+url = "https://chromereleases.googleblog.com/2025/06/stable-channel-update-for-desktop.html"
+
+[[affected]]
+
+[affected.package]
+ecosystem = "FreeBSD:ports"
+name = "ungoogled-chromium"
+
+[[affected.ranges]]
+type = "ECOSYSTEM"
+events = [
+    { fixed = "137.0.7151.68" },
+    { introduced = "0" },
+]
+
+[database_specific]
+vid = "4323e86c-2422-4fd7-8c8f-ec71c81ea7dd"
+discovery = "2025-06-02T00:00:00Z"

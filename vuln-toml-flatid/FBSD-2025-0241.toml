@@ -1,0 +1,34 @@
+schema_version = "1.7.0"
+modified = "2025-01-30T00:00:00Z"
+published = "2025-01-30T00:00:00Z"
+summary = "FreeBSD -- Uninitialized kernel memory disclosure via ktrace(2)"
+details = """
+Problem Description:
+====================
+
+In some cases, the ktrace facility will log the contents of
+kernel structures to userspace. In one such case, ktrace dumps a
+variable-sized sockaddr to userspace. There, the full sockaddr is
+copied, even when it is shorter than the full size. This can result
+in up to 14 uninitialized bytes of kernel memory being copied out
+to userspace.
+
+Impact:
+=======
+
+It is possible for an unprivileged userspace program to leak
+14 bytes of a kernel heap allocation to userspace."""
+affected = []
+id = "FBSD-2025-0241"
+
+[[references]]
+type = "ADVISORY"
+url = "https://api.osv.dev/v1/vulns/CVE-2025-0662"
+
+[[references]]
+type = "ADVISORY"
+url = "https://www.freebsd.org/security/advisories/FreeBSD-SA-25:04.ktrace.asc"
+
+[database_specific]
+vid = "2830b374-debd-11ef-87ba-002590c1f29c"
+discovery = "2025-01-29T00:00:00Z"

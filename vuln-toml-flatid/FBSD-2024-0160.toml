@@ -1,0 +1,66 @@
+schema_version = "1.7.0"
+modified = "2024-07-25T00:00:00Z"
+published = "2024-07-25T00:00:00Z"
+summary = "Gitlab -- Vulnerabilities"
+details = """
+Gitlab reports:
+
+> XSS via the Maven Dependency Proxy
+>
+> Project level analytics settings leaked in DOM
+>
+> Reports can access and download job artifacts despite use of settings to prevent it
+>
+> Direct Transfer - Authorised project/group exports are accessible to other users
+>
+> Bypassing tag check and branch check through imports
+>
+> Project Import/Export - Make project/group export files hidden to everyone except user who initiated it"""
+id = "FBSD-2024-0160"
+
+[[references]]
+type = "ADVISORY"
+url = "https://api.osv.dev/v1/vulns/CVE-2024-5067"
+
+[[references]]
+type = "ADVISORY"
+url = "https://api.osv.dev/v1/vulns/CVE-2024-7057"
+
+[[references]]
+type = "ADVISORY"
+url = "https://api.osv.dev/v1/vulns/CVE-2024-0231"
+
+[[references]]
+type = "WEB"
+url = "https://about.gitlab.com/releases/2024/07/24/patch-release-gitlab-17-2-1-released/"
+
+[[affected]]
+
+[affected.package]
+ecosystem = "FreeBSD:ports"
+name = "gitlab-ee"
+
+[[affected.ranges]]
+type = "ECOSYSTEM"
+events = [
+    { introduced = "17.2.0" },
+    { fixed = "17.2.1" },
+]
+
+[[affected.ranges]]
+type = "ECOSYSTEM"
+events = [
+    { introduced = "17.1.0" },
+    { fixed = "17.1.3" },
+]
+
+[[affected.ranges]]
+type = "ECOSYSTEM"
+events = [
+    { introduced = "12.0.0" },
+    { fixed = "17.0.5" },
+]
+
+[database_specific]
+vid = "24c88add-4a3e-11ef-86d7-001b217b3468"
+discovery = "2024-07-24T00:00:00Z"

@@ -1,0 +1,114 @@
+schema_version = "1.7.0"
+modified = "2024-04-04T00:00:00Z"
+published = "2024-04-04T00:00:00Z"
+summary = "xorg server -- Multiple vulnerabilities"
+details = """
+The X.Org project reports:
+
+> * CVE-2024-31080: Heap buffer overread/data leakage in
+>   ProcXIGetSelectedEvents
+>
+>   The ProcXIGetSelectedEvents() function uses the byte-swapped
+>   length of the return data for the amount of data to return to
+>   the client, if the client has a different endianness than
+>   the X server.
+> * CVE-2024-31081: Heap buffer overread/data leakage in
+>   ProcXIPassiveGrabDevice
+>
+>   The ProcXIPassiveGrabDevice() function uses the byte-swapped
+>   length of the return data for the amount of data to return to
+>   the client, if the client has a different endianness than
+>   the X server.
+> * CVE-2024-31083: User-after-free in ProcRenderAddGlyphs
+>
+>   The ProcRenderAddGlyphs() function calls the AllocateGlyph()
+>   function to store new glyphs sent by the client to the X server.
+>   AllocateGlyph() would return a new glyph with refcount=0 and
+>   a re-used glyph would end up not changing the refcount at all.
+>   The resulting glyph\\_new array would thus have multiple entries
+>   pointing to the same non-refcounted glyphs.
+>   ProcRenderAddGlyphs() may free a glyph, resulting in a
+>   use-after-free when the same glyph pointer is then later used."""
+references = [
+    { type = "ADVISORY", url = "https://api.osv.dev/v1/vulns/CVE-2024-31080" },
+    { type = "ADVISORY", url = "https://api.osv.dev/v1/vulns/CVE-2024-31081" },
+    { type = "ADVISORY", url = "https://api.osv.dev/v1/vulns/CVE-2024-31083" },
+    { type = "WEB", url = "https://lists.x.org/archives/xorg-announce/2024-April/003497.html" },
+]
+id = "FBSD-2024-0253"
+
+[[affected]]
+
+[affected.package]
+ecosystem = "FreeBSD:ports"
+name = "xephyr"
+
+[[affected.ranges]]
+type = "ECOSYSTEM"
+events = [
+    { fixed = "21.1.12,1" },
+    { introduced = "0" },
+]
+
+[[affected]]
+
+[affected.package]
+ecosystem = "FreeBSD:ports"
+name = "xorg-vfbserver"
+
+[[affected.ranges]]
+type = "ECOSYSTEM"
+events = [
+    { fixed = "21.1.12,1" },
+    { introduced = "0" },
+]
+
+[[affected]]
+
+[affected.package]
+ecosystem = "FreeBSD:ports"
+name = "xorg-nextserver"
+
+[[affected.ranges]]
+type = "ECOSYSTEM"
+events = [
+    { fixed = "21.1.12,2" },
+    { introduced = "0" },
+]
+
+[[affected]]
+
+[affected.package]
+ecosystem = "FreeBSD:ports"
+name = "xwayland"
+
+[[affected.ranges]]
+type = "ECOSYSTEM"
+events = [
+    { fixed = "23.2.5" },
+    { introduced = "0" },
+]
+
+[[affected]]
+
+[affected.package]
+ecosystem = "FreeBSD:ports"
+name = "xwayland-devel"
+
+[[affected.ranges]]
+type = "ECOSYSTEM"
+events = [
+    { introduced = "21.0.99.1.672" },
+    { fixed = "21.0.99.1.841_1" },
+]
+
+[[affected.ranges]]
+type = "ECOSYSTEM"
+events = [
+    { fixed = "21.0.99.1.671_1" },
+    { introduced = "0" },
+]
+
+[database_specific]
+vid = "57561cfc-f24b-11ee-9730-001fc69cd6dc"
+discovery = "2024-04-03T00:00:00Z"

@@ -1,0 +1,38 @@
+schema_version = "1.7.0"
+modified = "2024-11-12T00:00:00Z"
+published = "2024-11-12T00:00:00Z"
+summary = "Matrix clients -- mxc uri validation in js sdk"
+details = """
+matrix-js-sdk upstream reports:
+
+> matrix-js-sdk before 34.11.0 is vulnerable to client-side
+> path traversal via crafted MXC URIs. A malicious room member
+> can trigger clients based on the matrix-js-sdk to issue
+> arbitrary authenticated GET requests to the client's
+> homeserver."""
+id = "FBSD-2024-0050"
+
+[[references]]
+type = "ADVISORY"
+url = "https://api.osv.dev/v1/vulns/CVE-2024-50336"
+
+[[references]]
+type = "WEB"
+url = "https://github.com/matrix-org/matrix-js-sdk/security/advisories/GHSA-xvg8-m4x3-w6xr"
+
+[[affected]]
+
+[affected.package]
+ecosystem = "FreeBSD:ports"
+name = "element-web"
+
+[[affected.ranges]]
+type = "ECOSYSTEM"
+events = [
+    { fixed = "1.11.85" },
+    { introduced = "0" },
+]
+
+[database_specific]
+vid = "574f7bc9-a141-11ef-84e9-901b0e9408dc"
+discovery = "2024-11-12T00:00:00Z"
