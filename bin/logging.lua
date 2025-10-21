@@ -176,6 +176,7 @@ function logging.new(append, startLevel, colorOutput)
 				self[name] = disable_level
 			end
 		end
+
 		if old_level and old_level ~= level then
 			self:log(LEVELS[1], "Logger: changing loglevel from %s to %s", old_level, level)
 		end
@@ -189,6 +190,7 @@ function logging.new(append, startLevel, colorOutput)
 	logger.log = function(self, level, ...)
 		local order = LEVELS[level]
 		assert(order, "undefined level `%s'", _tostring(level))
+
 		if order < self.level_order then
 			return
 		end
