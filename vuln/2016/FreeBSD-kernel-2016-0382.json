@@ -1,0 +1,43 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "giflib"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "5.1.2"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "discovery": "2015-12-21T00:00:00Z",
+        "vid": "90c8385a-dc9f-11e5-8fa8-14dae9d210b8"
+    },
+    "details": "Hans Jerry Illikainen reports:\n\n> A heap overflow may occur in the giffix utility included in\n> giflib-5.1.1 when processing records of the type\n> `IMAGE\\_DESC\\_RECORD\\_TYPE' due to the allocated size of `LineBuffer'\n> equaling the value of the logical screen width, `GifFileIn->SWidth',\n> while subsequently having `GifFileIn->Image.Width' bytes of data written\n> to it.",
+    "id": "FreeBSD-kernel-2016-0382",
+    "modified": "2016-02-26T00:00:00Z",
+    "published": "2016-02-26T00:00:00Z",
+    "references": [
+        {
+            "type": "WEB",
+            "url": "http://seclists.org/bugtraq/2015/Dec/114"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2015-7555"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "giflib -- heap overflow"
+}

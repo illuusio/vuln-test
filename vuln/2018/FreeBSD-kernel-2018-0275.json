@@ -1,0 +1,43 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "libtorrent"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "0.13.6_5"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "discovery": "2015-12-01T00:00:00Z",
+        "vid": "e4dd787e-0ea9-11e8-95f2-005056925db4"
+    },
+    "details": "X-cela reports:\n\n> Calls into build\\_benocde that use %zu could crash on 64 bit\n> machines due to the size change of size\\_t. Someone can force\n> READ\\_ENC\\_IA to fail allowing an internal\\_error to be thrown\n> and bring down the client.",
+    "id": "FreeBSD-kernel-2018-0275",
+    "modified": "2018-02-10T00:00:00Z",
+    "published": "2018-02-10T00:00:00Z",
+    "references": [
+        {
+            "type": "WEB",
+            "url": "https://github.com/rakshasa/libtorrent/pull/99"
+        },
+        {
+            "type": "REPORT",
+            "url": "https://bugs.freebsd.org/bugzilla/show_bug.cgi?id=224664"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "libtorrent -- remote DoS"
+}

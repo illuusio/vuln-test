@@ -1,0 +1,39 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "freeradius3"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "3.0.15"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "discovery": "2017-06-17T00:00:00Z",
+        "vid": "79bbec7e-8141-11e7-b5af-a4badb2f4699"
+    },
+    "details": "Guido Vranken reports:\n\n> Multiple vulnerabilities found via fuzzing:\n> FR-GV-201 (v2,v3) Read / write overflow in make\\_secret()\n> FR-GV-202 (v2) Write overflow in rad\\_coalesce()\n> FR-GV-203 (v2) DHCP - Memory leak in decode\\_tlv()\n> FR-GV-204 (v2) DHCP - Memory leak in fr\\_dhcp\\_decode()\n> FR-GV-205 (v2) DHCP - Buffer over-read in fr\\_dhcp\\_decode\\_options()\n> FR-GV-206 (v2,v3) DHCP - Read overflow when decoding option 63\n> FR-GV-207 (v2) Zero-length malloc in data2vp()\n> FR-GV-301 (v3) Write overflow in data2vp\\_wimax()\n> FR-GV-302 (v3) Infinite loop and memory exhaustion with 'concat' attributes\n> FR-GV-303 (v3) DHCP - Infinite read in dhcp\\_attr2vp()\n> FR-GV-304 (v3) DHCP - Buffer over-read in fr\\_dhcp\\_decode\\_suboptions()\n> FR-GV-305 (v3) Decode 'signed' attributes correctly\n> FR-AD-001 (v2,v3) Use strncmp() instead of memcmp() for string data\n> FR-AD-002 (v3) String lifetime issues in rlm\\_python\n> FR-AD-003 (v3) Incorrect statement length passed into sqlite3\\_prepare",
+    "id": "FreeBSD-kernel-2017-0149",
+    "modified": "2017-08-14T00:00:00Z",
+    "published": "2017-08-14T00:00:00Z",
+    "references": [
+        {
+            "type": "WEB",
+            "url": "http://freeradius.org/security/fuzzer-2017.html"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "FreeRadius -- Multiple vulnerabilities"
+}

@@ -1,0 +1,43 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "curl"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "8.3.0"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "discovery": "2023-09-13T00:00:00Z",
+        "vid": "833b469b-5247-11ee-9667-080027f5fec9"
+    },
+    "details": "selmelc on hackerone reports:\n\n> When curl retrieves an HTTP response, it stores the\n> incoming headers so that they can be accessed later via\n> the libcurl headers API.\n>\n> However, curl did not have a limit in how many or how\n> large headers it would accept in a response, allowing a\n> malicious server to stream an endless series of headers\n> and eventually cause curl to run out of heap memory.",
+    "id": "FreeBSD-kernel-2023-0103",
+    "modified": "2023-09-13T00:00:00Z",
+    "published": "2023-09-13T00:00:00Z",
+    "references": [
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2023-38039"
+        },
+        {
+            "type": "WEB",
+            "url": "https://curl.se/docs/CVE-2023-38039.html HERE"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "curl -- HTTP headers eat all memory"
+}

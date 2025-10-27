@@ -1,0 +1,43 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "emacs"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "introduced": "22"
+                        },
+                        {
+                            "last_affected": "22.2_1"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "discovery": "2008-09-05T00:00:00Z",
+        "vid": "66657bd5-ac92-11dd-b541-001f3b19d541"
+    },
+    "details": "Emacs developers report:\n\n> The Emacs command `run-python' launches an interactive\n> Python interpreter. After the Python process starts up,\n> Emacs automatically sends it the line:\n>\n> import emacs\n>\n> which normally imports a script named emacs.py which is\n> distributed with Emacs. This script, which is typically\n> located in a write-protected installation directory with\n> other Emacs program files, defines various functions to help\n> the Python process communicate with Emacs.\n>\n> The vulnerability arises because Python, by default,\n> prepends '' to the module search path, so modules are looked\n> for in the current directory. If the current directory is\n> world-writable, an attacker may insert malicious code by\n> adding a fake Python module named emacs.py into that\n> directory.",
+    "id": "FreeBSD-kernel-2008-0039",
+    "modified": "2010-05-02T00:00:00Z",
+    "published": "2008-11-07T00:00:00Z",
+    "references": [
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2008-3949"
+        },
+        {
+            "type": "WEB",
+            "url": "http://lists.gnu.org/archive/html/emacs-devel/2008-09/msg00215.html"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "emacs -- run-python vulnerability"
+}

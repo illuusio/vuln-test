@@ -1,0 +1,124 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "bugzilla"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "introduced": "4.0.0"
+                        },
+                        {
+                            "fixed": "4.0.11"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        },
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "bugzilla40"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "introduced": "4.0.0"
+                        },
+                        {
+                            "fixed": "4.0.11"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        },
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "bugzilla42"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "introduced": "4.2.0"
+                        },
+                        {
+                            "fixed": "4.2.7"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        },
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "bugzilla44"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "introduced": "4.4"
+                        },
+                        {
+                            "fixed": "4.4.1"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "discovery": "2013-10-16T00:00:00Z",
+        "vid": "e135f0c9-375f-11e3-80b7-20cf30e32f6d"
+    },
+    "details": "A Bugzilla Security Advisory reports:\n=====================================\n\n> Cross-Site Request Forgery\n> ==========================\n>\n> When a user submits changes to a bug right after another\n> user did, a midair collision page is displayed to inform\n> the user about changes recently made. This page contains\n> a token which can be used to validate the changes if the\n> user decides to submit his changes anyway. A regression\n> in Bugzilla 4.4 caused this token to be recreated if a\n> crafted URL was given, even when no midair collision page\n> was going to be displayed, allowing an attacker to bypass\n> the token check and abuse a user to commit changes on his\n> behalf.\n>\n> Cross-Site Request Forgery\n> ==========================\n>\n> When an attachment is edited, a token is generated to\n> validate changes made by the user. Using a crafted URL,\n> an attacker could force the token to be recreated,\n> allowing him to bypass the token check and abuse a user\n> to commit changes on his behalf.\n>\n> Cross-Site Scripting\n> ====================\n>\n> Some parameters passed to editflagtypes.cgi were not\n> correctly filtered in the HTML page, which could lead\n> to XSS.\n>\n> Cross-Site Scripting\n> ====================\n>\n> Due to an incomplete fix for CVE-2012-4189, some\n> incorrectly filtered field values in tabular reports\n> could lead to XSS.",
+    "id": "FreeBSD-kernel-2013-0033",
+    "modified": "2014-04-30T00:00:00Z",
+    "published": "2013-10-17T00:00:00Z",
+    "references": [
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2013-1733"
+        },
+        {
+            "type": "REPORT",
+            "url": "https://bugzilla.mozilla.org/show_bug.cgi?id=911593"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2013-1734"
+        },
+        {
+            "type": "REPORT",
+            "url": "https://bugzilla.mozilla.org/show_bug.cgi?id=913904"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2013-1742"
+        },
+        {
+            "type": "REPORT",
+            "url": "https://bugzilla.mozilla.org/show_bug.cgi?id=924802"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2013-1743"
+        },
+        {
+            "type": "REPORT",
+            "url": "https://bugzilla.mozilla.org/show_bug.cgi?id=924932"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "bugzilla -- multiple vulnerabilities"
+}

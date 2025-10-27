@@ -1,0 +1,51 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "bugzilla"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "introduced": "2.17.1,1"
+                        },
+                        {
+                            "fixed": "3.6.1"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "discovery": "2010-06-24T00:00:00Z",
+        "vid": "f1331504-8849-11df-89b8-00151735203a"
+    },
+    "details": "A Bugzilla Security Advisory reports:\n\n> * Normally, information about time-tracking (estimated\n>   hours, actual hours, hours worked, and deadlines) is\n>   restricted to users in the \"time-tracking group\".\n>   However, any user was able, by crafting their own\n>   search URL, to search for bugs based using those\n>   fields as criteria, thus possibly exposing sensitive\n>   time-tracking information by a user seeing that a bug\n>   matched their search.\n> * If $use\\_suexec was set to \"1\" in the localconfig file,\n>   then the localconfig file's permissions were set as\n>   world-readable by checksetup.pl. This allowed any user\n>   with local shell access to see the contents of the file,\n>   including the database password and the site\\_wide\\_secret\n>   variable used for CSRF protection.",
+    "id": "FreeBSD-kernel-2010-0079",
+    "modified": "2010-07-05T00:00:00Z",
+    "published": "2010-07-05T00:00:00Z",
+    "references": [
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2010-1204"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2010-0180"
+        },
+        {
+            "type": "REPORT",
+            "url": "https://bugzilla.mozilla.org/show_bug.cgi?id=309952"
+        },
+        {
+            "type": "REPORT",
+            "url": "https://bugzilla.mozilla.org/show_bug.cgi?id=561797"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "bugzilla -- information disclosure"
+}

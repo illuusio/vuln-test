@@ -1,0 +1,62 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "redis"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "introduced": "6.0.0"
+                        },
+                        {
+                            "fixed": "6.0.14"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        },
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "redis-devel"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "introduced": "6.2.0"
+                        },
+                        {
+                            "fixed": "6.2.4"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "discovery": "2021-06-01T00:00:00Z",
+        "vid": "8eb69cd0-c2ec-11eb-b6e7-8c164567ca3c"
+    },
+    "details": "Redis development team reports:\n\n> An integer overflow bug in Redis version 6.0 or newer can be\n> exploited using the STRALGO LCS command to corrupt the heap and\n> potentially result with remote code execution. This is a result\n> of an incomplete fix by CVE-2021-29477.",
+    "id": "FreeBSD-kernel-2021-0173",
+    "modified": "2021-06-01T00:00:00Z",
+    "published": "2021-06-01T00:00:00Z",
+    "references": [
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2021-32625"
+        },
+        {
+            "type": "WEB",
+            "url": "https://groups.google.com/g/redis-db/c/RLTwi1kKsCI"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "redis -- integer overflow"
+}

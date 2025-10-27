@@ -1,0 +1,65 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:kernel",
+                "name": "FreeBSD-kernel"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "introduced": "11.2"
+                        },
+                        {
+                            "fixed": "11.2_3"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                },
+                {
+                    "events": [
+                        {
+                            "introduced": "11.1"
+                        },
+                        {
+                            "fixed": "11.1_14"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                },
+                {
+                    "events": [
+                        {
+                            "introduced": "10.4"
+                        },
+                        {
+                            "fixed": "10.4_12"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "discovery": "2018-09-12T00:00:00Z",
+        "vid": "a67c122a-b693-11e8-ac58-a4badb2f4699"
+    },
+    "details": "Problem Description:\n====================\n\nInsufficient validation was performed in the ELF header\nparser, and malformed or otherwise invalid ELF binaries\nwere not rejected as they should be.\n\nImpact:\n=======\n\nExecution of a malicious ELF binary may result in a\nkernel crash or may disclose kernel memory.",
+    "id": "FreeBSD-kernel-2018-0084",
+    "modified": "2018-09-12T00:00:00Z",
+    "published": "2018-09-12T00:00:00Z",
+    "references": [
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2018-6924"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://www.freebsd.org/security/advisories/FreeBSD-SA-18:12.elf.asc"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "FreeBSD -- Improper ELF header parsing"
+}

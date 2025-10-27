@@ -1,0 +1,65 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "powerdns-recursor"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "introduced": "4.3.0"
+                        },
+                        {
+                            "fixed": "4.3.5"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                },
+                {
+                    "events": [
+                        {
+                            "introduced": "4.2.0"
+                        },
+                        {
+                            "fixed": "4.2.5"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                },
+                {
+                    "events": [
+                        {
+                            "introduced": "4.1.0"
+                        },
+                        {
+                            "fixed": "4.1.18"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "discovery": "2020-10-13T00:00:00Z",
+        "vid": "a6860b11-0dee-11eb-94ff-6805ca2fa271"
+    },
+    "details": "PowerDNS Team reports:\n\n> CVE-2020-25829: An issue has been found in PowerDNS Recursor where a\n> remote attacker can cause the cached records for a given name to be\n> updated to the \u2018Bogus\u2019 DNSSEC validation state, instead of their actual\n> DNSSEC \u2018Secure\u2019 state, via a DNS ANY query. This results in a denial\n> of service for installations that always validate (dnssec=validate)\n> and for clients requesting validation when on-demand validation is\n> enabled (dnssec=process).",
+    "id": "FreeBSD-kernel-2020-0062",
+    "modified": "2020-10-14T00:00:00Z",
+    "published": "2020-10-14T00:00:00Z",
+    "references": [
+        {
+            "type": "WEB",
+            "url": "https://doc.powerdns.com/recursor/security-advisories/powerdns-advisory-2020-07.html"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2020-25829"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "powerdns-recursor -- cache pollution"
+}

@@ -1,0 +1,51 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "globus"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "4.0.2_20060706"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "discovery": "2006-08-08T00:00:00Z",
+        "vid": "5039ae61-2c9f-11db-8401-000ae42e9b93"
+    },
+    "details": "The Globus Alliance reports:\n\n> The proxy generation tool (grid-proxy-init) creates the\n> file, secures the file to provide access only to owner and\n> writes proxy to the file. A race condition exists between\n> the opening of the proxy credentials file, and making sure\n> it is safe file to write to. The checks to ensure this\n> file is accessible only to the owner take place using the\n> filename after the file is opened for writing, but before\n> any data is written.\n\n> Various components of the toolkit use files in shared\n> directories to store information, some being sensitive\n> information. For example, the tool to create proxy\n> certificates, stores the generated proxy certificate by\n> default in /tmp. Specific vulnerabilities in handling such\n> files were reported in myproxy-admin-adduser, grid-ca-sign\n> and grid-security-config.",
+    "id": "FreeBSD-kernel-2006-0083",
+    "modified": "2010-05-12T00:00:00Z",
+    "published": "2006-08-15T00:00:00Z",
+    "references": [
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2006-4232"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2006-4233"
+        },
+        {
+            "type": "WEB",
+            "url": "http://www.globus.org/mail_archive/security-announce/2006/08/msg00000.html"
+        },
+        {
+            "type": "WEB",
+            "url": "http://www.globus.org/mail_archive/security-announce/2006/08/msg00001.html"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "globus -- Multiple tmpfile races"
+}

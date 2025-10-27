@@ -1,0 +1,43 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "rust"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "introduced": "1.34.0"
+                        },
+                        {
+                            "fixed": "1.34.2"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "discovery": "2019-05-09T00:00:00Z",
+        "vid": "37528379-76a8-11e9-a4fd-00012e582166"
+    },
+    "details": "Sean McArthur reports:\n\n> The Rust Programming Language Standard Library 1.34.x\n> before 1.34.2 contains a stabilized method which, if\n> overridden, can violate Rust's safety guarantees and\n> cause memory unsafety. If the Error::type\\_id method\n> is overridden then any type can be safely cast to any\n> other type, causing memory safety vulnerabilities in\n> safe code (e.g., out-of-bounds write or read). Code\n> that does not manually implement Error::type\\_id is\n> unaffected.",
+    "id": "FreeBSD-kernel-2019-0189",
+    "modified": "2019-05-15T00:00:00Z",
+    "published": "2019-05-15T00:00:00Z",
+    "references": [
+        {
+            "type": "WEB",
+            "url": "https://blog.rust-lang.org/2019/05/13/Security-advisory.html"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2019-12083"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "Rust -- violation of Rust's safety guarantees"
+}

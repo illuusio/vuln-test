@@ -1,0 +1,39 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "fetchmail"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "introduced": "6.3.9"
+                        },
+                        {
+                            "fixed": "6.3.22"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "discovery": "2012-01-19T00:00:00Z",
+        "vid": "18ce9a90-f269-11e1-be53-080027ef73ec"
+    },
+    "details": "Matthias Andree reports:\n\n> Fetchmail version 6.3.9 enabled \"all SSL workarounds\" (SSL\\_OP\\_ALL)\n> which contains a switch to disable a countermeasure against certain\n> attacks against block ciphers that permit guessing the\n> initialization vectors, providing that an attacker can make the\n> application (fetchmail) encrypt some data for him -- which is not\n> easily the case.\n>\n> Stream ciphers (such as RC4) are unaffected.\n>\n> Credits to Apple Product Security for reporting this.",
+    "id": "FreeBSD-kernel-2012-0073",
+    "modified": "2012-08-30T00:00:00Z",
+    "published": "2012-08-30T00:00:00Z",
+    "references": [
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2011-3389"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "fetchmail -- chosen plaintext attack against SSL CBC initialization vectors"
+}

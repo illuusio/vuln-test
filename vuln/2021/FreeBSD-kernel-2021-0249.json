@@ -1,0 +1,39 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "minio"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "2021.03.17.02.33.02"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "discovery": "2021-03-17T00:00:00Z",
+        "vid": "b073677f-253a-41f9-bf2b-2d16072a25f6"
+    },
+    "details": "minio developer report:\n\n> This is a security issue because it enables MITM modification of\n> request bodies that are meant to have integrity guaranteed by chunk\n> signatures.\n>\n> In a PUT request using aws-chunked encoding, MinIO ordinarily\n> verifies signatures at the end of a chunk. This check can be skipped\n> if the client sends a false chunk size that is much greater than the\n> actual data sent: the server accepts and completes the request\n> without ever reaching the end of the chunk + thereby without ever\n> checking the chunk signature.",
+    "id": "FreeBSD-kernel-2021-0249",
+    "modified": "2021-03-17T00:00:00Z",
+    "published": "2021-03-17T00:00:00Z",
+    "references": [
+        {
+            "type": "WEB",
+            "url": "https://github.com/minio/minio/security/advisories/GHSA-xr7r-7gpj-5pgp"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "minio -- MITM attack"
+}

@@ -1,0 +1,81 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "tomcat85"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "introduced": "8.5.0"
+                        },
+                        {
+                            "last_affected": "8.5.66"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        },
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "tomcat9"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "introduced": "9.0.0"
+                        },
+                        {
+                            "last_affected": "9.0.46"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        },
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "tomcat10"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "introduced": "10.0.0"
+                        },
+                        {
+                            "last_affected": "10.0.6"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "discovery": "2021-05-07T00:00:00Z",
+        "vid": "d34bef0b-f312-11eb-b12b-fc4dd43e2b6a"
+    },
+    "details": "Bahruz Jabiyev, Steven Sprecher and Kaan Onarlioglu of NEU seclab reports:\n\n> Apache Tomcat did not correctly parse the HTTP transfer-encoding request header in some circumstances leading to the possibility to request smuggling when used with a reverse proxy. Specifically: Tomcat incorrectly ignored the transfer-encoding header if the client declared it would only accept an HTTP/1.0 response; Tomcat honoured the identify encoding; and Tomcat did not ensure that, if present, the chunked encoding was the final encoding.",
+    "id": "FreeBSD-kernel-2021-0123",
+    "modified": "2021-08-01T00:00:00Z",
+    "published": "2021-08-01T00:00:00Z",
+    "references": [
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2021-33037"
+        },
+        {
+            "type": "WEB",
+            "url": "http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2021-33037"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "tomcat -- HTTP request smuggling in multiple versions"
+}

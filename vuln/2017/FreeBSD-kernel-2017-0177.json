@@ -1,0 +1,51 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "irssi"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "1.0.4,1"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "discovery": "2017-07-05T00:00:00Z",
+        "vid": "31001c6b-63e7-11e7-85aa-a4badb2f4699"
+    },
+    "details": "irssi reports:\n\n> When receiving messages with invalid time stamps, Irssi\n> would try to dereference a NULL pointer.\n>\n> While updating the internal nick list, Irssi may\n> incorrectly use the GHashTable interface and free the nick while\n> updating it. This will then result in use-after-free conditions on each\n> access of the hash table.",
+    "id": "FreeBSD-kernel-2017-0177",
+    "modified": "2017-07-08T00:00:00Z",
+    "published": "2017-07-08T00:00:00Z",
+    "references": [
+        {
+            "type": "WEB",
+            "url": "https://irssi.org/security/irssi_sa_2017_07.txt"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2017-10965"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2017-10966"
+        },
+        {
+            "type": "REPORT",
+            "url": "https://bugs.freebsd.org/bugzilla/show_bug.cgi?id=220544"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "irssi -- multiple vulnerabilities"
+}

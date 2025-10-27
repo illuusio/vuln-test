@@ -1,0 +1,62 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "php5"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "5.4.13"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        },
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "php53"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "5.3.23"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "discovery": "2013-03-04T00:00:00Z",
+        "vid": "1d23109a-9005-11e2-9602-d43d7e0c7c02"
+    },
+    "details": "The PHP development team reports:\n\n> PHP does not validate the relationship between the soap.wsdl\\_cache\\_dir\n> directive and the open\\_basedir directive, which allows remote attackers to\n> bypass intended access restrictions by triggering the creation of cached\n> SOAP WSDL files in an arbitrary directory.\n>\n> The SOAP parser in PHP allows remote attackers to read arbitrary files\n> via a SOAP WSDL file containing an XML external entity declaration in\n> conjunction with an entity reference, related to an XML External Entity\n> (XXE) issue in the soap\\_xmlParseFile and soap\\_xmlParseMemory functions.",
+    "id": "FreeBSD-kernel-2013-0139",
+    "modified": "2013-03-18T00:00:00Z",
+    "published": "2013-03-18T00:00:00Z",
+    "references": [
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2013-1635"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2013-1643"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "php5 -- Multiple vulnerabilities"
+}

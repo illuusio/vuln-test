@@ -1,0 +1,47 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "zoo"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "2.10.1_2"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "discovery": "2006-02-22T00:00:00Z",
+        "vid": "d9307a41-c4d7-11da-b2fb-000e0c2e438a"
+    },
+    "details": "Jean-S\u00e9bastien Guay-Leroux report a vulnerability\nwithin the zoo archiver. The vulnerability which is present\nin the fullpath() function (from the misc.c file) is caused by\nimproper checking of user supplied data. The data returned\nto the buffer can be up to 512 bytes, while the buffer is\ncreated to hold 256 bytes. This could result in a buffer\noverflow which could allow remote code execution.",
+    "id": "FreeBSD-kernel-2006-0165",
+    "modified": "2006-04-06T00:00:00Z",
+    "published": "2006-04-05T00:00:00Z",
+    "references": [
+        {
+            "type": "ADVISORY",
+            "url": "https://www.securityfocus.com/bid/16790/info"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2006-0855"
+        },
+        {
+            "type": "WEB",
+            "url": "http://www.guay-leroux.com/projects/zoo-advisory.txt"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "zoo -- stack based buffer overflow"
+}

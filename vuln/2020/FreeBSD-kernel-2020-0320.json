@@ -1,0 +1,43 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "sudo"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "1.8.31"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "discovery": "2020-01-30T00:00:00Z",
+        "vid": "b4e5f782-442d-11ea-9ba9-206a8a720317"
+    },
+    "details": "Todd C. Miller reports:\n\n> Sudo's pwfeedback option can be used to provide visual feedback\n> when the user is inputting their password. For each key press,\n> an asterisk is printed. This option was added in response to\n> user confusion over how the standard Password: prompt disables\n> the echoing of key presses. While pwfeedback is not enabled by\n> default in the upstream version of sudo, some systems, such as\n> Linux Mint and Elementary OS, do enable it in their default\n> sudoers files.\n>\n> Due to a bug, when the pwfeedback option is enabled in the\n> sudoers file, a user may be able to trigger a stack-based buffer\n> overflow. This bug can be triggered even by users not listed in\n> the sudoers file. There is no impact unless pwfeedback has been\n> enabled.",
+    "id": "FreeBSD-kernel-2020-0320",
+    "modified": "2020-01-30T00:00:00Z",
+    "published": "2020-01-30T00:00:00Z",
+    "references": [
+        {
+            "type": "WEB",
+            "url": "https://www.sudo.ws/alerts/pwfeedback.html"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2019-18634"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "sudo -- Potential bypass of Runas user restrictions"
+}

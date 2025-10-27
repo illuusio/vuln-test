@@ -1,0 +1,43 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "openssl"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "1.0.2u,1"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "discovery": "2019-12-06T00:00:00Z",
+        "vid": "d778ddb0-2338-11ea-a1c7-b499baebfeaf"
+    },
+    "details": "The OpenSSL project reports:\n\n> rsaz\\_512\\_sqr overflow bug on x86\\_64 (CVE-2019-1551) (Low)  \n> There is an overflow bug in the x64\\_64 Montgomery squaring procedure\n> used in exponentiation with 512-bit moduli. No EC algorithms are\n> affected. Analysis suggests that attacks against 2-prime RSA1024,\n> 3-prime RSA1536, and DSA1024 as a result of this defect would be very\n> difficult to perform and are not believed likely. Attacks against\n> DH512 are considered just feasible. However, for an attack the target\n> would have to re-use the DH512 private key, which is not recommended\n> anyway. Also applications directly using the low level API BN\\_mod\\_exp\n> may be affected if they use BN\\_FLG\\_CONSTTIME.",
+    "id": "FreeBSD-kernel-2019-0009",
+    "modified": "2019-12-20T00:00:00Z",
+    "published": "2019-12-20T00:00:00Z",
+    "references": [
+        {
+            "type": "WEB",
+            "url": "https://www.openssl.org/news/secadv/20191206.txt"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2019-1551"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "OpenSSL -- Overflow vulnerability"
+}

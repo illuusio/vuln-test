@@ -1,0 +1,47 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "logstash"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "1.4.2"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "discovery": "2014-06-24T00:00:00Z",
+        "vid": "2184ccad-1a10-11e5-b43d-002590263bf5"
+    },
+    "details": "Elastic reports:\n\n> The vulnerability impacts deployments that use the either the\n> zabbix or the nagios\\_nsca outputs. In these cases, an attacker\n> with an ability to send crafted events to any source of data for\n> Logstash could execute operating system commands with the\n> permissions of the Logstash process.\n>\n> Deployments that do not use the zabbix or the nagios\\_nsca outputs\n> are not vulnerable and do not need to upgrade for this reason.\n>\n> We have added this vulnerability to our CVE page and are working\n> on filling out the CVE.\n>\n> We would like to thank Jan Karwowski and Danila Borisiuk for\n> reporting the issue and working with us on the resolution.",
+    "id": "FreeBSD-kernel-2015-0280",
+    "modified": "2015-06-24T00:00:00Z",
+    "published": "2015-06-24T00:00:00Z",
+    "references": [
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2014-4326"
+        },
+        {
+            "type": "WEB",
+            "url": "https://www.elastic.co/blog/logstash-1-4-2"
+        },
+        {
+            "type": "WEB",
+            "url": "https://www.elastic.co/community/security"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "logstash -- Remote command execution in Logstash zabbix and nagios_nsca outputs"
+}

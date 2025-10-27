@@ -1,0 +1,47 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "python36"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "3.6.9"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "discovery": "2019-03-13T00:00:00Z",
+        "vid": "18ed9650-a1d6-11e9-9b17-fcaa147e860e"
+    },
+    "details": "Python changelog:\n\n> bpo-35907: CVE-2019-9948: Avoid file reading by disallowing local-file://\n> and local\\_file:// URL schemes in URLopener().open() and URLopener().retrieve()\n> of urllib.request.\n>\n> bpo-36742: Fixes mishandling of pre-normalization characters in urlsplit().\n>\n> bpo-30458: Address CVE-2019-9740 by disallowing URL paths with embedded\n> whitespace or control characters through into the underlying http client\n> request. Such potentially malicious header injection URLs now cause an\n> http.client.InvalidURL exception to be raised.\n>\n> bpo-36216: Changes urlsplit() to raise ValueError when the URL contains\n> characters that decompose under IDNA encoding (NFKC-normalization) into\n> characters that affect how the URL is parsed.\n>\n> bpo-33529: Prevent fold function used in email header encoding from\n> entering infinite loop when there are too many non-ASCII characters in\n> a header.\n>\n> bpo-35121: Don't send cookies of domain A without Domain attribute to\n> domain B when domain A is a suffix match of domain B while using a cookiejar\n> with http.cookiejar.DefaultCookiePolicy policy. Patch by Karthikeyan\n> Singaravelan.",
+    "id": "FreeBSD-kernel-2019-0148",
+    "modified": "2019-07-08T00:00:00Z",
+    "published": "2019-07-08T00:00:00Z",
+    "references": [
+        {
+            "type": "WEB",
+            "url": "https://docs.python.org/3.6/whatsnew/changelog.html#python-3-6-9-final"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2019-9948"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2019-9740"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "python 3.6 -- multiple vulnerabilities"
+}

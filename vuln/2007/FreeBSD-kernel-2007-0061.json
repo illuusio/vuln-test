@@ -1,0 +1,43 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "bugzilla"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "introduced": "3.*"
+                        },
+                        {
+                            "fixed": "3.0.2"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "discovery": "2007-09-18T00:00:00Z",
+        "vid": "f8d3689e-6770-11dc-8be8-02e0185f8d72"
+    },
+    "details": "The Bugzilla development team reports:\n\n> Bugzilla::WebService::User::offer\\_account\\_by\\_email does\n> not check the \"createemailregexp\" parameter, and thus\n> allows users to create accounts who would normally be\n> denied account creation. The \"emailregexp\" parameter is\n> still checked. If you do not have the SOAP::Lite Perl\n> module installed on your Bugzilla system, your system is\n> not vulnerable (because the Bugzilla WebService will not\n> be enabled).",
+    "id": "FreeBSD-kernel-2007-0061",
+    "modified": "2010-05-12T00:00:00Z",
+    "published": "2007-09-20T00:00:00Z",
+    "references": [
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2007-5038"
+        },
+        {
+            "type": "WEB",
+            "url": "http://www.bugzilla.org/security/3.0.1/"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "bugzilla -- \"createmailregexp\" security bypass vulnerability"
+}

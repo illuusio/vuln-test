@@ -1,0 +1,78 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "asterisk16"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "16.24.1"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        },
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "asterisk18"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "18.10.1"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "discovery": "2022-03-03T00:00:00Z",
+        "vid": "964c5460-9c66-11ec-ad3a-001999f8d30b"
+    },
+    "details": "The Asterisk project reports:\n\n> AST-2022-004 - The header length on incoming STUN\n> messages that contain an ERROR-CODE attribute is not\n> properly checked. This can result in an integer underflow.\n> Note, this requires ICE or WebRTC support to be in use\n> with a malicious remote party.\n>\n> AST-2022-005 - When acting as a UAC, and when placing\n> an outgoing call to a target that then forks Asterisk may\n> experience undefined behavior (crashes, hangs, etc) after\n> a dialog set is prematurely freed.\n>\n> AST-2022-006 - If an incoming SIP message contains a\n> malformed multi-part body an out of bounds read access\n> may occur, which can result in undefined behavior. Note,\n> its currently uncertain if there is any externally\n> exploitable vector within Asterisk for this issue, but\n> providing this as a security issue out of caution.",
+    "id": "FreeBSD-kernel-2022-0203",
+    "modified": "2022-03-05T00:00:00Z",
+    "published": "2022-03-05T00:00:00Z",
+    "references": [
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2021-37706"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2022-23608"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2022-21723"
+        },
+        {
+            "type": "WEB",
+            "url": "https://downloads.asterisk.org/pub/security/AST-2022-004.html"
+        },
+        {
+            "type": "WEB",
+            "url": "https://downloads.asterisk.org/pub/security/AST-2022-005.html"
+        },
+        {
+            "type": "WEB",
+            "url": "https://downloads.asterisk.org/pub/security/AST-2022-006.html"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "asterisk -- multiple vulnerabilities"
+}

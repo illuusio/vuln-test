@@ -1,0 +1,43 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "FreeBSD"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "introduced": "10.1"
+                        },
+                        {
+                            "fixed": "10.1_1"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "discovery": "2014-12-10T00:00:00Z",
+        "vid": "74ded00e-6007-11e6-a6c3-14dae9d210b8"
+    },
+    "details": "Problem Description:\n====================\n\nA programming error in the standard I/O library's\n\\_\\_sflush() function could erroneously adjust the buffered\nstream's internal state even when no write actually occurred\nin the case when write(2) system call returns an error.\n\nImpact:\n=======\n\nThe accounting mismatch would accumulate, if the caller\ndoes not check for stream status and will eventually lead\nto a heap buffer overflow.\n\nSuch overflows may lead to data corruption or the execution\nof arbitrary code at the privilege level of the calling\nprogram.",
+    "id": "FreeBSD-kernel-2016-0173",
+    "modified": "2016-08-11T00:00:00Z",
+    "published": "2016-08-11T00:00:00Z",
+    "references": [
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2014-8611"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://www.freebsd.org/security/advisories/FreeBSD-SA-14:27.stdio.asc"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "FreeBSD -- Buffer overflow in stdio"
+}

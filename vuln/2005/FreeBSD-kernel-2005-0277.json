@@ -1,0 +1,47 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "squid"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "2.5.7_9"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "discovery": "2005-01-24T00:00:00Z",
+        "vid": "b4d94fa0-6e38-11d9-9e1e-c296ac722cb3"
+    },
+    "details": "The squid patches page notes:\n\n> This patch makes Squid considerably stricter while\n> parsing the HTTP protocol.\n>\n> 1. A Content-length header should only appear once in a\n>    valid request or response. Multiple Content-length\n>    headers, in conjunction with specially crafted requests,\n>    may allow Squid's cache to be poisoned with bad content\n>    in certain situations.\n> 2. CR characters is only allowed as part of the CR NL\n>    line terminator, not alone. This to ensure that all\n>    involved agrees on the structure of HTTP headers.\n> 3. Rejects requests/responses that have whitespace in an\n>    HTTP header name.\n\nTo enable these strict parsing rules, update to at least\nsquid-2.5.7\\_9 and specify `relaxed_header_parser\noff` in squid.conf.",
+    "id": "FreeBSD-kernel-2005-0277",
+    "modified": "2006-01-02T00:00:00Z",
+    "published": "2005-01-24T00:00:00Z",
+    "references": [
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2005-0174"
+        },
+        {
+            "type": "WEB",
+            "url": "http://www.squid-cache.org/Versions/v2/2.5/bugs/#squid-2.5.STABLE7-header_parsing"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://www.kb.cert.org/vuls/id/768702"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "squid -- possible cache-poisoning via malformed HTTP responses"
+}

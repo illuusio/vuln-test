@@ -1,0 +1,47 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "inn"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "2.5.2_2"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "discovery": "2012-08-14T00:00:00Z",
+        "vid": "a7975581-ee26-11e1-8bd8-0022156e8794"
+    },
+    "details": "INN developers report:\n\n> Fixed a possible plaintext command injection during the\n> negotiation of a TLS layer. The vulnerability detailed\n> in CVE-2011-0411 affects the STARTTLS and AUTHINFO SASL\n> commands. nnrpd now resets its read buffer upon\n> a successful negotiation of a TLS layer. It prevents\n> malicious commands, sent unencrypted, from being executed\n> in the new encrypted state of the session.",
+    "id": "FreeBSD-kernel-2012-0078",
+    "modified": "2012-08-25T00:00:00Z",
+    "published": "2012-08-25T00:00:00Z",
+    "references": [
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2012-3523"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2011-0411"
+        },
+        {
+            "type": "WEB",
+            "url": "https://www.isc.org/software/inn/2.5.3article"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "inn -- plaintext command injection into encrypted channel"
+}

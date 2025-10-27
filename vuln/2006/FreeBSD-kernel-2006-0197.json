@@ -1,0 +1,43 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "gnupg"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "1.4.2.1"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "discovery": "2006-02-15T00:00:00Z",
+        "vid": "63fe4189-9f97-11da-ac32-0001020eed82"
+    },
+    "details": "Werner Koch reports:\n\n> The Gentoo project identified a security related bug in\n> GnuPG. When using any current version of GnuPG for\n> unattended signature verification (e.g. by scripts and\n> mail programs), false positive signature verification of\n> detached signatures may occur.\n>\n> This problem affects the tool \\*gpgv\\*, as well as using\n> \"gpg --verify\" to imitate gpgv, if only the exit code of\n> the process is used to decide whether a detached signature\n> is valid. This is a plausible mode of operation for\n> gpgv.\n>\n> If, as suggested, the --status-fd generated output is\n> used to decide whether a signature is valid, no problem\n> exists. In particular applications making use of the\n> GPGME library[2] are not affected.",
+    "id": "FreeBSD-kernel-2006-0197",
+    "modified": "2006-02-17T00:00:00Z",
+    "published": "2006-02-17T00:00:00Z",
+    "references": [
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2006-0455"
+        },
+        {
+            "type": "DISCUSSION",
+            "url": "http://marc.theaimsgroup.com/?l=gnupg-devel&m=113999098729114"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "gnupg -- false positive signature verification"
+}

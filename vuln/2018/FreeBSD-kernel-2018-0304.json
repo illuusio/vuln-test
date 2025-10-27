@@ -1,0 +1,40 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "transmission-daemon"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "last_affected": "2.92_3"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "discovery": "2017-11-30T00:00:00Z",
+        "vid": "3e5b8bd3-0c32-452f-a60e-beab7b762351"
+    },
+    "details": "Google Project Zero reports:\n\n> The transmission bittorrent client uses a client/server\n> architecture, the user interface is the client which communicates\n> to the worker daemon using JSON RPC requests.\n>\n> As with all HTTP RPC schemes like this, any website can send\n> requests to the daemon listening on localhost with XMLHttpRequest(),\n> but the theory is they will be ignored because clients must prove\n> they can read and set a specific header, X-Transmission-Session-Id.\n> Unfortunately, this design doesn't work because of an attack called\n> \"DNS rebinding\". Any website can simply create a dns name that they\n> are authorized to communicate with, and then make it resolve to\n> localhost.\n>\n> Exploitation is simple, you could set script-torrent-done-enabled\n> and run any command, or set download-dir to /home/user/ and then\n> upload a torrent for .bashrc.",
+    "id": "FreeBSD-kernel-2018-0304",
+    "modified": "2018-01-14T00:00:00Z",
+    "published": "2018-01-14T00:00:00Z",
+    "references": [
+        {
+            "type": "WEB",
+            "url": "https://bugs.chromium.org/p/project-zero/issues/detail?id=1447"
+        },
+        {
+            "type": "WEB",
+            "url": "https://github.com/transmission/transmission/pull/468"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "transmission-daemon -- vulnerable to dns rebinding attacks"
+}

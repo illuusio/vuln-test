@@ -1,0 +1,51 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "squid"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "2.5.7_6"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "discovery": "2005-01-11T00:00:00Z",
+        "vid": "184ab9e0-64cd-11d9-9e1e-c296ac722cb3"
+    },
+    "details": "The squid patches page notes:\n\n> A malicious gopher server may return a response with very\n> long lines that cause a buffer overflow in Squid.\n>\n> Workaround: Since gopher is very obscure these days, do\n> not allow Squid to any gopher servers. Use an ACL rule\n> like:\n>\n> ```\n> acl Gopher proto gopher\n> http_access deny Gopher\n> ```",
+    "id": "FreeBSD-kernel-2005-0307",
+    "modified": "2005-01-22T00:00:00Z",
+    "published": "2005-01-12T00:00:00Z",
+    "references": [
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2005-0094"
+        },
+        {
+            "type": "WEB",
+            "url": "http://www.squid-cache.org/Versions/v2/2.5/bugs/#squid-2.5.STABLE7-gopher_html_parsing"
+        },
+        {
+            "type": "WEB",
+            "url": "http://www.squid-cache.org/bugs/show_bug.cgi?id=1189"
+        },
+        {
+            "type": "WEB",
+            "url": "http://www.squid-cache.org/Advisories/SQUID-2005_1.txt"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "squid -- buffer overflow vulnerability in gopherToHTML"
+}

@@ -1,0 +1,39 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "zeek"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "5.0.1"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "discovery": "2022-08-23T00:00:00Z",
+        "vid": "3110b29e-c82d-4287-9f6c-db82bb883b1e"
+    },
+    "details": "Tim Wojtulewicz of Corelight reports:\n\n> Fix a possible overflow and crash in the ARP analyzer\n> when receiving a specially crafted packet. Due to the\n> possibility of this happening with packets received from\n> the network, this is a potential DoS vulnerability.\n>\n> Fix a possible overflow and crash in the Modbus analyzer\n> when receiving a specially crafted packet. Due to the\n> possibility of this happening with packets received from\n> the network, this is a potential DoS vulnerability.\n>\n> Fix two possible crashes when converting IP headers for\n> output via the raw\\_packet event. Due to the possibility of\n> this happening with packets received from the network, this\n> is a potential DoS vulnerability. Note that the raw\\_packet\n> event is not enabled by default so these are likely\n> low-severity issues.\n>\n> Fix an abort related to an error related to the ordering\n> of record fields when processing DNS EDNS headers via events.\n> Due to the possibility of this happening with packets\n> received from the network, this is a potential DoS\n> vulnerability. Note that the dns\\_EDNS events are not\n> implemented by default so this is likely a low-severity\n> issue.",
+    "id": "FreeBSD-kernel-2022-0088",
+    "modified": "2022-08-26T00:00:00Z",
+    "published": "2022-08-26T00:00:00Z",
+    "references": [
+        {
+            "type": "WEB",
+            "url": "https://github.com/zeek/zeek/releases/tag/v5.0.1"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "zeek -- potential DoS vulnerabilities"
+}

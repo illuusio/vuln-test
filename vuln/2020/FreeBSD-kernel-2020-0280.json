@@ -1,0 +1,43 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "puppet6"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "6.13.0"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "discovery": "2020-02-18T00:00:00Z",
+        "vid": "77687355-52aa-11ea-b115-643150d3111d"
+    },
+    "details": "Puppetlabs reports:\n\n> Previously, Puppet operated on a model that a node with a valid certificate was entitled to all information in the system and that a compromised certificate allowed access to everything in the infrastructure. When a node's catalog falls back to the `default` node, the catalog can be retrieved for a different node by modifying facts for the Puppet run. This issue can be mitigated by setting `strict\\_hostname\\_checking = true` in `puppet.conf` on your Puppet master.\n>\n> Puppet 6.13.0 changes the default behavior for strict\\_hostname\\_checking from false to true. It is recommended that Puppet Open Source and Puppet Enterprise users that are not upgrading still set strict\\_hostname\\_checking to true to ensure secure behavior.",
+    "id": "FreeBSD-kernel-2020-0280",
+    "modified": "2020-03-23T00:00:00Z",
+    "published": "2020-03-23T00:00:00Z",
+    "references": [
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2020-7942"
+        },
+        {
+            "type": "WEB",
+            "url": "https://puppet.com/security/cve/CVE-2020-7942/"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "puppet6 -- Arbitrary Catalog Retrieval"
+}

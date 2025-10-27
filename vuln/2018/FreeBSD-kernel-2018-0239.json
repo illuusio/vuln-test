@@ -1,0 +1,102 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "isc-dhcp44-server"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "4.4.1"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        },
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "isc-dhcp44-client"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "4.4.1"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        },
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "isc-dhcp43-server"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "last_affected": "4.3.6"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        },
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "isc-dhcp43-client"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "last_affected": "4.3.6"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "discovery": "2018-02-21T00:00:00Z",
+        "vid": "2040c7f5-1e3a-11e8-8ae9-0050569f0b83"
+    },
+    "details": "ISC reports:\n\n> Failure to properly bounds check a buffer used for processing\n> DHCP options allows a malicious server (or an entity\n> masquerading as a server) to cause a buffer overflow (and\n> resulting crash) in dhclient by sending a response containing a\n> specially constructed options section.\n\n> A malicious client which is allowed to send very large amounts\n> of traffic (billions of packets) to a DHCP server can eventually\n> overflow a 32-bit reference counter, potentially causing dhcpd\n> to crash.",
+    "id": "FreeBSD-kernel-2018-0239",
+    "modified": "2018-03-02T00:00:00Z",
+    "published": "2018-03-02T00:00:00Z",
+    "references": [
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2018-5732"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2018-5733"
+        },
+        {
+            "type": "WEB",
+            "url": "https://kb.isc.org/article/AA-01565"
+        },
+        {
+            "type": "WEB",
+            "url": "https://kb.isc.org/article/AA-01567"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "isc-dhcp -- Multiple vulnerabilities"
+}

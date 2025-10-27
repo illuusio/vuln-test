@@ -1,0 +1,66 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "xloadimage"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "4.1.15"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        },
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "xli"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "1.17.0_4"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "discovery": "2005-10-05T00:00:00Z",
+        "vid": "2f0cb4bb-416d-11da-99fe-000854d03344"
+    },
+    "details": "Ariel Berkman reports:\n\n> Unlike most of the supported image formats in xloadimage,\n> the NIFF image format can store a title name of arbitrary\n> length as part of the image file.\n>\n> When xloadimage is processing a loaded image, it is\n> creating a new Image object and then writing the processed\n> image to it. At that point, it will also copy the title\n> from the old image to the newly created image.\n>\n> The 'zoom', 'reduce', and 'rotate' functions are using\n> a fixed length buffer to construct the new title name\n> when an image processing is done. Since the title name\n> in a NIFF format is of varying length, and there are\n> insufficient buffer size validations, the buffer can\n> be overflowed.",
+    "id": "FreeBSD-kernel-2005-0041",
+    "modified": "2005-10-23T00:00:00Z",
+    "published": "2005-10-20T00:00:00Z",
+    "references": [
+        {
+            "type": "ADVISORY",
+            "url": "https://www.securityfocus.com/bid/15051/info"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2005-3178"
+        },
+        {
+            "type": "DISCUSSION",
+            "url": "http://marc.theaimsgroup.com/?l=bugtraq&m=112862493918840&w=2"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "xloadimage -- buffer overflows in NIFF image title handling"
+}

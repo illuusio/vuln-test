@@ -1,0 +1,62 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "libyaml"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "0.1.6"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        },
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "mingw32-libyaml"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "0.1.6"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "discovery": "2014-03-11T00:00:00Z",
+        "vid": "580cc46b-bb1e-11e3-b144-2c4138874f7d"
+    },
+    "details": "oCERT reports:\n\n> The LibYAML project is an open source YAML 1.1 parser and\n> emitter written in C.\n>\n> The library is affected by a heap-based buffer overflow\n> which can lead to arbitrary code execution. The\n> vulnerability is caused by lack of proper expansion for the\n> string passed to the yaml\\_parser\\_scan\\_uri\\_escapes()\n> function.\n>\n> A specially crafted YAML file, with a long sequence of\n> percent-encoded characters in a URL, can be used to trigger\n> the overflow.",
+    "id": "FreeBSD-kernel-2014-0120",
+    "modified": "2014-03-26T00:00:00Z",
+    "published": "2014-03-26T00:00:00Z",
+    "references": [
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2014-2525"
+        },
+        {
+            "type": "WEB",
+            "url": "http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2014-2525"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "LibYAML input sanitization errors"
+}

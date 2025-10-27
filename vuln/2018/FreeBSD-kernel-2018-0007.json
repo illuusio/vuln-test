@@ -1,0 +1,54 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "FreeBSD"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "introduced": "12.0"
+                        },
+                        {
+                            "fixed": "12.0_1"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                },
+                {
+                    "events": [
+                        {
+                            "introduced": "11.2"
+                        },
+                        {
+                            "fixed": "11.2_7"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "discovery": "2018-12-19T00:00:00Z",
+        "vid": "fa6a4a69-03d1-11e9-be12-a4badb2f4699"
+    },
+    "details": "Problem Description:\n====================\n\nDue to insufficient validation of network-provided data\nit may be possible for a malicious attacker to craft a bootp\npacket which could cause a stack buffer overflow.\n\nImpact:\n=======\n\nIt is possible that the buffer overflow could lead to a\nDenial of Service or remote code execution.",
+    "id": "FreeBSD-kernel-2018-0007",
+    "modified": "2018-12-19T00:00:00Z",
+    "published": "2018-12-19T00:00:00Z",
+    "references": [
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2018-1716"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://www.freebsd.org/security/advisories/FreeBSD-SA-18:15.bootpd.asc"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "FreeBSD -- bootpd buffer overflow"
+}

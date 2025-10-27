@@ -1,0 +1,87 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "tnftpd"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "20040810"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        },
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "lukemftpd"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        },
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "FreeBSD"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "last_affected": "4.7"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "discovery": "2004-08-17T00:00:00Z",
+        "vid": "c4b025bb-f05d-11d8-9837-000c41e2cdad"
+    },
+    "details": "lukemftpd(8) is an enhanced BSD FTP server produced\nwithin the NetBSD project. The sources for lukemftpd are\nshipped with some versions of FreeBSD, however it is not\nbuilt or installed by default. The build system option\nWANT\\_LUKEMFTPD must be set to build and install lukemftpd.\n[**NOTE**: An exception is FreeBSD 4.7-RELEASE,\nwherein lukemftpd was installed, but not enabled, by\ndefault.]\n\nPrzemyslaw Frasunek discovered several vulnerabilities\nin lukemftpd arising from races in the out-of-band signal\nhandling code used to implement the ABOR command. As a\nresult of these races, the internal state of the FTP server\nmay be manipulated in unexpected ways.\n\nA remote attacker may be able to cause FTP commands to\nbe executed with the privileges of the running lukemftpd\nprocess. This may be a low-privilege `ftp' user if the `-r'\ncommand line option is specified, or it may be superuser\nprivileges if `-r' is \\*not\\* specified.",
+    "id": "FreeBSD-kernel-2004-0150",
+    "modified": "2016-08-11T00:00:00Z",
+    "published": "2004-08-17T00:00:00Z",
+    "references": [
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2004-0794"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://www.securityfocus.com/bid/10967/info"
+        },
+        {
+            "type": "WEB",
+            "url": "http://cvsweb.netbsd.org/bsdweb.cgi/src/libexec/ftpd/ftpd.c#rev1.158"
+        },
+        {
+            "type": "WEB",
+            "url": "ftp://ftp.netbsd.org/pub/NetBSD/security/advisories/NetBSD-SA2004-009.txt.asc"
+        },
+        {
+            "type": "DISCUSSION",
+            "url": "http://lists.netsys.com/pipermail/full-disclosure/2004-August/025418.html"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "tnftpd -- remotely exploitable vulnerability"
+}

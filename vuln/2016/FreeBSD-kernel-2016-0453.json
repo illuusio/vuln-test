@@ -1,0 +1,51 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "go"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "introduced": "1.5,1"
+                        },
+                        {
+                            "fixed": "1.5.3,1"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "discovery": "2016-01-13T00:00:00Z",
+        "vid": "6809c6db-bdeb-11e5-b5fe-002590263bf5"
+    },
+    "details": "Jason Buberel reports:\n\n> A security-related issue has been reported in Go's math/big\n> package. The issue was introduced in Go 1.5. We recommend that all\n> users upgrade to Go 1.5.3, which fixes the issue. Go programs must\n> be recompiled with Go 1.5.3 in order to receive the fix.\n>\n> The Go team would like to thank Nick Craig-Wood for identifying the\n> issue.\n>\n> This issue can affect RSA computations in crypto/rsa, which is used\n> by crypto/tls. TLS servers on 32-bit systems could plausibly leak\n> their RSA private key due to this issue. Other protocol\n> implementations that create many RSA signatures could also be\n> impacted in the same way.\n>\n> Specifically, incorrect results in one part of the RSA Chinese\n> Remainder computation can cause the result to be incorrect in such a\n> way that it leaks one of the primes. While RSA blinding should\n> prevent an attacker from crafting specific inputs that trigger the\n> bug, on 32-bit systems the bug can be expected to occur at random\n> around one in 2^26 times. Thus collecting around 64 million\n> signatures (of known data) from an affected server should be enough\n> to extract the private key used.\n>\n> On 64-bit systems, the frequency of the bug is so low (less than\n> one in 2^50) that it would be very difficult to exploit.\n> Nonetheless, everyone is strongly encouraged to upgrade.",
+    "id": "FreeBSD-kernel-2016-0453",
+    "modified": "2016-01-18T00:00:00Z",
+    "published": "2016-01-18T00:00:00Z",
+    "references": [
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2015-8618"
+        },
+        {
+            "type": "WEB",
+            "url": "http://www.openwall.com/lists/oss-security/2016/01/13/7"
+        },
+        {
+            "type": "WEB",
+            "url": "https://go-review.googlesource.com/#/c/17672/"
+        },
+        {
+            "type": "WEB",
+            "url": "https://go-review.googlesource.com/#/c/18491/"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "go -- information disclosure vulnerability"
+}

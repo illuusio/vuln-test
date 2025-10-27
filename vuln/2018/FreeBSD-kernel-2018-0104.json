@@ -1,0 +1,51 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "libX11"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "1.6.6,1"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "discovery": "2018-08-21T00:00:00Z",
+        "vid": "fe99d3ca-a63a-11e8-a7c6-54e1ad3d6335"
+    },
+    "details": "The freedesktop.org project reports:\n\n> The functions XGetFontPath, XListExtensions, and XListFonts are\n> vulnerable to an off-by-one override on malicious server responses.\n> The server replies consist of chunks consisting of a length byte\n> followed by actual string, which is not NUL-terminated.\n> While parsing the response, the length byte is overridden with '\\0',\n> thus the memory area can be used as storage of C strings later on.\n> To be able to NUL-terminate the last string, the buffer is reserved\n> with an additional byte of space. For a boundary check, the variable\n> chend (end of ch) was introduced, pointing at the end of the buffer\n> which ch initially points to. Unfortunately there is a difference\n> in handling \"the end of ch\". While chend points at the first byte\n> that must not be written to, the for-loop uses chend as the last\n> byte that can be written to. Therefore, an off-by-one can occur.\n>\n> The length value is interpreted as signed char on many systems\n> (depending on default signedness of char), which can lead to an out\n> of boundary write up to 128 bytes in front of the allocated storage,\n> but limited to NUL byte(s).\n>\n> If the server sends a reply in which even the first string would\n> overflow the transmitted bytes, list[0] (or flist[0]) will be set to\n> NULL and a count of 0 is returned. If the resulting list is freed\n> with XFreeExtensionList or XFreeFontPath later on, the first Xfree\n> call is turned into Xfree (NULL-1) which will most likely trigger a\n> segmentation fault. Casting the length value to unsigned char fixes\n> the problem and allows string values with up to 255 characters.",
+    "id": "FreeBSD-kernel-2018-0104",
+    "modified": "2018-08-22T00:00:00Z",
+    "published": "2018-08-22T00:00:00Z",
+    "references": [
+        {
+            "type": "WEB",
+            "url": "https://lists.x.org/archives/xorg-announce/2018-August/002915.html"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2018-14598"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2018-14599"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2018-14600"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "libX11 -- Multiple vulnerabilities"
+}

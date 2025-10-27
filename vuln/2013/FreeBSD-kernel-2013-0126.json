@@ -1,0 +1,54 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "nvidia-driver"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "introduced": "310.14"
+                        },
+                        {
+                            "fixed": "310.44"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                },
+                {
+                    "events": [
+                        {
+                            "introduced": "195.22"
+                        },
+                        {
+                            "fixed": "304.88"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "discovery": "2013-03-27T00:00:00Z",
+        "vid": "1431f2d6-a06e-11e2-b9e0-001636d274f3"
+    },
+    "details": "NVIDIA Unix security team reports:\n\n> When the NVIDIA driver for the X Window System is operated in\n> \"NoScanout\" mode, and an X client installs an ARGB cursor that\n> is larger than the expected size (64x64 or 256x256, depending on\n> the driver version), the driver will overflow a buffer. This\n> can cause a denial of service (e.g., an X server segmentation\n> fault), or could be exploited to achieve arbitrary code\n> execution. Because the X server runs as setuid root in many\n> configurations, an attacker could potentially use this\n> vulnerability in those configurations to gain root privileges.",
+    "id": "FreeBSD-kernel-2013-0126",
+    "modified": "2013-04-08T00:00:00Z",
+    "published": "2013-04-08T00:00:00Z",
+    "references": [
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2013-0131"
+        },
+        {
+            "type": "WEB",
+            "url": "http://nvidia.custhelp.com/app/answers/detail/a_id/3290"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "NVIDIA UNIX driver -- ARGB cursor buffer overflow in \"NoScanout\" mode"
+}

@@ -1,0 +1,63 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "up-imapproxy"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "1.2.4"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        },
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "pop3proxy"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "last_affected": "1.1"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "discovery": "2004-11-17T00:00:00Z",
+        "vid": "927743d4-5ca9-11d9-a9e7-0001020eed82"
+    },
+    "details": "Timo Sirainen reports:\n\n> There are various bugs in up-imapproxy which can crash\n> it. Since up-imapproxy runs in a single process with each\n> connection handled in a separate thread, any crash kills\n> all the connections and stops listening for new ones.\n>\n> In 64bit systems it might be possible to make it leak\n> data (mails, passwords, ..) from other connections to\n> attacker's connection. However I don't think up-imapproxy\n> actually works in any 64bit system so this is just a\n> theoretical problem.",
+    "id": "FreeBSD-kernel-2005-0325",
+    "modified": "2008-02-27T00:00:00Z",
+    "published": "2005-01-02T00:00:00Z",
+    "references": [
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2004-1035"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://www.securityfocus.com/bid/11630/info"
+        },
+        {
+            "type": "DISCUSSION",
+            "url": "http://marc.theaimsgroup.com/?l=bugtraq&m=109995749510773"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "up-imapproxy -- multiple vulnerabilities"
+}

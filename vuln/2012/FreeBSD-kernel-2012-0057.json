@@ -1,0 +1,47 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "mod_pagespeed"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "0.10.22.6"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "discovery": "2012-09-12T00:00:00Z",
+        "vid": "178ba4ea-fd40-11e1-b2ae-001fd0af1a4c"
+    },
+    "details": "Google Reports:\n\n> mod\\_pagespeed 0.10.22.6 is a security update that fixes two\n> critical issues that affect earlier versions:\n>\n> * CVE-2012-4001, a problem with validation of own host name.\n> * CVE-2012-4360, a cross-site scripting attack, which affects versions starting from 0.10.19.1.\n>\n> The effect of the first problem is that it is possible to confuse\n> mod\\_pagespeed about its own host name, and to trick it into\n> fetching resources from other machines. This could be an issue if\n> the HTTP server has access to machines that are not otherwise\n> publicly visible.\n>\n> The second problem would permit a hostile third party to execute\n> JavaScript in users' browsers in context of the domain running\n> mod\\_pagespeed, which could permit interception of users' cookies or\n> data on the site.\n>\n> Because of the severity of the two problems, users are strongly\n> encouraged to update immediately.\n>\n> Behavior Changes in the Update:\n>\n> As part of the fix to the first issue, mod\\_pagespeed will not fetch\n> resources from machines other than localhost if they are not\n> explicitly mentioned in the configuration. This means that if you\n> need resources on the server's domain to be handled by some other\n> system, you'll need to explicitly use ModPagespeedMapOriginDomain\n> or ModPagespeedDomain to authorize that.",
+    "id": "FreeBSD-kernel-2012-0057",
+    "modified": "2012-09-12T00:00:00Z",
+    "published": "2012-09-12T00:00:00Z",
+    "references": [
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2012-4001"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2012-4360"
+        },
+        {
+            "type": "WEB",
+            "url": "https://developers.google.com/speed/docs/mod_pagespeed/announce-0.10.22.6"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "mod_pagespeed -- multiple vulnerabilities"
+}

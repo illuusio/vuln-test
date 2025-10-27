@@ -1,0 +1,43 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "exim"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "introduced": "4.85"
+                        },
+                        {
+                            "fixed": "4.92.1"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "discovery": "2019-07-18T00:00:00Z",
+        "vid": "3e0da406-aece-11e9-8d41-97657151f8c2"
+    },
+    "details": "Exim team report:\n\n> A local or remote attacker can execute programs with root privileges - if you've an unusual configuration.\n>\n> If your configuration uses the ${sort } expansion for items that can be controlled by an attacker (e.g. $local\\_part, $domain). The default config, as shipped by the Exim developers, does not contain ${sort }.\n>\n> The vulnerability is exploitable either remotely or locally and could\n> be used to execute other programs with root privilege. The ${sort }\n> expansion re-evaluates its items.\n>\n> Exim 4.92.1 is not vulnerable.",
+    "id": "FreeBSD-kernel-2019-0137",
+    "modified": "2019-07-26T00:00:00Z",
+    "published": "2019-07-25T00:00:00Z",
+    "references": [
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2019-13917"
+        },
+        {
+            "type": "WEB",
+            "url": "https://www.exim.org/static/doc/security/CVE-2019-13917.txt"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "Exim -- RCE in ${sort} expansion"
+}

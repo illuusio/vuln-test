@@ -1,0 +1,51 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "phpMyAdmin"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "introduced": "4.1.0"
+                        },
+                        {
+                            "fixed": "4.2.4"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "discovery": "2014-06-20T00:00:00Z",
+        "vid": "c4892644-f8c6-11e3-9f45-6805ca0b3d42"
+    },
+    "details": "The phpMyAdmin development team reports:\n\n> Self-XSS due to unescaped HTML output in recent/favorite\n> tables navigation.\n>\n> When marking a crafted database or table name as\n> favorite or having it in recent tables, it is possible to\n> trigger an XSS.\n>\n> This vulnerability can be triggered only by someone who\n> logged in to phpMyAdmin, as the usual token protection\n> prevents non-logged-in users from accessing the required\n> form.\n\n> Self-XSS due to unescaped HTML output in navigation items\n> hiding feature.\n>\n> When hiding or unhiding a crafted table name in the\n> navigation, it is possible to trigger an XSS.\n>\n> This vulnerability can be triggered only by someone who\n> logged in to phpMyAdmin, as the usual token protection\n> prevents non-logged-in users from accessing the required\n> form.",
+    "id": "FreeBSD-kernel-2014-0087",
+    "modified": "2014-06-24T00:00:00Z",
+    "published": "2014-06-20T00:00:00Z",
+    "references": [
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2014-4348"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2014-4349"
+        },
+        {
+            "type": "WEB",
+            "url": "http://www.phpmyadmin.net/home_page/security/PMASA-2014-2.php"
+        },
+        {
+            "type": "WEB",
+            "url": "http://www.phpmyadmin.net/home_page/security/PMASA-2014-3.php"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "phpMyAdmin -- two XSS vulnerabilities due to unescaped db/table names"
+}

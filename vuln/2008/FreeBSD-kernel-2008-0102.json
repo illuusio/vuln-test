@@ -1,0 +1,63 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "xorg-server"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "1.4.2,1"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "discovery": "2008-06-11T00:00:00Z",
+        "vid": "800e8bd5-3acb-11dd-8842-001302a18722"
+    },
+    "details": "Matthieu Herrb of X.Org reports:\n\n> Several vulnerabilities have been found in the server-side code\n> of some extensions in the X Window System. Improper validation of\n> client-provided data can cause data corruption.\n>\n> Exploiting these overflows will crash the X server or,\n> under certain circumstances allow the execution of arbitray machine\n> code.\n>\n> When the X server is running with root privileges (which is the case\n> for the Xorg server and for most kdrive based servers), these\n> vulnerabilities can thus also be used to raise privileges.\n>\n> All these vulnerabilities, to be exploited successfully, require either\n> an already established connection to a running X server (and normally\n> running X servers are only accepting authenticated connections), or a\n> shell access with a valid user on the machine where the vulnerable\n> server is installed.",
+    "id": "FreeBSD-kernel-2008-0102",
+    "modified": "2008-06-15T00:00:00Z",
+    "published": "2008-06-15T00:00:00Z",
+    "references": [
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2008-1377"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2008-1379"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2008-2360"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2008-2361"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2008-2362"
+        },
+        {
+            "type": "WEB",
+            "url": "http://lists.freedesktop.org/archives/xorg/2008-June/036026.html"
+        },
+        {
+            "type": "WEB",
+            "url": "http://secunia.com/advisories/30627/"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "xorg -- multiple vulnerabilities"
+}

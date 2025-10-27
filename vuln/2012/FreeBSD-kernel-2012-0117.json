@@ -1,0 +1,103 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "FreeBSD"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "introduced": "7.4"
+                        },
+                        {
+                            "fixed": "7.4_8"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                },
+                {
+                    "events": [
+                        {
+                            "introduced": "8.1"
+                        },
+                        {
+                            "fixed": "8.1_10"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                },
+                {
+                    "events": [
+                        {
+                            "introduced": "8.2"
+                        },
+                        {
+                            "fixed": "8.2_8"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                },
+                {
+                    "events": [
+                        {
+                            "introduced": "8.3"
+                        },
+                        {
+                            "fixed": "8.3_2"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                },
+                {
+                    "events": [
+                        {
+                            "introduced": "9.0"
+                        },
+                        {
+                            "fixed": "9.0_2"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "discovery": "2012-05-03T00:00:00Z",
+        "vid": "2ae114de-c064-11e1-b5e0-000c299b62e1"
+    },
+    "details": "Problem description:\n\n> OpenSSL fails to clear the bytes used as block cipher padding in SSL 3.0\n> records when operating as a client or a server that accept SSL 3.0\n> handshakes. As a result, in each record, up to 15 bytes of uninitialized\n> memory may be sent, encrypted, to the SSL peer. This could include\n> sensitive contents of previously freed memory. [CVE-2011-4576]\n>\n> OpenSSL support for handshake restarts for server gated cryptography (SGC)\n> can be used in a denial-of-service attack. [CVE-2011-4619]\n>\n> If an application uses OpenSSL's certificate policy checking when\n> verifying X509 certificates, by enabling the X509\\_V\\_FLAG\\_POLICY\\_CHECK\n> flag, a policy check failure can lead to a double-free. [CVE-2011-4109]\n>\n> A weakness in the OpenSSL PKCS #7 code can be exploited using\n> Bleichenbacher's attack on PKCS #1 v1.5 RSA padding also known as the\n> million message attack (MMA). [CVE-2012-0884]\n>\n> The asn1\\_d2i\\_read\\_bio() function, used by the d2i\\_\\*\\_bio and d2i\\_\\*\\_fp\n> functions, in OpenSSL contains multiple integer errors that can cause\n> memory corruption when parsing encoded ASN.1 data. This error can occur\n> on systems that parse untrusted ASN.1 data, such as X.509 certificates\n> or RSA public keys. [CVE-2012-2110]",
+    "id": "FreeBSD-kernel-2012-0117",
+    "modified": "2012-06-27T00:00:00Z",
+    "published": "2012-06-27T00:00:00Z",
+    "references": [
+        {
+            "type": "ADVISORY",
+            "url": "https://www.freebsd.org/security/advisories/FreeBSD-SA-12:01.openssl.asc"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2011-4576"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2011-4619"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2011-4109"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2012-0884"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2012-2110"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "FreeBSD -- OpenSSL multiple vulnerabilities"
+}

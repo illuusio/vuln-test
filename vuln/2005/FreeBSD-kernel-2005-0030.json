@@ -1,0 +1,47 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "qpopper"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "introduced": "4.0"
+                        },
+                        {
+                            "last_affected": "4.0.5"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "discovery": "2005-05-26T00:00:00Z",
+        "vid": "eb29a575-3381-11da-8340-000e0c2e438a"
+    },
+    "details": "Jens Steube reports that qpopper is vulnerable to a privilege\nescalation vulnerability. qpopper does not properly drop root\nprivileges so that user supplied configuration and trace files\ncan be processed with root privileges. This could allow a\nlocal attacker to create or modify arbitrary files.\n\nqpopper is also affected by improper umask settings\nwhich could allow users to create group or world-writeable\nfiles, possibly allowing an attacker to overwrite arbitrary\nfiles.",
+    "id": "FreeBSD-kernel-2005-0030",
+    "modified": "2005-11-26T00:00:00Z",
+    "published": "2005-11-07T00:00:00Z",
+    "references": [
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2005-1151"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2005-1152"
+        },
+        {
+            "type": "WEB",
+            "url": "http://secunia.com/advisories/15475/"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "qpopper -- multiple privilege escalation vulnerabilities"
+}

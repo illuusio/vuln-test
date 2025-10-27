@@ -1,0 +1,52 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "jenkins"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "last_affected": "2.120"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        },
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "jenkins-lts"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "last_affected": "2.107.2"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "discovery": "2018-05-09T00:00:00Z",
+        "vid": "06ab7724-0fd7-427e-a5ce-fe436302b10c"
+    },
+    "details": "Jenkins developers report:\n\n> The agent to master security subsystem ensures that the Jenkins\n> master is protected from maliciously configured agents. A path\n> traversal vulnerability allowed agents to escape whitelisted\n> directories to read and write to files they should not be able to\n> access.\n>\n> Black Duck Hub Plugin's API endpoint was affected by an XML\n> External Entity (XXE) processing vulnerability. This allowed an\n> attacker with Overall/Read access to have Jenkins parse a maliciously\n> crafted file that uses external entities for extraction of secrets\n> from the Jenkins master, server-side request forgery, or\n> denial-of-service attacks.\n>\n> Several other lower severity issues were reported, see reference\n> url for details.",
+    "id": "FreeBSD-kernel-2018-0182",
+    "modified": "2018-05-10T00:00:00Z",
+    "published": "2018-05-10T00:00:00Z",
+    "references": [
+        {
+            "type": "WEB",
+            "url": "https://jenkins.io/security/advisory/2018-05-09/"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "jenkins -- multiple vulnerabilities"
+}

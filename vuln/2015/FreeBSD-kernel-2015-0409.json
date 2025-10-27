@@ -1,0 +1,43 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "asterisk13"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "13.1.1"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "discovery": "2015-01-06T00:00:00Z",
+        "vid": "2eeb6652-a7a6-11e4-96ba-001999f8d30b"
+    },
+    "details": "The Asterisk project reports:\n\n> Asterisk may be configured to only allow specific audio\n> or video codecs to be used when communicating with a\n> particular endpoint. When an endpoint sends an SDP offer\n> that only lists codecs not allowed by Asterisk, the offer\n> is rejected. However, in this case, RTP ports that are\n> allocated in the process are not reclaimed.\n>\n> This issue only affects the PJSIP channel driver in\n> Asterisk. Users of the chan\\_sip channel driver are not\n> affected.\n>\n> As the resources are allocated after authentication,\n> this issue only affects communications with authenticated\n> endpoints.",
+    "id": "FreeBSD-kernel-2015-0409",
+    "modified": "2015-02-17T00:00:00Z",
+    "published": "2015-01-29T00:00:00Z",
+    "references": [
+        {
+            "type": "WEB",
+            "url": "http://downloads.asterisk.org/pub/security/AST-2015-001.html"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2015-1558"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "asterisk -- File descriptor leak when incompatible codecs are offered"
+}

@@ -1,0 +1,51 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "asterisk13"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "13.19.2"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "discovery": "2018-02-21T00:00:00Z",
+        "vid": "933654ce-17b8-11e8-90b8-001999f8d30b"
+    },
+    "details": "The Asterisk project reports:\n\n> AST-2018-004 - When processing a SUBSCRIBE request the\n> res\\_pjsip\\_pubsub module stores the accepted formats present\n> in the Accept headers of the request. This code did not\n> limit the number of headers it processed despite having\n> a fixed limit of 32. If more than 32 Accept headers were\n> present the code would write outside of its memory and\n> cause a crash.\n>\n> AST-2018-005 - A crash occurs when a number of\n> authenticated INVITE messages are sent over TCP or TLS\n> and then the connection is suddenly closed. This issue\n> leads to a segmentation fault.",
+    "id": "FreeBSD-kernel-2018-0254",
+    "modified": "2018-06-12T00:00:00Z",
+    "published": "2018-02-22T00:00:00Z",
+    "references": [
+        {
+            "type": "WEB",
+            "url": "https://downloads.asterisk.org/pub/security/AST-2018-004.html"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2018-7284"
+        },
+        {
+            "type": "WEB",
+            "url": "https://downloads.asterisk.org/pub/security/AST-2018-005.html"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2018-7286"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "asterisk -- multiple vulnerabilities"
+}

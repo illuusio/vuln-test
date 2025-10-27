@@ -1,0 +1,115 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "FreeBSD"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "introduced": "11.0"
+                        },
+                        {
+                            "fixed": "11.0_6"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                },
+                {
+                    "events": [
+                        {
+                            "introduced": "10.3"
+                        },
+                        {
+                            "fixed": "10.3_15"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                },
+                {
+                    "events": [
+                        {
+                            "introduced": "10.2"
+                        },
+                        {
+                            "fixed": "10.2_28"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                },
+                {
+                    "events": [
+                        {
+                            "introduced": "10.1"
+                        },
+                        {
+                            "fixed": "10.1_45"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                },
+                {
+                    "events": [
+                        {
+                            "introduced": "9.3"
+                        },
+                        {
+                            "fixed": "9.3_53"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "discovery": "2016-12-22T00:00:00Z",
+        "vid": "fcedcdbb-c86e-11e6-b1cf-14dae9d210b8"
+    },
+    "details": "Problem Description:\n====================\n\nMultiple vulnerabilities have been discovered in the NTP\nsuite:\n\nCVE-2016-9311: Trap crash, Reported by Matthew Van Gundy\nof Cisco ASIG.\n\nCVE-2016-9310: Mode 6 unauthenticated trap information\ndisclosure and DDoS vector. Reported by Matthew Van Gundy\nof Cisco ASIG.\n\nCVE-2016-7427: Broadcast Mode Replay Prevention DoS.\nReported by Matthew Van Gundy of Cisco ASIG.\n\nCVE-2016-7428: Broadcast Mode Poll Interval Enforcement\nDoS. Reported by Matthew Van Gundy of Cisco ASIG.\n\nCVE-2016-7431: Regression: 010-origin: Zero Origin\nTimestamp Bypass. Reported by Sharon Goldberg and Aanchal\nMalhotra of Boston University.\n\nCVE-2016-7434: Null pointer dereference in\n\\_IO\\_str\\_init\\_static\\_internal(). Reported by Magnus Stubman.\n\nCVE-2016-7426: Client rate limiting and server responses.\nReported by Miroslav Lichvar of Red Hat.\n\nCVE-2016-7433: Reboot sync calculation problem. Reported\nindependently by Brian Utterback of Oracle, and by Sharon\nGoldberg and Aanchal Malhotra of Boston University.\n\nImpact:\n=======\n\nA remote attacker who can send a specially crafted packet\nto cause a NULL pointer dereference that will crash ntpd,\nresulting in a Denial of Service. [CVE-2016-9311]\n\nAn exploitable configuration modification vulnerability\nexists in the control mode (mode 6) functionality of ntpd.\nIf, against long-standing BCP recommendations, \"restrict\ndefault noquery ...\" is not specified, a specially crafted\ncontrol mode packet can set ntpd traps, providing information\ndisclosure and DDoS amplification, and unset ntpd traps,\ndisabling legitimate monitoring by an attacker from remote.\n[CVE-2016-9310]\n\nAn attacker with access to the NTP broadcast domain can\nperiodically inject specially crafted broadcast mode NTP\npackets into the broadcast domain which, while being logged\nby ntpd, can cause ntpd to reject broadcast mode packets\nfrom legitimate NTP broadcast servers. [CVE-2016-7427]\n\nAn attacker with access to the NTP broadcast domain can\nsend specially crafted broadcast mode NTP packets to the\nbroadcast domain which, while being logged by ntpd, will\ncause ntpd to reject broadcast mode packets from legitimate\nNTP broadcast servers. [CVE-2016-7428]\n\nOrigin timestamp problems were fixed in ntp 4.2.8p6.\nHowever, subsequent timestamp validation checks introduced\na regression in the handling of some Zero origin timestamp\nchecks. [CVE-2016-7431]\n\nIf ntpd is configured to allow mrulist query requests\nfrom a server that sends a crafted malicious packet, ntpd\nwill crash on receipt of that crafted malicious mrulist\nquery packet. [CVE-2016-7434]\n\nAn attacker who knows the sources (e.g., from an IPv4\nrefid in server response) and knows the system is (mis)configured\nin this way can periodically send packets with spoofed\nsource address to keep the rate limiting activated and\nprevent ntpd from accepting valid responses from its sources.\n[CVE-2016-7426]\n\nNtp Bug 2085 described a condition where the root delay\nwas included twice, causing the jitter value to be higher\nthan expected. Due to a misinterpretation of a small-print\nvariable in The Book, the fix for this problem was incorrect,\nresulting in a root distance that did not include the peer\ndispersion. The calculations and formulas have been reviewed\nand reconciled, and the code has been updated accordingly.\n[CVE-2016-7433]",
+    "id": "FreeBSD-kernel-2016-0013",
+    "modified": "2016-12-22T00:00:00Z",
+    "published": "2016-12-22T00:00:00Z",
+    "references": [
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2016-7426"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2016-7427"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2016-7428"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2016-7431"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2016-7433"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2016-7434"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2016-9310"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2016-9311"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://www.freebsd.org/security/advisories/FreeBSD-SA-16:39.ntp.asc"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "FreeBSD -- Multiple vulnerabilities of ntp"
+}

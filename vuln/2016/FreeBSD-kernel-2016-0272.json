@@ -1,0 +1,55 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "openafs"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "1.6.17"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "discovery": "2016-03-16T00:00:00Z",
+        "vid": "bcbd3fe0-2b46-11e6-ae88-002590263bf5"
+    },
+    "details": "The OpenAFS development team reports:\n\n> Foreign users can bypass access controls to create groups as\n> system:administrators, including in the user namespace and the\n> system: namespace.\n\n> The contents of uninitialized memory are sent on the wire when\n> clients perform certain RPCs. Depending on the RPC, the information\n> leaked may come from kernel memory or userspace.",
+    "id": "FreeBSD-kernel-2016-0272",
+    "modified": "2016-06-05T00:00:00Z",
+    "published": "2016-06-05T00:00:00Z",
+    "references": [
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2016-2860"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2016-4536"
+        },
+        {
+            "type": "REPORT",
+            "url": "https://bugs.freebsd.org/bugzilla/show_bug.cgi?id=209534"
+        },
+        {
+            "type": "WEB",
+            "url": "http://www.openafs.org/pages/security/OPENAFS-SA-2016-001.txt"
+        },
+        {
+            "type": "WEB",
+            "url": "http://www.openafs.org/pages/security/OPENAFS-SA-2016-002.txt"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "openafs -- multiple vulnerabilities"
+}

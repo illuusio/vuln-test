@@ -1,0 +1,43 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "findutils"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "4.2.31"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "discovery": "2007-05-30T00:00:00Z",
+        "vid": "7ca2a709-103b-11dc-8e82-00001cd613f9"
+    },
+    "details": "James Youngman reports:\n\n> When GNU locate reads filenames from an old-format locate database,\n> they are read into a fixed-length buffer allocated on the heap.\n> Filenames longer than the 1026-byte buffer can cause a buffer\n> overrun. The overrunning data can be chosen by any person able to\n> control the names of filenames created on the local system. This\n> will normally include all local users, but in many cases also remote\n> users (for example in the case of FTP servers allowing uploads).",
+    "id": "FreeBSD-kernel-2007-0113",
+    "modified": "2007-06-01T00:00:00Z",
+    "published": "2007-06-01T00:00:00Z",
+    "references": [
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2007-2452"
+        },
+        {
+            "type": "DISCUSSION",
+            "url": "http://lists.gnu.org/archive/html/bug-findutils/2007-06/msg00000.html"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "findutils -- GNU locate heap buffer overrun"
+}

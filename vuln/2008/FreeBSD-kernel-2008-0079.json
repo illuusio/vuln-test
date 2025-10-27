@@ -1,0 +1,90 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "opera"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "9.52"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        },
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "linux-opera"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "9.52"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "discovery": "2008-08-20T00:00:00Z",
+        "vid": "73ec1008-72f0-11dd-874b-0030843d3802"
+    },
+    "details": "The Opera Team reports:\n\n> Scripts are able to change the addresses of framed pages that\n> come from the same site. Due to a flaw in the way that Opera checks\n> what frames can be changed, a site can change the address of frames\n> on other sites inside any window that it has opened. This allows\n> sites to open pages from other sites, and display misleading\n> information on them.\n\n> Custom shortcut and menu commands can be used to activate external\n> applications. In some cases, the parameters passed to these\n> applications are not prepared correctly, and may be created from\n> uninitialized memory. These may be misinterpreted as additional\n> parameters, and depending on the application, this could allow\n> execution of arbitrary code.\n>\n> Successful exploitation requires convincing the user to modify\n> their shortcuts or menu files appropriately, pointing to an\n> appropriate target application, then to activate that shortcut at\n> an appropriate time. To inject code, additional means will have to\n> be employed.\n\n> When insecure pages load content from secure sites into a frame,\n> they can cause Opera to incorrectly report the insecure site as\n> being secure. The padlock icon will incorrectly be shown, and the\n> security information dialog will state that the connection is\n> secure, but without any certificate information.\n\n> As a security precaution, Opera does not allow Web pages to\n> link to files on the user's local disk. However, a flaw exists\n> that allows Web pages to link to feed source files on the\n> user's computer. Suitable detection of JavaScript events and\n> appropriate manipulation can unreliably allow a script to\n> detect the difference between successful and unsuccessful\n> subscriptions to these files, to allow it to discover if the\n> file exists or not. In most cases the attempt will fail.\n\n> It has been reported that when a user subscribes to a news\n> feed using the feed subscription button, the page address\n> can be changed. This causes the address field not to update\n> correctly. Although this can mean that misleading\n> information can be displayed in the address field, it can\n> only leave the attacking page's address in the address bar,\n> not a trusted third party address.",
+    "id": "FreeBSD-kernel-2008-0079",
+    "modified": "2010-05-12T00:00:00Z",
+    "published": "2008-08-25T00:00:00Z",
+    "references": [
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2008-4195"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2008-4197"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2008-4198"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2008-4200"
+        },
+        {
+            "type": "WEB",
+            "url": "http://www.opera.com/support/search/view/893/"
+        },
+        {
+            "type": "WEB",
+            "url": "http://www.opera.com/support/search/view/894/"
+        },
+        {
+            "type": "WEB",
+            "url": "http://www.opera.com/support/search/view/895/"
+        },
+        {
+            "type": "WEB",
+            "url": "http://www.opera.com/support/search/view/896/"
+        },
+        {
+            "type": "WEB",
+            "url": "http://www.opera.com/support/search/view/897/"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "opera -- multiple vulnerabilities"
+}

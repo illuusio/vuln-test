@@ -1,0 +1,74 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "drupal5"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "5.19"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        },
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "drupal6"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "6.13"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "discovery": "2009-07-01T00:00:00Z",
+        "vid": "be927298-6f97-11de-b444-001372fd0af2"
+    },
+    "details": "The Drupal Security Team reports:\n\n> Cross-site scripting\n>\n> The Forum module does not correctly handle certain arguments\n> obtained from the URL. By enticing a suitably privileged user\n> to visit a specially crafted URL, a malicious user is able to\n> insert arbitrary HTML and script code into forum pages. Such a\n> cross-site scripting attack may lead to the malicious user\n> gaining administrative access. Wikipedia has more information\n> about cross-site scripting (XSS).\n>\n> User signatures have no separate input format, they use the\n> format of the comment with which they are displayed. A user\n> will no longer be able to edit a comment when an administrator\n> changes the comment's input format to a format that is not\n> accessible to the user. However they will still be able to\n> modify their signature, which will then be processed by the new\n> input format.\n>\n> If the new format is very permissive, via their signature, the\n> user may be able to insert arbitrary HTML and script code into\n> pages or, when the PHP filter is enabled for the new format,\n> execute PHP code. This issue affects Drupal 6.x only.\n>\n> When an anonymous user fails to login due to mistyping his\n> username or password, and the page he is on contains a sortable\n> table, the (incorrect) username and password are included in\n> links on the table. If the user visits these links the password\n> may then be leaked to external sites via the HTTP referer.\n>\n> In addition, if the anonymous user is enticed to visit the site\n> via a specially crafted URL while the Drupal page cache is\n> enabled, a malicious user might be able to retrieve the\n> (incorrect) username and password from the page cache.",
+    "id": "FreeBSD-kernel-2009-0071",
+    "modified": "2010-05-02T00:00:00Z",
+    "published": "2009-07-13T00:00:00Z",
+    "references": [
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2009-2372"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2009-2374"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2009-2373"
+        },
+        {
+            "type": "WEB",
+            "url": "http://drupal.org/node/507572"
+        },
+        {
+            "type": "WEB",
+            "url": "http://secunia.com/advisories/35681"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "drupal -- multiple vulnerabilities"
+}

@@ -1,0 +1,43 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "clamav"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "1.4.3,1"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "discovery": "2025-06-18T00:00:00Z",
+        "vid": "3dcc0812-4da5-11f0-afcc-f02f7432cf97"
+    },
+    "details": "Cisco reports:\n\n> A vulnerability in the PDF scanning processes of ClamAV could allow\n> an unauthenticated, remote attacker to cause a buffer overflow\n> condition, cause a denial of service (DoS) condition, or execute\n> arbitrary code on an affected device.\n> This vulnerability exists because memory buffers are allocated\n> incorrectly when PDF files are processed. An attacker could exploit\n> this vulnerability by submitting a crafted PDF file to be scanned\n> by ClamAV on an affected device. A successful exploit could allow\n> the attacker to trigger a buffer overflow, likely resulting in the\n> termination of the ClamAV scanning process and a DoS condition on\n> the affected software. Although unproven, there is also a possibility\n> that an attacker could leverage the buffer overflow to execute\n> arbitrary code with the privileges of the ClamAV process.",
+    "id": "FreeBSD-ports-2025-0076",
+    "modified": "2025-06-20T00:00:00Z",
+    "published": "2025-06-20T00:00:00Z",
+    "references": [
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2025-20260"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://nvd.nist.gov/vuln/detail/CVE-2025-20260"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "clamav -- ClamAV PDF Scanning Buffer Overflow Vulnerability"
+}

@@ -1,0 +1,55 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "opendmarc"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "1.4.1"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "discovery": "2021-04-06T00:00:00Z",
+        "vid": "937aa1d6-685e-11ec-a636-000c29061ce6"
+    },
+    "details": "OpenDMARC releases prior to 1.4.1 are susceptible to the following\nvulnerabilities:\n\n* (CVE-2019-16378) OpenDMARC through 1.3.2 and 1.4.x through\n  1.4.0-Beta1 is prone to a signature-bypass vulnerability with\n  multiple From: addresses, which might affect applications that\n  consider a domain name to be relevant to the origin of an e-mail\n  message.\n* (CVE-2019-20790) OpenDMARC through 1.3.2 and 1.4.x, when used\n  with pypolicyd-spf 2.0.2, allows attacks that bypass SPF and DMARC\n  authentication in situations where the HELO field is inconsistent\n  with the MAIL FROM field.\n* (CVE-2020-12272) OpenDMARC through 1.3.2 and 1.4.x allows\n  attacks that inject authentication results to provide false\n  information about the domain that originated an e-mail\n  message.\n* (CVE-2020-12460) OpenDMARC through 1.3.2 and 1.4.x through\n  1.4.0-Beta1 has improper null termination in the function\n  opendmarc\\_xml\\_parse that can result in a one-byte heap overflow in\n  opendmarc\\_xml when parsing a specially crafted DMARC aggregate\n  report. This can cause remote memory corruption.",
+    "id": "FreeBSD-kernel-2021-0004",
+    "modified": "2021-12-30T00:00:00Z",
+    "published": "2021-12-30T00:00:00Z",
+    "references": [
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2019-16378"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2019-20790"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2020-12272"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2020-12460"
+        },
+        {
+            "type": "WEB",
+            "url": "https://github.com/trusteddomainproject/OpenDMARC/blob/rel-opendmarc-1-4-1-1/RELEASE_NOTES"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "OpenDMARC - Multiple vulnerabilities"
+}

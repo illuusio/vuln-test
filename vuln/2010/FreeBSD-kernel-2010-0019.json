@@ -1,0 +1,43 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "openssl"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "1.0.0_2"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "discovery": "2010-10-08T00:00:00Z",
+        "vid": "3042c33a-f237-11df-9d02-0018fe623f2b"
+    },
+    "details": "OpenSSL Team reports:\n\n> Rob Hulswit has found a flaw in the OpenSSL TLS server extension\n> code parsing which on affected servers can be exploited in a buffer\n> overrun attack.\n>\n> Any OpenSSL based TLS server is vulnerable if it is multi-threaded\n> and uses OpenSSL's internal caching mechanism. Servers that are\n> multi-process and/or disable internal session caching are NOT\n> affected.\n>\n> In particular the Apache HTTP server (which never uses OpenSSL\n> internal caching) and Stunnel (which includes its own workaround)\n> are NOT affected.",
+    "id": "FreeBSD-kernel-2010-0019",
+    "modified": "2010-11-17T00:00:00Z",
+    "published": "2010-11-17T00:00:00Z",
+    "references": [
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2010-3864"
+        },
+        {
+            "type": "WEB",
+            "url": "http://openssl.org/news/secadv_20101116.txt"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "openssl -- TLS extension parsing race condition"
+}

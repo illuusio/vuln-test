@@ -1,0 +1,43 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "FreeBSD"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "introduced": "5.4"
+                        },
+                        {
+                            "fixed": "5.4_3"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "discovery": "2005-06-29T00:00:00Z",
+        "vid": "f70f8860-e8ee-11d9-b875-0001020eed82"
+    },
+    "details": "Problem Description\n===================\n\nThe ipfw tables lookup code caches the result of the last\nquery. The kernel may process multiple packets\nconcurrently, performing several concurrent table lookups.\nDue to an insufficient locking, a cached result can become\ncorrupted that could cause some addresses to be incorrectly\nmatched against a lookup table.\n\nImpact\n======\n\nWhen lookup tables are used with ipfw, packets may on very\nrare occasions incorrectly match a lookup table. This could\nresult in a packet being treated contrary to the defined\npacket filtering ruleset. For example, a packet may be\nallowed to pass through when it should have been\ndiscarded.\n\nThe problem can only occur on Symmetric Multi-Processor\n(SMP) systems, or on Uni Processor (UP) systems with the\nPREEMPTION kernel option enabled (not the default).\n\nWorkaround\n==========\n\na) Do not use lookup tables.\n\nOR\n\nb) Disable concurrent processing of packets in the network\nstack by setting the \"debug.mpsafenet=0\" tunable:\n\n# echo \"debug.mpsafenet=0\" << /boot/loader.conf",
+    "id": "FreeBSD-kernel-2005-0133",
+    "modified": "2005-07-06T00:00:00Z",
+    "published": "2005-06-29T00:00:00Z",
+    "references": [
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2005-2019"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://www.freebsd.org/security/advisories/FreeBSD-SA-05:13.ipfw.asc"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "kernel -- ipfw packet matching errors with address tables"
+}

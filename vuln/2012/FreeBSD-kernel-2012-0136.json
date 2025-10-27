@@ -1,0 +1,66 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "libxml2"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "2.7.8_3"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        },
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "linux-f10-libxml2"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "2.7.8_3"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "discovery": "2012-05-15T00:00:00Z",
+        "vid": "b8ae4659-a0da-11e1-a294-bcaec565249c"
+    },
+    "details": "Google chrome team reports:\n\n> An off-by-one out-of-bounds write flaw was found in the way libxml, a library\n> for providing XML and HTML support, evaluated certain XPointer parts (XPointer\n> is used by libxml to include only the part from the returned XML document, that\n> can be accessed using the XPath expression given with the XPointer). A remote\n> attacker could provide a specially-crafted XML file, which once opened in an\n> application, linked against libxml, would lead to that application crash, or,\n> potentially arbitrary code execution with the privileges of the user running\n> the application.\n>\n> Note: The flaw to be exploited requires the particular application, linked\n> against libxml, to use the XPointer evaluation functionality.",
+    "id": "FreeBSD-kernel-2012-0136",
+    "modified": "2014-04-30T00:00:00Z",
+    "published": "2012-05-18T00:00:00Z",
+    "references": [
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2011-3202"
+        },
+        {
+            "type": "WEB",
+            "url": "http://googlechromereleases.blogspot.com/2012/05/stable-channel-update.html"
+        },
+        {
+            "type": "REPORT",
+            "url": "https://bugzilla.redhat.com/show_bug.cgi?id=CVE-2011-3102"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "libxml2 -- An off-by-one out-of-bounds write by XPointer"
+}

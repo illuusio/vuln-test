@@ -1,0 +1,43 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "nginx-devel"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "1.29.1"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "discovery": "2025-08-13T00:00:00Z",
+        "vid": "eb03714d-79f0-11f0-b4c1-ac5afc632ba3"
+    },
+    "details": "F5 reports:\n\n> NGINX Open Source and NGINX Plus have a vulnerability in the\n> ngx\\_mail\\_smtp\\_module that might allow an unauthenticated attacker to\n> over-read NGINX SMTP authentication process memory; as a result, the\n> server side may leak arbitrary bytes sent in a request to the\n> authentication server. This issue happens during the NGINX SMTP\n> authentication process and requires the attacker to make preparations\n> against the target system to extract the leaked data. The issue\n> affects NGINX only if (1) it is built with the ngx\\_mail\\_smtp\\_module,\n> (2) the smtp\\_auth directive is configured with method \"none,\"\n> and (3) the authentication server returns the \"Auth-Wait\" response\n> header.",
+    "id": "FreeBSD-ports-2025-0001",
+    "modified": "2025-08-15T00:00:00Z",
+    "published": "2025-08-15T00:00:00Z",
+    "references": [
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2025-53859"
+        },
+        {
+            "type": "WEB",
+            "url": "https://www.cve.org/CVERecord?id=CVE-2025-53859"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "nginx -- worker process memory disclosure"
+}

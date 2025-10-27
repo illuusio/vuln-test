@@ -1,0 +1,58 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "FreeBSD"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "introduced": "6.3"
+                        },
+                        {
+                            "fixed": "6.3_3"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                },
+                {
+                    "events": [
+                        {
+                            "introduced": "7.0"
+                        },
+                        {
+                            "fixed": "7.0_3"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "discovery": "2008-07-08T00:00:00Z",
+        "vid": "655ee1ec-511b-11dd-80ba-000bcdf0a03b"
+    },
+    "details": "Problem Description:\n====================\n\nThe BIND DNS implementation does not randomize the UDP source\nport when doing remote queries, and the query id alone does\nnot provide adequate randomization.\n\nImpact:\n=======\n\nThe lack of source port randomization reduces the amount of\ndata the attacker needs to guess in order to successfully\nexecute a DNS cache poisoning attack. This allows the\nattacker to influence or control the results of DNS queries\nbeing returned to users from target systems.\n\nWorkaround:\n===========\n\nLimiting the group of machines that can do recursive queries\non the DNS server will make it more difficult, but not\nimpossible, for this vulnerability to be exploited.\n\nTo limit the machines able to perform recursive queries, add an ACL in\nnamed.conf and limit recursion like the following:\n\n```\nacl example-acl {\n```\n\n```\n   192.0.2.0/24;\n```\n\n```\n};\n```\n\n```\noptions {\n```\n\n```\n\trecursion yes;\n```\n\n```\n\tallow-recursion { example-acl; };\n```\n\n```\n};\n```",
+    "id": "FreeBSD-kernel-2008-0091",
+    "modified": "2016-08-09T00:00:00Z",
+    "published": "2008-07-13T00:00:00Z",
+    "references": [
+        {
+            "type": "ADVISORY",
+            "url": "https://www.kb.cert.org/vuls/id/800113"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2008-1447"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://www.freebsd.org/security/advisories/FreeBSD-SA-08:06.bind.asc"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "FreeBSD -- DNS cache poisoning"
+}

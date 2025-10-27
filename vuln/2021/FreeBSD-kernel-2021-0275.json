@@ -1,0 +1,81 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "asterisk13"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "introduced": "13.38.1"
+                        },
+                        {
+                            "fixed": "13.38.2"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        },
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "asterisk16"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "introduced": "16.15.1"
+                        },
+                        {
+                            "fixed": "16.16.1"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        },
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "asterisk18"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "introduced": "18.1.1"
+                        },
+                        {
+                            "fixed": "18.2.1"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "discovery": "2021-01-04T00:00:00Z",
+        "vid": "b330db5f-7225-11eb-8386-001999f8d30b"
+    },
+    "details": "The Asterisk project reports:\n\n> If a registered user is tricked into dialing a malicious\n> number that sends lots of 181 responses to Asterisk, each\n> one will cause a 181 to be sent back to the original\n> caller with an increasing number of entries in the\n> \"Supported\" header. Eventually the number of entries in\n> the header exceeds the size of the entry array and causes\n> a crash.",
+    "id": "FreeBSD-kernel-2021-0275",
+    "modified": "2021-02-18T00:00:00Z",
+    "published": "2021-02-18T00:00:00Z",
+    "references": [
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2020-35776"
+        },
+        {
+            "type": "WEB",
+            "url": "https://downloads.asterisk.org/pub/security/AST-2021-001.html"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "asterisk -- Remote crash in res_pjsip_diversion"
+}

@@ -1,0 +1,43 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "unbound"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "1.16.2"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "discovery": "2022-09-26T00:00:00Z",
+        "vid": "5a1c2e06-3fb7-11ed-a402-b42e991fc52e"
+    },
+    "details": "A vulnerability named 'Non-Responsive Delegation Attack'\n(NRDelegation Attack) has been discovered in various DNS\nresolving software. The NRDelegation Attack works by having\na malicious delegation with a considerable number of non\nresponsive nameservers. The attack starts by querying a\nresolver for a record that relies on those unresponsive\nnameservers. The attack can cause a resolver to spend a lot\nof time/resources resolving records under a malicious\ndelegation point where a considerable number of unresponsive\nNS records reside. It can trigger high CPU usage in some\nresolver implementations that continually look in the cache\nfor resolved NS records in that delegation.\n\n> .",
+    "id": "FreeBSD-kernel-2022-0067",
+    "modified": "2022-09-29T00:00:00Z",
+    "published": "2022-09-29T00:00:00Z",
+    "references": [
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2022-3204"
+        },
+        {
+            "type": "WEB",
+            "url": "https://nlnetlabs.nl/downloads/unbound/CVE-2022-3204.txt"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "unbound -- Non-Responsive Delegation Attack"
+}

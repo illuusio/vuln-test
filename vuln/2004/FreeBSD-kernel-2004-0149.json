@@ -1,0 +1,51 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "p5-Mail-SpamAssassin"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "2.64"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "discovery": "2004-08-04T00:00:00Z",
+        "vid": "0d3a5148-f512-11d8-9837-000c41e2cdad"
+    },
+    "details": "According to the SpamAssassin 2.64 release announcement:\n\n> Security fix prevents a denial of service attack open\n> to certain malformed messages; this DoS affects all\n> SpamAssassin 2.5x and 2.6x versions to date.\n\nThe issue appears to be triggered by overly long message\nheaders.",
+    "id": "FreeBSD-kernel-2004-0149",
+    "modified": "2004-08-28T00:00:00Z",
+    "published": "2004-08-23T00:00:00Z",
+    "references": [
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2004-0796"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://www.securityfocus.com/bid/10957/info"
+        },
+        {
+            "type": "DISCUSSION",
+            "url": "http://marc.theaimsgroup.com/?l=spamassassin-announce&m=109168121628767"
+        },
+        {
+            "type": "WEB",
+            "url": "http://search.cpan.org/src/JMASON/Mail-SpamAssassin-2.64/Changes"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "SpamAssassin -- denial-of-service in tokenize_headers"
+}

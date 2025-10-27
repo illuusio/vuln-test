@@ -1,0 +1,98 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "go119"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "1.19.12"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        },
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "go120"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "1.20.7"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "discovery": "2023-04-27T00:00:00Z",
+        "vid": "78f2e491-312d-11ee-85f2-bd89b893fcb4"
+    },
+    "details": "The Go project reports:\n\n> crypto/tls: restrict RSA keys in certificates to <= 8192 bits\n>\n> Extremely large RSA keys in certificate chains can cause\n> a client/server to expend significant CPU time verifying\n> signatures. Limit this by restricting the size of RSA keys\n> transmitted during handshakes to <= 8192 bits.\n\n> net/http: insufficient sanitization of Host header\n>\n> The HTTP/1 client did not fully validate the contents of\n> the Host header. A maliciously crafted Host header could\n> inject additional headers or entire requests. The HTTP/1\n> client now refuses to send requests containing an\n> invalid Request.Host or Request.URL.Host value.\n\n> cmd/go: cgo code injection\n>\n> The go command may generate unexpected code at build\n> time when using cgo. This may result in unexpected\n> behavior when running a go program which uses cgo.\n\n> runtime: unexpected behavior of setuid/setgid binaries\n>\n> The Go runtime didn't act any differently when a binary\n> had the setuid/setgid bit set. On Unix platforms, if a\n> setuid/setgid binary was executed with standard I/O file\n> descriptors closed, opening any files could result in\n> unexpected content being read/written with elevated\n> prilieges. Similarly if a setuid/setgid program was\n> terminated, either via panic or signal, it could leak the\n> contents of its registers.\n\n> cmd/go: improper sanitization of LDFLAGS\n>\n> The go command may execute arbitrary code at build time\n> when using cgo. This may occur when running \"go get\" on a\n> malicious module, or when running any other command which\n> builds untrusted code. This is can by triggered by linker\n> flags, specified via a \"#cgo LDFLAGS\" directive.\n\n> html/template: improper sanitization of CSS values\n>\n> Angle brackets (<>) were not considered dangerous\n> characters when inserted into CSS contexts. Templates\n> containing multiple actions separated by a '/' character\n> could result in unexpectedly closing the CSS context and\n> allowing for injection of unexpected HMTL, if executed\n> with untrusted input.\n\n> html/template: improper handling of JavaScript whitespace\n>\n> Not all valid JavaScript whitespace characters were\n> considered to be whitespace. Templates containing\n> whitespace characters outside of the character set\n> \"\\t\\n\\f\\r\\u0020\\u2028\\u2029\" in JavaScript contexts that\n> also contain actions may not be properly sanitized\n> during execution.\n\n> html/template: improper handling of empty HTML attributes\n>\n> Templates containing actions in unquoted HTML attributes\n> (e.g. \"attr={{.}}\") executed with empty input could\n> result in output that would have unexpected results when\n> parsed due to HTML normalization rules. This may allow\n> injection of arbitrary attributes into tags.",
+    "id": "FreeBSD-kernel-2023-0169",
+    "modified": "2023-08-02T00:00:00Z",
+    "published": "2023-08-02T00:00:00Z",
+    "references": [
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2023-29406"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2023-29402"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2023-29403"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2023-29404"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2023-24539"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2023-24540"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2023-29400"
+        },
+        {
+            "type": "WEB",
+            "url": "https://groups.google.com/u/1/g/golang-announce/c/X0b6CsSAaYI"
+        },
+        {
+            "type": "WEB",
+            "url": "https://groups.google.com/u/1/g/golang-announce/c/2q13H6LEEx0"
+        },
+        {
+            "type": "WEB",
+            "url": "https://groups.google.com/u/1/g/golang-announce/c/q5135a9d924"
+        },
+        {
+            "type": "WEB",
+            "url": "https://groups.google.com/u/1/g/golang-announce/c/MEb0UyuSMsU"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "go -- multiple vulnerabilities"
+}

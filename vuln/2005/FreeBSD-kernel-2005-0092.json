@@ -1,0 +1,39 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "nbsmtp"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "0.99_1"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "discovery": "2005-07-25T00:00:00Z",
+        "vid": "debbb39c-fdb3-11d9-a30d-00b0d09acbfc"
+    },
+    "details": "When nbsmtp is executed in debug mode, server messages\nwill be printed to stdout and logged via syslog. Syslog is\nused insecurely and user-supplied format characters are\ndirectly fed to the syslog function, which results in a\nformat string vulnerability.\n\nUnder some circumstances, an SMTP server may be able to\nabuse this vulnerability in order to alter the nbsmtp\nprocess and execute malicious code.",
+    "id": "FreeBSD-kernel-2005-0092",
+    "modified": "2005-08-01T00:00:00Z",
+    "published": "2005-08-01T00:00:00Z",
+    "references": [
+        {
+            "type": "WEB",
+            "url": "http://people.freebsd.org/~niels/issues/nbsmtp-20050726.txt"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "nbsmtp -- format string vulnerability"
+}

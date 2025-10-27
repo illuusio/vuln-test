@@ -1,0 +1,39 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "elm"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "2.5.8"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "discovery": "2005-08-20T00:00:00Z",
+        "vid": "f66e011d-13ff-11da-af41-0004614cc33d"
+    },
+    "details": "Ulf Harnhammar has discovered a remotely exploitable buffer\noverflow in Elm e-mail client when parsing the Expires header\nof an e-mail message:\n\n> The attacker only needs to send the victim an e-mail\n> message. When the victim with that message in his or her\n> inbox starts Elm or simply views the inbox in an already\n> started copy of Elm, the buffer overflow will happen\n> immediately. The overflow is stack-based, and it gives full\n> control over EIP, EBP and EBX. It is caused by a bad\n> sscanf(3) call, using a format string containing \"%s\"\n> to copy from a long char array to a shorter array.",
+    "id": "FreeBSD-kernel-2005-0072",
+    "modified": "2005-08-23T00:00:00Z",
+    "published": "2005-08-23T00:00:00Z",
+    "references": [
+        {
+            "type": "WEB",
+            "url": "http://archives.neohapsis.com/archives/fulldisclosure/2005-08/0688.html"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "elm -- remote buffer overflow in Expires header"
+}

@@ -1,0 +1,47 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "qutebrowser"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "1.11.1"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "discovery": "2020-05-02T00:00:00Z",
+        "vid": "452d16bb-920d-11ea-9d20-18a6f7016652"
+    },
+    "details": "Qutebrowser developers report:\n\n> After a certificate error was overridden by the user,\n> qutebrowser displays the URL as yellow (colors.statusbar.url.warn.fg).\n> However, when the affected website was subsequently loaded again,\n> the URL was mistakenly displayed as green (colors.statusbar.url.success\\_https).\n> While the user already has seen a certificate error prompt at this point\n> (or set content.ssl\\_strict to false which is not recommended),\n> this could still provide a false sense of security.",
+    "id": "FreeBSD-kernel-2020-0231",
+    "modified": "2020-05-09T00:00:00Z",
+    "published": "2020-05-09T00:00:00Z",
+    "references": [
+        {
+            "type": "WEB",
+            "url": "https://github.com/qutebrowser/qutebrowser/security/advisories/GHSA-4rcq-jv2f-898j"
+        },
+        {
+            "type": "WEB",
+            "url": "https://github.com/qutebrowser/qutebrowser/issues/5403"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2020-11054"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "qutebrowser -- Reloading page with certificate errors shows a green URL"
+}

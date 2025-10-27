@@ -1,0 +1,51 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "e2fsprogs"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "1.40.3"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "discovery": "2007-12-07T00:00:00Z",
+        "vid": "299e3f81-aee7-11dc-b781-0016179b2dd5"
+    },
+    "details": "Theodore Y. Ts'o reports:\n\n> Fix a potential security vulnerability where an untrusted\n> filesystem can be corrupted in such a way that a program using\n> libext2fs will allocate a buffer which is far too small. This\n> can lead to either a crash or potentially a heap-based buffer\n> overflow crash. No known exploits exist, but main concern is\n> where an untrusted user who possesses privileged access in a\n> guest Xen environment could corrupt a filesystem which is then\n> accessed by thus allowing the untrusted user to gain privileged\n> access in the host OS. Thanks to the McAfee AVERT Research group\n> for reporting this issue.",
+    "id": "FreeBSD-kernel-2007-0003",
+    "modified": "2007-12-20T00:00:00Z",
+    "published": "2007-12-20T00:00:00Z",
+    "references": [
+        {
+            "type": "ADVISORY",
+            "url": "https://www.securityfocus.com/bid/26772/info"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2007-5497"
+        },
+        {
+            "type": "WEB",
+            "url": "http://secunia.com/advisories/27889/"
+        },
+        {
+            "type": "WEB",
+            "url": "http://sourceforge.net/project/shownotes.php?group_id=2406&release_id=560230"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "e2fsprogs -- heap buffer overflow"
+}

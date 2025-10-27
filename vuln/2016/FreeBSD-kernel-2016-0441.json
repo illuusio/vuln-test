@@ -1,0 +1,59 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "privoxy"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "3.0.23"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "discovery": "2015-01-26T00:00:00Z",
+        "vid": "d9e1b569-c3d8-11e5-b5fe-002590263bf5"
+    },
+    "details": "Privoxy Developers reports:\n\n> Fixed a DoS issue in case of client requests with incorrect\n> chunk-encoded body. When compiled with assertions enabled (the\n> default) they could previously cause Privoxy to abort(). Reported\n> by Matthew Daley. CVE-2015-1380.\n>\n> Fixed multiple segmentation faults and memory leaks in the pcrs\n> code. This fix also increases the chances that an invalid pcrs\n> command is rejected as such. Previously some invalid commands would\n> be loaded without error. Note that Privoxy's pcrs sources (action\n> and filter files) are considered trustworthy input and should not be\n> writable by untrusted third-parties. CVE-2015-1381.\n>\n> Fixed an 'invalid read' bug which could at least theoretically\n> cause Privoxy to crash. So far, no crashes have been observed.\n> CVE-2015-1382.",
+    "id": "FreeBSD-kernel-2016-0441",
+    "modified": "2016-01-26T00:00:00Z",
+    "published": "2016-01-26T00:00:00Z",
+    "references": [
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2015-1380"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2015-1381"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2015-1382"
+        },
+        {
+            "type": "REPORT",
+            "url": "https://bugs.freebsd.org/bugzilla/show_bug.cgi?id=197089"
+        },
+        {
+            "type": "WEB",
+            "url": "http://www.privoxy.org/3.0.23/user-manual/whatsnew.html"
+        },
+        {
+            "type": "WEB",
+            "url": "http://www.openwall.com/lists/oss-security/2015/01/26/4"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "privoxy -- multiple vulnerabilities"
+}

@@ -1,0 +1,39 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "php5-zip"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "5.3.6"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "discovery": "2011-03-20T00:00:00Z",
+        "vid": "fe853666-56ce-11e0-9668-001fd0d616cf"
+    },
+    "details": "US-CERT/NIST reports:\n\n> The \\_zip\\_name\\_locate function in zip\\_name\\_locate.c in the Zip extension\n> in PHP before 5.3.6 does not properly handle a ZIPARCHIVE::FL\\_UNCHANGED\n> argument, which might allow context-dependent attackers to cause a\n> denial of service (application crash) via an empty ZIP archive that is\n> processed with a (1) locateName or (2) statName operation.",
+    "id": "FreeBSD-kernel-2011-0118",
+    "modified": "2011-03-25T00:00:00Z",
+    "published": "2011-03-25T00:00:00Z",
+    "references": [
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2011-0421"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "php -- ZipArchive segfault with FL_UNCHANGED on empty archive"
+}

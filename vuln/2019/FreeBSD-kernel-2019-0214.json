@@ -1,0 +1,43 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "wget"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "introduced": "1.19"
+                        },
+                        {
+                            "fixed": "1.20.1"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "discovery": "2018-12-25T00:00:00Z",
+        "vid": "a737eb11-5cfc-11e9-ab87-8cec4bf8fcfb"
+    },
+    "details": "Gynvael Coldwind reports:\n\n> set\\_file\\_metadata in xattr.c in GNU Wget before 1.20.1 stores a\n> file's origin URL in the user.xdg.origin.url metadata attribute\n> of the extended attributes of the downloaded file, which allows\n> local users to obtain sensitive information (e.g., credentials\n> contained in the URL) by reading this attribute, as demonstrated\n> by getfattr. This also applies to Referer information in the\n> user.xdg.referrer.url metadata attribute.",
+    "id": "FreeBSD-kernel-2019-0214",
+    "modified": "2019-04-12T00:00:00Z",
+    "published": "2019-04-12T00:00:00Z",
+    "references": [
+        {
+            "type": "ADVISORY",
+            "url": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2018-20483"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2018-20483"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "wget -- security flaw in caching credentials passed as a part of the URL"
+}

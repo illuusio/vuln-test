@@ -1,0 +1,51 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "advancecomp"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "2.1.6"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "discovery": "2018-07-29T00:00:00Z",
+        "vid": "0bf816f6-3cfe-11ec-86cd-dca632b19f10"
+    },
+    "details": "Joonun Jang reports:\n\n> heap buffer overflow running advzip with \"-l poc\" option\n>\n> Running 'advzip -l poc' with the attached file raises heap buffer overflow\n> which may allow a remote attacker to cause unspecified impact including denial-of-service attack.\n> I expected the program to terminate without segfault, but the program crashes as follow. [...]\n\nand other vulnerabilities.",
+    "id": "FreeBSD-kernel-2021-0037",
+    "modified": "2021-11-19T00:00:00Z",
+    "published": "2021-11-19T00:00:00Z",
+    "references": [
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2018-1056"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2019-8379"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2019-8383"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2019-9210"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "advancecomp -- multiple vulnerabilities"
+}

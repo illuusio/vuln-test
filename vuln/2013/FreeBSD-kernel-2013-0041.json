@@ -1,0 +1,65 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "FreeBSD"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "introduced": "9.1"
+                        },
+                        {
+                            "fixed": "9.1_7"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                },
+                {
+                    "events": [
+                        {
+                            "introduced": "8.4"
+                        },
+                        {
+                            "fixed": "8.4_4"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                },
+                {
+                    "events": [
+                        {
+                            "introduced": "8.3"
+                        },
+                        {
+                            "fixed": "8.3_11"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "discovery": "2013-09-10T00:00:00Z",
+        "vid": "b72bad1c-20ed-11e3-be06-000c29ee3065"
+    },
+    "details": "Problem Description:\n\nThe nullfs(5) implementation of the VOP\\_LINK(9) VFS\noperation does not check whether the source and target of\nthe link are both in the same nullfs instance. It is\ntherefore possible to create a hardlink from a location in\none nullfs instance to a file in another, as long as the\nunderlying (source) filesystem is the same.\n\nImpact:\n\nIf multiple nullfs views into the same filesystem are\nmounted in different locations, a user with read access to\none of these views and write access to another will be able\nto create a hard link from the latter to a file in the\nformer, even though they are, from the user's perspective,\ndifferent filesystems. The user may thereby gain write\naccess to files which are nominally on a read-only\nfilesystem.",
+    "id": "FreeBSD-kernel-2013-0041",
+    "modified": "2016-08-09T00:00:00Z",
+    "published": "2013-09-19T00:00:00Z",
+    "references": [
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2013-5710"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://www.freebsd.org/security/advisories/FreeBSD-SA-13:13.nullfs.asc"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "FreeBSD -- Cross-mount links between nullfs(5) mounts"
+}

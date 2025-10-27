@@ -1,0 +1,62 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "grafana"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "introduced": "9.2.0"
+                        },
+                        {
+                            "fixed": "9.2.4"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        },
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "grafana9"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "introduced": "9.2.0"
+                        },
+                        {
+                            "fixed": "9.2.4"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "discovery": "2022-11-08T00:00:00Z",
+        "vid": "db895ed0-6298-11ed-9ca2-6c3be5272acd"
+    },
+    "details": "Grafana Labs reports:\n\n> Internal security audit identified a race condition in the Grafana codebase,\n> which allowed an unauthenticated user to query an arbitrary endpoint in Grafana.\n> A race condition in the [HTTP context](https://github.com/grafana/grafana/blob/main/pkg/web/router.go#L153) creation could make a HTTP request being assigned\n> the authentication/authorization middlewares of another call. Under heavy load\n> it is possible that a call protected by a privileged middleware receives instead\n> the middleware of a public query. As a result, an unauthenticated user can\n> successfully query protected endpoints.\n>\n> The CVSS score for this vulnerability is 9.8 Critical",
+    "id": "FreeBSD-kernel-2022-0027",
+    "modified": "2022-11-12T00:00:00Z",
+    "published": "2022-11-12T00:00:00Z",
+    "references": [
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2022-39328"
+        },
+        {
+            "type": "WEB",
+            "url": "https://github.com/grafana/grafana/security/advisories/GHSA-vqc4-mpj8-jxch"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "Grafana -- Privilege escalation"
+}

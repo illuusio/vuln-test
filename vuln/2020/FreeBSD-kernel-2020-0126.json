@@ -1,0 +1,55 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "dovecot"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "2.3.11"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "discovery": "2020-04-23T00:00:00Z",
+        "vid": "87a07de1-e55e-4d51-bb64-8d117829a26a"
+    },
+    "details": "Aki Tuomi reports:\n\n> Parsing mails with a large number of MIME parts could\n> have resulted in excessive CPU usage or a crash due to running out of\n> stack memory..\n\n> Dovecot's NTLM implementation does not correctly check\n> message buffer size, which leads to reading past allocation which can\n> lead to crash\n\n> lmtp/submission: Issuing the RCPT command with an\n> address that has the empty quoted string as local-part causes the lmtp\n> service to crash.\n\n> Dovecot's RPA mechanism implementation accepts\n> zero-length message, which leads to assert-crash later on.",
+    "id": "FreeBSD-kernel-2020-0126",
+    "modified": "2020-08-13T00:00:00Z",
+    "published": "2020-08-13T00:00:00Z",
+    "references": [
+        {
+            "type": "WEB",
+            "url": "https://dovecot.org/pipermail/dovecot-news/2020-August/000440.html"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2020-12100"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2020-12673"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2020-10967"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2020-12674"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "mail/dovecot -- multiple vulnerabilities"
+}

@@ -1,0 +1,62 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "python38"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "3.8.10"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        },
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "python39"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "3.9.5"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "discovery": "2021-03-08T00:00:00Z",
+        "vid": "bffa40db-ad50-11eb-86b8-080027846a02"
+    },
+    "details": "Python reports:\n\n> bpo-43434: Creating a sqlite3.Connection object now also produces a\n> sqlite3.connect auditing event. Previously this event was only produced\n> by sqlite3.connect() calls. Patch by Erlend E. Aasland.\n>\n> bpo-43882: The presence of newline or tab characters in parts of a URL\n> could allow some forms of attacks.Following the controlling specification\n> for URLs defined by WHATWG urllib.parse() now removes A SCII newlines\n> and tabs from URLs, preventing such attacks.\n>\n> bpo-43472: Ensures interpreter-level audit hooks receive the cpython.\n> PyInterpreterState\\_New event when called through the \\_xxsubinterpreters\n> module.\n>\n> bpo-36384: ipaddress module no longer accepts any leading zeros in IPv4\n> address strings. Leading zeros are ambiguous and interpreted as octal\n> notation by some libraries. For example the legacy function socket.inet\\_aton()\n> treats leading zeros as octal notatation. glibc implementation of modern\n> inet\\_pton() does not accept any leading zeros. For a while the ipaddress\n> module used to accept ambiguous leading zeros.\n>\n> bpo-43075: Fix Regular Expression Denial of Service (ReDoS) vulnerability\n> in urllib.request.AbstractBasicAuthHandler. The ReDoS-vulnerable regex has\n> quadratic worst-case complexity and it allows cause a denial of service\n> when identifying crafted invalid RFCs. This ReDoS issue is on the client\n> side and needs remote attackers to control the HTTP server.\n>\n> bpo-42800: Audit hooks are now fired for frame.f\\_code, traceback.tb\\_frame,\n> and generator code/frame attribute access.",
+    "id": "FreeBSD-kernel-2021-0200",
+    "modified": "2021-05-05T00:00:00Z",
+    "published": "2021-05-05T00:00:00Z",
+    "references": [
+        {
+            "type": "WEB",
+            "url": "https://docs.python.org/3/whatsnew/changelog.html#changelog"
+        },
+        {
+            "type": "WEB",
+            "url": "https://docs.python.org/3.8/whatsnew/changelog.html#changelog"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "Python -- multiple vulnerabilities"
+}

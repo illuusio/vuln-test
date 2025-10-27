@@ -1,0 +1,43 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "mutt"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "2.2.3"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "discovery": "2022-04-04T00:00:00Z",
+        "vid": "6eb9cf14-bab0-11ec-8f59-4437e6ad11c4"
+    },
+    "details": "Tavis Ormandy reports:\n\n> mutt\\_decode\\_uuencoded(), the line length is read from the untrusted uuencoded part without validation. This could result in including private memory in message parts, for example fragments of other messages, passphrases or keys in replys",
+    "id": "FreeBSD-kernel-2022-0173",
+    "modified": "2022-04-12T00:00:00Z",
+    "published": "2022-04-12T00:00:00Z",
+    "references": [
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2022-1328"
+        },
+        {
+            "type": "WEB",
+            "url": "https://gitlab.com/muttmua/mutt/-/issues/404"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "mutt -- mutt_decode_uuencoded() can read past the of the input line"
+}

@@ -1,0 +1,55 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "chicken"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "4.10.0.r2,1"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "discovery": "2015-06-15T00:00:00Z",
+        "vid": "0da404ad-1891-11e5-a1cf-002590263bf5"
+    },
+    "details": "chicken developer Peter Bex reports:\n\n> Using gcc's Address Sanitizer, it was discovered that the string-translate\\*\n> procedure from the data-structures unit can scan beyond the input string's\n> length up to the length of the source strings in the map that's passed to\n> string-translate\\*. This issue was fixed in master 8a46020, and it will\n> make its way into CHICKEN 4.10.\n>\n> This bug is present in all released versions of CHICKEN.",
+    "id": "FreeBSD-kernel-2015-0288",
+    "modified": "2015-07-31T00:00:00Z",
+    "published": "2015-06-22T00:00:00Z",
+    "references": [
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2015-4556"
+        },
+        {
+            "type": "REPORT",
+            "url": "https://bugs.freebsd.org/bugzilla/show_bug.cgi?id=200980"
+        },
+        {
+            "type": "DISCUSSION",
+            "url": "http://lists.nongnu.org/archive/html/chicken-announce/2015-06/msg00010.html"
+        },
+        {
+            "type": "DISCUSSION",
+            "url": "http://lists.nongnu.org/archive/html/chicken-hackers/2015-06/msg00037.html"
+        },
+        {
+            "type": "DISCUSSION",
+            "url": "http://lists.nongnu.org/archive/html/chicken-announce/2015-07/msg00001.html"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "chicken -- Potential buffer overrun in string-translate*"
+}

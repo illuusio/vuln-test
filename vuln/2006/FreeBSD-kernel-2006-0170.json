@@ -1,0 +1,39 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "mod_pubcookie"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "3.3.0"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "discovery": "2006-03-06T00:00:00Z",
+        "vid": "91afa94c-c452-11da-8bff-000ae42e9b93"
+    },
+    "details": "Nathan Dors of the Pubcookie Project reports:\n\n> Non-persistent XSS vulnerabilities were found in the\n> Pubcookie Apache module (mod\\_pubcookie) and ISAPI\n> filter. These components mishandle untrusted data when\n> printing responses to the browser. This makes them\n> vulnerable to carefully crafted requests containing script\n> or HTML. If an attacker can lure an unsuspecting user to\n> visit carefully staged content, the attacker can use it to\n> redirect the user to a vulnerable Pubcookie application\n> server and attempt to exploit the XSS vulnerabilities.\n>\n> These vulnerabilities are classified as \\*high\\* due to the\n> nature and purpose of Pubcookie application servers for user\n> authentication and Web Single Sign-on (SSO). An attacker\n> who injects malicious script through the vulnerabilities\n> might steal private Pubcookie data including a user's\n> authentication assertion (\"granting\") cookies and\n> application session cookies.",
+    "id": "FreeBSD-kernel-2006-0170",
+    "modified": "2006-04-05T00:00:00Z",
+    "published": "2006-04-05T00:00:00Z",
+    "references": [
+        {
+            "type": "ADVISORY",
+            "url": "https://www.kb.cert.org/vuls/id/314540"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "mod_pubcookie -- cross site scripting vulnerability"
+}

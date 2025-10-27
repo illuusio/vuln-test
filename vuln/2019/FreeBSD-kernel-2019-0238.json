@@ -1,0 +1,43 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "openssl111"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "1.1.1b_1"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "discovery": "2019-03-06T00:00:00Z",
+        "vid": "e56f2f7c-410e-11e9-b95c-b499baebfeaf"
+    },
+    "details": "The OpenSSL project reports:\n\n> Low: ChaCha20-Poly1305 with long nonces (CVE-2019-1543)\n>\n> ChaCha20-Poly1305 is an AEAD cipher, and requires a unique nonce\n> input for every encryption operation. RFC 7539 specifies that the nonce\n> value (IV) should be 96 bits (12 bytes). OpenSSL allows a variable nonce\n> length and front pads the nonce with 0 bytes if it is less than 12 bytes.\n> However it also incorrectly allows a nonce to be set of up to 16 bytes.\n> In this case only the last 12 bytes are significant and any additional\n> leading bytes are ignored.",
+    "id": "FreeBSD-kernel-2019-0238",
+    "modified": "2019-03-07T00:00:00Z",
+    "published": "2019-03-07T00:00:00Z",
+    "references": [
+        {
+            "type": "WEB",
+            "url": "https://www.openssl.org/news/secadv/20190306.txt"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2019-1543"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "OpenSSL -- ChaCha20-Poly1305 nonce vulnerability"
+}

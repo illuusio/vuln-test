@@ -1,0 +1,70 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "asterisk11"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "11.25.2"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        },
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "asterisk13"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "13.17.1"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "discovery": "2017-08-31T00:00:00Z",
+        "vid": "c599f95c-8ee5-11e7-8be8-001999f8d30b"
+    },
+    "details": "The Asterisk project reports:\n\n> AST-2017-005 - A change was made to the strict RTP\n> support in the RTP stack to better tolerate late media\n> when a reinvite occurs. When combined with the symmetric\n> RTP support this introduced an avenue where media could\n> be hijacked. Instead of only learning a new address when\n> expected the new code allowed a new source address to be\n> learned at all times.\n>\n> AST-2017-006 - The app\\_minivm module has an \"externnotify\"\n> program configuration option that is executed by the\n> MinivmNotify dialplan application. The application uses\n> the caller-id name and number as part of a built string\n> passed to the OS shell for interpretation and execution.\n> Since the caller-id name and number can come from an\n> untrusted source, a crafted caller-id name or number\n> allows an arbitrary shell command injection.",
+    "id": "FreeBSD-kernel-2017-0134",
+    "modified": "2017-09-01T00:00:00Z",
+    "published": "2017-09-01T00:00:00Z",
+    "references": [
+        {
+            "type": "WEB",
+            "url": "https://downloads.asterisk.org/pub/security/AST-2017-005.html"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2017-14099"
+        },
+        {
+            "type": "WEB",
+            "url": "https://downloads.asterisk.org/pub/security/AST-2017-006.html"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2017-14100"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "asterisk -- Unauthorized data disclosure and shell access command injection in app_minivm"
+}

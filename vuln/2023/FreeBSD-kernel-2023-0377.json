@@ -1,0 +1,119 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "emacs"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "28.2_2,3"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        },
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "emacs-canna"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "28.2_2,3"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        },
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "emacs-nox"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "28.2_2,3"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        },
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "emacs-devel"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "30.0.50.202211128,2"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        },
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "emacs-devel-nox"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "30.0.50.202211128,2"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "discovery": "2022-11-28T00:00:00Z",
+        "vid": "76e2fcce-92d2-11ed-a635-080027f5fec9"
+    },
+    "details": "lu4nx reports:\n\n> GNU Emacs through 28.2 allows attackers to execute\n> commands via shell metacharacters in the name of a\n> source-code file, because lib-src/etags.c uses the system\n> C library function in its implementation of the ctags\n> program. For example, a victim may use the \"ctags \\*\"\n> command (suggested in the ctags documentation) in a\n> situation where the current working directory has contents\n> that depend on untrusted input.",
+    "id": "FreeBSD-kernel-2023-0377",
+    "modified": "2023-01-12T00:00:00Z",
+    "published": "2023-01-12T00:00:00Z",
+    "references": [
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2022-45939"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://nvd.nist.gov/vuln/detail/CVE-2022-45939"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "emacs -- arbitary shell command execution vulnerability of ctags"
+}

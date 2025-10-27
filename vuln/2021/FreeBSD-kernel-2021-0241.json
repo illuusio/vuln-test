@@ -1,0 +1,58 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "nettle"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "3.7.2"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        },
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "linux-c7-nettle"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "3.7.2"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "discovery": "2021-03-21T00:00:00Z",
+        "vid": "80f9dbd3-8eec-11eb-b9e8-3525f51429a0"
+    },
+    "details": "Niels M\u00f6ller reports:\n\n> I've prepared a new bug-fix release of Nettle, a low-level\n> cryptographics library, to fix a serious bug in the function to\n> verify ECDSA signatures. Implications include an assertion failure,\n> which could be used for denial-of-service, when verifying signatures\n> on the secp\\_224r1 and secp521\\_r1 curves.\n>\n> Even when no assert is triggered in ecdsa\\_verify, ECC point\n> multiplication may get invalid intermediate values as input, and\n> produce incorrect results. [...] It appears difficult to construct\n> an alleged signature that makes the function misbehave in such a way\n> that an invalid signature is accepted as valid, but such attacks\n> can't be ruled out without further analysis.",
+    "id": "FreeBSD-kernel-2021-0241",
+    "modified": "2021-03-27T00:00:00Z",
+    "published": "2021-03-27T00:00:00Z",
+    "references": [
+        {
+            "type": "WEB",
+            "url": "https://lists.lysator.liu.se/pipermail/nettle-bugs/2021/009458.html"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "nettle 3.7.2 -- fix serious ECDSA signature verify bug"
+}

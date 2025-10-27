@@ -1,0 +1,47 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "xen-tools"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "4.7.0_4"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "discovery": "2016-07-27T00:00:00Z",
+        "vid": "06574c62-5854-11e6-b334-002590263bf5"
+    },
+    "details": "The Xen Project reports:\n\n> A guest can submit virtio requests without bothering to wait for\n> completion and is therefore not bound by virtqueue size...\n>\n> A malicious guest administrator can cause unbounded memory\n> allocation in QEMU, which can cause an Out-of-Memory condition\n> in the domain running qemu. Thus, a malicious guest administrator\n> can cause a denial of service affecting the whole host.",
+    "id": "FreeBSD-kernel-2016-0206",
+    "modified": "2016-08-02T00:00:00Z",
+    "published": "2016-08-02T00:00:00Z",
+    "references": [
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2016-5403"
+        },
+        {
+            "type": "REPORT",
+            "url": "https://bugs.freebsd.org/bugzilla/show_bug.cgi?id=211482"
+        },
+        {
+            "type": "WEB",
+            "url": "http://xenbits.xen.org/xsa/advisory-184.html"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "xen-tools -- virtio: unbounded memory allocation issue"
+}

@@ -1,0 +1,43 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "freeradius"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "introduced": "1.0.0"
+                        },
+                        {
+                            "last_affected": "1.0.4"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "discovery": "2005-09-09T00:00:00Z",
+        "vid": "ec2f2ff5-f710-11da-9156-000e0c2e438a"
+    },
+    "details": "The freeradious development team reports:\n\n> Multiple issues exist with version 1.0.4, and all prior\n> versions of the server. Externally exploitable\n> vulnerabilities exist only for sites that use the\n> rlm\\_sqlcounter module. Those sites may be vulnerable to\n> SQL injection attacks, similar to the issues noted below.\n> All sites that have not deployed the rlm\\_sqlcounter module\n> are not vulnerable to external exploits.\n>\n> The issues are:  \n> SQL Injection attack in the rlm\\_sqlcounter module.  \n> Buffer overflow in the rlm\\_sqlcounter module, that may cause\n> a server crash.   \n> Buffer overflow while expanding %t, that may cause a server\n> crash.",
+    "id": "FreeBSD-kernel-2006-0118",
+    "modified": "2006-06-08T00:00:00Z",
+    "published": "2006-06-08T00:00:00Z",
+    "references": [
+        {
+            "type": "ADVISORY",
+            "url": "https://www.securityfocus.com/bid/17171/info"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2005-4744"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "freeradius -- multiple vulnerabilities"
+}

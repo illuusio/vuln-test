@@ -1,0 +1,63 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "neon"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "0.24.5_1"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        },
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "sitecopy"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "last_affected": "0.13.4_1"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "discovery": "2004-05-19T00:00:00Z",
+        "vid": "8d075001-a9ce-11d8-9c6d-0020ed76ef5a"
+    },
+    "details": "Stefan Esser reports:\n\n> A vulnerability within a libneon date parsing function\n> could cause a heap overflow which could lead to remote\n> code execution, depending on the application using\n> libneon.\n\nThe vulnerability is in the function ne\\_rfc1036\\_parse,\nwhich is in turn used by the function ne\\_httpdate\\_parse.\nApplications using either of these neon functions may be\nvulnerable.",
+    "id": "FreeBSD-kernel-2004-0196",
+    "modified": "2004-06-25T00:00:00Z",
+    "published": "2004-05-19T00:00:00Z",
+    "references": [
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2004-0398"
+        },
+        {
+            "type": "WEB",
+            "url": "http://security.e-matters.de/advisories/062004.html"
+        },
+        {
+            "type": "WEB",
+            "url": "http://secunia.com/advisories/11785"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "neon date parsing vulnerability"
+}

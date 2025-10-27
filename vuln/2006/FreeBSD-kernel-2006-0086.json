@@ -1,0 +1,188 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "postgresql"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "introduced": "7.3"
+                        },
+                        {
+                            "fixed": "7.3.15"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                },
+                {
+                    "events": [
+                        {
+                            "introduced": "7.4"
+                        },
+                        {
+                            "fixed": "7.4.13"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                },
+                {
+                    "events": [
+                        {
+                            "introduced": "8.0.0"
+                        },
+                        {
+                            "fixed": "8.0.8"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                },
+                {
+                    "events": [
+                        {
+                            "introduced": "8.1.0"
+                        },
+                        {
+                            "fixed": "8.1.4"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        },
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "postgresql-server"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "introduced": "7.3"
+                        },
+                        {
+                            "fixed": "7.3.15"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                },
+                {
+                    "events": [
+                        {
+                            "introduced": "7.4"
+                        },
+                        {
+                            "fixed": "7.4.13"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                },
+                {
+                    "events": [
+                        {
+                            "introduced": "8.0.0"
+                        },
+                        {
+                            "fixed": "8.0.8"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                },
+                {
+                    "events": [
+                        {
+                            "introduced": "8.1.0"
+                        },
+                        {
+                            "fixed": "8.1.4"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        },
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "ja-postgresql"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "introduced": "7.3"
+                        },
+                        {
+                            "fixed": "7.3.15"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                },
+                {
+                    "events": [
+                        {
+                            "introduced": "7.4"
+                        },
+                        {
+                            "fixed": "7.4.13"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                },
+                {
+                    "events": [
+                        {
+                            "introduced": "8.0.0"
+                        },
+                        {
+                            "fixed": "8.0.8"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                },
+                {
+                    "events": [
+                        {
+                            "introduced": "8.1.0"
+                        },
+                        {
+                            "fixed": "8.1.4"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "discovery": "2006-05-11T00:00:00Z",
+        "vid": "17f53c1d-2ae9-11db-a6e2-000e0c2e438a"
+    },
+    "details": "The PostgreSQL development team reports:\n\n> An attacker able to submit crafted strings to an\n> application that will embed those strings in SQL commands\n> can use invalidly-encoded multibyte characters to bypass\n> standard string-escaping methods, resulting in possible\n> injection of hostile SQL commands into the database. The\n> attacks covered here work in any multibyte encoding.\n>\n> The widely-used practice of escaping ASCII single quote\n> \"'\" by turning it into \"\\'\" is unsafe when operating in\n> multibyte encodings that allow 0x5c (ASCII code for\n> backslash) as the trailing byte of a multibyte character;\n> this includes at least SJIS, BIG5, GBK, GB18030, and UHC.\n> An application that uses this conversion while embedding\n> untrusted strings in SQL commands is vulnerable to\n> SQL-injection attacks if it communicates with the server in\n> one of these encodings. While the standard client libraries\n> used with PostgreSQL have escaped \"'\" in the safe,\n> SQL-standard way of \"''\" for some time, the older practice\n> remains common.",
+    "id": "FreeBSD-kernel-2006-0086",
+    "modified": "2006-08-13T00:00:00Z",
+    "published": "2006-08-13T00:00:00Z",
+    "references": [
+        {
+            "type": "ADVISORY",
+            "url": "https://www.securityfocus.com/bid/18092/info"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2006-2313"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2006-2314"
+        },
+        {
+            "type": "WEB",
+            "url": "http://www.postgresql.org/docs/techdocs.50"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "postgresql -- encoding based SQL injection"
+}

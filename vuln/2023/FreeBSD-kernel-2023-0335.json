@@ -1,0 +1,43 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "git"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "2.39.1"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "discovery": "2023-01-17T00:00:00Z",
+        "vid": "2fcca7e4-b1d7-11ed-b0f4-002590f2a714"
+    },
+    "details": "The git team reports:\n\n> git log has the ability to display commits using an arbitrary\n> format with its --format specifiers. This functionality is also\n> exposed to git archive via the export-subst gitattribute.\n>\n> When processing the padding operators (e.g., %<(, %<|(,\n> %>(, %>>(, or %><( ), an integer overflow can occur in\n> pretty.c::format\\_and\\_pad\\_commit() where a size\\_t is improperly\n> stored as an int, and then added as an offset to a subsequent\n> memcpy() call.\n>\n> This overflow can be triggered directly by a user running a\n> command which invokes the commit formatting machinery (e.g., git\n> log --format=...). It may also be triggered indirectly through\n> git archive via the export-subst mechanism, which expands format\n> specifiers inside of files within the repository during a git\n> archive.\n>\n> This integer overflow can result in arbitrary heap writes, which\n> may result in remote code execution.",
+    "id": "FreeBSD-kernel-2023-0335",
+    "modified": "2023-02-21T00:00:00Z",
+    "published": "2023-02-21T00:00:00Z",
+    "references": [
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2022-41903"
+        },
+        {
+            "type": "WEB",
+            "url": "https://github.blog/2023-01-17-git-security-vulnerabilities-announced-2/#cve-2022-41903"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "git -- Heap overflow in `git archive`, `git log --format` leading to RCE"
+}

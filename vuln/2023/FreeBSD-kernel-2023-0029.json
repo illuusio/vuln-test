@@ -1,0 +1,54 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:kernel",
+                "name": "FreeBSD-kernel"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "introduced": "14.0"
+                        },
+                        {
+                            "fixed": "14.0_3"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                },
+                {
+                    "events": [
+                        {
+                            "introduced": "13.2"
+                        },
+                        {
+                            "fixed": "13.2_8"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "discovery": "2023-12-12T00:00:00Z",
+        "vid": "8eefff69-997f-11ee-8e38-002590c1f29c"
+    },
+    "details": "Problem Description:\n====================\n\nIn FreeBSD 13.2 and 14.0, the NFS client was optimized to improve\nthe performance of IO\\_APPEND writes, that is, writes which add data\nto the end of a file and so extend its size. This uncovered an old\nbug in some routines which copy userspace data into the kernel.\nThe bug also affects the NFS client's implementation of direct I/O;\nhowever, this implementation is disabled by default by the\nvfs.nfs.nfs\\_directio\\_enable sysctl and is only used to handle\nsynchronous writes.\n\nImpact:\n=======\n\nWhen a program running on an affected system appends data to a\nfile via an NFS client mount, the bug can cause the NFS client to\nfail to copy in the data to be written but proceed as though the\ncopy operation had succeeded. This means that the data to be written\nis instead replaced with whatever data had been in the packet buffer\npreviously. Thus, an unprivileged user with access to an affected\nsystem may abuse the bug to trigger disclosure of sensitive\ninformation. In particular, the leak is limited to data previously\nstored in mbufs, which are used for network transmission and\nreception, and for certain types of inter-process communication.\n\nThe bug can also be triggered unintentionally by system\napplications, in which case the data written by the application to an\nNFS mount may be corrupted. Corrupted data is written over the\nnetwork to the NFS server, and thus also susceptible to being snooped\nby other hosts on the network.\n\nNote that the bug exists only in the NFS client; the version and\nimplementation of the server has no effect on whether a given system\nis affected by the problem.",
+    "id": "FreeBSD-kernel-2023-0029",
+    "modified": "2023-12-13T00:00:00Z",
+    "published": "2023-12-13T00:00:00Z",
+    "references": [
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2023-6660"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://www.freebsd.org/security/advisories/FreeBSD-SA-23:18.nfsclient.asc"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "FreeBSD -- NFS client data corruption and kernel memory disclosure"
+}

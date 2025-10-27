@@ -1,0 +1,89 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "node"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "10.9.0"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        },
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "node8"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "8.11.4"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        },
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "node6"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "6.14.4"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "discovery": "2018-08-16T00:00:00Z",
+        "vid": "0904e81f-a89d-11e8-afbb-bc5ff4f77b71"
+    },
+    "details": "Node.js reports:\n\n> OpenSSL: Client DoS due to large DH parameter\n> =============================================\n>\n> This fixes a potential denial of service (DoS) attack\n> against client connections by a malicious server. During a TLS\n> communication handshake, where both client and server agree to\n> use a cipher-suite using DH or DHE (Diffie-Hellman, in both\n> ephemeral and non-ephemeral modes), a malicious server can\n> send a very large prime value to the client. Because this has\n> been unbounded in OpenSSL, the client can be forced to spend\n> an unreasonably long period of time to generate a key,\n> potentially causing a denial of service.\n>\n> OpenSSL: ECDSA key extraction via local side-channel\n> ====================================================\n>\n> Attackers with access to observe cache-timing may be able\n> to extract DSA or ECDSA private keys by causing the victim to\n> create several signatures and watching responses. This flaw\n> does not have a CVE due to OpenSSL policy to not assign itself\n> CVEs for local-only vulnerabilities that are more academic\n> than practical. This vulnerability was discovered by Keegan\n> Ryan at NCC Group and impacts many cryptographic libraries\n> including OpenSSL.\n>\n> Unintentional exposure of uninitialized memory\n> ==============================================\n>\n> Only Node.js 10 is impacted by this flaw.\n>\n> Node.js TSC member Nikita Skovoroda discovered an argument\n> processing flaw that causes Buffer.alloc() to return\n> uninitialized memory. This method is intended to be safe and\n> only return initialized, or cleared, memory. The third\n> argument specifying encoding can be passed as a number, this\n> is misinterpreted by Buffer's internal \"fill\" method as the\n> start to a fill operation. This flaw may be abused where\n> Buffer.alloc() arguments are derived from user input to return\n> uncleared memory blocks that may contain sensitive\n> information.\n>\n> Out of bounds (OOB) write\n> =========================\n>\n> Node.js TSC member Nikita Skovoroda discovered an OOB write\n> in Buffer that can be used to write to memory outside of a\n> Buffer's memory space. This can corrupt unrelated Buffer\n> objects or cause the Node.js process to crash.\n>\n> When used with UCS-2 encoding (recognized by Node.js under\n> the names 'ucs2', 'ucs-2', 'utf16le' and 'utf-16le'),\n> Buffer#write() can be abused to write outside of the bounds of\n> a single Buffer. Writes that start from the second-to-last\n> position of a buffer cause a miscalculation of the maximum\n> length of the input bytes to be written.",
+    "id": "FreeBSD-kernel-2018-0098",
+    "modified": "2018-08-25T00:00:00Z",
+    "published": "2018-08-25T00:00:00Z",
+    "references": [
+        {
+            "type": "WEB",
+            "url": "https://nodejs.org/en/blog/vulnerability/august-2018-security-releases/"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2018-0732"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2018-7166"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2018-12115"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "node.js -- multiple vulnerabilities"
+}

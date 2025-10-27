@@ -1,0 +1,117 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "tomcat"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "6.0.44"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        },
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "tomcat7"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "7.0.55"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        },
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "tomcat8"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "8.0.9"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        },
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "hadoop2"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "last_affected": "2.6.0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        },
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "oozie"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "last_affected": "4.1.0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "discovery": "2015-05-12T00:00:00Z",
+        "vid": "25e0593d-13c0-11e5-9afb-3c970e169bc2"
+    },
+    "details": "Apache Software Foundation reports:\n\n> Low: Denial of Service CVE-2014-0230\n>\n> When a response for a request with a request body is\n> returned to the user agent before the request body is\n> fully read, by default Tomcat swallows the remaining\n> request body so that the next request on the connection\n> may be processed. There was no limit to the size of\n> request body that Tomcat would swallow. This permitted\n> a limited Denial of Service as Tomcat would never close\n> the connection and a processing thread would remain\n> allocated to the connection.\n>\n> Moderate: Security Manager bypass CVE-2014-7810\n>\n> Malicious web applications could use expression\n> language to bypass the protections of a Security\n> Manager as expressions were evaluated within a\n> privileged code section.",
+    "id": "FreeBSD-kernel-2015-0297",
+    "modified": "2017-03-18T00:00:00Z",
+    "published": "2015-06-16T00:00:00Z",
+    "references": [
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2014-0230"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2014-7810"
+        },
+        {
+            "type": "WEB",
+            "url": "https://tomcat.apache.org/security-6.html#Fixed_in_Apache_Tomcat_6.0.44"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "tomcat -- multiple vulnerabilities"
+}

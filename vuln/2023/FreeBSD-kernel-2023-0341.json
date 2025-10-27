@@ -1,0 +1,74 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "go119"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "1.19.6"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        },
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "go120"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "1.20.1"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "discovery": "2023-02-14T00:00:00Z",
+        "vid": "3d73e384-ad1f-11ed-983c-83fe35862e3a"
+    },
+    "details": "The Go project reports:\n\n> path/filepath: path traversal in filepath.Clean on Windows\n>\n> On Windows, the filepath.Clean function could transform\n> an invalid path such as a/../c:/b into the valid path\n> c:\\b. This transformation of a relative (if invalid)\n> path into an absolute path could enable a directory\n> traversal attack. The filepath.Clean function will now\n> transform this path into the relative (but still\n> invalid) path .\\c:\\b.\n\n> net/http, mime/multipart: denial of service from excessive\n> resource consumption\n>\n> Multipart form parsing with\n> mime/multipart.Reader.ReadForm can consume largely\n> unlimited amounts of memory and disk files. This also\n> affects form parsing in the net/http package with the\n> Request methods FormFile, FormValue, ParseMultipartForm,\n> and PostFormValue.\n\n> crypto/tls: large handshake records may cause panics\n>\n> Both clients and servers may send large TLS handshake\n> records which cause servers and clients,\n> respectively, to panic when attempting to construct responses.\n\n> net/http: avoid quadratic complexity in HPACK decoding\n>\n> A maliciously crafted HTTP/2 stream could cause\n> excessive CPU consumption in the HPACK decoder,\n> sufficient to cause a denial of service from a small\n> number of small requests.",
+    "id": "FreeBSD-kernel-2023-0341",
+    "modified": "2023-02-15T00:00:00Z",
+    "published": "2023-02-15T00:00:00Z",
+    "references": [
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2022-41722"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2022-41725"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2022-41724"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2022-41723"
+        },
+        {
+            "type": "WEB",
+            "url": "https://groups.google.com/g/golang-dev/c/G2APtTxT1HQ/m/6O6aksDaBAAJ"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "go -- multiple vulnerabilities"
+}

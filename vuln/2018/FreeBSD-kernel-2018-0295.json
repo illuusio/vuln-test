@@ -1,0 +1,43 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "powerdns-recursor"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "4.1.1"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "discovery": "2018-01-22T00:00:00Z",
+        "vid": "24a82876-002e-11e8-9a95-0cc47a02c232"
+    },
+    "details": "PowerDNS Security Advisory reports:\n\n> An issue has been found in the DNSSEC validation component of\n> PowerDNS Recursor, allowing an ancestor delegation NSEC or NSEC3\n> record to be used to wrongfully prove the non-existence of a RR\n> below the owner name of that record. This would allow an attacker in\n> position of man-in-the-middle to send a NXDOMAIN answer for a name\n> that does exist.",
+    "id": "FreeBSD-kernel-2018-0295",
+    "modified": "2018-01-23T00:00:00Z",
+    "published": "2018-01-23T00:00:00Z",
+    "references": [
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2018-1000003"
+        },
+        {
+            "type": "WEB",
+            "url": "https://doc.powerdns.com/recursor/security-advisories/powerdns-advisory-2018-01.html"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "powerdns-recursor -- insufficient validation of DNSSEC signatures"
+}

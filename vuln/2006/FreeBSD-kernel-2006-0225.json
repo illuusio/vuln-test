@@ -1,0 +1,43 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "bogofilter"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "introduced": "0.93.5"
+                        },
+                        {
+                            "fixed": "0.96.3"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "discovery": "2005-10-22T00:00:00Z",
+        "vid": "92140bc9-7bde-11da-8ec4-0002b3b60e4c"
+    },
+    "details": "Matthias Andree reports:\n\n> When using Unicode databases (default in more recent bogofilter\n> installations), upon encountering invalid input sequences,\n> bogofilter or bogolexer could overrun a malloc()'d buffer,\n> corrupting the heap, while converting character sets. Bogofilter\n> would usually be processing untrusted data received from the\n> network at that time.\n>\n> This problem was aggravated by an unrelated bug that made\n> bogofilter process binary attachments as though they were text, and\n> attempt charset conversion on them. Given the MIME default\n> character set, US-ASCII, all input octets in the range 0x80...0xff\n> were considered invalid input sequences and could trigger the heap\n> corruption.",
+    "id": "FreeBSD-kernel-2006-0225",
+    "modified": "2006-01-07T00:00:00Z",
+    "published": "2006-01-07T00:00:00Z",
+    "references": [
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2005-4591"
+        },
+        {
+            "type": "WEB",
+            "url": "http://bogofilter.sourceforge.net/security/bogofilter-SA-2005-01"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "bogofilter -- heap corruption through malformed input"
+}

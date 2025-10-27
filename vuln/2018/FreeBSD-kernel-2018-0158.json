@@ -1,0 +1,51 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "phpmyadmin"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "4.8.2"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "discovery": "2018-06-21T00:00:00Z",
+        "vid": "17cb6ff3-7670-11e8-8854-6805ca0b3d42"
+    },
+    "details": "The phpMyAdmin development team reports:\n\n> ### Summary\n>\n> XSS in Designer feature\n>\n> ### Description\n>\n> A Cross-Site Scripting vulnerability was found in the\n> Designer feature, where an attacker can deliver a\n> payload to a user through a specially-crafted database\n> name.\n>\n> ### Severity\n>\n> We consider this attack to be of moderate severity.\n\n> ### Summary\n>\n> File inclusion and remote code execution attack\n>\n> ### Description\n>\n> A flaw has been discovered where an attacker can include\n> (view and potentially execute) files on the server.\n>\n> The vulnerability comes from a portion of code where\n> pages are redirected and loaded within phpMyAdmin, and an\n> improper test for whitelisted pages.\n>\n> An attacker must be authenticated, except in these\n> situations:\n>\n> * $cfg['AllowArbitraryServer'] = true: attacker can\n>   specify any host he/she is already in control of, and\n>   execute arbitrary code on phpMyAdmin\n> * $cfg['ServerDefault'] = 0: this bypasses the login and\n>   runs the vulnerable code without any authentication\n>\n> ### Severity\n>\n> We consider this to be severe.\n>\n> ### Mitigation factor\n>\n> Configuring PHP with a restrictive\n> `open\\_basedir` can greatly restrict an attacker's ability to\n> view files on the server. Vulnerable systems should not be\n> run with the phpMyAdmin directives\n> $cfg['AllowArbitraryServer'] = true or $cfg['ServerDefault']\n> = 0",
+    "id": "FreeBSD-kernel-2018-0158",
+    "modified": "2018-06-22T00:00:00Z",
+    "published": "2018-06-22T00:00:00Z",
+    "references": [
+        {
+            "type": "WEB",
+            "url": "https://www.phpmyadmin.net/security/PMASA-2018-3/"
+        },
+        {
+            "type": "WEB",
+            "url": "https://www.phpmyadmin.net/security/PMASA-2018-4/"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2018-12581"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2018-12613"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "phpmyadmin -- remote code inclusion and XSS scripting"
+}

@@ -1,0 +1,81 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "postgresql13-server"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "13.4"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        },
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "postgresql12-server"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "12.8"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        },
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "postgresql11-server"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "11.13"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "discovery": "2021-08-12T00:00:00Z",
+        "vid": "b471130b-fb86-11eb-87db-6cc21735f730"
+    },
+    "details": "The PostgreSQL Project reports:\n\n> A purpose-crafted query can read arbitrary bytes of\n> server memory. In the default configuration, any\n> authenticated database user can complete this attack at\n> will. The attack does not require the ability to create\n> objects. If server settings include\n> max\\_worker\\_processes=0, the known versions of this\n> attack are infeasible. However, undiscovered variants of\n> the attack may be independent of that setting.",
+    "id": "FreeBSD-kernel-2021-0115",
+    "modified": "2021-08-12T00:00:00Z",
+    "published": "2021-08-12T00:00:00Z",
+    "references": [
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2021-3677"
+        },
+        {
+            "type": "WEB",
+            "url": "https://www.postgresql.org/support/security/CVE-2021-3677/"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "PostgreSQL server -- Memory disclosure in certain queries"
+}

@@ -1,0 +1,161 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "php5"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "5.1.6_1"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        },
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "php5-cli"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "introduced": "5"
+                        },
+                        {
+                            "fixed": "5.1.6_1"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        },
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "php5-cgi"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "introduced": "5"
+                        },
+                        {
+                            "fixed": "5.1.6_1"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        },
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "php5-dtc"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "introduced": "5"
+                        },
+                        {
+                            "fixed": "5.1.6_1"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        },
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "php5-horde"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "introduced": "5"
+                        },
+                        {
+                            "fixed": "5.1.6_1"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        },
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "php5-nms"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "introduced": "5"
+                        },
+                        {
+                            "fixed": "5.1.6_1"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        },
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "mod_php5"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "introduced": "5"
+                        },
+                        {
+                            "fixed": "5.1.6_1"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "discovery": "2006-09-30T00:00:00Z",
+        "vid": "e329550b-54f7-11db-a5ae-00508d6a62df"
+    },
+    "details": "Stefan Esser reports:\n\n> The PHP 5 branch of the PHP source code lacks the\n> protection against possible integer overflows inside\n> ecalloc() that is present in the PHP 4 branch and also for\n> several years part of our Hardening-Patch and our new\n> Suhosin-Patch.\n>\n> It was discovered that such an integer overflow can be\n> triggered when user input is passed to the unserialize()\n> function. Earlier vulnerabilities in PHP's unserialize()\n> that were also discovered by one of our audits in December\n> 2004 are unrelated to the newly discovered flaw, but they\n> have shown, that the unserialize() function is exposed to\n> user-input in many popular PHP applications. Examples for\n> applications that use the content of COOKIE variables with\n> unserialize() are phpBB and Serendipity.\n>\n> The successful exploitation of this integer overflow will\n> result in arbitrary code execution.",
+    "id": "FreeBSD-kernel-2006-0047",
+    "modified": "2013-04-01T00:00:00Z",
+    "published": "2006-10-06T00:00:00Z",
+    "references": [
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2006-4812"
+        },
+        {
+            "type": "WEB",
+            "url": "http://www.hardened-php.net/advisory_092006.133.html"
+        },
+        {
+            "type": "WEB",
+            "url": "http://secunia.com/advisories/22280/"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "php -- _ecalloc Integer Overflow Vulnerability"
+}

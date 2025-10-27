@@ -1,0 +1,170 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "py37-Scrapy"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "1.8.3"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                },
+                {
+                    "events": [
+                        {
+                            "introduced": "2.0.0"
+                        },
+                        {
+                            "fixed": "2.6.2"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        },
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "py38-Scrapy"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "1.8.3"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                },
+                {
+                    "events": [
+                        {
+                            "introduced": "2.0.0"
+                        },
+                        {
+                            "fixed": "2.6.2"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        },
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "py39-Scrapy"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "1.8.3"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                },
+                {
+                    "events": [
+                        {
+                            "introduced": "2.0.0"
+                        },
+                        {
+                            "fixed": "2.6.2"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        },
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "py310-Scrapy"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "1.8.3"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                },
+                {
+                    "events": [
+                        {
+                            "introduced": "2.0.0"
+                        },
+                        {
+                            "fixed": "2.6.2"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        },
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "py311-Scrapy"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "1.8.3"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                },
+                {
+                    "events": [
+                        {
+                            "introduced": "2.0.0"
+                        },
+                        {
+                            "fixed": "2.6.2"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "discovery": "2022-07-29T00:00:00Z",
+        "vid": "2ad25820-c71a-4e6c-bb99-770c66fe496d"
+    },
+    "details": "> When the built-in HTTP proxy downloader middleware processes a request with `proxy` metadata, and that `proxy` metadata includes proxy credentials, the built-in HTTP proxy downloader middleware sets the `Proxy-Authentication` header, but only if that header is not already set.\n>\n> There are third-party proxy-rotation downloader middlewares that set different `proxy` metadata every time they process a request.\n>\n> Because of request retries and redirects, the same request can be processed by downloader middlewares more than once, including both the built-in HTTP proxy downloader middleware and any third-party proxy-rotation downloader middleware.\n>\n> These third-party proxy-rotation downloader middlewares could change the `proxy` metadata of a request to a new value, but fail to remove the `Proxy-Authentication` header from the previous value of the `proxy` metadata, causing the credentials of one proxy to be leaked to a different proxy.\n>\n> If you rotate proxies from different proxy providers, and any of those proxies requires credentials, you are affected, unless you are handling proxy rotation as described under \\*\\*Workarounds\\*\\* below.\n>\n> If you use a third-party downloader middleware for proxy rotation, the same applies to that downloader middleware, and installing a patched version of Scrapy may not be enough;\n>\n> patching that downloader middlware may be necessary as well.",
+    "id": "FreeBSD-kernel-2023-0130",
+    "modified": "2023-08-31T00:00:00Z",
+    "published": "2023-08-31T00:00:00Z",
+    "references": [
+        {
+            "type": "WEB",
+            "url": "https://osv.dev/vulnerability/GHSA-9x8m-2xpf-crp3"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "py-Scrapy -- credentials leak vulnerability"
+}

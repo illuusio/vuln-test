@@ -1,0 +1,43 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "gzip"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "1.12"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "discovery": "2022-04-07T00:00:00Z",
+        "vid": "b019585a-bfea-11ec-b46c-b42e991fc52e"
+    },
+    "details": "RedHat reports:\n\n> An arbitrary file write vulnerability was found in GNU\n> gzip's zgrep utility. When zgrep is applied on the\n> attacker's chosen file name (for example, a crafted\n> file name), this can overwrite an attacker's content\n> to an arbitrary attacker-selected file. This flaw\n> occurs due to insufficient validation when processing\n> filenames with two or more newlines where selected\n> content and the target file names are embedded in\n> crafted multi-line file names. This flaw allows a\n> remote, low privileged attacker to force zgrep to\n> write arbitrary files on the system.",
+    "id": "FreeBSD-kernel-2022-0163",
+    "modified": "2022-04-19T00:00:00Z",
+    "published": "2022-04-19T00:00:00Z",
+    "references": [
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2022-1271"
+        },
+        {
+            "type": "REPORT",
+            "url": "https://bugzilla.redhat.com/show_bug.cgi?id=2073310"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "zgrep -- arbitrary file write"
+}

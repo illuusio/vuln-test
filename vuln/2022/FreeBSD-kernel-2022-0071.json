@@ -1,0 +1,43 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "squid"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "5.7"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "discovery": "2022-04-17T00:00:00Z",
+        "vid": "f9ada0b5-3d80-11ed-9330-080027f5fec9"
+    },
+    "details": "Mikhail Evdokimov (aka konata) reports:\n\n> Due to inconsistent handling of internal URIs Squid is\n> vulnerable to Exposure of Sensitive Information about\n> clients using the proxy. This problem allows a trusted\n> client to directly access cache manager information\n> bypassing the manager ACL protection. The available cache\n> manager information contains records of internal network\n> structure, client credentials, client identity and client\n> traffic behaviour.",
+    "id": "FreeBSD-kernel-2022-0071",
+    "modified": "2022-09-26T00:00:00Z",
+    "published": "2022-09-26T00:00:00Z",
+    "references": [
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2022-41317"
+        },
+        {
+            "type": "WEB",
+            "url": "https://github.com/squid-cache/squid/security/advisories/GHSA-rcg9-7fqm-83mq"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "squid -- Exposure of sensitive information in cache manager"
+}

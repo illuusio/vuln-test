@@ -1,0 +1,62 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "plexmediaserver"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "1.13.5.5332"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        },
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "plexmediaserver-plexpass"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "1.13.5.5332"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "discovery": "2018-08-01T00:00:00Z",
+        "vid": "337960ec-b5dc-11e8-ac58-a4badb2f4699"
+    },
+    "details": "Chris reports:\n\n> The XML parsing engine for Plex Media Server's SSDP/UPNP\n> functionality is vulnerable to an XML External Entity\n> Processing (XXE) attack. Unauthenticated attackers on the same LAN can\n> use this vulnerability to:\n>\n> * Access arbitrary files from the filesystem with the same permission as\n>   the user account running Plex.\n> * Initiate SMB connections to capture NetNTLM challenge/response and\n>   crack to clear-text password.\n> * Initiate SMB connections to relay NetNTLM challenge/response and\n>   achieve Remote Command Execution in Windows domains.",
+    "id": "FreeBSD-kernel-2018-0087",
+    "modified": "2018-09-11T00:00:00Z",
+    "published": "2018-09-11T00:00:00Z",
+    "references": [
+        {
+            "type": "WEB",
+            "url": "https://seclists.org/fulldisclosure/2018/Aug/1"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2018-13415"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "Plex Media Server -- Information Disclosure Vulnerability"
+}

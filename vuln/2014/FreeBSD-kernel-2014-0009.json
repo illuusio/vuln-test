@@ -1,0 +1,43 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "asterisk11"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "11.14.2"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "discovery": "2014-10-30T00:00:00Z",
+        "vid": "94268da0-8118-11e4-a180-001999f8d30b"
+    },
+    "details": "The Asterisk project reports:\n\n> When handling a WebSocket frame the res\\_http\\_websocket\n> module dynamically changes the size of the memory used\n> to allow the provided payload to fit. If a payload length\n> of zero was received the code would incorrectly attempt\n> to resize to zero. This operation would succeed and end\n> up freeing the memory but be treated as a failure. When\n> the session was subsequently torn down this memory would\n> get freed yet again causing a crash.\n>\n> Users of the WebSocket functionality also did not take\n> into account that provided text frames are not guaranteed\n> to be NULL terminated. This has been fixed in chan\\_sip\n> and chan\\_pjsip in the applicable versions.",
+    "id": "FreeBSD-kernel-2014-0009",
+    "modified": "2015-01-29T00:00:00Z",
+    "published": "2014-12-11T00:00:00Z",
+    "references": [
+        {
+            "type": "WEB",
+            "url": "http://downloads.asterisk.org/pub/security/AST-2014-019.html"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2014-9374"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "asterisk -- Remote Crash Vulnerability in WebSocket Server"
+}

@@ -1,0 +1,43 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "prosody"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "0.11.12"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "discovery": "2022-01-10T00:00:00Z",
+        "vid": "e3ec8b30-757b-11ec-922f-654747404482"
+    },
+    "details": "The Prosody teaM reports:\n\n> It was discovered that an internal Prosody library to load XML based on\n> does not properly restrict the XML features allowed in parsed\n> XML data. Given suitable attacker input, this results in expansion of\n> recursive entity references from DTDs (CWE-776). In addition,\n> depending on the libexpat version used, it may also allow injections\n> using XML External Entity References (CWE-611).",
+    "id": "FreeBSD-kernel-2022-0242",
+    "modified": "2022-01-14T00:00:00Z",
+    "published": "2022-01-14T00:00:00Z",
+    "references": [
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2022-0217"
+        },
+        {
+            "type": "WEB",
+            "url": "https://prosody.im/security/advisory_20220113/"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "Prosody XMPP server advisory 2022-01-13"
+}

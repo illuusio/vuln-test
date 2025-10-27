@@ -1,0 +1,43 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "curl"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "introduced": "7.53.0"
+                        },
+                        {
+                            "fixed": "7.54.1"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "discovery": "2017-06-14T00:00:00Z",
+        "vid": "9314058e-5204-11e7-b712-b1a44a034d72"
+    },
+    "details": "cURL security advisory:\n\n> When libcurl is given either\n>\n> 1. a file: URL that doesn't use two slashes following the colon, or\n>\n> 2. is told that file is the default scheme to use for URLs without scheme\n>\n> ... and the given path starts with a drive letter and libcurl is built for\n> Windows or DOS, then libcurl would copy the path with a wrong offset, so that\n> the end of the given path would write beyond the malloc buffer. Up to seven\n> bytes too much.\n>\n> We are not aware of any exploit of this flaw.",
+    "id": "FreeBSD-kernel-2017-0191",
+    "modified": "2017-06-15T00:00:00Z",
+    "published": "2017-06-15T00:00:00Z",
+    "references": [
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2017-9502"
+        },
+        {
+            "type": "WEB",
+            "url": "https://curl.haxx.se/docs/adv_20170614.html"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "cURL -- URL file scheme drive letter buffer overflow"
+}

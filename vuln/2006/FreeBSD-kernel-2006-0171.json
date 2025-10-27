@@ -1,0 +1,39 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "pubcookie-login-server"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "3.3.0"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "discovery": "2006-03-06T00:00:00Z",
+        "vid": "855cd9fa-c452-11da-8bff-000ae42e9b93"
+    },
+    "details": "Nathan Dors of the Pubcookie Project reports:\n\n> Multiple non-persistent XSS vulnerabilities were found\n> in the Pubcookie login server's compiled binary \"index.cgi\"\n> CGI program. The CGI program mishandles untrusted data when\n> printing responses to the browser. This makes the program\n> vulnerable to carefully crafted requests containing script\n> or HTML. If an attacker can lure an unsuspecting user to\n> visit carefully staged content, the attacker can use it to\n> redirect the user to his or her local Pubcookie login page\n> and attempt to exploit the XSS vulnerabilities.\n>\n> These vulnerabilities are classified as \\*critical\\* due\n> to the nature and purpose of the Pubcookie login server for\n> user authentication and Web Single Sign-on (SSO). Specific\n> threats include:\n>\n> * An attacker who injects malicious script through the\n>   vulnerabilities might steal senstive user data including\n>   a user's authentication credentials (usernames and\n>   passwords);\n> * An attacker who injects malicious script through the\n>   vulnerabilities might steal private Pubcookie data\n>   including a user's authentication assertion (\"granting\")\n>   cookies and SSO (\"login\") session cookies;\n> * An attacker who injects HTML tags through the\n>   vulnerabilities might deface a site's Pubcookie login page\n>   for a single visit by a single user (i.e. a non-persistent\n>   defacement).\n>\n> At the heart of these threats lies a violation of the\n> user's trust in the Pubcookie login server.",
+    "id": "FreeBSD-kernel-2006-0171",
+    "modified": "2006-04-05T00:00:00Z",
+    "published": "2006-04-05T00:00:00Z",
+    "references": [
+        {
+            "type": "ADVISORY",
+            "url": "https://www.kb.cert.org/vuls/id/337585"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "pubcookie-login-server -- cross site scripting vulnerability"
+}

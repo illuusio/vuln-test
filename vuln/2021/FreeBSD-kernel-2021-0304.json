@@ -1,0 +1,112 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "node10"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "10.23.1"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        },
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "node12"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "12.20.1"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        },
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "node14"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "14.15.4"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        },
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "node"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "15.5.1"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "discovery": "2021-01-04T00:00:00Z",
+        "vid": "08b553ed-537a-11eb-be6e-0022489ad614"
+    },
+    "details": "Node.js reports:\n\n> use-after-free in TLSWrap (High) (CVE-2020-8265)\n> ================================================\n>\n> Affected Node.js versions are vulnerable to a use-after-free bug in its TLS implementation. When writing to a TLS enabled socket, node::StreamBase::Write calls node::TLSWrap::DoWrite with a freshly allocated WriteWrap object as first argument. If the DoWrite method does not return an error, this object is passed back to the caller as part of a StreamWriteResult structure. This may be exploited to corrupt memory leading to a Denial of Service or potentially other exploits.\n>\n> HTTP Request Smuggling in nodejs (Low) (CVE-2020-8287)\n> ======================================================\n>\n> Affected versions of Node.js allow two copies of a header field in a http request. For example, two Transfer-Encoding header fields. In this case Node.js identifies the first header field and ignores the second. This can lead to HTTP Request Smuggling.\n>\n> OpenSSL - EDIPARTYNAME NULL pointer de-reference (CVE-2020-1971)\n> ================================================================\n>\n> iThis is a vulnerability in OpenSSL which may be exploited through Node.js. You can read more about it in https://www.openssl.org/news/secadv/20201208.txt.",
+    "id": "FreeBSD-kernel-2021-0304",
+    "modified": "2021-01-14T00:00:00Z",
+    "published": "2021-01-14T00:00:00Z",
+    "references": [
+        {
+            "type": "WEB",
+            "url": "https://nodejs.org/en/blog/vulnerability/january-2021-security-releases/"
+        },
+        {
+            "type": "WEB",
+            "url": "https://www.openssl.org/news/secadv/20201208.txt"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2020-8265"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2020-8287"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2020-1971"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "Node.js -- January 2021 Security Releases"
+}

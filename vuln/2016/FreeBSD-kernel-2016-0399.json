@@ -1,0 +1,43 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "nghttp2"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "1.7.1"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "discovery": "2016-02-03T00:00:00Z",
+        "vid": "07718e2b-d29d-11e5-a95f-b499baebfeaf"
+    },
+    "details": "Nghttp2 reports:\n\n> Out of memory in nghttpd, nghttp, and libnghttp2\\_asio applications\n> due to unlimited incoming HTTP header fields.\n>\n> nghttpd, nghttp, and libnghttp2\\_asio applications do not limit the memory usage\n> for the incoming HTTP header field. If peer sends specially crafted HTTP/2\n> HEADERS frames and CONTINUATION frames, they will crash with out of memory\n> error.\n>\n> Note that libnghttp2 itself is not affected by this vulnerability.",
+    "id": "FreeBSD-kernel-2016-0399",
+    "modified": "2016-02-13T00:00:00Z",
+    "published": "2016-02-13T00:00:00Z",
+    "references": [
+        {
+            "type": "WEB",
+            "url": "http://nghttp2.org/blog/2016/02/11/nghttp2-v1-7-1/"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2016-1544"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "nghttp2 -- Out of memory in nghttpd, nghttp, and libnghttp2_asio"
+}

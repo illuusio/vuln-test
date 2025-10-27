@@ -1,0 +1,58 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "firefox"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "57.0.4,1"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        },
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "waterfox"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "56.0.2"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "discovery": "2018-01-04T00:00:00Z",
+        "vid": "8429711b-76ca-474e-94a0-6b980f1e2d47"
+    },
+    "details": "Mozilla Foundation reports:\n\n> **Jann Horn** of Google Project Zero\n> Security reported that speculative execution performed\n> by modern CPUs could leak information through a timing\n> side-channel attack. Microsoft Vulnerability Research\n> extended this attack to browser JavaScript engines and\n> demonstrated that code on a malicious web page could\n> read data from other web sites (violating the\n> same-origin policy) or private data from the browser\n> itself.\n>\n> Since this new class of attacks involves measuring\n> precise time intervals, as a parti al, short-term,\n> mitigation we are disabling or reducing the precision of\n> several time sources in Firefox. The precision of\n> `performance.now()` has been reduced from 5\u03bcs\n> to 20\u03bcs, and the `SharedArrayBuffer` feature\n> has been disabled because it can be used to construct a\n> high-resolution timer.",
+    "id": "FreeBSD-kernel-2018-0309",
+    "modified": "2018-01-05T00:00:00Z",
+    "published": "2018-01-05T00:00:00Z",
+    "references": [
+        {
+            "type": "WEB",
+            "url": "https://www.mozilla.org/security/advisories/mfsa2018-01/"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "mozilla -- Speculative execution side-channel attack"
+}

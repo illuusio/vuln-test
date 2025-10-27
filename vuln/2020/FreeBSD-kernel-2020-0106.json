@@ -1,0 +1,43 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "ark"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "20.08.0_1"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "discovery": "2020-08-27T00:00:00Z",
+        "vid": "38fdf07b-e8ec-11ea-8bbe-e0d55e2a8bf9"
+    },
+    "details": "Albert Astals Cid reports:\n\n> ### Overview\n>\n> A maliciously crafted TAR archive containing symlink entries\n> would install files anywhere in the user's home directory upon extraction.\n>\n> ### Proof of concept\n>\n> For testing, an example of malicious archive can be found at\n> [dirsymlink.tar](https://github.com/jwilk/traversal-archives/releases/download/0/dirsymlink.tar)\n>\n> ### Impact\n>\n> Users can unwillingly install files like a modified .bashrc, or a malicious\n> script placed in ~/.config/autostart.\n>\n> ### Workaround\n>\n> Before extracting a downloaded archive using the Ark GUI, users should inspect it\n> to make sure it doesn't contain symlink entries pointing outside the extraction folder.\n>\n> The 'Extract' context menu from the Dolphin file manager shouldn't be used.\n>\n> ### Solution\n>\n> Ark 20.08.1 skips maliciously crafted symlinks when extracting TAR archives.\n>\n> Alternatively, [8bf8c5ef07b0ac5e914d752681e470dea403a5bd](https://invent.kde.org/utilities/ark/-/commit/8bf8c5ef07b0ac5e914d752681e470dea403a5bd) can be applied to previous releases.\n>\n> ### Credits\n>\n> Thanks to Fabian Vogt for reporting this issue and for fixing it.",
+    "id": "FreeBSD-kernel-2020-0106",
+    "modified": "2020-08-28T00:00:00Z",
+    "published": "2020-08-28T00:00:00Z",
+    "references": [
+        {
+            "type": "WEB",
+            "url": "https://kde.org/info/security/advisory-20200827-1.txt"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2020-24654"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "ark -- extraction outside of extraction directory"
+}

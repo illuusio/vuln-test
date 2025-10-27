@@ -1,0 +1,51 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "libxslt"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "1.1.43"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "discovery": "2025-03-13T00:00:00Z",
+        "vid": "a96cd659-303e-11f0-94b5-54ee755069b5"
+    },
+    "details": "[CVE-2024-55549] Fix UAF related to excluded namespaces\n=======================================================\n\n> xsltGetInheritedNsList in libxslt before 1.1.43 has a use-after-free issue related to exclusion of result prefixes.\n\n[CVE-2025-24855] Fix use-after-free of XPath context node\n=========================================================\n\n> numbers.c in libxslt before 1.1.43 has a use-after-free because\n> , in nested XPath evaluations, an XPath context node can be\n> modified but never restored. This is related to\n> xsltNumberFormatGetValue, xsltEvalXPathPredicate,\n> xsltEvalXPathStringNs, and xsltComputeSortResultInternal.",
+    "id": "FreeBSD-ports-2025-0129",
+    "modified": "2025-05-13T00:00:00Z",
+    "published": "2025-05-13T00:00:00Z",
+    "references": [
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2024-55549"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2025-24855"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://nvd.nist.gov/vuln/detail/CVE-2024-55549"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://nvd.nist.gov/vuln/detail/CVE-2025-24855"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "libxslt -- multiple vulnerabilities"
+}

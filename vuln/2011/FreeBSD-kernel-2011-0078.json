@@ -1,0 +1,66 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "samba34"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "introduced": "3.4.*,1"
+                        },
+                        {
+                            "fixed": "3.4.12"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        },
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "samba35"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "introduced": "3.5.*,1"
+                        },
+                        {
+                            "fixed": "3.5.7"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "discovery": "2011-02-28T00:00:00Z",
+        "vid": "bfdbc7ec-9c3f-11e0-9bec-6c626dd55a41"
+    },
+    "details": "The Samba team reports:\n\n> Samba is vulnerable to a denial of service, caused by a memory\n> corruption error related to missing range checks on file\n> descriptors being used in the \"FD\\_SET\" macro. By performing a\n> select on a bad file descriptor set, a remote attacker could\n> exploit this vulnerability to cause the application to crash or\n> possibly execute arbitrary code on the system.",
+    "id": "FreeBSD-kernel-2011-0078",
+    "modified": "2011-06-21T00:00:00Z",
+    "published": "2011-06-21T00:00:00Z",
+    "references": [
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2011-0719"
+        },
+        {
+            "type": "WEB",
+            "url": "http://www.samba.org/samba/security/CVE-2011-0719.html"
+        },
+        {
+            "type": "WEB",
+            "url": "http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2011-0719"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "Samba -- Denial of service - memory corruption"
+}

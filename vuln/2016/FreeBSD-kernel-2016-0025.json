@@ -1,0 +1,43 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "xen-kernel"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "4.7.1_1"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "discovery": "2016-12-13T00:00:00Z",
+        "vid": "80a897a2-c1a6-11e6-ae1b-002590263bf5"
+    },
+    "details": "The Xen Project reports:\n\n> The x86 instruction CMPXCHG8B is supposed to ignore legacy operand\n> size overrides; it only honors the REX.W override (making it\n> CMPXCHG16B). So, the operand size is always 8 or 16. When support\n> for CMPXCHG16B emulation was added to the instruction emulator,\n> this restriction on the set of possible operand sizes was relied on\n> in some parts of the emulation; but a wrong, fully general, operand\n> size value was used for other parts of the emulation. As a result,\n> if a guest uses a supposedly-ignored operand size prefix, a small\n> amount of hypervisor stack data is leaked to the guests: a 96 bit\n> leak to guests running in 64-bit mode; or, a 32 bit leak to other\n> guests.\n>\n> A malicious unprivileged guest may be able to obtain sensitive\n> information from the host.",
+    "id": "FreeBSD-kernel-2016-0025",
+    "modified": "2016-12-14T00:00:00Z",
+    "published": "2016-12-14T00:00:00Z",
+    "references": [
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2016-9932"
+        },
+        {
+            "type": "WEB",
+            "url": "http://xenbits.xen.org/xsa/advisory-200.html"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "xen-kernel -- x86 CMPXCHG8B emulation fails to ignore operand size override"
+}

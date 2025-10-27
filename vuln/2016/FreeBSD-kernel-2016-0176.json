@@ -1,0 +1,65 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "FreeBSD"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "introduced": "10.0"
+                        },
+                        {
+                            "fixed": "10.0_12"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                },
+                {
+                    "events": [
+                        {
+                            "introduced": "9.2"
+                        },
+                        {
+                            "fixed": "9.2_15"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                },
+                {
+                    "events": [
+                        {
+                            "introduced": "9.1"
+                        },
+                        {
+                            "fixed": "9.1_22"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "discovery": "2014-11-04T00:00:00Z",
+        "vid": "73e9a137-6007-11e6-a6c3-14dae9d210b8"
+    },
+    "details": "Problem Description:\n====================\n\nAlthough OpenSSH is not multithreaded, when OpenSSH is\ncompiled with Kerberos support, the Heimdal libraries bring\nin the POSIX thread library as a dependency. Due to incorrect\nlibrary ordering while linking sshd(8), symbols in the C\nlibrary which are shadowed by the POSIX thread library may\nnot be resolved correctly at run time.\n\nNote that this problem is specific to the FreeBSD build\nsystem and does not affect other operating systems or the\nversion of OpenSSH available from the FreeBSD ports tree.\n\nImpact:\n=======\n\nAn incorrectly linked sshd(8) child process may deadlock\nwhile handling an incoming connection. The connection may\nthen time out or be interrupted by the client, leaving the\ndeadlocked sshd(8) child process behind. Eventually, the\nsshd(8) parent process stops accepting new connections.\n\nAn attacker may take advantage of this by repeatedly\nconnecting and then dropping the connection after having\nbegun, but not completed, the authentication process.",
+    "id": "FreeBSD-kernel-2016-0176",
+    "modified": "2016-08-11T00:00:00Z",
+    "published": "2016-08-11T00:00:00Z",
+    "references": [
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2014-8475"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://www.freebsd.org/security/advisories/FreeBSD-SA-14:24.sshd.asc"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "FreeBSD -- Denial of service attack against sshd(8)"
+}

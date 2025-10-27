@@ -1,0 +1,67 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "curl"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "7.86.0"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "discovery": "2022-10-26T00:00:00Z",
+        "vid": "0f99a30c-7b4b-11ed-9168-080027f5fec9"
+    },
+    "details": "Daniel Stenberg reports:\n\n> CVE-2022-32221: POST following PUT confusion\n> :   When doing HTTP(S) transfers, libcurl might erroneously\n>     use the read callback\n>     (`CURLOPT_READFUNCTION`) to ask for data to\n>     send, even when the `CURLOPT_POSTFIELDS`\n>     option has been set, if the same handle previously was\n>     used to issue a `PUT` request which used that\n>     callback. This flaw may surprise the application and\n>     cause it to misbehave and either send off the wrong data\n>     or use memory after free or similar in the subsequent\n>     `POST` request. The problem exists in the\n>     logic for a reused handle when it is changed from a PUT\n>     to a POST.\n>\n> CVE-2022-35260: .netrc parser out-of-bounds access\n> :   curl can be told to parse a .netrc file for\n>     credentials. If that file ends in a line with\n>     consecutive non-white space letters and no newline, curl\n>     could read past the end of the stack-based buffer, and\n>     if the read works, write a zero byte possibly beyond its\n>     boundary. This will in most cases cause a segfault or\n>     similar, but circumstances might also cause different\n>     outcomes. If a malicious user can provide a custom netrc\n>     file to an application or otherwise affect its contents,\n>     this flaw could be used as denial-of-service.\n>\n> CVE-2022-42915: HTTP proxy double-free\n> :   f curl is told to use an HTTP proxy for a transfer with\n>     a non-HTTP(S) URL, it sets up the connection to the\n>     remote server by issuing a CONNECT request to the proxy,\n>     and then tunnels the rest of protocol through. An HTTP\n>     proxy might refuse this request (HTTP proxies often only\n>     allow outgoing connections to specific port numbers,\n>     like 443 for HTTPS) and instead return a non-200\n>     response code to the client. Due to flaws in the\n>     error/cleanup handling, this could trigger a double-free\n>     in curl if one of the following schemes were used in the\n>     URL for the transfer: dict, gopher, gophers, ldap,\n>     ldaps, rtmp, rtmps, telnet\n>\n> CVE-2022-42916: HSTS bypass via IDN\n> :   curl's HSTS check could be bypassed to trick it to keep\n>     using HTTP. Using its HSTS support, curl can be\n>     instructed to use HTTPS directly instead of using an\n>     insecure clear-text HTTP step even when HTTP is provided\n>     in the URL. This mechanism could be bypassed if the host\n>     name in the given URL uses IDN characters that get\n>     replaced to ASCII counterparts as part of the IDN\n>     conversion. Like using the character UTF-8 U+3002\n>     (IDEOGRAPHIC FULL STOP) instead of the common ASCII full\n>     stop (U+002E) .. Like this: http://curl\u3002se\u3002",
+    "id": "FreeBSD-kernel-2022-0008",
+    "modified": "2022-12-14T00:00:00Z",
+    "published": "2022-12-14T00:00:00Z",
+    "references": [
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2022-32221"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2022-35260"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2022-42915"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2022-42916"
+        },
+        {
+            "type": "WEB",
+            "url": "https://curl.se/docs/CVE-2022-32221.html"
+        },
+        {
+            "type": "WEB",
+            "url": "https://curl.se/docs/CVE-2022-35260.html"
+        },
+        {
+            "type": "WEB",
+            "url": "https://curl.se/docs/CVE-2022-42915.html"
+        },
+        {
+            "type": "WEB",
+            "url": "https://curl.se/docs/CVE-2022-42916.html"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "curl -- multiple vulnerabilities"
+}

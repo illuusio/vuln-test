@@ -1,0 +1,43 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "dbus"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "1.8.10"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "discovery": "2014-11-10T00:00:00Z",
+        "vid": "c1930f45-6982-11e4-80e1-bcaec565249c"
+    },
+    "details": "Simon McVittie reports:\n\n> The patch issued by the D-Bus maintainers for CVE-2014-3636\n> was based on incorrect reasoning, and does not fully prevent\n> the attack described as \"CVE-2014-3636 part A\", which is\n> repeated below. Preventing that attack requires raising the\n> system dbus-daemon's RLIMIT\\_NOFILE (ulimit -n) to a higher\n> value. CVE-2014-7824 has been allocated for this\n> vulnerability.",
+    "id": "FreeBSD-kernel-2014-0024",
+    "modified": "2014-11-11T00:00:00Z",
+    "published": "2014-11-11T00:00:00Z",
+    "references": [
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2014-7824"
+        },
+        {
+            "type": "WEB",
+            "url": "http://lists.freedesktop.org/archives/dbus/2014-November/016395.html"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "dbus -- incomplete fix for CVE-2014-3636 part A"
+}

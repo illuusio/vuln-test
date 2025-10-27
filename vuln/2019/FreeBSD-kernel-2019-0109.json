@@ -1,0 +1,59 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "apache24"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "2.4.41"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "discovery": "2019-08-14T00:00:00Z",
+        "vid": "caf545f2-c0d9-11e9-9051-4c72b94353b5"
+    },
+    "details": "SO-AND-SO reports:\n\n> SECURITY: CVE-2019-10081\n> ========================\n>\n> mod\\_http2: HTTP/2 very early pushes, for example configured with \"H2PushResource\",\n> could lead to an overwrite of memory in the pushing request's pool,\n> leading to crashes. The memory copied is that of the configured push\n> link header values, not data supplied by the client.\n>\n> SECURITY: CVE-2019-9517\n> =======================\n>\n> mod\\_http2: a malicious client could perform a DoS attack by flooding\n> a connection with requests and basically never reading responses\n> on the TCP connection. Depending on h2 worker dimensioning, it was\n> possible to block those with relatively few connections.\n>\n> SECURITY: CVE-2019-10098\n> ========================\n>\n> rewrite, core: Set PCRE\\_DOTALL flag by default to avoid unpredictable\n> matches and substitutions with encoded line break characters.\n>\n> SECURITY: CVE-2019-10092\n> ========================\n>\n> Remove HTML-escaped URLs from canned error responses to prevent misleading\n> text/links being displayed via crafted links.\n>\n> SECURITY: CVE-2019-10097\n> ========================\n>\n> mod\\_remoteip: Fix stack buffer overflow and NULL pointer deference\n> when reading the PROXY protocol header.\n>\n> CVE-2019-10082\n> ==============\n>\n> mod\\_http2: Using fuzzed network input, the http/2 session\n> handling could be made to read memory after being freed,\n> during connection shutdown.",
+    "id": "FreeBSD-kernel-2019-0109",
+    "modified": "2019-08-17T00:00:00Z",
+    "published": "2019-08-17T00:00:00Z",
+    "references": [
+        {
+            "type": "WEB",
+            "url": "http://www.apache.org/dist/httpd/CHANGES_2.4"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2019-10081"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2019-9517"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2019-10098"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2019-10092"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2019-10082"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "Apache -- Multiple vulnerabilities"
+}

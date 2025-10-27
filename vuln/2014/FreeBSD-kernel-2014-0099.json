@@ -1,0 +1,76 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "libXfont"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "1.4.7_3"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        },
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "linux-c6-xorg-libs"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "7.4_2"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        },
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "linux-f10-xorg-libs"
+            }
+        }
+    ],
+    "database_specific": {
+        "discovery": "2014-05-13T00:00:00Z",
+        "vid": "b060ee50-daba-11e3-99f2-bcaec565249c"
+    },
+    "details": "Alan Coopersmith reports:\n\n> Ilja van Sprundel, a security researcher with IOActive, has\n> discovered several issues in the way the libXfont library\n> handles the responses it receives from xfs servers, and has\n> worked with X.Org's security team to analyze, confirm, and fix\n> these issues.\n>\n> Most of these issues stem from libXfont trusting the font server\n> to send valid protocol data, and not verifying that the values\n> will not overflow or cause other damage. This code is commonly\n> called from the X server when an X Font Server is active in the\n> font path, so may be running in a setuid-root process depending\n> on the X server in use. Exploits of this path could be used by\n> a local, authenticated user to attempt to raise privileges; or\n> by a remote attacker who can control the font server to attempt\n> to execute code with the privileges of the X server.",
+    "id": "FreeBSD-kernel-2014-0099",
+    "modified": "2015-07-15T00:00:00Z",
+    "published": "2014-05-13T00:00:00Z",
+    "references": [
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2014-0209"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2014-0210"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2014-0211"
+        },
+        {
+            "type": "WEB",
+            "url": "http://lists.x.org/archives/xorg-announce/2014-May/002431.html"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "libXfont -- X Font Service Protocol and Font metadata file handling issues"
+}

@@ -1,0 +1,107 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "glpi"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "10.0.18"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "discovery": "2025-02-25T00:00:00Z",
+        "vid": "c36decbe-3c84-11f0-8d29-b42e991fc52e"
+    },
+    "details": "security-advisories@github.com reports:\n\n> CVE-2024-11955: A vulnerability was found in GLPI up to\n> 10.0.17. It has been declared as problematic. Affected by\n> this vulnerability is an unknown functionality of the file\n> /index.php.\n> The manipulation of the argument redirect leads to\n> open redirect. The attack can be launched remotely.\n> The exploit has been disclosed to the public and\n> may be used. Upgrading to version 10.0.18 is able to\n> address this issue.\n> It is recommended to upgrade the affected component.\n>\n> CVE-2025-23024: Starting in version 0.72 and prior to\n> version 10.0.18, an anonymous user can disable all the\n> active plugins. Version 10.0.18 contains a patch.\n> As a workaround, one may delete the `install/update.php`\n> file.\n>\n> CVE-2025-23046: Prior to version 10.0.18, a low privileged\n> user can enable debug mode and access sensitive information.\n> Version 10.0.18 contains a patch.\n> As a workaround, one may delete the `install/update.php`\n> file.\n>\n> CVE-2025-25192: Starting in version 9.5.0 and prior to\n> version 10.0.18, if a \"Mail servers\"\n> authentication provider is configured to use an Oauth\n> connection provided by the OauthIMAP plugin, anyone can\n> connect to GLPI using a user name on which an Oauth\n> authorization has already been established.\n> Version 10.0.18 contains a patch. As a\n> workaround, one may disable any \"Mail\n> servers\" authentication provider configured to\n> use an Oauth connection provided by the OauthIMAP\n> plugin.\n>\n> CVE-2025-21626: Starting in version 0.71 and prior to\n> version 10.0.18, an anonymous user can fetch sensitive\n> information from the `status.php` endpoint.\n> Version 10.0.18 contains a fix for the issue.\n> Some workarounds are available. One may delete the\n> `status.php` file, restrict its access, or\n> remove any sensitive values from the `name` field of\n> the active LDAP directories, mail servers authentication\n> providers and mail receivers.\n>\n> CVE-2025-21627: In versions prior to 10.0.18, a malicious\n> link can be crafted to perform a reflected XSS attack on the\n> search page. If the anonymous ticket creation is enabled,\n> this attack can be performed by an unauthenticated\n> user. Version 10.0.18 contains a fix for the issue.\n>\n> CVE-2025-21619: An administrator user can perfom a SQL\n> injection through the rules configuration forms.\n> This vulnerability is fixed in 10.0.18.\n>\n> CVE-2025-24799: An unauthenticated user can perform a SQL\n> injection through the inventory endpoint.\n> This vulnerability is fixed in 10.0.18.\n>\n> CVE-2025-24801: An authenticated user can upload and force\n> the execution of \\*.php files located on the GLPI server.\n> This vulnerability is fixed in 10.0.18.",
+    "id": "FreeBSD-ports-2025-0114",
+    "modified": "2025-05-29T00:00:00Z",
+    "published": "2025-05-29T00:00:00Z",
+    "references": [
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2024-11955"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://nvd.nist.gov/vuln/detail/CVE-2024-11955"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2025-23024"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://nvd.nist.gov/vuln/detail/CVE-2025-23024"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2025-23046"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://nvd.nist.gov/vuln/detail/CVE-2025-23046"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2025-25192"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://nvd.nist.gov/vuln/detail/CVE-2025-25192"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2025-21626"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://nvd.nist.gov/vuln/detail/CVE-2025-21626"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2025-21627"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://nvd.nist.gov/vuln/detail/CVE-2025-21627"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2025-21619"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://nvd.nist.gov/vuln/detail/CVE-2025-21619"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2025-24799"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://nvd.nist.gov/vuln/detail/CVE-2025-24799"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2025-24801"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://nvd.nist.gov/vuln/detail/CVE-2025-24801"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "glpi-project -- GLPI multiple vulnerabilities"
+}

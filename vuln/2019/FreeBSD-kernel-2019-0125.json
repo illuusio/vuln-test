@@ -1,0 +1,54 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:kernel",
+                "name": "FreeBSD-kernel"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "introduced": "11.2"
+                        },
+                        {
+                            "fixed": "11.2_12"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                },
+                {
+                    "events": [
+                        {
+                            "introduced": "11.3"
+                        },
+                        {
+                            "fixed": "11.3_1"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "discovery": "2019-07-24T00:00:00Z",
+        "vid": "6b856e00-b30a-11e9-a87f-a4badb2f4699"
+    },
+    "details": "Problem Description:\n====================\n\nDue to insufficient initialization of memory copied to\nuserland in the components listed above small amounts of\nkernel memory may be disclosed to userland processes.\n\nImpact:\n=======\n\nA user who can invoke 32-bit FreeBSD ioctls may be able\nto read the contents of small portions of kernel memory.\n\nSuch memory might contain sensitive information, such\nas portions of the file cache or terminal buffers. This\ninformation might be directly useful, or it might be leveraged\nto obtain elevated privileges in some way; for example, a\nterminal buffer might include a user-entered password.",
+    "id": "FreeBSD-kernel-2019-0125",
+    "modified": "2019-07-30T00:00:00Z",
+    "published": "2019-07-30T00:00:00Z",
+    "references": [
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2019-5605"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://www.freebsd.org/security/advisories/FreeBSD-SA-19:14.freebsd32.asc"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "FreeBSD -- Kernel memory disclosure in freebsd32_ioctl"
+}

@@ -1,0 +1,55 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "curl"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "7.13.1"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "discovery": "2004-12-21T00:00:00Z",
+        "vid": "96df5fd0-8900-11d9-aa18-0001020eed82"
+    },
+    "details": "Two iDEFENSE Security Advisories reports:\n\n> An exploitable stack-based buffer overflow condition\n> exists when using NT Lan Manager (NTLM)\n> authentication. The problem specifically exists within\n> `Curl_input_ntlm()` defined in\n> lib/http\\_ntlm.c.\n>\n> Successful exploitation allows remote attackers to\n> execute arbitrary code under the privileges of the target\n> user. Exploitation requires that an attacker either coerce\n> or force a target to connect to a malicious server using\n> NTLM authentication.\n\n> An exploitable stack-based buffer overflow condition\n> exists when using Kerberos authentication. The problem\n> specifically exists within the functions\n> `Curl_krb_kauth()` and `krb4_auth()`\n> defined in lib/krb4.c.\n>\n> Successful exploitation allows remote attackers to\n> execute arbitrary code under the privileges of the target\n> user. Exploitation requires that an attacker either coerce\n> or force a target to connect to a malicious server using\n> Kerberos authentication.",
+    "id": "FreeBSD-kernel-2005-0240",
+    "modified": "2005-02-27T00:00:00Z",
+    "published": "2005-02-27T00:00:00Z",
+    "references": [
+        {
+            "type": "ADVISORY",
+            "url": "https://www.securityfocus.com/bid/12615/info"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://www.securityfocus.com/bid/12616/info"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2005-0490"
+        },
+        {
+            "type": "DISCUSSION",
+            "url": "http://marc.theaimsgroup.com/?l=bugtraq&m=110902850731457"
+        },
+        {
+            "type": "DISCUSSION",
+            "url": "http://marc.theaimsgroup.com/?l=bugtraq&m=110902601221592"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "curl -- authentication buffer overflow vulnerability"
+}

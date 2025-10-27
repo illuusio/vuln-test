@@ -1,0 +1,97 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "opera"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "9.10"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        },
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "opera-devel"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "9.10"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        },
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "linux-opera"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "9.10"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "discovery": "2007-01-05T00:00:00Z",
+        "vid": "78ad2525-9d0c-11db-a5f6-000c6ec775d9"
+    },
+    "details": "iDefense reports:\n\n> The vulnerability specifically exists due to Opera\n> improperly processing a JPEG DHT marker. The DHT marker is\n> used to define a Huffman Table which is used for decoding\n> the image data. An invalid number of index bytes in the\n> DHT marker will trigger a heap overflow with partially\n> user controlled data.\n>\n> Exploitation of this vulnerability would allow an\n> attacker to execute arbitrary code on the affected\n> host. The attacker would first need to construct a website\n> containing the malicious image and trick the vulnerable\n> user into visiting the site. This would trigger the\n> vulnerability and allow the code to execute with the\n> privileges of the local user.\n\n> A flaw exists within Opera's Javascript SVG\n> implementation. When processing a\n> createSVGTransformFromMatrix request Opera does not\n> properly validate the type of object passed to the\n> function. Passing an incorrect object to this function can\n> result in it using a pointer that is user controlled when\n> it attempts to make the virtual function call.\n>\n> Exploitation of this vulnerability would allow an\n> attacker to execute arbitrary code on the affected\n> host. The attacker would first need to construct a website\n> containing the malicious JavaScript and trick the\n> vulnerable user into visiting the site. This would trigger\n> the vulnerability and allow the code to execute with the\n> privileges of the local user.",
+    "id": "FreeBSD-kernel-2007-0157",
+    "modified": "2010-05-12T00:00:00Z",
+    "published": "2007-01-05T00:00:00Z",
+    "references": [
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2007-0126"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2007-0127"
+        },
+        {
+            "type": "WEB",
+            "url": "http://labs.idefense.com/intelligence/vulnerabilities/display.php?id=457"
+        },
+        {
+            "type": "WEB",
+            "url": "http://labs.idefense.com/intelligence/vulnerabilities/display.php?id=458"
+        },
+        {
+            "type": "WEB",
+            "url": "http://www.opera.com/support/search/supsearch.dml?index=851"
+        },
+        {
+            "type": "WEB",
+            "url": "http://www.opera.com/support/search/supsearch.dml?index=852"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "opera -- multiple vulnerabilities"
+}

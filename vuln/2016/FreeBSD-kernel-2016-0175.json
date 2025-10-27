@@ -1,0 +1,87 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:kernel",
+                "name": "FreeBSD-kernel"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "introduced": "10.0"
+                        },
+                        {
+                            "fixed": "10.0_12"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                },
+                {
+                    "events": [
+                        {
+                            "introduced": "9.3"
+                        },
+                        {
+                            "fixed": "9.3_5"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                },
+                {
+                    "events": [
+                        {
+                            "introduced": "9.2"
+                        },
+                        {
+                            "fixed": "9.2_15"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                },
+                {
+                    "events": [
+                        {
+                            "introduced": "9.1"
+                        },
+                        {
+                            "fixed": "9.1_22"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                },
+                {
+                    "events": [
+                        {
+                            "introduced": "8.4"
+                        },
+                        {
+                            "fixed": "8.4_19"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "discovery": "2014-11-04T00:00:00Z",
+        "vid": "74389f22-6007-11e6-a6c3-14dae9d210b8"
+    },
+    "details": "Problem Description:\n====================\n\nWhen setlogin(2) is called while setting up a new login\nsession, the login name is copied into an uninitialized\nstack buffer, which is then copied into a buffer of the\nsame size in the session structure. The getlogin(2) system\ncall returns the entire buffer rather than just the portion\noccupied by the login name associated with the session.\n\nImpact:\n=======\n\nAn unprivileged user can access this memory by calling\ngetlogin(2) and reading beyond the terminating NUL character\nof the resulting string. Up to 16 (FreeBSD 8) or 32 (FreeBSD\n9 and 10) bytes of kernel memory may be leaked in this\nmanner for each invocation of setlogin(2).\n\nThis memory may contain sensitive information, such as\nportions of the file cache or terminal buffers, which an\nattacker might leverage to obtain elevated privileges.",
+    "id": "FreeBSD-kernel-2016-0175",
+    "modified": "2016-08-11T00:00:00Z",
+    "published": "2016-08-11T00:00:00Z",
+    "references": [
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2014-8476"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://www.freebsd.org/security/advisories/FreeBSD-SA-14:25.setlogin.asc"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "FreeBSD -- Kernel stack disclosure in setlogin(2) / getlogin(2)"
+}

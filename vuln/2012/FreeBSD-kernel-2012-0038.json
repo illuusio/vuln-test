@@ -1,0 +1,43 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "exim"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "introduced": "4.70"
+                        },
+                        {
+                            "fixed": "4.80.1"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "discovery": "2012-10-25T00:00:00Z",
+        "vid": "b0f3ab1f-1f3b-11e2-8fe9-0022156e8794"
+    },
+    "details": "This vulnerability affects Exim instances built with DKIM\nenabled (this is the default for FreeBSD Exim port) and running\nverification of DKIM signatures on the incoming mail\nmessages.\n\nPhil Penncock reports:\n\n> This is a SECURITY release, addressing a CRITICAL remote\n> code execution flaw in versions of Exim between 4.70 and\n> 4.80 inclusive, when built with DKIM support (the default).\n>\n> This security vulnerability can be exploited by anyone\n> who can send email from a domain for which they control the\n> DNS.\n>\n> You are not vulnerable if you built Exim with DISABLE\\_DKIM\n> or if you put this at the start of an ACL plumbed into\n> acl\\_smtp\\_connect or acl\\_smtp\\_rcpt:\n>\n> ```\n> warn control = dkim_disable_verify\n> ```",
+    "id": "FreeBSD-kernel-2012-0038",
+    "modified": "2012-10-26T00:00:00Z",
+    "published": "2012-10-26T00:00:00Z",
+    "references": [
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2012-5671"
+        },
+        {
+            "type": "WEB",
+            "url": "https://lists.exim.org/lurker/message/20121026.080330.74b9147b.en.html"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "Exim -- remote code execution"
+}

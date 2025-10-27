@@ -1,0 +1,59 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "apache"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "introduced": "2.*,1"
+                        },
+                        {
+                            "fixed": "2.2.22"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "discovery": "2011-10-05T00:00:00Z",
+        "vid": "4b7dbfab-4c6b-11e1-bc16-0023ae8e59f0"
+    },
+    "details": "CVE MITRE reports:\n\n> An exposure was found when using mod\\_proxy in reverse proxy\n> mode. In certain configurations using RewriteRule with proxy\n> flag or ProxyPassMatch, a remote attacker could cause the reverse\n> proxy to connect to an arbitrary server, possibly disclosing\n> sensitive information from internal web servers not directly\n> accessible to attacker.\n>\n> Integer overflow in the ap\\_pregsub function in server/util.c in\n> the Apache HTTP Server 2.0.x through 2.0.64 and 2.2.x through\n> 2.2.21, when the mod\\_setenvif module is enabled, allows local\n> users to gain privileges via a .htaccess file with a crafted\n> SetEnvIf directive, in conjunction with a crafted HTTP request\n> header, leading to a heap-based buffer overflow.\n>\n> An additional exposure was found when using mod\\_proxy in\n> reverse proxy mode. In certain configurations using RewriteRule\n> with proxy flag or ProxyPassMatch, a remote attacker could cause\n> the reverse proxy to connect to an arbitrary server, possibly\n> disclosing sensitive information from internal web servers\n> not directly accessible to attacker.\n>\n> A flaw was found in mod\\_log\\_config. If the '%{cookiename}C' log\n> format string is in use, a remote attacker could send a specific\n> cookie causing a crash. This crash would only be a denial of\n> service if using a threaded MPM.\n>\n> A flaw was found in the handling of the scoreboard. An\n> unprivileged child process could cause the parent process to\n> crash at shutdown rather than terminate cleanly.\n>\n> A flaw was found in the default error response for status code\n> 400. This flaw could be used by an attacker to expose\n> \"httpOnly\" cookies when no custom ErrorDocument is specified.",
+    "id": "FreeBSD-kernel-2012-0204",
+    "modified": "2012-01-31T00:00:00Z",
+    "published": "2012-01-31T00:00:00Z",
+    "references": [
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2011-3368"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2011-3607"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2011-4317"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2012-0021"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2012-0031"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2012-0053"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "apache -- multiple vulnerabilities"
+}

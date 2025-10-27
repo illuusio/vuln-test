@@ -1,0 +1,54 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:kernel",
+                "name": "FreeBSD-kernel"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "introduced": "12.0"
+                        },
+                        {
+                            "fixed": "12.0_7"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                },
+                {
+                    "events": [
+                        {
+                            "introduced": "11.2"
+                        },
+                        {
+                            "fixed": "11.2_11"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "discovery": "2019-07-02T00:00:00Z",
+        "vid": "ff82610f-b309-11e9-a87f-a4badb2f4699"
+    },
+    "details": "Problem Description:\n====================\n\nA bug causes up to three bytes of kernel stack memory\nto be written to disk as uninitialized directory entry\npadding. This data can be viewed by any user with read\naccess to the directory. Additionally, a malicious user\nwith write access to a directory can cause up to 254 bytes\nof kernel stack memory to be exposed.\n\nImpact:\n=======\n\nSome amount of the kernel stack is disclosed and written\nout to the filesystem.",
+    "id": "FreeBSD-kernel-2019-0129",
+    "modified": "2019-07-30T00:00:00Z",
+    "published": "2019-07-30T00:00:00Z",
+    "references": [
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2019-5601"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://www.freebsd.org/security/advisories/FreeBSD-SA-19:10.ufs.asc"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "FreeBSD -- Kernel stack disclosure in UFS/FFS"
+}

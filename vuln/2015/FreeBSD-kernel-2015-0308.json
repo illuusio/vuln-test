@@ -1,0 +1,51 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "pcre"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "8.37_1"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "discovery": "2015-05-29T00:00:00Z",
+        "vid": "e69af246-0ae2-11e5-90e4-d050996490d0"
+    },
+    "details": "Venustech ADLAB reports:\n\n> PCRE library is prone to a vulnerability which leads\n> to Heap Overflow. During the compilation of a malformed\n> regular expression, more data is written on the malloced\n> block than the expected size output by compile\\_regex.\n\n> PCRE library is prone to a vulnerability which leads to\n> Stack Overflow. Without enough bound checking inside\n> match(), the stack memory could be overflowed via a\n> crafted regular expression.",
+    "id": "FreeBSD-kernel-2015-0308",
+    "modified": "2015-06-07T00:00:00Z",
+    "published": "2015-06-04T00:00:00Z",
+    "references": [
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2015-3210"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2015-3217"
+        },
+        {
+            "type": "WEB",
+            "url": "https://bugs.exim.org/show_bug.cgi?id=1636"
+        },
+        {
+            "type": "WEB",
+            "url": "https://bugs.exim.org/show_bug.cgi?id=1638"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "pcre -- multiple vulnerabilities"
+}

@@ -1,0 +1,43 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "xen-kernel"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "4.7.2_1"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "discovery": "2017-04-04T00:00:00Z",
+        "vid": "90becf7c-1acf-11e7-970f-002590263bf5"
+    },
+    "details": "The Xen Project reports:\n\n> The XSA-29 fix introduced an insufficient check on XENMEM\\_exchange\n> input, allowing the caller to drive hypervisor memory accesses\n> outside of the guest provided input/output arrays.\n>\n> A malicious or buggy 64-bit PV guest may be able to access all of\n> system memory, allowing for all of privilege escalation, host\n> crashes, and information leaks.",
+    "id": "FreeBSD-kernel-2017-0242",
+    "modified": "2017-04-06T00:00:00Z",
+    "published": "2017-04-06T00:00:00Z",
+    "references": [
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2017-7228"
+        },
+        {
+            "type": "WEB",
+            "url": "https://xenbits.xen.org/xsa/advisory-212.html"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "xen-kernel -- broken check in memory_exchange() permits PV guest breakout"
+}

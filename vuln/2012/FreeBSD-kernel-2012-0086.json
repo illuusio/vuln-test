@@ -1,0 +1,43 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "phpMyAdmin"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "3.5.2.2"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "discovery": "2012-08-12T00:00:00Z",
+        "vid": "db1d3340-e83b-11e1-999b-e0cb4e266481"
+    },
+    "details": "The phpMyAdmin development team reports:\n\n> Using a crafted table name, it was possible to produce a\n> XSS : 1) On the Database Structure page, creating a new\n> table with a crafted name 2) On the Database Structure page,\n> using the Empty and Drop links of the crafted table name 3)\n> On the Table Operations page of a crafted table, using the\n> 'Empty the table (TRUNCATE)' and 'Delete the table (DROP)'\n> links 4) On the Triggers page of a database containing\n> tables with a crafted name, when opening the 'Add Trigger'\n> popup 5) When creating a trigger for a table with a crafted\n> name, with an invalid definition. Having crafted data in a\n> database table, it was possible to produce a XSS : 6) When\n> visualizing GIS data, having a crafted label name.",
+    "id": "FreeBSD-kernel-2012-0086",
+    "modified": "2012-08-17T00:00:00Z",
+    "published": "2012-08-17T00:00:00Z",
+    "references": [
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2012-4345"
+        },
+        {
+            "type": "WEB",
+            "url": "http://www.phpmyadmin.net/home_page/security/PMASA-2012-4.php"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "phpMyAdmin -- Multiple XSS in Table operations, Database structure, Trigger and Visualize GIS data pages"
+}

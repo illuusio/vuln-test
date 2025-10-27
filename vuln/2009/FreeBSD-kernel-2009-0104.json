@@ -1,0 +1,104 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "pango"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "1.24"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        },
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "linux-pango"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "1.24"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        },
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "linux-f8-pango"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "1.24"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        },
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "linux-f10-pango"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "1.24"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "discovery": "2009-02-22T00:00:00Z",
+        "vid": "4b172278-3f46-11de-becb-001cc0377035"
+    },
+    "details": "oCERT reports:\n\n> Pango suffers from a multiplicative integer overflow which\n> may lead to a potentially exploitable, heap overflow depending\n> on the calling conditions.\n>\n> For example, this vulnerability is remotely reachable in Firefox\n> by creating an overly large document.location value but only results\n> in a process-terminating, allocation error (denial of service).\n>\n> The affected function is pango\\_glyph\\_string\\_set\\_size. An overflow\n> check when doubling the size neglects the overflow possible on the\n> subsequent allocation.",
+    "id": "FreeBSD-kernel-2009-0104",
+    "modified": "2009-10-01T00:00:00Z",
+    "published": "2009-05-13T00:00:00Z",
+    "references": [
+        {
+            "type": "ADVISORY",
+            "url": "https://www.securityfocus.com/bid/34870/info"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2009-1194"
+        },
+        {
+            "type": "WEB",
+            "url": "http://secunia.com/advisories/35021/"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "pango -- integer overflow"
+}

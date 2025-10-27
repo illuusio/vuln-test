@@ -1,0 +1,43 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "gnu-radius"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "1.2.94"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "discovery": "2004-09-15T00:00:00Z",
+        "vid": "e6f0edd8-0b40-11d9-8a8a-000c41e2cdad"
+    },
+    "details": "An iDEFENSE security advisory reports:\n\n> Remote exploitation of an input validation error in\n> version 1.2 of GNU radiusd could allow a denial of\n> service.\n>\n> The vulnerability specifically exists within\n> the asn\\_decode\\_string() function defined in\n> snmplib/asn1.c. When a very large unsigned number is\n> supplied, it is possible that an integer overflow will\n> occur in the bounds-checking code. The daemon will then\n> attempt to reference unallocated memory, resulting in an\n> access violation that causes the process to terminate.",
+    "id": "FreeBSD-kernel-2004-0126",
+    "modified": "2005-05-03T00:00:00Z",
+    "published": "2004-09-20T00:00:00Z",
+    "references": [
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2004-0849"
+        },
+        {
+            "type": "WEB",
+            "url": "http://www.idefense.com/application/poi/display?id=141&type=vulnerabilities"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "gnu-radius -- SNMP-related denial-of-service"
+}

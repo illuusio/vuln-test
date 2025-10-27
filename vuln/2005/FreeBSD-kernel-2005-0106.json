@@ -1,0 +1,47 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "dnrd"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "2.19.1"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "discovery": "2005-07-21T00:00:00Z",
+        "vid": "e72fd82b-fa01-11d9-bc08-0001020eed82"
+    },
+    "details": "Natanael Copa reports that dnrd is vulnerable to a remote\nbuffer overflow and a remote stack overflow. These\nvulnerabilities can be triggered by sending invalid DNS\npackets to dnrd.\n\nThe buffer overflow could potentially be used to execute\narbitrary code with the permissions of the dnrd daemon.\nNote that dnrd runs in an chroot environment and runs as\nnon-root.\n\nThe stack overflow vulnerability can cause dnrd to\ncrash.",
+    "id": "FreeBSD-kernel-2005-0106",
+    "modified": "2005-07-21T00:00:00Z",
+    "published": "2005-07-21T00:00:00Z",
+    "references": [
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2005-2315"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2005-2316"
+        },
+        {
+            "type": "REPORT",
+            "url": "https://bugs.freebsd.org/bugzilla/show_bug.cgi?id=83851"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "dnrd -- remote buffer and stack overflow vulnerabilities"
+}

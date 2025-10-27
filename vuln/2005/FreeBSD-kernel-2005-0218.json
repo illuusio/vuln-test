@@ -1,0 +1,63 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "wine"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "20050310"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "discovery": "2005-03-13T00:00:00Z",
+        "vid": "48a59c96-9c6e-11d9-a040-000a95bc6fae"
+    },
+    "details": "Due to insecure temporary file creation in the Wine Windows\nemulator, it is possible for any user to read potentially\nsensitive information from temporary registry files.\n\n> When a Win32 application is launched by wine, wine makes\n> a dump of the Windows registry in /tmp with name\n> regxxxxyyyy.tmp , where xxxxxx is the pid in hexadecimal\n> value of the current wine process and yyyy is an integer\n> value usually equal to zero.\n>\n> regxxxxyyyy.tmp is created with 0644 (-rw-r--r--)\n> permissions. This could represent a security problem in a\n> multi-user environment. Indeed, any local user could\n> access to windows regstry's dump and get sensitive\n> information, like passwords and other private data.",
+    "id": "FreeBSD-kernel-2005-0218",
+    "modified": "2005-03-24T00:00:00Z",
+    "published": "2005-03-24T00:00:00Z",
+    "references": [
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2005-0787"
+        },
+        {
+            "type": "DISCUSSION",
+            "url": "http://marc.theaimsgroup.com/?l=bugtraq&m=111082537009842"
+        },
+        {
+            "type": "WEB",
+            "url": "http://bugs.winehq.org/show_bug.cgi?id=2715"
+        },
+        {
+            "type": "WEB",
+            "url": "http://www.securitytracker.com/alerts/2005/Mar/1013428.html"
+        },
+        {
+            "type": "WEB",
+            "url": "http://www.zone-h.org/advisories/read/id=7300"
+        },
+        {
+            "type": "WEB",
+            "url": "http://www.securityfocus.com/bid/12791"
+        },
+        {
+            "type": "WEB",
+            "url": "http://xforce.iss.net/xforce/xfdb/19697"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "wine -- information disclosure due to insecure temporary file handling"
+}

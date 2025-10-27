@@ -1,0 +1,43 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "phpMyAdmin"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "introduced": "4.5.0"
+                        },
+                        {
+                            "fixed": "4.5.3.1"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "discovery": "2015-12-25T00:00:00Z",
+        "vid": "88f75070-abcf-11e5-83d3-6805ca0b3d42"
+    },
+    "details": "The phpMyAdmin development team reports:\n\n> By calling some scripts that are part of phpMyAdmin in an\n> unexpected way, it is possible to trigger phpMyAdmin to\n> display a PHP error message which contains the full path of\n> the directory where phpMyAdmin is installed.\n>\n> We consider these vulnerabilities to be non-critical.\n>\n> This path disclosure is possible on servers where the\n> recommended setting of the PHP configuration directive\n> display\\_errors is set to on, which is against the\n> recommendations given in the PHP manual for a production\n> server.",
+    "id": "FreeBSD-kernel-2015-0006",
+    "modified": "2015-12-26T00:00:00Z",
+    "published": "2015-12-26T00:00:00Z",
+    "references": [
+        {
+            "type": "WEB",
+            "url": "https://www.phpmyadmin.net/security/PMASA-2015-6/"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2015-8669"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "phpMyAdmin -- path disclosure vulnerability"
+}

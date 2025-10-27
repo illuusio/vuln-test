@@ -1,0 +1,57 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "krb5"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "introduced": "1.7"
+                        },
+                        {
+                            "fixed": "1.7.2"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                },
+                {
+                    "events": [
+                        {
+                            "introduced": "1.8"
+                        },
+                        {
+                            "fixed": "1.8.4"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ],
+            "versions": [
+                "1.9"
+            ]
+        }
+    ],
+    "database_specific": {
+        "discovery": "2011-03-15T00:00:00Z",
+        "vid": "7edac52a-66cd-11e0-9398-5d45f3aa24f0"
+    },
+    "details": "An advisory published by the MIT Kerberos team says:\n\n> The MIT Kerberos 5 Key Distribution Center (KDC) daemon is\n> vulnerable to a double-free condition if the Public Key\n> Cryptography for Initial Authentication (PKINIT) capability is\n> enabled, resulting in daemon crash or arbitrary code execution\n> (which is believed to be difficult).\n>\n> An unauthenticated remote attacker can induce a double-free\n> event, causing the KDC daemon to crash (denial of service),\n> or to execute arbitrary code. Exploiting a double-free event\n> to execute arbitrary code is believed to be difficult.",
+    "id": "FreeBSD-kernel-2011-0109",
+    "modified": "2011-04-14T00:00:00Z",
+    "published": "2011-04-14T00:00:00Z",
+    "references": [
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2011-0284"
+        },
+        {
+            "type": "WEB",
+            "url": "http://web.mit.edu/kerberos/advisories/MITKRB5-SA-2011-003.txt"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "krb5 -- MITKRB5-SA-2011-003, KDC vulnerable to double-free when PKINIT enabled"
+}

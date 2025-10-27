@@ -1,0 +1,63 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "curl"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "7.64.0"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "discovery": "2019-02-07T00:00:00Z",
+        "vid": "714b033a-2b09-11e9-8bc3-610fd6e6cd05"
+    },
+    "details": "curl security problems:\n\n> CVE-2018-16890: NTLM type-2 out-of-bounds buffer read\n>\n> libcurl contains a heap buffer out-of-bounds read flaw.\n>\n> The function handling incoming NTLM type-2 messages\n> (lib/vauth/ntlm.c:ntlm\\_decode\\_type2\\_target) does not validate incoming\n> data correctly and is subject to an integer overflow vulnerability.\n>\n> Using that overflow, a malicious or broken NTLM server could trick\n> libcurl to accept a bad length + offset combination that would lead to a\n> buffer read out-of-bounds.\n>\n> CVE-2019-3822: NTLMv2 type-3 header stack buffer overflow\n>\n> libcurl contains a stack based buffer overflow vulnerability.\n>\n> The function creating an outgoing NTLM type-3 header\n> (lib/vauth/ntlm.c:Curl\\_auth\\_create\\_ntlm\\_type3\\_message()), generates the\n> request HTTP header contents based on previously received data. The\n> check that exists to prevent the local buffer from getting overflowed is\n> implemented wrongly (using unsigned math) and as such it does not\n> prevent the overflow from happening.\n>\n> This output data can grow larger than the local buffer if very large\n> \"nt response\" data is extracted from a previous NTLMv2 header provided\n> by the malicious or broken HTTP server.\n>\n> Such a \"large value\" needs to be around 1000 bytes or more. The actual\n> payload data copied to the target buffer comes from the NTLMv2 type-2\n> response header.\n>\n> CVE-2019-3823: SMTP end-of-response out-of-bounds read\n>\n> libcurl contains a heap out-of-bounds read in the code handling the\n> end-of-response for SMTP.\n>\n> If the buffer passed to smtp\\_endofresp() isn't NUL terminated and\n> contains no character ending the parsed number, and len is set to 5,\n> then the strtol() call reads beyond the allocated buffer. The read\n> contents will not be returned to the caller.",
+    "id": "FreeBSD-kernel-2019-0260",
+    "modified": "2019-02-07T00:00:00Z",
+    "published": "2019-02-07T00:00:00Z",
+    "references": [
+        {
+            "type": "WEB",
+            "url": "https://curl.haxx.se/docs/security.html"
+        },
+        {
+            "type": "WEB",
+            "url": "https://curl.haxx.se/docs/CVE-2018-16890.html"
+        },
+        {
+            "type": "WEB",
+            "url": "https://curl.haxx.se/docs/CVE-2019-3822.html"
+        },
+        {
+            "type": "WEB",
+            "url": "https://curl.haxx.se/docs/CVE-2019-3823.html"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2018-16890"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2019-3822"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2019-3823"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "curl -- multiple vulnerabilities"
+}

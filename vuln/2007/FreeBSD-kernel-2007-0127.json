@@ -1,0 +1,72 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "freeradius"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "last_affected": "1.1.5"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        },
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "freeradius-mysql"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "last_affected": "1.1.5"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "discovery": "2007-04-10T00:00:00Z",
+        "vid": "c110eda2-e995-11db-a944-0012f06707f0"
+    },
+    "details": "The freeradius development team reports:\n\n> A malicious 802.1x supplicant could send malformed Diameter format\n> attributes inside of an EAP-TTLS tunnel. The server would reject\n> the authentication request, but would leak one VALUE\\_PAIR data\n> structure, of approximately 300 bytes. If an attacker performed\n> the attack many times (e.g. thousands or more over a period of\n> minutes to hours), the server could leak megabytes of memory,\n> potentially leading to an \"out of memory\" condition, and early\n> process exit.",
+    "id": "FreeBSD-kernel-2007-0127",
+    "modified": "2010-05-12T00:00:00Z",
+    "published": "2007-04-13T00:00:00Z",
+    "references": [
+        {
+            "type": "ADVISORY",
+            "url": "https://www.securityfocus.com/bid/23466/info"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2005-1455"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2005-1454"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2007-2028"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2005-4745"
+        },
+        {
+            "type": "WEB",
+            "url": "http://www.freeradius.org/security.html"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "freeradius -- EAP-TTLS Tunnel Memory Leak Remote DOS Vulnerability"
+}

@@ -1,0 +1,43 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "webmin"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "1.150_5"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "discovery": "2004-09-05T00:00:00Z",
+        "vid": "ae7b7f65-05c7-11d9-b45d-000c41e2cdad"
+    },
+    "details": "The Webmin developers documented a security issue in the\nrelease notes for version 1.160:\n\n> Fixed a security hole in the maketemp.pl script, used\n> to create the /tmp/.webmin directory at install time. If\n> an un-trusted user creates this directory before Webmin\n> is installed, he could create in it a symbolic link\n> pointing to a critical file on the system, which would be\n> overwritten when Webmin writes to the link filename.",
+    "id": "FreeBSD-kernel-2004-0136",
+    "modified": "2004-09-15T00:00:00Z",
+    "published": "2004-09-14T00:00:00Z",
+    "references": [
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2004-0559"
+        },
+        {
+            "type": "WEB",
+            "url": "http://www.webmin.com/changes-1.160.html"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "webmin -- insecure temporary file creation at installation time"
+}

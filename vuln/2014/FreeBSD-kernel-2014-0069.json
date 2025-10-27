@@ -1,0 +1,66 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "tor"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "0.2.4.23"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        },
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "tor-devel"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "0.2.5.6.a"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "discovery": "2014-07-30T00:00:00Z",
+        "vid": "31c09848-1829-11e4-bf04-60a44c524f57"
+    },
+    "details": "The Tor Project reports:\n\n> Tor before 0.2.4.23 and 0.2.5 before 0.2.5.6-alpha maintains a\n> circuit after an inbound RELAY\\_EARLY cell is received by a client,\n> which makes it easier for remote attackers to conduct\n> traffic-confirmation attacks by using the pattern of RELAY and\n> RELAY\\_EARLY cells as a means of communicating information about\n> hidden service names.",
+    "id": "FreeBSD-kernel-2014-0069",
+    "modified": "2014-07-30T00:00:00Z",
+    "published": "2014-07-30T00:00:00Z",
+    "references": [
+        {
+            "type": "WEB",
+            "url": "https://lists.torproject.org/pipermail/tor-announce/2014-July/000094.html"
+        },
+        {
+            "type": "WEB",
+            "url": "https://blog.torproject.org/blog/tor-security-advisory-relay-early-traffic-confirmation-attack"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2014-5117"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "tor -- traffic confirmation attack"
+}

@@ -1,0 +1,43 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "py-libcloud"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "0.11.1"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "discovery": "2012-08-01T00:00:00Z",
+        "vid": "a14dee30-e3d7-11e1-a084-50e5492bd3dc"
+    },
+    "details": "The libcloud development team reports:\n\n> When establishing a secure (SSL / TLS) connection to a target server an invalid regular\n> expression has been used for performing the hostname verification. Subset instead of the\n> full target server hostname has been marked an an acceptable match for the given hostname.\n> For example, certificate with a hostname field of \"aexample.com\" was considered a valid\n> certificate for domain \"example.com\".",
+    "id": "FreeBSD-kernel-2012-0090",
+    "modified": "2012-08-11T00:00:00Z",
+    "published": "2012-08-11T00:00:00Z",
+    "references": [
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2012-3446"
+        },
+        {
+            "type": "WEB",
+            "url": "http://seclists.org/fulldisclosure/2012/Aug/55"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "libcloud -- possible SSL MITM due to invalid regexp used to validate target server hostname"
+}

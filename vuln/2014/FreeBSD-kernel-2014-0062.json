@@ -1,0 +1,100 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "subversion16"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "introduced": "1.0.0"
+                        },
+                        {
+                            "fixed": "1.7.18"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        },
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "subversion17"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "introduced": "1.0.0"
+                        },
+                        {
+                            "fixed": "1.7.18"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        },
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "subversion"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "introduced": "1.0.0"
+                        },
+                        {
+                            "fixed": "1.7.18"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                },
+                {
+                    "events": [
+                        {
+                            "introduced": "1.8.0"
+                        },
+                        {
+                            "fixed": "1.8.10"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "discovery": "2014-08-06T00:00:00Z",
+        "vid": "83a418cc-2182-11e4-802c-20cf30e32f6d"
+    },
+    "details": "Subversion Project reports:\n\n> Using the Serf RA layer of Subversion for HTTPS uses the apr\\_fnmatch API\n> to handle matching wildcards in certificate Common Names and Subject\n> Alternate Names. However, apr\\_fnmatch is not designed for this purpose.\n> Instead it is designed to behave like common shell globbing. In particular\n> this means that '\\*' is not limited to a single label within a hostname\n> (i.e. it will match '.'). But even further apr\\_fnmatch supports '?' and\n> character classes (neither of which are part of the RFCs defining how\n> certificate validation works).\n>\n> Subversion stores cached credentials by an MD5 hash based on the URL and\n> the authentication realm of the server the credentials are cached for.\n> MD5 has been shown to be subject to chosen plaintext hash collisions.\n> This means it may be possible to generate an authentication realm which\n> results in the same MD5 hash for a different URL.",
+    "id": "FreeBSD-kernel-2014-0062",
+    "modified": "2014-08-11T00:00:00Z",
+    "published": "2014-08-11T00:00:00Z",
+    "references": [
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2014-3522"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2014-3528"
+        },
+        {
+            "type": "WEB",
+            "url": "http://subversion.apache.org/security/CVE-2014-3522-advisory.txt"
+        },
+        {
+            "type": "WEB",
+            "url": "http://subversion.apache.org/security/CVE-2014-3528-advisory.txt"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "subversion -- several vulnerabilities"
+}

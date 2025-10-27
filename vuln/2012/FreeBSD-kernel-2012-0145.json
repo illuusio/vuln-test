@@ -1,0 +1,76 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "nvidia-driver"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "introduced": "173.14.35_2,1"
+                        },
+                        {
+                            "fixed": "295.71"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                },
+                {
+                    "events": [
+                        {
+                            "introduced": "96.43.20_3,1"
+                        },
+                        {
+                            "fixed": "173.14.35"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                },
+                {
+                    "events": [
+                        {
+                            "introduced": "71.86.15_3,1"
+                        },
+                        {
+                            "fixed": "96.43.20_2"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                },
+                {
+                    "events": [
+                        {
+                            "fixed": "71.86.15_2"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "discovery": "2012-03-20T00:00:00Z",
+        "vid": "b91234e7-9a8b-11e1-b666-001636d274f3"
+    },
+    "details": "NVIDIA Unix security team reports:\n\n> Security vulnerability CVE-2012-0946 in the NVIDIA UNIX driver\n> was disclosed to NVIDIA on March 20th, 2012. The vulnerability\n> makes it possible for an attacker who has read and write access\n> to the GPU device nodes to reconfigure GPUs to gain access to\n> arbitrary system memory. NVIDIA is not aware of any reports of\n> this vulnerability, outside of the disclosure which was made\n> privately to NVIDIA.\n>\n> NVIDIA has identified the root cause of the vulnerability and\n> has released updated drivers which close it. [NVIDIA encourages]\n> all users with Geforce 8 or newer, G80 Quadro or newer, and all\n> Tesla GPUs to update their drivers to 295.40 or later.\n\nLater, it was additionally discovered that similar exploit could\nbe achieved through remapping of VGA window:\n\n> NVIDIA received notification of a security exploit that uses\n> NVIDIA UNIX device files to map and program registers to redirect\n> the VGA window. Through the VGA window, the exploit can access\n> any region of physical system memory. This arbitrary memory\n> access can be further exploited, for example, to escalate user\n> privileges.",
+    "id": "FreeBSD-kernel-2012-0145",
+    "modified": "2012-09-12T00:00:00Z",
+    "published": "2012-05-10T00:00:00Z",
+    "references": [
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2012-0946"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2012-4225"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "NVIDIA UNIX driver -- access to arbitrary system memory"
+}

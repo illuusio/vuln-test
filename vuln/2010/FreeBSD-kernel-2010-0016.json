@@ -1,0 +1,43 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "openttd"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "introduced": "1.0.0"
+                        },
+                        {
+                            "fixed": "1.0.5"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "discovery": "2010-11-20T00:00:00Z",
+        "vid": "373e412e-f748-11df-96cd-0015f2db7bde"
+    },
+    "details": "The OpenTTD Team reports:\n\n> When a client disconnects, without sending the \"quit\" or\n> \"client error\" message, the server has a chance of reading and\n> writing a just freed piece of memory. The writing can only\n> happen while the server is sending the map. Depending on what\n> happens directly after freeing the memory there is a chance of\n> segmentation fault, and thus a denial of service.",
+    "id": "FreeBSD-kernel-2010-0016",
+    "modified": "2010-11-23T00:00:00Z",
+    "published": "2010-11-23T00:00:00Z",
+    "references": [
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2010-4168"
+        },
+        {
+            "type": "WEB",
+            "url": "http://security.openttd.org/en/CVE-2010-4168"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "OpenTTD -- Denial of service (server/client) via invalid read"
+}

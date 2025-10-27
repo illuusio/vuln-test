@@ -1,0 +1,98 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "samba412"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "4.12.16"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        },
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "samba413"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "4.13.17_2"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "discovery": "2022-07-27T00:00:00Z",
+        "vid": "f9140ad4-4920-11ed-a07e-080027f5fec9"
+    },
+    "details": "The Samba Team reports:\n\n> CVE-2022-2031\n> :   The KDC and the kpasswd service share a single account\n>     and set of keys, allowing them to decrypt each other's\n>     tickets. A user who has been requested to change their\n>     password can exploit this to obtain and use tickets to\n>     other services.\n>\n> CVE-2022-32744\n> :   The KDC accepts kpasswd requests encrypted with any key\n>     known to it. By encrypting forged kpasswd requests with\n>     its own key, a user can change the passwords of other\n>     users, enabling full domain takeover.\n>\n> CVE-2022-32745\n> :   Samba AD users can cause the server to access\n>     uninitialised data with an LDAP add or modify request,\n>     usually resulting in a segmentation fault.\n>\n> CVE-2022-32746\n> :   The AD DC database audit logging module can be made to\n>     access LDAP message values that have been freed by a\n>     preceding database module, resulting in a\n>     use-after-free. This is only possible when modifying\n>     certain privileged attributes, such as\n>     userAccountControl.\n>\n> CVE-2022-32742\n> :   SMB1 Client with write access to a share can cause\n>     server memory contents to be written into a file or\n>     printer.",
+    "id": "FreeBSD-kernel-2022-0057",
+    "modified": "2022-10-11T00:00:00Z",
+    "published": "2022-10-11T00:00:00Z",
+    "references": [
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2022-2031"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2022-32744"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2022-32745"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2022-32746"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2022-32742"
+        },
+        {
+            "type": "WEB",
+            "url": "https://lists.samba.org/archive/samba-announce/2022/000609.html"
+        },
+        {
+            "type": "WEB",
+            "url": "https://www.samba.org/samba/security/CVE-2022-2031.html"
+        },
+        {
+            "type": "WEB",
+            "url": "https://www.samba.org/samba/security/CVE-2022-32744.html"
+        },
+        {
+            "type": "WEB",
+            "url": "https://www.samba.org/samba/security/CVE-2022-32745.html"
+        },
+        {
+            "type": "WEB",
+            "url": "https://www.samba.org/samba/security/CVE-2022-32746.html"
+        },
+        {
+            "type": "WEB",
+            "url": "https://www.samba.org/samba/security/CVE-2022-32742.html"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "samba -- Multiple vulnerabilities"
+}

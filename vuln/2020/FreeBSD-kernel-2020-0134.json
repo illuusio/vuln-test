@@ -1,0 +1,43 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "go"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "1.14.7,1"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "discovery": "2020-08-06T00:00:00Z",
+        "vid": "bc7aff8c-d806-11ea-a5aa-0800272260e5"
+    },
+    "details": "The Go project reports:\n\n> Certain invalid inputs to ReadUvarint or ReadVarint could cause\n> those functions to read an unlimited number of bytes from the\n> ByteReader argument before returning an error. This could lead to\n> processing more input than expected when the caller is reading\n> directly from the network and depends on ReadUvarint and ReadVarint\n> only consuming a small, bounded number of bytes, even from invalid\n> inputs.",
+    "id": "FreeBSD-kernel-2020-0134",
+    "modified": "2020-08-06T00:00:00Z",
+    "published": "2020-08-06T00:00:00Z",
+    "references": [
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2020-16845"
+        },
+        {
+            "type": "WEB",
+            "url": "https://github.com/golang/go/issues/40618"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "go -- encoding/binary: ReadUvarint and ReadVarint can read an unlimited number of bytes from invalid inputs"
+}

@@ -1,0 +1,70 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "curl"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "introduced": "7.21.0"
+                        },
+                        {
+                            "fixed": "7.57.0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        },
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "linux-c7-curl"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "introduced": "7.21.0"
+                        },
+                        {
+                            "fixed": "7.29.0_4"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "discovery": "2017-11-29T00:00:00Z",
+        "vid": "301a01b7-d50e-11e7-ac58-b499baebfeaf"
+    },
+    "details": "The cURL project reports:\n\n> * NTLM buffer overflow via integer overflow\n>   (CVE-2017-8816)  \n>   libcurl contains a buffer overrun flaw\n>   in the NTLM authentication code.\n>   The internal function Curl\\_ntlm\\_core\\_mk\\_ntlmv2\\_hash sums up\n>   the lengths of the user name + password (= SUM) and multiplies\n>   the sum by two (= SIZE) to figure out how large storage to\n>   allocate from the heap.\n> * FTP wildcard out of bounds read (CVE-2017-8817)  \n>   libcurl contains a read out of bounds flaw in the FTP wildcard\n>   function.\n>   libcurl's FTP wildcard matching feature, which is enabled with\n>   the CURLOPT\\_WILDCARDMATCH option can use a built-in wildcard\n>   function or a user provided one. The built-in wildcard function\n>   has a flaw that makes it not detect the end of the pattern\n>   string if it ends with an open bracket ([) but instead it will\n>   continue reading the heap beyond the end of the URL buffer that\n>   holds the wildcard.\n> * SSL out of buffer access (CVE-2017-8818)  \n>   libcurl contains an out boundary access flaw in SSL related code.\n>   When allocating memory for a connection (the internal struct\n>   called connectdata), a certain amount of memory is allocated at\n>   the end of the struct to be used for SSL related structs. Those\n>   structs are used by the particular SSL library libcurl is built\n>   to use. The application can also tell libcurl which specific SSL\n>   library to use if it was built to support more than one.",
+    "id": "FreeBSD-kernel-2017-0035",
+    "modified": "2017-12-11T00:00:00Z",
+    "published": "2017-11-29T00:00:00Z",
+    "references": [
+        {
+            "type": "WEB",
+            "url": "https://curl.haxx.se/changes.html"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2017-8816"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2017-8817"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2017-8818"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "cURL -- Multiple vulnerabilities"
+}

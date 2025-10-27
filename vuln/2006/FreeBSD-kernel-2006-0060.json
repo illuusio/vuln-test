@@ -1,0 +1,148 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "FreeBSD"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "introduced": "6.1"
+                        },
+                        {
+                            "fixed": "6.1_10"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                },
+                {
+                    "events": [
+                        {
+                            "introduced": "6.0"
+                        },
+                        {
+                            "fixed": "6.0_15"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                },
+                {
+                    "events": [
+                        {
+                            "introduced": "5.5"
+                        },
+                        {
+                            "fixed": "5.5_8"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                },
+                {
+                    "events": [
+                        {
+                            "introduced": "5.4"
+                        },
+                        {
+                            "fixed": "5.4_22"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                },
+                {
+                    "events": [
+                        {
+                            "introduced": "5.0"
+                        },
+                        {
+                            "fixed": "5.3_37"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                },
+                {
+                    "events": [
+                        {
+                            "fixed": "4.11_25"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        },
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "openssh"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "4.4,1"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        },
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "openssh-portable"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "4.4.p1,1"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "discovery": "2006-09-25T00:00:00Z",
+        "vid": "32db37a5-50c3-11db-acf3-000c6ec775d9"
+    },
+    "details": "Problem Description\n===================\n\nThe CRC compensation attack detector in the sshd(8) daemon,\nupon receipt of duplicate blocks, uses CPU time cubic in the\nnumber of duplicate blocks received. [CVE-2006-4924]\n\nA race condition exists in a signal handler used by the\nsshd(8) daemon to handle the LoginGraceTime option, which\ncan potentially cause some cleanup routines to be executed\nmultiple times. [CVE-2006-5051]\n\nImpact\n======\n\nAn attacker sending specially crafted packets to sshd(8)\ncan cause a Denial of Service by using 100% of CPU time\nuntil a connection timeout occurs. Since this attack can be\nperformed over multiple connections simultaneously, it is\npossible to cause up to MaxStartups (10 by default) sshd\nprocesses to use all the CPU time they can obtain.\n[CVE-2006-4924]\n\nThe OpenSSH project believe that the race condition can\nlead to a Denial of Service or potentially remote code\nexecution, but the FreeBSD Security Team has been unable to\nverify the exact impact. [CVE-2006-5051]\n\nWorkaround\n==========\n\nThe attack against the CRC compensation attack detector can\nbe avoided by disabling SSH Protocol version 1 support in\nsshd\\_config(5).\n\nThere is no workaround for the second issue.",
+    "id": "FreeBSD-kernel-2006-0060",
+    "modified": "2006-09-30T00:00:00Z",
+    "published": "2006-09-30T00:00:00Z",
+    "references": [
+        {
+            "type": "ADVISORY",
+            "url": "https://www.securityfocus.com/bid/20216/info"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2006-4924"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2006-5051"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://www.freebsd.org/security/advisories/FreeBSD-SA-06:22.openssh.asc"
+        },
+        {
+            "type": "WEB",
+            "url": "http://www.openssh.com/txt/release-4.4"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "openssh -- multiple vulnerabilities"
+}

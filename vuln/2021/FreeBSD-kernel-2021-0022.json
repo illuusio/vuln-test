@@ -1,0 +1,62 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "grafana"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "introduced": "8.0.0"
+                        },
+                        {
+                            "fixed": "8.3.2"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        },
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "grafana8"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "introduced": "8.0.0"
+                        },
+                        {
+                            "fixed": "8.3.2"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "discovery": "2021-12-09T00:00:00Z",
+        "vid": "c2a7de31-5b42-11ec-8398-6c3be5272acd"
+    },
+    "details": "GitHub Security Labs reports:\n\n> A vulnerability through which authenticated users could read out fully lowercase or fully uppercase `.md` files through directory traversal. Doing our own follow-up investigation we found a related vulnerability through which authenticated users could read out arbitrary `.csv` files through directory traversal. Thanks to our defense-in-depth approach, at no time has [Grafana Cloud](https://grafana.com/cloud) been vulnerable.\n>\n> **The vulnerable URL path is:** `/api/ds/query`",
+    "id": "FreeBSD-kernel-2021-0022",
+    "modified": "2021-12-12T00:00:00Z",
+    "published": "2021-12-12T00:00:00Z",
+    "references": [
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2021-43815"
+        },
+        {
+            "type": "WEB",
+            "url": "https://grafana.com/blog/2021/12/10/grafana-8.3.2-and-7.5.12-released-with-moderate-severity-security-fix/"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "Grafana -- Directory Traversal"
+}

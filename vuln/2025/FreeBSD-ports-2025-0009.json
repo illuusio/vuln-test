@@ -1,0 +1,65 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "FreeBSD"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "introduced": "14.3"
+                        },
+                        {
+                            "fixed": "14.3_2"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                },
+                {
+                    "events": [
+                        {
+                            "introduced": "14.2"
+                        },
+                        {
+                            "fixed": "14.2_5"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                },
+                {
+                    "events": [
+                        {
+                            "introduced": "13.5"
+                        },
+                        {
+                            "fixed": "13.5_3"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "discovery": "2025-08-08T00:00:00Z",
+        "vid": "66f35fd9-73f5-11f0-8e0e-002590c1f29c"
+    },
+    "details": "Problem Description:\n====================\n\nAn integer overflow in the archive\\_read\\_format\\_rar\\_seek\\_data()\nfunction may lead to a double free problem.\n\nImpact:\n=======\n\nExploiting a double free vulnerability can cause memory corruption.\nThis in turn could enable a threat actor to execute arbitrary code.\nIt might also result in denial of service.",
+    "id": "FreeBSD-ports-2025-0009",
+    "modified": "2025-08-08T00:00:00Z",
+    "published": "2025-08-08T00:00:00Z",
+    "references": [
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2025-5914"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://www.freebsd.org/security/advisories/FreeBSD-SA-25:07.libarchive.asc"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "FreeBSD -- Integer overflow in libarchive leading to double free"
+}

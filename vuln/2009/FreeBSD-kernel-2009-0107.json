@@ -1,0 +1,76 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "FreeBSD"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "introduced": "6.3"
+                        },
+                        {
+                            "fixed": "6.3_10"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                },
+                {
+                    "events": [
+                        {
+                            "introduced": "6.4"
+                        },
+                        {
+                            "fixed": "6.4_4"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                },
+                {
+                    "events": [
+                        {
+                            "introduced": "7.0"
+                        },
+                        {
+                            "fixed": "7.0_12"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                },
+                {
+                    "events": [
+                        {
+                            "introduced": "7.1"
+                        },
+                        {
+                            "fixed": "7.1_5"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "discovery": "2009-03-25T00:00:00Z",
+        "vid": "fbc8413f-2f7a-11de-9a3f-001b77d09812"
+    },
+    "details": "Problem Description\n===================\n\nThe function ASN1\\_STRING\\_print\\_ex does not properly validate\nthe lengths of BMPString or UniversalString objects before\nattempting to print them.\n\nImpact\n======\n\nAn application which attempts to print a BMPString or\nUniversalString which has an invalid length will crash as a\nresult of OpenSSL accessing invalid memory locations. This\ncould be used by an attacker to crash a remote application.\n\nWorkaround\n==========\n\nNo workaround is available, but applications which do not use\nthe ASN1\\_STRING\\_print\\_ex function (either directly or indirectly)\nare not affected.",
+    "id": "FreeBSD-kernel-2009-0107",
+    "modified": "2009-05-13T00:00:00Z",
+    "published": "2009-05-07T00:00:00Z",
+    "references": [
+        {
+            "type": "ADVISORY",
+            "url": "https://www.freebsd.org/security/advisories/FreeBSD-SA-09:08.openssl.asc"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2009-0590"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "FreeBSD -- remotely exploitable crash in OpenSSL"
+}

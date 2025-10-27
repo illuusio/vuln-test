@@ -1,0 +1,108 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "openssl-devel"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "1.1.0i_1"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        },
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "openssl111"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "1.1.1_2"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        },
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "libressl"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "introduced": "2.8.0"
+                        },
+                        {
+                            "fixed": "2.8.3"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        },
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "libressl-devel"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "introduced": "2.8.0"
+                        },
+                        {
+                            "fixed": "2.8.3"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "discovery": "2018-10-29T00:00:00Z",
+        "vid": "238ae7de-dba2-11e8-b713-b499baebfeaf"
+    },
+    "details": "The OpenSSL project reports:\n\n> Timing vulnerability in ECDSA signature generation\n> (CVE-2018-0735): The OpenSSL ECDSA signature algorithm has been\n> shown to be vulnerable to a timing side channel attack. An\n> attacker could use variations in the signing algorithm to\n> recover the private key (Low).\n>\n> Timing vulnerability in DSA signature generation (CVE-2018-0734):\n> Avoid a timing attack that leaks information via a side channel\n> that triggers when a BN is resized. Increasing the size of the\n> BNs prior to doing anything with them suppresses the attack (Low).",
+    "id": "FreeBSD-kernel-2018-0050",
+    "modified": "2018-11-10T00:00:00Z",
+    "published": "2018-10-29T00:00:00Z",
+    "references": [
+        {
+            "type": "WEB",
+            "url": "https://www.openssl.org/news/secadv/20181029.txt"
+        },
+        {
+            "type": "WEB",
+            "url": "https://github.com/openssl/openssl/commit/8abfe72e"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2018-0735"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2018-0734"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "OpenSSL -- Multiple vulnerabilities in 1.1 branch"
+}

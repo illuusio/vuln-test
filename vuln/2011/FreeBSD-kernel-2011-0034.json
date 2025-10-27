@@ -1,0 +1,43 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "xorg-server"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "1.7.7_3"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "discovery": "2011-10-18T00:00:00Z",
+        "vid": "8441957c-f9b4-11e0-a78a-bcaec565249c"
+    },
+    "details": "Matthieu Herrb reports:\n\n> It is possible to deduce if a file exists or not by exploiting\n> the way that Xorg creates its lock files. This is caused by the\n> fact that the X server is behaving differently if the lock file\n> already exists as a symbolic link pointing to an existing or\n> non-existing file.\n>\n> It is possible for a non-root user to set the permissions for\n> all users on any file or directory to 444, giving unwanted read\n> access or causing denies of service (by removing execute\n> permission). This is caused by a race between creating the lock\n> file and setting its access modes.",
+    "id": "FreeBSD-kernel-2011-0034",
+    "modified": "2011-10-18T00:00:00Z",
+    "published": "2011-10-18T00:00:00Z",
+    "references": [
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2011-4028"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2011-4029"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "Xorg server -- two vulnerabilities in X server lock handling code"
+}

@@ -1,0 +1,43 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "zsh"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "5.8.1"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "discovery": "2022-02-12T00:00:00Z",
+        "vid": "d923fb0c-8c2f-11ec-aa85-0800270512f4"
+    },
+    "details": "Marc Cornell\u00e0 reports:\n\n> Some prompt expansion sequences, such as %F, support 'arguments'\n> which are themselves expanded in case they contain colour values,\n> etc. This additional expansion would trigger PROMPT\\_SUBST evaluation,\n> if enabled. This could be abused to execute code the user didn't\n> expect. e.g., given a certain prompt configuration, an attacker\n> could trick a user into executing arbitrary code by having them\n> check out a Git branch with a specially crafted name.",
+    "id": "FreeBSD-kernel-2022-0221",
+    "modified": "2022-02-12T00:00:00Z",
+    "published": "2022-02-12T00:00:00Z",
+    "references": [
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2021-45444"
+        },
+        {
+            "type": "WEB",
+            "url": "https://zsh.sourceforge.io/releases.html"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "zsh -- Arbitrary command execution vulnerability"
+}

@@ -1,0 +1,128 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "grafana8"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "introduced": "8.0.0"
+                        },
+                        {
+                            "fixed": "8.0.7"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                },
+                {
+                    "events": [
+                        {
+                            "introduced": "8.1.0"
+                        },
+                        {
+                            "fixed": "8.1.8"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                },
+                {
+                    "events": [
+                        {
+                            "introduced": "8.2.0"
+                        },
+                        {
+                            "fixed": "8.2.7"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                },
+                {
+                    "events": [
+                        {
+                            "introduced": "8.3.0"
+                        },
+                        {
+                            "fixed": "8.3.1"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        },
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "grafana"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "introduced": "8.0.0"
+                        },
+                        {
+                            "fixed": "8.0.7"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                },
+                {
+                    "events": [
+                        {
+                            "introduced": "8.1.0"
+                        },
+                        {
+                            "fixed": "8.1.8"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                },
+                {
+                    "events": [
+                        {
+                            "introduced": "8.2.0"
+                        },
+                        {
+                            "fixed": "8.2.7"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                },
+                {
+                    "events": [
+                        {
+                            "introduced": "8.3.0"
+                        },
+                        {
+                            "fixed": "8.3.1"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "discovery": "2021-12-03T00:00:00Z",
+        "vid": "e33880ed-5802-11ec-8398-6c3be5272acd"
+    },
+    "details": "Grafana Labs reports:\n\n> Grafana is vulnerable to directory traversal, allowing access to local files. We have confirmed this for versions v8.0.0-beta1 to v8.3.0. Thanks to our defense-in-depth approach, at no time has [Grafana Cloud](https://grafana.com/cloud/?pg=blog) been vulnerable.\n>\n> **The vulnerable URL path is:** <grafana\\_host\\_url>*/public/plugins/<\u201cplugin-id\u201d>* where *<\u201cplugin-id\u201d>* is the plugin ID for any installed plugin.\n>\n> Every Grafana instance comes with pre-installed plugins like the Prometheus plugin or MySQL plugin so the following URLs are vulnerable for every instance:\n>\n> * <grafana\\_host\\_url>/public/plugins/alertlist/\n> * <grafana\\_host\\_url>/public/plugins/annolist/\n> * <grafana\\_host\\_url>/public/plugins/barchart/\n> * <grafana\\_host\\_url>/public/plugins/bargauge/\n> * <grafana\\_host\\_url>/public/plugins/candlestick/\n> * <grafana\\_host\\_url>/public/plugins/cloudwatch/\n> * <grafana\\_host\\_url>/public/plugins/dashlist/\n> * <grafana\\_host\\_url>/public/plugins/elasticsearch/\n> * <grafana\\_host\\_url>/public/plugins/gauge/\n> * <grafana\\_host\\_url>/public/plugins/geomap/\n> * <grafana\\_host\\_url>/public/plugins/gettingstarted/\n> * <grafana\\_host\\_url>/public/plugins/grafana-azure-monitor-datasource/\n> * <grafana\\_host\\_url>/public/plugins/graph/\n> * <grafana\\_host\\_url>/public/plugins/heatmap/\n> * <grafana\\_host\\_url>/public/plugins/histogram/\n> * <grafana\\_host\\_url>/public/plugins/influxdb/\n> * <grafana\\_host\\_url>/public/plugins/jaeger/\n> * <grafana\\_host\\_url>/public/plugins/logs/\n> * <grafana\\_host\\_url>/public/plugins/loki/\n> * <grafana\\_host\\_url>/public/plugins/mssql/\n> * <grafana\\_host\\_url>/public/plugins/mysql/\n> * <grafana\\_host\\_url>/public/plugins/news/\n> * <grafana\\_host\\_url>/public/plugins/nodeGraph/\n> * <grafana\\_host\\_url>/public/plugins/opentsdb\n> * <grafana\\_host\\_url>/public/plugins/piechart/\n> * <grafana\\_host\\_url>/public/plugins/pluginlist/\n> * <grafana\\_host\\_url>/public/plugins/postgres/\n> * <grafana\\_host\\_url>/public/plugins/prometheus/\n> * <grafana\\_host\\_url>/public/plugins/stackdriver/\n> * <grafana\\_host\\_url>/public/plugins/stat/\n> * <grafana\\_host\\_url>/public/plugins/state-timeline/\n> * <grafana\\_host\\_url>/public/plugins/status-history/\n> * <grafana\\_host\\_url>/public/plugins/table/\n> * <grafana\\_host\\_url>/public/plugins/table-old/\n> * <grafana\\_host\\_url>/public/plugins/tempo/\n> * <grafana\\_host\\_url>/public/plugins/testdata/\n> * <grafana\\_host\\_url>/public/plugins/text/\n> * <grafana\\_host\\_url>/public/plugins/timeseries/\n> * <grafana\\_host\\_url>/public/plugins/welcome/\n> * <grafana\\_host\\_url>/public/plugins/zipkin/",
+    "id": "FreeBSD-kernel-2021-0024",
+    "modified": "2021-12-11T00:00:00Z",
+    "published": "2021-12-11T00:00:00Z",
+    "references": [
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2021-43798"
+        },
+        {
+            "type": "WEB",
+            "url": "https://grafana.com/blog/2021/12/07/grafana-8.3.1-8.2.7-8.1.8-and-8.0.7-released-with-high-severity-security-fix/"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "Grafana -- Path Traversal"
+}

@@ -1,0 +1,66 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "go"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "1.18.2,1"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        },
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "go117"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "1.17.10"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "discovery": "2022-04-12T00:00:00Z",
+        "vid": "a1360138-d446-11ec-8ea1-10c37b4ac2ea"
+    },
+    "details": "The Go project reports:\n\n> When called with a non-zero flags parameter, the\n> syscall.Faccessat function could incorrectly report that a\n> file is accessible. This bug only occurs on Linux systems.",
+    "id": "FreeBSD-kernel-2022-0146",
+    "modified": "2022-05-15T00:00:00Z",
+    "published": "2022-05-15T00:00:00Z",
+    "references": [
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2022-29526"
+        },
+        {
+            "type": "WEB",
+            "url": "https://github.com/golang/go/issues/52313"
+        },
+        {
+            "type": "WEB",
+            "url": "https://groups.google.com/g/golang-dev/c/CPU3TB6d4oY"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "go -- syscall.Faccessat checks wrong group on Linux"
+}

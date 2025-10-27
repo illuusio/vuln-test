@@ -1,0 +1,150 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "mplayer"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "0.99.11_2"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        },
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "mplayer-esound"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "0.99.11_2"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        },
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "mplayer-gtk"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "0.99.11_2"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        },
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "mplayer-gtk2"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "0.99.11_2"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        },
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "mplayer-gtk-esound"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "0.99.11_2"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        },
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "mplayer-gtk2-esound"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "0.99.11_2"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "discovery": "2008-02-05T00:00:00Z",
+        "vid": "de4d4110-ebce-11dc-ae14-0016179b2dd5"
+    },
+    "details": "The Mplayer team reports:\n\n> A buffer overflow was found in the code used to extract album\n> titles from CDDB server answers. When parsing answers from the\n> CDDB server, the album title is copied into a fixed-size buffer\n> with insufficient size checks, which may cause a buffer overflow.\n> A malicious database entry could trigger a buffer overflow in the\n> program. That can lead to arbitrary code execution with the UID of\n> the user running MPlayer.\n>\n> A buffer overflow was found in the code used to escape URL\n> strings. The code used to skip over IPv6 addresses can be tricked\n> into leaving a pointer to a temporary buffer with a non-NULL value;\n> this causes the unescape code to reuse the buffer, and may lead to\n> a buffer overflow if the old buffer is smaller than required.\n> A malicious URL string may be used to trigger a buffer overflow in\n> the program, that can lead to arbitrary code execution with the UID\n> of the user running MPlayer.\n>\n> A buffer overflow was found in the code used to parse MOV file\n> headers. The code read some values from the file and used them as\n> indexes into as array allocated on the heap without performing any\n> boundary check. A malicious file may be used to trigger a buffer\n> overflow in the program. That can lead to arbitrary code execution\n> with the UID of the user running MPlayer.",
+    "id": "FreeBSD-kernel-2008-0144",
+    "modified": "2008-03-06T00:00:00Z",
+    "published": "2008-03-06T00:00:00Z",
+    "references": [
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2008-0485"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2008-0486"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2008-0629"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2008-0630"
+        },
+        {
+            "type": "WEB",
+            "url": "http://secunia.com/advisories/28779"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "mplayer -- multiple vulnerabilities"
+}

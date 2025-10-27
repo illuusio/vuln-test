@@ -1,0 +1,47 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "ipython"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "introduced": "0.12"
+                        },
+                        {
+                            "fixed": "3.2.1"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "discovery": "2015-07-12T00:00:00Z",
+        "vid": "81326883-2905-11e5-a4a5-002590263bf5"
+    },
+    "details": "Kyle Kelley reports:\n\n> Summary: POST requests exposed via the IPython REST API are\n> vulnerable to cross-site request forgery (CSRF). Web pages on\n> different domains can make non-AJAX POST requests to known IPython\n> URLs, and IPython will honor them. The user's browser will\n> automatically send IPython cookies along with the requests. The\n> response is blocked by the Same-Origin Policy, but the request\n> isn't.\n>\n> API paths with issues:\n>\n> * POST /api/contents/<path>/<file>\n> * POST /api/contents/<path>/<file>/checkpoints\n> * POST /api/contents/<path>/<file>/checkpoints/<checkpoint\\_id>\n> * POST /api/kernels\n> * POST /api/kernels/<kernel\\_id>/<action>\n> * POST /api/sessions\n> * POST /api/clusters/<cluster\\_id>/<action>",
+    "id": "FreeBSD-kernel-2015-0229",
+    "modified": "2015-07-22T00:00:00Z",
+    "published": "2015-07-13T00:00:00Z",
+    "references": [
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2015-5607"
+        },
+        {
+            "type": "WEB",
+            "url": "http://seclists.org/oss-sec/2015/q3/92"
+        },
+        {
+            "type": "WEB",
+            "url": "http://ipython.org/ipython-doc/3/whatsnew/version3.html#ipython-3-2-1"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "devel/ipython -- CSRF possible remote execution vulnerability"
+}

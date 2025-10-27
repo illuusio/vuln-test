@@ -1,0 +1,65 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:kernel",
+                "name": "FreeBSD-kernel"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "introduced": "11.2"
+                        },
+                        {
+                            "fixed": "11.2_1"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                },
+                {
+                    "events": [
+                        {
+                            "introduced": "11.1"
+                        },
+                        {
+                            "fixed": "11.1_12"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                },
+                {
+                    "events": [
+                        {
+                            "introduced": "10.4"
+                        },
+                        {
+                            "fixed": "10.4_10"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "discovery": "2018-08-06T00:00:00Z",
+        "vid": "3c2eea8c-99bf-11e8-8bee-a4badb2f4699"
+    },
+    "details": "Problem Description:\n====================\n\nOne of the data structures that holds TCP segments uses\nan inefficient algorithm to reassemble the data. This causes\nthe CPU time spent on segment processing to grow linearly\nwith the number of segments in the reassembly queue.\n\nImpact:\n=======\n\nAn attacker who has the ability to send TCP traffic to\na victim system can degrade the victim system's network\nperformance and/or consume excessive CPU by exploiting the\ninefficiency of TCP reassembly handling, with relatively\nsmall bandwidth cost.",
+    "id": "FreeBSD-kernel-2018-0117",
+    "modified": "2018-08-06T00:00:00Z",
+    "published": "2018-08-06T00:00:00Z",
+    "references": [
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2018-6922"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://www.freebsd.org/security/advisories/FreeBSD-SA-18:08.tcp.asc"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "FreeBSD -- Resource exhaustion in TCP reassembly"
+}

@@ -1,0 +1,43 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "curl"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "introduced": "7.11.1"
+                        },
+                        {
+                            "fixed": "7.50.3"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "discovery": "2016-09-14T00:00:00Z",
+        "vid": "b018121b-7a4b-11e6-bf52-b499baebfeaf"
+    },
+    "details": "The cURL project reports\n\n> The four libcurl functions curl\\_escape(), curl\\_easy\\_escape(),\n> curl\\_unescape and curl\\_easy\\_unescape perform string URL percent\n> escaping and unescaping. They accept custom string length inputs\n> in signed integer arguments.\n>\n> The provided string length arguments were not properly checked\n> and due to arithmetic in the functions, passing in the length\n> 0xffffffff (2^32-1 or UINT\\_MAX or even just -1) would end up\n> causing an allocation of zero bytes of heap memory that curl\n> would attempt to write gigabytes of data into.",
+    "id": "FreeBSD-kernel-2016-0123",
+    "modified": "2016-09-14T00:00:00Z",
+    "published": "2016-09-14T00:00:00Z",
+    "references": [
+        {
+            "type": "WEB",
+            "url": "https://curl.haxx.se/docs/adv_20160914.html"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2016-7167"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "cURL -- Escape and unescape integer overflows"
+}

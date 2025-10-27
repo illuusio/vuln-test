@@ -1,0 +1,59 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "go"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "1.15.5,1"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "discovery": "2020-11-09T00:00:00Z",
+        "vid": "db4b2f27-252a-11eb-865c-00155d646400"
+    },
+    "details": "The Go project reports:\n\n> A number of math/big.Int methods (Div, Exp, DivMod, Quo, Rem,\n> QuoRem, Mod, ModInverse, ModSqrt, Jacobi, and GCD) can panic\n> when provided crafted large inputs. For the panic to happen,\n> the divisor or modulo argument must be larger than 3168 bits\n> (on 32-bit architectures) or 6336 bits (on 64-bit architectures).\n> Multiple math/big.Rat methods are similarly affected.\n\n> The go command may execute arbitrary code at build time when\n> cgo is in use. This may occur when running go get on a malicious\n> package, or any other command that builds untrusted code. This\n> can be caused by a malicious gcc flags specified via a #cgo\n> directive.\n\n> The go command may execute arbitrary code at build time when\n> cgo is in use. This may occur when running go get on a malicious\n> package, or any other command that builds untrusted code. This\n> can be caused by malicious unquoted symbol names.",
+    "id": "FreeBSD-kernel-2020-0046",
+    "modified": "2020-11-12T00:00:00Z",
+    "published": "2020-11-12T00:00:00Z",
+    "references": [
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2020-28362"
+        },
+        {
+            "type": "WEB",
+            "url": "https://github.com/golang/go/issues/42552"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2020-28367"
+        },
+        {
+            "type": "WEB",
+            "url": "https://github.com/golang/go/issues/42556"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2020-28366"
+        },
+        {
+            "type": "WEB",
+            "url": "https://github.com/golang/go/issues/42559"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "go -- math/big: panic during recursive division of very large numbers; cmd/go: arbitrary code execution at build time through cgo"
+}

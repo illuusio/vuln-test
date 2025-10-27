@@ -1,0 +1,47 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "dovecot"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "2.3.5.1"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "discovery": "2019-02-05T00:00:00Z",
+        "vid": "7862213c-5152-11e9-8b26-a4badb296695"
+    },
+    "details": "Aki Tuomi reports:\n\n> Vulnerability Details:\n> When reading FTS or POP3-UIDL header from dovecot index, the input\n> buffer size is not bound, and data is copied to target structure causing\n> stack overflow.\n> Risk:\n> This can be used for local root privilege escalation or executing\n> arbitrary code in dovecot process context. This requires ability to\n> directly modify dovecot indexes.\n> Steps to reproduce:\n> Produce dovecot.index.log entry that creates an FTS header which has\n> more than 12 bytes of data.\n> Trigger dovecot indexer-worker or run doveadm index.\n> Dovecot will crash.\n> Mitigations:\n> Since 2.3.0 dovecot has been compiled with stack smash protection, ASLR,\n> read-only GOT tables and other techniques that make exploiting this bug\n> much harder.",
+    "id": "FreeBSD-kernel-2019-0224",
+    "modified": "2019-03-28T00:00:00Z",
+    "published": "2019-03-28T00:00:00Z",
+    "references": [
+        {
+            "type": "WEB",
+            "url": "http://cve.mitre.org/cgi-bin/cvename.cgi?name=2019-7524"
+        },
+        {
+            "type": "WEB",
+            "url": "https://dovecot.org/list/dovecot-news/2019-March/000401.html"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2019-7524"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "dovecot -- Buffer overflow reading extension header"
+}

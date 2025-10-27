@@ -1,0 +1,51 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "upnp"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "1.6.21"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "discovery": "2016-02-23T00:00:00Z",
+        "vid": "244c8288-cc4a-11e6-a475-bcaec524bf84"
+    },
+    "details": "Matthew Garett reports:\n\n> Reported this to upstream 8 months ago without response,\n> so: libupnp's default behaviour allows anyone to write to your\n> filesystem. Seriously. Find a device running a libupnp based server\n> (Shodan says there's rather a lot), and POST a file to /testfile.\n> Then GET /testfile ... and yeah if the server is running as root\n> (it is) and is using / as the web root (probably not, but maybe)\n> this gives full host fs access.\n\nScott Tenaglia reports:\n\n> There is a heap buffer overflow vulnerability in the\n> create\\_url\\_list function in upnp/src/gena/gena\\_device.c.",
+    "id": "FreeBSD-kernel-2016-0006",
+    "modified": "2016-12-27T00:00:00Z",
+    "published": "2016-12-27T00:00:00Z",
+    "references": [
+        {
+            "type": "WEB",
+            "url": "https://twitter.com/mjg59/status/755062278513319936"
+        },
+        {
+            "type": "WEB",
+            "url": "https://sourceforge.net/p/pupnp/bugs/133/"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2016-6255"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2016-8863"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "upnp -- multiple vulnerabilities"
+}

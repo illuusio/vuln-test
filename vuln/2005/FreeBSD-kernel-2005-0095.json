@@ -1,0 +1,87 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "gnupg"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "1.4.1"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        },
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "p5-Crypt-OpenPGP"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "last_affected": "1.03"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        },
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "pgp"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "introduced": "3.0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "discovery": "2005-02-08T00:00:00Z",
+        "vid": "8375a73f-01bf-11da-bc08-0001020eed82"
+    },
+    "details": "Serge Mister and Robert Zuccherato reports that the OpenPGP\nprotocol is vulnerable to a cryptographic attack when using\nsymmetric encryption in an automated way.\n\nDavid Shaw reports about the impact:\n\n> This attack, while very significant from a cryptographic\n> point of view, is not generally effective in the real\n> world. To be specific, unless you have your OpenPGP\n> program set up as part of an automated system to accept\n> encrypted messages, decrypt them, and then provide a\n> response to the submitter, then this does not affect you\n> at all.\n\nNote that the \"fix\" in GnuPG does note completely\neliminate the potential problem:\n\n> These patches disable a portion of the OpenPGP protocol\n> that the attack is exploiting. This change should not be\n> user visible. With the patch in place, this attack will\n> not work using a public-key encrypted message. It will\n> still work using a passphrase-encrypted message.",
+    "id": "FreeBSD-kernel-2005-0095",
+    "modified": "2007-04-23T00:00:00Z",
+    "published": "2005-07-31T00:00:00Z",
+    "references": [
+        {
+            "type": "ADVISORY",
+            "url": "https://www.kb.cert.org/vuls/id/303094"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2005-0366"
+        },
+        {
+            "type": "WEB",
+            "url": "http://eprint.iacr.org/2005/033"
+        },
+        {
+            "type": "WEB",
+            "url": "http://lists.gnupg.org/pipermail/gnupg-announce/2005q1/000191.html"
+        },
+        {
+            "type": "WEB",
+            "url": "http://www.pgp.com/newsroom/ctocorner/openpgp.html"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "gnupg -- OpenPGP symmetric encryption vulnerability"
+}

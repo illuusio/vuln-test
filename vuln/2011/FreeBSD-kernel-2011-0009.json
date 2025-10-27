@@ -1,0 +1,43 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "krb5"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "introduced": "1.9"
+                        },
+                        {
+                            "fixed": "1.9.2_1"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "discovery": "2011-12-11T00:00:00Z",
+        "vid": "6c7d9a35-2608-11e1-89b4-001ec9578670"
+    },
+    "details": "The MIT Kerberos Team reports:\n\n> In releases krb5-1.9 and later, the KDC can crash due to a NULL\n> pointer dereference in code that handles TGS (Ticket Granting\n> Service) requests. The trigger condition is trivial to produce\n> using unmodified client software, but requires the ability to\n> authenticate as a principal in the KDC's realm.",
+    "id": "FreeBSD-kernel-2011-0009",
+    "modified": "2011-12-14T00:00:00Z",
+    "published": "2011-12-14T00:00:00Z",
+    "references": [
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2011-1530"
+        },
+        {
+            "type": "WEB",
+            "url": "http://web.mit.edu/kerberos/www/advisories/MITKRB5-SA-2011-007.txt"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "krb5 -- KDC null pointer dereference in TGS handling"
+}

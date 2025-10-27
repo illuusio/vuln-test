@@ -1,0 +1,59 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "patch"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "2.7.6_1"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "discovery": "2018-04-16T00:00:00Z",
+        "vid": "791841a3-d484-4878-8909-92ef9ce424f4"
+    },
+    "details": "NVD reports:\n\n> An issue was discovered in GNU patch through 2.7.6. There is a segmentation fault, associated with a NULL pointer dereference, leading to a denial of service in the intuit\\_diff\\_type function in pch.c, aka a \"mangled rename\" issue.\n\n> A double free exists in the another\\_hunk function in pch.c in GNU patch through 2.7.6.\n\n> GNU Patch version 2.7.6 contains an input validation vulnerability when processing patch files, specifically the EDITOR\\_PROGRAM invocation (using ed) can result in code execution. This attack appear to be exploitable via a patch file processed via the patch utility. This is similar to FreeBSD's CVE-2015-1418 however although they share a common ancestry the code bases have diverged over time.",
+    "id": "FreeBSD-kernel-2018-0041",
+    "modified": "2018-11-11T00:00:00Z",
+    "published": "2018-11-11T00:00:00Z",
+    "references": [
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2018-6951"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2018-6952"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2018-1000156"
+        },
+        {
+            "type": "WEB",
+            "url": "https://savannah.gnu.org/bugs/?53132"
+        },
+        {
+            "type": "WEB",
+            "url": "https://savannah.gnu.org/bugs/?53133"
+        },
+        {
+            "type": "WEB",
+            "url": "https://savannah.gnu.org/bugs/?53566"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "patch -- multiple vulnerabilities"
+}

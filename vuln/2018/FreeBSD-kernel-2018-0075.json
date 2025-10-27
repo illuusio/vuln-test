@@ -1,0 +1,43 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "apache24"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "2.4.35"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "discovery": "2018-09-25T00:00:00Z",
+        "vid": "e182c076-c189-11e8-a6d2-b499baebfeaf"
+    },
+    "details": "The Apache httpd project reports:\n\n> low: DoS for HTTP/2 connections by continuous SETTINGS\n>\n> By sending continous SETTINGS frames of maximum size an ongoing\n> HTTP/2 connection could be kept busy and would never time out. This\n> can be abused for a DoS on the server. This only affect a server\n> that has enabled the h2 protocol.",
+    "id": "FreeBSD-kernel-2018-0075",
+    "modified": "2018-09-26T00:00:00Z",
+    "published": "2018-09-26T00:00:00Z",
+    "references": [
+        {
+            "type": "WEB",
+            "url": "http://httpd.apache.org/security/vulnerabilities_24.html"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2018-11763"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "Apache -- Denial of service vulnerability in HTTP/2"
+}

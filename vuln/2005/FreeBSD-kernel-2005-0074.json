@@ -1,0 +1,43 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "openvpn"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "2.0.1"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "discovery": "2005-07-27T00:00:00Z",
+        "vid": "1986449a-8b74-40fa-b7cc-0d8def8aad65"
+    },
+    "details": "James Yonan reports:\n\n> A malicious [authenticated] client in \"dev tap\"\n> ethernet bridging mode could theoretically flood the server\n> with packets appearing to come from hundreds of thousands\n> of different MAC addresses, causing the OpenVPN process to\n> deplete system virtual memory as it expands its internal\n> routing table.",
+    "id": "FreeBSD-kernel-2005-0074",
+    "modified": "2005-08-19T00:00:00Z",
+    "published": "2005-08-19T00:00:00Z",
+    "references": [
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2005-2533"
+        },
+        {
+            "type": "WEB",
+            "url": "http://openvpn.net/changelog.html"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "openvpn -- denial of service: malicious authenticated \"tap\" client can deplete server virtual memory"
+}

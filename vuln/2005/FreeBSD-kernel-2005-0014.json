@@ -1,0 +1,55 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "curl"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "introduced": "7.11.2"
+                        },
+                        {
+                            "fixed": "7.15.1"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "discovery": "2005-12-07T00:00:00Z",
+        "vid": "9b4facec-6761-11da-99f6-00123ffe8333"
+    },
+    "details": "A Project cURL Security Advisory reports:\n\n> libcurl's URL parser function can overflow a malloced\n> buffer in two ways, if given a too long URL.\n>\n> 1 - pass in a URL with no protocol (like \"http://\")\n> prefix, using no slash and the string is 256 bytes or\n> longer. This leads to a single zero byte overflow of the\n> malloced buffer.\n>\n> 2 - pass in a URL with only a question mark as separator\n> (no slash) between the host and the query part of the URL.\n> This leads to a single zero byte overflow of the malloced\n> buffer.\n>\n> Both overflows can be made with the same input string,\n> leading to two single zero byte overwrites.\n>\n> The affected flaw cannot be triggered by a redirect, but\n> the long URL must be passed in \"directly\" to libcurl. It\n> makes this a \"local\" problem. Of course, lots of programs\n> may still pass in user-provided URLs to libcurl without doing\n> much syntax checking of their own, allowing a user to exploit\n> this vulnerability.",
+    "id": "FreeBSD-kernel-2005-0014",
+    "modified": "2006-01-01T00:00:00Z",
+    "published": "2005-12-09T00:00:00Z",
+    "references": [
+        {
+            "type": "ADVISORY",
+            "url": "https://www.securityfocus.com/bid/15756/info"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2005-4077"
+        },
+        {
+            "type": "WEB",
+            "url": "http://curl.haxx.se/docs/adv_20051207.html"
+        },
+        {
+            "type": "WEB",
+            "url": "http://www.hardened-php.net/advisory_242005.109.html"
+        },
+        {
+            "type": "WEB",
+            "url": "http://secunia.com/advisories/17907/"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "curl -- URL buffer overflow vulnerability"
+}

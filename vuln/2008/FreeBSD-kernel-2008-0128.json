@@ -1,0 +1,170 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "postgresql"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "introduced": "7.3"
+                        },
+                        {
+                            "fixed": "7.3.21"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                },
+                {
+                    "events": [
+                        {
+                            "introduced": "7.4"
+                        },
+                        {
+                            "fixed": "7.4.19"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                },
+                {
+                    "events": [
+                        {
+                            "introduced": "8.0"
+                        },
+                        {
+                            "fixed": "8.0.15"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                },
+                {
+                    "events": [
+                        {
+                            "introduced": "8.1"
+                        },
+                        {
+                            "fixed": "8.1.11"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                },
+                {
+                    "events": [
+                        {
+                            "introduced": "8.2"
+                        },
+                        {
+                            "fixed": "8.2.6"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        },
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "postgresql-server"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "introduced": "7.3"
+                        },
+                        {
+                            "fixed": "7.3.21"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                },
+                {
+                    "events": [
+                        {
+                            "introduced": "7.4"
+                        },
+                        {
+                            "fixed": "7.4.19"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                },
+                {
+                    "events": [
+                        {
+                            "introduced": "8.0"
+                        },
+                        {
+                            "fixed": "8.0.15"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                },
+                {
+                    "events": [
+                        {
+                            "introduced": "8.1"
+                        },
+                        {
+                            "fixed": "8.1.11"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                },
+                {
+                    "events": [
+                        {
+                            "introduced": "8.2"
+                        },
+                        {
+                            "fixed": "8.2.6"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "discovery": "2008-01-06T00:00:00Z",
+        "vid": "51436b4c-1250-11dd-bab7-0016179b2dd5"
+    },
+    "details": "The PostgreSQL developers report:\n\n> PostgreSQL allows users to create indexes on the results of\n> user-defined functions, known as \"expression indexes\". This provided\n> two vulnerabilities to privilege escalation: (1) index functions\n> were executed as the superuser and not the table owner during VACUUM\n> and ANALYZE, and (2) that SET ROLE and SET SESSION AUTHORIZATION\n> were permitted within index functions. Both of these holes have now\n> been closed.\n\n> PostgreSQL allowed malicious users to initiate a denial-of-service\n> by passing certain regular expressions in SQL queries. First, users\n> could create infinite loops using some specific regular expressions.\n> Second, certain complex regular expressions could consume excessive\n> amounts of memory. Third, out-of-range backref numbers could be used\n> to crash the backend.\n\n> DBLink functions combined with local trust or ident authentication\n> could be used by a malicious user to gain superuser privileges. This\n> issue has been fixed, and does not affect users who have not\n> installed DBLink (an optional module), or who are using password\n> authentication for local access. This same problem was addressed in\n> the previous release cycle, but that patch failed to close all forms\n> of the loophole.",
+    "id": "FreeBSD-kernel-2008-0128",
+    "modified": "2008-04-24T00:00:00Z",
+    "published": "2008-04-24T00:00:00Z",
+    "references": [
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2007-6600"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2007-4772"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2007-6067"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2007-4769"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2007-6601"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://www.securityfocus.com/bid/27163/info"
+        },
+        {
+            "type": "WEB",
+            "url": "http://www.postgresql.org/about/news.905"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "postgresql -- multiple vulnerabilities"
+}

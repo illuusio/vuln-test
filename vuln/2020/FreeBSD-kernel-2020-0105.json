@@ -1,0 +1,54 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "go"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "1.14.8,1"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                },
+                {
+                    "events": [
+                        {
+                            "introduced": "1.15,1"
+                        },
+                        {
+                            "fixed": "1.15.1,1"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "discovery": "2020-08-20T00:00:00Z",
+        "vid": "67b050ae-ec82-11ea-9071-10c37b4ac2ea"
+    },
+    "details": "The Go project reports:\n\n> When a Handler does not explicitly set the Content-Type header, both\n> CGI implementations default to \u201ctext/html\u201d. If an attacker can make\n> a server generate content under their control (e.g. a JSON\n> containing user data or an uploaded image file) this might be\n> mistakenly returned by the server as \u201ctext/html\u201d. If a victim visits\n> such a page they could get the attacker's code executed in the\n> context of the server origin. If an attacker can make a server\n> generate content under their control (e.g. a JSON containing user\n> data or an uploaded image file) this might be mistakenly returned by\n> the server as \u201ctext/html\u201d. If a victim visits such a page they could\n> get the attacker's code executed in the context of the server\n> origin.",
+    "id": "FreeBSD-kernel-2020-0105",
+    "modified": "2020-09-01T00:00:00Z",
+    "published": "2020-09-01T00:00:00Z",
+    "references": [
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2020-24553"
+        },
+        {
+            "type": "WEB",
+            "url": "https://github.com/golang/go/issues/40928"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "go -- net/http/cgi, net/http/fcgi: Cross-Site Scripting (XSS) when Content-Type is not specified"
+}

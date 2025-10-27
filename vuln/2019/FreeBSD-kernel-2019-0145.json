@@ -1,0 +1,47 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "python37"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "3.7.4"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "discovery": "2019-03-13T00:00:00Z",
+        "vid": "a449c604-a43a-11e9-b422-fcaa147e860e"
+    },
+    "details": "Python changelog:\n\n> bpo-37463: ssl.match\\_hostname() no longer accepts IPv4 addresses with additional text\n> after the address and only quad-dotted notation without trailing whitespaces. Some\n> inet\\_aton() implementations ignore whitespace and all data after whitespace, e.g.'127.0.0.1\n> whatever'.\n>\n> bpo-35907: CVE-2019-9948: Avoid file reading by disallowing local-file:// and\n> local\\_file:// URL schemes in URLopener().open() and URLopener().retrieve() of\n> urllib.request.\n>\n> bpo-36742: Fixes mishandling of pre-normalization characters in urlsplit().\n>\n> bpo-30458: Address CVE-2019-9740 by disallowing URL paths with embedded whitespace\n> or control characters through into the underlying http client request. Such potentially\n> malicious header injection URLs now cause an http.client.InvalidURL exception to be\n> raised.\n>\n> bpo-33529: Prevent fold function used in email header encoding from entering infinite\n> loop when there are too many non-ASCII characters in a header.\n>\n> bpo-35755: shutil.which() now uses os.confstr(\"CS\\_PATH\") if available and if the PATH\n> environment variable is not set. Remove also the current directory from posixpath.defpath.\n> On Unix, shutil.which() and the subprocess module no longer search the executable in the\n> current directory if the PATH environment variable is not set.",
+    "id": "FreeBSD-kernel-2019-0145",
+    "modified": "2019-07-12T00:00:00Z",
+    "published": "2019-07-12T00:00:00Z",
+    "references": [
+        {
+            "type": "WEB",
+            "url": "https://docs.python.org/3.7/whatsnew/changelog.html#python-3-7-4-final"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2019-9740"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2019-9948"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "python 3.7 -- multiple vulnerabilities"
+}

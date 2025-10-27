@@ -1,0 +1,39 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "apache24"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "introduced": "2.4.49"
+                        },
+                        {
+                            "fixed": "2.4.51"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "discovery": "2021-10-07T00:00:00Z",
+        "vid": "d001c189-2793-11ec-8fb1-206a8a720317"
+    },
+    "details": "The Apache http server project reports:\n\n> critical: Path Traversal and Remote Code Execution in Apache HTTP\n> Server 2.4.49 and 2.4.50 (incomplete fix of CVE-2021-41773)\n> (CVE-2021-42013).\n>\n> It was found that the fix for CVE-2021-41773 in Apache HTTP\n> Server 2.4.50 was insufficient. An attacker could use a path\n> traversal attack to map URLs to files outside the directories\n> configured by Alias-like directives.\n>\n> If files outside of these directories are not protected by the\n> usual default configuration \"require all denied\", these requests\n> can succeed. If CGI scripts are also enabled for these aliased\n> pathes, this could allow for remote code execution.\n>\n> This issue only affects Apache 2.4.49 and Apache 2.4.50 and not\n> earlier versions.\n>\n> Acknowledgements: Reported by Juan Escobar from Dreamlab\n> Technologies, Fernando Munoz from NULL Life CTF Team, and\n> Shungo Kumasaka",
+    "id": "FreeBSD-kernel-2021-0065",
+    "modified": "2021-10-07T00:00:00Z",
+    "published": "2021-10-07T00:00:00Z",
+    "references": [
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2021-42013"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "Apache httpd -- Path Traversal and Remote Code Execution"
+}

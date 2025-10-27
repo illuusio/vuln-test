@@ -1,0 +1,47 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "pcre"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "8.38_1"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "discovery": "2016-02-27T00:00:00Z",
+        "vid": "497b82e0-f9a0-11e5-92ce-002590263bf5"
+    },
+    "details": "Mitre reports:\n\n> The pcre\\_compile2 function in pcre\\_compile.c in PCRE 8.38\n> mishandles the /((?:F?+(?:^(?(R)a+\\\"){99}-))(?J)(?'R'(?'R'<((?'RR'(?'R'\\){97)?J)?J)(?'R'(?'R'\\){99|(:(?|(?'R')(\\k'R')|((?'R')))H'R'R)(H'R))))))/\n> pattern and related patterns with named subgroups, which allows\n> remote attackers to cause a denial of service (heap-based buffer\n> overflow) or possibly have unspecified other impact via a crafted\n> regular expression, as demonstrated by a JavaScript RegExp object\n> encountered by Konqueror.",
+    "id": "FreeBSD-kernel-2016-0322",
+    "modified": "2016-04-03T00:00:00Z",
+    "published": "2016-04-03T00:00:00Z",
+    "references": [
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2016-1283"
+        },
+        {
+            "type": "REPORT",
+            "url": "https://bugs.freebsd.org/bugzilla/show_bug.cgi?id=208260"
+        },
+        {
+            "type": "WEB",
+            "url": "https://bugs.exim.org/show_bug.cgi?id=1767"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "pcre -- heap overflow vulnerability"
+}

@@ -1,0 +1,43 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "xinetd"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "2.3.15"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "discovery": "2012-02-15T00:00:00Z",
+        "vid": "e11955ca-187c-11e2-be36-00215af774f0"
+    },
+    "details": "Thomas Swan reports:\n\n> xinetd allows for services to be configured with the TCPMUX\n> or TCPMUXPLUS service types, which makes those services\n> available on port 1, as per RFC 1078 [1], if the tcpmux-server\n> service is enabled. When the tcpmux-server service is enabled,\n> xinetd would expose \\_all\\_ enabled services via the tcpmux port,\n> instead of just the configured service(s). This could allow\n> a remote attacker to bypass firewall restrictions and access\n> services via the tcpmux port.",
+    "id": "FreeBSD-kernel-2012-0042",
+    "modified": "2012-10-17T00:00:00Z",
+    "published": "2012-10-17T00:00:00Z",
+    "references": [
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2012-0862"
+        },
+        {
+            "type": "REPORT",
+            "url": "https://bugzilla.redhat.com/show_bug.cgi?id=790940"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "xinetd -- attackers can bypass access restrictions if tcpmux-servers service enabled"
+}

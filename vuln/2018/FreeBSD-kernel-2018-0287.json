@@ -1,0 +1,180 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "py27-django111"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "1.11.10"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        },
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "py34-django111"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "1.11.10"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        },
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "py35-django111"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "1.11.10"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        },
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "py36-django111"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "1.11.10"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        },
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "py27-django20"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "2.0.2"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        },
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "py34-django20"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "2.0.2"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        },
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "py35-django20"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "2.0.2"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        },
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "py36-django20"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "2.0.2"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "discovery": "2018-02-01T00:00:00Z",
+        "vid": "d696473f-9f32-42c5-a106-bf4536fb1f74"
+    },
+    "details": "Django release notes:\n\n> CVE-2018-6188: Information leakage in AuthenticationForm\n>\n> A regression in Django 1.11.8 made AuthenticationForm run its\n> confirm\\_login\\_allowed() method even if an incorrect password is entered.\n> This can leak information about a user, depending on what messages\n> confirm\\_login\\_allowed() raises. If confirm\\_login\\_allowed() isn't\n> overridden, an attacker enter an arbitrary username and see if that user\n> has been set to is\\_active=False. If confirm\\_login\\_allowed() is\n> overridden, more sensitive details could be leaked.\n>\n> This issue is fixed with the caveat that AuthenticationForm can no\n> longer raise the \"This account is inactive.\" error if the authentication\n> backend rejects inactive users (the default authentication backend,\n> ModelBackend, has done that since Django 1.10). This issue will be\n> revisited for Django 2.1 as a fix to address the caveat will likely be too\n> invasive for inclusion in older versions.",
+    "id": "FreeBSD-kernel-2018-0287",
+    "modified": "2018-02-02T00:00:00Z",
+    "published": "2018-02-02T00:00:00Z",
+    "references": [
+        {
+            "type": "WEB",
+            "url": "https://docs.djangoproject.com/en/1.11/releases/1.11.10/"
+        },
+        {
+            "type": "WEB",
+            "url": "https://docs.djangoproject.com/en/2.0/releases/2.0.2/"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2018-6188"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "Django -- information leakage"
+}

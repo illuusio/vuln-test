@@ -1,0 +1,65 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:kernel",
+                "name": "FreeBSD-kernel"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "introduced": "10.1"
+                        },
+                        {
+                            "fixed": "10.1_9"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                },
+                {
+                    "events": [
+                        {
+                            "introduced": "9.3"
+                        },
+                        {
+                            "fixed": "9.3_13"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                },
+                {
+                    "events": [
+                        {
+                            "introduced": "8.4"
+                        },
+                        {
+                            "fixed": "8.4_27"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "discovery": "2015-04-07T00:00:00Z",
+        "vid": "0bb55a18-600a-11e6-a6c3-14dae9d210b8"
+    },
+    "details": "Problem Description:\n====================\n\nThe Neighbor Discover Protocol allows a local router to\nadvertise a suggested Current Hop Limit value of a link,\nwhich will replace Current Hop Limit on an interface connected\nto the link on the FreeBSD system.\n\nImpact:\n=======\n\nWhen the Current Hop Limit (similar to IPv4's TTL) is\nsmall, IPv6 packets may get dropped before they reached\ntheir destinations.\n\nBy sending specifically crafted Router Advertisement\npackets, an attacker on the local network can cause the\nFreeBSD system to lose the ability to communicate with\nanother IPv6 node on a different network.",
+    "id": "FreeBSD-kernel-2016-0168",
+    "modified": "2016-08-11T00:00:00Z",
+    "published": "2016-08-11T00:00:00Z",
+    "references": [
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2015-2923"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://www.freebsd.org/security/advisories/FreeBSD-SA-15:09.ipv6.asc"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "FreeBSD -- Denial of Service with IPv6 Router Advertisements"
+}

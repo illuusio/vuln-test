@@ -1,0 +1,51 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "joomla15"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "introduced": "1.5.1"
+                        },
+                        {
+                            "last_affected": "1.5.15"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "discovery": "2010-04-23T00:00:00Z",
+        "vid": "8d10038e-515c-11df-83fb-0015587e2cc1"
+    },
+    "details": "Joomla! reported the following vulnerabilities:\n\n> If a user entered a URL with a negative query limit\n> or offset, a PHP notice would display revealing information\n> about the system..\n\n> The migration script in the Joomla! installer does not\n> check the file type being uploaded. If the installation\n> application is present, an attacker could use it to\n> upload malicious files to a server.\n\n> Session id doesn't get modified when user logs in. A\n> remote site may be able to forward a visitor to the\n> Joomla! site and set a specific cookie. If the user\n> then logs in, the remote site can use that cookie to\n> authenticate as that user.\n\n> When a user requests a password reset, the reset tokens\n> were stored in plain text in the database. While this\n> is not a vulnerability in itself, it allows user accounts\n> to be compromised if there is an extension on the site\n> with an SQL injection vulnerability.",
+    "id": "FreeBSD-kernel-2010-0101",
+    "modified": "2010-04-26T00:00:00Z",
+    "published": "2010-04-26T00:00:00Z",
+    "references": [
+        {
+            "type": "WEB",
+            "url": "http://developer.joomla.org/security/news/308-20100423-core-password-reset-tokens.html"
+        },
+        {
+            "type": "WEB",
+            "url": "http://developer.joomla.org/security/news/309-20100423-core-sessation-fixation.html"
+        },
+        {
+            "type": "WEB",
+            "url": "http://developer.joomla.org/security/news/310-20100423-core-installer-migration-script.html"
+        },
+        {
+            "type": "WEB",
+            "url": "http://developer.joomla.org/security/news/311-20100423-core-negative-values-for-limit-and-offset.html"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "joomla -- multiple vulnerabilities"
+}

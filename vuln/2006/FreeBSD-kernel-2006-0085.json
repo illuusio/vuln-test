@@ -1,0 +1,44 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "alsaplayer"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "introduced": "0,1"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "discovery": "2006-08-09T00:00:00Z",
+        "vid": "9855ac8e-2aec-11db-a6e2-000e0c2e438a"
+    },
+    "details": "Luigi Auriemma reports three vulnerabilities within\nalsaplayer:\n\n> * The function which handles the HTTP connections is\n>   vulnerable to a buffer-overflow that happens when it uses\n>   sscanf for copying the URL in the Location's field\n>   received from the server into the redirect buffer of only\n>   1024 bytes declared in http\\_open.\n> * A buffer-overflow exists in the functions which add items\n>   to the playlist when the GTK interface is used (so the other\n>   interfaces are not affected by this problem): new\\_list\\_item\n>   and CbUpdated in interface/gtk/PlaylistWindow.cpp.\n> * AlsaPlayer automatically queries the CDDB server\n>   specified in its configuration (by default\n>   freedb.freedb.org) when the user choices the CDDA function\n>   for playing audio CDs. The function which queries the\n>   server uses a buffer of 20 bytes and one of 9 for storing\n>   the category and ID strings received from the server while\n>   the buffer which contains this server's response is 32768\n>   bytes long. Naturally for exploiting this bug the attacker\n>   must have control of the freedb server specified in the\n>   AlsaPlayer's configuration.\n\nThese vulnerabilities could allow a remote attacker to\nexecute arbitrary code, possibly gaining access to the\nsystem.",
+    "id": "FreeBSD-kernel-2006-0085",
+    "modified": "2010-05-12T00:00:00Z",
+    "published": "2006-08-13T00:00:00Z",
+    "references": [
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2006-4089"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://www.securityfocus.com/bid/19450/info"
+        },
+        {
+            "type": "WEB",
+            "url": "http://aluigi.altervista.org/adv/alsapbof-adv.txt"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "alsaplayer -- multiple vulnerabilities"
+}

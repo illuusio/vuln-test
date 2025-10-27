@@ -1,0 +1,43 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "xen-kernel"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "4.5.0_3"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "discovery": "2015-03-05T00:00:00Z",
+        "vid": "ef9d041e-27e2-11e5-a4a5-002590263bf5"
+    },
+    "details": "The Xen Project reports:\n\n> The code handling certain sub-operations of the\n> HYPERVISOR\\_xen\\_version hypercall fails to fully initialize all\n> fields of structures subsequently copied back to guest memory. Due\n> to this hypervisor stack contents are copied into the destination of\n> the operation, thus becoming visible to the guest.\n>\n> A malicious guest might be able to read sensitive data relating to\n> other guests.",
+    "id": "FreeBSD-kernel-2015-0243",
+    "modified": "2015-07-11T00:00:00Z",
+    "published": "2015-07-11T00:00:00Z",
+    "references": [
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2015-2045"
+        },
+        {
+            "type": "WEB",
+            "url": "http://xenbits.xen.org/xsa/advisory-122.html"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "xen-kernel -- Information leak through version information hypercall"
+}

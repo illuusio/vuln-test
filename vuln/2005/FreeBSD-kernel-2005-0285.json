@@ -1,0 +1,77 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "opera"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "7.54.20041210"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        },
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "opera-devel"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "7.54.20041210"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        },
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "linux-opera"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "7.54.20041210"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "discovery": "2004-11-19T00:00:00Z",
+        "vid": "1489df94-6bcb-11d9-a21e-000a95bc6fae"
+    },
+    "details": "Marc Schoenefeld reports:\n\n> Opera 7.54 is vulnerable to leakage of the java sandbox,\n> allowing malicious applets to gain unacceptable\n> privileges. This allows them to be used for information\n> gathering (spying) of local identity information and\n> system configurations as well as causing annoying crash\n> effects.\n>\n> Opera 754 *[sic]* which was released Aug 5,2004 is\n> vulnerable to the XSLT processor covert channel attack,\n> which was corrected with JRE 1.4.2\\_05 [released in July\n> 04], but in disadvantage to the users the opera packaging\n> guys chose to bundle the JRE 1.4.2\\_04 *[...]*\n>\n> Internal pointer DoS exploitation: Opera.jar contains the\n> opera replacement of the java plugin. It therefore handles\n> communication between javascript and the Java VM via the\n> liveconnect protocol. The public class EcmaScriptObject\n> exposes a system memory pointer to the java address space,\n> by constructing a special variant of this type an internal\n> cache table can be polluted by false entries that infer\n> proper function of the JSObject class and in the following\n> proof-of-concept crash the browser.\n>\n> Exposure of location of local java installation Sniffing\n> the URL classpath allows to retrieve the URLs of the\n> bootstrap class path and therefore the JDK installation\n> directory.\n>\n> Exposure of local user name to an untrusted applet An\n> attacker could use the sun.security.krb5.Credentials class\n> to retrieve the name of the currently logged in user and\n> parse his home directory from the information which is\n> provided by the thrown\n> java.security.AccessControlException.",
+    "id": "FreeBSD-kernel-2005-0285",
+    "modified": "2005-01-24T00:00:00Z",
+    "published": "2005-01-24T00:00:00Z",
+    "references": [
+        {
+            "type": "DISCUSSION",
+            "url": "http://marc.theaimsgroup.com/?l=bugtraq&m=110088923127820"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "opera -- multiple vulnerabilities in Java implementation"
+}

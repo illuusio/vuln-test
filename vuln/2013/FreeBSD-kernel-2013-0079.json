@@ -1,0 +1,43 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "curl"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "introduced": "7.7"
+                        },
+                        {
+                            "fixed": "7.24.0_4"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "discovery": "2013-06-22T00:00:00Z",
+        "vid": "01cf67b3-dc3b-11e2-a6cd-c48508086173"
+    },
+    "details": "cURL developers report:\n\n> libcurl is vulnerable to a case of bad checking of the\n> input data which may lead to heap corruption.\n>\n> The function curl\\_easy\\_unescape() decodes URL-encoded\n> strings to raw binary data. URL-encoded octets are\n> represented with %HH combinations where HH is a two-digit\n> hexadecimal number. The decoded string is written to an\n> allocated memory area that the function returns to the\n> caller.\n>\n> The function takes a source string and a length\n> parameter, and if the length provided is 0 the function will\n> instead use strlen() to figure out how much data to\n> parse.\n>\n> The \"%HH\" parser wrongly only considered the case where a\n> zero byte would terminate the input. If a length-limited\n> buffer was passed in which ended with a '%' character which\n> was followed by two hexadecimal digits outside of the buffer\n> libcurl was allowed to parse alas without a terminating\n> zero, libcurl would still parse that sequence as well. The\n> counter for remaining data to handle would then be decreased\n> too much and wrap to become a very large integer and the\n> copying would go on too long and the destination buffer that\n> is allocated on the heap would get overwritten.\n>\n> We consider it unlikely that programs allow user-provided\n> strings unfiltered into this function. Also, only the not\n> zero-terminated input string use case is affected by this\n> flaw. Exploiting this flaw for gain is probably possible for\n> specific circumstances but we consider the general risk for\n> this to be low.\n>\n> The curl command line tool is not affected by this\n> problem as it doesn't use this function.\n>\n> There are no known exploits available at this time.",
+    "id": "FreeBSD-kernel-2013-0079",
+    "modified": "2013-07-01T00:00:00Z",
+    "published": "2013-06-23T00:00:00Z",
+    "references": [
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2013-2174"
+        },
+        {
+            "type": "WEB",
+            "url": "http://curl.haxx.se/docs/adv_20130622.html"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "cURL library -- heap corruption in curl_easy_unescape"
+}

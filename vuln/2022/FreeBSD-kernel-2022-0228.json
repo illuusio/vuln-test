@@ -1,0 +1,43 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "h2o-devel"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "2.3.0.d.20220131"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "discovery": "2021-01-31T00:00:00Z",
+        "vid": "1d3677a8-9143-42d8-84a3-0585644dff4b"
+    },
+    "details": "Emil Lerner reports:\n\n> When receiving QUIC frames in certain order, HTTP/3 server-side\n> implementation of h2o can be misguided to treat uninitialized\n> memory as HTTP/3 frames that have been received. When h2o is\n> used as a reverse proxy, an attacker can abuse this vulnerability\n> to send internal state of h2o to backend servers controlled by\n> the attacker or third party. Also, if there is an HTTP endpoint\n> that reflects the traffic sent from the client, an attacker can\n> use that reflector to obtain internal state of h2o.\n>\n> This internal state includes traffic of other connections in\n> unencrypted form and TLS session tickets.\n>\n> This vulnerability exists in h2o server with HTTP/3\n> support, between commit 93af138 and d1f0f65. None of the\n> released versions of h2o are affected by this vulnerability.",
+    "id": "FreeBSD-kernel-2022-0228",
+    "modified": "2022-02-02T00:00:00Z",
+    "published": "2022-02-02T00:00:00Z",
+    "references": [
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2021-43848"
+        },
+        {
+            "type": "WEB",
+            "url": "https://github.com/h2o/h2o/security/advisories/GHSA-f9xw-j925-m4m4"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "h2o -- uninitialised memory access in HTTP3"
+}

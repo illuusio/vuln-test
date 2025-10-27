@@ -1,0 +1,62 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "gnutls"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "1.0.17"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        },
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "gnutls-devel"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "introduced": "1.1.*"
+                        },
+                        {
+                            "fixed": "1.1.12"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "discovery": "2004-08-02T00:00:00Z",
+        "vid": "84ab58cf-e4ac-11d8-9b0a-000347a4fa7d"
+    },
+    "details": "Patric Hornik reports on a problem in the certificate chain\nverification procedures of GnuTLS that may result in a\ndenial-of-service vulnerability:\n\n> The certificate chain should be verified from last root\n> certificate to the first certificate. Otherwise a lot\n> of unauthorized CPU processing can be forced to check\n> certificate signatures signed with arbitrary RSA/DSA keys\n> chosen by attacker.\n>\n> In GnuTLS the signatures are checked from first to last\n> certificate, there is no limit on size of keys and no\n> limit on length of certificate chain.",
+    "id": "FreeBSD-kernel-2004-0101",
+    "modified": "2004-10-05T00:00:00Z",
+    "published": "2004-10-05T00:00:00Z",
+    "references": [
+        {
+            "type": "WEB",
+            "url": "http://www.hornik.sk/SA/SA-20040802.txt"
+        },
+        {
+            "type": "WEB",
+            "url": "http://secunia.com/advisories/12156"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "gnutls -- certificate chain verification DoS"
+}

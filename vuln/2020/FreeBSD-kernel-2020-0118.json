@@ -1,0 +1,70 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "python37"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "3.7.9"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        },
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "python36"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "3.6.12"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "discovery": "2020-06-17T00:00:00Z",
+        "vid": "3fcb70a4-e22d-11ea-98b2-080027846a02"
+    },
+    "details": "Python reports:\n\n> bpo-29778: Ensure python3.dll is loaded from correct locations when\n> Python is embedded (CVE-2020-15523).\n>\n> bpo-41004: CVE-2020-14422: The \\_\\_hash\\_\\_() methods of ipaddress.IPv4Interface\n> and ipaddress.IPv6Interface incorrectly generated constant hash values\n> of 32 and 128 respectively. This resulted in always causing hash collisions.\n> The fix uses hash() to generate hash values for the tuple of (address, mask\n> length, network address).\n>\n> bpo-39603: Prevent http header injection by rejecting control characters\n> in http.client.putrequest(...).",
+    "id": "FreeBSD-kernel-2020-0118",
+    "modified": "2020-08-19T00:00:00Z",
+    "published": "2020-08-19T00:00:00Z",
+    "references": [
+        {
+            "type": "WEB",
+            "url": "https://docs.python.org/release/3.7.9/whatsnew/changelog.html#changelog"
+        },
+        {
+            "type": "WEB",
+            "url": "https://docs.python.org/release/3.6.12/whatsnew/changelog.html#changelog"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2020-14422"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2020-15523"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "Python -- multiple vulnerabilities"
+}

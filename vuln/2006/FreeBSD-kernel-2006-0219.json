@@ -1,0 +1,95 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "FreeBSD"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "introduced": "5.4"
+                        },
+                        {
+                            "fixed": "5.4_7"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                },
+                {
+                    "events": [
+                        {
+                            "introduced": "5.3"
+                        },
+                        {
+                            "fixed": "5.3_22"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                },
+                {
+                    "events": [
+                        {
+                            "introduced": "4.11"
+                        },
+                        {
+                            "fixed": "4.11_12"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                },
+                {
+                    "events": [
+                        {
+                            "introduced": "4.10"
+                        },
+                        {
+                            "fixed": "4.10_18"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        },
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "cvs+ipv6"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "1.11.17_1"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "discovery": "2005-09-07T00:00:00Z",
+        "vid": "c5c17ead-8f23-11da-8c1d-000e0c2e438a"
+    },
+    "details": "Problem description\n\nA temporary file is created, used, deleted, and then\nre-created with the same name. This creates a window during\nwhich an attacker could replace the file with a link to\nanother file. While cvsbug(1) is based on the send-pr(1)\nutility, this problem does not exist in the version of\nsend-pr(1) distributed with FreeBSD.  \nIn FreeBSD 4.10 and 5.3, some additional problems exist\nconcerning temporary file usage in both cvsbug(1) and\nsend-pr(1).\n\nImpact\n\nA local attacker could cause data to be written to any file\nto which the user running cvsbug(1) (or send-pr(1) in FreeBSD\n4.10 and 5.3) has write access. This may cause damage in\nitself (e.g., by destroying important system files or\ndocuments) or may be used to obtain elevated privileges.\n\nWorkaround\n\nDo not use the cvsbug(1) utility on any system with untrusted\nusers.  \nDo not use the send-pr(1) utility on a FreeBSD 4.10 or 5.3\nsystem with untrusted users.",
+    "id": "FreeBSD-kernel-2006-0219",
+    "modified": "2006-11-08T00:00:00Z",
+    "published": "2006-01-27T00:00:00Z",
+    "references": [
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CAN-2005-2693"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://www.freebsd.org/security/advisories/FreeBSD-SA-05:20.cvsbug.asc"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "cvsbug -- race condition"
+}

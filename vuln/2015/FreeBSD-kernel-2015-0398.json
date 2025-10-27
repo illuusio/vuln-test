@@ -1,0 +1,85 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "krb5"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "1.13.1"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        },
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "krb5-112"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "1.12.2_2"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        },
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "krb5-111"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "1.11.5_5"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "discovery": "2015-02-12T00:00:00Z",
+        "vid": "3a888a1e-b321-11e4-83b2-206a8a720317"
+    },
+    "details": "The MIT Kerberos team reports:\n\n> CVE-2014-5353: The krb5\\_ldap\\_get\\_password\\_policy\\_from\\_dn\n> function in plugins/kdb/ldap/libkdb\\_ldap/ldap\\_pwd\\_policy.c in\n> MIT Kerberos 5 (aka krb5) before 1.13.1, when the KDC uses LDAP,\n> allows remote authenticated users to cause a denial of service\n> (daemon crash) via a successful LDAP query with no results, as\n> demonstrated by using an incorrect object type for a password\n> policy.\n>\n> CVE-2014-5354: plugins/kdb/ldap/libkdb\\_ldap/ldap\\_principal2.c in\n> MIT Kerberos 5 (aka krb5) 1.12.x and 1.13.x before 1.13.1, when\n> the KDC uses LDAP, allows remote authenticated users to cause a\n> denial of service (NULL pointer dereference and daemon crash) by\n> creating a database entry for a keyless principal, as\n> demonstrated by a kadmin \"add\\_principal -nokey\" or \"purgekeys\n> -all\" command.",
+    "id": "FreeBSD-kernel-2015-0398",
+    "modified": "2015-02-13T00:00:00Z",
+    "published": "2015-02-12T00:00:00Z",
+    "references": [
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2014-5353"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2014-5354"
+        },
+        {
+            "type": "WEB",
+            "url": "http://web.mit.edu/kerberos/advisories/MITKRB5-SA-2015-001.txt"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "krb5 -- Vulnerabilities in kadmind, libgssrpc, gss_process_context_token VU#540092"
+}

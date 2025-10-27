@@ -1,0 +1,82 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "asterisk11"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "11.8.1"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        },
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "asterisk18"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "1.8.26.1"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "discovery": "2014-03-10T00:00:00Z",
+        "vid": "03159886-a8a3-11e3-8f36-0025905a4771"
+    },
+    "details": "The Asterisk project reports:\n\n> Stack Overflow in HTTP Processing of Cookie Headers. Sending a HTTP\n> request that is handled by Asterisk with a large number of Cookie\n> headers could overflow the stack. You could even exhaust memory if you\n> sent an unlimited number of headers in the request.\n>\n> Denial of Service Through File Descriptor Exhaustion with chan\\_sip\n> Session-Timers. An attacker can use all available file descriptors\n> using SIP INVITE requests. Asterisk will respond with code 400, 420,\n> or 422 for INVITEs meeting this criteria.\n> Each INVITE meeting these conditions will leak a channel and several\n> file descriptors. The file descriptors cannot be released without\n> restarting Asterisk which may allow intrusion detection systems to be\n> bypassed by sending the requests slowly.\n>\n> Remote Crash Vulnerability in PJSIP channel driver. A remotely\n> exploitable crash vulnerability exists in the PJSIP channel driver if\n> the \"qualify\\_frequency\" configuration option is enabled on an AOR and\n> the remote SIP server challenges for authentication of the resulting\n> OPTIONS request. The response handling code wrongly assumes that a\n> PJSIP endpoint will always be associated with an outgoing request which\n> is incorrect.",
+    "id": "FreeBSD-kernel-2014-0132",
+    "modified": "2014-03-10T00:00:00Z",
+    "published": "2014-03-10T00:00:00Z",
+    "references": [
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2014-2286"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2014-2287"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2014-2288"
+        },
+        {
+            "type": "WEB",
+            "url": "http://downloads.asterisk.org/pub/security/AST-2014-001.pdf"
+        },
+        {
+            "type": "WEB",
+            "url": "http://downloads.asterisk.org/pub/security/AST-2014-002.pdf"
+        },
+        {
+            "type": "WEB",
+            "url": "http://downloads.asterisk.org/pub/security/AST-2014-003.pdf"
+        },
+        {
+            "type": "WEB",
+            "url": "https://www.asterisk.org/security"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "asterisk -- multiple vulnerabilities"
+}

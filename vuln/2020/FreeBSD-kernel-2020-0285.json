@@ -1,0 +1,54 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:kernel",
+                "name": "FreeBSD-kernel"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "introduced": "12.1"
+                        },
+                        {
+                            "fixed": "12.1_3"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                },
+                {
+                    "events": [
+                        {
+                            "introduced": "11.3"
+                        },
+                        {
+                            "fixed": "11.3_7"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "discovery": "2020-03-19T00:00:00Z",
+        "vid": "0e06013e-6a06-11ea-92ab-00163e433440"
+    },
+    "details": "Problem Description:\n====================\n\nWhen a TCP server transmits or retransmits a TCP SYN-ACK segment\nover IPv6, the Traffic Class field is not initialized. This also\napplies to challenge ACK segments, which are sent in response to\nreceived RST segments during the TCP connection setup phase.\n\nImpact:\n=======\n\nFor each TCP SYN-ACK (or challenge TCP-ACK) segment sent over IPv6,\none byte of kernel memory is transmitted over the network.",
+    "id": "FreeBSD-kernel-2020-0285",
+    "modified": "2020-03-19T00:00:00Z",
+    "published": "2020-03-19T00:00:00Z",
+    "references": [
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2020-7451"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://www.freebsd.org/security/advisories/FreeBSD-SA-20:04.tcp.asc"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "FreeBSD -- TCP IPv6 SYN cache kernel information disclosure"
+}

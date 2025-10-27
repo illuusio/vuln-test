@@ -1,0 +1,51 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "go"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "1.15.7,1"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "discovery": "2021-01-13T00:00:00Z",
+        "vid": "6a4805d5-5aaf-11eb-a21d-79f5bc5ef6a9"
+    },
+    "details": "The Go project reports:\n\n> The go command may execute arbitrary code at build time when cgo is\n> in use on Windows. This may occur when running \"go get\", or\n> any other command that builds code. Only users who build untrusted\n> code (and don't execute it) are affected. In addition to Windows\n> users, this can also affect Unix users who have \".\" listed\n> explicitly in their PATH and are running \"go get\" or build\n> commands outside of a module or with module mode disabled.\n\n> The P224() Curve implementation can in rare circumstances generate\n> incorrect outputs, including returning invalid points from\n> ScalarMult. The crypto/x509 and golang.org/x/crypto/ocsp (but not\n> crypto/tls) packages support P-224 ECDSA keys, but they are not\n> supported by publicly trusted certificate authorities. No other\n> standard library or golang.org/x/crypto package supports or uses the\n> P-224 curve.",
+    "id": "FreeBSD-kernel-2021-0300",
+    "modified": "2021-01-19T00:00:00Z",
+    "published": "2021-01-19T00:00:00Z",
+    "references": [
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2021-3115"
+        },
+        {
+            "type": "WEB",
+            "url": "http://golang.org/issue/43783"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2021-3114"
+        },
+        {
+            "type": "WEB",
+            "url": "http://golang.org/issue/43786"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "go -- cmd/go: packages using cgo can cause arbitrary code execution at build time; crypto/elliptic: incorrect operations on the P-224 curve"
+}

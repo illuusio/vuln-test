@@ -1,0 +1,98 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "mediawiki131"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "1.31.3"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        },
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "mediawiki132"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "1.32.3"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "discovery": "2019-04-23T00:00:00Z",
+        "vid": "3c5a4fe0-9ebb-11e9-9169-fcaa147e860e"
+    },
+    "details": "Mediawiki reports:\n\n> Security fixes:\n> T197279, CVE-2019-12468: Directly POSTing to Special:ChangeEmail would allow\n> for bypassing reauthentication, allowing for potential account takeover.\n> T204729, CVE-2019-12473: Passing invalid titles to the API could cause a DoS\n> by querying the entire `watchlist` table.\n> T207603, CVE-2019-12471: Loading user JavaScript from a non-existent account\n> allows anyone to create the account, and XSS the users' loading that script.\n> T208881: blacklist CSS var().\n> T199540, CVE-2019-12472: It is possible to bypass the limits on IP range\n> blocks (`$wgBlockCIDRLimit`) by using the API.\n> T212118, CVE-2019-12474: Privileged API responses that include whether a\n> recent change has been patrolled may be cached publicly.\n> T209794, CVE-2019-12467: A spammer can use Special:ChangeEmail to send out\n> spam with no rate limiting or ability to block them.\n> T25227, CVE-2019-12466: An account can be logged out without using a token(CRRF)\n> T222036, CVE-2019-12469: Exposed suppressed username or log in Special:EditTags.\n> T222038, CVE-2019-12470: Exposed suppressed log in RevisionDelete page.\n> T221739, CVE-2019-11358: Fix potential XSS in jQuery.",
+    "id": "FreeBSD-kernel-2019-0150",
+    "modified": "2019-07-05T00:00:00Z",
+    "published": "2019-07-05T00:00:00Z",
+    "references": [
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2019-11358"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2019-12466"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2019-12467"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2019-12468"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2019-12469"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2019-12470"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2019-12471"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2019-12472"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2019-12473"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2019-12474"
+        },
+        {
+            "type": "WEB",
+            "url": "https://lists.wikimedia.org/pipermail/mediawiki-announce/2019-June/000230.html"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "mediawiki -- multiple vulnerabilities"
+}

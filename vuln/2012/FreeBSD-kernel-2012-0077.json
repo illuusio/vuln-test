@@ -1,0 +1,54 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "squidclamav"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "5.7_1"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                },
+                {
+                    "events": [
+                        {
+                            "introduced": "6.0"
+                        },
+                        {
+                            "fixed": "6.7"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "discovery": "2012-07-24T00:00:00Z",
+        "vid": "8defa0f9-ee8a-11e1-8bd8-0022156e8794"
+    },
+    "details": "SquidClamav developers report:\n\n> Add a workaround for a squidGuard bug that unescape\n> the URL and send it back unescaped. This result in garbage\n> staying into pipe of the system command call and could crash\n> squidclamav on next read or return false information.\n> This is specially true with URL containing the %0D or %0A\n> character.\n\nThis vulnerability can be triggered only in configurations\nwhere external chained URL checker is configured via\n\"squidguard\" directive.",
+    "id": "FreeBSD-kernel-2012-0077",
+    "modified": "2012-09-04T00:00:00Z",
+    "published": "2012-08-25T00:00:00Z",
+    "references": [
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2012-3501"
+        },
+        {
+            "type": "WEB",
+            "url": "http://squidclamav.darold.net/news.html"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "squidclamav -- Denial of Service"
+}

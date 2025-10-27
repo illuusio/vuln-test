@@ -1,0 +1,44 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "newsgrab"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "last_affected": "0.4.0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "discovery": "2005-01-18T00:00:00Z",
+        "vid": "35f6093c-73c3-11d9-8a93-00065be4b5b6"
+    },
+    "details": "The newsgrab script creates files by using the names provided\nin the newsgroup messages in a perl open() call. This is done\nwithout performing any security checks to prevent a\ndirectory traversal. A specially crafted newsgroup message\ncould cause newsgrab to drop an attachment anywhere on the\nfile system using the permissions of the user running the\nscript.",
+    "id": "FreeBSD-kernel-2005-0269",
+    "modified": "2005-02-01T00:00:00Z",
+    "published": "2005-02-01T00:00:00Z",
+    "references": [
+        {
+            "type": "WEB",
+            "url": "http://people.freebsd.org/~niels/issues/newsgrab-20050114.txt"
+        },
+        {
+            "type": "WEB",
+            "url": "http://sourceforge.net/project/shownotes.php?release_id=300562"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2005-0153"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "newsgrab -- directory traversal vulnerability"
+}

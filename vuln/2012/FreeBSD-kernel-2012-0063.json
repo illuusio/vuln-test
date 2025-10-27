@@ -1,0 +1,103 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "php5"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "introduced": "5.2"
+                        },
+                        {
+                            "fixed": "5.2.17_11"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                },
+                {
+                    "events": [
+                        {
+                            "introduced": "5.3"
+                        },
+                        {
+                            "fixed": "5.3.11"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                },
+                {
+                    "events": [
+                        {
+                            "introduced": "5.4"
+                        },
+                        {
+                            "fixed": "5.4.1"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        },
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "php52"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "5.2.17_11"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        },
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "php53"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "5.3.11"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "discovery": "2011-11-06T00:00:00Z",
+        "vid": "918f38cd-f71e-11e1-8bd8-0022156e8794"
+    },
+    "details": "Rui Hirokawa reports:\n\n> As of PHP 5.1.2, header() can no longer be used to send\n> multiple response headers in a single call to prevent the\n> HTTP Response Splitting Attack. header() only checks the\n> linefeed (LF, 0x0A) as line-end marker, it doesn't check the\n> carriage-return (CR, 0x0D).\n>\n> However, some browsers including Google Chrome, IE also\n> recognize CR as the line-end.\n>\n> The current specification of header() still has the\n> vulnerability against the HTTP header splitting attack.",
+    "id": "FreeBSD-kernel-2012-0063",
+    "modified": "2012-09-19T00:00:00Z",
+    "published": "2012-09-05T00:00:00Z",
+    "references": [
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2011-1398"
+        },
+        {
+            "type": "WEB",
+            "url": "https://bugs.php.net/bug.php?id=60227"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "php5 -- header splitting attack via carriage-return character"
+}

@@ -1,0 +1,82 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "clamav"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "0.104.3,1"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        },
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "clamav-lts"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "0.103.6,1"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "discovery": "2022-05-04T00:00:00Z",
+        "vid": "b2407db1-d79f-11ec-a15f-589cfc0f81b0"
+    },
+    "details": "The ClamAV project reports:\n\n> Fixed a possible double-free vulnerability in the OLE2 file\n> parser. Issue affects versions 0.104.0 through 0.104.2. Issue\n> identified by OSS-Fuzz.\n>\n> Fixed a possible infinite loop vulnerability in the CHM file\n> parser. Issue affects versions 0.104.0 through 0.104.2 and LTS\n> version 0.103.5 and prior versions. Thank you to Micha\u0142 Dardas\n> for reporting this issue.\n>\n> Fixed a possible NULL-pointer dereference crash in the scan\n> verdict cache check. Issue affects versions 0.103.4, 0.103.5,\n> 0.104.1, and 0.104.2. Thank you to Alexander Patrakov and\n> Antoine Gatineau for reporting this issue.\n>\n> Fixed a possible infinite loop vulnerability in the TIFF file\n> parser. Issue affects versions 0.104.0 through 0.104.2 and LTS\n> version 0.103.5 and prior versions. The issue only occurs if the\n> \"--alert-broken-media\" ClamScan option is enabled. For ClamD,\n> the affected option is \"AlertBrokenMedia yes\", and for libclamav\n> it is the \"CL\\_SCAN\\_HEURISTIC\\_BROKEN\\_MEDIA\" scan option. Thank\n> you to Micha\u0142 Dardas for reporting this issue.\n>\n> Fixed a possible memory leak in the HTML file parser /\n> Javascript normalizer. Issue affects versions 0.104.0 through\n> 0.104.2 and LTS version 0.103.5 and prior versions. Thank you to\n> Micha\u0142 Dardas for reporting this issue.\n>\n> Fixed a possible multi-byte heap buffer overflow write\n> vulnerability in the signature database load module. The fix was\n> to update the vendored regex library to the latest version.\n> Issue affects versions 0.104.0 through 0.104.2 and LTS version\n> 0.103.5 and prior versions. Thank you to Micha\u0142 Dardas for\n> reporting this issue.",
+    "id": "FreeBSD-kernel-2022-0145",
+    "modified": "2022-05-19T00:00:00Z",
+    "published": "2022-05-19T00:00:00Z",
+    "references": [
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2022-20803"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2022-20770"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2022-20796"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2022-20771"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2022-20785"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2022-20792"
+        },
+        {
+            "type": "WEB",
+            "url": "https://blog.clamav.net/2022/05/clamav-01050-01043-01036-released.html#more"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "clamav -- Multiple vulnerabilities"
+}

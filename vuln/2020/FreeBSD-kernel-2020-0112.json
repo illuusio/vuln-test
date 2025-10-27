@@ -1,0 +1,43 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "chrony"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "3.5.1"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "discovery": "2020-08-06T00:00:00Z",
+        "vid": "719f06af-e45e-11ea-95a1-c3b8167b8026"
+    },
+    "details": "Miroslav Lichvar reports:\n\n> chrony-3.5.1 [...] fixes a security issue in writing of the pidfile.\n>\n> When chronyd is configured to save the pidfile in a directory where the\n> chrony user has write permissions (e.g. /var/run/chrony - the default\n> since chrony-3.4), an attacker that compromised the chrony user account\n> could create a symbolic link at the location of the pidfile to make\n> chronyd starting with root privileges follow the symlink and write its\n> process ID to a file for which the chrony user doesn't have write\n> permissions, causing a denial of service, or data loss.\n>\n> This issue was reported by Matthias Gerstner of SUSE.",
+    "id": "FreeBSD-kernel-2020-0112",
+    "modified": "2020-08-22T00:00:00Z",
+    "published": "2020-08-22T00:00:00Z",
+    "references": [
+        {
+            "type": "WEB",
+            "url": "https://listengine.tuxfamily.org/chrony.tuxfamily.org/chrony-announce/2020/08/msg00000.html"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2020-14367"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "chrony <= 3.5.1 data corruption through symlink vulnerability writing the pidfile"
+}

@@ -1,0 +1,47 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "phpbb"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "2.0.12"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "discovery": "2005-02-22T00:00:00Z",
+        "vid": "03653079-8594-11d9-afa0-003048705d5a"
+    },
+    "details": "psoTFX reports:\n\n> phpBB Group are pleased to announce the release of phpBB\n> 2.0.12 the \"Horray for Furrywood\" release. This release\n> addresses a number of bugs and a couple of potential\n> exploits. [...] one of the potential exploits addressed\n> in this release could be serious in certain situations and\n> thus we urge all users, as always, to upgrade to this\n> release as soon as possible. Mostly this release is\n> concerned with eliminating disclosures of information\n> which while useful in debug situations may allow third\n> parties to gain information which could be used to do harm\n> via unknown or unfixed exploits in this or other\n> applications.\n\nThe ChangeLog for phpBB 2.0.12 states:\n\n> * Prevented full path display on critical messages\n> * Fixed full path disclosure in username handling caused\n>   by a PHP 4.3.10 bug - **AnthraX101**\n> * Added exclude list to unsetting globals (if\n>   register\\_globals is on) -\n>   **SpoofedExistence**\n> * Fixed arbitrary file disclosure vulnerability in avatar\n>   handling functions - **AnthraX101**\n> * Fixed arbitrary file unlink vulnerability in avatar\n>   handling functions - **AnthraX101**\n> * Fixed path disclosure bug in search.php caused by a\n>   PHP 4.3.10 bug (related to AnthraX101's discovery)\n> * Fixed path disclosure bug in viewtopic.php caused by\n>   a PHP 4.3.10 bug - **matrix\\_killer**",
+    "id": "FreeBSD-kernel-2005-0246",
+    "modified": "2005-02-25T00:00:00Z",
+    "published": "2005-02-23T00:00:00Z",
+    "references": [
+        {
+            "type": "WEB",
+            "url": "http://www.phpbb.com/support/documents.php?mode=changelog"
+        },
+        {
+            "type": "WEB",
+            "url": "http://www.phpbb.com/phpBB/viewtopic.php?f=14&t=265423"
+        },
+        {
+            "type": "REPORT",
+            "url": "https://bugs.freebsd.org/bugzilla/show_bug.cgi?id=77943"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "phpbb -- multiple information disclosure vulnerabilities"
+}

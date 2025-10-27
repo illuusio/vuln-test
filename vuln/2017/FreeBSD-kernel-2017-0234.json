@@ -1,0 +1,43 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "curl"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "introduced": "7.52.0"
+                        },
+                        {
+                            "fixed": "7.54.0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "discovery": "2017-04-19T00:00:00Z",
+        "vid": "3e2e9b44-25ce-11e7-a175-939b30e0836d"
+    },
+    "details": "cURL security advisory:\n\n> libcurl would attempt to resume a TLS session even if the client\n> certificate had changed. That is unacceptable since a server by\n> specification is allowed to skip the client certificate check on\n> resume, and may instead use the old identity which was established\n> by the previous certificate (or no certificate).\n>\n> libcurl supports by default the use of TLS session id/ticket to\n> resume previous TLS sessions to speed up subsequent TLS handshakes.\n> They are used when for any reason an existing TLS connection\n> couldn't be kept alive to make the next handshake faster.\n>\n> This flaw is a regression and identical to CVE-2016-5419 reported\n> on August 3rd 2016, but affecting a different version range.",
+    "id": "FreeBSD-kernel-2017-0234",
+    "modified": "2017-04-20T00:00:00Z",
+    "published": "2017-04-20T00:00:00Z",
+    "references": [
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2017-7468"
+        },
+        {
+            "type": "WEB",
+            "url": "https://curl.haxx.se/docs/adv_20170419.html"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "cURL -- TLS session resumption client cert bypass (again)"
+}

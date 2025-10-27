@@ -1,0 +1,55 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "guile2"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "2.0.13"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "discovery": "2016-10-12T00:00:00Z",
+        "vid": "b4ecf774-eb01-11e6-9ac1-a4badb2f4699"
+    },
+    "details": "Ludovic Court\u00e8s reports:\n\n> The REPL server is vulnerable to\n> the HTTP inter-protocol attack\n>\n> The \u2018mkdir\u2019 procedure of GNU Guile, an implementation of\n> the Scheme programming language, temporarily changed the process\u2019 umask\n> to zero. During that time window, in a multithreaded application, other\n> threads could end up creating files with insecure permissions.",
+    "id": "FreeBSD-kernel-2017-0285",
+    "modified": "2017-02-04T00:00:00Z",
+    "published": "2017-02-04T00:00:00Z",
+    "references": [
+        {
+            "type": "WEB",
+            "url": "http://www.openwall.com/lists/oss-security/2016/10/11/1"
+        },
+        {
+            "type": "WEB",
+            "url": "http://www.openwall.com/lists/oss-security/2016/10/12/2"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2016-8605"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2016-8606"
+        },
+        {
+            "type": "REPORT",
+            "url": "https://bugs.freebsd.org/bugzilla/show_bug.cgi?id=216663"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "guile2 -- multiple vulnerabilities"
+}

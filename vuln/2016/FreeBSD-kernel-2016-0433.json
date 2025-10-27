@@ -1,0 +1,43 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "phpmyadmin"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "introduced": "4.5.0"
+                        },
+                        {
+                            "fixed": "4.5.4"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "discovery": "2016-01-28T00:00:00Z",
+        "vid": "6cc06eec-c60b-11e5-bf36-6805ca0b3d42"
+    },
+    "details": "The phpMyAdmin development team reports:\n\n> * With a crafted table name it is possible to trigger\n>   an XSS attack in the database search page.\n> * With a crafted SET value or a crafted search query, it\n>   is possible to trigger an XSS attacks in the zoom search\n>   page.\n> * With a crafted hostname header, it is possible to\n>   trigger an XSS attacks in the home page.\n>\n> We consider these vulnerabilities to be non-critical.\n>\n> These vulnerabilities can be triggered only by someone\n> who is logged in to phpMyAdmin, as the usual token\n> protection prevents non-logged-in users from accessing the\n> required pages.",
+    "id": "FreeBSD-kernel-2016-0433",
+    "modified": "2016-01-28T00:00:00Z",
+    "published": "2016-01-28T00:00:00Z",
+    "references": [
+        {
+            "type": "WEB",
+            "url": "https://www.phpmyadmin.net/security/PMASA-2016-3/"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2016-2040"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "phpmyadmin -- Multiple XSS vulnerabilities"
+}

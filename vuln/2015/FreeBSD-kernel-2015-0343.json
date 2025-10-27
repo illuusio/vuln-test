@@ -1,0 +1,43 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "libssh"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "0.6.5"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "discovery": "2015-04-30T00:00:00Z",
+        "vid": "0b040e24-f751-11e4-b24d-5453ed2e2b49"
+    },
+    "details": "Andreas Schneider reports:\n\n> libssh versions 0.5.1 and above have a logical error in the\n> handling of a SSH\\_MSG\\_NEWKEYS and SSH\\_MSG\\_KEXDH\\_REPLY package. A\n> detected error did not set the session into the error state\n> correctly and further processed the packet which leads to a null\n> pointer dereference. This is the packet after the initial key\n> exchange and doesn\u2019t require authentication.\n>\n> This could be used for a Denial of Service (DoS) attack.",
+    "id": "FreeBSD-kernel-2015-0343",
+    "modified": "2015-05-10T00:00:00Z",
+    "published": "2015-05-10T00:00:00Z",
+    "references": [
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2015-3146"
+        },
+        {
+            "type": "WEB",
+            "url": "https://www.libssh.org/2015/04/30/libssh-0-6-5-security-and-bugfix-release"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "libssh -- null pointer dereference"
+}

@@ -1,0 +1,39 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "portupgrade"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "20041226_2"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "discovery": "2005-04-12T00:00:00Z",
+        "vid": "22f00553-a09d-11d9-a788-0001020eed82"
+    },
+    "details": "Simon L. Nielsen discovered that portupgrade handles\ntemporary files in an insecure manner. This could allow an\nunprivileged local attacker to execute arbitrary commands or\noverwrite arbitrary files with the permissions of the user\nrunning portupgrade, typically root, by way of a symlink\nattack.\n\nThe following issues exist where the temporary files are\ncreated, by default in the world writeable directory\n/var/tmp, with the permissions of the user running\nportupgrade:\n\n* pkg\\_fetch download packages with a predictable local\n  filename allowing a local attacker to overwrite arbitrary\n  local files or potentially replace the downloaded package\n  after download but before install with a package with\n  malicious content, allowing the attacker to run arbitrary\n  commands.\n* portupgrade will, when upgrading ports/packages, write\n  the old package to a predictable temporary file, allowing\n  an attacker to overwrite arbitrary files via a symlink\n  attack.\n* portupgrade will \"touch\" a temporary file\n  with a constant filename (pkgdb.fixme) allowing an\n  attacker to create arbitrary zero-byte files via a symlink\n  attack.\n\nA workaround for these issues is to set the\n`PKG_TMPDIR` environment variable to a directory\nonly write-able by the user running portupgrade.",
+    "id": "FreeBSD-kernel-2005-0208",
+    "modified": "2005-04-12T00:00:00Z",
+    "published": "2005-04-12T00:00:00Z",
+    "references": [
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2005-0610"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "portupgrade -- insecure temporary file handling vulnerability"
+}

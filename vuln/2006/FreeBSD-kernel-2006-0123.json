@@ -1,0 +1,65 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "mysql-server"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "introduced": "5.1"
+                        },
+                        {
+                            "last_affected": "5.1.9"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                },
+                {
+                    "events": [
+                        {
+                            "introduced": "5.0"
+                        },
+                        {
+                            "fixed": "5.0.22"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                },
+                {
+                    "events": [
+                        {
+                            "introduced": "4.1"
+                        },
+                        {
+                            "fixed": "4.1.20"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "discovery": "2006-05-31T00:00:00Z",
+        "vid": "7f8cecea-f199-11da-8422-00123ffe8333"
+    },
+    "details": "MySQL reports:\n\n> An SQL-injection security hole has been found in multibyte\n> encoding processing. An SQL-injection security hole can include a\n> situation whereby when inserting user supplied data into a\n> database, the user might inject his own SQL statements that the\n> server will execute. With regards to this vulnerability discovered,\n> when character set unaware escaping is used (e.g., addslashes() in\n> PHP), it is possible to bypass it in some multibyte character sets\n> (e.g., SJIS, BIG5 and GBK). As a result, a function like\n> addslashes() is not able to prevent SQL injection attacks. It is\n> impossible to fix this on the server side. The best solution is for\n> applications to use character set aware escaping offered in a\n> function like mysql\\_real\\_escape().\n>\n> Workarounds:\n>\n> One can use NO\\_BACKSLASH\\_ESCAPES mode as a workaround for a bug\n> in mysql\\_real\\_escape\\_string(), if you cannot upgrade your server\n> for some reason. It will enable SQL standard compatibility mode,\n> where backslash is not considered a special character.",
+    "id": "FreeBSD-kernel-2006-0123",
+    "modified": "2006-06-01T00:00:00Z",
+    "published": "2006-06-01T00:00:00Z",
+    "references": [
+        {
+            "type": "WEB",
+            "url": "http://lists.mysql.com/announce/364"
+        },
+        {
+            "type": "WEB",
+            "url": "http://lists.mysql.com/announce/365"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "MySQL -- SQL-injection security vulnerability"
+}

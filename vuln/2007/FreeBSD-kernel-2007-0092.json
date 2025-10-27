@@ -1,0 +1,105 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "opera"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "9.22"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        },
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "opera-devel"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "9.22"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        },
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "linux-opera"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "9.22"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "discovery": "2007-07-19T00:00:00Z",
+        "vid": "12d266b6-363f-11dc-b6c9-000c6ec775d9"
+    },
+    "details": "Opera Software ASA reports of multiple security fixes in\nOpera, including an arbitrary code execute\nvulnerability:\n\n> Opera for Linux, FreeBSD, and Solaris has a flaw in the\n> createPattern function that leaves old data that was in\n> the memory before Opera allocated it in the new\n> pattern. The pattern can be read and analyzed by\n> JavaScript, so an attacker can get random samples of the\n> user's memory, which may contain data.\n\n> Removing a specially crafted torrent from the download\n> manager can crash Opera. The crash is caused by an\n> erroneous memory access.\n>\n> An attacker needs to entice the user to accept the\n> malicious BitTorrent download, and later remove it from\n> Opera's download manager. To inject code, additional means\n> will have to be employed.\n>\n> Users clicking a BitTorrent link and rejecting the\n> download are not affected.\n\n> data: URLs embed data inside them, instead of linking to\n> an external resource. Opera can mistakenly display the end\n> of a data URL instead of the beginning. This allows an\n> attacker to spoof the URL of a trusted site.\n\n> Opera's HTTP authentication dialog is displayed when the\n> user enters a Web page that requires a login name and a\n> password. To inform the user which server it was that\n> asked for login credentials, the dialog displays the\n> server name.\n>\n> The user has to see the entire server name. A truncated\n> name can be misleading. Opera's authentication dialog cuts\n> off the long server names at the right hand side, adding\n> an ellipsis (...) to indicate that it has been cut off.\n>\n> The dialog has a predictable size, allowing an attacker\n> to create a server name which will look almost like a\n> trusted site, because the real domain name has been cut\n> off. The three dots at the end will not be obvious to all\n> users.\n>\n> This flaw can be exploited by phishers who can set up\n> custom sub-domains, for example by hosting their own\n> public DNS.",
+    "id": "FreeBSD-kernel-2007-0092",
+    "modified": "2010-05-12T00:00:00Z",
+    "published": "2007-07-19T00:00:00Z",
+    "references": [
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2007-3929"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2007-4944"
+        },
+        {
+            "type": "WEB",
+            "url": "http://labs.idefense.com/intelligence/vulnerabilities/display.php?id=564"
+        },
+        {
+            "type": "WEB",
+            "url": "http://www.opera.com/support/search/view/861/"
+        },
+        {
+            "type": "WEB",
+            "url": "http://www.opera.com/support/search/view/862/"
+        },
+        {
+            "type": "WEB",
+            "url": "http://www.opera.com/support/search/view/863/"
+        },
+        {
+            "type": "WEB",
+            "url": "http://www.opera.com/support/search/view/864/"
+        },
+        {
+            "type": "WEB",
+            "url": "http://www.opera.com/docs/changelogs/freebsd/922/"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "opera -- multiple vulnerabilities"
+}

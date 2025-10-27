@@ -1,0 +1,51 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "go"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "1.17.3,1"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "discovery": "2021-11-04T00:00:00Z",
+        "vid": "930def19-3e05-11ec-9ba8-002324b2fba8"
+    },
+    "details": "The Go project reports:\n\n> debug/macho fails out when loading a file that contains a dynamic\n> symbol table command that indicates a larger number of symbols than\n> exist in the loaded symbol table.\n\n> Previously, opening a zip with (\\*Reader).Open could result in a\n> panic if the zip contained a file whose name was exclusively made up\n> of slash characters or \"..\" path elements. Open could also panic if\n> passed the empty string directly as an argument.",
+    "id": "FreeBSD-kernel-2021-0047",
+    "modified": "2021-11-05T00:00:00Z",
+    "published": "2021-11-05T00:00:00Z",
+    "references": [
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2021-41771"
+        },
+        {
+            "type": "WEB",
+            "url": "https://github.com/golang/go/issues/48990"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2021-41772"
+        },
+        {
+            "type": "WEB",
+            "url": "https://github.com/golang/go/issues/48085"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "go -- multiple vulnerabilities"
+}

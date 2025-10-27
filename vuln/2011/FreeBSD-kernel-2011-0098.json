@@ -1,0 +1,51 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "exim"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "introduced": "4.70"
+                        },
+                        {
+                            "fixed": "4.76"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "discovery": "2011-05-10T00:00:00Z",
+        "vid": "36594c54-7be7-11e0-9838-0022156e8794"
+    },
+    "details": "Release notes for Exim 4.76 says:\n\n> Bugzilla 1106: CVE-2011-1764 - DKIM log line was subject to\n> a format-string attack -- SECURITY: remote arbitrary code\n> execution.\n>\n> DKIM signature header parsing was double-expanded, second\n> time unintentionally subject to list matching rules, letting\n> the header cause arbitrary Exim lookups (of items which can\n> occur in lists, \\*not\\* arbitrary string expansion). This\n> allowed for information disclosure.\n\nAlso, impact assessment was redone shortly after the original\nannouncement:\n\n> Further analysis revealed that the second security was\n> more severe than I realised at the time that I wrote the\n> announcement. The second security issue has been assigned\n> CVE-2011-1407 and is also a remote code execution flaw.\n> For clarity: both issues were introduced with 4.70.",
+    "id": "FreeBSD-kernel-2011-0098",
+    "modified": "2011-05-14T00:00:00Z",
+    "published": "2011-05-14T00:00:00Z",
+    "references": [
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2011-1764"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2011-1407"
+        },
+        {
+            "type": "DISCUSSION",
+            "url": "https://lists.exim.org/lurker/message/20110512.102909.8136175a.en.html"
+        },
+        {
+            "type": "WEB",
+            "url": "http://bugs.exim.org/show_bug.cgi?id=1106"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "Exim -- remote code execution and information disclosure"
+}

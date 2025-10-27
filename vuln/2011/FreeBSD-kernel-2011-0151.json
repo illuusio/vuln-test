@@ -1,0 +1,39 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "dokuwiki"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "20101107a"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "discovery": "2011-01-16T00:00:00Z",
+        "vid": "7580f00e-280c-11e0-b7c8-00215c6a37bb"
+    },
+    "details": "Dokuwiki reports:\n\n> This security update fixes problems in the XMLRPC\n> interface where ACLs where not checked correctly\n> sometimes, making it possible to access and write\n> information that should not have been accessible/writable.\n> This only affects users who have enabled the XMLRPC\n> interface (default is off) and have enabled XMLRPC\n> access for users who can't access/write all content\n> anyway (default is nobody, see <http://www.dokuwiki.org/config:xmlrpcuser>\n> for details).\n>\n> This update also includes a fix for a problem in\n> the general ACL checking function that could be exploited\n> to gain access to restricted pages and media files in rare\n> conditions (when you had rights for an id you could get\n> the same rights on ids where one character has been\n> replaced by a \".\").",
+    "id": "FreeBSD-kernel-2011-0151",
+    "modified": "2011-01-24T00:00:00Z",
+    "published": "2011-01-24T00:00:00Z",
+    "references": [
+        {
+            "type": "WEB",
+            "url": "http://bugs.dokuwiki.org/index.php?do=details&task_id=2136"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "dokuwiki -- multiple privilege escalation vulnerabilities"
+}

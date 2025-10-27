@@ -1,0 +1,86 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "apache-openoffice"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "4.1.4"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        },
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "apache-openoffice-devel"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "4.2.1810071_1,4"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "discovery": "2016-09-11T00:00:00Z",
+        "vid": "27229c67-b8ff-11e7-9f79-ac9e174be3af"
+    },
+    "details": "The Apache Openofffice project reports:\n\n> CVE-2017-3157: Arbitrary file disclosure in Calc and Writer\n> ===========================================================\n>\n> By exploiting the way OpenOffice renders embedded objects, an attacker could craft a document that allows reading in a file from the user's filesystem. Information could be retrieved by the attacker by, e.g., using hidden sections to store the information, tricking the user into saving the document and convincing the user to sent the document back to the attacker.\n>\n> The vulnerability is mitigated by the need for the attacker to know the precise file path in the target system, and the need to trick the user into saving the document and sending it back.\n\n> CVE-2017-9806: Out-of-Bounds Write in Writer's WW8Fonts Constructor\n> ===================================================================\n>\n> A vulnerability in the OpenOffice Writer DOC file parser, and specifically in the WW8Fonts Constructor, allows attackers to craft malicious documents that cause denial of service (memory corruption and application crash) potentially resulting in arbitrary code execution.\n\n> CVE-2017-12607: Out-of-Bounds Write in Impress' PPT Filter\n> ==========================================================\n>\n> A vulnerability in OpenOffice's PPT file parser, and specifically in PPTStyleSheet, allows attackers to craft malicious documents that cause denial of service (memory corruption and application crash) potentially resulting in arbitrary code execution.\n\n> CVE-2017-12608: Out-of-Bounds Write in Writer's ImportOldFormatStyles\n> =====================================================================\n>\n> A vulnerability in OpenOffice Writer DOC file parser, and specifically in ImportOldFormatStyles, allows attackers to craft malicious documents that cause denial of service (memory corruption and application crash) potentially resulting in arbitrary code execution.",
+    "id": "FreeBSD-kernel-2017-0067",
+    "modified": "2017-10-26T00:00:00Z",
+    "published": "2017-10-24T00:00:00Z",
+    "references": [
+        {
+            "type": "WEB",
+            "url": "https://www.openoffice.org/security/cves/CVE-2017-3157.html"
+        },
+        {
+            "type": "WEB",
+            "url": "https://www.openoffice.org/security/cves/CVE-2017-9806.html"
+        },
+        {
+            "type": "WEB",
+            "url": "https://www.openoffice.org/security/cves/CVE-2017-12607.html"
+        },
+        {
+            "type": "WEB",
+            "url": "https://www.openoffice.org/security/cves/CVE-2017-12608.html"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2017-3157"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2017-9806"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2017-12607"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2017-12608"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "Apache OpenOffice -- multiple vulnerabilities"
+}

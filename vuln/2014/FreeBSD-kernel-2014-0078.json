@@ -1,0 +1,67 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "phpMyAdmin"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "introduced": "4.2.0"
+                        },
+                        {
+                            "fixed": "4.2.6"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "discovery": "2014-07-18T00:00:00Z",
+        "vid": "3f09ca29-0e48-11e4-b17a-6805ca0b3d42"
+    },
+    "details": "The phpMyAdmin development team reports:\n\n> Self-XSS due to unescaped HTML output in database\n> structure page.\n>\n> With a crafted table comment, it is possible to trigger\n> an XSS in database structure page.\n\n> Self-XSS due to unescaped HTML output in database\n> triggers page.\n>\n> When navigating into the database triggers page, it is\n> possible to trigger an XSS with a crafted trigger\n> name.\n\n> Multiple XSS in AJAX confirmation messages.\n>\n> With a crafted column name it is possible to trigger an\n> XSS when dropping the column in table structure page. With\n> a crafted table name it is possible to trigger an XSS when\n> dropping or truncating the table in table operations\n> page.\n\n> Access for an unprivileged user to MySQL user list.\n>\n> An unpriviledged user could view the MySQL user list and\n> manipulate the tabs displayed in phpMyAdmin for them.",
+    "id": "FreeBSD-kernel-2014-0078",
+    "modified": "2014-07-20T00:00:00Z",
+    "published": "2014-07-18T00:00:00Z",
+    "references": [
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2014-4954"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2014-4955"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2014-4986"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2014-4987"
+        },
+        {
+            "type": "WEB",
+            "url": "http://www.phpmyadmin.net/home_page/security/PMASA-2014-4.php"
+        },
+        {
+            "type": "WEB",
+            "url": "http://www.phpmyadmin.net/home_page/security/PMASA-2014-5.php"
+        },
+        {
+            "type": "WEB",
+            "url": "http://www.phpmyadmin.net/home_page/security/PMASA-2014-6.php"
+        },
+        {
+            "type": "WEB",
+            "url": "http://www.phpmyadmin.net/home_page/security/PMASA-2014-7.php"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "phpMyAdmin -- multiple XSS vulnerabilities, missing validation"
+}

@@ -1,0 +1,98 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "postgresql-server"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "16.1"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                },
+                {
+                    "events": [
+                        {
+                            "fixed": "15.5"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                },
+                {
+                    "events": [
+                        {
+                            "fixed": "14.10"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                },
+                {
+                    "events": [
+                        {
+                            "fixed": "13.13"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                },
+                {
+                    "events": [
+                        {
+                            "fixed": "12.17"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                },
+                {
+                    "events": [
+                        {
+                            "fixed": "11.22"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "discovery": "2023-11-09T00:00:00Z",
+        "vid": "bbb18fcb-7f0d-11ee-94b4-6cc21735f730"
+    },
+    "details": "PostgreSQL Project reports:\n\n> Documentation says the pg\\_cancel\\_backend role cannot\n> signal \"a backend owned by a superuser\". On the\n> contrary, it can signal background workers, including\n> the logical replication launcher. It can signal\n> autovacuum workers and the autovacuum launcher.\n> Signaling autovacuum workers and those two launchers\n> provides no meaningful exploit, so exploiting this\n> vulnerability requires a non-core extension with a\n> less-resilient background worker. For example, a\n> non-core background worker that does not auto-restart\n> would experience a denial of service with respect to\n> that particular background worker.",
+    "id": "FreeBSD-kernel-2023-0049",
+    "modified": "2023-11-09T00:00:00Z",
+    "published": "2023-11-09T00:00:00Z",
+    "references": [
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2023-5870"
+        },
+        {
+            "type": "WEB",
+            "url": "https://www.postgresql.org/support/security/CVE-2023-5870/"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "postgresql-server -- Role pg_cancel_backend can signal certain superuser processes"
+}

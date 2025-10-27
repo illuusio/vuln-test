@@ -1,0 +1,114 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "drupal4"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "4.7.8"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        },
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "drupal5"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "5.3"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "discovery": "2007-10-17T00:00:00Z",
+        "vid": "9c00d446-8208-11dc-9283-0016179b2dd5"
+    },
+    "details": "The Drupal Project reports:\n\n> In some circumstances Drupal allows user-supplied data to\n> become part of response headers. As this user-supplied data\n> is not always properly escaped, this can be exploited by\n> malicious users to execute HTTP response splitting attacks\n> which may lead to a variety of issues, among them cache\n> poisoning, cross-user defacement and injection of arbitrary\n> code.\n\n> The Drupal installer allows any visitor to provide credentials\n> for a database when the site's own database is not reachable. This\n> allows attackers to run arbitrary code on the site's server.\n> An immediate workaround is the removal of the file install.php\n> in the Drupal root directory.\n\n> The allowed extension list of the core Upload module contains\n> the extension HTML by default. Such files can be used to execute\n> arbitrary script code in the context of the affected site when a\n> user views the file. Revoking upload permissions or removing the\n> .html extension from the allowed extension list will stop uploads\n> of malicious files. but will do nothing to protect your site\n> againstfiles that are already present. Carefully inspect the file\n> system path for any HTML files. We recommend you remove any HTML\n> file you did not update yourself. You should look for , CSS\n> includes, Javascript includes, and onerror=\"\" attributes if\n> you need to review files individually.\n\n> The Drupal Forms API protects against cross site request\n> forgeries (CSRF), where a malicious site can cause a user\n> to unintentionally submit a form to a site where he is\n> authenticated. The user deletion form does not follow the\n> standard Forms API submission model and is therefore not\n> protected against this type of attack. A CSRF attack may\n> result in the deletion of users.\n\n> The publication status of comments is not passed during the\n> hook\\_comments API operation, causing various modules that rely\n> on the publication status (such as Organic groups, or Subscriptions)\n> to mail out unpublished comments.",
+    "id": "FreeBSD-kernel-2007-0041",
+    "modified": "2007-10-24T00:00:00Z",
+    "published": "2007-10-24T00:00:00Z",
+    "references": [
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2007-5597"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2007-5596"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2007-5595"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2007-5594"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2007-5593"
+        },
+        {
+            "type": "WEB",
+            "url": "http://drupal.org/node/184315"
+        },
+        {
+            "type": "WEB",
+            "url": "http://drupal.org/node/184316"
+        },
+        {
+            "type": "WEB",
+            "url": "http://drupal.org/node/184348"
+        },
+        {
+            "type": "WEB",
+            "url": "http://drupal.org/node/184354"
+        },
+        {
+            "type": "WEB",
+            "url": "http://drupal.org/node/184320"
+        },
+        {
+            "type": "WEB",
+            "url": "http://secunia.com/advisories/27292"
+        },
+        {
+            "type": "WEB",
+            "url": "http://secunia.com/advisories/27292"
+        },
+        {
+            "type": "WEB",
+            "url": "http://secunia.com/advisories/27292"
+        },
+        {
+            "type": "WEB",
+            "url": "http://secunia.com/advisories/27290"
+        },
+        {
+            "type": "WEB",
+            "url": "http://secunia.com/advisories/27290"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "drupal --- multiple vulnerabilities"
+}

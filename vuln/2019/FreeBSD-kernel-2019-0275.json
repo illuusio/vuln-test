@@ -1,0 +1,55 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "apache24"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "2.4.38"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "discovery": "2019-01-22T00:00:00Z",
+        "vid": "eb888ce5-1f19-11e9-be05-4c72b94353b5"
+    },
+    "details": "The Apache httpd Project reports:\n\n> SECURITY: CVE-2018-17199\n> mod\\_session: mod\\_session\\_cookie does not respect expiry time allowing\n> sessions to be reused.\n>\n> SECURITY: CVE-2019-0190\n> mod\\_ssl: Fix infinite loop triggered by a client-initiated\n> renegotiation in TLSv1.2 (or earlier) with OpenSSL 1.1.1 and\n> later. PR 63052.\n>\n> SECURITY: CVE-2018-17189\n> mod\\_http2: fixes a DoS attack vector. By sending slow request bodies\n> to resources not consuming them, httpd cleanup code occupies a server\n> thread unnecessarily. This was changed to an immediate stream reset\n> which discards all stream state and incoming data.",
+    "id": "FreeBSD-kernel-2019-0275",
+    "modified": "2019-01-23T00:00:00Z",
+    "published": "2019-01-23T00:00:00Z",
+    "references": [
+        {
+            "type": "WEB",
+            "url": "http://www.apache.org/dist/httpd/CHANGES_2.4.38"
+        },
+        {
+            "type": "WEB",
+            "url": "http://httpd.apache.org/security/vulnerabilities_24.html"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2018-17199"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2018-17189"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2019-0190"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "Apache -- vulnerability"
+}

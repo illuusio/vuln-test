@@ -1,0 +1,90 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "rt40"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "introduced": "4.0"
+                        },
+                        {
+                            "fixed": "4.0.6"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        },
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "rt38"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "3.8.12"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "discovery": "2012-05-22T00:00:00Z",
+        "vid": "e0a969e4-a512-11e1-90b4-e0cb4e266481"
+    },
+    "details": "BestPractical report:\n\n> Internal audits of the RT codebase have uncovered a\n> number of security vulnerabilities in RT. We are releasing\n> versions 3.8.12 and 4.0.6 to resolve these vulnerabilities,\n> as well as patches which apply atop all released versions of\n> 3.8 and 4.0.\n>\n> The vulnerabilities addressed by 3.8.12, 4.0.6, and the\n> below patches include the following:\n>\n> The previously released tool to upgrade weak password\n> hashes as part of CVE-2011-0009 was an incomplete fix and\n> failed to upgrade passwords of disabled users.\n>\n> RT versions 3.0 and above contain a number of cross-site\n> scripting (XSS) vulnerabilities which allow an attacker to\n> run JavaScript with the user's credentials. CVE-2011-2083 is\n> assigned to this vulnerability.\n>\n> RT versions 3.0 and above are vulnerable to multiple\n> information disclosure vulnerabilities. This includes the\n> ability for privileged users to expose users' previous\n> password hashes -- this vulnerability is particularly\n> dangerous given RT's weak hashing previous to the fix in\n> CVE-2011-0009. A separate vulnerability allows privileged\n> users to obtain correspondence history for any ticket in\n> RT. CVE-2011-2084 is assigned to this vulnerability.\n>\n> All publicly released versions of RT are vulnerable to\n> cross-site request forgery (CSRF). CVE-2011-2085 is assigned\n> to this vulnerability.\n>\n> We have also added a separate configuration option\n> ($RestrictLoginReferrer) to prevent login CSRF, a different\n> class of CSRF attack.\n>\n> RT versions 3.6.1 and above are vulnerable to a remote\n> execution of code vulnerability if the optional VERP\n> configuration options ($VERPPrefix and $VERPDomain) are\n> enabled. RT 3.8.0 and higher are vulnerable to a limited\n> remote execution of code which can be leveraged for\n> privilege escalation. RT 4.0.0 and above contain a\n> vulnerability in the global $DisallowExecuteCode option,\n> allowing sufficiently privileged users to still execute code\n> even if RT was configured to not allow it. CVE-2011-4458 is\n> assigned to this set of vulnerabilities.\n>\n> RT versions 3.0 and above may, under some circumstances,\n> still respect rights that a user only has by way of a\n> currently-disabled group. CVE-2011-4459 is assigned to this\n> vulnerability.\n>\n> RT versions 2.0 and above are vulnerable to a SQL\n> injection attack, which allow privileged users to obtain\n> arbitrary information from the database. CVE-2011-4460 is\n> assigned to this vulnerability.",
+    "id": "FreeBSD-kernel-2012-0133",
+    "modified": "2012-05-23T00:00:00Z",
+    "published": "2012-05-23T00:00:00Z",
+    "references": [
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2011-0009"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2011-2082"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2011-2083"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2011-2084"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2011-2085"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2011-4458"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2011-4459"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2011-4460"
+        },
+        {
+            "type": "WEB",
+            "url": "http://blog.bestpractical.com/2012/05/security-vulnerabilities-in-rt.html"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "RT -- Multiple Vulnerabilities"
+}

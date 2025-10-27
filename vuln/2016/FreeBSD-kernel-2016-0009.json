@@ -1,0 +1,43 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "curl"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "introduced": "7.52.0"
+                        },
+                        {
+                            "fixed": "7.52.1"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "discovery": "2016-12-23T00:00:00Z",
+        "vid": "c40ca16c-4d9f-4d70-8b6c-4d53aeb8ead4"
+    },
+    "details": "Project curl Security Advisory:\n\n> libcurl's (new) internal function that returns a good 32bit\n> random value was implemented poorly and overwrote the pointer\n> instead of writing the value into the buffer the pointer\n> pointed to.\n>\n> This random value is used to generate nonces for Digest and\n> NTLM authentication, for generating boundary strings in HTTP\n> formposts and more. Having a weak or virtually non-existent\n> random there makes these operations vulnerable.\n>\n> This function is brand new in 7.52.0 and is the result of an\n> overhaul to make sure libcurl uses strong random as much as\n> possible - provided by the backend TLS crypto libraries when\n> present. The faulty function was introduced in this commit.\n>\n> We are not aware of any exploit of this flaw.",
+    "id": "FreeBSD-kernel-2016-0009",
+    "modified": "2016-12-24T00:00:00Z",
+    "published": "2016-12-24T00:00:00Z",
+    "references": [
+        {
+            "type": "WEB",
+            "url": "https://curl.haxx.se/docs/adv_20161223.html"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2016-9594"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "cURL -- uninitialized random vulnerability"
+}

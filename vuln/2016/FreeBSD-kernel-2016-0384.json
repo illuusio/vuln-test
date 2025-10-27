@@ -1,0 +1,52 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "jenkins"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "last_affected": "1.650"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        },
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "jenkins-lts"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "last_affected": "1.642.2"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "discovery": "2016-02-24T00:00:00Z",
+        "vid": "7e01df39-db7e-11e5-b937-00e0814cab4e"
+    },
+    "details": "Jenkins Security Advisory:\n\n> Description\n> ===========\n>\n> ##### SECURITY-232 / CVE-2016-0788(Remote code execution vulnerability in remoting module)\n>\n> A vulnerability in the Jenkins remoting module allowed\n> unauthenticated remote attackers to open a JRMP listener on the\n> server hosting the Jenkins master process, which allowed arbitrary\n> code execution.\n>\n> ##### SECURITY-238 / CVE-2016-0789(HTTP response splitting vulnerability)\n>\n> An HTTP response splitting vulnerability in the CLI command\n> documentation allowed attackers to craft Jenkins URLs that serve\n> malicious content.\n>\n> ##### SECURITY-241 / CVE-2016-0790(Non-constant time comparison of API token)\n>\n> The verification of user-provided API tokens with the expected\n> value did not use a constant-time comparison algorithm, potentially\n> allowing attackers to use statistical methods to determine valid\n> API tokens using brute-force methods.\n>\n> ##### SECURITY-245 / CVE-2016-0791(Non-constant time comparison of CSRF crumbs)\n>\n> The verification of user-provided CSRF crumbs with the expected\n> value did not use a constant-time comparison algorithm, potentially\n> allowing attackers to use statistical methods to determine valid\n> CSRF crumbs using brute-force methods.\n>\n> ##### SECURITY-247 / CVE-2016-0792(Remote code execution through remote API)\n>\n> Jenkins has several API endpoints that allow low-privilege users\n> to POST XML files that then get deserialized by Jenkins.\n> Maliciously crafted XML files sent to these API endpoints could\n> result in arbitrary code execution.",
+    "id": "FreeBSD-kernel-2016-0384",
+    "modified": "2016-02-25T00:00:00Z",
+    "published": "2016-02-25T00:00:00Z",
+    "references": [
+        {
+            "type": "WEB",
+            "url": "https://wiki.jenkins-ci.org/display/SECURITY/Security+Advisory+2016-02-24"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "jenkins -- multiple vulnerabilities"
+}

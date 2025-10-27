@@ -1,0 +1,43 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "sql-ledger"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "2.6.26"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "discovery": "2007-03-09T00:00:00Z",
+        "vid": "8e02441d-d39c-11db-a6da-0003476f14d3"
+    },
+    "details": "Chris Travers reports:\n\n> George Theall of Tenable Security notified the LedgerSMB\n> core team today of an authentication bypass vulnerability\n> allowing full access to the administrator interface of\n> LedgerSMB 1.1 and SQL-Ledger 2.x. The problem is caused\n> by the password checking routine failing to enforce a\n> password check under certain circumstances. The user\n> can then create accounts or effect denial of service\n> attacks.\n>\n> This is not related to any previous CVE.\n>\n> We have coordinated with the SQL-Ledger vendor and\n> today both of us released security patches correcting\n> the problem. SQL-Ledger users who can upgrade to 2.6.26\n> should do so, and LedgerSMB 1.1 or 1.0 users should\n> upgrade to 1.1.9. Users who cannot upgrade should\n> configure their web servers to use http authentication\n> for the admin.pl script in the main root directory.",
+    "id": "FreeBSD-kernel-2007-0133",
+    "modified": "2007-03-16T00:00:00Z",
+    "published": "2007-03-16T00:00:00Z",
+    "references": [
+        {
+            "type": "REPORT",
+            "url": "https://bugs.freebsd.org/bugzilla/show_bug.cgi?id=110350"
+        },
+        {
+            "type": "WEB",
+            "url": "http://www.securityfocus.com/archive/1/462375"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "sql-ledger -- security bypass vulnerability"
+}

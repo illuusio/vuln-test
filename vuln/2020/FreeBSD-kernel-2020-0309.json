@@ -1,0 +1,51 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "dovecot"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "2.3.9.3"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "discovery": "2020-01-14T00:00:00Z",
+        "vid": "74db0d02-b140-4c32-aac6-1f1e81e1ad30"
+    },
+    "details": "Aki Tuomi reports:\n\n> lib-smtp doesn't handle truncated command parameters properly, resulting\n> in infinite loop taking 100% CPU for the process. This happens for LMTP\n> (where it doesn't matter so much) and also for submission-login where\n> unauthenticated users can trigger it.\n\nAki also reports:\n\n> Snippet generation crashes if:\n> message is large enough that message-parser returns multiple body\n> blocks\n> The first block(s) don't contain the full snippet (e.g. full of\n> whitespace)\n> input ends with '>'",
+    "id": "FreeBSD-kernel-2020-0309",
+    "modified": "2020-02-13T00:00:00Z",
+    "published": "2020-02-13T00:00:00Z",
+    "references": [
+        {
+            "type": "WEB",
+            "url": "https://dovecot.org/pipermail/dovecot-news/2020-February/000430.html"
+        },
+        {
+            "type": "WEB",
+            "url": "https://dovecot.org/pipermail/dovecot-news/2020-February/000431.html"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2020-7046"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2020-7967"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "dovecot -- multiple vulnerabilities"
+}

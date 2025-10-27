@@ -1,0 +1,112 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "rubygem-rails"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "3.2.11"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        },
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "rubygem-actionpack"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "3.2.11"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        },
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "rubygem-activerecord"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "3.2.11"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        },
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "rubygem-activesupport"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "3.2.11"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "discovery": "2013-01-08T00:00:00Z",
+        "vid": "ca5d3272-59e3-11e2-853b-00262d5ed8ee"
+    },
+    "details": "Ruby on Rails team reports:\n\n> Two high-risk vulnerabilities have been discovered:\n>\n> (CVE-2013-0155) There is a vulnerability when Active Record is\n> used in conjunction with JSON parameter parsing.\n>\n> Due to the way Active Record interprets parameters in combination\n> with the way that JSON parameters are parsed, it is possible for an\n> attacker to issue unexpected database queries with \"IS NULL\" or\n> empty \"WHERE\" clauses. This issue does not let an attacker insert\n> arbitrary values into an SQL query, however they can cause the\n> query to check for NULL or eliminate a WHERE clause when most users\n> would not expect it.\n>\n> (CVE-2013-0156) There are multiple weaknesses in the parameter\n> parsing code for Ruby on Rails which allows attackers to bypass\n> authentication systems, inject arbitrary SQL, inject and execute\n> arbitrary code, or perform a DoS attack on a Rails application.\n>\n> The parameter parsing code of Ruby on Rails allows applications to\n> automatically cast values from strings to certain data types.\n> Unfortunately the type casting code supported certain conversions\n> which were not suitable for performing on user-provided data\n> including creating Symbols and parsing YAML. These unsuitable\n> conversions can be used by an attacker to compromise a Rails\n> application.",
+    "id": "FreeBSD-kernel-2013-0186",
+    "modified": "2013-01-08T00:00:00Z",
+    "published": "2013-01-08T00:00:00Z",
+    "references": [
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2013-0155"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2013-0156"
+        },
+        {
+            "type": "WEB",
+            "url": "http://weblog.rubyonrails.org/2013/1/8/Rails-3-2-11-3-1-10-3-0-19-and-2-3-15-have-been-released/"
+        },
+        {
+            "type": "WEB",
+            "url": "https://groups.google.com/forum/?fromgroups#!topic/rubyonrails-security/t1WFuuQyavI"
+        },
+        {
+            "type": "WEB",
+            "url": "https://groups.google.com/forum/?fromgroups#!topic/rubyonrails-security/61bkgvnSGTQ"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "rubygem-rails -- multiple vulnerabilities"
+}

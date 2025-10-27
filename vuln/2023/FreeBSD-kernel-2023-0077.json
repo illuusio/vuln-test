@@ -1,0 +1,47 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "libXpm"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "3.5.17"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "discovery": "2023-09-22T00:00:00Z",
+        "vid": "199cdb4d-690d-11ee-9ed0-001fc69cd6dc"
+    },
+    "details": "The X.Org project reports:\n\n> CVE-2023-43788: Out of bounds read in XpmCreateXpmImageFromBuffer\n> :   An out-of-bounds read is located in ParseComment() when reading from\n>     a memory buffer instead of a file, as it continued to look for the\n>     closing comment marker past the end of the buffer.\n>\n> CVE-2023-43789: Out of bounds read on XPM with corrupted colormap\n> :   A corrupted colormap section may cause libXpm to read out of bounds.",
+    "id": "FreeBSD-kernel-2023-0077",
+    "modified": "2023-10-12T00:00:00Z",
+    "published": "2023-10-12T00:00:00Z",
+    "references": [
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2023-43788"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2023-43789"
+        },
+        {
+            "type": "WEB",
+            "url": "https://lists.x.org/archives/xorg/2023-October/061506.html"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "x11/libXpm multiple vulnerabilities"
+}

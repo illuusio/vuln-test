@@ -1,0 +1,76 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "FreeBSD"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "introduced": "11.0"
+                        },
+                        {
+                            "fixed": "11.0_4"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                },
+                {
+                    "events": [
+                        {
+                            "introduced": "10.3"
+                        },
+                        {
+                            "fixed": "10.3_13"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                },
+                {
+                    "events": [
+                        {
+                            "introduced": "10.2"
+                        },
+                        {
+                            "fixed": "10.2_26"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                },
+                {
+                    "events": [
+                        {
+                            "introduced": "10.1"
+                        },
+                        {
+                            "fixed": "10.1_43"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "discovery": "2016-12-06T00:00:00Z",
+        "vid": "e722e3c6-bbee-11e6-b1cf-14dae9d210b8"
+    },
+    "details": "Problem Description:\n====================\n\nThe bounds checking of accesses to guest memory greater\nthan 4GB by device emulations is subject to integer\noverflow.\n\nImpact:\n=======\n\nFor a bhyve virtual machine with more than 3GB of guest\nmemory configured, a malicious guest could craft device\ndescriptors that could give it access to the heap of the\nbhyve process. Since the bhyve process is running as root,\nthis may allow guests to obtain full control of the hosts\nthey're running on.",
+    "id": "FreeBSD-kernel-2016-0030",
+    "modified": "2016-12-06T00:00:00Z",
+    "published": "2016-12-06T00:00:00Z",
+    "references": [
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2016-1889"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://www.freebsd.org/security/advisories/FreeBSD-SA-16:38.bhyve.asc"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "FreeBSD -- bhyve(8) virtual machine escape"
+}

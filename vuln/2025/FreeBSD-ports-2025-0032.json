@@ -1,0 +1,43 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "powerdns-recursor"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "5.2.4"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "discovery": "2025-07-21T00:00:00Z",
+        "vid": "b3948bf3-685e-11f0-bff5-6805ca2fa271"
+    },
+    "details": "PowerDNS Team reports:\n\n> An attacker spoofing answers to ECS enabled requests\n> sent out by the Recursor has a chance of success higher\n> than non-ECS enabled queries. The updated version include\n> various mitigations against spoofing attempts of ECS enabled\n> queries by chaining ECS enabled requests and enforcing\n> stricter validation of the received answers. The most strict\n> mitigation done when the new setting outgoing.edns\\_subnet\\_harden\n> (old style name edns-subnet-harden) is enabled.",
+    "id": "FreeBSD-ports-2025-0032",
+    "modified": "2025-07-24T00:00:00Z",
+    "published": "2025-07-24T00:00:00Z",
+    "references": [
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2025-30192"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://nvd.nist.gov/vuln/detail/CVE-2025-30192"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "powerdns-recursor -- cache pollution"
+}

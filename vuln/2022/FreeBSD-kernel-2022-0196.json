@@ -1,0 +1,39 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "weechat"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "3.4.1"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "discovery": "2022-03-13T00:00:00Z",
+        "vid": "3ba1ca94-a563-11ec-8be6-d4c9ef517024"
+    },
+    "details": "The Weechat project reports:\n\n> After changing the options weechat.network.gnutls\\_ca\\_system or\n> weechat.network.gnutls\\_ca\\_user, the TLS verification function is lost.\n> Consequently, any connection to a server with TLS is made without\n> verifying the certificate, which could lead to a man-in-the-middle\n> attack. Connection to IRC servers with TLS is affected, as well as any\n> connection a server made by a plugin or a script using the function\n> hook\\_connect.",
+    "id": "FreeBSD-kernel-2022-0196",
+    "modified": "2022-03-16T00:00:00Z",
+    "published": "2022-03-16T00:00:00Z",
+    "references": [
+        {
+            "type": "WEB",
+            "url": "https://weechat.org/doc/security/WSA-2022-1/"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "Weechat -- Possible man-in-the-middle attack in TLS connection to servers"
+}

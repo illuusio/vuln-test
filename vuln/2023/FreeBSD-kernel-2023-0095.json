@@ -1,0 +1,47 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "xrdp"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "0.9.23"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "discovery": "2023-08-30T00:00:00Z",
+        "vid": "c9ff1150-5d63-11ee-bbae-1c61b4739ac9"
+    },
+    "details": "xrdp team reports:\n\n> In versions prior to 0.9.23 improper handling of session establishment\n> errors allows bypassing OS-level session restrictions. The `auth\\_start\\_session`\n> function can return non-zero (1) value on, e.g., PAM error which may result\n> in session restrictions such as max concurrent sessions per user by PAM\n> (ex ./etc/security/limits.conf) to be bypassed. Users (administrators) don't\n> use restrictions by PAM are not affected. This issue has been addressed in\n> release version 0.9.23. Users are advised to upgrade. There are no known\n> workarounds for this issue.",
+    "id": "FreeBSD-kernel-2023-0095",
+    "modified": "2023-09-27T00:00:00Z",
+    "published": "2023-09-27T00:00:00Z",
+    "references": [
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2023-40184"
+        },
+        {
+            "type": "WEB",
+            "url": "https://www.cve.org/CVERecord?id=CVE-2023-40184"
+        },
+        {
+            "type": "WEB",
+            "url": "https://github.com/neutrinolabs/xrdp/security/advisories/GHSA-f489-557v-47jq"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "xrdp -- Improper handling of session establishment errors allows bypassing OS-level session restrictions"
+}

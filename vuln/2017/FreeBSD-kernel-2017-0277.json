@@ -1,0 +1,51 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "optipng"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "0.7.6"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "discovery": "2015-10-09T00:00:00Z",
+        "vid": "8fedf75c-ef2f-11e6-900e-003048f78448"
+    },
+    "details": "> ifread.c in gif2png, as used in OptiPNG before 0.7.6, allows remote attackers to cause a denial of service (uninitialized memory read) via a crafted GIF file.\n\n> The bmp\\_read\\_rows function in pngxtern/pngxrbmp.c in OptiPNG before 0.7.6 allows remote attackers to cause a denial of service (invalid memory write and crash) via a series of delta escapes in a crafted BMP image.\n\n> Heap-based buffer overflow in the bmp\\_read\\_rows function in pngxrbmp.c in OptiPNG before 0.7.6 allows remote attackers to cause a denial of service (out-of-bounds read or write access and crash) or possibly execute arbitrary code via a crafted image file.\n\n> Off-by-one error in the bmp\\_rle4\\_fread function in pngxrbmp.c in OptiPNG before 0.7.6 allows remote attackers to cause a denial of service (out-of-bounds read or write access and crash) or possibly execute arbitrary code via a crafted image file, which triggers a heap-based buffer overflow.",
+    "id": "FreeBSD-kernel-2017-0277",
+    "modified": "2017-02-16T00:00:00Z",
+    "published": "2017-02-16T00:00:00Z",
+    "references": [
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2015-7802"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2016-2191"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2016-3981"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2016-3982"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "optipng -- multiple vulnerabilities"
+}

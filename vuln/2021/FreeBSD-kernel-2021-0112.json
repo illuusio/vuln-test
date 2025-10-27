@@ -1,0 +1,43 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "binutils"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "2.33.1_5"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "discovery": "2020-11-25T00:00:00Z",
+        "vid": "f4c54b81-bcc8-11eb-a7a6-080027f515ea"
+    },
+    "details": "Hao Wang reports:\n\n> There's a flaw in the BFD library of binutils in versions before 2.36.\n> An attacker who supplies a crafted file to an application linked with BFD,\n> and using the DWARF functionality, could cause an impact to system\n> availability by way of excessive memory consumption.",
+    "id": "FreeBSD-kernel-2021-0112",
+    "modified": "2021-08-13T00:00:00Z",
+    "published": "2021-08-13T00:00:00Z",
+    "references": [
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2021-3487"
+        },
+        {
+            "type": "WEB",
+            "url": "https://sourceware.org/bugzilla/show_bug.cgi?id=26946"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "binutils -- excessive debug section size can cause excessive memory consumption in bfd's dwarf2.c read_section()"
+}

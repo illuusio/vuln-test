@@ -1,0 +1,51 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "go"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "1.17.5,1"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "discovery": "2021-12-08T00:00:00Z",
+        "vid": "720505fe-593f-11ec-9ba8-002324b2fba8"
+    },
+    "details": "The Go project reports:\n\n> net/http: limit growth of header canonicalization cache. An\n> attacker can cause unbounded memory growth in a Go server accepting\n> HTTP/2 requests.\n\n> syscall: don\u2019t close fd 0 on ForkExec error. When a Go program\n> running on a Unix system is out of file descriptors and calls\n> syscall.ForkExec (including indirectly by using the os/exec\n> package), syscall.ForkExec can close file descriptor 0 as it fails.\n> If this happens (or can be provoked) repeatedly, it can result in\n> misdirected I/O such as writing network traffic intended for one\n> connection to a different connection, or content intended for one\n> file to a different one.",
+    "id": "FreeBSD-kernel-2021-0029",
+    "modified": "2021-12-09T00:00:00Z",
+    "published": "2021-12-09T00:00:00Z",
+    "references": [
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2021-44716"
+        },
+        {
+            "type": "WEB",
+            "url": "https://github.com/golang/go/issues/50058"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2021-44717"
+        },
+        {
+            "type": "WEB",
+            "url": "https://github.com/golang/go/issues/50057"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "go -- multiple vulnerabilities"
+}

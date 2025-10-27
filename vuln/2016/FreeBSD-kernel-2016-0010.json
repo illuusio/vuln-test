@@ -1,0 +1,78 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "squid"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "introduced": "3.1"
+                        },
+                        {
+                            "fixed": "3.5.23"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        },
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "squid-devel"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "introduced": "4.0"
+                        },
+                        {
+                            "fixed": "4.0.17"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "discovery": "2016-12-16T00:00:00Z",
+        "vid": "41f8af15-c8b9-11e6-ae1b-002590263bf5"
+    },
+    "details": "Squid security advisory 2016:10 reports:\n\n> Due to incorrect comparison of request headers Squid can deliver\n> responses containing private data to clients it should not have\n> reached.\n>\n> This problem allows a remote attacker to discover private and\n> sensitive information about another clients browsing session.\n> Potentially including credentials which allow access to further\n> sensitive resources. This problem only affects Squid configured\n> to use the Collapsed Forwarding feature. It is of particular\n> importance for HTTPS reverse-proxy sites with Collapsed\n> Forwarding.\n\nSquid security advisory 2016:11 reports:\n\n> Due to incorrect HTTP conditional request handling Squid can\n> deliver responses containing private data to clients it should not\n> have reached.\n>\n> This problem allows a remote attacker to discover private and\n> sensitive information about another clients browsing session.\n> Potentially including credentials which allow access to further\n> sensitive resources..",
+    "id": "FreeBSD-kernel-2016-0010",
+    "modified": "2016-12-23T00:00:00Z",
+    "published": "2016-12-23T00:00:00Z",
+    "references": [
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2016-10002"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2016-10003"
+        },
+        {
+            "type": "REPORT",
+            "url": "https://bugs.freebsd.org/bugzilla/show_bug.cgi?id=215416"
+        },
+        {
+            "type": "REPORT",
+            "url": "https://bugs.freebsd.org/bugzilla/show_bug.cgi?id=215418"
+        },
+        {
+            "type": "WEB",
+            "url": "http://www.squid-cache.org/Advisories/SQUID-2016_10.txt"
+        },
+        {
+            "type": "WEB",
+            "url": "http://www.squid-cache.org/Advisories/SQUID-2016_11.txt"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "squid -- multiple vulnerabilities"
+}

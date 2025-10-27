@@ -1,0 +1,65 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:kernel",
+                "name": "FreeBSD-kernel"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "introduced": "12.0"
+                        },
+                        {
+                            "fixed": "12.0_10"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                },
+                {
+                    "events": [
+                        {
+                            "introduced": "11.3"
+                        },
+                        {
+                            "fixed": "11.3_3"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                },
+                {
+                    "events": [
+                        {
+                            "introduced": "11.2"
+                        },
+                        {
+                            "fixed": "11.2_14"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "discovery": "2019-08-20T00:00:00Z",
+        "vid": "5027b62e-f680-11e9-a87f-a4badb2f4699"
+    },
+    "details": "Problem Description:\n====================\n\nThe kernel driver for /dev/midistat implements a handler\nfor read(2). This handler is not thread-safe, and a\nmulti-threaded program can exploit races in the handler to\ncause it to copy out kernel memory outside the boundaries\nof midistat's data buffer.\n\nImpact:\n=======\n\nThe races allow a program to read kernel memory within\na 4GB window centered at midistat's data buffer. The buffer\nis allocated each time the device is opened, so an attacker\nis not limited to a static 4GB region of memory.\n\nOn 32-bit platforms, an attempt to trigger the race may\ncause a page fault in kernel mode, leading to a panic.",
+    "id": "FreeBSD-kernel-2019-0048",
+    "modified": "2019-10-24T00:00:00Z",
+    "published": "2019-10-24T00:00:00Z",
+    "references": [
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2019-5612"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://www.freebsd.org/security/advisories/FreeBSD-SA-19:23.midi.asc"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "FreeBSD -- kernel memory disclosure from /dev/midistat"
+}

@@ -1,0 +1,87 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "FreeBSD"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "introduced": "6.0"
+                        },
+                        {
+                            "fixed": "6.0_6"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                },
+                {
+                    "events": [
+                        {
+                            "introduced": "5.4"
+                        },
+                        {
+                            "fixed": "5.4_13"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                },
+                {
+                    "events": [
+                        {
+                            "introduced": "5.3"
+                        },
+                        {
+                            "fixed": "5.3_28"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                },
+                {
+                    "events": [
+                        {
+                            "introduced": "4.11"
+                        },
+                        {
+                            "fixed": "4.11_16"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                },
+                {
+                    "events": [
+                        {
+                            "introduced": "4.10"
+                        },
+                        {
+                            "fixed": "4.10_22"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "discovery": "2006-03-22T00:00:00Z",
+        "vid": "e50a7476-bb2d-11da-b2fb-000e0c2e438a"
+    },
+    "details": "Problem Description\n===================\n\nIPsec provides an anti-replay service which when enabled\nprevents an attacker from successfully executing a replay\nattack. This is done through the verification of sequence\nnumbers. A programming error in the fast\\_ipsec(4)\nimplementation results in the sequence number associated with\na Security Association not being updated, allowing packets to\nunconditionally pass sequence number verification checks.\n\nImpact\n======\n\nAn attacker able to intercept IPSec packets can replay\nthem. If higher level protocols which do not provide any\nprotection against packet replays (e.g., UDP) are used, this\nmay have a variety of effects.\n\nWorkaround\n==========\n\nNo workaround is available.",
+    "id": "FreeBSD-kernel-2006-0178",
+    "modified": "2006-06-09T00:00:00Z",
+    "published": "2006-03-24T00:00:00Z",
+    "references": [
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2006-0905"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://www.freebsd.org/security/advisories/FreeBSD-SA-06:11.ipsec.asc"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "ipsec -- reply attack vulnerability"
+}

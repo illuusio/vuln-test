@@ -1,0 +1,39 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "zeek"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "5.0.3"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "discovery": "2022-11-09T00:00:00Z",
+        "vid": "60d4d31a-a573-41bd-8c1e-5af7513c1ee9"
+    },
+    "details": "Tim Wojtulewicz of Corelight reports:\n\n> Fix an issue where a specially-crafted FTP packet can\n> cause Zeek to spend large amounts of time attempting to\n> search for valid commands in the data stream.\n>\n> Fix a possible overflow in the Zeek dictionary code\n> that may lead to a memory leak.\n>\n> Fix an issue where a specially-crafted packet can\n> cause Zeek to spend large amounts of time reporting\n> analyzer violations.\n>\n> Fix a possible assert and crash in the HTTP analyzer\n> when receiving a specially crafted packet.\n>\n> Fix an issue where a specially-crafted HTTP or SMTP\n> packet can cause Zeek to spend a large amount of time\n> attempting to search for filenames within the packet data.\n>\n> Fix two separate possible crashes when converting\n> processed IP headers for logging via the raw\\_packet event\n> handlers.",
+    "id": "FreeBSD-kernel-2022-0037",
+    "modified": "2022-11-09T00:00:00Z",
+    "published": "2022-11-09T00:00:00Z",
+    "references": [
+        {
+            "type": "WEB",
+            "url": "https://github.com/zeek/zeek/releases/tag/v5.0.3"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "zeek -- potential DoS vulnerabilities"
+}

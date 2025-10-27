@@ -1,0 +1,58 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "drupal6"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "6.37"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        },
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "drupal7"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "7.39"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "discovery": "2015-08-19T00:00:00Z",
+        "vid": "9393213d-489b-11e5-b8c7-d050996490d0"
+    },
+    "details": "Drupal development team reports:\n\n> This security advisory fixes multiple vulnerabilities.\n> See below for a list.\n>\n> ### Cross-site Scripting - Ajax system - Drupal 7\n>\n> A vulnerability was found that allows a malicious\n> user to perform a cross-site scripting attack by\n> invoking Drupal.ajax() on a whitelisted HTML element.\n>\n> This vulnerability is mitigated on sites that do not\n> allow untrusted users to enter HTML.\n>\n> ### Cross-site Scripting - Autocomplete system - Drupal 6 and 7\n>\n> A cross-site scripting vulnerability was found in\n> the autocomplete functionality of forms. The\n> requested URL is not sufficiently sanitized.\n>\n> This vulnerability is mitigated by the fact that\n> the malicious user must be allowed to upload files.\n>\n> ### SQL Injection - Database API - Drupal 7\n>\n> A vulnerability was found in the SQL comment\n> filtering system which could allow a user with\n> elevated permissions to inject malicious code in\n> SQL comments.\n>\n> This vulnerability is mitigated by the fact that\n> only one contributed module that the security team\n> found uses the comment filtering system in a way\n> that would trigger the vulnerability. That module\n> requires you to have a very high level of access\n> in order to perform the attack.\n>\n> ### Cross-site Request Forgery - Form API - Drupal 6 and 7\n>\n> A vulnerability was discovered in Drupal's form API\n> that could allow file upload value callbacks to run\n> with untrusted input, due to form token validation\n> not being performed early enough. This vulnerability\n> could allow a malicious user to upload files to the\n> site under another user's account.\n>\n> This vulnerability is mitigated by the fact that\n> the uploaded files would be temporary, and Drupal\n> normally deletes temporary files automatically\n> after 6 hours.\n>\n> ### Information Disclosure in Menu Links - Access system - Drupal 6 and 7\n>\n> Users without the \"access content\" permission\n> can see the titles of nodes that they do not have\n> access to, if the nodes are added to a menu on the\n> site that the users have access to.",
+    "id": "FreeBSD-kernel-2015-0165",
+    "modified": "2015-08-22T00:00:00Z",
+    "published": "2015-08-22T00:00:00Z",
+    "references": [
+        {
+            "type": "WEB",
+            "url": "https://www.drupal.org/SA-CORE-2015-003"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "drupal -- multiple vulnerabilities"
+}

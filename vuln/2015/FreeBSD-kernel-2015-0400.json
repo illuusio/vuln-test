@@ -1,0 +1,43 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "openldap-server"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "2.4.40_3"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "discovery": "2015-02-02T00:00:00Z",
+        "vid": "a0c45e53-ae51-11e4-8ac7-d050992ecde8"
+    },
+    "details": "Ryan Tandy reports:\n\n> With the deref overlay enabled, ldapsearch with '-E deref=member:'\n> causes slapd to crash.\n\n> Bill MacAllister discovered that certain queries cause slapd\n> to crash while freeing operation controls. This is a 2.4.40 regression.\n> Earlier releases are not affected.",
+    "id": "FreeBSD-kernel-2015-0400",
+    "modified": "2015-02-06T00:00:00Z",
+    "published": "2015-02-06T00:00:00Z",
+    "references": [
+        {
+            "type": "WEB",
+            "url": "https://bugs.debian.org/cgi-bin/bugreport.cgi?bug=776988"
+        },
+        {
+            "type": "WEB",
+            "url": "https://bugs.debian.org/cgi-bin/bugreport.cgi?bug=776991"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "openldap -- two remote denial of service vulnerabilities"
+}

@@ -1,0 +1,112 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "py27-pillow"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "3.3.2"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        },
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "py33-pillow"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "3.3.2"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        },
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "py34-pillow"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "3.3.2"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        },
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "py35-pillow"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "3.3.2"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "discovery": "2016-09-06T00:00:00Z",
+        "vid": "bc4898d5-a794-11e6-b2d3-60a44ce6887b"
+    },
+    "details": "Pillow reports:\n\n> Pillow prior to 3.3.2 may experience integer overflow\n> errors in map.c when reading specially crafted image files. This may\n> lead to memory disclosure or corruption.\n>\n> Pillow prior to 3.3.2 and PIL 1.1.7 (at least) do not check\n> for negative image sizes in ImagingNew in Storage.c. A negative image\n> size can lead to a smaller allocation than expected, leading to arbi\n> trary writes.",
+    "id": "FreeBSD-kernel-2016-0036",
+    "modified": "2016-12-04T00:00:00Z",
+    "published": "2016-12-04T00:00:00Z",
+    "references": [
+        {
+            "type": "WEB",
+            "url": "http://pillow.readthedocs.io/en/3.4.x/releasenotes/3.3.2.html"
+        },
+        {
+            "type": "WEB",
+            "url": "https://github.com/python-pillow/Pillow/issues/2105"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2016-9189"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2016-9190"
+        },
+        {
+            "type": "REPORT",
+            "url": "https://bugs.freebsd.org/bugzilla/show_bug.cgi?id=214410"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "Pillow -- multiple vulnerabilities"
+}

@@ -1,0 +1,66 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "php5-imap"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "5.3.4"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        },
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "php52-imap"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "5.2.15"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "discovery": "2010-12-13T00:00:00Z",
+        "vid": "1a0704e7-0edf-11e0-becc-0022156e8794"
+    },
+    "details": "The following DoS condition in IMAP extension\nwas fixed in PHP 5.3.4 and PHP 5.2.15:\n\n> A remote user can send specially crafted IMAP user name\n> or password data to trigger a double free memory error\n> in 'ext/imap/php\\_imap.c' and cause the target service\n> to crash.\n>\n> It may be possible to execute arbitrary code.\n> However, code execution was not confirmed.",
+    "id": "FreeBSD-kernel-2011-0163",
+    "modified": "2011-01-13T00:00:00Z",
+    "published": "2011-01-13T00:00:00Z",
+    "references": [
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2010-4150"
+        },
+        {
+            "type": "WEB",
+            "url": "http://www.php.net/releases/5_3_4.php"
+        },
+        {
+            "type": "WEB",
+            "url": "http://www.php.net/releases/5_2_15.php"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "php-imap -- Denial of Service"
+}

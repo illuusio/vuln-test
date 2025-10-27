@@ -1,0 +1,51 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "cyrus-sasl"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "last_affected": "1.5.28_3"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                },
+                {
+                    "events": [
+                        {
+                            "introduced": "2.*"
+                        },
+                        {
+                            "last_affected": "2.1.19"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "discovery": "2004-09-22T00:00:00Z",
+        "vid": "92268205-1947-11d9-bc4a-000c41e2cdad"
+    },
+    "details": "The Cyrus SASL library, libsasl, contains functions which\nmay load dynamic libraries. These libraries may be loaded\nfrom the path specified by the environmental variable\nSASL\\_PATH, which in some situations may be fully controlled\nby a local attacker. Thus, if a set-user-ID application\n(such as chsh) utilizes libsasl, it may be possible for a\nlocal attacker to gain superuser privileges.",
+    "id": "FreeBSD-kernel-2004-0098",
+    "modified": "2004-10-08T00:00:00Z",
+    "published": "2004-10-08T00:00:00Z",
+    "references": [
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2004-0884"
+        },
+        {
+            "type": "WEB",
+            "url": "https://bugzilla.andrew.cmu.edu/cgi-bin/cvsweb.cgi/src/sasl/lib/common.c#rev1.104"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "cyrus-sasl -- dynamic library loading and set-user-ID applications"
+}

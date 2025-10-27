@@ -1,0 +1,66 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "openssl"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "1.0.2m,1"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        },
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "openssl-devel"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "1.1.0g"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "discovery": "2017-11-02T00:00:00Z",
+        "vid": "f40f07aa-c00f-11e7-ac58-b499baebfeaf"
+    },
+    "details": "The OpenSSL project reports:\n\n> bn\\_sqrx8x\\_internal carry bug on x86\\_64 (CVE-2017-3736)  \n> Severity: Moderate  \n> There is a carry propagating bug in the x86\\_64 Montgomery squaring\n> procedure. No EC algorithms are affected. Analysis suggests that\n> attacks against RSA and DSA as a result of this defect would be\n> very difficult to perform and are not believed likely. Attacks\n> against DH are considered just feasible (although very difficult)\n> because most of the work necessary to deduce information about a\n> private key may be performed offline.\n>\n> Malformed X.509 IPAddressFamily could cause OOB read (CVE-2017-3735)  \n> Severity: Low  \n> This issue was previously announced in security advisory\n> https://www.openssl.org/news/secadv/20170828.txt, but the fix has\n> not previously been included in a release due to its low severity.",
+    "id": "FreeBSD-kernel-2017-0058",
+    "modified": "2017-11-02T00:00:00Z",
+    "published": "2017-11-02T00:00:00Z",
+    "references": [
+        {
+            "type": "WEB",
+            "url": "https://www.openssl.org/news/secadv/20171102.txt"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2017-3735"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2017-3736"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "OpenSSL -- Multiple vulnerabilities"
+}

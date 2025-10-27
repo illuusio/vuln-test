@@ -1,0 +1,123 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "postgresql10-server"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "10.5"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        },
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "postgresql96-server"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "9.6.10"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        },
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "postgresql95-server"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "9.5.14"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        },
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "postgresql94-server"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "9.4.19"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        },
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "postgresql93-server"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "9.3.24"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "discovery": "2018-08-09T00:00:00Z",
+        "vid": "96eab874-9c79-11e8-b34b-6cc21735f730"
+    },
+    "details": "The PostgreSQL project reports:\n\n> CVE-2018-10915: Certain host connection parameters defeat\n> client-side security defenses\n>\n> libpq, the client connection API for PostgreSQL that is also used\n> by other connection libraries, had an internal issue where it did not\n> reset all of its connection state variables when attempting to\n> reconnect. In particular, the state variable that determined whether\n> or not a password is needed for a connection would not be reset, which\n> could allow users of features requiring libpq, such as the \"dblink\" or\n> \"postgres\\_fdw\" extensions, to login to servers they should not be able\n> to access.\n>\n> CVE-2018-10925: Memory disclosure and missing authorization in\n> `INSERT ... ON CONFLICT DO UPDATE`\n>\n> An attacker able to issue CREATE TABLE can read arbitrary bytes of\n> server memory using an upsert (`INSERT ... ON CONFLICT DO UPDATE`)\n> query. By default, any user can exploit that. A user that has\n> specific INSERT privileges and an UPDATE privilege on at least one\n> column in a given table can also update other columns using a view and\n> an upsert query.",
+    "id": "FreeBSD-kernel-2018-0114",
+    "modified": "2018-08-10T00:00:00Z",
+    "published": "2018-08-10T00:00:00Z",
+    "references": [
+        {
+            "type": "WEB",
+            "url": "https://www.postgresql.org/about/news/1878/"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2018-10915"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2018-10925"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "PostgreSQL -- two vulnerabilities"
+}

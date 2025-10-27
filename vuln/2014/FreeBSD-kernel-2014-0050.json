@@ -1,0 +1,47 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "asterisk11"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "11.12.1"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "discovery": "2014-09-05T00:00:00Z",
+        "vid": "e60d9e65-3f6b-11e4-ad16-001999f8d30b"
+    },
+    "details": "The Asterisk project reports:\n\n> When an out of call message - delivered by either the\n> SIP or PJSIP channel driver or the XMPP stack - is handled\n> in Asterisk, a crash can occur if the channel servicing\n> the message is sent into the ReceiveFax dialplan application\n> while using the res\\_fax\\_spandsp module.\n>\n> Note that this crash does not occur when using the\n> res\\_fax\\_digium module. While this crash technically\n> occurs due to a configuration issue, as attempting to\n> receive a fax from a channel driver that only contains\n> textual information will never succeed, the likelihood\n> of having it occur is sufficiently high as to warrant\n> this advisory.",
+    "id": "FreeBSD-kernel-2014-0050",
+    "modified": "2014-09-18T00:00:00Z",
+    "published": "2014-09-18T00:00:00Z",
+    "references": [
+        {
+            "type": "WEB",
+            "url": "http://downloads.asterisk.org/pub/security/AST-2014-010.pdf"
+        },
+        {
+            "type": "WEB",
+            "url": "https://issues.asterisk.org/jira/browse/ASTERISK-24301"
+        },
+        {
+            "type": "WEB",
+            "url": "https://www.asterisk.org/security"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "asterisk -- Remotely triggered crash"
+}

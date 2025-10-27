@@ -1,0 +1,51 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "cacti"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "0.8.6f"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "discovery": "2005-06-22T00:00:00Z",
+        "vid": "1cf00643-ed8a-11d9-8310-0001020eed82"
+    },
+    "details": "Stefan Esser reports:\n\n> Wrongly implemented user input filters lead to multiple\n> SQL Injection vulnerabilities which can lead f.e. to\n> disclosure of the admin password hash.\n\n> Wrongly implemented user input filters allows injection\n> of user input into executed commandline.\n>\n> Alberto Trivero posted his Remote Command Execution\n> Exploit for Cacti <= 0.8.6d to Bugtraq on the 22th\n> June. Having analysed his bug we come to the conclusion,\n> that the malfunctioning input filters, which were already\n> mentioned in the previous advisory are also responsible\n> for this bug still being exploitable.\n\n> A HTTP headers bypass switch can also be used to\n> completely bypass the authentification system of Cacti. As\n> admin it is possible to execute shell commands with the\n> permission of the webserver.\n>\n> While looking at the source of Cacti a HTTP headers\n> bypass switch was discovered, that also switches off a\n> call to `session_start()` and the manual\n> application of `addslashes()` in case of\n> `magic_quotes_gpc=Off`.\n>\n> When register\\_globals is turned on\\* an attacker can use\n> this switch to disables Cacti's use of PHP's session\n> support and therefore supply the session variables on his\n> own through f.e. the URL. Additionally using the switch\n> renders several SQL statements vulnerable to SQL\n> Injections attacks, when magic\\_quotes\\_gpc is turned off,\n> which is the recommended setting.\n>\n> Logged in as an admin it is possible to issue shell\n> commands.\n>\n> (\\*) register\\_globals is turned off by default since PHP\n> 4.2 but is activated on most servers because of older\n> scripts requiring it.",
+    "id": "FreeBSD-kernel-2005-0128",
+    "modified": "2005-07-05T00:00:00Z",
+    "published": "2005-07-05T00:00:00Z",
+    "references": [
+        {
+            "type": "DISCUSSION",
+            "url": "http://marc.theaimsgroup.com/?l=bugtraq&m=111954136315248"
+        },
+        {
+            "type": "WEB",
+            "url": "http://www.hardened-php.net/advisory-032005.php"
+        },
+        {
+            "type": "WEB",
+            "url": "http://www.hardened-php.net/advisory-042005.php"
+        },
+        {
+            "type": "WEB",
+            "url": "http://www.hardened-php.net/advisory-052005.php"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "cacti -- multiple vulnerabilities"
+}

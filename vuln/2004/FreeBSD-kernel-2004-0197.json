@@ -1,0 +1,82 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "neon"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "0.24.5"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        },
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "tla"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "1.2_1"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        },
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "sitecopy"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "last_affected": "0.13.4_1"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "discovery": "2004-04-14T00:00:00Z",
+        "vid": "84237895-8f39-11d8-8b29-0020ed76ef5a"
+    },
+    "details": "Greuff reports that the neon WebDAV client library contains\nseveral format string bugs within error reporting code. A\nmalicious server may exploit these bugs by sending specially\ncrafted PROPFIND or PROPPATCH responses.\n\nAlthough several applications include neon, such as cadaver and\nsubversion, the FreeBSD Ports of these applications are not\nimpacted. They are specifically configured to NOT use the\nincluded neon. Only packages listed as affected in this\nnotice are believed to be impacted.",
+    "id": "FreeBSD-kernel-2004-0197",
+    "modified": "2004-06-25T00:00:00Z",
+    "published": "2004-04-15T00:00:00Z",
+    "references": [
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2004-0179"
+        },
+        {
+            "type": "WEB",
+            "url": "http://www.webdav.org/neon/"
+        },
+        {
+            "type": "WEB",
+            "url": "http://secunia.com/advisories/11785"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "neon format string vulnerabilities"
+}

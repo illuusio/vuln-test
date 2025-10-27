@@ -1,0 +1,47 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "ap24-mod_gnutls"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "0.12.1"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "discovery": "2023-02-23T00:00:00Z",
+        "vid": "e8b20517-dbb6-11ed-bf28-589cfc0f81b0"
+    },
+    "details": "The mod\\_gnutls project reports:\n\n> Mod\\_gnutls is a TLS module for Apache HTTPD based on GnuTLS. Versions\n> from 0.9.0 to 0.12.0 (including) did not properly fail blocking\n> read operations on TLS connections when the transport hit timeouts.\n> Instead it entered an endless loop retrying the read operation,\n> consuming CPU resources. This could be exploited for denial of\n> service attacks. If trace level logging was enabled, it would also\n> produce an excessive amount of log output during the loop, consuming\n> disk space.",
+    "id": "FreeBSD-kernel-2023-0246",
+    "modified": "2023-04-15T00:00:00Z",
+    "published": "2023-04-15T00:00:00Z",
+    "references": [
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2023-25824"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://nvd.nist.gov/vuln/detail/CVE-2023-25824"
+        },
+        {
+            "type": "WEB",
+            "url": "https://mod.gnutls.org/browser/mod_gnutls/CHANGELOG?rev=17b2836dc3e27754159ffb098323a4cd4426192f"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "mod_gnutls -- Infinite Loop on request read timeout"
+}

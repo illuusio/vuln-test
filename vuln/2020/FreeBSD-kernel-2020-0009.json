@@ -1,0 +1,51 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "p11-kit"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "0.23.22"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "discovery": "2020-12-12T00:00:00Z",
+        "vid": "fdc49972-3ca7-11eb-929d-d4c9ef517024"
+    },
+    "details": "The p11-glue project reports:\n\n> CVE-2020-29363: Out-of-bounds write in\n> p11\\_rpc\\_buffer\\_get\\_byte\\_array\\_value function  \n> A heap-based buffer\n> overflow has been discovered in the RPC protocol used by p11-kit\n> server/remote commands and the client library. When the remote\n> entity supplies a serialized byte array in a CK\\_ATTRIBUTE, the\n> receiving entity may not allocate sufficient length for the buffer\n> to store the deserialized value.\n>\n> CVE-2020-29362: Out-of-bounds read in p11\\_rpc\\_buffer\\_get\\_byte\\_array\n> function  \n> A heap-based buffer over-read has been discovered in\n> the RPC protocol used by thep11-kit server/remote commands and the\n> client library. When the remote entity supplies a byte array through\n> a serialized PKCS#11 function call, the receiving entity may allow\n> the reading of up to 4 bytes of memory past the heap\n> allocation.\n>\n> CVE-2020-29361: Integer overflow when allocating memory for arrays\n> of attributes and object identifiers  \n> Multiple integer overflows\n> have been discovered in the array allocations in the p11-kit library\n> and the p11-kit list command, where overflow checks are missing\n> before calling realloc or calloc.",
+    "id": "FreeBSD-kernel-2020-0009",
+    "modified": "2020-12-12T00:00:00Z",
+    "published": "2020-12-12T00:00:00Z",
+    "references": [
+        {
+            "type": "WEB",
+            "url": "https://lists.freedesktop.org/archives/p11-glue/2020-December/000712.html"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2020-29361"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2020-29362"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2020-29363"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "p11-kit -- Multiple vulnerabilities"
+}

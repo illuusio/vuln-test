@@ -1,0 +1,62 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "kde-runtime"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "4.14.2_2"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        },
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "kwebkitpart"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "1.3.2_4"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "discovery": "2014-11-13T00:00:00Z",
+        "vid": "890b6b22-70fa-11e4-91ae-5453ed2e2b49"
+    },
+    "details": "Albert Aastals Cid reports:\n\n> kwebkitpart and the bookmarks:// io slave were not sanitizing\n> input correctly allowing to some javascript being executed on the\n> context of the referenced hostname.\n>\n> Whilst in most cases, the JavaScript will be executed in an\n> untrusted context, with the bookmarks IO slave, it will be executed\n> in the context of the referenced hostname. It should however be\n> noted that KDE mitigates this risk by attempting to ensure that\n> such URLs cannot be embedded directly into Internet hosted\n> content.",
+    "id": "FreeBSD-kernel-2014-0020",
+    "modified": "2014-11-20T00:00:00Z",
+    "published": "2014-11-20T00:00:00Z",
+    "references": [
+        {
+            "type": "WEB",
+            "url": "https://www.kde.org/info/security/advisory-20141113-1.txt"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2014-8600"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "kwebkitpart, kde-runtime -- insufficient input validation"
+}

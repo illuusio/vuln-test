@@ -1,0 +1,89 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "libXfont"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "1.5.1"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        },
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "linux-c6-xorg-libs"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "7.4_4"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        },
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "linux-f10-xorg-libs"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "7.4_4"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "discovery": "2015-03-17T00:00:00Z",
+        "vid": "f7d79fac-cd49-11e4-898f-bcaec565249c"
+    },
+    "details": "Alan Coopersmith reports:\n\n> Ilja van Sprundel, a security researcher with IOActive, has\n> discovered an issue in the parsing of BDF font files by libXfont.\n> Additional testing by Alan Coopersmith and William Robinet with\n> the American Fuzzy Lop (afl) tool uncovered two more issues in\n> the parsing of BDF font files.\n>\n> As libXfont is used by the X server to read font files, and an\n> unprivileged user with access to the X server can tell the X\n> server to read a given font file from a path of their choosing,\n> these vulnerabilities have the potential to allow unprivileged\n> users to run code with the privileges of the X server\n> (often root access).",
+    "id": "FreeBSD-kernel-2015-0379",
+    "modified": "2016-01-31T00:00:00Z",
+    "published": "2015-03-18T00:00:00Z",
+    "references": [
+        {
+            "type": "WEB",
+            "url": "http://lists.x.org/archives/xorg-announce/2015-March/002550.html"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2015-1802"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2015-1803"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2015-1804"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "libXfont -- BDF parsing issues"
+}

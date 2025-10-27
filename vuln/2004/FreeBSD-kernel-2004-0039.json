@@ -1,0 +1,54 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "cyrus-imapd"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "2.1.17"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                },
+                {
+                    "events": [
+                        {
+                            "introduced": "2.2.*"
+                        },
+                        {
+                            "last_affected": "2.2.6"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "discovery": "2004-11-06T00:00:00Z",
+        "vid": "114d70f3-3d16-11d9-8818-008088034841"
+    },
+    "details": "Due to a bug within the argument parser of the partial\ncommand an argument like \"body[p\" will be wrongly detected as\n\"body.peek\". Because of this the bufferposition gets increased\nby 10 instead of 5 and could therefore point outside the\nallocated memory buffer for the rest of the parsing\nprocess. In imapd versions prior to 2.2.7 the handling of\n\"body\" or \"bodypeek\" arguments was broken so that the\nterminating ']' got overwritten by a '\\0'. Combined the two\nproblems allow a potential attacker to overwrite a single byte\nof malloc() control structures, which leads to remote code\nexecution if the attacker successfully controls the heap\nlayout.",
+    "id": "FreeBSD-kernel-2004-0039",
+    "modified": "2004-11-24T00:00:00Z",
+    "published": "2004-11-22T00:00:00Z",
+    "references": [
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2004-1012"
+        },
+        {
+            "type": "WEB",
+            "url": "http://security.e-matters.de/advisories/152004.html"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "Cyrus IMAPd -- PARTIAL command out of bounds memory corruption"
+}

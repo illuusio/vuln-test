@@ -1,0 +1,81 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "asterisk13"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "13.27.1"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        },
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "asterisk15"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "15.7.3"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        },
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "asterisk16"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "16.4.1"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "discovery": "2019-06-28T00:00:00Z",
+        "vid": "e9d2e981-a46d-11e9-bed9-001999f8d30b"
+    },
+    "details": "The Asterisk project reports:\n\n> When T.38 faxing is done in Asterisk a T.38 reinvite\n> may be sent to an endpoint to switch it to T.38. If the\n> endpoint responds with an improperly formatted SDP answer\n> including both a T.38 UDPTL stream and an audio or video\n> stream containing only codecs not allowed on the SIP peer\n> or user a crash will occur. The code incorrectly assumes\n> that there will be at least one common codec when T.38\n> is also in the SDP answer.",
+    "id": "FreeBSD-kernel-2019-0144",
+    "modified": "2019-07-12T00:00:00Z",
+    "published": "2019-07-12T00:00:00Z",
+    "references": [
+        {
+            "type": "WEB",
+            "url": "https://downloads.asterisk.org/pub/security/AST-2019-003.html"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2019-13161"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "asterisk -- Remote Crash Vulnerability in chan_sip channel driver"
+}

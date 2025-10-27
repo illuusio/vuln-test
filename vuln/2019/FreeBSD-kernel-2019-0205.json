@@ -1,0 +1,88 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "FreeBSD"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "introduced": "12.0"
+                        },
+                        {
+                            "fixed": "12.0_3"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                },
+                {
+                    "events": [
+                        {
+                            "introduced": "11.2"
+                        },
+                        {
+                            "fixed": "11.2_9"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        },
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "wpa_supplicant"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "2.8"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        },
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "hostapd"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "2.8"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "discovery": "2019-04-10T00:00:00Z",
+        "vid": "60129efe-656d-11e9-8e67-206a8a720317"
+    },
+    "details": "Problem Description:\n====================\n\nPotential side channel attacks in the SAE implementations used\nby both hostapd and wpa\\_supplicant (see CVE-2019-9494 and VU#871675).\nEAP-pwd uses a similar design for deriving PWE from the password and\nwhile a specific attack against EAP-pwd is not yet known to be tested,\nthere is no reason to believe that the EAP-pwd implementation would\nbe immune against the type of cache attack that was identified for the\nSAE implementation. Since the EAP-pwd implementation in hostapd (EAP\nserver) and wpa\\_supplicant (EAP peer) does not support MODP groups,\nthe timing attack described against SAE is not applicable for the\nEAP-pwd implementation.\n\nSee\nhttps://w1.fi/security/2019-2/eap-pwd-side-channel-attack.txt\nfor a detailed description of the bug.\n\nImpact:\n=======\n\nAll wpa\\_supplicant and hostapd versions with EAP-pwd support\n(CONFIG\\_EAP\\_PWD=y in the build configuration and EAP-pwd being enabled\nin the runtime configuration).",
+    "id": "FreeBSD-kernel-2019-0205",
+    "modified": "2019-04-23T00:00:00Z",
+    "published": "2019-04-23T00:00:00Z",
+    "references": [
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2019-9495"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "FreeBSD -- EAP-pwd side-channel attack"
+}

@@ -1,0 +1,57 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "krb5"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "introduced": "1.7"
+                        },
+                        {
+                            "fixed": "1.7.2"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                },
+                {
+                    "events": [
+                        {
+                            "introduced": "1.8"
+                        },
+                        {
+                            "fixed": "1.8.4"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ],
+            "versions": [
+                "1.9"
+            ]
+        }
+    ],
+    "database_specific": {
+        "discovery": "2011-02-08T00:00:00Z",
+        "vid": "64f24a1e-66cf-11e0-9deb-f345f3aa24f0"
+    },
+    "details": "An advisory published by the MIT Kerberos team says:\n\n> The MIT krb5 KDC database propagation daemon (kpropd) is\n> vulnerable to a denial-of-service attack triggered by invalid\n> network input. If a kpropd worker process receives invalid\n> input that causes it to exit with an abnormal status, it can\n> cause the termination of the listening process that spawned it,\n> preventing the slave KDC it was running on from receiving\n> database updates from the master KDC.\n>\n> Exploit code is not known to exist, but the vulnerabilities are\n> easy to trigger manually.\n>\n> An unauthenticated remote attacker can cause kpropd running in\n> standalone mode (the \"-S\" option) to terminate its listening\n> process, preventing database propagations to the KDC host on\n> which it was running. Configurations where kpropd runs in\n> incremental propagation mode (\"iprop\") or as an inetd server\n> are not affected.",
+    "id": "FreeBSD-kernel-2011-0111",
+    "modified": "2011-04-14T00:00:00Z",
+    "published": "2011-04-14T00:00:00Z",
+    "references": [
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2010-4022"
+        },
+        {
+            "type": "WEB",
+            "url": "http://web.mit.edu/kerberos/advisories/MITKRB5-SA-2011-001.txt"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "krb5 -- MITKRB5-SA-2011-001, kpropd denial of service"
+}

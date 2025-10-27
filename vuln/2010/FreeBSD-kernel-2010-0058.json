@@ -1,0 +1,71 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "bugzilla"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "introduced": "2.17.1,1"
+                        },
+                        {
+                            "fixed": "3.6.2"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "discovery": "2010-08-05T00:00:00Z",
+        "vid": "8cbf4d65-af9a-11df-89b8-00151735203a"
+    },
+    "details": "A Bugzilla Security Advisory reports:\n\n> * Remote Information Disclosure:\n>   An unprivileged user is normally not allowed to view\n>   other users' group membership. But boolean charts\n>   let the user use group-based pronouns, indirectly\n>   disclosing group membership. This security fix\n>   restricts the use of pronouns to groups the user\n>   belongs to.\n> * Notification Bypass:\n>   Normally, when a user is impersonated, he receives\n>   an email informing him that he is being impersonated,\n>   containing the identity of the impersonator. However,\n>   it was possible to impersonate a user without this\n>   notification being sent.\n> * Remote Information Disclosure:\n>   An error message thrown by the \"Reports\" and \"Duplicates\"\n>   page confirmed the non-existence of products, thus\n>   allowing users to guess confidential product names.\n>   (Note that the \"Duplicates\" page was not vulnerable\n>   in Bugzilla 3.6rc1 and above though.)\n> * Denial of Service:\n>   If a comment contained the phrases \"bug X\" or\n>   \"attachment X\", where X was an integer larger than the\n>   maximum 32-bit signed integer size, PostgreSQL would\n>   throw an error, and any page containing that comment would\n>   not be viewable. On most Bugzillas, any user can enter\n>   a comment on any bug, so any user could have used this to\n>   deny access to one or all bugs. Bugzillas running on\n>   databases other than PostgreSQL are not affected.",
+    "id": "FreeBSD-kernel-2010-0058",
+    "modified": "2010-08-24T00:00:00Z",
+    "published": "2010-08-24T00:00:00Z",
+    "references": [
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2010-2756"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2010-2757"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2010-2758"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2010-2759"
+        },
+        {
+            "type": "REPORT",
+            "url": "https://bugzilla.mozilla.org/show_bug.cgi?id=417048"
+        },
+        {
+            "type": "REPORT",
+            "url": "https://bugzilla.mozilla.org/show_bug.cgi?id=450013"
+        },
+        {
+            "type": "REPORT",
+            "url": "https://bugzilla.mozilla.org/show_bug.cgi?id=577139"
+        },
+        {
+            "type": "REPORT",
+            "url": "https://bugzilla.mozilla.org/show_bug.cgi?id=519835"
+        },
+        {
+            "type": "REPORT",
+            "url": "https://bugzilla.mozilla.org/show_bug.cgi?id=583690"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "bugzilla -- information disclosure, denial of service"
+}

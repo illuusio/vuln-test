@@ -1,0 +1,47 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "awstats"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "6.5_2,1"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "discovery": "2006-05-03T00:00:00Z",
+        "vid": "2df297a2-dc74-11da-a22b-000c6ec775d9"
+    },
+    "details": "OS Reviews reports:\n\n> If the update of the stats via web front-end is allowed,\n> a remote attacker can execute arbitrary code on the server\n> using a specially crafted request involving the migrate\n> parameter. Input starting with a pipe character (\"|\")\n> leads to an insecure call to Perl's open function and the\n> rest of the input being executed in a shell. The code is\n> run in the context of the process running the AWStats\n> CGI.\n>\n> Arbitrary code can be executed by uploading a specially\n> crafted configuration file if an attacker can put a file\n> on the server with chosen file name and content (e.g. by\n> using an FTP account on a shared hosting server). In this\n> configuration file, the LogFile directive can be used to\n> execute shell code following a pipe character. As above,\n> an open call on unsanitized input is the source of this\n> vulnerability.",
+    "id": "FreeBSD-kernel-2006-0135",
+    "modified": "2006-11-15T00:00:00Z",
+    "published": "2006-05-05T00:00:00Z",
+    "references": [
+        {
+            "type": "WEB",
+            "url": "http://awstats.sourceforge.net/awstats_security_news.php"
+        },
+        {
+            "type": "WEB",
+            "url": "http://secunia.com/advisories/19969/"
+        },
+        {
+            "type": "WEB",
+            "url": "http://www.osreviews.net/reviews/comm/awstats"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "awstats -- arbitrary command execution vulnerability"
+}

@@ -1,0 +1,66 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "samba"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "introduced": "3.0.21a,1"
+                        },
+                        {
+                            "fixed": "3.0.22,1"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        },
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "ja-samba"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "introduced": "3.0.21a,1"
+                        },
+                        {
+                            "fixed": "3.0.22,1"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "discovery": "2006-03-30T00:00:00Z",
+        "vid": "92fd40eb-c458-11da-9c79-00123ffe8333"
+    },
+    "details": "Samba Security Advisory:\n\n> The machine trust account password is the secret\n> shared between a domain controller and a specific\n> member server. Access to the member server machine\n> credentials allows an attacker to impersonate the\n> server in the domain and gain access to additional\n> information regarding domain users and groups.\n>\n> The winbindd daemon writes the clear text of server's\n> machine credentials to its log file at level 5.\n> The winbindd log files are world readable by default\n> and often log files are requested on open mailing\n> lists as tools used to debug server misconfigurations.\n>\n> This affects servers configured to use domain or\n> ads security and possibly Samba domain controllers\n> as well (if configured to use winbindd).",
+    "id": "FreeBSD-kernel-2006-0169",
+    "modified": "2006-04-05T00:00:00Z",
+    "published": "2006-04-05T00:00:00Z",
+    "references": [
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2006-1059"
+        },
+        {
+            "type": "WEB",
+            "url": "http://us1.samba.org/samba/security/CAN-2006-1059.html"
+        },
+        {
+            "type": "WEB",
+            "url": "http://secunia.com/advisories/19455/"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "samba -- Exposure of machine account credentials in winbind log files"
+}

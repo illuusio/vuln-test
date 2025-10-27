@@ -1,0 +1,119 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "py27-pillow"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "2.9.0_1"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        },
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "py33-pillow"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "2.9.0_1"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        },
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "py34-pillow"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "2.9.0_1"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        },
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "py35-pillow"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "2.9.0_1"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        },
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "py27-imaging"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "1.1.7_6"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "discovery": "2016-02-05T00:00:00Z",
+        "vid": "6ea60e00-cf13-11e5-805c-5453ed2e2b49"
+    },
+    "details": "The Pillow maintainers report:\n\n> In all versions of Pillow, dating back at least to the last PIL\n> 1.1.7 release, FliDecode.c has a buffer overflow error.\n>\n> There is a memcpy error where x is added to a target buffer\n> address. X is used in several internal temporary variable roles,\n> but can take a value up to the width of the image. Im->image[y]\n> is a set of row pointers to segments of memory that are the size of\n> the row. At the max y, this will write the contents of the line off\n> the end of the memory buffer, causing a segfault.\n>\n> This issue was found by Alyssa Besseling at Atlassian.",
+    "id": "FreeBSD-kernel-2016-0410",
+    "modified": "2016-02-09T00:00:00Z",
+    "published": "2016-02-09T00:00:00Z",
+    "references": [
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2016-0775"
+        },
+        {
+            "type": "WEB",
+            "url": "https://github.com/python-pillow/Pillow/commit/bcaaf97f4ff25b3b5b9e8efeda364e17e80858ec"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "py-imaging, py-pillow -- Buffer overflow in FLI decoding code"
+}

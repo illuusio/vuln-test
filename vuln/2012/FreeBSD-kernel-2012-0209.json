@@ -1,0 +1,72 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "FreeBSD"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "introduced": "7.3"
+                        },
+                        {
+                            "fixed": "7.3_8"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                },
+                {
+                    "events": [
+                        {
+                            "introduced": "7.4"
+                        },
+                        {
+                            "fixed": "7.4_4"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                },
+                {
+                    "events": [
+                        {
+                            "introduced": "8.1"
+                        },
+                        {
+                            "fixed": "8.1_6"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                },
+                {
+                    "events": [
+                        {
+                            "introduced": "8.2"
+                        },
+                        {
+                            "fixed": "8.2_4"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "discovery": "2011-09-28T00:00:00Z",
+        "vid": "f56390a4-4638-11e1-9f47-00e0815b8da8"
+    },
+    "details": "> Problem Description:\n> ====================\n>\n> When a UNIX-domain socket is attached to a location using the\n> bind(2) system call, the length of the provided path is not\n> validated. Later, when this address was returned via other system\n> calls, it is copied into a fixed-length buffer.\n>\n> Linux uses a larger socket address structure for UNIX-domain\n> sockets than FreeBSD, and the FreeBSD's linux emulation code did\n> not translate UNIX-domain socket addresses into the correct size\n> of structure.",
+    "id": "FreeBSD-kernel-2012-0209",
+    "modified": "2012-01-29T00:00:00Z",
+    "published": "2012-01-29T00:00:00Z",
+    "references": [
+        {
+            "type": "ADVISORY",
+            "url": "https://www.freebsd.org/security/advisories/FreeBSD-SA-11:05.unix.asc"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "FreeBSD -- Buffer overflow in handling of UNIX socket addresses"
+}

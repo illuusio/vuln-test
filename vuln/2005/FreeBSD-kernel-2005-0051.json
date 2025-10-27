@@ -1,0 +1,47 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "picasm"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "1.12c"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "discovery": "2005-05-20T00:00:00Z",
+        "vid": "8a3ece40-3315-11da-a263-0001020eed82"
+    },
+    "details": "Shaun Colley reports:\n\n> When generating error and warning messages, picasm copies\n> strings into fixed length buffers without bounds\n> checking.\n>\n> If an attacker could trick a user into assembling a\n> source file with a malformed 'error' directive, arbitrary\n> code could be executed with the privileges of the user.\n> This could result in full system compromise.",
+    "id": "FreeBSD-kernel-2005-0051",
+    "modified": "2005-10-02T00:00:00Z",
+    "published": "2005-10-02T00:00:00Z",
+    "references": [
+        {
+            "type": "ADVISORY",
+            "url": "https://www.securityfocus.com/bid/13698/info"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2005-1679"
+        },
+        {
+            "type": "DISCUSSION",
+            "url": "http://marc.theaimsgroup.com/?l=bugtraq&m=111661253517089"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "picasm -- buffer overflow vulnerability"
+}

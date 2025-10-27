@@ -1,0 +1,67 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "phpMyAdmin"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "introduced": "4.2.0"
+                        },
+                        {
+                            "fixed": "4.2.12"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "discovery": "2014-11-20T00:00:00Z",
+        "vid": "a5d4a82a-7153-11e4-88c7-6805ca0b3d42"
+    },
+    "details": "The phpMyAdmin development team reports:\n\n> * With a crafted database, table or column name it is\n>   possible to trigger an XSS attack in the table browse\n>   page.\n> * With a crafted ENUM value it is possible to trigger\n>   XSS attacks in the table print view and zoom search\n>   pages.\n> * With a crafted value for font size it is possible to\n>   trigger an XSS attack in the home page.\n>\n> These vulnerabilities can be triggered only by someone\n> who is logged in to phpMyAdmin, as the usual token\n> protection prevents non-logged-in users from accessing the\n> required pages. Moreover, exploitation of the XSS\n> vulnerability related to the font size requires forgery of\n> the pma\\_fontsize cookie.\n\n> In the GIS editor feature, a parameter specifying the\n> geometry type was not correcly validated, opening the door\n> to a local file inclusion attack.\n>\n> This vulnerability can be triggered only by someone who\n> is logged in to phpMyAdmin, as the usual token protection\n> prevents non-logged-in users from accessing the required\n> page.\n\n> With a crafted file name it is possible to trigger an\n> XSS in the error reporting page.\n>\n> This vulnerability can be triggered only by someone who\n> is logged in to phpMyAdmin, as the usual token protection\n> prevents non-logged-in users from accessing the required\n> page.\n\n> In the error reporting feature, a parameter specifying\n> the file was not correctly validated, allowing the\n> attacker to derive the line count of an arbitrary file\n>\n> This vulnerability can be triggered only by someone who\n> is logged in to phpMyAdmin, as the usual token protection\n> prevents non-logged-in users from accessing the required\n> page.",
+    "id": "FreeBSD-kernel-2014-0019",
+    "modified": "2014-11-21T00:00:00Z",
+    "published": "2014-11-21T00:00:00Z",
+    "references": [
+        {
+            "type": "WEB",
+            "url": "http://www.phpmyadmin.net/home_page/security/PMASA-2014-13.php"
+        },
+        {
+            "type": "WEB",
+            "url": "http://www.phpmyadmin.net/home_page/security/PMASA-2014-14.php"
+        },
+        {
+            "type": "WEB",
+            "url": "http://www.phpmyadmin.net/home_page/security/PMASA-2014-15.php"
+        },
+        {
+            "type": "WEB",
+            "url": "http://www.phpmyadmin.net/home_page/security/PMASA-2014-16.php"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2014-8958"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2014-8959"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2014-8960"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2014-8961"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "phpMyAdmin -- XSS and information disclosure vulnerabilities"
+}

@@ -1,0 +1,43 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "wpa_supplicant"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "2.4_1"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "discovery": "2015-04-22T00:00:00Z",
+        "vid": "cb9d2fcd-eb47-11e4-b03e-002590263bf5"
+    },
+    "details": "Jouni Malinen reports:\n\n> A vulnerability was found in how wpa\\_supplicant uses SSID information\n> parsed from management frames that create or update P2P peer entries\n> (e.g., Probe Response frame or number of P2P Public Action frames). SSID\n> field has valid length range of 0-32 octets. However, it is transmitted\n> in an element that has a 8-bit length field and potential maximum\n> payload length of 255 octets. wpa\\_supplicant was not sufficiently\n> verifying the payload length on one of the code paths using the SSID\n> received from a peer device.\n>\n> This can result in copying arbitrary data from an attacker to a fixed\n> length buffer of 32 bytes (i.e., a possible overflow of up to 223\n> bytes). The SSID buffer is within struct p2p\\_device that is allocated\n> from heap. The overflow can override couple of variables in the struct,\n> including a pointer that gets freed. In addition about 150 bytes (the\n> exact length depending on architecture) can be written beyond the end of\n> the heap allocation.\n>\n> This could result in corrupted state in heap, unexpected program\n> behavior due to corrupted P2P peer device information, denial of service\n> due to wpa\\_supplicant process crash, exposure of memory contents during\n> GO Negotiation, and potentially arbitrary code execution.\n>\n> Vulnerable versions/configurations\n>\n> wpa\\_supplicant v1.0-v2.4 with CONFIG\\_P2P build option enabled\n> (which is not compiled by default).\n>\n> Attacker (or a system controlled by the attacker) needs to be within\n> radio range of the vulnerable system to send a suitably constructed\n> management frame that triggers a P2P peer device information to be\n> created or updated.\n>\n> The vulnerability is easiest to exploit while the device has started an\n> active P2P operation (e.g., has ongoing P2P\\_FIND or P2P\\_LISTEN control\n> interface command in progress). However, it may be possible, though\n> significantly more difficult, to trigger this even without any active\n> P2P operation in progress.",
+    "id": "FreeBSD-kernel-2015-0350",
+    "modified": "2015-04-25T00:00:00Z",
+    "published": "2015-04-25T00:00:00Z",
+    "references": [
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2015-1863"
+        },
+        {
+            "type": "WEB",
+            "url": "http://w1.fi/security/2015-1/wpa_supplicant-p2p-ssid-overflow.txt"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "wpa_supplicant -- P2P SSID processing vulnerability"
+}

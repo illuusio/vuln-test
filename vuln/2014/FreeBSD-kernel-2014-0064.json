@@ -1,0 +1,161 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "openssl"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "introduced": "1.0.1"
+                        },
+                        {
+                            "fixed": "1.0.1_14"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        },
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "mingw32-openssl"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "introduced": "1.0.1"
+                        },
+                        {
+                            "fixed": "1.0.1i"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        },
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "FreeBSD"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "introduced": "8.4"
+                        },
+                        {
+                            "fixed": "8.4_15"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                },
+                {
+                    "events": [
+                        {
+                            "introduced": "9.1"
+                        },
+                        {
+                            "fixed": "9.1_18"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                },
+                {
+                    "events": [
+                        {
+                            "introduced": "9.2"
+                        },
+                        {
+                            "fixed": "9.2_11"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                },
+                {
+                    "events": [
+                        {
+                            "introduced": "9.3"
+                        },
+                        {
+                            "fixed": "9.3_1"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                },
+                {
+                    "events": [
+                        {
+                            "introduced": "10.0"
+                        },
+                        {
+                            "fixed": "10.0_8"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "discovery": "2014-08-06T00:00:00Z",
+        "vid": "8aff07eb-1dbd-11e4-b6ba-3c970e169bc2"
+    },
+    "details": "The OpenSSL Project reports:\n\n> A flaw in OBJ\\_obj2txt may cause pretty printing functions\n> such as X509\\_name\\_oneline, X509\\_name\\_print\\_ex et al. to leak\n> some information from the stack. [CVE-2014-3508]\n>\n> The issue affects OpenSSL clients and allows a malicious\n> server to crash the client with a null pointer dereference\n> (read) by specifying an SRP ciphersuite even though it was\n> not properly negotiated with the client. [CVE-2014-5139]\n>\n> If a multithreaded client connects to a malicious server\n> using a resumed session and the server sends an ec point\n> format extension it could write up to 255 bytes to freed\n> memory. [CVE-2014-3509]\n>\n> An attacker can force an error condition which causes\n> openssl to crash whilst processing DTLS packets due to\n> memory being freed twice. This can be exploited through\n> a Denial of Service attack. [CVE-2014-3505]\n>\n> An attacker can force openssl to consume large amounts\n> of memory whilst processing DTLS handshake messages.\n> This can be exploited through a Denial of Service\n> attack. [CVE-2014-3506]\n>\n> By sending carefully crafted DTLS packets an attacker\n> could cause openssl to leak memory. This can be exploited\n> through a Denial of Service attack. [CVE-2014-3507]\n>\n> OpenSSL DTLS clients enabling anonymous (EC)DH\n> ciphersuites are subject to a denial of service attack.\n> A malicious server can crash the client with a null pointer\n> dereference (read) by specifying an anonymous (EC)DH\n> ciphersuite and sending carefully crafted handshake\n> messages. [CVE-2014-3510]\n>\n> A flaw in the OpenSSL SSL/TLS server code causes the\n> server to negotiate TLS 1.0 instead of higher protocol\n> versions when the ClientHello message is badly\n> fragmented. This allows a man-in-the-middle attacker\n> to force a downgrade to TLS 1.0 even if both the server\n> and the client support a higher protocol version, by\n> modifying the client's TLS records. [CVE-2014-3511]\n>\n> A malicious client or server can send invalid SRP\n> parameters and overrun an internal buffer. Only\n> applications which are explicitly set up for SRP\n> use are affected. [CVE-2014-3512]",
+    "id": "FreeBSD-kernel-2014-0064",
+    "modified": "2016-08-09T00:00:00Z",
+    "published": "2014-08-06T00:00:00Z",
+    "references": [
+        {
+            "type": "WEB",
+            "url": "https://www.openssl.org/news/secadv_20140806.txt"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://www.freebsd.org/security/advisories/FreeBSD-SA-14:18.openssl.asc"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2014-3505"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2014-3506"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2014-3507"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2014-3508"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2014-3509"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2014-3510"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2014-3511"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2014-3512"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2014-5139"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "OpenSSL -- multiple vulnerabilities"
+}

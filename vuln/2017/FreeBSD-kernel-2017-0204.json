@@ -1,0 +1,66 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "FreeBSD"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "introduced": "11.0"
+                        },
+                        {
+                            "fixed": "11.0_9"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                },
+                {
+                    "events": [
+                        {
+                            "introduced": "10.3"
+                        },
+                        {
+                            "fixed": "10.3_18"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "discovery": "2017-04-12T00:00:00Z",
+        "vid": "3c0237f5-420e-11e7-82c5-14dae9d210b8"
+    },
+    "details": "Problem Description:\n====================\n\nA vulnerability was discovered in the NTP server's parsing\nof configuration directives. [CVE-2017-6464]\n\nA vulnerability was found in NTP, in the parsing of\npackets from the DPTS Clock. [CVE-2017-6462]\n\nA vulnerability was discovered in the NTP server's parsing\nof configuration directives. [CVE-2017-6463]\n\nA vulnerability was found in NTP, affecting the origin\ntimestamp check function. [CVE-2016-9042]\n\nImpact:\n=======\n\nA remote, authenticated attacker could cause ntpd to\ncrash by sending a crafted message. [CVE-2017-6463,\nCVE-2017-6464]\n\nA malicious device could send crafted messages, causing\nntpd to crash. [CVE-2017-6462]\n\nAn attacker able to spoof messages from all of the\nconfigured peers could send crafted packets to ntpd, causing\nlater replies from those peers to be discarded, resulting\nin denial of service. [CVE-2016-9042]",
+    "id": "FreeBSD-kernel-2017-0204",
+    "modified": "2017-05-26T00:00:00Z",
+    "published": "2017-05-26T00:00:00Z",
+    "references": [
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2016-9042"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2017-6462"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2017-6463"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2017-6464"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://www.freebsd.org/security/advisories/FreeBSD-SA-17:03.ntp.asc"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "FreeBSD -- Multiple vulnerabilities of ntp"
+}

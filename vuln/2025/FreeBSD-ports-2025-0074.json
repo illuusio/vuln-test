@@ -1,0 +1,43 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "openh264"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "2.5.1,2"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "discovery": "2025-02-20T00:00:00Z",
+        "vid": "03ba1cdd-4faf-11f0-af06-00a098b42aeb"
+    },
+    "details": "Cisco reports:\n\n> A vulnerability in the decoding functions\n> of OpenH264 codec library could allow a remote, unauthenticated\n> attacker to trigger a heap overflow. This vulnerability is due to\n> a race condition between a Sequence Parameter Set (SPS) memory\n> allocation and a subsequent non Instantaneous Decoder Refresh\n> (non-IDR) Network Abstraction Layer (NAL) unit memory usage. An\n> attacker could exploit this vulnerability by crafting a malicious\n> bitstream and tricking a victim user into processing an arbitrary\n> video containing the malicious bistream. An exploit could allow\n> the attacker to cause an unexpected crash in the victim's user\n> decoding client and, possibly, perform arbitrary commands on the\n> victim's host by abusing the heap overflow.",
+    "id": "FreeBSD-ports-2025-0074",
+    "modified": "2025-06-22T00:00:00Z",
+    "published": "2025-06-22T00:00:00Z",
+    "references": [
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2025-27091"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://nvd.nist.gov/vuln/detail/CVE-2025-27091"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "cisco -- OpenH264 Decoding Functions Heap Overflow Vulnerability"
+}

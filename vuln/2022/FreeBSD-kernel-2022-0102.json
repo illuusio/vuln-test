@@ -1,0 +1,43 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "gnutls"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "introduced": "3.6.0"
+                        },
+                        {
+                            "fixed": "3.7.7"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "discovery": "2022-07-07T00:00:00Z",
+        "vid": "1cd0c17a-17c0-11ed-91a5-080027f5fec9"
+    },
+    "details": "The GnuTLS project reports:\n\n> When gnutls\\_pkcs7\\_verify cannot verify signature against\n> given trust list, it starts creating a chain of\n> certificates starting from identified signer up to known\n> root. During the creation of this chain the signer\n> certificate gets freed which results in double free when\n> the same signer certificate is freed at the end of the\n> algorithm.",
+    "id": "FreeBSD-kernel-2022-0102",
+    "modified": "2022-08-09T00:00:00Z",
+    "published": "2022-08-09T00:00:00Z",
+    "references": [
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2022-2509"
+        },
+        {
+            "type": "WEB",
+            "url": "https://www.gnutls.org/security-new.html#GNUTLS-SA-2022-07-07"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "gnutls -- double free vulnerability"
+}

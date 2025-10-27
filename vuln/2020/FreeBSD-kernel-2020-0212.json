@@ -1,0 +1,73 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "powerdns-recursor"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "introduced": "4.3.0"
+                        },
+                        {
+                            "fixed": "4.3.1"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                },
+                {
+                    "events": [
+                        {
+                            "introduced": "4.2.0"
+                        },
+                        {
+                            "fixed": "4.2.2"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                },
+                {
+                    "events": [
+                        {
+                            "introduced": "4.1.0"
+                        },
+                        {
+                            "fixed": "4.1.16"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "discovery": "2020-05-19T00:00:00Z",
+        "vid": "f9c5a410-9b4e-11ea-ac3f-6805ca2fa271"
+    },
+    "details": "PowerDNS Team reports:\n\n> CVE-2020-10995: An issue in the DNS protocol has been found that allow malicious parties to use\n> recursive DNS services to attack third party authoritative name servers. The attack uses a crafted\n> reply by an authoritative name server to amplify the resulting traffic between the recursive and\n> other authoritative name servers. Both types of service can suffer degraded performance as an effect.\n>\n> CVE-2020-12244: An issue has been found in PowerDNS Recursor 4.1.0 through 4.3.0 where records in\n> the answer section of a NXDOMAIN response lacking an SOA were not properly validated in\n> SyncRes::processAnswer. This would allow an attacker in position of man-in-the-middle to send a\n> NXDOMAIN answer for a name that does exist, bypassing DNSSEC validation.\n>\n> CVE-2020-10030: An issue has been found in PowerDNS Authoritative Server allowing an attacker\n> with enough privileges to change the system's hostname to cause disclosure of uninitialized memory\n> content via a stack-based out-of-bounds read. It only occurs on systems where gethostname() does\n> not null-terminate the returned string if the hostname is larger than the supplied buffer. Linux\n> systems are not affected because the buffer is always large enough. OpenBSD systems are not affected\n> because the returned hostname is always null-terminated. Under some conditions this issue can lead\n> to the writing of one null-byte out-of-bounds on the stack, causing a denial of service or possibly\n> arbitrary code execution.",
+    "id": "FreeBSD-kernel-2020-0212",
+    "modified": "2020-05-29T00:00:00Z",
+    "published": "2020-05-26T00:00:00Z",
+    "references": [
+        {
+            "type": "WEB",
+            "url": "https://doc.powerdns.com/recursor/security-advisories/index.html"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2020-10995"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2020-12244"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2020-10030"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "powerdns-recursor -- multiple vulnerabilities"
+}

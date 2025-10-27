@@ -1,0 +1,81 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "bogofilter"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "1.2.1_2"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        },
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "bogofilter-sqlite"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "1.2.1_1"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        },
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "bogofilter-tc"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "1.2.1_1"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "discovery": "2010-06-28T00:00:00Z",
+        "vid": "25ed4ff8-8940-11df-a339-0026189baca3"
+    },
+    "details": "Julius Plenz reports:\n\n> I found a bug in the base64\\_decode function which may cause memory\n> corruption when the function is executed on a malformed base64\n> encoded string.\n>\n> If a string starting with an equal-sign is passed to the\n> base64\\_decode function it triggers a memory corruption that\n> in some cases makes bogofilter crash.",
+    "id": "FreeBSD-kernel-2010-0078",
+    "modified": "2010-07-06T00:00:00Z",
+    "published": "2010-07-06T00:00:00Z",
+    "references": [
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2010-2494"
+        },
+        {
+            "type": "WEB",
+            "url": "http://bogofilter.sourceforge.net/security/bogofilter-SA-2010-01"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "bogofilter -- heap underrun on malformed base64 input"
+}

@@ -1,0 +1,51 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "rubygem-activemodel"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "3.2.4"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "discovery": "2012-05-31T00:00:00Z",
+        "vid": "748aa89f-d529-11e1-82ab-001fd0af1a4c"
+    },
+    "details": "rubygem-activerecord -- multiple vulernabilities\n\n> Due to the way Active Record interprets parameters in\n> combination with the way that Rack parses query parameters, it\n> is possible for an attacker to issue unexpected database\n> queries with \"IS NULL\" where clauses. This issue does \\*not\\*\n> let an attacker insert arbitrary values into an SQL query,\n> however they can cause the query to check for NULL where most\n> users wouldn't expect it.\n>\n> Due to the way Active Record handles nested query parameters,\n> an attacker can use a specially crafted request to inject some\n> forms of SQL into your application's SQL queries.",
+    "id": "FreeBSD-kernel-2012-0105",
+    "modified": "2012-07-23T00:00:00Z",
+    "published": "2012-07-23T00:00:00Z",
+    "references": [
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2012-2660"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2012-2661"
+        },
+        {
+            "type": "WEB",
+            "url": "https://groups.google.com/forum/?fromgroups#!topic/rubyonrails-security/8SA-M3as7A8"
+        },
+        {
+            "type": "WEB",
+            "url": "https://groups.google.com/forum/?fromgroups#!topic/rubyonrails-security/dUaiOOGWL1k"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "rubygem-activerecord -- multiple vulnerabilities"
+}

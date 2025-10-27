@@ -1,0 +1,65 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:kernel",
+                "name": "FreeBSD-kernel"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "introduced": "11.1"
+                        },
+                        {
+                            "fixed": "11.1_9"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                },
+                {
+                    "events": [
+                        {
+                            "introduced": "10.4"
+                        },
+                        {
+                            "fixed": "10.4_8"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                },
+                {
+                    "events": [
+                        {
+                            "introduced": "10.3"
+                        },
+                        {
+                            "fixed": "10.3_29"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "discovery": "2018-04-04T00:00:00Z",
+        "vid": "a5cf3ecd-38db-11e8-8b7f-a4badb2f469b"
+    },
+    "details": "Problem Description:\n====================\n\nInsufficient validation of user-provided font parameters\ncan result in an integer overflow, leading to the use of\narbitrary kernel memory as glyph data. Characters that\nreference this data can be displayed on the screen, effectively\ndisclosing kernel memory.\n\nImpact:\n=======\n\nUnprivileged users may be able to access privileged\nkernel data.\n\nSuch memory might contain sensitive information, such\nas portions of the file cache or terminal buffers. This\ninformation might be directly useful, or it might be leveraged\nto obtain elevated privileges in some way; for example, a\nterminal buffer might include a user-entered password.",
+    "id": "FreeBSD-kernel-2018-0210",
+    "modified": "2018-04-05T00:00:00Z",
+    "published": "2018-04-05T00:00:00Z",
+    "references": [
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2018-6917"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://www.freebsd.org/security/advisories/FreeBSD-SA-18:04.vt.asc"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "FreeBSD -- vt console memory disclosure"
+}

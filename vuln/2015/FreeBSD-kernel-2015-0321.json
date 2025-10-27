@@ -1,0 +1,67 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "curl"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "7.42.0"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "discovery": "2015-04-22T00:00:00Z",
+        "vid": "6294f75f-03f2-11e5-aab1-d050996490d0"
+    },
+    "details": "cURL reports:\n\n> libcurl keeps a pool of its last few connections around\n> after use to facilitate easy, convenient, and completely\n> transparent connection re-use for applications.\n>\n> When doing HTTP requests NTLM authenticated, the entire\n> connection becomes authenticated and not just the\n> specific HTTP request which is otherwise how HTTP works.\n> This makes NTLM special and a subject for special\n> treatment in the code. With NTLM, once the connection is\n> authenticated, no further authentication is necessary until\n> the connection gets closed.\n\n> When doing HTTP requests Negotiate authenticated, the\n> entire connection may become authenticated and not just\n> the specific HTTP request which is otherwise how HTTP\n> works, as Negotiate can basically use NTLM under the hood.\n> curl was not adhering to this fact but would assume that\n> such requests would also be authenticated per request.\n\n> libcurl supports HTTP \"cookies\" as documented in RFC 6265.\n> Together with each individual cookie there are several\n> different properties, but for this vulnerability we\n> focus on the associated \"path\" element. It tells\n> information about for which path on a given host the\n> cookies is valid.\n>\n> The internal libcurl function called sanitize\\_cookie\\_path()\n> that cleans up the path element as given to it from a\n> remote site or when read from a file, did not properly\n> validate the input. If given a path that consisted of a\n> single double-quote, libcurl would index a newly\n> allocated memory area with index -1 and assign a zero\n> to it, thus destroying heap memory it wasn't supposed to.\n\n> There is a private function in libcurl called fix\\_hostname()\n> that removes a trailing dot from the host name if there is\n> one. The function is called after the host name has been\n> extracted from the URL libcurl has been told to act on.\n>\n> If a URL is given with a zero-length host name, like in\n> \"http://:80\" or just \":80\", fix\\_hostname() will index the\n> host name pointer with a -1 offset (as it blindly assumes\n> a non-zero length) and both read and assign that address.",
+    "id": "FreeBSD-kernel-2015-0321",
+    "modified": "2015-05-26T00:00:00Z",
+    "published": "2015-05-26T00:00:00Z",
+    "references": [
+        {
+            "type": "WEB",
+            "url": "http://curl.haxx.se/docs/adv_20150422A.html"
+        },
+        {
+            "type": "WEB",
+            "url": "http://curl.haxx.se/docs/adv_20150422B.html"
+        },
+        {
+            "type": "WEB",
+            "url": "http://curl.haxx.se/docs/adv_20150422C.html"
+        },
+        {
+            "type": "WEB",
+            "url": "http://curl.haxx.se/docs/adv_20150422D.html"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2014-3143"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2014-3144"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2014-3145"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2014-3148"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "cURL -- multiple vulnerabilities"
+}

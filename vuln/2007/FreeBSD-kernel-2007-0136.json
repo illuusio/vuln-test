@@ -1,0 +1,66 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "ktorrent"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "2.1.2"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        },
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "ktorrent-devel"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "20070311"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "discovery": "2007-03-09T00:00:00Z",
+        "vid": "73f53712-d028-11db-8c07-0211d85f11fb"
+    },
+    "details": "Two problems have been found in KTorrent:\n\n* KTorrent does not properly sanitize file names to filter\n  out \"..\" components, so it's possible for an attacker to create\n  a malicious torrent in order to overwrite arbitrary files within\n  the filesystem.\n* Messages with invalid chunk indexes aren't rejected.",
+    "id": "FreeBSD-kernel-2007-0136",
+    "modified": "2007-03-14T00:00:00Z",
+    "published": "2007-03-11T00:00:00Z",
+    "references": [
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2007-1384"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2007-1385"
+        },
+        {
+            "type": "WEB",
+            "url": "http://ktorrent.org/forum/viewtopic.php?t=1401"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "ktorrent -- multiple vulnerabilities"
+}

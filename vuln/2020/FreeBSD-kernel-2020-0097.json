@@ -1,0 +1,43 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "mbedtls"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "2.16.8"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "discovery": "2020-09-01T00:00:00Z",
+        "vid": "4c69240f-f02c-11ea-838a-0011d823eebd"
+    },
+    "details": "Manuel P\u00e9gouri\u00e9-Gonnard reports:\n\n> When decrypting/authenticating (D)TLS record in a connection using\n> a CBC ciphersuite without the Encrypt-then-Mac extension RFC 7366,\n> Mbed TLS used dummy rounds of the compression function associated\n> with the hash used for HMAC in order to hide the length of the\n> padding to remote attackers, as recommended in the original Lucky\n> Thirteen paper.\n>\n> A local attacker who is able to observe the state of the cache\n> could monitor the presence of mbedtls\\_md\\_process() in the cache in\n> order to determine when the actual computation ends and when the\n> dummy rounds start. This is a reliable target as it's always called\n> at least once, in response to a previous attack. The attacker can\n> then continue with one of many well-documented Lucky 13\n> variants.",
+    "id": "FreeBSD-kernel-2020-0097",
+    "modified": "2020-09-06T00:00:00Z",
+    "published": "2020-09-06T00:00:00Z",
+    "references": [
+        {
+            "type": "WEB",
+            "url": "https://tls.mbed.org/tech-updates/security-advisories/mbedtls-security-advisory-2020-09-1"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2020-16150"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "Mbed TLS -- Local side channel attack on classical CBC decryption in (D)TLS"
+}

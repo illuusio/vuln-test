@@ -1,0 +1,39 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "freexl"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "1.0.2"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "discovery": "2015-07-06T00:00:00Z",
+        "vid": "a59e263a-45cd-11e5-adde-14dae9d210b8"
+    },
+    "details": "Stefan Cornelius reports:\n\n> There's an integer overflow in the allocate\\_cells() function\n> when trying to allocate the memory for worksheet with specially\n> crafted row/column dimensions. This can be exploited to cause a\n> heap memory corruption. The most likely outcome of this is a crash\n> when trying to initialize the cells later in the function.",
+    "id": "FreeBSD-kernel-2015-0175",
+    "modified": "2015-08-18T00:00:00Z",
+    "published": "2015-08-18T00:00:00Z",
+    "references": [
+        {
+            "type": "WEB",
+            "url": "http://www.openwall.com/lists/oss-security/2015/07/06/7"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "freexl -- integer overflow"
+}

@@ -1,0 +1,51 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "graylog"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "4.2.4"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "discovery": "2021-11-14T00:00:00Z",
+        "vid": "650734b2-7665-4170-9a0a-eeced5e10a5e"
+    },
+    "details": "Apache Software Foundation reports:\n\n> It was found that the fix to address CVE-2021-44228 in Apache\n> Log4j 2.15.0 was incomplete in certain non-default\n> configurations. This could allows attackers with control over\n> Thread Context Map (MDC) input data when the logging\n> configuration uses a non-default Pattern Layout with either a\n> Context Lookup (for example, $${ctx:loginId}) or a Thread\n> Context Map pattern (%X, %mdc, or %MDC) to craft malicious input\n> data using a JNDI Lookup pattern resulting in a denial of\n> service (DOS) attack. Log4j 2.15.0 makes a best-effort attempt\n> to restrict JNDI LDAP lookups to localhost by default. Log4j\n> 2.16.0 fixes this issue by removing support for message lookup\n> patterns and disabling JNDI functionality by default.",
+    "id": "FreeBSD-kernel-2021-0011",
+    "modified": "2021-12-17T00:00:00Z",
+    "published": "2021-12-17T00:00:00Z",
+    "references": [
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2021-45046"
+        },
+        {
+            "type": "WEB",
+            "url": "https://github.com/Graylog2/graylog2-server/commit/d3e441f"
+        },
+        {
+            "type": "WEB",
+            "url": "https://github.com/Graylog2/graylog2-server/commit/dd24b85"
+        },
+        {
+            "type": "WEB",
+            "url": "https://logging.apache.org/log4j/2.x/security.html"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "graylog -- remote code execution in log4j from user-controlled log input"
+}

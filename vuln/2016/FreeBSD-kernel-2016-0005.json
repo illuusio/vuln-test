@@ -1,0 +1,173 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "samba36"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "introduced": "3.6.0"
+                        },
+                        {
+                            "last_affected": "3.6.25_4"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        },
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "samba4"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "introduced": "4.0.0"
+                        },
+                        {
+                            "last_affected": "4.0.26"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        },
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "samba41"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "introduced": "4.1.0"
+                        },
+                        {
+                            "last_affected": "4.1.23"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        },
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "samba42"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "introduced": "4.2.0"
+                        },
+                        {
+                            "last_affected": "4.2.14"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        },
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "samba43"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "introduced": "4.3.0"
+                        },
+                        {
+                            "fixed": "4.3.13"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        },
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "samba44"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "introduced": "4.4.0"
+                        },
+                        {
+                            "fixed": "4.4.8"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        },
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "samba45"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "introduced": "4.5.0"
+                        },
+                        {
+                            "fixed": "4.5.3"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "discovery": "2016-12-19T00:00:00Z",
+        "vid": "e4bc323f-cc73-11e6-b704-000c292e4fd8"
+    },
+    "details": "Samba team reports:\n\n> [CVE-2016-2123] Authenticated users can supply malicious dnsRecord attributes\n> on DNS objects and trigger a controlled memory corruption.\n>\n> [CVE-2016-2125] Samba client code always requests a forwardable ticket\n> when using Kerberos authentication. This means the target server, which must be in the current or trusted\n> domain/realm, is given a valid general purpose Kerberos \"Ticket Granting Ticket\" (TGT), which can be used to\n> fully impersonate the authenticated user or service.\n>\n> [CVE-2016-2126] A remote, authenticated, attacker can cause the winbindd process\n> to crash using a legitimate Kerberos ticket due to incorrect handling of the PAC checksum.\n> A local service with access to the winbindd privileged pipe can cause winbindd to cache elevated access permissions.",
+    "id": "FreeBSD-kernel-2016-0005",
+    "modified": "2016-12-26T00:00:00Z",
+    "published": "2016-12-26T00:00:00Z",
+    "references": [
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2016-2123"
+        },
+        {
+            "type": "WEB",
+            "url": "https://www.samba.org/samba/security/CVE-2016-2123.html"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2016-2125"
+        },
+        {
+            "type": "WEB",
+            "url": "https://www.samba.org/samba/security/CVE-2016-2125.html"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2016-2126"
+        },
+        {
+            "type": "WEB",
+            "url": "https://www.samba.org/samba/security/CVE-2016-2126.html"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "samba -- multiple vulnerabilities"
+}

@@ -1,0 +1,65 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "krb5"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "introduced": "1.7"
+                        },
+                        {
+                            "fixed": "1.7.2"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                },
+                {
+                    "events": [
+                        {
+                            "introduced": "1.8"
+                        },
+                        {
+                            "last_affected": "1.8.4"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ],
+            "versions": [
+                "1.9"
+            ]
+        }
+    ],
+    "database_specific": {
+        "discovery": "2011-02-08T00:00:00Z",
+        "vid": "4ab413ea-66ce-11e0-bf05-d445f3aa24f0"
+    },
+    "details": "An advisory published by the MIT Kerberos team says:\n\n> The MIT krb5 Key Distribution Center (KDC) daemon is vulnerable\n> to denial of service attacks from unauthenticated remote\n> attackers. CVE-2011-0281 and CVE-2011-0282 occur only in KDCs\n> using LDAP back ends, but CVE-2011-0283 occurs in all krb5-1.9\n> KDCs.\n>\n> Exploit code is not known to exist, but the vulnerabilities are\n> easy to trigger manually. The trigger for CVE-2011-0281 has\n> already been disclosed publicly, but that fact might not be\n> obvious to casual readers of the message in which it was\n> disclosed. The triggers for CVE-2011-0282 and CVE-2011-0283\n> have not yet been disclosed publicly, but they are also\n> trivial.\n>\n> CVE-2011-0281: An unauthenticated remote attacker can cause a KDC\n> configured with an LDAP back end to become completely unresponsive\n> until restarted.\n>\n> CVE-2011-0282: An unauthenticated remote attacker can cause a KDC\n> configured with an LDAP back end to crash with a null pointer\n> dereference.\n>\n> CVE-2011-0283: An unauthenticated remote attacker can cause a\n> krb5-1.9 KDC with any back end to crash with a null pointer\n> dereference.",
+    "id": "FreeBSD-kernel-2011-0110",
+    "modified": "2011-04-14T00:00:00Z",
+    "published": "2011-04-14T00:00:00Z",
+    "references": [
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2011-0281"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2011-0282"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2011-0283"
+        },
+        {
+            "type": "WEB",
+            "url": "http://web.mit.edu/kerberos/advisories/MITKRB5-SA-2011-002.txt"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "krb5 -- MITKRB5-SA-2011-002, KDC vulnerable to hang when using LDAP back end"
+}

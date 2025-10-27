@@ -1,0 +1,77 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "asterisk13"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "13.18.1"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        },
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "pjsip"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "2.7.1"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        },
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "pjsip-extsrtp"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "2.7.1"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "discovery": "2017-10-05T00:00:00Z",
+        "vid": "19b052c9-c533-11e7-8da5-001999f8d30b"
+    },
+    "details": "The Asterisk project reports:\n\n> By carefully crafting invalid values in the Cseq and\n> the Via header port, pjprojects packet parsing code can\n> create strings larger than the buffer allocated to hold\n> them. This will usually cause Asterisk to crash immediately.\n> The packets do not have to be authenticated.",
+    "id": "FreeBSD-kernel-2017-0057",
+    "modified": "2017-11-15T00:00:00Z",
+    "published": "2017-11-09T00:00:00Z",
+    "references": [
+        {
+            "type": "WEB",
+            "url": "https://downloads.asterisk.org/pub/security/AST-2017-009.html"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "asterisk -- Buffer overflow in pjproject header parsing can cause crash in Asterisk"
+}

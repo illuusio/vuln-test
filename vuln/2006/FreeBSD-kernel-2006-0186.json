@@ -1,0 +1,54 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "FreeBSD"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "introduced": "5.4"
+                        },
+                        {
+                            "fixed": "5.4_12"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                },
+                {
+                    "events": [
+                        {
+                            "introduced": "5.3"
+                        },
+                        {
+                            "fixed": "5.3_27"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "discovery": "2006-03-01T00:00:00Z",
+        "vid": "6a308e8e-b1b4-11da-b2fb-000e0c2e438a"
+    },
+    "details": "Problem description:\n====================\n\nBecause OpenSSH and OpenPAM have conflicting designs (one is event-\ndriven while the other is callback-driven), it is necessary for\nOpenSSH to fork a child process to handle calls to the PAM framework.\nHowever, if the unprivileged child terminates while PAM authentication\nis under way, the parent process incorrectly believes that the PAM\nchild also terminated. The parent process then terminates, and the\nPAM child is left behind.\n\nDue to the way OpenSSH performs internal accounting, these orphaned\nPAM children are counted as pending connections by the master OpenSSH\nserver process. Once a certain number of orphans has accumulated, the\nmaster decides that it is overloaded and stops accepting client\nconnections.\n\nImpact:\n=======\n\nBy repeatedly connecting to a vulnerable server, waiting for\na password prompt, and closing the connection, an attacker can\ncause OpenSSH to stop accepting client connections until the\nsystem restarts or an administrator manually kills the orphaned\nPAM processes.\n\nWorkaround:\n===========\n\nThe following command will show a list of orphaned PAM\nprocesses:\n\n```\n# pgrep -lf 'sshd.*\\[pam\\]'\n```\n\nThe following command will kill orphaned PAM processes:\n\n```\n# pkill -f 'sshd.*\\[pam\\]'\n```\n\nTo prevent OpenSSH from leaving orphaned PAM processes behind,\nperform one of the following:\n\n1. Disable PAM authentication in OpenSSH. Users will still\n   be able to log in using their Unix password, OPIE or SSH\n   keys.\n\n   To do this, execute the following commands as root:\n\n   ```\n   # echo 'UsePAM no' >>/etc/ssh/sshd_config\n   ```\n\n   ```\n   # echo 'PasswordAuthentication yes' >>/etc/ssh/sshd_config\n   ```\n\n   ```\n   # /etc/rc.d/sshd restart\n   ```\n2. If disabling PAM is not an option - if, for instance, you use\n   RADIUS authentication, or store user passwords in an SQL database\n   - you may instead disable privilege separation. However, this may\n   leave OpenSSH vulnerable to hitherto unknown bugs, and should be\n   considered a last resort.\n\n   To do this, execute the following commands as root:\n\n   ```\n   # echo 'UsePrivilegeSeparation no' >>/etc/ssh/sshd_config\n   ```\n\n   ```\n   # /etc/rc.d/sshd restart\n   ```",
+    "id": "FreeBSD-kernel-2006-0186",
+    "modified": "2016-08-09T00:00:00Z",
+    "published": "2006-03-12T00:00:00Z",
+    "references": [
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2006-0883"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://www.freebsd.org/security/advisories/FreeBSD-SA-06:09.openssh.asc"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "openssh -- remote denial of service"
+}

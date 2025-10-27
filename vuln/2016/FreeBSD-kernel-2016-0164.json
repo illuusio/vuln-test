@@ -1,0 +1,43 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "FreeBSD"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "introduced": "10.1"
+                        },
+                        {
+                            "fixed": "10.1_17"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "discovery": "2015-08-05T00:00:00Z",
+        "vid": "0d090952-600a-11e6-a6c3-14dae9d210b8"
+    },
+    "details": "Problem Description:\n====================\n\nDue to insufficient sanitization of the input patch\nstream, it is possible for a patch file to cause patch(1)\nto pass certain ed(1) scripts to the ed(1) editor, which\nwould run commands.\n\nImpact:\n=======\n\nThis issue could be exploited to execute arbitrary\ncommands as the user invoking patch(1) against a specially\ncrafted patch file, which could be leveraged to obtain\nelevated privileges.",
+    "id": "FreeBSD-kernel-2016-0164",
+    "modified": "2016-08-11T00:00:00Z",
+    "published": "2016-08-11T00:00:00Z",
+    "references": [
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2015-1418"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://www.freebsd.org/security/advisories/FreeBSD-SA-15:18.bsdpatch.asc"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "FreeBSD -- shell injection vulnerability in patch(1)"
+}

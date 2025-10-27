@@ -1,0 +1,54 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:kernel",
+                "name": "FreeBSD-kernel"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "introduced": "12.0"
+                        },
+                        {
+                            "fixed": "12.0_4"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                },
+                {
+                    "events": [
+                        {
+                            "introduced": "11.2"
+                        },
+                        {
+                            "fixed": "11.2_10"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "discovery": "2019-05-14T00:00:00Z",
+        "vid": "59c5f255-b309-11e9-a87f-a4badb2f4699"
+    },
+    "details": "Problem Description:\n====================\n\nStates in pf(4) let ICMP and ICMP6 packets pass if they\nhave a packet in their payload matching an existing condition.\npf(4) does not check if the outer ICMP or ICMP6 packet has\nthe same destination IP as the source IP of the inner\nprotocol packet.\n\nImpact:\n=======\n\nA maliciously crafted ICMP/ICMP6 packet could bypass the\npacket filter rules and be passed to a host that would\notherwise be unavailable.",
+    "id": "FreeBSD-kernel-2019-0133",
+    "modified": "2019-07-30T00:00:00Z",
+    "published": "2019-07-30T00:00:00Z",
+    "references": [
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2019-5598"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://www.freebsd.org/security/advisories/FreeBSD-SA-19:06.pf.asc"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "FreeBSD -- ICMP/ICMP6 packet filter bypass in pf"
+}

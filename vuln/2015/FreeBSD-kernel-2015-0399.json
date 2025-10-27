@@ -1,0 +1,62 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "xorg-server"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "1.14.7_2,1"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        },
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "xorg-server"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "introduced": "1.15.0,1"
+                        },
+                        {
+                            "fixed": "1.16.4,1"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "discovery": "2015-02-10T00:00:00Z",
+        "vid": "54a69cf7-b2ef-11e4-b1f1-bcaec565249c"
+    },
+    "details": "Peter Hutterer reports:\n\n> Olivier Fourdan from Red Hat has discovered a protocol handling\n> issue in the way the X server code base handles the XkbSetGeometry\n> request.\n>\n> The issue stems from the server trusting the client to send valid\n> string lengths in the request data. A malicious client with string\n> lengths exceeding the request length can cause the server to copy\n> adjacent memory data into the XKB structs. This data is then\n> available to the client via the XkbGetGeometry request. The\n> data length is at least up to 64k, it is possible to obtain\n> more data by chaining strings, each string length is then\n> determined by whatever happens to be in that 16-bit region of\n> memory.\n>\n> A similarly crafted request can likely cause the X server\n> to crash.",
+    "id": "FreeBSD-kernel-2015-0399",
+    "modified": "2015-02-12T00:00:00Z",
+    "published": "2015-02-12T00:00:00Z",
+    "references": [
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2015-0255"
+        },
+        {
+            "type": "WEB",
+            "url": "http://lists.freedesktop.org/archives/xorg/2015-February/057158.html"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "xorg-server -- Information leak in the XkbSetGeometry request of X servers."
+}

@@ -1,0 +1,39 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "python39"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "3.9.7"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "discovery": "2021-08-30T00:00:00Z",
+        "vid": "032643d7-0ba7-11ec-a689-080027e50e6d"
+    },
+    "details": "Python reports:\n\n> bpo-42278: Replaced usage of tempfile.mktemp() with TemporaryDirectory to avoid\n> a potential race condition.\n>\n> bpo-41180: Add auditing events to the marshal module, and stop raising\n> code.\\_\\_init\\_\\_ events for every unmarshalled code object. Directly instantiated\n> code objects will continue to raise an event, and audit event handlers should\n> inspect or collect the raw marshal data. This reduces a significant performance\n> overhead when loading from .pyc files.\n>\n> bpo-44394: Update the vendored copy of libexpat to 2.4.1 (from 2.2.8) to get the\n> fix for the CVE-2013-0340 \"Billion Laughs\" vulnerability. This copy is most used\n> on Windows and macOS.\n>\n> bpo-43124: Made the internal putcmd function in smtplib sanitize input for\n> presence of \\r and \\n characters to avoid (unlikely) command injection.",
+    "id": "FreeBSD-kernel-2021-0099",
+    "modified": "2021-09-02T00:00:00Z",
+    "published": "2021-09-02T00:00:00Z",
+    "references": [
+        {
+            "type": "WEB",
+            "url": "https://docs.python.org/release/3.9.7/whatsnew/changelog.html"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "Python -- multiple vulnerabilities"
+}

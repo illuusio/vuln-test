@@ -1,0 +1,93 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "krb5"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "1.13_1"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        },
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "krb5-112"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "1.12.2_1"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        },
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "krb5-111"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "1.11.5_4"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "discovery": "2015-02-03T00:00:00Z",
+        "vid": "24ce5597-acab-11e4-a847-206a8a720317"
+    },
+    "details": "SO-AND-SO reports:\n\n> CVE-2014-5352: In the MIT krb5 libgssapi\\_krb5 library, after\n> gss\\_process\\_context\\_token() is used to process a valid context\n> deletion token, the caller is left with a security context handle\n> containing a dangling pointer. Further uses of this handle will\n> result in use-after-free and double-free memory access violations.\n> libgssrpc server applications such as kadmind are vulnerable as\n> they can be instructed to call gss\\_process\\_context\\_token().\n>\n> CVE-2014-9421: If the MIT krb5 kadmind daemon receives invalid XDR\n> data from an authenticated user, it may perform use-after-free and\n> double-free memory access violations while cleaning up the partial\n> deserialization results. Other libgssrpc server applications may\n> also be vulnerable if they contain insufficiently defensive XDR\n> functions.\n>\n> CVE-2014-9422: The MIT krb5 kadmind daemon incorrectly accepts\n> authentications to two-component server principals whose first\n> component is a left substring of \"kadmin\" or whose realm is a left\n> prefix of the default realm.\n>\n> CVE-2014-9423: libgssrpc applications including kadmind output\n> four or eight bytes of uninitialized memory to the network as\n> part of an unused \"handle\" field in replies to clients.",
+    "id": "FreeBSD-kernel-2015-0403",
+    "modified": "2015-02-04T00:00:00Z",
+    "published": "2015-02-04T00:00:00Z",
+    "references": [
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2014-5352"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2014-9421"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2014-9422"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2014-9423"
+        },
+        {
+            "type": "WEB",
+            "url": "http://web.mit.edu/kerberos/advisories/MITKRB5-SA-2015-001.txt"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "krb5 -- Vulnerabilities in kadmind, libgssrpc, gss_process_context_token VU#540092"
+}

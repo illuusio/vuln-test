@@ -1,0 +1,98 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "FreeBSD"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "4.11_20"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                },
+                {
+                    "events": [
+                        {
+                            "introduced": "5.3"
+                        },
+                        {
+                            "fixed": "5.3_32"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                },
+                {
+                    "events": [
+                        {
+                            "introduced": "5.4"
+                        },
+                        {
+                            "fixed": "5.4_17"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                },
+                {
+                    "events": [
+                        {
+                            "introduced": "5.5"
+                        },
+                        {
+                            "fixed": "5.5_3"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                },
+                {
+                    "events": [
+                        {
+                            "introduced": "6.0"
+                        },
+                        {
+                            "fixed": "6.0_10"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                },
+                {
+                    "events": [
+                        {
+                            "introduced": "6.1"
+                        },
+                        {
+                            "fixed": "6.1_4"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "discovery": "2006-08-23T00:00:00Z",
+        "vid": "c9d2e361-32fb-11db-a6e2-000e0c2e438a"
+    },
+    "details": "Problem Description\n===================\n\nWhile processing Link Control Protocol (LCP) configuration\noptions received from the remote host, sppp(4) fails to\ncorrectly validate option lengths. This may result in data\nbeing read or written beyond the allocated kernel memory\nbuffer.\n\nImpact\n======\n\nAn attacker able to send LCP packets, including the remote\nend of a sppp(4) connection, can cause the FreeBSD kernel to\npanic. Such an attacker may also be able to obtain\nsensitive information or gain elevated privileges.\n\nWorkaround\n==========\n\nNo workaround is available, but systems which do not use sppp(4) are\nnot vulnerable.",
+    "id": "FreeBSD-kernel-2006-0081",
+    "modified": "2006-08-30T00:00:00Z",
+    "published": "2006-08-23T00:00:00Z",
+    "references": [
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2006-4304"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://www.freebsd.org/security/advisories/FreeBSD-SA-06:18.ppp.asc"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "sppp -- buffer overflow vulnerability"
+}

@@ -1,0 +1,77 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "asterisk13"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "13.37.1"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        },
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "asterisk16"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "16.14.1"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        },
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "asterisk18"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "18.0.1"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "discovery": "2020-11-05T00:00:00Z",
+        "vid": "29b7f0be-1fb7-11eb-b9d4-001999f8d30b"
+    },
+    "details": "The Asterisk project reports:\n\n> If Asterisk is challenged on an outbound INVITE and\n> the nonce is changed in each response, Asterisk will\n> continually send INVITEs in a loop. This causes Asterisk\n> to consume more and more memory since the transaction\n> will never terminate (even if the call is hung up),\n> ultimately leading to a restart or shutdown of Asterisk.\n> Outbound authentication must be configured on the endpoint\n> for this to occur.",
+    "id": "FreeBSD-kernel-2020-0051",
+    "modified": "2020-11-05T00:00:00Z",
+    "published": "2020-11-05T00:00:00Z",
+    "references": [
+        {
+            "type": "WEB",
+            "url": "https://downloads.asterisk.org/pub/security/AST-2020-002.html"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "asterisk -- Outbound INVITE loop on challenge with different nonce"
+}

@@ -1,0 +1,51 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "nss"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "3.9.2"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "discovery": "2004-08-23T00:00:00Z",
+        "vid": "207f8ff3-f697-11d8-81b0-000347a4fa7d"
+    },
+    "details": "ISS X-Force reports that a remotely exploitable buffer\noverflow exists in the Netscape Security Services (NSS)\nlibrary's implementation of SSLv2. From their advisory:\n\n> The NSS library contains a flaw in SSLv2 record parsing\n> that may lead to remote compromise. When parsing the\n> first record in an SSLv2 negotiation, the client hello\n> message, the server fails to validate the length of a\n> record field. As a result, it is possible for an attacker\n> to trigger a heap-based overflow of arbitrary length.\n\nNote that the vulnerable NSS library is also present in\nMozilla-based browsers. However, it is not believed that\nbrowsers are affected, as the vulnerability is present only in\ncode used by SSLv2 \\*servers\\*.",
+    "id": "FreeBSD-kernel-2004-0153",
+    "modified": "2004-08-27T00:00:00Z",
+    "published": "2004-08-27T00:00:00Z",
+    "references": [
+        {
+            "type": "WEB",
+            "url": "http://xforce.iss.net/xforce/alerts/id/180"
+        },
+        {
+            "type": "WEB",
+            "url": "http://www.osvdb.org/9116"
+        },
+        {
+            "type": "WEB",
+            "url": "http://secunia.com/advisories/12362"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://www.securityfocus.com/bid/11015/info"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "nss -- exploitable buffer overflow in SSLv2 protocol handler"
+}

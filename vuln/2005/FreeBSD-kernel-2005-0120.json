@@ -1,0 +1,74 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "bugzilla"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "introduced": "2.17.1"
+                        },
+                        {
+                            "fixed": "2.18.2"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        },
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "ja-bugzilla"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "introduced": "2.17.1"
+                        },
+                        {
+                            "fixed": "2.18.2"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "discovery": "2005-07-07T00:00:00Z",
+        "vid": "6e33f4ab-efed-11d9-8310-0001020eed82"
+    },
+    "details": "A Bugzilla Security Advisory reports:\n\n> Any user can change any flag on any bug, even if they\n> don't have access to that bug, or even if they can't\n> normally make bug changes. This also allows them to expose\n> the summary of a bug.\n>\n> Bugs are inserted into the database before they are\n> marked as private, in Bugzilla code. Thus, MySQL\n> replication can lag in between the time that the bug is\n> inserted and when it is marked as private (usually less\n> than a second). If replication lags at this point, the bug\n> summary will be accessible to all users until replication\n> catches up. Also, on a very slow machine, there may be a\n> pause longer than a second that allows users to see the\n> title of the newly-filed bug.",
+    "id": "FreeBSD-kernel-2005-0120",
+    "modified": "2005-07-18T00:00:00Z",
+    "published": "2005-07-08T00:00:00Z",
+    "references": [
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2005-2173"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2005-2174"
+        },
+        {
+            "type": "WEB",
+            "url": "http://www.bugzilla.org/security/2.18.1/"
+        },
+        {
+            "type": "REPORT",
+            "url": "https://bugzilla.mozilla.org/show_bug.cgi?id=292544"
+        },
+        {
+            "type": "REPORT",
+            "url": "https://bugzilla.mozilla.org/show_bug.cgi?id=293159"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "bugzilla -- multiple vulnerabilities"
+}

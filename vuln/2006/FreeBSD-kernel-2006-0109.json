@@ -1,0 +1,43 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "hashcash"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "1.22"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "discovery": "2006-06-27T00:00:00Z",
+        "vid": "2be7c122-0614-11db-9156-000e0c2e438a"
+    },
+    "details": "Andreas Seltenreich reports that hashcash is prone to a heap\noverflow vulnerability. This vulnerability is caused by\nimproper checking of memory allocations within the\n\"array\\_push()\" function. An attacker could trigger this\nvulnerability by passing a lot of \"-r\" or \"-j\" flags from\nthe command line, this only applies when the application is\nconfigured to allow command line options, or by passing a lot\nof resource names when the application was started with the\n\"-m\" flag set. This could lead to a Denial or Service or\ncould allow remote access to the targeted system.",
+    "id": "FreeBSD-kernel-2006-0109",
+    "modified": "2006-06-27T00:00:00Z",
+    "published": "2006-06-27T00:00:00Z",
+    "references": [
+        {
+            "type": "WEB",
+            "url": "http://secunia.com/advisories/20800/"
+        },
+        {
+            "type": "WEB",
+            "url": "http://www.hashcash.org/source/CHANGELOG"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "hashcash -- heap overflow vulnerability"
+}

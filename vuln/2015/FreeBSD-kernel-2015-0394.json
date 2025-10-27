@@ -1,0 +1,43 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "e2fsprogs"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "1.42.12_2"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "discovery": "2015-02-06T00:00:00Z",
+        "vid": "2a4bcd7d-bbb8-11e4-903c-080027ef73ec"
+    },
+    "details": "Theodore Ts'o reports:\n\n> On a carefully crafted filesystem that gets modified through\n> tune2fs or debugfs, it is possible to trigger a buffer overrun when\n> the file system is closed via closefs().",
+    "id": "FreeBSD-kernel-2015-0394",
+    "modified": "2015-02-24T00:00:00Z",
+    "published": "2015-02-24T00:00:00Z",
+    "references": [
+        {
+            "type": "WEB",
+            "url": "http://git.kernel.org/cgit/fs/ext2/e2fsprogs.git/commit/?h=maint&id=49d0fe2a14f2a23da2fe299643379b8c1d37df73"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2015-1572"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "e2fsprogs -- potential buffer overflow in closefs()"
+}

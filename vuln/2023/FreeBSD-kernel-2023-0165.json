@@ -1,0 +1,87 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "postgresql-server"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "11.21"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                },
+                {
+                    "events": [
+                        {
+                            "fixed": "12.16"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                },
+                {
+                    "events": [
+                        {
+                            "fixed": "13.12"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                },
+                {
+                    "events": [
+                        {
+                            "fixed": "14.9"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                },
+                {
+                    "events": [
+                        {
+                            "fixed": "15.4"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "discovery": "2023-08-10T00:00:00Z",
+        "vid": "cfd2a634-3785-11ee-94b4-6cc21735f730"
+    },
+    "details": "PostgreSQL Project reports\n\n> An extension script is vulnerable if it uses @extowner@,\n> @extschema@, or @extschema:...@ inside a quoting construct\n> (dollar quoting, '', or \"\"). No bundled extension is\n> vulnerable. Vulnerable uses do appear in a documentation\n> example and in non-bundled extensions. Hence, the attack\n> prerequisite is an administrator having installed files of a\n> vulnerable, trusted, non-bundled extension. Subject to that\n> prerequisite, this enables an attacker having database-level\n> CREATE privilege to execute arbitrary code as the bootstrap\n> superuser. PostgreSQL will block this attack in the core\n> server, so there's no need to modify individual extensions.",
+    "id": "FreeBSD-kernel-2023-0165",
+    "modified": "2023-08-10T00:00:00Z",
+    "published": "2023-08-10T00:00:00Z",
+    "references": [
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2023-39417"
+        },
+        {
+            "type": "WEB",
+            "url": "https://www.postgresql.org/support/security/CVE-2023-39417/"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "postgresql-server -- Extension script @substitutions@ within quoting allow SQL injection"
+}

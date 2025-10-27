@@ -1,0 +1,86 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "openjdk7"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "introduced": "0,1"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        },
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "linux-sun-jdk"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "introduced": "7.0"
+                        },
+                        {
+                            "fixed": "7.11"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        },
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "linux-sun-jre"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "introduced": "7.0"
+                        },
+                        {
+                            "fixed": "7.11"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "discovery": "2013-01-10T00:00:00Z",
+        "vid": "d5e0317e-5e45-11e2-a113-c48508086173"
+    },
+    "details": "US CERT reports:\n\n> Java 7 Update 10 and earlier versions of Java 7 contain a\n> vulnerability that can allow a remote, unauthenticated\n> attacker to execute arbitrary code on a vulnerable\n> system.\n>\n> The Java JRE plug-in provides its own Security Manager.\n> Typically, a web applet runs with a security manager\n> provided by the browser or Java Web Start plugin. Oracle's\n> document states, \"If there is a security manager already\n> installed, this method first calls the security manager's\n> checkPermission method with a\n> RuntimePermission(\"setSecurityManager\") permission to ensure\n> it's safe to replace the existing security manager. This may\n> result in throwing a SecurityException\".\n>\n> By leveraging the vulnerability in the Java Management\n> Extensions (JMX) MBean components, unprivileged Java code\n> can access restricted classes. By using that vulnerability\n> in conjunction with a second vulnerability involving the\n> Reflection API and the invokeWithArguments method of the\n> MethodHandle class, an untrusted Java applet can escalate\n> its privileges by calling the the setSecurityManager()\n> function to allow full privileges, without requiring code\n> signing. Oracle Java 7 update 10 and earlier Java 7 versions\n> are affected. The invokeWithArguments method was introduced\n> with Java 7, so therefore Java 6 is not affected.\n>\n> This vulnerability is being attacked in the wild, and is\n> reported to be incorporated into exploit kits. Exploit code\n> for this vulnerability is also publicly available.\n\nEsteban Guillardoy from Immunity Inc. additionally clarifies\non the recursive reflection exploitation technique:\n\n> The real issue is in the native\n> sun.reflect.Reflection.getCallerClass method.\n>\n> We can see the following information in the Reflection\n> source code:\n>\n> Returns the class of the method realFramesToSkip frames\n> up the stack (zero-based), ignoring frames associated with\n> java.lang.reflect.Method.invoke() and its\n> implementation.\n>\n> So what is happening here is that they forgot to skip the\n> frames related to the new Reflection API and only the old\n> reflection API is taken into account.\n\nThis exploit does not only affect Java applets, but every\npiece of software that relies on the Java Security Manager for\nsandboxing executable code is affected: malicious code can\ntotally disable Security Manager.\n\nFor users who are running native Web browsers with enabled\nJava plugin, the workaround is to remove the java/icedtea-web\nport and restart all browser instances.\n\nFor users who are running Linux Web browser flavors, the\nworkaround is either to disable the Java plugin in browser\nor to upgrade linux-sun-\\* packages to the non-vulnerable\nversion.\n\nIt is not recommended to run untrusted applets using\nappletviewer, since this may lead to the execution of the\nmalicious code on vulnerable versions on JDK/JRE.",
+    "id": "FreeBSD-kernel-2013-0183",
+    "modified": "2013-01-14T00:00:00Z",
+    "published": "2013-01-14T00:00:00Z",
+    "references": [
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2013-0433"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://www.kb.cert.org/vuls/id/625617"
+        },
+        {
+            "type": "WEB",
+            "url": "http://www.oracle.com/technetwork/topics/security/alert-cve-2013-0422-1896849.html"
+        },
+        {
+            "type": "WEB",
+            "url": "https://partners.immunityinc.com/idocs/Java%20MBeanInstantiator.findClass%200day%20Analysis.pdf"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "java 7.x -- security manager bypass"
+}

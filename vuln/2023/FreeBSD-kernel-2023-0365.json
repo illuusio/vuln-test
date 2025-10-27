@@ -1,0 +1,43 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "krill"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "0.12.1"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "discovery": "2023-01-10T00:00:00Z",
+        "vid": "7844789a-9b1f-11ed-9a3f-b42e991fc52e"
+    },
+    "details": "MITRE reports:\n\n> NLnet Labs Krill supports direct access to the RRDP repository\n> content through its built-in web server at the \"/rrdp\" endpoint.\n> Prior to 0.12.1 a direct query for any existing directory under\n> \"/rrdp/\", rather than an RRDP file such as \"/rrdp/notification.xml\"\n> as would be expected, causes Krill to crash. If the built-in \"/rrdp\"\n> endpoint is exposed directly to the internet, then malicious remote\n> parties can cause the publication server to crash. The repository\n> content is not affected by this, but the availability of the server\n> and repository can cause issues if this attack is persistent and is\n> not mitigated. .",
+    "id": "FreeBSD-kernel-2023-0365",
+    "modified": "2023-01-23T00:00:00Z",
+    "published": "2023-01-23T00:00:00Z",
+    "references": [
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2023-0158"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2023-0158"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "net/krill -- DoS vulnerability"
+}

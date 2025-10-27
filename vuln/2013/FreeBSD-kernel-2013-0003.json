@@ -1,0 +1,43 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "curl"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "introduced": "7.21.4"
+                        },
+                        {
+                            "fixed": "7.33.0_2"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "discovery": "2013-12-17T00:00:00Z",
+        "vid": "4e1f4abc-6837-11e3-9cda-3c970e169bc2"
+    },
+    "details": "cURL project reports:\n\n> libcurl is vulnerable to a case of missing out the checking\n> of the certificate CN or SAN name field when the digital\n> signature verification is turned off.\n>\n> libcurl offers two separate and independent options for\n> verifying a server's TLS certificate. CURLOPT\\_SSL\\_VERIFYPEER\n> and CURLOPT\\_SSL\\_VERIFYHOST. The first one tells libcurl to\n> verify the trust chain using a CA cert bundle, while the\n> second tells libcurl to make sure that the name fields in\n> the server certificate meets the criteria. Both options are\n> enabled by default.\n>\n> This flaw had the effect that when an application disabled\n> CURLOPT\\_SSL\\_VERIFYPEER, libcurl mistakenly also skipped the\n> CURLOPT\\_SSL\\_VERIFYHOST check. Applications can disable\n> CURLOPT\\_SSL\\_VERIFYPEER and still achieve security by doing\n> the check on its own using other means.\n>\n> The curl command line tool is not affected by this problem\n> as it either enables both options or disables both at the\n> same time.",
+    "id": "FreeBSD-kernel-2013-0003",
+    "modified": "2013-12-18T00:00:00Z",
+    "published": "2013-12-18T00:00:00Z",
+    "references": [
+        {
+            "type": "WEB",
+            "url": "http://curl.haxx.se/docs/adv_20131217.html"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2013-6422"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "cURL library -- cert name check ignore with GnuTLS"
+}

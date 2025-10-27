@@ -1,0 +1,43 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "ap24-mod_security"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "2.9.10"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "discovery": "2025-06-02T00:00:00Z",
+        "vid": "fa1d42c8-42fe-11f0-a9fa-b42e991fc52e"
+    },
+    "details": "security-advisories@github.com reports:\n\n> ModSecurity is an open source, cross platform web\n> application firewall (WAF) engine for Apache, IIS\n> and Nginx. Versions prior to 2.9.10 contain a denial of\n> service vulnerability similar to\n> GHSA-859r-vvv8-rm8r/CVE-2025-47947. The `sanitiseArg`\n> (and `sanitizeArg` - this is the same action but an\n> alias) is vulnerable to adding an excessive number\n> of arguments, thereby leading to denial of service.\n> Version 2.9.10 fixes the issue. As a workaround, avoid\n> using rules that contain the `sanitiseArg` (or\n> `sanitizeArg`) action.",
+    "id": "FreeBSD-ports-2025-0090",
+    "modified": "2025-06-06T00:00:00Z",
+    "published": "2025-06-06T00:00:00Z",
+    "references": [
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2025-48866"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://nvd.nist.gov/vuln/detail/CVE-2025-48866"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "ModSecurity -- possible DoS vulnerability"
+}

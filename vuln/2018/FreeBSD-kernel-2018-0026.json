@@ -1,0 +1,36 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "payara"
+            },
+            "versions": [
+                "4.1.2.181.3",
+                "4.1.2.182",
+                "5.181.3",
+                "5.182"
+            ]
+        }
+    ],
+    "database_specific": {
+        "discovery": "2018-02-26T00:00:00Z",
+        "vid": "93f8e0ff-f33d-11e8-be46-0019dbb15b3f"
+    },
+    "details": "> FasterXML jackson-databind before 2.8.11.1 and 2.9.x before\n> 2.9.5 allows unauthenticated remote code execution because of\n> an incomplete fix for the CVE-2017-7525 deserialization flaw.\n> This is exploitable by sending maliciously crafted JSON input\n> to the readValue method of the ObjectMapper, bypassing a\n> blacklist that is ineffective if the c3p0 libraries are\n> available in the classpath.",
+    "id": "FreeBSD-kernel-2018-0026",
+    "modified": "2018-11-28T00:00:00Z",
+    "published": "2018-11-28T00:00:00Z",
+    "references": [
+        {
+            "type": "ADVISORY",
+            "url": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2018-7489"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2018-7489"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "payara -- Default typing issue in Jackson Databind"
+}

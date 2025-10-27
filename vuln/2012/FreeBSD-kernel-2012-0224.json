@@ -1,0 +1,43 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "isc-dhcp42-server"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "4.2.3_2"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "discovery": "2012-01-13T00:00:00Z",
+        "vid": "1800886c-3dde-11e1-89b4-001ec9578670"
+    },
+    "details": "ISC reports:\n\n> Due to improper handling of a DHCPv6 lease structure, ISC DHCP\n> servers that are serving IPv6 address pools AND using Dynamic\n> DNS can encounter a segmentation fault error while updating lease\n> status under certain conditions.\n>\n> The potential exists for this condition to be intentionally\n> triggered, resulting in effective denial of service to\n> clients expecting service from the affected server.",
+    "id": "FreeBSD-kernel-2012-0224",
+    "modified": "2012-01-13T00:00:00Z",
+    "published": "2012-01-13T00:00:00Z",
+    "references": [
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2011-4868"
+        },
+        {
+            "type": "WEB",
+            "url": "https://www.isc.org/software/dhcp/advisories/cve-2011-4868"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "isc-dhcp-server -- DoS in DHCPv6"
+}

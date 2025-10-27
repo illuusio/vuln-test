@@ -1,0 +1,43 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "gnupg"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "1.4.14"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "discovery": "2013-07-18T00:00:00Z",
+        "vid": "80771b89-f57b-11e2-bf21-b499baab0cbe"
+    },
+    "details": "A Yarom and Falkner paper reports:\n\n> Flush+Reload is a cache side-channel attack that monitors access to\n> data in shared pages. In this paper we demonstrate how to use the\n> attack to extract private encryption keys from GnuPG. The high\n> resolution and low noise of the Flush+Reload attack enables a spy\n> program to recover over 98% of the bits of the private key in a\n> single decryption or signing round. Unlike previous attacks, the\n> attack targets the last level L3 cache. Consequently, the spy\n> program and the victim do not need to share the execution core of\n> the CPU. The attack is not limited to a traditional OS and can be\n> used in a virtualised environment, where it can attack programs\n> executing in a different VM.",
+    "id": "FreeBSD-kernel-2013-0062",
+    "modified": "2013-07-26T00:00:00Z",
+    "published": "2013-07-25T00:00:00Z",
+    "references": [
+        {
+            "type": "WEB",
+            "url": "http://eprint.iacr.org/2013/448"
+        },
+        {
+            "type": "WEB",
+            "url": "http://lists.gnupg.org/pipermail/gnupg-announce/2013q3/000330.html"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "gnupg -- side channel attack on RSA secret keys"
+}

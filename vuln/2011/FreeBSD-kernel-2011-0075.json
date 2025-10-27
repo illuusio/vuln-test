@@ -1,0 +1,101 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "asterisk14"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "introduced": "1.4.*,1"
+                        },
+                        {
+                            "fixed": "1.4.41.2"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        },
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "asterisk16"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "introduced": "1.6.*,1"
+                        },
+                        {
+                            "fixed": "1.6.2.18.2"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        },
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "asterisk18"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "introduced": "1.8.*,1"
+                        },
+                        {
+                            "fixed": "1.8.4.4"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "discovery": "2011-06-24T00:00:00Z",
+        "vid": "40544e8c-9f7b-11e0-9bec-6c626dd55a41"
+    },
+    "details": "The Asterisk Development Team reports:\n\n> AST-2011-008: If a remote user sends a SIP packet containing a\n> NULL, Asterisk assumes available data extends past the null to\n> the end of the packet when the buffer is actually truncated when\n> copied. This causes SIP header parsing to modify data past the\n> end of the buffer altering unrelated memory structures. This\n> vulnerability does not affect TCP/TLS connections.\n>\n> AST-2011-009: A remote user sending a SIP packet containing a\n> Contact header with a missing left angle bracket causes Asterisk\n> to access a null pointer.\n>\n> AST-2011-010: A memory address was inadvertently transmitted\n> over the network via IAX2 via an option control frame and the\n> remote party would try to access it.\n>\n> Possible enumeration of SIP users due to differing\n> authentication responses.",
+    "id": "FreeBSD-kernel-2011-0075",
+    "modified": "2011-06-29T00:00:00Z",
+    "published": "2011-06-25T00:00:00Z",
+    "references": [
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2011-2529"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2011-2535"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2011-2536"
+        },
+        {
+            "type": "WEB",
+            "url": "http://downloads.asterisk.org/pub/security/AST-2011-008.html"
+        },
+        {
+            "type": "WEB",
+            "url": "http://downloads.asterisk.org/pub/security/AST-2011-009.html"
+        },
+        {
+            "type": "WEB",
+            "url": "http://downloads.asterisk.org/pub/security/AST-2011-010.html"
+        },
+        {
+            "type": "WEB",
+            "url": "http://downloads.asterisk.org/pub/security/AST-2011-011.html"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "Asterisk -- multiple vulnerabilities"
+}

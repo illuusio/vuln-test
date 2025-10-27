@@ -1,0 +1,47 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "freeradius"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "introduced": "2.1.10"
+                        },
+                        {
+                            "fixed": "2.1.12_2"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "discovery": "2012-09-10T00:00:00Z",
+        "vid": "3bbbe3aa-fbeb-11e1-8bd8-0022156e8794"
+    },
+    "details": "freeRADIUS security team reports:\n\n> Overflow in EAP-TLS for 2.1.10, 2.1.11 and 2.1.12.\n>\n> The issue was found by Timo Warns, and communicated to\n> security@freeradius.org. A sample exploit for the issue was\n> included in the notification.\n>\n> The vulnerability was created in commit a368a6f4f4aaf on\n> August 18, 2010. Vulnerable versions include 2.1.10, 2.1.11,\n> and 2.1.12. Also anyone running the git \"master\" branch\n> after August 18, 2010 is vulnerable.\n>\n> All sites using TLS-based EAP methods and the above\n> versions are vulnerable. The only configuration change which\n> can avoid the issue is to disable EAP-TLS, EAP-TTLS, and\n> PEAP.\n>\n> An external attacker can use this vulnerability to\n> over-write the stack frame of the RADIUS server, and cause\n> it to crash. In addition, more sophisticated attacks may\n> gain additional privileges on the system running the RADIUS\n> server.\n>\n> This attack does not require local network access to the\n> RADIUS server. It can be done by an attacker through a WiFi\n> Access Point, so long as the Access Point is configured to\n> use 802.1X authentication with the RADIUS server.",
+    "id": "FreeBSD-kernel-2012-0058",
+    "modified": "2012-09-11T00:00:00Z",
+    "published": "2012-09-11T00:00:00Z",
+    "references": [
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2012-3547"
+        },
+        {
+            "type": "WEB",
+            "url": "http://freeradius.org/security.html"
+        },
+        {
+            "type": "WEB",
+            "url": "http://www.pre-cert.de/advisories/PRE-SA-2012-06.txt"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "freeradius -- arbitrary code execution for TLS-based authentication"
+}

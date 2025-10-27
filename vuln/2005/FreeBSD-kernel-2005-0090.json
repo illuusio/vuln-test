@@ -1,0 +1,54 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "FreeBSD"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "introduced": "5.4"
+                        },
+                        {
+                            "fixed": "5.4_5"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                },
+                {
+                    "events": [
+                        {
+                            "introduced": "5.*"
+                        },
+                        {
+                            "fixed": "5.3_19"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "discovery": "2005-07-20T00:00:00Z",
+        "vid": "7257b26f-0597-11da-86bc-000e0c2e438a"
+    },
+    "details": "Problem description\n===================\n\nDue to insufficient parameter checking of the node type\nduring device creation, any user can expose hidden device\nnodes on devfs mounted file systems within their jail.\nDevice nodes will be created in the jail with their normal\ndefault access permissions.\n\nImpact\n======\n\nJailed processes can get access to restricted resources on\nthe host system. For jailed processes running with superuser\nprivileges this implies access to all devices on the system.\nThis level of access can lead to information leakage and\nprivilege escalation.",
+    "id": "FreeBSD-kernel-2005-0090",
+    "modified": "2005-08-05T00:00:00Z",
+    "published": "2005-08-05T00:00:00Z",
+    "references": [
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2005-2218"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://www.freebsd.org/security/advisories/FreeBSD-SA-05:17.devfs.asc"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "devfs -- ruleset bypass"
+}

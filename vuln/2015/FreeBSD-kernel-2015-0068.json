@@ -1,0 +1,43 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "xen-kernel"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "introduced": "3.2"
+                        },
+                        {
+                            "fixed": "4.5.1_1"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "discovery": "2015-10-29T00:00:00Z",
+        "vid": "e4848ca4-8820-11e5-ab94-002590263bf5"
+    },
+    "details": "The Xen Project reports:\n\n> HYPERCALL\\_xenoprof\\_op and HYPERVISOR\\_xenpmu\\_op log some errors and\n> attempts at invalid operations. These log messages are not\n> rate-limited, even though they can be triggered by guests.\n>\n> A malicious guest could cause repeated logging to the hypervisor\n> console, leading to a Denial of Service attack.",
+    "id": "FreeBSD-kernel-2015-0068",
+    "modified": "2015-11-11T00:00:00Z",
+    "published": "2015-11-11T00:00:00Z",
+    "references": [
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2015-7971"
+        },
+        {
+            "type": "WEB",
+            "url": "http://xenbits.xen.org/xsa/advisory-152.html"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "xen-kernel -- some pmu and profiling hypercalls log without rate limiting"
+}

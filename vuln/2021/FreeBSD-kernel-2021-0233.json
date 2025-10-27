@@ -1,0 +1,54 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:kernel",
+                "name": "FreeBSD-kernel"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "introduced": "12.2"
+                        },
+                        {
+                            "fixed": "12.2_6"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                },
+                {
+                    "events": [
+                        {
+                            "introduced": "11.4"
+                        },
+                        {
+                            "fixed": "11.4_9"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "discovery": "2021-04-06T00:00:00Z",
+        "vid": "a7b97d26-9792-11eb-b87a-901b0ef719ab"
+    },
+    "details": "Problem Description:\n====================\n\nDue to a race condition between lookup of \"..\" and remounting a filesystem,\na process running inside a jail might access filesystem hierarchy outside\nof jail.\n\nImpact:\n=======\n\nA process with superuser privileges running inside a jail configured\nwith the allow.mount permission (not enabled by default) could change the root\ndirectory outside of the jail, and thus gain full read and write access\nto all files and directories in the system.",
+    "id": "FreeBSD-kernel-2021-0233",
+    "modified": "2021-04-07T00:00:00Z",
+    "published": "2021-04-07T00:00:00Z",
+    "references": [
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2020-25584"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://www.freebsd.org/security/advisories/FreeBSD-SA-21:10.jail_mount.asc"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "FreeBSD -- jail escape possible by mounting over jail root"
+}

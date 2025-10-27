@@ -1,0 +1,43 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "libvorbis"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "1.3.6,3"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "discovery": "2018-03-16T00:00:00Z",
+        "vid": "64ee858e-e035-4bb4-9c77-2468963dddb8"
+    },
+    "details": "NVD reports:\n\n> Xiph.Org libvorbis 1.3.5 allows Remote Code Execution\n> upon freeing uninitialized memory in the function\n> vorbis\\_analysis\\_headerout() in info.c when\n> vi->channels<=0, a similar issue to Mozilla bug\n> 550184.\n\n> In Xiph.Org libvorbis 1.3.5, an out-of-bounds array read\n> vulnerability exists in the function mapping0\\_forward() in\n> mapping0.c, which may lead to DoS when operating on a\n> crafted audio file with vorbis\\_analysis().",
+    "id": "FreeBSD-kernel-2018-0228",
+    "modified": "2018-03-16T00:00:00Z",
+    "published": "2018-03-16T00:00:00Z",
+    "references": [
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2017-14632"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2017-14633"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "libvorbis -- multiple vulnerabilities"
+}

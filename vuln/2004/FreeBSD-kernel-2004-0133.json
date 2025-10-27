@@ -1,0 +1,43 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "apache"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "introduced": "2.0"
+                        },
+                        {
+                            "fixed": "2.0.50_3"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "discovery": "2004-09-15T00:00:00Z",
+        "vid": "762d1c6d-0722-11d9-b45d-000c41e2cdad"
+    },
+    "details": "The Apache Software Foundation Security Team discovered a\nprogramming error in the apr-util library function apr\\_uri\\_parse.\nWhen parsing IPv6 literal addresses, it is possible that a\nlength is incorrectly calculated to be negative, and this\nvalue is passed to memcpy. This may result in an exploitable\nvulnerability on some platforms, including FreeBSD.",
+    "id": "FreeBSD-kernel-2004-0133",
+    "modified": "2004-09-15T00:00:00Z",
+    "published": "2004-09-15T00:00:00Z",
+    "references": [
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2004-0786"
+        },
+        {
+            "type": "WEB",
+            "url": "http://httpd.apache.org"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "apache -- apr_uri_parse IPv6 address handling vulnerability"
+}

@@ -1,0 +1,59 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "gsoap"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "2.8.47"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "discovery": "2017-07-18T00:00:00Z",
+        "vid": "8745c67e-7dd1-4165-96e2-fcf9da2dc5b5"
+    },
+    "details": "Senrio reports:\n\n> Genivia gSOAP is prone to a stack-based buffer-overflow\n> vulnerability because it fails to properly bounds check user-supplied\n> data before copying it into an insufficiently sized buffer.\n>\n> A remote attacker may exploit this issue to execute arbitrary code\n> in the context of the affected device. Failed attempts will likely\n> cause a denial-of-service condition.",
+    "id": "FreeBSD-kernel-2017-0165",
+    "modified": "2017-07-25T00:00:00Z",
+    "published": "2017-07-25T00:00:00Z",
+    "references": [
+        {
+            "type": "WEB",
+            "url": "http://www.securityfocus.com/bid/99868/discuss"
+        },
+        {
+            "type": "WEB",
+            "url": "http://blog.senr.io/blog/devils-ivy-flaw-in-widely-used-third-party-code-impacts-millions"
+        },
+        {
+            "type": "WEB",
+            "url": "http://blog.senr.io/devilsivy.html"
+        },
+        {
+            "type": "WEB",
+            "url": "https://www.genivia.com/advisory.html#Security_advisory:_CVE-2017-9765_bug_in_certain_versions_of_gSOAP_2.7_up_to_2.8.47_%28June_21,_2017%29"
+        },
+        {
+            "type": "WEB",
+            "url": "https://www.genivia.com/changelog.html#Version_2.8.48_upd_%2806/21/2017%29"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2017-9765"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "gsoap -- remote code execution via via overflow"
+}

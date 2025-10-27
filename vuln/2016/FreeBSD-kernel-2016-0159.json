@@ -1,0 +1,65 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:kernel",
+                "name": "FreeBSD-kernel"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "introduced": "10.2"
+                        },
+                        {
+                            "fixed": "10.2_9"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                },
+                {
+                    "events": [
+                        {
+                            "introduced": "10.1"
+                        },
+                        {
+                            "fixed": "10.1_26"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                },
+                {
+                    "events": [
+                        {
+                            "introduced": "9.3"
+                        },
+                        {
+                            "fixed": "9.3_33"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "discovery": "2016-01-14T00:00:00Z",
+        "vid": "78f06a6c-600a-11e6-a6c3-14dae9d210b8"
+    },
+    "details": "Problem Description:\n====================\n\nA lack of proper input checks in the ICMPv6 processing\nin the SCTP stack can lead to either a failed kernel assertion\nor to a NULL pointer dereference. In either case, a kernel\npanic will follow.\n\nImpact:\n=======\n\nA remote, unauthenticated attacker can reliably trigger\na kernel panic in a vulnerable system running IPv6. Any\nkernel compiled with both IPv6 and SCTP support is vulnerable.\nThere is no requirement to have an SCTP socket open.\n\nIPv4 ICMP processing is not impacted by this vulnerability.",
+    "id": "FreeBSD-kernel-2016-0159",
+    "modified": "2016-08-11T00:00:00Z",
+    "published": "2016-08-11T00:00:00Z",
+    "references": [
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2016-1879"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://www.freebsd.org/security/advisories/FreeBSD-SA-16:01.sctp.asc"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "FreeBSD -- SCTP ICMPv6 error message vulnerability"
+}

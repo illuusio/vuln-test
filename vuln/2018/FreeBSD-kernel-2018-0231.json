@@ -1,0 +1,47 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:kernel",
+                "name": "FreeBSD-kernel"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "introduced": "11.1"
+                        },
+                        {
+                            "fixed": "11.1_8"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "discovery": "2018-03-14T00:00:00Z",
+        "vid": "74daa370-2797-11e8-95ec-a4badb2f4699"
+    },
+    "details": "Problem Description:\n====================\n\nA number of issues relating to speculative execution\nwere found last year and publicly announced January 3rd.\nTwo of these, known as Meltdown and Spectre V2, are addressed\nhere.\n\nCVE-2017-5754 (Meltdown) - ------------------------\n\nThis issue relies on an affected CPU speculatively\nexecuting instructions beyond a faulting instruction. When\nthis happens, changes to architectural state are not\ncommitted, but observable changes may be left in micro-\narchitectural state (for example, cache). This may be used\nto infer privileged data.\n\nCVE-2017-5715 (Spectre V2) - --------------------------\n\nSpectre V2 uses branch target injection to speculatively\nexecute kernel code at an address under the control of an\nattacker.\n\nImpact:\n=======\n\nAn attacker may be able to read secret data from the\nkernel or from a process when executing untrusted code (for\nexample, in a web browser).",
+    "id": "FreeBSD-kernel-2018-0231",
+    "modified": "2018-03-14T00:00:00Z",
+    "published": "2018-03-14T00:00:00Z",
+    "references": [
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2017-5715"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2017-5754"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://www.freebsd.org/security/advisories/FreeBSD-SA-18:03.speculative_execution.asc"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "FreeBSD -- Speculative Execution Vulnerabilities"
+}

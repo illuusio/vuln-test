@@ -1,0 +1,51 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "p7zip"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "15.14_2"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "discovery": "2016-07-17T00:00:00Z",
+        "vid": "48e83187-b6e9-11e6-b6cf-5453ed2e2b49"
+    },
+    "details": "MITRE reports:\n\n> A null pointer dereference bug affects the 16.02 and many old\n> versions of p7zip. A lack of null pointer check for the variable\n> `folders.PackPositions` in function\n> `CInArchive::ReadAndDecodePackedStreams`, as used in\n> the 7z.so library and in 7z applications, will cause a crash and a\n> denial of service when decoding malformed 7z files.",
+    "id": "FreeBSD-kernel-2016-0055",
+    "modified": "2016-11-30T00:00:00Z",
+    "published": "2016-11-30T00:00:00Z",
+    "references": [
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2016-9296"
+        },
+        {
+            "type": "WEB",
+            "url": "https://sourceforge.net/p/p7zip/discussion/383043/thread/648d34db/"
+        },
+        {
+            "type": "WEB",
+            "url": "https://sourceforge.net/p/p7zip/bugs/185/"
+        },
+        {
+            "type": "WEB",
+            "url": "https://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2016-9296"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "p7zip -- Null pointer dereference"
+}

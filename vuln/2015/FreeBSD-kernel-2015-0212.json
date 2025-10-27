@@ -1,0 +1,48 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "pcre"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "last_affected": "8.37_1"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "discovery": "2015-06-23T00:00:00Z",
+        "vid": "8a1d0e63-1e07-11e5-b43d-002590263bf5"
+    },
+    "details": "Venustech ADLAB reports:\n\n> PCRE library is prone to a vulnerability which leads to Heap\n> Overflow. During subpattern calculation of a malformed regular\n> expression, an offset that is used as an array index is fully\n> controlled and can be large enough so that unexpected heap\n> memory regions are accessed.\n>\n> One could at least exploit this issue to read objects nearby of\n> the affected application's memory.\n>\n> Such information disclosure may also be used to bypass memory\n> protection method such as ASLR.",
+    "id": "FreeBSD-kernel-2015-0212",
+    "modified": "2015-06-29T00:00:00Z",
+    "published": "2015-06-29T00:00:00Z",
+    "references": [
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2015-5073"
+        },
+        {
+            "type": "WEB",
+            "url": "https://bugs.exim.org/show_bug.cgi?id=1651"
+        },
+        {
+            "type": "WEB",
+            "url": "http://vcs.pcre.org/pcre?view=revision&revision=1571"
+        },
+        {
+            "type": "DISCUSSION",
+            "url": "http://www.openwall.com/lists/oss-security/2015/06/26/1"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "pcre -- Heap Overflow Vulnerability in find_fixedlength()"
+}

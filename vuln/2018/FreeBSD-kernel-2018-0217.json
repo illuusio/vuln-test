@@ -1,0 +1,65 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "gitlab"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "introduced": "10.5.0"
+                        },
+                        {
+                            "fixed": "10.5.6"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                },
+                {
+                    "events": [
+                        {
+                            "introduced": "10.4.0"
+                        },
+                        {
+                            "fixed": "10.4.6"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                },
+                {
+                    "events": [
+                        {
+                            "introduced": "8.3"
+                        },
+                        {
+                            "fixed": "10.3.9"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "discovery": "2018-03-20T00:00:00Z",
+        "vid": "dc0c201c-31da-11e8-ac53-d8cb8abf62dd"
+    },
+    "details": "GitLab reports:\n\n> SSRF in services and web hooks\n> ==============================\n>\n> There were multiple server-side request forgery issues in the Services feature.\n> An attacker could make requests to servers within the same network of the GitLab\n> instance. This could lead to information disclosure, authentication bypass, or\n> potentially code execution. This issue has been assigned\n> [CVE-2018-8801](https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2018-8801).\n>\n> Gitlab Auth0 integration issue\n> ==============================\n>\n> There was an issue with the GitLab `omniauth-auth0` configuration\n> which resulted in the Auth0 integration signing in the wrong users.",
+    "id": "FreeBSD-kernel-2018-0217",
+    "modified": "2018-04-07T00:00:00Z",
+    "published": "2018-03-27T00:00:00Z",
+    "references": [
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2018-8801"
+        },
+        {
+            "type": "WEB",
+            "url": "https://about.gitlab.com/2018/03/20/critical-security-release-gitlab-10-dot-5-dot-6-released/"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "Gitlab -- multiple vulnerabilities"
+}

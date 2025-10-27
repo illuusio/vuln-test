@@ -1,0 +1,65 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:kernel",
+                "name": "FreeBSD-kernel"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "introduced": "10.1"
+                        },
+                        {
+                            "fixed": "10.1_15"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                },
+                {
+                    "events": [
+                        {
+                            "introduced": "9.3"
+                        },
+                        {
+                            "fixed": "9.3_20"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                },
+                {
+                    "events": [
+                        {
+                            "introduced": "8.4"
+                        },
+                        {
+                            "fixed": "8.4_34"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "discovery": "2015-07-21T00:00:00Z",
+        "vid": "0c064c43-600a-11e6-a6c3-14dae9d210b8"
+    },
+    "details": "Problem Description:\n====================\n\nTCP connections transitioning to the LAST\\_ACK state can\nbecome permanently stuck due to mishandling of protocol\nstate in certain situations, which in turn can lead to\naccumulated consumption and eventual exhaustion of system\nresources, such as mbufs and sockets.\n\nImpact:\n=======\n\nAn attacker who can repeatedly establish TCP connections\nto a victim system (for instance, a Web server) could create\nmany TCP connections that are stuck in LAST\\_ACK state and\ncause resource exhaustion, resulting in a denial of service\ncondition. This may also happen in normal operation where\nno intentional attack is conducted, but an attacker who can\nsend specifically crafted packets can trigger this more\nreliably.",
+    "id": "FreeBSD-kernel-2016-0167",
+    "modified": "2016-08-11T00:00:00Z",
+    "published": "2016-08-11T00:00:00Z",
+    "references": [
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2015-5358"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://www.freebsd.org/security/advisories/FreeBSD-SA-15:13.tcp.asc"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "FreeBSD -- Resource exhaustion due to sessions stuck in LAST_ACK state"
+}

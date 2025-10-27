@@ -1,0 +1,47 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "awstats"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "6.4_1"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "discovery": "2005-08-09T00:00:00Z",
+        "vid": "e86fbb5f-0d04-11da-bc08-0001020eed82"
+    },
+    "details": "An iDEFENSE Security Advisory reports:\n\n> Remote exploitation of an input validation vulnerability\n> in AWStats allows remote attackers to execute arbitrary\n> commands.\n>\n> The problem specifically exists because of insufficient\n> input filtering before passing user-supplied data to an\n> `eval()` function. As part of the statistics\n> reporting function, AWStats displays information about the\n> most common referrer values that caused users to visit the\n> website. The referrer data is used without proper\n> sanitation in an `eval()` statement, resulting\n> in the execution of arbitrary perl code.\n>\n> Successful exploitation results in the execution of\n> arbitrary commands with permissions of the web\n> service. Exploitation will not occur until the stats page\n> has been regenerated with the tainted referrer values from\n> the http access log. Note that AWStats is only vulnerable\n> in situations where at least one URLPlugin is enabled.",
+    "id": "FreeBSD-kernel-2005-0080",
+    "modified": "2005-08-23T00:00:00Z",
+    "published": "2005-08-14T00:00:00Z",
+    "references": [
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2005-1527"
+        },
+        {
+            "type": "DISCUSSION",
+            "url": "http://marc.theaimsgroup.com/?l=full-disclosure&m=112377934108902"
+        },
+        {
+            "type": "WEB",
+            "url": "http://www.idefense.com/application/poi/display?id=290&type=vulnerabilities"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "awstats -- arbitrary code execution vulnerability"
+}

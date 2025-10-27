@@ -1,0 +1,43 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "claws-mail"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "3.13.2"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "discovery": "2015-11-04T00:00:00Z",
+        "vid": "51358314-bec8-11e5-82cd-bcaec524bf84"
+    },
+    "details": "DrWhax reports:\n\n> So in codeconv.c there is a function for Japanese character set\n> conversion called conv\\_jistoeuc(). There is no bounds checking on\n> the output buffer, which is created on the stack with alloca()\n> Bug can be triggered by sending an email to TAILS\\_luser@riseup.net\n> or whatever.\n> Since my C is completely rusty, you might be able to make a better\n> judgment on the severity of this issue. Marking critical for now.",
+    "id": "FreeBSD-kernel-2016-0451",
+    "modified": "2016-01-19T00:00:00Z",
+    "published": "2016-01-19T00:00:00Z",
+    "references": [
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2015-8614"
+        },
+        {
+            "type": "WEB",
+            "url": "https://security-tracker.debian.org/tracker/CVE-2015-8614"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "claws-mail -- no bounds checking on the output buffer in conv_jistoeuc, conv_euctojis, conv_sjistoeuc"
+}

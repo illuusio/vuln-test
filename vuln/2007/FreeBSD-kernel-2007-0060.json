@@ -1,0 +1,40 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "openoffice"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "introduced": "0,1"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "discovery": "2007-09-19T00:00:00Z",
+        "vid": "e595e170-6771-11dc-8be8-02e0185f8d72"
+    },
+    "details": "iDefense reports:\n\n> Remote exploitation of multiple integer overflow\n> vulnerabilities within OpenOffice, as included in various\n> vendors' operating system distributions, allows attackers to\n> execute arbitrary code.\n>\n> These vulnerabilities exist within the TIFF parsing code of\n> the OpenOffice suite. When parsing the TIFF directory entries\n> for certain tags, the parser uses untrusted values from the\n> file to calculate the amount of memory to allocate. By\n> providing specially crafted values, an integer overflow occurs\n> in this calculation. This results in the allocation of a\n> buffer of insufficient size, which in turn leads to a heap\n> overflow.",
+    "id": "FreeBSD-kernel-2007-0060",
+    "modified": "2007-09-20T00:00:00Z",
+    "published": "2007-09-20T00:00:00Z",
+    "references": [
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2007-2834"
+        },
+        {
+            "type": "WEB",
+            "url": "http://labs.idefense.com/intelligence/vulnerabilities/display.php?id=593"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "openoffice -- arbitrary command execution vulnerability"
+}

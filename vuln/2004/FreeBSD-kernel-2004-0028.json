@@ -1,0 +1,39 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "rockdodger"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "0.6_3"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "discovery": "2004-10-29T00:00:00Z",
+        "vid": "2b4d5288-447e-11d9-9ebb-000854d03344"
+    },
+    "details": "The environment variable HOME is copied without regard\nto buffer size, which can be used to gain elevated privilege\nif the binary is installed setgid games, and a string is\nread from the high score file without bounds check.\n\nThe port installs the binary without setgid, but with a\nworld-writable high score file.",
+    "id": "FreeBSD-kernel-2004-0028",
+    "modified": "2004-12-02T00:00:00Z",
+    "published": "2004-12-02T00:00:00Z",
+    "references": [
+        {
+            "type": "WEB",
+            "url": "http://bugs.debian.org/cgi-bin/bugreport.cgi?bug=278878"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "rockdodger -- buffer overflows"
+}

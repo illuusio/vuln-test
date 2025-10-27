@@ -1,0 +1,128 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "bind910"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "9.10.2P2"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        },
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "bind99"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "9.9.7P1"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        },
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "bind910-base"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "introduced": "0,1"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        },
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "bind99-base"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "introduced": "0,1"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        },
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "FreeBSD"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "introduced": "9.3"
+                        },
+                        {
+                            "fixed": "9.3_19"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                },
+                {
+                    "events": [
+                        {
+                            "introduced": "8.4"
+                        },
+                        {
+                            "fixed": "8.4_33"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "discovery": "2015-07-07T00:00:00Z",
+        "vid": "c93533a3-24f1-11e5-8b74-3c970e169bc2"
+    },
+    "details": "ISC reports:\n\n> A very uncommon combination of zone data has been found\n> that triggers a bug in BIND, with the result that named\n> will exit with a \"REQUIRE\" failure in name.c when validating\n> the data returned in answer to a recursive query.\n>\n> A recursive resolver that is performing DNSSEC validation\n> can be deliberately terminated by any attacker who can\n> cause a query to be performed against a maliciously\n> constructed zone. This will result in a denial of\n> service to clients who rely on that resolver.",
+    "id": "FreeBSD-kernel-2015-0254",
+    "modified": "2016-08-09T00:00:00Z",
+    "published": "2015-07-07T00:00:00Z",
+    "references": [
+        {
+            "type": "ADVISORY",
+            "url": "https://www.freebsd.org/security/advisories/FreeBSD-SA-15:11.bind.asc"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2015-4620"
+        },
+        {
+            "type": "WEB",
+            "url": "https://kb.isc.org/article/AA-01267/"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "bind -- denial of service vulnerability"
+}

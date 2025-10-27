@@ -1,0 +1,43 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "fetchmail"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "6.3.8"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "discovery": "2007-04-06T00:00:00Z",
+        "vid": "f1c4d133-e6d3-11db-99ea-0060084a00e5"
+    },
+    "details": "Matthias Andree reports:\n\n> The POP3 standard, currently RFC-1939, has specified an optional,\n> MD5-based authentication scheme called \"APOP\" which no longer\n> should be considered secure.\n>\n> Additionally, fetchmail's POP3 client implementation has been\n> validating the APOP challenge too lightly and accepted random\n> garbage as a POP3 server's APOP challenge. This made it easier\n> than necessary for man-in-the-middle attackers to retrieve by\n> several probing and guessing the first three characters of the\n> APOP secret, bringing brute forcing the remaining characters well\n> within reach.",
+    "id": "FreeBSD-kernel-2007-0128",
+    "modified": "2007-04-09T00:00:00Z",
+    "published": "2007-04-09T00:00:00Z",
+    "references": [
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2007-1558"
+        },
+        {
+            "type": "WEB",
+            "url": "http://www.fetchmail.info/fetchmail-SA-2007-01.txt"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "fetchmail -- insecure APOP authentication"
+}

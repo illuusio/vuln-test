@@ -1,0 +1,59 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "dbus"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "1.8.8"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "discovery": "2014-09-16T00:00:00Z",
+        "vid": "38242d51-3e58-11e4-ac2f-bcaec565249c"
+    },
+    "details": "Simon McVittie reports:\n\n> Do not accept an extra fd in the padding of a cmsg message,\n> which could lead to a 4-byte heap buffer overrun\n> (CVE-2014-3635).\n>\n> Reduce default for maximum Unix file descriptors passed per\n> message from 1024 to 16, preventing a uid with the default\n> maximum number of connections from exhausting the system\n> bus' file descriptors under Linux's default rlimit\n> (CVE-2014-3636).\n>\n> Disconnect connections that still have a fd pending\n> unmarshalling after a new configurable limit,\n> pending\\_fd\\_timeout (defaulting to 150 seconds), removing\n> the possibility of creating an abusive connection that\n> cannot be disconnected by setting up a circular reference\n> to a connection's file descriptor (CVE-2014-3637).\n>\n> Reduce default for maximum pending replies per connection\n> from 8192 to 128, mitigating an algorithmic complexity\n> denial-of-service attack (CVE-2014-3638).\n>\n> Reduce default for authentication timeout on the system\n> bus from 30 seconds to 5 seconds, avoiding denial of service\n> by using up all unauthenticated connection slots; and when\n> all unauthenticated connection slots are used up, make new\n> connection attempts block instead of disconnecting them\n> (CVE-2014-3639).",
+    "id": "FreeBSD-kernel-2014-0052",
+    "modified": "2014-09-17T00:00:00Z",
+    "published": "2014-09-17T00:00:00Z",
+    "references": [
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2014-3635"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2014-3636"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2014-3637"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2014-3638"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2014-3639"
+        },
+        {
+            "type": "WEB",
+            "url": "http://lists.freedesktop.org/archives/dbus/2014-September/016343.html"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "dbus -- multiple vulnerabilities"
+}

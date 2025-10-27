@@ -1,0 +1,66 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "bash"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "4.3.27_1"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        },
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "bash-static"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "4.3.27_1"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "discovery": "2014-09-25T00:00:00Z",
+        "vid": "4a4e9f88-491c-11e4-ae2c-c80aa9043978"
+    },
+    "details": "RedHat security team reports:\n\n> It was discovered that the fixed-sized redir\\_stack could be forced\n> to overflow in the Bash parser, resulting in memory corruption, and\n> possibly leading to arbitrary code execution when evaluating\n> untrusted input that would not otherwise be run as code.\n\n> An off-by-one error was discovered in the way Bash was handling\n> deeply nested flow control constructs. Depending on the layout of\n> the .bss segment, this could allow arbitrary execution of code that\n> would not otherwise be executed by Bash.",
+    "id": "FreeBSD-kernel-2014-0043",
+    "modified": "2014-10-01T00:00:00Z",
+    "published": "2014-10-01T00:00:00Z",
+    "references": [
+        {
+            "type": "WEB",
+            "url": "https://access.redhat.com/security/cve/CVE-2014-7186"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2014-7186"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2014-7187"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "bash -- out-of-bounds memory access in parser"
+}

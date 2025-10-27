@@ -1,0 +1,176 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "py27-django"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "introduced": "1.8"
+                        },
+                        {
+                            "fixed": "1.8.2"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        },
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "py32-django"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "introduced": "1.8"
+                        },
+                        {
+                            "fixed": "1.8.2"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        },
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "py33-django"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "introduced": "1.8"
+                        },
+                        {
+                            "fixed": "1.8.2"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        },
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "py34-django"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "introduced": "1.8"
+                        },
+                        {
+                            "fixed": "1.8.2"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        },
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "py27-django-devel"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "20150531,1"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        },
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "py32-django-devel"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "20150531,1"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        },
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "py33-django-devel"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "20150531,1"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        },
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "py34-django-devel"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "20150531,1"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "discovery": "2015-05-20T00:00:00Z",
+        "vid": "48504af7-07ad-11e5-879c-00e0814cab4e"
+    },
+    "details": "The Django project reports:\n\n> A change to session.flush() in the cached\\_db session backend in\n> Django 1.8 mistakenly sets the session key to an empty string\n> rather than None. An empty string is treated as a valid session key\n> and the session cookie is set accordingly. Any users with an empty\n> string in their session cookie will use the same session store.\n> session.flush() is called by django.contrib.auth.logout() and, more\n> seriously, by django.contrib.auth.login() when a user switches accounts.\n> If a user is logged in and logs in again to a different account\n> (without logging out) the session is flushed to avoid reuse.\n> After the session is flushed (and its session key becomes '') the\n> account details are set on the session and the session is saved.\n> Any users with an empty string in their session cookie will now be\n> logged into that account.\n>\n> Thanks to Sam Cooke for reporting the issue.",
+    "id": "FreeBSD-kernel-2015-0316",
+    "modified": "2015-05-31T00:00:00Z",
+    "published": "2015-05-31T00:00:00Z",
+    "references": [
+        {
+            "type": "WEB",
+            "url": "https://www.djangoproject.com/weblog/2015/may/20/security-release/"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2015-3982"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "django -- Fixed session flushing in the cached_db backend"
+}

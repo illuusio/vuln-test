@@ -1,0 +1,43 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "qt4-xml"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "4.8.6"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "discovery": "2013-12-05T00:00:00Z",
+        "vid": "89709e58-d497-11e3-a3d5-5453ed2e2b49"
+    },
+    "details": "Richard J. Moore reports:\n\n> QXmlSimpleReader in Qt versions prior to 5.2 supports\n> expansion of internal entities in XML documents without\n> placing restrictions to ensure the document does not cause\n> excessive memory usage. If an application using this API\n> processes untrusted data then the application may use\n> unexpected amounts of memory if a malicious document is\n> processed.\n>\n> It is possible to construct XML documents using internal\n> entities that consume large amounts of memory and other\n> resources to process, this is known as the 'Billion Laughs'\n> attack. Qt versions prior to 5.2 did not offer protection\n> against this issue.",
+    "id": "FreeBSD-kernel-2014-0102",
+    "modified": "2014-05-05T00:00:00Z",
+    "published": "2014-05-05T00:00:00Z",
+    "references": [
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2013-4549"
+        },
+        {
+            "type": "WEB",
+            "url": "http://lists.qt-project.org/pipermail/announce/2013-December/000036.html"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "qt4-xml -- XML Entity Expansion Denial of Service"
+}

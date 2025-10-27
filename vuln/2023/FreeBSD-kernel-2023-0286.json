@@ -1,0 +1,75 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "py39-lmdb"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "0.98"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "discovery": "2019-09-11T00:00:00Z",
+        "vid": "c13a8c17-cbeb-11ed-956f-7054d21a9e2a"
+    },
+    "details": "TeamSeri0us reports:\n\n> An issue was discovered in py-lmdb 0.97. For certain values of md\\_flags, mdb\\_node\\_add does not properly set up a memcpy destination, leading to an invalid write operation. NOTE: this outcome occurs when accessing a data.mdb file supplied by an attacker.\n\n> An issue was discovered in py-lmdb 0.97. For certain values of mp\\_flags, mdb\\_page\\_touch does not properly set up mc->mc\\_pg[mc->top], leading to an invalid write operation. NOTE: this outcome occurs when accessing a data.mdb file supplied by an attacker.\n\n> An issue was discovered in py-lmdb 0.97. mdb\\_node\\_del does not validate a memmove in the case of an unexpected node->mn\\_hi, leading to an invalid write operation. NOTE: this outcome occurs when accessing a data.mdb file supplied by an attacker.\n\n> An issue was discovered in py-lmdb 0.97. For certain values of mn\\_flags, mdb\\_cursor\\_set triggers a memcpy with an invalid write operation within mdb\\_xcursor\\_init1. NOTE: this outcome occurs when accessing a data.mdb file supplied by an attacker.\n\n> An issue was discovered in py-lmdb 0.97. There is a divide-by-zero error in the function mdb\\_env\\_open2 if mdb\\_env\\_read\\_header obtains a zero value for a certain size field. NOTE: this outcome occurs when accessing a data.mdb file supplied by an attacker.",
+    "id": "FreeBSD-kernel-2023-0286",
+    "modified": "2023-03-26T00:00:00Z",
+    "published": "2023-03-26T00:00:00Z",
+    "references": [
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2019-16224"
+        },
+        {
+            "type": "WEB",
+            "url": "https://osv.dev/vulnerability/PYSEC-2019-236"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2019-16225"
+        },
+        {
+            "type": "WEB",
+            "url": "https://osv.dev/vulnerability/PYSEC-2019-237"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2019-16226"
+        },
+        {
+            "type": "WEB",
+            "url": "https://osv.dev/vulnerability/PYSEC-2019-238"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2019-16227"
+        },
+        {
+            "type": "WEB",
+            "url": "https://osv.dev/vulnerability/PYSEC-2019-239"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2019-16228"
+        },
+        {
+            "type": "WEB",
+            "url": "https://osv.dev/vulnerability/PYSEC-2019-240"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "py39-lmdb -- multiple vulnerabilities"
+}

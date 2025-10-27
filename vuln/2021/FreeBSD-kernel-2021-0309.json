@@ -1,0 +1,43 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "sudo"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "1.9.5"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "discovery": "2021-01-11T00:00:00Z",
+        "vid": "6193b3f6-548c-11eb-ba01-206a8a720317"
+    },
+    "details": "Todd C. Miller reports:\n\n> A potential information leak in sudoedit that could be used to\n> test for the existence of directories not normally accessible to\n> the user in certain circumstances. When creating a new file,\n> sudoedit checks to make sure the parent directory of the new file\n> exists before running the editor. However, a race condition exists\n> if the invoking user can replace (or create) the parent directory.\n> If a symbolic link is created in place of the parent directory,\n> sudoedit will run the editor as long as the target of the link\n> exists.If the target of the link does not exist, an error message\n> will be displayed. The race condition can be used to test for the\n> existence of an arbitrary directory. However, it \\_cannot\\_ be used\n> to write to an arbitrary location.",
+    "id": "FreeBSD-kernel-2021-0309",
+    "modified": "2021-01-11T00:00:00Z",
+    "published": "2021-01-11T00:00:00Z",
+    "references": [
+        {
+            "type": "WEB",
+            "url": "https://www.sudo.ws/stable.html#1.9.5"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2021-23239"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "sudo -- Potential information leak in sudoedit"
+}

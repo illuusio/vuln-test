@@ -1,0 +1,136 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "grafana"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "8.5.22"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                },
+                {
+                    "events": [
+                        {
+                            "introduced": "9.0.0"
+                        },
+                        {
+                            "fixed": "9.2.15"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                },
+                {
+                    "events": [
+                        {
+                            "introduced": "9.3.0"
+                        },
+                        {
+                            "fixed": "9.3.11"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                },
+                {
+                    "events": [
+                        {
+                            "introduced": "9.4.0"
+                        },
+                        {
+                            "fixed": "9.4.7"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        },
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "grafana8"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "8.5.22"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        },
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "grafana9"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "9.2.15"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                },
+                {
+                    "events": [
+                        {
+                            "introduced": "9.3.0"
+                        },
+                        {
+                            "fixed": "9.3.11"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                },
+                {
+                    "events": [
+                        {
+                            "introduced": "9.4.0"
+                        },
+                        {
+                            "fixed": "9.4.7"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "discovery": "2023-03-14T00:00:00Z",
+        "vid": "955eb3cc-ce0b-11ed-825f-6c3be5272acd"
+    },
+    "details": "Grafana Labs reports:\n\n> When a user adds a Graphite data source, they can then use the data source\n> in a dashboard. This capability contains a feature to use Functions. Once\n> a function is selected, a small tooltip appears when hovering over the name\n> of the function. This tooltip allows you to delete the selected Function\n> from your query or show the Function Description. However, no sanitization\n> is done when adding this description to the DOM.\n>\n> Since it is not uncommon to connect to public data sources, an attacker\n> could host a Graphite instance with modified Function Descriptions containing\n> XSS payloads. When the victim uses it in a query and accidentally hovers\n> over the Function Description, an attacker-controlled XSS payload\n> will be executed.\n>\n> The severity of this vulnerability is of CVSSv3.1 5.7 Medium\n> (CVSS: AV:N/AC:H/PR:H/UI:R/S:U/C:H/I:H/A:N (5.7)).",
+    "id": "FreeBSD-kernel-2023-0300",
+    "modified": "2023-03-29T00:00:00Z",
+    "published": "2023-03-29T00:00:00Z",
+    "references": [
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2023-1410"
+        },
+        {
+            "type": "WEB",
+            "url": "https://grafana.com/security/security-advisories/cve-2023-1410/"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "Grafana -- Stored XSS in Graphite FunctionDescription tooltip"
+}

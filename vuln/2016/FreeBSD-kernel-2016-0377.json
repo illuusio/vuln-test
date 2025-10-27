@@ -1,0 +1,43 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "xen-kernel"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "4.5.2_2"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "discovery": "2016-02-17T00:00:00Z",
+        "vid": "81f9d6a4-ddaf-11e5-b2bd-002590263bf5"
+    },
+    "details": "The Xen Project reports:\n\n> VMX refuses attempts to enter a guest with an instruction pointer\n> which doesn't satisfy certain requirements. In particular, the\n> instruction pointer needs to be canonical when entering a guest\n> currently in 64-bit mode. This is the case even if the VM entry\n> information specifies an exception to be injected immediately (in\n> which case the bad instruction pointer would possibly never get used\n> for other than pushing onto the exception handler's stack).\n> Provided the guest OS allows user mode to map the virtual memory\n> space immediately below the canonical/non-canonical address\n> boundary, a non-canonical instruction pointer can result even from\n> normal user mode execution. VM entry failure, however, is fatal to\n> the guest.\n>\n> Malicious HVM guest user mode code may be able to crash the\n> guest.",
+    "id": "FreeBSD-kernel-2016-0377",
+    "modified": "2016-02-28T00:00:00Z",
+    "published": "2016-02-28T00:00:00Z",
+    "references": [
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2016-2271"
+        },
+        {
+            "type": "WEB",
+            "url": "http://xenbits.xen.org/xsa/advisory-170.html"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "xen-kernel -- VMX: guest user mode may crash guest with non-canonical RIP"
+}

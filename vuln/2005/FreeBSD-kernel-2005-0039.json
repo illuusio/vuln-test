@@ -1,0 +1,103 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "lynx"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "2.8.5_1"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                },
+                {
+                    "events": [
+                        {
+                            "introduced": "2.8.6*,1"
+                        },
+                        {
+                            "fixed": "2.8.6d14"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        },
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "ja-lynx"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "2.8.5_1"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                },
+                {
+                    "events": [
+                        {
+                            "introduced": "2.8.6*,1"
+                        },
+                        {
+                            "fixed": "2.8.6d14"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        },
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "lynx-ssl"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "2.8.5_1"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "discovery": "2005-10-17T00:00:00Z",
+        "vid": "c01170bf-4990-11da-a1b8-000854d03344"
+    },
+    "details": "Ulf H\u00e4rnhammar reports:\n\n> When Lynx connects to an NNTP server to fetch information\n> about the available articles in a newsgroup, it will\n> call a function called HTrjis() with the information\n> from certain article headers. The function adds missing\n> ESC characters to certain data, to support Asian character\n> sets. However, it does not check if it writes outside\n> of the char array buf, and that causes a remote stack-based\n> buffer overflow.",
+    "id": "FreeBSD-kernel-2005-0039",
+    "modified": "2006-10-05T00:00:00Z",
+    "published": "2005-10-30T00:00:00Z",
+    "references": [
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2005-3120"
+        },
+        {
+            "type": "WEB",
+            "url": "http://lists.grok.org.uk/pipermail/full-disclosure/2005-October/038019.html"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "lynx -- remote buffer overflow"
+}

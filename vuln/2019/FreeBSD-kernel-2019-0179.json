@@ -1,0 +1,39 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "bro"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "2.6.2"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "discovery": "2019-05-29T00:00:00Z",
+        "vid": "177fa455-48fc-4ded-ba1b-9975caa7f62a"
+    },
+    "details": "Jon Siwek of Corelight reports:\n\n> The following Denial of Service vulnerabilities are addressed:\n>\n> * Integer type mismatches in BinPAC-generated parser code\n>   and Bro analyzer code may allow for crafted packet data\n>   to cause unintentional code paths in the analysis logic\n>   to be taken due to unsafe integer conversions causing the\n>   parser and analysis logic to each expect different fields\n>   to have been parsed. One such example, reported by Maksim\n>   Shudrak, causes the Kerberos analyzer to dereference a\n>   null pointer. CVE-2019-12175 was assigned for this issue.\n> * The Kerberos parser allows for several fields to be left\n>   uninitialized, but they were not marked with an &optional\n>   attribute and several usages lacked existence checks.\n>   Crafted packet data could potentially cause an attempt\n>   to access such uninitialized fields, generate a runtime\n>   error/exception, and leak memory. Existence checks and\n>   &optional attributes have been added to the relevent\n>   Kerberos fields.\n> * BinPAC-generated protocol parsers commonly contain fields\n>   whose length is derived from other packet input, and for\n>   those that allow for incremental parsing, BinPAC did not\n>   impose a limit on how large such a field could grow,\n>   allowing for remotely-controlled packet data to cause\n>   growth of BinPAC's flowbuffer bounded only by the numeric\n>   limit of an unsigned 64-bit integer, leading to memory\n>   exhaustion. There is now a generalized limit for how\n>   large flowbuffers are allowed to grow, tunable by setting\n>   \"BinPAC::flowbuffer\\_capacity\\_max\".",
+    "id": "FreeBSD-kernel-2019-0179",
+    "modified": "2019-05-31T00:00:00Z",
+    "published": "2019-05-31T00:00:00Z",
+    "references": [
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2017-12175"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "bro -- Unsafe integer conversions can cause unintentional code paths to be executed"
+}

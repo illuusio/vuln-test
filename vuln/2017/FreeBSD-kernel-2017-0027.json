@@ -1,0 +1,80 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "FreeBSD"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "introduced": "11.1"
+                        },
+                        {
+                            "fixed": "11.1_2"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                },
+                {
+                    "events": [
+                        {
+                            "introduced": "11.0"
+                        },
+                        {
+                            "fixed": "11.0_13"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                },
+                {
+                    "events": [
+                        {
+                            "introduced": "10.4"
+                        },
+                        {
+                            "fixed": "10.4_1"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                },
+                {
+                    "events": [
+                        {
+                            "introduced": "10.3"
+                        },
+                        {
+                            "fixed": "10.3_22"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "discovery": "2017-10-16T00:00:00Z",
+        "vid": "1f8de723-dab3-11e7-b5af-a4badb2f4699"
+    },
+    "details": "Problem Description:\n====================\n\nA vulnerability was found in how a number of implementations\ncan be triggered to reconfigure WPA/WPA2/RSN keys (TK, GTK,\nor IGTK) by replaying a specific frame that is used to\nmanage the keys.\n\nImpact:\n=======\n\nSuch reinstallation of the encryption key can result in\ntwo different types of vulnerabilities: disabling replay\nprotection and significantly reducing the security of\nencryption to the point of allowing frames to be decrypted\nor some parts of the keys to be determined by an attacker\ndepending on which cipher is used.",
+    "id": "FreeBSD-kernel-2017-0027",
+    "modified": "2017-12-06T00:00:00Z",
+    "published": "2017-12-06T00:00:00Z",
+    "references": [
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2017-1307"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2017-1308"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://www.freebsd.org/security/advisories/FreeBSD-SA-17:07.wpa.asc"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "FreeBSD -- WPA2 protocol vulnerability"
+}

@@ -1,0 +1,47 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "py27-salt"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "2015.8.1"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "discovery": "2015-10-16T00:00:00Z",
+        "vid": "3934cc60-f0fa-4eca-be09-c8bd7ae42871"
+    },
+    "details": "Salt release notes:\n\n> CVE-2015-6918 - Git modules leaking HTTPS auth credentials to debug log\n>\n> Updated the Git state and execution modules to no longer display HTTPS basic\n> authentication credentials in loglevel debug output on the Salt master. These\n> credentials are now replaced with REDACTED in the debug output. Thanks to\n> Andreas Stieger for bringing this to our attention.\n>\n> CVE-2015-6941 - win\\_useradd module and salt-cloud display passwords in debug\n> log\n>\n> Updated the win\\_useradd module return data to no longer include the password\n> of the newly created user. The password is now replaced with the string\n> XXX-REDACTED-XXX. Updated the Salt Cloud debug output to no longer display\n> win\\_password and sudo\\_password authentication credentials. Also updated the\n> Linode driver to no longer display authentication credentials in debug logs.\n> These credentials are now replaced with REDACTED in the debug output.",
+    "id": "FreeBSD-kernel-2015-0098",
+    "modified": "2015-10-17T00:00:00Z",
+    "published": "2015-10-17T00:00:00Z",
+    "references": [
+        {
+            "type": "WEB",
+            "url": "https://docs.saltstack.com/en/latest/topics/releases/2015.8.1.html"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2015-6918"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2015-6941"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "Salt -- multiple vulnerabilities"
+}

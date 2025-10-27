@@ -1,0 +1,55 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "squid"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "3.5.16"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "discovery": "2016-03-28T00:00:00Z",
+        "vid": "297117ba-f92d-11e5-92ce-002590263bf5"
+    },
+    "details": "Squid security advisory 2016:3 reports:\n\n> Due to a buffer overrun Squid pinger binary is vulnerable to\n> denial of service or information leak attack when processing\n> ICMPv6 packets.\n>\n> This bug also permits the server response to manipulate other\n> ICMP and ICMPv6 queries processing to cause information leak.\n>\n> This bug allows any remote server to perform a denial of service\n> attack on the Squid service by crashing the pinger. This may\n> affect Squid HTTP routing decisions. In some configurations,\n> sub-optimal routing decisions may result in serious service\n> degradation or even transaction failures.\n>\n> If the system does not contain buffer-overrun protection leading\n> to that crash this bug will instead allow attackers to leak\n> arbitrary amounts of information from the heap into Squid log\n> files. This is of higher importance than usual because the pinger\n> process operates with root priviliges.\n\nSquid security advisory 2016:4 reports:\n\n> Due to incorrect bounds checking Squid is vulnerable to a denial\n> of service attack when processing HTTP responses.\n>\n> This problem allows a malicious client script and remote server\n> delivering certain unusual HTTP response syntax to trigger a\n> denial of service for all clients accessing the Squid service.",
+    "id": "FreeBSD-kernel-2016-0325",
+    "modified": "2016-04-02T00:00:00Z",
+    "published": "2016-04-02T00:00:00Z",
+    "references": [
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2016-3947"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2016-3948"
+        },
+        {
+            "type": "REPORT",
+            "url": "https://bugs.freebsd.org/bugzilla/show_bug.cgi?id=208463"
+        },
+        {
+            "type": "WEB",
+            "url": "http://www.squid-cache.org/Advisories/SQUID-2016_3.txt"
+        },
+        {
+            "type": "WEB",
+            "url": "http://www.squid-cache.org/Advisories/SQUID-2016_4.txt"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "squid -- multiple vulnerabilities"
+}

@@ -1,0 +1,85 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "FreeBSD"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "introduced": "11.3"
+                        },
+                        {
+                            "fixed": "11.3_7"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                },
+                {
+                    "events": [
+                        {
+                            "introduced": "12.1"
+                        },
+                        {
+                            "fixed": "12.1_3"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        },
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "ntp"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "4.2.8p14"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        },
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "ntp-devel"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "last_affected": "4.3.99_6"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "discovery": "2019-05-30T00:00:00Z",
+        "vid": "591a706b-5cdc-11ea-9a0a-206a8a720317"
+    },
+    "details": "nwtime.org reports:\n\n> Three ntp vulnerabilities, Depending on configuration, may have\n> little impact up to termination of the ntpd process.\n>\n> NTP Bug 3610: Process\\_control() should exit earlier on short\n> packets. On systems that override the default and enable ntpdc\n> (mode 7) fuzz testing detected that a short packet will cause\n> ntpd to read uninitialized data.\n>\n> NTP Bug 3596: An unauthenticated unmonitored ntpd is vulnerable\n> to attack on IPv4 with highly predictable transmit timestamps. An\n> off-path attacker who can query time from the victim's ntp which\n> receives time from an unauthenticated time source must be able to\n> send from a spoofed IPv4 address of upstream ntp server and and\n> the victim must be able to process a large number of packets with\n> the spoofed IPv4 address of the upstream server. After eight or\n> more successful attacks in a row the attacker can either modify\n> the victim's clock by a small amount or cause ntpd to terminate.\n> The attack is especially effective when unusually short poll\n> intervals have been configured.\n>\n> NTP Bug 3592: The fix for https://bugs.ntp.org/3445 introduced\n> a bug such that a ntp can be prevented from initiating a time\n> volley to its peer resulting in a DoS.\n>\n> All three NTP bugs may result in DoS or terimation of the ntp\n> daemon.",
+    "id": "FreeBSD-kernel-2020-0296",
+    "modified": "2020-03-03T00:00:00Z",
+    "published": "2020-03-03T00:00:00Z",
+    "references": [
+        {
+            "type": "ADVISORY",
+            "url": "https://www.freebsd.org/security/advisories/FreeBSD-SA-20:09.ntp.asc"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "ntp -- Multiple vulnerabilities"
+}

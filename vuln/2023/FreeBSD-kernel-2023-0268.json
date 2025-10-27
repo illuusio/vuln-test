@@ -1,0 +1,51 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "traefik"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "2.9.9_1"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "discovery": "2023-03-10T00:00:00Z",
+        "vid": "02e51cb3-d7e4-11ed-9f7a-5404a68ad561"
+    },
+    "details": "The Go project reports:\n\n> HTTP and MIME header parsing can allocate large amounts\n> of memory, even when parsing small inputs, potentially\n> leading to a denial of service. Certain unusual patterns\n> of input data can cause the common function used to parse\n> HTTP and MIME headers to allocate substantially more\n> memory than required to hold the parsed headers. An\n> attacker can exploit this behavior to cause an HTTP\n> server to allocate large amounts of memory from a small\n> request, potentially leading to memory exhaustion and a\n> denial of service. With fix, header parsing now correctly\n> allocates only the memory required to hold parsed headers.",
+    "id": "FreeBSD-kernel-2023-0268",
+    "modified": "2023-04-07T00:00:00Z",
+    "published": "2023-04-07T00:00:00Z",
+    "references": [
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2023-24534"
+        },
+        {
+            "type": "WEB",
+            "url": "https://www.cve.org/CVERecord?id=CVE-2023-24534"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2023-29013"
+        },
+        {
+            "type": "WEB",
+            "url": "https://www.cve.org/CVERecord?id=CVE-2023-29013"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "traefik -- Use of vulnerable Go modules net/http, net/textproto"
+}

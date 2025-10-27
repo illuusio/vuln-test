@@ -1,0 +1,43 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "FreeBSD"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "introduced": "10.0"
+                        },
+                        {
+                            "fixed": "10.0_2"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "discovery": "2014-04-30T00:00:00Z",
+        "vid": "6b6ca5b6-6007-11e6-a6c3-14dae9d210b8"
+    },
+    "details": "Problem Description:\n====================\n\nThe default devfs rulesets are not loaded on boot, even\nwhen jails are used. Device nodes will be created in the\njail with their normal default access permissions, while\nmost of them should be hidden and inaccessible.\n\nImpact:\n=======\n\nJailed processes can get access to restricted resources\non the host system. For jailed processes running with\nsuperuser privileges this implies access to all devices on\nthe system. This level of access could lead to information\nleakage and privilege escalation.",
+    "id": "FreeBSD-kernel-2016-0188",
+    "modified": "2016-08-11T00:00:00Z",
+    "published": "2016-08-11T00:00:00Z",
+    "references": [
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2014-3001"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://www.freebsd.org/security/advisories/FreeBSD-SA-14:07.devfs.asc"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "FreeBSD -- devfs rules not applied by default for jails"
+}

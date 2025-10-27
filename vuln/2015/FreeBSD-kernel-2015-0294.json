@@ -1,0 +1,51 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "curl"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "introduced": "7.40"
+                        },
+                        {
+                            "fixed": "7.43"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "discovery": "2015-06-17T00:00:00Z",
+        "vid": "2438d4af-1538-11e5-a106-3c970e169bc2"
+    },
+    "details": "cURL reports:\n\n> libcurl can wrongly send HTTP credentials when re-using\n> connections.\n>\n> libcurl allows applications to set credentials for the\n> upcoming transfer with HTTP Basic authentication, like\n> with CURLOPT\\_USERPWD for example. Name and password.\n> Just like all other libcurl options the credentials\n> are sticky and are kept associated with the \"handle\"\n> until something is made to change the situation.\n>\n> Further, libcurl offers a curl\\_easy\\_reset() function\n> that resets a handle back to its pristine state in\n> terms of all settable options. A reset is of course\n> also supposed to clear the credentials. A reset is\n> typically used to clear up the handle and prepare\n> it for a new, possibly unrelated, transfer.\n>\n> Within such a handle, libcurl can also store a\n> set of previous connections in case a second transfer\n> is requested to a host name for which an existing\n> connection is already kept alive.\n>\n> With this flaw present, using the handle even\n> after a reset would make libcurl accidentally use\n> those credentials in a subsequent request if done\n> to the same host name and connection as was\n> previously accessed.\n>\n> An example case would be first requesting a password\n> protected resource from one section of a web site, and\n> then do a second request of a public resource from a\n> completely different part of the site without\n> authentication. This flaw would then inadvertently\n> leak the credentials in the second request.\n\n> libcurl can get tricked by a malicious SMB server to\n> send off data it did not intend to.\n>\n> In libcurl's state machine function handling the SMB\n> protocol (smb\\_request\\_state()), two length and offset\n> values are extracted from data that has arrived over\n> the network, and those values are subsequently used\n> to figure out what data range to send back.\n>\n> The values are used and trusted without boundary\n> checks and are just assumed to be valid. This allows\n> carefully handcrafted packages to trick libcurl\n> into responding and sending off data that was not\n> intended. Or just crash if the values cause libcurl\n> to access invalid memory.",
+    "id": "FreeBSD-kernel-2015-0294",
+    "modified": "2015-06-17T00:00:00Z",
+    "published": "2015-06-17T00:00:00Z",
+    "references": [
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2015-3236"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2015-3237"
+        },
+        {
+            "type": "WEB",
+            "url": "http://curl.haxx.se/docs/adv_20150617A.html"
+        },
+        {
+            "type": "WEB",
+            "url": "http://curl.haxx.se/docs/adv_20150617B.html"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "cURL -- Multiple Vulnerability"
+}

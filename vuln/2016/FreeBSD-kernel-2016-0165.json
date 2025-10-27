@@ -1,0 +1,65 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:kernel",
+                "name": "FreeBSD-kernel"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "introduced": "10.1"
+                        },
+                        {
+                            "fixed": "10.1_16"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                },
+                {
+                    "events": [
+                        {
+                            "introduced": "9.3"
+                        },
+                        {
+                            "fixed": "9.3_21"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                },
+                {
+                    "events": [
+                        {
+                            "introduced": "8.4"
+                        },
+                        {
+                            "fixed": "8.4_35"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "discovery": "2015-07-28T00:00:00Z",
+        "vid": "0cb9d5bb-600a-11e6-a6c3-14dae9d210b8"
+    },
+    "details": "Problem Description:\n====================\n\nThere is a mistake with the introduction of VNET, which\nconverted the global limit on the number of segments that\ncould belong to reassembly queues into a per-VNET limit.\nBecause mbufs are allocated from a global pool, in the\npresence of a sufficient number of VNETs, the total number\nof mbufs attached to reassembly queues can grow to the total\nnumber of mbufs in the system, at which point all network\ntraffic would cease.\n\nImpact:\n=======\n\nAn attacker who can establish concurrent TCP connections\nacross a sufficient number of VNETs and manipulate the\ninbound packet streams such that the maximum number of mbufs\nare enqueued on each reassembly queue can cause mbuf cluster\nexhaustion on the target system, resulting in a Denial of\nService condition.\n\nAs the default per-VNET limit on the number of segments\nthat can belong to reassembly queues is 1/16 of the total\nnumber of mbuf clusters in the system, only systems that\nhave 16 or more VNET instances are vulnerable.",
+    "id": "FreeBSD-kernel-2016-0165",
+    "modified": "2016-08-11T00:00:00Z",
+    "published": "2016-08-11T00:00:00Z",
+    "references": [
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2015-1417"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://www.freebsd.org/security/advisories/FreeBSD-SA-15:15.tcp.asc"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "FreeBSD -- Resource exhaustion in TCP reassembly"
+}

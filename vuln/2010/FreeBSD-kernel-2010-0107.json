@@ -1,0 +1,51 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "fetchmail"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "introduced": "4.6.3"
+                        },
+                        {
+                            "last_affected": "6.3.16"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "discovery": "2010-04-18T00:00:00Z",
+        "vid": "09910d76-4c82-11df-83fb-0015587e2cc1"
+    },
+    "details": "Fetchmail developer Matthias Andree reported a vulnerability\nthat allows remote attackers to crash the application\nwhen it is runs in verbose mode.\n\n> Fetchmail before release 6.3.17 did not properly\n> sanitize external input (mail headers and UID). When a\n> multi-character locale (such as UTF-8) was in use, this\n> could cause memory exhaustion and thus a denial of\n> service.",
+    "id": "FreeBSD-kernel-2010-0107",
+    "modified": "2010-04-20T00:00:00Z",
+    "published": "2010-04-20T00:00:00Z",
+    "references": [
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2010-1167"
+        },
+        {
+            "type": "REPORT",
+            "url": "https://bugs.freebsd.org/bugzilla/show_bug.cgi?id=145857"
+        },
+        {
+            "type": "WEB",
+            "url": "http://gitorious.org/fetchmail/fetchmail/commit/ec06293"
+        },
+        {
+            "type": "WEB",
+            "url": "http://seclists.org/oss-sec/2010/q2/76"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "fetchmail -- denial of service vulnerability"
+}

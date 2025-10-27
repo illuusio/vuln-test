@@ -1,0 +1,47 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "icedtea-web"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "1.2.1"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "discovery": "2012-07-31T00:00:00Z",
+        "vid": "55b498e2-e56c-11e1-bbd5-001c25e46b1d"
+    },
+    "details": "The IcedTea project team reports:\n\n> CVE-2012-3422: Use of uninitialized instance pointers\n>\n> An uninitialized pointer use flaw was found in IcedTea-Web web\n> browser plugin. A malicious web page could use this flaw make\n> IcedTea-Web browser plugin pass invalid pointer to a web browser.\n> Depending on the browser used, it may cause the browser to crash\n> or possibly execute arbitrary code.\n>\n> The get\\_cookie\\_info() and get\\_proxy\\_info() call\n> getFirstInTableInstance() with the instance\\_to\\_id\\_map hash as\n> a parameter. If instance\\_to\\_id\\_map is empty (which can happen\n> when plugin was recently removed), getFirstInTableInstance()\n> returns an uninitialized pointer.\n\n> CVE-2012-3423: Incorrect handling of non 0-terminated strings\n>\n> It was discovered that the IcedTea-Web web browser plugin\n> incorrectly assumed that all strings provided by browser are NUL\n> terminated, which is not guaranteed by the NPAPI (Netscape Plugin\n> Application Programming Interface). When used in a browser that\n> does not NUL terminate NPVariant NPStrings, this could lead to\n> buffer over-read or over-write, resulting in possible information\n> leak, crash, or code execution.\n>\n> Mozilla browsers currently NUL terminate strings, however recent\n> Chrome versions are known not to provide NUL terminated data.",
+    "id": "FreeBSD-kernel-2012-0089",
+    "modified": "2012-08-13T00:00:00Z",
+    "published": "2012-08-13T00:00:00Z",
+    "references": [
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2012-3422"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2012-3423"
+        },
+        {
+            "type": "DISCUSSION",
+            "url": "http://mail.openjdk.java.net/pipermail/distro-pkg-dev/2012-July/019580.html"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "Several vulnerabilities found in IcedTea-Web"
+}

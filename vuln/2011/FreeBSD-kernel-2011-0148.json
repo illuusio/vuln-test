@@ -1,0 +1,47 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "maradns"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "1.4.06"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "discovery": "2011-01-23T00:00:00Z",
+        "vid": "8015600f-2c80-11e0-9cc1-00163e5bf4f9"
+    },
+    "details": "MaraDNS developer Sam Trenholme reports:\n\n> ... a mistake in allocating an array of integers, allocating it\n> in bytes instead of sizeof(int) units. This resulted in a buffer\n> being too small, allowing it to be overwritten. The impact of this\n> programming error is that MaraDNS can be crashed by sending\n> MaraDNS a single \"packet of death\". Since the data placed in the\n> overwritten array cannot be remotely controlled (it is a list of\n> increasing integers), there is no way to increase privileges\n> exploiting this bug.",
+    "id": "FreeBSD-kernel-2011-0148",
+    "modified": "2011-01-31T00:00:00Z",
+    "published": "2011-01-31T00:00:00Z",
+    "references": [
+        {
+            "type": "ADVISORY",
+            "url": "https://www.securityfocus.com/bid/45966/info"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2011-0520"
+        },
+        {
+            "type": "WEB",
+            "url": "http://bugs.debian.org/cgi-bin/bugreport.cgi?bug=610834"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "maradns -- denial of service when resolving a long DNS hostname"
+}

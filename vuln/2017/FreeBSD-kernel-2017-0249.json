@@ -1,0 +1,39 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "phpMyAdmin"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "4.7.0"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "discovery": "2017-03-28T00:00:00Z",
+        "vid": "68611303-149e-11e7-b9bb-6805ca0b3d42"
+    },
+    "details": "The phpMyAdmin team reports:\n\n> ### Summary\n>\n> Bypass $cfg['Servers'][$i]['AllowNoPassword']\n>\n> ### Description\n>\n> A vulnerability was discovered where the restrictions\n> caused by $cfg['Servers'][$i]['AllowNoPassword'] = false are\n> bypassed under certain PHP versions. This can allow the\n> login of users who have no password set even if the\n> administrator has set $cfg['Servers'][$i]['AllowNoPassword']\n> to false (which is also the default).\n>\n> This behavior depends on the PHP version used (it seems\n> PHP 5 is affected, while PHP 7.0 is not).\n>\n> ### Severity\n>\n> We consider this vulnerability to be of moderate severity.\n>\n> ### Mitigation factor\n>\n> Set a password for all users.",
+    "id": "FreeBSD-kernel-2017-0249",
+    "modified": "2017-03-29T00:00:00Z",
+    "published": "2017-03-29T00:00:00Z",
+    "references": [
+        {
+            "type": "WEB",
+            "url": "https://www.phpmyadmin.net/security/PMASA-2017-8/"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "phpMyAdmin -- bypass 'no password' restriction"
+}

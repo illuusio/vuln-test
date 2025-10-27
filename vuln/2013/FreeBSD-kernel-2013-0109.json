@@ -1,0 +1,43 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "plib"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "1.8.5_4"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "discovery": "2011-12-21T00:00:00Z",
+        "vid": "13bf0602-c08a-11e2-bb21-083e8ed0f47b"
+    },
+    "details": "Secunia reports:\n\n> A vulnerability has been discovered in PLIB, which can be\n> exploited by malicious people to compromise an application\n> using the library. The vulnerability is caused due to a\n> boundary error within the \"ulSetError()\" function\n> (src/util/ulError.cxx) when creating the error message,\n> which can be exploited to overflow a static buffer.\n>\n> Successful exploitation allows the execution of arbitrary\n> code but requires that the attacker can e.g. control the\n> content of an overly long error message passed to the\n> \"ulSetError()\" function.\n>\n> The vulnerability is confirmed in version 1.8.5. Other\n> versions may also be affected.\n>\n> Originally reported in TORCS by Andres Gomez.",
+    "id": "FreeBSD-kernel-2013-0109",
+    "modified": "2013-05-19T00:00:00Z",
+    "published": "2013-05-19T00:00:00Z",
+    "references": [
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2011-4620"
+        },
+        {
+            "type": "DISCUSSION",
+            "url": "http://openwall.com/lists/oss-security/2011/12/21/2"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "plib -- buffer overflow"
+}

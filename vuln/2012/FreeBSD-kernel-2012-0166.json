@@ -1,0 +1,43 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "bugzilla"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "introduced": "4.0.0"
+                        },
+                        {
+                            "fixed": "4.0.5"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "discovery": "2012-02-22T00:00:00Z",
+        "vid": "7f448dc1-82ca-11e1-b393-20cf30e32f6d"
+    },
+    "details": "A Bugzilla Security Advisory reports:\n\n> The following security issues have been discovered in\n> Bugzilla:\n>\n> * Due to a lack of validation of the enctype form attribute\n>   when making POST requests to xmlrpc.cgi, a possible CSRF\n>   vulnerability was discovered. If a user visits an HTML page\n>   with some malicious HTML code in it, an attacker could make\n>   changes to a remote Bugzilla installation on behalf of the\n>   victim's account by using the XML-RPC API on a site running\n>   mod\\_perl. Sites running under mod\\_cgi are not affected.\n>   Also, the user would have had to be already logged in to the\n>   target site for the vulnerability to work.\n>\n> All affected installations are encouraged to upgrade as soon\n> as possible.",
+    "id": "FreeBSD-kernel-2012-0166",
+    "modified": "2012-04-10T00:00:00Z",
+    "published": "2012-04-10T00:00:00Z",
+    "references": [
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2012-0453"
+        },
+        {
+            "type": "REPORT",
+            "url": "https://bugzilla.mozilla.org/show_bug.cgi?id=725663"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "bugzilla Cross-Site Request Forgery"
+}

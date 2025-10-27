@@ -1,0 +1,61 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "tomcat85"
+            },
+            "versions": [
+                "8.5.64"
+            ]
+        },
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "tomcat9"
+            },
+            "versions": [
+                "9.0.44"
+            ]
+        },
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "tomcat10"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "introduced": "10.0.3"
+                        },
+                        {
+                            "last_affected": "10.0.4"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "discovery": "2021-03-24T00:00:00Z",
+        "vid": "cc7c85d9-f30a-11eb-b12b-fc4dd43e2b6a"
+    },
+    "details": "rbeaudry reports:\n\n> A vulnerability in Apache Tomcat allows an attacker to remotely trigger a denial of service. An error introduced as part of a change to improve error handling during non-blocking I/O meant that the error flag associated with the Request object was not reset between requests. This meant that once a non-blocking I/O error occurred, all future requests handled by that request object would fail. Users were able to trigger non-blocking I/O errors, e.g. by dropping a connection, thereby creating the possibility of triggering a DoS.\n>\n> Applications that do not use non-blocking I/O are not exposed to this vulnerability. This issue affects Apache Tomcat 10.0.3 to 10.0.4; 9.0.44; 8.5.64.",
+    "id": "FreeBSD-kernel-2021-0125",
+    "modified": "2021-08-01T00:00:00Z",
+    "published": "2021-08-01T00:00:00Z",
+    "references": [
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2021-30639"
+        },
+        {
+            "type": "WEB",
+            "url": "http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2021-30639"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "tomcat -- Remote Denial of Service in multiple versions"
+}

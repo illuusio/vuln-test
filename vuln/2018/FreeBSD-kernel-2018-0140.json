@@ -1,0 +1,47 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "apache24"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "2.4.34"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "discovery": "2018-07-18T00:00:00Z",
+        "vid": "8b1a50ab-8a8e-11e8-add2-b499baebfeaf"
+    },
+    "details": "The Apache project reports:\n\n> * DoS for HTTP/2 connections by crafted requests\n>   (CVE-2018-1333). By specially crafting HTTP/2 requests, workers\n>   would be allocated 60 seconds longer than necessary, leading to\n>   worker exhaustion and a denial of service. (low)\n> * mod\\_md, DoS via Coredumps on specially crafted requests\n>   (CVE-2018-8011). By specially crafting HTTP requests, the mod\\_md\n>   challenge handler would dereference a NULL pointer and cause the\n>   child process to segfault. This could be used to DoS the server.\n>   (moderate)",
+    "id": "FreeBSD-kernel-2018-0140",
+    "modified": "2018-07-18T00:00:00Z",
+    "published": "2018-07-18T00:00:00Z",
+    "references": [
+        {
+            "type": "WEB",
+            "url": "http://httpd.apache.org/security/vulnerabilities_24.html"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2018-1333"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2018-8011"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "Apache httpd -- multiple vulnerabilities"
+}

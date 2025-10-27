@@ -1,0 +1,82 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "ZendFramework"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "1.11.13"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        },
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "magento"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "1.7.0.2"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "discovery": "2012-06-26T00:00:00Z",
+        "vid": "ec34d0c2-1799-11e2-b4ab-000c29033c32"
+    },
+    "details": "The Zend Framework team reports:\n\n> The XmlRpc package of Zend Framework is vulnerable to XML\n> eXternal Entity Injection attacks (both server and client).\n> The SimpleXMLElement class (SimpleXML PHP extension) is used\n> in an insecure way to parse XML data. External entities can be\n> specified by adding a specific DOCTYPE element to XML-RPC\n> requests. By exploiting this vulnerability an application may be\n> coerced to open arbitrary files and/or TCP connections.\n>\n> Additionally, the Zend\\_Dom, Zend\\_Feed, Zend\\_Soap, and\n> Zend\\_XmlRpc components are vulnerable to XML Entity Expansion\n> (XEE) vectors, leading to Denial of Service vectors. XEE attacks\n> occur when the XML DOCTYPE declaration includes XML entity\n> definitions that contain either recursive or circular references;\n> this leads to CPU and memory consumption, making Denial of\n> Service exploits trivial to implement.",
+    "id": "FreeBSD-kernel-2012-0043",
+    "modified": "2015-10-14T00:00:00Z",
+    "published": "2012-10-16T00:00:00Z",
+    "references": [
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2012-3363"
+        },
+        {
+            "type": "WEB",
+            "url": "https://www.sec-consult.com/files/20120626-0_zend_framework_xxe_injection.txt"
+        },
+        {
+            "type": "WEB",
+            "url": "http://framework.zend.com/security/advisory/ZF2012-01"
+        },
+        {
+            "type": "WEB",
+            "url": "http://framework.zend.com/security/advisory/ZF2012-02"
+        },
+        {
+            "type": "WEB",
+            "url": "http://www.openwall.com/lists/oss-security/2012/06/26/2"
+        },
+        {
+            "type": "WEB",
+            "url": "https://secunia.com/advisories/49665/"
+        },
+        {
+            "type": "WEB",
+            "url": "http://www.magentocommerce.com/download/release_notes"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "Zend Framework -- Multiple vulnerabilities via XXE injection"
+}

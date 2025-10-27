@@ -1,0 +1,94 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "mediawiki"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "introduced": "1.19"
+                        },
+                        {
+                            "fixed": "1.19.2"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                },
+                {
+                    "events": [
+                        {
+                            "introduced": "1.18"
+                        },
+                        {
+                            "fixed": "1.18.5"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "discovery": "2012-08-27T00:00:00Z",
+        "vid": "7c0fecd6-f42f-11e1-b17b-000c2977ec30"
+    },
+    "details": "Mediawiki reports:\n\n> (Bug 39700) Wikipedia administrator Writ Keeper discovered\n> a stored XSS (HTML injection) vulnerability. This was\n> possible due to the handling of link text on File: links for\n> nonexistent files. MediaWiki 1.16 and later is affected.\n>\n> (Bug 39180) User Fomafix reported several DOM-based XSS\n> vulnerabilities, made possible by a combination of loose\n> filtering of the uselang parameter, and JavaScript gadgets\n> on various language Wikipedias.\n>\n> (Bug 39180) During internal review, it was discovered that\n> CSRF tokens, available via the api, were not protected with\n> X-Frame-Options headers. This could lead to a CSRF vulnerability\n> if the API response is embedded in an external website using\n> using an iframe.\n>\n> (Bug 39824) During internal review, it was discovered extensions\n> were not always allowed to prevent the account creation action.\n> This allowed users blocked by the GlobalBlocking extension to\n> create accounts.\n>\n> (Bug 39184) During internal review, it was discovered that\n> password data was always saved to the local MediaWiki database\n> even if authentication was handled by an extension, such as LDAP.\n> This could allow a compromised MediaWiki installation to leak\n> information about user's LDAP passwords. Additionally, in situations\n> when an authentication plugin returned false in its strict\n> function, this would allow old passwords to be used for accounts\n> that did not exist in the external system, indefinitely.\n>\n> (Bug 39823) During internal review, it was discovered that metadata\n> about blocks, hidden by a user with suppression rights, was visible\n> to administrators.",
+    "id": "FreeBSD-kernel-2012-0067",
+    "modified": "2012-09-01T00:00:00Z",
+    "published": "2012-09-01T00:00:00Z",
+    "references": [
+        {
+            "type": "WEB",
+            "url": "https://bugzilla.wikimedia.org/show_bug.cgi?id=39700"
+        },
+        {
+            "type": "WEB",
+            "url": "https://bugzilla.wikimedia.org/show_bug.cgi?id=37587"
+        },
+        {
+            "type": "WEB",
+            "url": "https://bugzilla.wikimedia.org/show_bug.cgi?id=39180"
+        },
+        {
+            "type": "WEB",
+            "url": "https://bugzilla.wikimedia.org/show_bug.cgi?id=39824"
+        },
+        {
+            "type": "WEB",
+            "url": "https://bugzilla.wikimedia.org/show_bug.cgi?id=39184"
+        },
+        {
+            "type": "WEB",
+            "url": "https://bugzilla.wikimedia.org/show_bug.cgi?id=39823"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2012-4377"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2012-4378"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2012-4379"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2012-4380"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2012-4381"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2012-4382"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "mediawiki -- multiple vulnerabilities"
+}

@@ -1,0 +1,43 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:kernel",
+                "name": "FreeBSD-kernel"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "introduced": "12.0"
+                        },
+                        {
+                            "fixed": "12.0_6"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "discovery": "2019-06-19T00:00:00Z",
+        "vid": "c294c2e6-b309-11e9-a87f-a4badb2f4699"
+    },
+    "details": "Problem Description:\n====================\n\nWhile processing acknowledgements, the RACK code uses\nseveral linked lists to maintain state entries. A malicious\nattacker can cause the lists to grow unbounded. This can\ncause an expensive list traversal on every packet being\nprocessed, leading to resource exhaustion and a denial of\nservice.\n\nImpact:\n=======\n\nAn attacker with the ability to send specially crafted\nTCP traffic to a victim system can degrade network performance\nand/or consume excessive CPU by exploiting the inefficiency\nof traversing the potentially very large RACK linked lists\nwith relatively small bandwidth cost.",
+    "id": "FreeBSD-kernel-2019-0131",
+    "modified": "2019-07-30T00:00:00Z",
+    "published": "2019-07-30T00:00:00Z",
+    "references": [
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2019-5599"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://www.freebsd.org/security/advisories/FreeBSD-SA-19:08.rack.asc"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "FreeBSD -- Resource exhaustion in non-default RACK TCP stack"
+}

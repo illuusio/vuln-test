@@ -1,0 +1,43 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "drupal"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "4.6.10"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "discovery": "2006-10-18T00:00:00Z",
+        "vid": "b2383758-5f15-11db-ae08-0008743bf21a"
+    },
+    "details": "The Drupal Team reports:\n\n> A bug in input validation and lack of output validation\n> allows HTML and script insertion on several pages.\n>\n> Drupal's XML parser passes unescaped data to watchdog\n> under certain circumstances. A malicious user may execute\n> an XSS attack via a specially crafted RSS feed. This\n> vulnerability exists on systems that do not use PHP's\n> mb\\_string extension (to check if mb\\_string is being used,\n> navigate to admin/settings and look under \"String\n> handling\"). Disabling the aggregator module provides an\n> immediate workaround.\n>\n> The aggregator module, profile module, and forum module do\n> not properly escape output of certain fields.\n>\n> Note: XSS attacks may lead to administrator access if\n> certain conditions are met.",
+    "id": "FreeBSD-kernel-2006-0038",
+    "modified": "2006-10-18T00:00:00Z",
+    "published": "2006-10-18T00:00:00Z",
+    "references": [
+        {
+            "type": "WEB",
+            "url": "http://drupal.org/files/sa-2006-024/advisory.txt"
+        },
+        {
+            "type": "WEB",
+            "url": "http://drupal.org/drupal-4.7.4"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "drupal -- multiple XSS vulnerabilities"
+}

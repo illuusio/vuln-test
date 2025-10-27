@@ -1,0 +1,104 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "openssl"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "1.1.1j,1"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        },
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "openssl-devel"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "3.0.0.a12"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        },
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "FreeBSD"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "introduced": "12.2"
+                        },
+                        {
+                            "fixed": "12.2_10"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                },
+                {
+                    "events": [
+                        {
+                            "introduced": "11.4"
+                        },
+                        {
+                            "fixed": "11.4_13"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "discovery": "2021-02-16T00:00:00Z",
+        "vid": "96a21236-707b-11eb-96d8-d4c9ef517024"
+    },
+    "details": "The OpenSSL project reports:\n\n> Null pointer deref in X509\\_issuer\\_and\\_serial\\_hash()\n> CVE-2021-23841  \n> (Moderate) The OpenSSL public API function\n> X509\\_issuer\\_and\\_serial\\_hash() attempts to create a unique hash\n> value based on the issuer and serial number data contained within\n> an X509 certificate. However it fails to correctly handle any errors\n> that may occur while parsing the issuer field (which might occur if\n> the issuer field is maliciously constructed). This may subsequently\n> result in a NULL pointer deref and a crash leading to a potential\n> denial of service attack.\n>\n> Integer overflow in CipherUpdate CVE-2021-23840  \n> (Low)\n> Calls to EVP\\_CipherUpdate, EVP\\_EncryptUpdate and EVP\\_DecryptUpdate\n> may overflow the output length argument in some cases where the\n> input length is close to the maximum permissable length for an\n> integer on the platform. In such cases the return value from the\n> function call will be 1 (indicating success), but the output length\n> value will be negative. This could cause applications to behave\n> incorrectly or crash.",
+    "id": "FreeBSD-kernel-2021-0278",
+    "modified": "2021-08-25T00:00:00Z",
+    "published": "2021-02-16T00:00:00Z",
+    "references": [
+        {
+            "type": "WEB",
+            "url": "https://www.openssl.org/news/secadv/20210216.txt"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2021-23841"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2021-23840"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2021-23839"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://www.freebsd.org/security/advisories/FreeBSD-SA-21:17.openssl.asc"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "OpenSSL -- Multiple vulnerabilities"
+}

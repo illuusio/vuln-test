@@ -1,0 +1,43 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "consul"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "1.9.0"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "discovery": "2020-11-02T00:00:00Z",
+        "vid": "8d17229f-3054-11eb-a455-ac1f6b16e566"
+    },
+    "details": "Hashicorp reports:\n\n> Increase the permissions to read from the\n> /connect/ca/configuration endpoint to operator:write.\n> Previously Connect CA configuration, including the private\n> key, set via this endpoint could be read back by an operator\n> with operator:read privileges.",
+    "id": "FreeBSD-kernel-2020-0033",
+    "modified": "2020-12-06T00:00:00Z",
+    "published": "2020-12-06T00:00:00Z",
+    "references": [
+        {
+            "type": "WEB",
+            "url": "https://github.com/hashicorp/consul/blob/master/CHANGELOG.md"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2020-28053"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "consul -- Fix Consul Connect CA private key configuration"
+}

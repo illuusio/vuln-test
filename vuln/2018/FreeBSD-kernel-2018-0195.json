@@ -1,0 +1,45 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "mbedtls"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "2.7.2"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        },
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "polarssl13"
+            }
+        }
+    ],
+    "database_specific": {
+        "discovery": "2018-03-21T00:00:00Z",
+        "vid": "d8382a69-4728-11e8-ba83-0011d823eebd"
+    },
+    "details": "Simon Butcher reports:\n\n> * Defend against Bellcore glitch attacks by verifying the results\n>   of RSA private key operations.\n> * Fix implementation of the truncated HMAC extension. The\n>   previous implementation allowed an offline 2^80 brute force\n>   attack on the HMAC key of a single, uninterrupted connection\n>   (with no resumption of the session).\n> * Reject CRLs containing unsupported critical extensions. Found\n>   by Falko Strenzke and Evangelos Karatsiolis.\n> * Fix a buffer overread in ssl\\_parse\\_server\\_key\\_exchange() that\n>   could cause a crash on invalid input.\n> * Fix a buffer overread in ssl\\_parse\\_server\\_psk\\_hint() that could\n>   cause a crash on invalid input.",
+    "id": "FreeBSD-kernel-2018-0195",
+    "modified": "2018-04-23T00:00:00Z",
+    "published": "2018-04-23T00:00:00Z",
+    "references": [
+        {
+            "type": "WEB",
+            "url": "https://tls.mbed.org/tech-updates/releases/mbedtls-2.8.0-2.7.2-and-2.1.11-released"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "mbed TLS (PolarSSL) -- multiple vulnerabilities"
+}

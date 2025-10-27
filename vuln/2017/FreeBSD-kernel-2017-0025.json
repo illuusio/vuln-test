@@ -1,0 +1,54 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:kernel",
+                "name": "FreeBSD-kernel"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "introduced": "10.4"
+                        },
+                        {
+                            "fixed": "10.4_3"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                },
+                {
+                    "events": [
+                        {
+                            "introduced": "10.3"
+                        },
+                        {
+                            "fixed": "10.3_24"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "discovery": "2017-11-15T00:00:00Z",
+        "vid": "5b1463dd-dab3-11e7-b5af-a4badb2f4699"
+    },
+    "details": "Problem Description:\n====================\n\nNamed paths are globally scoped, meaning a process located\nin one jail can read and modify the content of POSIX shared\nmemory objects created by a process in another jail or the\nhost system.\n\nImpact:\n=======\n\nA malicious user that has access to a jailed system is\nable to abuse shared memory by injecting malicious content\nin the shared memory region. This memory region might be\nexecuted by applications trusting the shared memory, like\nSquid.\n\nThis issue could lead to a Denial of Service or local\nprivilege escalation.",
+    "id": "FreeBSD-kernel-2017-0025",
+    "modified": "2017-12-06T00:00:00Z",
+    "published": "2017-12-06T00:00:00Z",
+    "references": [
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2017-1087"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://www.freebsd.org/security/advisories/FreeBSD-SA-17:09.shm.asc"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "FreeBSD -- POSIX shm allows jails to access global namespace"
+}

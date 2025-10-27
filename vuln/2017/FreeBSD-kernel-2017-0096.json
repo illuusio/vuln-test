@@ -1,0 +1,43 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "curl"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "7.56.0"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "discovery": "2017-10-04T00:00:00Z",
+        "vid": "ccace707-a8d8-11e7-ac58-b499baebfeaf"
+    },
+    "details": "The cURL project reports:\n\n> FTP PWD response parser out of bounds read\n>\n> libcurl may read outside of a heap allocated buffer when doing FTP.\n>\n> When libcurl connects to an FTP server and successfully logs in\n> (anonymous or not), it asks the server for the current directory with\n> the PWD command. The server then responds with a 257 response containing\n> the path, inside double quotes. The returned path name is then kept by\n> libcurl for subsequent uses.\n>\n> Due to a flaw in the string parser for this directory name, a directory\n> name passed like this but without a closing double quote would lead to\n> libcurl not adding a trailing NUL byte to the buffer holding the name.\n> When libcurl would then later access the string, it could read beyond\n> the allocated heap buffer and crash or wrongly access data beyond the\n> buffer, thinking it was part of the path.\n>\n> A malicious server could abuse this fact and effectively prevent\n> libcurl-based clients to work with it - the PWD command is always issued\n> on new FTP connections and the mistake has a high chance of causing a\n> segfault.",
+    "id": "FreeBSD-kernel-2017-0096",
+    "modified": "2017-10-04T00:00:00Z",
+    "published": "2017-10-04T00:00:00Z",
+    "references": [
+        {
+            "type": "WEB",
+            "url": "https://curl.haxx.se/docs/adv_20171004.html"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2017-1000254"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "cURL -- out of bounds read"
+}

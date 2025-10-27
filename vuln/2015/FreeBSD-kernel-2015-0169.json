@@ -1,0 +1,47 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "vlc"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "2.2.1_5,4"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "discovery": "2015-08-20T00:00:00Z",
+        "vid": "a0a4e24c-4760-11e5-9391-3c970e169bc2"
+    },
+    "details": "oCERT reports:\n\n> The stable VLC version suffers from an arbitrary pointer\n> dereference vulnerability.\n>\n> The vulnerability affects the 3GP file format parser,\n> insufficient restrictions on a writable buffer can be\n> exploited to execute arbitrary code via the heap memory.\n> A specific 3GP file can be crafted to trigger the\n> vulnerability.\n>\n> Credit: vulnerability reported by Loren Maggiore of\n> Trail of Bits.",
+    "id": "FreeBSD-kernel-2015-0169",
+    "modified": "2015-08-20T00:00:00Z",
+    "published": "2015-08-20T00:00:00Z",
+    "references": [
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2015-5949"
+        },
+        {
+            "type": "WEB",
+            "url": "https://git.videolan.org/?p=vlc/vlc-2.2.git;a=commitdiff;h=ce91452460a75d7424b165c4dc8db98114c3cbd9;hp=9e12195d3e4316278af1fa4bcb6a705ff27456fd"
+        },
+        {
+            "type": "WEB",
+            "url": "https://www.ocert.org/advisories/ocert-2015-009.html"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "vlc -- arbitrary pointer dereference vulnerability"
+}

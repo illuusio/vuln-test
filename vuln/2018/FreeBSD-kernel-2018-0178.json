@@ -1,0 +1,51 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "bind912"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "9.12.1P2"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "discovery": "2018-05-18T00:00:00Z",
+        "vid": "94599fe0-5ca3-11e8-8be1-d05099c0ae8c"
+    },
+    "details": "ISC reports:\n\n> An error in zone database reference counting can\n> lead to an assertion failure if a server which is\n> running an affected version of BIND attempts\n> several transfers of a slave zone in quick\n> succession.\n\n> A problem with the implementation of the new\n> serve-stale feature in BIND 9.12 can lead to\n> an assertion failure in rbtdb.c, even when\n> stale-answer-enable is off. Additionally,\n> problematic interaction between the serve-stale\n> feature and NSEC aggressive negative caching can\n> in some cases cause undesirable behavior from named,\n> such as a recursion loop or excessive logging.",
+    "id": "FreeBSD-kernel-2018-0178",
+    "modified": "2018-05-21T00:00:00Z",
+    "published": "2018-05-21T00:00:00Z",
+    "references": [
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2018-5736"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2018-5737"
+        },
+        {
+            "type": "WEB",
+            "url": "https://kb.isc.org/article/AA-01602"
+        },
+        {
+            "type": "WEB",
+            "url": "https://kb.isc.org/article/AA-01606"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "BIND -- multiple vulnerabilities"
+}

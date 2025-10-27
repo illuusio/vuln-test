@@ -1,0 +1,98 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "gitlab"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "introduced": "7.9.0"
+                        },
+                        {
+                            "last_affected": "8.17.8"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                },
+                {
+                    "events": [
+                        {
+                            "introduced": "9.0.0"
+                        },
+                        {
+                            "last_affected": "9.0.12"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                },
+                {
+                    "events": [
+                        {
+                            "introduced": "9.1.0"
+                        },
+                        {
+                            "last_affected": "9.1.9"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                },
+                {
+                    "events": [
+                        {
+                            "introduced": "9.2.0"
+                        },
+                        {
+                            "last_affected": "9.2.9"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                },
+                {
+                    "events": [
+                        {
+                            "introduced": "9.3.0"
+                        },
+                        {
+                            "last_affected": "9.3.9"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                },
+                {
+                    "events": [
+                        {
+                            "introduced": "9.4.0"
+                        },
+                        {
+                            "last_affected": "9.4.3"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "discovery": "2017-08-10T00:00:00Z",
+        "vid": "abcc5ad3-7e6a-11e7-93f7-d43d7e971a1b"
+    },
+    "details": "GitLab reports:\n\n> Remote Command Execution in git client\n> ======================================\n>\n> An external code review performed by Recurity-Labs identified a remote\n> command execution vulnerability in git that could be exploited via the \"Repo\n> by URL\" import option in GitLab. The command line git client was not\n> properly escaping command line arguments in URLs using the SSH protocol\n> before invoking the SSH client. A specially crafted URL could be used to\n> execute arbitrary shell commands on the GitLab server.  \n> To fully patch this vulnerability two fixes were needed. The Omnibus\n> versions of GitLab contain a patched git client. For source users who may\n> still be running an older version of git, GitLab now also blocks import URLs\n> containing invalid host and usernames.  \n> This issue has been assigned CVE-2017-12426.\n>\n> Improper sanitization of GitLab export files on import\n> ======================================================\n>\n> GitLab versions 8.13.3, 8.12.8, 8.11.10, 8.10.13, and 8.9.12 contained a\n> patch for a critical directory traversal vulnerability in the GitLab export\n> feature that could be exploited by including symlinks in the export file and\n> then re-importing it to a GitLab instance. This vulnerability was patched by\n> checking for and removing symlinks in these files on import.  \n> Recurity-Labs also determined that this fix did not properly remove symlinks for\n> hidden files. Though not as dangerous as the original vulnerability hidden file\n> symlinks could still be used to steal copies of git repositories belonging to\n> other users if the path to the git repository was known by the attacker. An\n> updated fix has been included in these releases that properly removes all\n> symlinks.  \n> This import option was not made available to non-admin users until GitLab\n> 8.13.0.",
+    "id": "FreeBSD-kernel-2017-0152",
+    "modified": "2017-08-11T00:00:00Z",
+    "published": "2017-08-11T00:00:00Z",
+    "references": [
+        {
+            "type": "WEB",
+            "url": "https://about.gitlab.com/2017/08/10/gitlab-9-dot-4-dot-4-released/"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2017-12426"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "GitLab -- two vulnerabilities"
+}

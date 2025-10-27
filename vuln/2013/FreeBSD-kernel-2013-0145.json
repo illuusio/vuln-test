@@ -1,0 +1,106 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "perl"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "5.12.4_5"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                },
+                {
+                    "events": [
+                        {
+                            "introduced": "5.14.0"
+                        },
+                        {
+                            "fixed": "5.14.2_3"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                },
+                {
+                    "events": [
+                        {
+                            "introduced": "5.16.0"
+                        },
+                        {
+                            "fixed": "5.16.2_1"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        },
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "perl-threaded"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "5.12.4_5"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                },
+                {
+                    "events": [
+                        {
+                            "introduced": "5.14.0"
+                        },
+                        {
+                            "fixed": "5.14.2_3"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                },
+                {
+                    "events": [
+                        {
+                            "introduced": "5.16.0"
+                        },
+                        {
+                            "fixed": "5.16.2_1"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "discovery": "2013-03-04T00:00:00Z",
+        "vid": "68c1f75b-8824-11e2-9996-c48508086173"
+    },
+    "details": "Perl developers report:\n\n> In order to prevent an algorithmic complexity attack\n> against its hashing mechanism, perl will sometimes\n> recalculate keys and redistribute the contents of a hash.\n> This mechanism has made perl robust against attacks that\n> have been demonstrated against other systems.\n>\n> Research by Yves Orton has recently uncovered a flaw in\n> the rehashing code which can result in pathological\n> behavior. This flaw could be exploited to carry out a\n> denial of service attack against code that uses arbitrary\n> user input as hash keys.\n>\n> Because using user-provided strings as hash keys is a\n> very common operation, we urge users of perl to update their\n> perl executable as soon as possible.",
+    "id": "FreeBSD-kernel-2013-0145",
+    "modified": "2016-08-22T00:00:00Z",
+    "published": "2013-03-10T00:00:00Z",
+    "references": [
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2013-1667"
+        },
+        {
+            "type": "WEB",
+            "url": "http://www.nntp.perl.org/group/perl.perl5.porters/2013/03/msg199755.html"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "perl -- denial of service via algorithmic complexity attack on hashing routines"
+}

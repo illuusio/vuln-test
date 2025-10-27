@@ -1,0 +1,74 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "drupal6"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "6.36"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        },
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "drupal7"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "7.38"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "discovery": "2015-06-17T00:00:00Z",
+        "vid": "d605edb1-1616-11e5-a000-d050996490d0"
+    },
+    "details": "Drupal development team reports:\n\n> ### Impersonation (OpenID module - Drupal 6 and 7 - Critical)\n>\n> A vulnerability was found in the OpenID module that allows\n> a malicious user to log in as other users on the site,\n> including administrators, and hijack their accounts.\n>\n> This vulnerability is mitigated by the fact that the victim\n> must have an account with an associated OpenID identity from\n> a particular set of OpenID providers (including, but not\n> limited to, Verisign, LiveJournal, or StackExchange).\n>\n> ### Open redirect (Field UI module - Drupal 7 - Less critical)\n>\n> The Field UI module uses a \"destinations\" query string parameter\n> in URLs to redirect users to new destinations after completing\n> an action on a few administration pages. Under certain\n> circumstances, malicious users can use this parameter to\n> construct a URL that will trick users into being redirected\n> to a 3rd party website, thereby exposing the users to potential\n> social engineering attacks.\n>\n> This vulnerability is mitigated by the fact that only sites\n> with the Field UI module enabled are affected.\n>\n> Drupal 6 core is not affected, but see the similar advisory\n> for the Drupal 6 contributed CCK module:\n> [SA-CONTRIB-2015-126](https://www.drupal.org/node/2507753)\n>\n> ### Open redirect (Overlay module - Drupal 7 - Less critical)\n>\n> The Overlay module displays administrative pages as a layer\n> over the current page (using JavaScript), rather than replacing\n> the page in the browser window. The Overlay module does not\n> sufficiently validate URLs prior to displaying their contents,\n> leading to an open redirect vulnerability.\n>\n> This vulnerability is mitigated by the fact that it can only\n> be used against site users who have the \"Access the administrative\n> overlay\" permission, and that the Overlay module must be enabled.\n>\n> ### Information disclosure (Render cache system - Drupal 7 - Less critical)\n>\n> On sites utilizing Drupal 7's render cache system to cache\n> content on the site by user role, private content viewed by\n> user 1 may be included in the cache and exposed to non-privileged\n> users.\n>\n> This vulnerability is mitigated by the fact that render caching\n> is not used in Drupal 7 core itself (it requires custom code or\n> the contributed [Render\n> Cache](https://www.drupal.org/project/render_cache) module to enable) and that it only affects sites that\n> have user 1 browsing the live site. Exposure is also limited if an\n> administrative role has been assigned to the user 1 account (which\n> is done, for example, by the Standard install profile that ships\n> with Drupal core).",
+    "id": "FreeBSD-kernel-2015-0293",
+    "modified": "2015-06-19T00:00:00Z",
+    "published": "2015-06-19T00:00:00Z",
+    "references": [
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2015-3231"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2015-3232"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2015-3233"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2015-3234"
+        },
+        {
+            "type": "WEB",
+            "url": "https://www.drupal.org/SA-CORE-2015-002"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "drupal -- multiple vulnerabilities"
+}

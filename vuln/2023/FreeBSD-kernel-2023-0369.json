@@ -1,0 +1,43 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "fish"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "introduced": "3.1.0"
+                        },
+                        {
+                            "fixed": "3.4.0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "discovery": "2021-12-26T00:00:00Z",
+        "vid": "a3b10c9b-99d9-11ed-aa55-d05099fed512"
+    },
+    "details": "Peter Ammon reports:\n\n> fish is a command line shell. fish version 3.1.0 through\n> version 3.3.1 is vulnerable to arbitrary code execution.\n> git repositories can contain per-repository\n> configuration that change the behavior of git, including\n> running arbitrary commands. When using the default\n> configuration of fish, changing to a directory\n> automatically runs git commands in order to display\n> information about the current repository in the prompt.\n> If an attacker can convince a user to change their\n> current directory into one controlled by the attacker,\n> such as on a shared file system or extracted archive,\n> fish will run arbitrary commands under the attacker's\n> control. This problem has been fixed in fish 3.4.0. Note\n> that running git in these directories, including using\n> the git tab completion, remains a potential trigger for\n> this issue. As a workaround, remove the\n> fish\\_git\\_prompt function from the prompt.",
+    "id": "FreeBSD-kernel-2023-0369",
+    "modified": "2023-01-21T00:00:00Z",
+    "published": "2023-01-21T00:00:00Z",
+    "references": [
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2022-20001"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2022-20001"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "shells/fish -- arbitrary code execution via git"
+}

@@ -1,0 +1,43 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "unbound"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "introduced": "1.6.1,1"
+                        },
+                        {
+                            "fixed": "1.23.0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "discovery": "2025-07-16T00:00:00Z",
+        "vid": "e27ee4fc-cdc9-45a1-8242-09898cdbdc91"
+    },
+    "details": "sep@nlnetlabs.nl reports:\n\n> A multi-vendor cache poisoning vulnerability named 'Rebirthday\n> Attack' has been discovered in caching resolvers that support\n> EDNS Client Subnet (ECS). Unbound is also vulnerable when compiled\n> with ECS support, i.e., '--enable-subnet', AND configured\n> to send ECS information along with queries to upstream name servers,\n> i.e., at least one of the 'send-client-subnet',\n> 'client-subnet-zone' or 'client-subnet-always-forward'\n> options is used. Resolvers supporting ECS need to segregate outgoing\n> queries to accommodate for different outgoing ECS information. This\n> re-opens up resolvers to a birthday paradox attack (Rebirthday\n> Attack) that tries to match the DNS transaction ID in order to cache\n> non-ECS poisonous replies.",
+    "id": "FreeBSD-ports-2025-0037",
+    "modified": "2025-07-18T00:00:00Z",
+    "published": "2025-07-18T00:00:00Z",
+    "references": [
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2025-5994"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://nvd.nist.gov/vuln/detail/CVE-2025-5994"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "unbound -- Cache poisoning via the ECS-enabled Rebirthday Attack"
+}

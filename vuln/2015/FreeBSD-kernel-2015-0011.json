@@ -1,0 +1,70 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "bugzilla44"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "4.4.11"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        },
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "bugzilla50"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "5.0.2"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "discovery": "2015-12-22T00:00:00Z",
+        "vid": "54075861-a95a-11e5-8b40-20cf30e32f6d"
+    },
+    "details": "Bugzilla Security Advisory\n\n> During the generation of a dependency graph, the code for\n> the HTML image map is generated locally if a local dot\n> installation is used. With escaped HTML characters in a bug\n> summary, it is possible to inject unfiltered HTML code in\n> the map file which the CreateImagemap function generates.\n> This could be used for a cross-site scripting attack.\n>\n> If an external HTML page contains a <script> element with\n> its src attribute pointing to a buglist in CSV format, some\n> web browsers incorrectly try to parse the CSV file as valid\n> JavaScript code. As the buglist is generated based on the\n> privileges of the user logged into Bugzilla, the external\n> page could collect confidential data contained in the CSV\n> file.",
+    "id": "FreeBSD-kernel-2015-0011",
+    "modified": "2015-12-23T00:00:00Z",
+    "published": "2015-12-23T00:00:00Z",
+    "references": [
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2015-8508"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2015-8509"
+        },
+        {
+            "type": "REPORT",
+            "url": "https://bugzilla.mozilla.org/show_bug.cgi?id=1221518"
+        },
+        {
+            "type": "REPORT",
+            "url": "https://bugzilla.mozilla.org/show_bug.cgi?id=1232785"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "Bugzilla security issues"
+}

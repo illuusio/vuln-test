@@ -1,0 +1,66 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "python38"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "3.8.9"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        },
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "python39"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "3.9.3"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "discovery": "2021-01-21T00:00:00Z",
+        "vid": "f671c282-95ef-11eb-9c34-080027f515ea"
+    },
+    "details": "David Schw\u00f6rer reports:\n\n> Remove the getfile feature of the pydoc module which could be\n> abused to read arbitrary files on the disk (directory traversal\n> vulnerability). Moreover, even source code of Python modules\n> can contain sensitive data like passwords.",
+    "id": "FreeBSD-kernel-2021-0226",
+    "modified": "2021-04-10T00:00:00Z",
+    "published": "2021-04-10T00:00:00Z",
+    "references": [
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2021-3426"
+        },
+        {
+            "type": "WEB",
+            "url": "https://pythoninsider.blogspot.com/2021/04/python-393-and-389-are-now-available.html"
+        },
+        {
+            "type": "WEB",
+            "url": "https://bugs.python.org/issue42988"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "python -- Information disclosure via pydoc -p: /getfile?key=path allows to read arbitrary file on the filesystem"
+}

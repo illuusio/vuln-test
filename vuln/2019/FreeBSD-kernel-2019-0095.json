@@ -1,0 +1,62 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "dovecot"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "2.3.7.2"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        },
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "dovecot-pigeonhole"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "0.5.7.2"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "discovery": "2019-04-13T00:00:00Z",
+        "vid": "abaaecda-ea16-43e2-bad0-d34a9ac576b1"
+    },
+    "details": "Aki Tuomi reports:\n\n> Vulnerability Details:\n> IMAP and ManageSieve protocol parsers do not properly handle NUL byte\n> when scanning data in quoted strings, leading to out of bounds heap\n> memory writes.\n> Risk:\n> This vulnerability allows for out-of-bounds writes to objects stored on\n> the heap up to 8096 bytes in pre-login phase, and 65536 bytes post-login\n> phase, allowing sufficiently skilled attacker to perform complicated\n> attacks that can lead to leaking private information or remote code\n> execution. Abuse of this bug is very difficult to observe, as it does\n> not necessarily cause a crash. Attempts to abuse this bug are not\n> directly evident from logs.",
+    "id": "FreeBSD-kernel-2019-0095",
+    "modified": "2019-08-28T00:00:00Z",
+    "published": "2019-08-28T00:00:00Z",
+    "references": [
+        {
+            "type": "WEB",
+            "url": "https://dovecot.org/pipermail/dovecot/2019-August/116874.html"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2019-11500"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "Dovecot -- improper input validation"
+}

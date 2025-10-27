@@ -1,0 +1,56 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "wu-ftpd"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "last_affected": "2.6.2_3"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        },
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "wu-ftpd+ipv6"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "last_affected": "2.6.2_5"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "discovery": "2004-02-17T00:00:00Z",
+        "vid": "3b7c7f6c-7102-11d8-873f-0020ed76ef5a"
+    },
+    "details": "Glenn Stewart reports a bug in wu-ftpd's ftpaccess\n`restricted-uid'/`restricted-gid' directives:\n\n> Users can get around the restriction to their home\n> directory by issuing a simple chmod command on their home\n> directory. On the next ftp log in, the user will have '/'\n> as their root directory.\n\nMatt Zimmerman discovered that the cause of the bug was a\nmissing check for a restricted user within a code path that\nis executed only when a certain error is encountered.",
+    "id": "FreeBSD-kernel-2004-0246",
+    "modified": "2004-03-29T00:00:00Z",
+    "published": "2004-03-08T00:00:00Z",
+    "references": [
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2004-0148"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://www.securityfocus.com/bid/9832/info"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "wu-ftpd ftpaccess `restricted-uid'/`restricted-gid' directive may be bypassed"
+}

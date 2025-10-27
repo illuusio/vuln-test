@@ -1,0 +1,104 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "redis"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "7.0.9"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        },
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "redis-devel"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "7.0.9.20230228"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        },
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "redis62"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "6.2.11"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        },
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "redis6"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "6.0.18"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "discovery": "2023-02-28T00:00:00Z",
+        "vid": "b17bce48-b7c6-11ed-b304-080027f5fec9"
+    },
+    "details": "The Redis core team reports:\n\n> CVE-2023-25155\n> :   Specially crafted SRANDMEMBER, ZRANDMEMBER, and\n>     HRANDFIELD commands can trigger an integer overflow,\n>     resulting in a runtime assertion and termination of the\n>     Redis server process.\n>\n> CVE-2022-36021\n> :   String matching commands (like SCAN or KEYS) with a\n>     specially crafted pattern to trigger a denial-of-service\n>     attack on Redis, causing it to hang and consume 100% CPU\n>     time.",
+    "id": "FreeBSD-kernel-2023-0325",
+    "modified": "2023-03-01T00:00:00Z",
+    "published": "2023-03-01T00:00:00Z",
+    "references": [
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2023-25155"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2022-36021"
+        },
+        {
+            "type": "WEB",
+            "url": "https://groups.google.com/g/redis-db/c/3hQ1oTO4hMI"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "redis -- multiple vulnerabilities"
+}

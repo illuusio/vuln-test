@@ -1,0 +1,43 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "xen-tools"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "introduced": "3.3"
+                        },
+                        {
+                            "fixed": "4.5.0_6"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "discovery": "2015-06-02T00:00:00Z",
+        "vid": "af38cfec-27e7-11e5-a4a5-002590263bf5"
+    },
+    "details": "The Xen Project reports:\n\n> Logic is in place to avoid writes to certain host config space\n> fields when the guest must nevertheless be able to access their\n> virtual counterparts. A bug in how this logic deals with accesses\n> spanning multiple fields allows the guest to write to the host MSI\n> message data field.\n>\n> While generally the writes write back the values previously read,\n> their value in config space may have got changed by the host between\n> the qemu read and write. In such a case host side interrupt handling\n> could become confused, possibly losing interrupts or allowing\n> spurious interrupt injection into other guests.\n>\n> Certain untrusted guest administrators may be able to confuse host\n> side interrupt handling, leading to a Denial of Service.",
+    "id": "FreeBSD-kernel-2015-0238",
+    "modified": "2015-07-11T00:00:00Z",
+    "published": "2015-07-11T00:00:00Z",
+    "references": [
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2015-4103"
+        },
+        {
+            "type": "WEB",
+            "url": "http://xenbits.xen.org/xsa/advisory-128.html"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "xen-tools -- Potential unintended writes to host MSI message data field via qemu"
+}

@@ -1,0 +1,62 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "ruby"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "1.6.8.2004.07.26"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                },
+                {
+                    "events": [
+                        {
+                            "introduced": "1.7.0"
+                        },
+                        {
+                            "fixed": "1.8.1.2004.07.23"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "discovery": "2004-08-16T00:00:00Z",
+        "vid": "e811aaf1-f015-11d8-876f-00902714cc7c"
+    },
+    "details": "According to a Debian Security Advisory:\n\n> Andres Salomon noticed a problem in the CGI session\n> management of Ruby, an object-oriented scripting language.\n> CGI::Session's FileStore (and presumably PStore [...])\n> implementations store session information insecurely.\n> They simply create files, ignoring permission issues.\n> This can lead an attacker who has also shell access to the\n> webserver to take over a session.",
+    "id": "FreeBSD-kernel-2004-0152",
+    "modified": "2004-08-28T00:00:00Z",
+    "published": "2004-08-16T00:00:00Z",
+    "references": [
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2004-0755"
+        },
+        {
+            "type": "WEB",
+            "url": "http://xforce.iss.net/xforce/xfdb/16996"
+        },
+        {
+            "type": "WEB",
+            "url": "http://www.debian.org/security/2004/dsa-537"
+        },
+        {
+            "type": "DISCUSSION",
+            "url": "http://marc.theaimsgroup.com/?l=bugtraq&m=109267579822250&w=2"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "Ruby insecure file permissions in the CGI session management"
+}

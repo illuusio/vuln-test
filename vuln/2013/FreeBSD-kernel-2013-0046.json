@@ -1,0 +1,65 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "subversion"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "introduced": "1.4.0"
+                        },
+                        {
+                            "fixed": "1.6.23_2"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                },
+                {
+                    "events": [
+                        {
+                            "introduced": "1.7.0"
+                        },
+                        {
+                            "fixed": "1.7.13"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                },
+                {
+                    "events": [
+                        {
+                            "introduced": "1.8.0"
+                        },
+                        {
+                            "fixed": "1.8.3"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "discovery": "2013-08-30T00:00:00Z",
+        "vid": "f8a913cc-1322-11e3-8ffa-20cf30e32f6d"
+    },
+    "details": "Subversion Project reports:\n\n> svnserve takes a --pid-file option which creates a file containing the\n> process id it is running as. It does not take steps to ensure that the file\n> it has been directed at is not a symlink. If the pid file is in a directory\n> writeable by unprivileged users, the destination could be replaced by a\n> symlink allowing for privilege escalation. svnserve does not create a pid\n> file by default.\n>\n> All versions are only vulnerable when the --pid-file=ARG option is used.",
+    "id": "FreeBSD-kernel-2013-0046",
+    "modified": "2013-09-02T00:00:00Z",
+    "published": "2013-09-02T00:00:00Z",
+    "references": [
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2013-4277"
+        },
+        {
+            "type": "WEB",
+            "url": "http://subversion.apache.org/security/CVE-2013-4277-advisory.txt"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "svnserve is vulnerable to a local privilege escalation vulnerability via symlink attack."
+}

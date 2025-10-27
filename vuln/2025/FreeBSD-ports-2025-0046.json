@@ -1,0 +1,159 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "git"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "2.50.1"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        },
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "git-cvs"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "2.50.1"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        },
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "git-gui"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "2.50.1"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        },
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "git-p4"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "2.50.1"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        },
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "git-svn"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "2.50.1"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "discovery": "2025-04-11T00:00:00Z",
+        "vid": "2a4472ed-5c0d-11f0-b991-291fce777db8"
+    },
+    "details": "Git development team reports:\n\n> CVE-2025-27613: Gitk:\n> When a user clones an untrusted repository and runs Gitk without\n> additional command arguments, any writable file can be created and\n> truncated. The option \"Support per-file encoding\" must have been\n> enabled. The operation \"Show origin of this line\" is affected as\n> well, regardless of the option being enabled or not.\n>\n> CVE-2025-27614: Gitk:\n> A Git repository can be crafted in such a way that a user who has\n> cloned the repository can be tricked into running any script\n> supplied by the attacker by invoking `gitk filename`, where\n> `filename` has a particular structure.\n>\n> CVE-2025-46835: Git GUI:\n> When a user clones an untrusted repository and is tricked into\n> editing a file located in a maliciously named directory in the\n> repository, then Git GUI can create and overwrite any writable\n> file.\n>\n> CVE-2025-48384: Git:\n> When reading a config value, Git strips any trailing carriage\n> return and line feed (CRLF). When writing a config entry, values\n> with a trailing CR are not quoted, causing the CR to be lost when\n> the config is later read. When initializing a submodule, if the\n> submodule path contains a trailing CR, the altered path is read\n> resulting in the submodule being checked out to an incorrect\n> location. If a symlink exists that points the altered path to the\n> submodule hooks directory, and the submodule contains an executable\n> post-checkout hook, the script may be unintentionally executed\n> after checkout.\n>\n> CVE-2025-48385: Git:\n> When cloning a repository Git knows to optionally fetch a bundle\n> advertised by the remote server, which allows the server-side to\n> offload parts of the clone to a CDN. The Git client does not\n> perform sufficient validation of the advertised bundles, which\n> allows the remote side to perform protocol injection.\n> This protocol injection can cause the client to write the fetched\n> bundle to a location controlled by the adversary. The fetched\n> content is fully controlled by the server, which can in the worst\n> case lead to arbitrary code execution.\n>\n> CVE-2025-48386: Git:\n> The wincred credential helper uses a static buffer (`target`) as a\n> unique key for storing and comparing against internal storage. This\n> credential helper does not properly bounds check the available\n> space remaining in the buffer before appending to it with\n> `wcsncat()`, leading to potential buffer overflows.",
+    "id": "FreeBSD-ports-2025-0046",
+    "modified": "2025-07-08T00:00:00Z",
+    "published": "2025-07-08T00:00:00Z",
+    "references": [
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2025-27613"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2025-27613"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2025-27614"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2025-27614"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2025-46835"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2025-46835"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2025-48384"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2025-48384"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2025-48385"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2025-48385"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2025-48386"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2025-48386"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "git -- multiple vulnerabilities"
+}

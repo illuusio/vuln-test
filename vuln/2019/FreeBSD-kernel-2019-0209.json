@@ -1,0 +1,47 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "gnutls"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "3.6.7"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "discovery": "2019-03-27T00:00:00Z",
+        "vid": "fb30db8f-62af-11e9-b0de-001cc0382b2f"
+    },
+    "details": "The GnuTLS project reports:\n\n> * Tavis Ormandy from Google Project Zero found a memory\n>   corruption (double free) vulnerability in the certificate\n>   verification API. Any client or server application that verifies\n>   X.509 certificates with GnuTLS 3.5.8 or later is affected.\n> * It was found using the TLS fuzzer tools that decoding a\n>   malformed TLS1.3 asynchronous message can cause a server crash\n>   via an invalid pointer access. The issue affects GnuTLS server\n>   applications since 3.6.4.",
+    "id": "FreeBSD-kernel-2019-0209",
+    "modified": "2019-04-19T00:00:00Z",
+    "published": "2019-04-19T00:00:00Z",
+    "references": [
+        {
+            "type": "WEB",
+            "url": "https://www.gnutls.org/security-new.html#GNUTLS-SA-2019-03-27"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2019-3829"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2019-3836"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "GnuTLS -- double free, invalid pointer access"
+}

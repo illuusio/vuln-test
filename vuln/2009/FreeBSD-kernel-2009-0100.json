@@ -1,0 +1,62 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "drupal5"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "5.18"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        },
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "drupal6"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "6.12"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "discovery": "2009-05-13T00:00:00Z",
+        "vid": "a6605f4b-4067-11de-b444-001372fd0af2"
+    },
+    "details": "The Drupal Security Team reports:\n\n> When outputting user-supplied data Drupal strips potentially\n> dangerous HTML attributes and tags or escapes characters which\n> have a special meaning in HTML. This output filtering secures the\n> site against cross site scripting attacks via user input.\n>\n> Certain byte sequences that are valid in the UTF-8 specification\n> are potentially dangerous when interpreted as UTF-7. Internet\n> Explorer 6 and 7 may decode these characters as UTF-7 if they\n> appear before the <meta http-equiv=\"Content-Type\" /> tag that\n> specifies the page content as UTF-8, despite the fact that Drupal\n> also sends a real HTTP header specifying the content as UTF-8.\n> This enables attackers to execute cross site scripting attacks\n> with UTF-7. SA-CORE-2009-005 - Drupal core - Cross site scripting\n> contained an incomplete fix for the issue. HTML exports of books\n> are still vulnerable, which means that anyone with edit\n> permissions for pages in outlines is able to insert arbitrary HTML\n> and script code in these exports.\n>\n> Additionally, the taxonomy module allows users with the\n> 'administer taxonomy' permission to inject arbitrary HTML and\n> script code in the help text of any vocabulary.",
+    "id": "FreeBSD-kernel-2009-0100",
+    "modified": "2009-05-16T00:00:00Z",
+    "published": "2009-05-14T00:00:00Z",
+    "references": [
+        {
+            "type": "WEB",
+            "url": "http://drupal.org/node/461886"
+        },
+        {
+            "type": "WEB",
+            "url": "http://secunia.com/advisories/35045"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "drupal -- cross-site scripting"
+}

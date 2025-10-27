@@ -1,0 +1,51 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "openvpn"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "introduced": "2.0"
+                        },
+                        {
+                            "fixed": "2.0.6"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "discovery": "2006-04-03T00:00:00Z",
+        "vid": "be4ccb7b-c48b-11da-ae12-0002b3b60e4c"
+    },
+    "details": "Hendrik Weimer reports:\n\n> OpenVPN clients are a bit too generous when accepting\n> configuration options from a server. It is possible to transmit\n> environment variables to client-side shell scripts. There are some\n> filters in place to prevent obvious nonsense, however they don't\n> catch the good old LD\\_PRELOAD trick. All we need is to put a file\n> onto the client under a known location (e.g. by returning a\n> specially crafted document upon web access) and we have a remote\n> root exploit. But since the attack may only come from authenticated\n> servers, this threat is greatly reduced.",
+    "id": "FreeBSD-kernel-2006-0168",
+    "modified": "2006-04-06T00:00:00Z",
+    "published": "2006-04-05T00:00:00Z",
+    "references": [
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2006-1629"
+        },
+        {
+            "type": "WEB",
+            "url": "http://www.osreviews.net/reviews/security/openvpn-print"
+        },
+        {
+            "type": "WEB",
+            "url": "http://openvpn.net/changelog.html"
+        },
+        {
+            "type": "DISCUSSION",
+            "url": "http://sourceforge.net/mailarchive/message.php?msg_id=15298074"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "openvpn -- LD_PRELOAD code execution on client through malicious or compromised server"
+}

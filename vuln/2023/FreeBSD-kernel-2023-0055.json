@@ -1,0 +1,54 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "FreeBSD"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "introduced": "13.2"
+                        },
+                        {
+                            "fixed": "13.2_5"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                },
+                {
+                    "events": [
+                        {
+                            "introduced": "12.4"
+                        },
+                        {
+                            "fixed": "12.4_7"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "discovery": "2023-11-08T00:00:00Z",
+        "vid": "5afcc9a4-7e04-11ee-8e38-002590c1f29c"
+    },
+    "details": "Problem Description:\n====================\n\nFor line-buffered streams the \\_\\_sflush() function did not\ncorrectly update the FILE object's write space member when the\nwrite(2) system call returns an error.\n\nImpact:\n=======\n\nDepending on the nature of an application that calls libc's\nstdio functions and the presence of errors returned from the write(2)\nsystem call (or an overridden stdio write routine) a heap buffer\noverfly may occur. Such overflows may lead to data corruption or\nthe execution of arbitrary code at the privilege level of the calling\nprogram.",
+    "id": "FreeBSD-kernel-2023-0055",
+    "modified": "2023-11-08T00:00:00Z",
+    "published": "2023-11-08T00:00:00Z",
+    "references": [
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2023-5941"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://www.freebsd.org/security/advisories/FreeBSD-SA-23:15.stdio.asc"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "FreeBSD -- libc stdio buffer overflow"
+}

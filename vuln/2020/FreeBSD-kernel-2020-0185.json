@@ -1,0 +1,62 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "bind911"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "introduced": "9.11.14"
+                        },
+                        {
+                            "fixed": "9.11.20"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        },
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "bind916"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "introduced": "9.16.0"
+                        },
+                        {
+                            "fixed": "9.16.4"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "discovery": "2020-06-17T00:00:00Z",
+        "vid": "f00d1873-b138-11ea-8659-901b0ef719ab"
+    },
+    "details": "ISC reports:\n\n> The asterisk character (\"\\*\") is allowed in DNS zone files, where\n> it is most commonly present as a wildcard at a terminal node of\n> the Domain Name System graph. However, the RFCs do not require\n> and BIND does not enforce that an asterisk character be present\n> only at a terminal node.\n>\n> A problem can occur when an asterisk is present in an empty\n> non-terminal location within the DNS graph. If such a node exists,\n> after a series of queries, named can reach an inconsistent state\n> that results in the failure of an assertion check in rbtdb.c,\n> followed by the program exiting due to the assertion failure.",
+    "id": "FreeBSD-kernel-2020-0185",
+    "modified": "2020-06-18T00:00:00Z",
+    "published": "2020-06-18T00:00:00Z",
+    "references": [
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2020-8619"
+        },
+        {
+            "type": "WEB",
+            "url": "https://kb.isc.org/docs/cve-2020-8619"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "BIND -- Remote Denial of Service vulnerability"
+}

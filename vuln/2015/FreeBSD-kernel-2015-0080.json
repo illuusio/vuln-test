@@ -1,0 +1,47 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "openafs"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "1.6.15"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "discovery": "2015-10-28T00:00:00Z",
+        "vid": "017a493f-7db6-11e5-a762-14dae9d210b8"
+    },
+    "details": "The OpenAFS development team reports:\n\n> When constructing an Rx acknowledgment (ACK) packet, Andrew-derived Rx\n> implementations do not initialize three octets of data that are padding\n> in the C language structure and were inadvertently included in the wire\n> protocol (CVE-2015-7762). Additionally, OpenAFS Rx in versions 1.5.75\n> through 1.5.78, 1.6.0 through 1.6.14, and 1.7.0 through 1.7.32 include\n> a variable-length padding at the end of the ACK packet, in an attempt to\n> detect the path MTU, but only four octets of the additional padding are\n> initialized (CVE-2015-7763).",
+    "id": "FreeBSD-kernel-2015-0080",
+    "modified": "2015-10-28T00:00:00Z",
+    "published": "2015-10-28T00:00:00Z",
+    "references": [
+        {
+            "type": "WEB",
+            "url": "http://openafs.org/pages/security/OPENAFS-SA-2015-007.txt"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2015-7762"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2015-7763"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "openafs -- information disclosure"
+}

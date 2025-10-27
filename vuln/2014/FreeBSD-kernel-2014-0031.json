@@ -1,0 +1,43 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "phpMyAdmin"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "introduced": "4.2.0"
+                        },
+                        {
+                            "fixed": "4.2.10.1"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "discovery": "2014-10-21T00:00:00Z",
+        "vid": "25b78f04-59c8-11e4-b711-6805ca0b3d42"
+    },
+    "details": "The phpMyAdmin development team reports:\n\n> With a crafted database or table name it is possible to\n> trigger an XSS in SQL debug output when enabled and in\n> server monitor page when viewing and analysing executed\n> queries.\n>\n> This vulnerability can be triggered only by someone who\n> is logged in to phpMyAdmin, as the usual token protection\n> prevents non-logged-in users from accessing the required\n> pages. Moreover, debugging SQL is a developer option which\n> is disabled by default and expected to be disabled in\n> production environments.",
+    "id": "FreeBSD-kernel-2014-0031",
+    "modified": "2014-10-22T00:00:00Z",
+    "published": "2014-10-22T00:00:00Z",
+    "references": [
+        {
+            "type": "WEB",
+            "url": "http://www.phpmyadmin.net/home_page/security/PMASA-2014-12.php"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2014-8326"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "phpMyAdmin -- XSS vulnerabilities in SQL debug output and server monitor page."
+}

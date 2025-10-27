@@ -1,0 +1,70 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "openssl"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "1.1.1k,1"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        },
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "FreeBSD"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "introduced": "12.2"
+                        },
+                        {
+                            "fixed": "12.2_5"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "discovery": "2021-03-25T00:00:00Z",
+        "vid": "5a668ab3-8d86-11eb-b8d6-d4c9ef517024"
+    },
+    "details": "The OpenSSL project reports:\n\n> High: CA certificate check bypass with X509\\_V\\_FLAG\\_X509\\_STRICT\n> (CVE-2021-3450)  \n> The X509\\_V\\_FLAG\\_X509\\_STRICT flag enables\n> additional security checks of the certificates present in a\n> certificate chain. It is not set by default.\n>\n> High: NULL pointer deref in signature\\_algorithms processing\n> (CVE-2021-3449)  \n> An OpenSSL TLS server may crash if sent a\n> maliciously crafted renegotiation ClientHello message from a client.\n> If a TLSv1.2 renegotiation ClientHello omits the\n> signature\\_algorithms extension (where it was present in the initial\n> ClientHello), but includes a signature\\_algorithms\\_cert extension\n> then a NULL pointer dereference will result, leading to a crash and\n> a denial of service attack.",
+    "id": "FreeBSD-kernel-2021-0242",
+    "modified": "2021-04-07T00:00:00Z",
+    "published": "2021-03-26T00:00:00Z",
+    "references": [
+        {
+            "type": "WEB",
+            "url": "https://www.openssl.org/news/secadv/20210325.txt"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2021-3449"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2021-3450"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://www.freebsd.org/security/advisories/FreeBSD-SA-21:07.openssl.asc"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "OpenSSL -- Multiple vulnerabilities"
+}

@@ -1,0 +1,47 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "clamav"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "0.102.3,1"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "discovery": "2020-05-12T00:00:00Z",
+        "vid": "91ce95d5-cd15-4105-b942-af5ccc7144c1"
+    },
+    "details": "Micah Snyder reports:\n\n> CVE-2020-3327: Fixed a vulnerability in the ARJ archive-parsing module\n> in ClamAV 0.102.2 that could cause a denial-of-service condition.\n> Improper bounds checking of an unsigned variable results in an\n> out-of-bounds read which causes a crash. Special thanks to Daehui Chang\n> and Fady Othman for helping identify the ARJ parsing vulnerability.\n>\n> CVE-2020-3341: Fixed a vulnerability in the PDF-parsing module in ClamAV\n> 0.101 - 0.102.2 that could cause a denial-of-service condition. Improper\n> size checking of a buffer used to initialize AES decryption routines\n> results in an out-of-bounds read, which may cause a crash. OSS-Fuzz\n> discovered this vulnerability.",
+    "id": "FreeBSD-kernel-2020-0221",
+    "modified": "2020-05-14T00:00:00Z",
+    "published": "2020-05-14T00:00:00Z",
+    "references": [
+        {
+            "type": "WEB",
+            "url": "https://blog.clamav.net/2020/05/clamav-01023-security-patch-released.html"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2020-3327"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2020-3341"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "clamav -- multiple vulnerabilities"
+}

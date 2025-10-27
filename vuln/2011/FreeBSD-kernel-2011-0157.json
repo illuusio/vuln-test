@@ -1,0 +1,66 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "subversion"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "1.6.15"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        },
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "subversion-freebsd"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "1.6.15"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "discovery": "2011-01-02T00:00:00Z",
+        "vid": "71612099-1e93-11e0-a587-001b77d09812"
+    },
+    "details": "Entry for CVE-2010-4539 says:\n\n> The walk function in repos.c in the mod\\_dav\\_svn module\n> for the Apache HTTP Server, as distributed in Apache\n> Subversion before 1.6.15, allows remote authenticated\n> users to cause a denial of service (NULL pointer\n> dereference and daemon crash) via vectors that trigger\n> the walking of SVNParentPath collections.\n\nEntry for CVE-2010-4644 says:\n\n> Multiple memory leaks in rev\\_hunt.c in Apache Subversion\n> before 1.6.15 allow remote authenticated users to cause\n> a denial of service (memory consumption and daemon crash)\n> via the -g option to the blame command.",
+    "id": "FreeBSD-kernel-2011-0157",
+    "modified": "2011-01-13T00:00:00Z",
+    "published": "2011-01-13T00:00:00Z",
+    "references": [
+        {
+            "type": "ADVISORY",
+            "url": "https://www.securityfocus.com/bid/45655/info"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2010-4539"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2010-4644"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "subversion -- multiple DoS"
+}

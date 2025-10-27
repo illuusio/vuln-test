@@ -1,0 +1,54 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "mysql-client"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "introduced": "5.1,1"
+                        },
+                        {
+                            "fixed": "5.1.28_1"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                },
+                {
+                    "events": [
+                        {
+                            "introduced": "5.0,1"
+                        },
+                        {
+                            "fixed": "5.0.67_1"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "discovery": "2007-04-17T00:00:00Z",
+        "vid": "4775c807-8f30-11dd-821f-001cc0377035"
+    },
+    "details": "Thomas Henlich reports:\n\n> The mysql command-line client does not quote HTML special\n> characters like < in its output. This allows an attacker who\n> is able to write data into a table to hide or modify records in\n> the output, and to inject potentially dangerous code, e. g.\n> Javascript to perform cross-site scripting or cross-site request\n> forgery attacks.",
+    "id": "FreeBSD-kernel-2008-0058",
+    "modified": "2008-10-10T00:00:00Z",
+    "published": "2008-10-01T00:00:00Z",
+    "references": [
+        {
+            "type": "ADVISORY",
+            "url": "https://www.securityfocus.com/bid/31486/info"
+        },
+        {
+            "type": "WEB",
+            "url": "http://www.henlich.de/it-security/mysql-command-line-client-html-injection-vulnerability/"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "mysql -- command line client input validation vulnerability"
+}

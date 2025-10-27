@@ -1,0 +1,63 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "squid"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "3.5.17"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "discovery": "2016-04-20T00:00:00Z",
+        "vid": "e05bfc92-0763-11e6-94fa-002590263bf5"
+    },
+    "details": "Squid security advisory 2016:5 reports:\n\n> Due to incorrect buffer management Squid cachemgr.cgi tool is\n> vulnerable to a buffer overflow when processing remotely supplied\n> inputs relayed to it from Squid.\n>\n> This problem allows any client to seed the Squid manager reports\n> with data that will cause a buffer overflow when processed by the\n> cachemgr.cgi tool. However, this does require manual administrator\n> actions to take place. Which greatly reduces the impact and\n> possible uses.\n\nSquid security advisory 2016:6 reports:\n\n> Due to buffer overflow issues Squid is vulnerable to a denial of\n> service attack when processing ESI responses. Due to incorrect input\n> validation Squid is vulnerable to public information disclosure of\n> the server stack layout when processing ESI responses. Due to\n> incorrect input validation and buffer overflow Squid is vulnerable\n> to remote code execution when processing ESI responses.\n>\n> These problems allow ESI components to be used to perform a denial\n> of service attack on the Squid service and all other services on the\n> same machine. Under certain build conditions these problems allow\n> remote clients to view large sections of the server memory. However,\n> the bugs are exploitable only if you have built and configured the\n> ESI features to be used by a reverse-proxy and if the ESI components\n> being processed by Squid can be controlled by an attacker.",
+    "id": "FreeBSD-kernel-2016-0310",
+    "modified": "2016-04-21T00:00:00Z",
+    "published": "2016-04-21T00:00:00Z",
+    "references": [
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2016-4051"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2016-4052"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2016-4053"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2016-4054"
+        },
+        {
+            "type": "REPORT",
+            "url": "https://bugs.freebsd.org/bugzilla/show_bug.cgi?id=208939"
+        },
+        {
+            "type": "WEB",
+            "url": "http://www.squid-cache.org/Advisories/SQUID-2016_5.txt"
+        },
+        {
+            "type": "WEB",
+            "url": "http://www.squid-cache.org/Advisories/SQUID-2016_6.txt"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "squid -- multiple vulnerabilities"
+}

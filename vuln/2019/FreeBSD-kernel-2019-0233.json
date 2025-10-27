@@ -1,0 +1,43 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "powerdns"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "4.1.7"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "discovery": "2019-03-18T00:00:00Z",
+        "vid": "6001cfc6-9f0f-4fae-9b4f-9b8fae001425"
+    },
+    "details": "PowerDNS developers report:\n\n> An issue has been found in PowerDNS Authoritative Server when the HTTP remote backend is used in RESTful mode (without post=1 set), allowing a remote user to cause the HTTP backend to connect to an attacker-specified host instead of the configured one, via a crafted DNS query. This can be used to cause a denial of service by preventing the remote backend from getting a response, content spoofing if the attacker can time its own query so that subsequent queries will use an attacker-controlled HTTP server instead of the configured one, and possibly information disclosure if the Authoritative Server has access to internal servers.",
+    "id": "FreeBSD-kernel-2019-0233",
+    "modified": "2019-03-19T00:00:00Z",
+    "published": "2019-03-19T00:00:00Z",
+    "references": [
+        {
+            "type": "WEB",
+            "url": "https://doc.powerdns.com/authoritative/security-advisories/powerdns-advisory-2019-03.html"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2019-3871"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "PowerDNS -- Insufficient validation in the HTTP remote backend"
+}

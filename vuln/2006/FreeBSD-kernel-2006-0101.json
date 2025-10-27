@@ -1,0 +1,51 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "twiki"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "4.0.4,1"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "discovery": "2006-07-05T00:00:00Z",
+        "vid": "a876df84-0fef-11db-ac96-000c6ec775d9"
+    },
+    "details": "A TWiki Security Alert reports:\n\n> The TWiki upload filter already prevents executable\n> scripts such as .php, .php1, .phps, .pl from potentially\n> getting executed by appending a .txt suffix to the\n> uploaded filename. However, PHP and some other types\n> allows additional file suffixes, such as .php.en, .php.1,\n> and .php.2. TWiki does not check for these suffixes,\n> e.g. it is possible to upload php scripts with such\n> suffixes without the .txt filename padding.\n\nThis issue can also be worked around with a restrictive web\nserver configuration. See the\n[TWiki Security Alert](http://twiki.org/cgi-bin/view/Codev/SecurityAlertSecureFileUploads) for more information about how to do\nthis.",
+    "id": "FreeBSD-kernel-2006-0101",
+    "modified": "2006-07-10T00:00:00Z",
+    "published": "2006-07-10T00:00:00Z",
+    "references": [
+        {
+            "type": "ADVISORY",
+            "url": "https://www.securityfocus.com/bid/18854/info"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2006-3336"
+        },
+        {
+            "type": "WEB",
+            "url": "http://secunia.com/advisories/20992/"
+        },
+        {
+            "type": "WEB",
+            "url": "http://twiki.org/cgi-bin/view/Codev/SecurityAlertSecureFileUploads"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "twiki -- multiple file extensions file upload vulnerability"
+}

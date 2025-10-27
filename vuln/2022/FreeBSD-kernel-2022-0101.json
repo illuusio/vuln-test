@@ -1,0 +1,43 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "rsync"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "3.2.5"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "discovery": "2022-08-02T00:00:00Z",
+        "vid": "21f43976-1887-11ed-9911-40b034429ecf"
+    },
+    "details": "Openwall oss-security reports:\n\n> We have discovered a critical arbitrary file write vulnerability\n> in the rsync utility that allows malicious remote servers to write\n> arbitrary files inside the directories of connecting peers.\n> The server chooses which files/directories are sent to the client.\n> Due to the insufficient controls inside the do\\_server\\_recv function\n> a malicious rysnc server (or Man-in-The-Middle attacker) can\n> overwrite arbitrary files in the rsync client target directory and\n> subdirectories.",
+    "id": "FreeBSD-kernel-2022-0101",
+    "modified": "2022-08-10T00:00:00Z",
+    "published": "2022-08-10T00:00:00Z",
+    "references": [
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2022-29154"
+        },
+        {
+            "type": "WEB",
+            "url": "https://www.openwall.com/lists/oss-security/2022/08/02/1"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "rsync -- client-side arbitrary file write vulnerability"
+}

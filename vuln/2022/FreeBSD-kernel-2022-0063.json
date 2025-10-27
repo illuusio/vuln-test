@@ -1,0 +1,43 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "zydis"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "3.2.1"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "discovery": "2021-11-08T00:00:00Z",
+        "vid": "d487d4fc-43a8-11ed-8b01-b42e991fc52e"
+    },
+    "details": "Zyantific reports:\n\n> Zydis users of versions v3.2.0 and older\n> that use the string functions provided in zycore in order to\n> append untrusted user data to the formatter buffer within\n> their custom formatter hooks can run into heap buffer\n> overflows. Older versions of Zydis failed to properly\n> initialize the string object within the formatter buffer,\n> forgetting to initialize a few fields, leaving their value\n> to chance. This could then in turn cause zycore functions\n> like ZyanStringAppend to make incorrect calculations for the\n> new target size, resulting in heap memory corruption.",
+    "id": "FreeBSD-kernel-2022-0063",
+    "modified": "2022-10-04T00:00:00Z",
+    "published": "2022-10-04T00:00:00Z",
+    "references": [
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2021-41253"
+        },
+        {
+            "type": "WEB",
+            "url": "https://www.cvedetails.com/cve/CVE-2021-41253"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "zydis -- heap buffer overflow"
+}

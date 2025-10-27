@@ -1,0 +1,85 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "mpg123"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "0.59r_15"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        },
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "mpg123-nas"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "0.59r_15"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        },
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "mpg123-esound"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "0.59r_15"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "discovery": "2004-10-02T00:00:00Z",
+        "vid": "20d16518-2477-11d9-814e-0001020eed82"
+    },
+    "details": "Carlos Barros reports that mpg123 contains two buffer\noverflows. These vulnerabilities can potentially lead to\nexecution of arbitrary code.\n\nThe first buffer overflow can occur when mpg123 parses a\nURL with a user-name/password field that is more than 256\ncharacters long. This problem can be triggered either\nlocally or remotely via a specially crafted play list. The\nsecond potential buffer overflow may be triggered locally by\na specially crafted symlink to the mpg123 binary. This\nproblem is not as serious, since mpg123 is not installed\nsetuid by default.",
+    "id": "FreeBSD-kernel-2004-0074",
+    "modified": "2004-12-30T00:00:00Z",
+    "published": "2004-10-23T00:00:00Z",
+    "references": [
+        {
+            "type": "ADVISORY",
+            "url": "https://www.securityfocus.com/bid/11468/info"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2004-0982"
+        },
+        {
+            "type": "DISCUSSION",
+            "url": "http://marc.theaimsgroup.com/?l=bugtraq&m=109834486312407"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "mpg123 -- buffer overflow in URL handling"
+}

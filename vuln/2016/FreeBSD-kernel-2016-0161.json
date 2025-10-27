@@ -1,0 +1,54 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:kernel",
+                "name": "FreeBSD-kernel"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "introduced": "10.1"
+                        },
+                        {
+                            "fixed": "10.1_19"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                },
+                {
+                    "events": [
+                        {
+                            "introduced": "9.3"
+                        },
+                        {
+                            "fixed": "9.3_24"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "discovery": "2015-08-25T00:00:00Z",
+        "vid": "0dfa5dde-600a-11e6-a6c3-14dae9d210b8"
+    },
+    "details": "Problem Description:\n====================\n\nIf the kernel-mode IRET instruction generates an #SS or\n#NP exception, but the exception handler does not properly\nensure that the right GS register base for kernel is reloaded,\nthe userland GS segment may be used in the context of the\nkernel exception handler.\n\nImpact:\n=======\n\nBy causing an IRET with #SS or #NP exceptions, a local\nattacker can cause the kernel to use an arbitrary GS base,\nwhich may allow escalated privileges or panic the system.",
+    "id": "FreeBSD-kernel-2016-0161",
+    "modified": "2016-08-11T00:00:00Z",
+    "published": "2016-08-11T00:00:00Z",
+    "references": [
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2015-5675"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://www.freebsd.org/security/advisories/FreeBSD-SA-15:21.amd64.asc"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "FreeBSD -- Local privilege escalation in IRET handler"
+}

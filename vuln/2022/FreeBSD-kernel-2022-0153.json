@@ -1,0 +1,93 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "openssl"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "1.1.1o,1"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        },
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "openssl-devel"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "3.0.3"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        },
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "openssl-quictls"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "3.0.3"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "discovery": "2022-05-03T00:00:00Z",
+        "vid": "fceb2b08-cb76-11ec-a06f-d4c9ef517024"
+    },
+    "details": "The OpenSSL project reports:\n\n> * The c\\_rehash script allows command injection (CVE-2022-1292)\n>   (Moderate)   \n>   The c\\_rehash script does not properly sanitise shell\n>   metacharacters to prevent command injection. This script is distributed\n>   by some operating systems in a manner where it is automatically\n>   executed. On such operating systems, an attacker could execute arbitrary\n>   commands with the privileges of the script.\n> * OCSP\\_basic\\_verify may incorrectly verify the response signing\n>   certificate (CVE-2022-1343) (Moderate)  \n>   The function\n>   `OCSP\\_basic\\_verify` verifies the signer certificate on an OCSP response.\n>   In the case where the (non-default) flag OCSP\\_NOCHECKS is used then the\n>   response will be positive (meaning a successful verification) even in\n>   the case where the response signing certificate fails to verify.\n> * Incorrect MAC key used in the RC4-MD5 ciphersuite (CVE-2022-1434)\n>   (Low)  \n>   The OpenSSL 3.0 implementation of the RC4-MD5 ciphersuite\n>   incorrectly uses the AAD data as the MAC key. This makes the MAC key\n>   trivially predictable.\n> * Resource leakage when decoding certificates and keys (CVE-2022-1473)\n>   (Low)  \n>   The OPENSSL\\_LH\\_flush() function, which empties a hash table,\n>   containsa bug that breaks reuse of the memory occuppied by the removed\n>   hash table entries.",
+    "id": "FreeBSD-kernel-2022-0153",
+    "modified": "2022-05-05T00:00:00Z",
+    "published": "2022-05-04T00:00:00Z",
+    "references": [
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2022-1292"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2022-1343"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2022-1434"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2022-1473"
+        },
+        {
+            "type": "WEB",
+            "url": "https://www.openssl.org/news/secadv/20220503.txt"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "OpenSSL -- Multiple vulnerabilities"
+}

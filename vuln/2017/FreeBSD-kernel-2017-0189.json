@@ -1,0 +1,82 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "apache22"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "2.2.33"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        },
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "apache24"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "2.4.26"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "discovery": "2017-06-20T00:00:00Z",
+        "vid": "0c2db2aa-5584-11e7-9a7d-b499baebfeaf"
+    },
+    "details": "The Apache httpd project reports:\n\n> * ap\\_get\\_basic\\_auth\\_pw() Authentication Bypass (CVE-2017-3167):  \n>   Use of the ap\\_get\\_basic\\_auth\\_pw() by third-party modules outside\n>   of the authentication phase may lead to authentication requirements\n>   being bypassed.\n> * mod\\_ssl Null Pointer Dereference (CVE-2017-3169):  \n>   mod\\_ssl may\n>   dereference a NULL pointer when third-party modules\n>   call ap\\_hook\\_process\\_connection() during an HTTP request to an HTTPS\n>   port.\n> * mod\\_http2 Null Pointer Dereference (CVE-2017-7659):  \n>    A maliciously\n>   constructed HTTP/2 request could cause mod\\_http2 to dereference a NULL\n>   pointer and crash the server process.\n> * ap\\_find\\_token() Buffer Overread (CVE-2017-7668):  \n>   The HTTP strict\n>   parsing changes added in 2.2.32 and 2.4.24 introduced a bug in token\n>   list parsing, which allows ap\\_find\\_token() to search past the end of its\n>   input string. By maliciously crafting a sequence of request headers, an\n>   attacker may be able to cause a segmentation fault, or to force\n>   ap\\_find\\_token() to return an incorrect value.\n> * mod\\_mime Buffer Overread (CVE-2017-7679):  \n>   mod\\_mime can read one\n>   byte past the end of a buffer when sending a malicious Content-Type\n>   response header.",
+    "id": "FreeBSD-kernel-2017-0189",
+    "modified": "2017-06-20T00:00:00Z",
+    "published": "2017-06-20T00:00:00Z",
+    "references": [
+        {
+            "type": "WEB",
+            "url": "https://httpd.apache.org/security/vulnerabilities_24.html"
+        },
+        {
+            "type": "WEB",
+            "url": "https://httpd.apache.org/security/vulnerabilities_22.html"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2017-3167"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2017-3169"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2017-7659"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2017-7668"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2017-7679"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "Apache httpd -- several vulnerabilities"
+}

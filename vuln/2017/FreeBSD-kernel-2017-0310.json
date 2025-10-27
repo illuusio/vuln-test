@@ -1,0 +1,77 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "openssh-portable"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "7.3.p1_5,1"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        },
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "FreeBSD"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "introduced": "11.0"
+                        },
+                        {
+                            "fixed": "11.0_7"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                },
+                {
+                    "events": [
+                        {
+                            "introduced": "10.3"
+                        },
+                        {
+                            "fixed": "10.3_16"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "discovery": "2017-01-11T00:00:00Z",
+        "vid": "2c948527-d823-11e6-9171-14dae9d210b8"
+    },
+    "details": "Problem Description:\n====================\n\nThe ssh-agent(1) agent supports loading a PKCS#11 module\nfrom outside a trusted whitelist. An attacker can request\nloading of a PKCS#11 module across forwarded agent-socket.\n[CVE-2016-10009]\n\nWhen privilege separation is disabled, forwarded Unix\ndomain sockets would be created by sshd(8) with the privileges\nof 'root' instead of the authenticated user. [CVE-2016-10010]\n\nImpact:\n=======\n\nA remote attacker who have control of a forwarded\nagent-socket on a remote system and have the ability to\nwrite files on the system running ssh-agent(1) agent can\nrun arbitrary code under the same user credential. Because\nthe attacker must already have some control on both systems,\nit is relatively hard to exploit this vulnerability in a\npractical attack. [CVE-2016-10009]\n\nWhen privilege separation is disabled (on FreeBSD,\nprivilege separation is enabled by default and has to be\nexplicitly disabled), an authenticated attacker can potentially\ngain root privileges on systems running OpenSSH server.\n[CVE-2016-10010]",
+    "id": "FreeBSD-kernel-2017-0310",
+    "modified": "2017-01-13T00:00:00Z",
+    "published": "2017-01-11T00:00:00Z",
+    "references": [
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2016-10009"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2016-10010"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://www.freebsd.org/security/advisories/FreeBSD-SA-17:01.openssh.asc"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "FreeBSD -- OpenSSH multiple vulnerabilities"
+}

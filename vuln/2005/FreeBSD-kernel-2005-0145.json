@@ -1,0 +1,47 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "trac"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "0.8.4"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "discovery": "2005-06-20T00:00:00Z",
+        "vid": "b02c1d80-e1bb-11d9-b875-0001020eed82"
+    },
+    "details": "Stefan Esser reports:\n\n> Trac's wiki and ticket systems allows to add attachments\n> to wiki entries and bug tracker tickets. These attachments\n> are stored within directories that are determined by the\n> id of the corresponding ticket or wiki entry.\n>\n> Due to a missing validation of the id parameter it is\n> possible for an attacker to supply arbitrary paths to the\n> upload and attachment viewer scripts. This means that a\n> potential attacker can retrieve any file accessible by the\n> webserver user.\n>\n> Additionally it is possible to upload arbitrary files (up\n> to a configured file length) to any place the webserver\n> has write access too.\n>\n> For obvious reasons this can lead to the execution of\n> arbitrary code if it possible to upload files to the\n> document root or it's subdirectories. One example of a\n> configuration would be f.e. running Trac and\n> s9y/wordpress with writeable content directories on the\n> same webserver.\n>\n> Another potential usage of this exploit would be to abuse\n> Trac powered webservers as storage for f.e. torrent\n> files.",
+    "id": "FreeBSD-kernel-2005-0145",
+    "modified": "2005-06-20T00:00:00Z",
+    "published": "2005-06-20T00:00:00Z",
+    "references": [
+        {
+            "type": "ADVISORY",
+            "url": "https://www.securityfocus.com/bid/13990/info"
+        },
+        {
+            "type": "WEB",
+            "url": "http://www.hardened-php.net/advisory-012005.php"
+        },
+        {
+            "type": "WEB",
+            "url": "http://projects.edgewall.com/trac/wiki/ChangeLog"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "trac -- file upload/download vulnerability"
+}

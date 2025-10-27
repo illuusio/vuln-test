@@ -1,0 +1,39 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "python38"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "3.8.12"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "discovery": "2021-08-30T00:00:00Z",
+        "vid": "145ce848-1165-11ec-ac7e-08002789875b"
+    },
+    "details": "Python reports:\n\n> bpo-42278: Replaced usage of tempfile.mktemp() with TemporaryDirectory to avoid\n> a potential race condition.\n>\n> bpo-44394: Update the vendored copy of libexpat to 2.4.1 (from 2.2.8) to get the\n> fix for the CVE-2013-0340 \"Billion Laughs\" vulnerability. This copy is most used\n> on Windows and macOS.\n>\n> bpo-43124: Made the internal putcmd function in smtplib sanitize input for\n> presence of \\r and \\n characters to avoid (unlikely) command injection.\n>\n> bpo-36384: ipaddress module no longer accepts any leading zeros in IPv4 address\n> strings. Leading zeros are ambiguous and interpreted as octal notation by some\n> libraries. For example the legacy function socket.inet\\_aton() treats leading\n> zeros as octal notation. glibc implementation of modern inet\\_pton() does not\n> accept any leading zeros. For a while the ipaddress module used to accept ambiguous\n> leading zeros.",
+    "id": "FreeBSD-kernel-2021-0094",
+    "modified": "2021-09-09T00:00:00Z",
+    "published": "2021-09-09T00:00:00Z",
+    "references": [
+        {
+            "type": "WEB",
+            "url": "https://docs.python.org/3.8/whatsnew/changelog.html#changelog"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "Python -- multiple vulnerabilities"
+}

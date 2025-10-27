@@ -1,0 +1,62 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "librsvg2"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "2.40.21"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        },
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "librsvg2-rust"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "introduced": "2.41.0"
+                        },
+                        {
+                            "fixed": "2.46.3"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "discovery": "2020-02-26T00:00:00Z",
+        "vid": "b66583ae-5aee-4cd5-bb31-b2d397f8b6b3"
+    },
+    "details": "Librsvg2 developers reports:\n\n> Backport the following fixes from 2.46.x:\n>\n> Librsvg now has limits on the number of loaded XML elements,\n> and the number of referenced elements within an SVG document. This\n> is to mitigate malicious SVGs which try to consume all memory, and\n> those which try to consume an exponential amount of CPU time.\n>\n> Fix stack exhaustion with circular references in <use> elements.\n>\n> Fix a denial-of-service condition from exponential explosion\n> of rendered elements, through nested use of SVG <use> elements in\n> malicious SVGs. This is similar to the XML \"billion laughs attack\"\n> but for SVG instancing.",
+    "id": "FreeBSD-kernel-2020-0297",
+    "modified": "2020-03-02T00:00:00Z",
+    "published": "2020-03-02T00:00:00Z",
+    "references": [
+        {
+            "type": "WEB",
+            "url": "https://mail.gnome.org/archives/ftp-release-list/2020-February/msg00133.html"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2019-20446"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "librsvg2 -- multiple vulnerabilities"
+}

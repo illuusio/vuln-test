@@ -1,0 +1,39 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "bro"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "2.5.4"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "discovery": "2018-05-29T00:00:00Z",
+        "vid": "2f4fd3aa-32f8-4116-92f2-68f05398348e"
+    },
+    "details": "Corelight reports:\n\n> Bro 2.5.4 primarily fixes security issues\n>\n> Multiple fixes and improvements to BinPAC generated code related to array parsing, with potential impact to all Bro's BinPAC-generated analyzers in the form of buffer over-reads or other invalid memory accesses depending on whether a particular analyzer incorrectly assumed that the evaulated-array-length expression is actually the number of elements that were parsed out from the input.\n>\n> The NCP analyzer (not enabled by default and also updated to actually work with newer Bro APIs in the release) performed a memory allocation based directly on a field in the input packet and using signed integer storage. This could result in a signed integer overflow and memory allocations of negative or very large size, leading to a crash or memory exhaustion. The new NCP::max\\_frame\\_size tuning option now limits the maximum amount of memory that can be allocated.",
+    "id": "FreeBSD-kernel-2018-0172",
+    "modified": "2018-06-06T00:00:00Z",
+    "published": "2018-06-06T00:00:00Z",
+    "references": [
+        {
+            "type": "WEB",
+            "url": "https://www.bro.org/download/NEWS.bro.html"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "bro -- multiple memory allocation issues"
+}

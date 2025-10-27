@@ -1,0 +1,40 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "sudo"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "last_affected": "1.8.4_1"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "discovery": "2012-05-16T00:00:00Z",
+        "vid": "b3435b68-9ee8-11e1-997c-002354ed89bc"
+    },
+    "details": "Todd Miller reports:\n\n> Sudo supports granting access to commands on a per-host basis.\n> The host specification may be in the form of a host name, a\n> netgroup, an IP address, or an IP network (an IP address with an\n> associated netmask).\n>\n> When IPv6 support was added to sudo, a bug was introduced that\n> caused the IPv6 network matching code to be called when an IPv4\n> network address does not match. Depending on the value of the\n> uninitialized portion of the IPv6 address, it is possible for the\n> IPv4 network number to match when it should not. This bug only\n> affects IP network matching and does not affect simple IP address\n> matching.\n>\n> The reported configuration that exhibited the bug was an\n> LDAP-based sudo installation where the sudoRole object contained\n> multiple sudoHost entries, each containing a different IPv4\n> network. File-based sudoers should be affected as well as the\n> same matching code is used.",
+    "id": "FreeBSD-kernel-2012-0139",
+    "modified": "2012-05-16T00:00:00Z",
+    "published": "2012-05-16T00:00:00Z",
+    "references": [
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2012-2337"
+        },
+        {
+            "type": "WEB",
+            "url": "http://www.sudo.ws/sudo/alerts/netmask.html"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "sudo -- netmask vulnerability"
+}

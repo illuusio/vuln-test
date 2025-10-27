@@ -1,0 +1,62 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "curl"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "introduced": "7.69.0,1"
+                        },
+                        {
+                            "fixed": "8.4.0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        },
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "cmake-core"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "3.27.8"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "discovery": "2023-09-30T00:00:00Z",
+        "vid": "d6c19e8c-6806-11ee-9464-b42e991fc52e"
+    },
+    "details": "The curl team reports:\n\n> This flaw makes curl overflow a heap based buffer in the\n> SOCKS5 proxy handshake. When curl is asked to pass along\n> the hostname to the SOCKS5 proxy to allow that to resolve\n> the address instead of it getting done by curl itself, the\n> maximum length that hostname can be is 255 bytes. If the\n> hostname is detected to be longer than 255 bytes, curl\n> switches to local name resolving and instead passes on the\n> resolved address only to the proxy. Due to a bug, the\n> local variable that means \"let the host resolve the name\"\n> could get the wrong value during a slow SOCKS5 handshake,\n> and contrary to the intention, copy the too long hostname\n> to the target buffer instead of copying just the resolved\n> address there.",
+    "id": "FreeBSD-kernel-2023-0081",
+    "modified": "2023-10-11T00:00:00Z",
+    "published": "2023-10-11T00:00:00Z",
+    "references": [
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2023-38545"
+        },
+        {
+            "type": "WEB",
+            "url": "https://curl.se/docs/CVE-2023-38545.html"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "curl -- SOCKS5 heap buffer overflow"
+}

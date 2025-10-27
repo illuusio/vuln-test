@@ -1,0 +1,55 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "apache24"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "2.4.16"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "discovery": "2015-02-04T00:00:00Z",
+        "vid": "a12494c1-2af4-11e5-86ff-14dae9d210b8"
+    },
+    "details": "Jim Jagielski reports:\n\n> CVE-2015-3183 (cve.mitre.org)\n> core: Fix chunk header parsing defect.\n> Remove apr\\_brigade\\_flatten(), buffering and duplicated code from\n> the HTTP\\_IN filter, parse chunks in a single pass with zero copy.\n> Limit accepted chunk-size to 2^63-1 and be strict about chunk-ext\n> authorized characters.\n>\n> CVE-2015-3185 (cve.mitre.org)\n> Replacement of ap\\_some\\_auth\\_required (unusable in Apache httpd 2.4)\n> with new ap\\_some\\_authn\\_required and ap\\_force\\_authn hook.\n>\n> CVE-2015-0253 (cve.mitre.org)\n> core: Fix a crash with ErrorDocument 400 pointing to a local URL-path\n> with the INCLUDES filter active, introduced in 2.4.11. PR 57531.\n>\n> CVE-2015-0228 (cve.mitre.org)\n> mod\\_lua: A maliciously crafted websockets PING after a script\n> calls r:wsupgrade() can cause a child process crash.",
+    "id": "FreeBSD-kernel-2015-0223",
+    "modified": "2015-07-15T00:00:00Z",
+    "published": "2015-07-15T00:00:00Z",
+    "references": [
+        {
+            "type": "DISCUSSION",
+            "url": "https://mail-archives.apache.org/mod_mbox/www-announce/201507.mbox/%3CAA5C882C-A9C3-46B9-9320-5040A2152E83@apache.org%3E"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2015-3183"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2015-3185"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2015-0253"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2015-0228"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "apache24 -- multiple vulnerabilities"
+}

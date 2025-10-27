@@ -1,0 +1,65 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "FreeBSD"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "introduced": "6.3"
+                        },
+                        {
+                            "fixed": "6.3_7"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                },
+                {
+                    "events": [
+                        {
+                            "introduced": "6.4"
+                        },
+                        {
+                            "fixed": "6.4_1"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                },
+                {
+                    "events": [
+                        {
+                            "introduced": "7.0"
+                        },
+                        {
+                            "fixed": "7.0_7"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "discovery": "2008-12-23T00:00:00Z",
+        "vid": "e9ecaceb-db0d-11dd-aa56-000bcdf0a03b"
+    },
+    "details": "Problem Description:\n====================\n\nThe ftpd(8) server splits long commands into several\nrequests. This may result in the server executing a command\nwhich is hidden inside another very long command.\n\nImpact:\n=======\n\nThis could, with a specifically crafted command, be used in a\ncross-site request forgery attack.\n\nFreeBSD systems running ftpd(8) server could act as a point\nof privilege escalation in an attack against users using web\nbrowser to access trusted FTP sites.\n\nWorkaround:\n===========\n\nNo workaround is available, but systems not running FTP\nservers are not vulnerable. Systems not running the FreeBSD\nftp(8) server are not affected, but users of other ftp\ndaemons are advised to take care since several other ftp\ndaemons are known to have related bugs.",
+    "id": "FreeBSD-kernel-2009-0177",
+    "modified": "2016-08-09T00:00:00Z",
+    "published": "2009-01-05T00:00:00Z",
+    "references": [
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2008-4247"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://www.freebsd.org/security/advisories/FreeBSD-SA-08:12.ftpd.asc"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "FreeBSD -- Cross-site request forgery in ftpd(8)"
+}

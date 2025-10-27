@@ -1,0 +1,43 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "libXfont"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "1.4.4_1,1"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "discovery": "2011-07-26T00:00:00Z",
+        "vid": "304409c3-c3ef-11e0-8aa5-485d60cb5385"
+    },
+    "details": "Tomas Hoger reports:\n\n> The compress/ LZW decompress implentation does not correctly\n> handle compressed streams that contain code words that were not\n> yet added to the decompression table. This may lead to\n> arbitrary memory corruption. Successfull exploitation may\n> possible lead to a local privilege escalation.",
+    "id": "FreeBSD-kernel-2011-0065",
+    "modified": "2012-03-13T00:00:00Z",
+    "published": "2011-08-11T00:00:00Z",
+    "references": [
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2011-2895"
+        },
+        {
+            "type": "REPORT",
+            "url": "https://bugzilla.redhat.com/show_bug.cgi?id=725760"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "libXfont -- possible local privilege escalation"
+}

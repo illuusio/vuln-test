@@ -1,0 +1,74 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "freeradius2"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "2.2.8"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        },
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "freeradius3"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "3.0.9"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "discovery": "2015-06-22T00:00:00Z",
+        "vid": "379788f3-2900-11e5-a4a5-002590263bf5"
+    },
+    "details": "oCERT reports:\n\n> The FreeRADIUS server relies on OpenSSL to perform certificate\n> validation, including Certificate Revocation List (CRL) checks. The\n> FreeRADIUS usage of OpenSSL, in CRL application, limits the checks\n> to leaf certificates, therefore not detecting revocation of\n> intermediate CA certificates.\n>\n> An unexpired client certificate, issued by an intermediate CA with\n> a revoked certificate, is therefore accepted by FreeRADIUS.\n>\n> Specifically sets the X509\\_V\\_FLAG\\_CRL\\_CHECK flag for leaf\n> certificate CRL checks, but does not use X509\\_V\\_FLAG\\_CRL\\_CHECK\\_ALL\n> for CRL checks on the complete trust chain.\n>\n> The FreeRADIUS project advises that the recommended configuration\n> is to use self-signed CAs for all EAP-TLS methods.",
+    "id": "FreeBSD-kernel-2015-0230",
+    "modified": "2015-07-13T00:00:00Z",
+    "published": "2015-07-13T00:00:00Z",
+    "references": [
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2015-4680"
+        },
+        {
+            "type": "REPORT",
+            "url": "https://bugs.freebsd.org/bugzilla/show_bug.cgi?id=201058"
+        },
+        {
+            "type": "REPORT",
+            "url": "https://bugs.freebsd.org/bugzilla/show_bug.cgi?id=201059"
+        },
+        {
+            "type": "WEB",
+            "url": "http://www.ocert.org/advisories/ocert-2015-008.html"
+        },
+        {
+            "type": "WEB",
+            "url": "http://freeradius.org/security.html"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "freeradius -- insufficient CRL application vulnerability"
+}

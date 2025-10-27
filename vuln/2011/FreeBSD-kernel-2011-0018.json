@@ -1,0 +1,43 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "kdeutils"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "introduced": "4.0.*"
+                        },
+                        {
+                            "fixed": "4.7.3"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "discovery": "2011-10-19T00:00:00Z",
+        "vid": "7fb9e739-0e6d-11e1-87cd-00235a5f2c9a"
+    },
+    "details": "Tim Brown from Nth Dimention reports:\n\n> I recently discovered that the Ark archiving tool is vulnerable\n> to directory traversal via malformed. When attempts are made to\n> view files within the malformed Zip file in Ark's default view,\n> the wrong file may be displayed due to incorrect construction of\n> the temporary file name. Whilst this does not allow the wrong\n> file to be overwritten, after closing the default view, Ark will\n> then attempt to delete the temporary file which could result in\n> the deletion of the incorrect file.",
+    "id": "FreeBSD-kernel-2011-0018",
+    "modified": "2011-11-14T00:00:00Z",
+    "published": "2011-11-14T00:00:00Z",
+    "references": [
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2011-2725"
+        },
+        {
+            "type": "WEB",
+            "url": "http://seclists.org/fulldisclosure/2011/Oct/351"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "kdeutils4 -- Directory traversal vulnerability"
+}

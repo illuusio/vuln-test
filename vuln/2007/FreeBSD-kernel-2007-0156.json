@@ -1,0 +1,43 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "fetchmail"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "6.3.6"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "discovery": "2007-01-04T00:00:00Z",
+        "vid": "5238ac45-9d8c-11db-858b-0060084a00e5"
+    },
+    "details": "Matthias Andree reports:\n\n> Fetchmail has had several longstanding password disclosure\n> vulnerabilities.\n>\n> * sslcertck/sslfingerprint options should have implied\n>   \"sslproto tls1\" in order to enforce TLS negotiation,\n>   but did not.\n> * Even with \"sslproto tls1\" in the config, fetches\n>   would go ahead in plain text if STLS/STARTTLS wasn't available\n>   (not advertised, or advertised but rejected).\n> * POP3 fetches could completely ignore all TLS options\n>   whether available or not because it didn't reliably issue\n>   CAPA before checking for STLS support - but CAPA is a\n>   requisite for STLS. Whether or not CAPAbilities were probed,\n>   depended on the \"auth\" option. (Fetchmail only\n>   tried CAPA if the auth option was not set at all, was set\n>   to gssapi, kerberos, kerberos\\_v4, otp, or cram-md5.)\n> * POP3 could fall back to using plain text passwords, even\n>   if strong authentication had been configured.\n> * POP2 would not complain if strong authentication or TLS\n>   had been requested.",
+    "id": "FreeBSD-kernel-2007-0156",
+    "modified": "2007-01-06T00:00:00Z",
+    "published": "2007-01-06T00:00:00Z",
+    "references": [
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2006-5867"
+        },
+        {
+            "type": "WEB",
+            "url": "http://www.fetchmail.info/fetchmail-SA-2006-02.txt"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "fetchmail -- TLS enforcement problem/MITM attack/password exposure"
+}

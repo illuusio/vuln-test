@@ -1,0 +1,62 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "samba"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "introduced": "3.0.6,1"
+                        },
+                        {
+                            "fixed": "3.0.24,1"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        },
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "ja-samba"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "introduced": "3.0.6,1"
+                        },
+                        {
+                            "fixed": "3.0.24,1"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "discovery": "2007-02-05T00:00:00Z",
+        "vid": "57ae52f7-b9cc-11db-bf0f-0013720b182d"
+    },
+    "details": "The Samba Team reports:\n\n> NOTE: This security advisory only impacts Samba servers\n> that share AFS file systems to CIFS clients and which have\n> been explicitly instructed in smb.conf to load the afsacl.so\n> VFS module.\n>\n> The source defect results in the name of a file stored on\n> disk being used as the format string in a call to snprintf().\n> This bug becomes exploitable only when a user is able\n> to write to a share which utilizes Samba's afsacl.so library\n> for setting Windows NT access control lists on files residing\n> on an AFS file system.",
+    "id": "FreeBSD-kernel-2007-0135",
+    "modified": "2007-03-16T00:00:00Z",
+    "published": "2007-03-16T00:00:00Z",
+    "references": [
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2007-0454"
+        },
+        {
+            "type": "WEB",
+            "url": "http://www.samba.org/samba/security/CVE-2007-0454.html"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "samba -- format string bug in afsacl.so VFS plugin"
+}

@@ -1,0 +1,54 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "squidclamav"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "5.8"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                },
+                {
+                    "events": [
+                        {
+                            "introduced": "6.0"
+                        },
+                        {
+                            "fixed": "6.7"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "discovery": "2012-07-24T00:00:00Z",
+        "vid": "ce680f0a-eea6-11e1-8bd8-0022156e8794"
+    },
+    "details": "SquidClamav developers report:\n\n> This release fix several security issues by escaping CGI\n> parameters.\n\nPrior to versions 6.7 and 5.8, CGI script clwarn.cgi was not\nproperly sanitizing input variables, so they could be used to\ninject arbitrary strings to the generated page, leading\nto the cross-site scripting attacks.",
+    "id": "FreeBSD-kernel-2012-0076",
+    "modified": "2012-08-25T00:00:00Z",
+    "published": "2012-08-25T00:00:00Z",
+    "references": [
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2012-4667"
+        },
+        {
+            "type": "WEB",
+            "url": "http://squidclamav.darold.net/news.html"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "squidclamav -- cross-site scripting in default virus warning pages"
+}

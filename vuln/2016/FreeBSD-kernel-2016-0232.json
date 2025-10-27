@@ -1,0 +1,43 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "xen-kernel"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "4.7.0"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "discovery": "2016-05-17T00:00:00Z",
+        "vid": "e43b210a-4212-11e6-942d-bc5ff45d0f28"
+    },
+    "details": "The Xen Project reports:\n\n> The Page Size (PS) page table entry bit exists at all page table\n> levels other than L1. Its meaning is reserved in L4, and\n> conditionally reserved in L3 and L2 (depending on hardware\n> capabilities). The software page table walker in the hypervisor,\n> however, so far ignored that bit in L4 and (on respective hardware)\n> L3 entries, resulting in pages to be treated as page tables which\n> the guest OS may not have designated as such. If the page in\n> question is writable by an unprivileged user, then that user will\n> be able to map arbitrary guest memory.\n>\n> On vulnerable OSes, guest user mode code may be able to establish\n> mappings of arbitrary memory inside the guest, allowing it to\n> elevate its privileges inside the guest.",
+    "id": "FreeBSD-kernel-2016-0232",
+    "modified": "2016-07-04T00:00:00Z",
+    "published": "2016-07-04T00:00:00Z",
+    "references": [
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2016-4480"
+        },
+        {
+            "type": "WEB",
+            "url": "http://xenbits.xen.org/xsa/advisory-176.html"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "xen-kernel -- x86 software guest page walk PS bit handling flaw"
+}

@@ -1,0 +1,43 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "mcollective"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "2.5.3"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "discovery": "2014-07-09T00:00:00Z",
+        "vid": "ecea9e92-0be5-4931-88da-8772d044972a"
+    },
+    "details": "Melissa Stone reports:\n\n> The MCollective aes\\_security public key plugin does not correctly\n> validate certs against the CA. By exploiting this vulnerability\n> within a race/initialization window, an attacker with local access\n> could initiate an unauthorized MCollective client connection with a\n> server, and thus control the mcollective plugins running on that\n> server. This vulnerability requires a collective be configured to\n> use the aes\\_security plugin. Puppet Enterprise and open source\n> MCollective are not configured to use the plugin and are not\n> vulnerable by default.",
+    "id": "FreeBSD-kernel-2014-0075",
+    "modified": "2014-07-21T00:00:00Z",
+    "published": "2014-07-21T00:00:00Z",
+    "references": [
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2014-3251"
+        },
+        {
+            "type": "WEB",
+            "url": "https://groups.google.com/forum/#!topic/puppet-announce/cPykqUXMmK4"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "mcollective -- cert valication issue"
+}

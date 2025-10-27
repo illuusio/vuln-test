@@ -1,0 +1,229 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "py37-tflite"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "2.8.4"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                },
+                {
+                    "events": [
+                        {
+                            "introduced": "2.9.0"
+                        },
+                        {
+                            "fixed": "2.9.3"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                },
+                {
+                    "events": [
+                        {
+                            "introduced": "2.10.0"
+                        },
+                        {
+                            "fixed": "2.10.1"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        },
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "py38-tflite"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "2.8.4"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                },
+                {
+                    "events": [
+                        {
+                            "introduced": "2.9.0"
+                        },
+                        {
+                            "fixed": "2.9.3"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                },
+                {
+                    "events": [
+                        {
+                            "introduced": "2.10.0"
+                        },
+                        {
+                            "fixed": "2.10.1"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        },
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "py39-tflite"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "2.8.4"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                },
+                {
+                    "events": [
+                        {
+                            "introduced": "2.9.0"
+                        },
+                        {
+                            "fixed": "2.9.3"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                },
+                {
+                    "events": [
+                        {
+                            "introduced": "2.10.0"
+                        },
+                        {
+                            "fixed": "2.10.1"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        },
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "py310-tflite"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "2.8.4"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                },
+                {
+                    "events": [
+                        {
+                            "introduced": "2.9.0"
+                        },
+                        {
+                            "fixed": "2.9.3"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                },
+                {
+                    "events": [
+                        {
+                            "introduced": "2.10.0"
+                        },
+                        {
+                            "fixed": "2.10.1"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        },
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "py311-tflite"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "2.8.4"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                },
+                {
+                    "events": [
+                        {
+                            "introduced": "2.9.0"
+                        },
+                        {
+                            "fixed": "2.9.3"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                },
+                {
+                    "events": [
+                        {
+                            "introduced": "2.10.0"
+                        },
+                        {
+                            "fixed": "2.10.1"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "discovery": "2022-11-21T00:00:00Z",
+        "vid": "326b2f3e-6fc7-4661-955d-a772760db9cf"
+    },
+    "details": "Thibaut Goetghebuer-Planchon reports:\n\n> The reference kernel of the CONV\\_3D\\_TRANSPOSE TensorFlow Lite operator wrongly increments the data\\_ptr when adding the bias to the result.\n>\n> Instead of `data\\_ptr += num\\_channels;` it should be `data\\_ptr += output\\_num\\_channels;` as if the number of input channels is different than the number of output channels, the wrong result will be returned and a buffer overflow will occur if num\\_channels > output\\_num\\_channels.\n>\n> An attacker can craft a model with a specific number of input channels in a way similar to the attached example script.\n>\n> It is then possible to write specific values through the bias of the layer outside the bounds of the buffer.\n>\n> This attack only works if the reference kernel resolver is used in the interpreter (i.e. `experimental\\_op\\_resolver\\_type=tf.lite.experimental.OpResolverType.BUILTIN\\_REF` is used).",
+    "id": "FreeBSD-kernel-2023-0264",
+    "modified": "2023-04-09T00:00:00Z",
+    "published": "2023-04-09T00:00:00Z",
+    "references": [
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2022-41894"
+        },
+        {
+            "type": "WEB",
+            "url": "https://osv.dev/vulnerability/GHSA-h6q3-vv32-2cq5"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "py-tflite -- buffer overflow vulnerability"
+}

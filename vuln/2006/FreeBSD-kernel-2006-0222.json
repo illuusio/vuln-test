@@ -1,0 +1,74 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "clamav"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "0.88"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        },
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "clamav-devel"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "20060110"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "discovery": "2006-01-09T00:00:00Z",
+        "vid": "612a34ec-81dc-11da-a043-0002a5c3d308"
+    },
+    "details": "The Zero Day Initiative reports:\n\n> This vulnerability allows remote attackers to execute\n> arbitrary code on vulnerable Clam AntiVirus\n> installations. Authentication is not required to exploit\n> this vulnerability.\n>\n> This specific flaw exists within libclamav/upx.c during\n> the unpacking of executable files compressed with UPX. Due\n> to an invalid size calculation during a data copy from the\n> user-controlled file to heap allocated memory, an\n> exploitable memory corruption condition is created.",
+    "id": "FreeBSD-kernel-2006-0222",
+    "modified": "2006-01-15T00:00:00Z",
+    "published": "2006-01-10T00:00:00Z",
+    "references": [
+        {
+            "type": "ADVISORY",
+            "url": "https://www.securityfocus.com/bid/16191/info"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2006-0162"
+        },
+        {
+            "type": "DISCUSSION",
+            "url": "http://lurker.clamav.net/message/20060109.213247.a16ae8db.en.html"
+        },
+        {
+            "type": "WEB",
+            "url": "http://www.zerodayinitiative.com/advisories/ZDI-06-001.html"
+        },
+        {
+            "type": "WEB",
+            "url": "http://secunia.com/advisories/18379/"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "clamav -- possible heap overflow in the UPX code"
+}

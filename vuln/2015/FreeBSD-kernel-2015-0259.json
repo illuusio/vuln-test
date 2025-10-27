@@ -1,0 +1,92 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "squid"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "introduced": "3.5"
+                        },
+                        {
+                            "fixed": "3.5.4"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                },
+                {
+                    "events": [
+                        {
+                            "introduced": "3.4"
+                        },
+                        {
+                            "fixed": "3.4.13"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        },
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "squid33"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "introduced": "3.3"
+                        },
+                        {
+                            "fixed": "3.3.14"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        },
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "squid32"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "introduced": "3.2"
+                        },
+                        {
+                            "fixed": "3.2.14"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "discovery": "2015-05-01T00:00:00Z",
+        "vid": "b6da24da-23f7-11e5-a4a5-002590263bf5"
+    },
+    "details": "Squid security advisory 2015:1 reports:\n\n> Squid configured with client-first SSL-bump does not correctly\n> validate X509 server certificate domain / hostname fields.\n>\n> The bug is important because it allows remote servers to bypass\n> client certificate validation. Some attackers may also be able\n> to use valid certificates for one domain signed by a global\n> Certificate Authority to abuse an unrelated domain.\n>\n> However, the bug is exploitable only if you have configured\n> Squid to perform SSL Bumping with the \"client-first\" or \"bump\"\n> mode of operation.\n>\n> Sites that do not use SSL-Bump are not vulnerable.\n>\n> All Squid built without SSL support are not vulnerable to the\n> problem.\n\nThe FreeBSD port does not use SSL by default and is not vulnerable\nin the default configuration.",
+    "id": "FreeBSD-kernel-2015-0259",
+    "modified": "2015-07-06T00:00:00Z",
+    "published": "2015-07-06T00:00:00Z",
+    "references": [
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2015-3455"
+        },
+        {
+            "type": "WEB",
+            "url": "http://www.squid-cache.org/Advisories/SQUID-2015_1.txt"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "squid -- client-first SSL-bump does not correctly validate X509 server certificate"
+}

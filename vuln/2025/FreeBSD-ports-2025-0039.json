@@ -1,0 +1,55 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "gnutls"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "3.8.10"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "discovery": "2025-07-09T00:00:00Z",
+        "vid": "c3e1df74-5e73-11f0-95e5-74563cf9e4e9"
+    },
+    "details": "Daiki Ueno reports:\n\n> * libgnutls: Fix heap read buffer overrun in parsing X.509 SCTS timestamps\n>   Spotted by oss-fuzz and reported by OpenAI Security Research Team,\n>   and fix developed by Andrew Hamilton. [GNUTLS-SA-2025-07-07-1,\n>   CVSS: medium] [CVE-2025-32989]\n> * libgnutls: Fix double-free upon error when exporting otherName in SAN\n>   Reported by OpenAI Security Research Team. [GNUTLS-SA-2025-07-07-2,\n>   CVSS: low] [CVE-2025-32988]\n> * certtool: Fix 1-byte write buffer overrun when parsing template\n>   Reported by David Aitel. [GNUTLS-SA-2025-07-07-3,\n>   CVSS: low] [CVE-2025-32990]\n> * libgnutls: Fix NULL pointer dereference when 2nd Client Hello omits PSK\n>   Reported by Stefan B\u00fchler. [GNUTLS-SA-2025-07-07-4, CVSS: medium]\n>   [CVE-2025-6395]",
+    "id": "FreeBSD-ports-2025-0039",
+    "modified": "2025-07-14T00:00:00Z",
+    "published": "2025-07-14T00:00:00Z",
+    "references": [
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2025-32989"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2025-32988"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2025-32990"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2025-6395"
+        },
+        {
+            "type": "WEB",
+            "url": "https://lists.gnupg.org/pipermail/gnutls-help/2025-July/004883.html"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "GnuTLS -- multiple vulnerabilities"
+}

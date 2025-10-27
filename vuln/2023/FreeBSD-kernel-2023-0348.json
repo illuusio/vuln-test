@@ -1,0 +1,114 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "grafana"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "introduced": "8.0.0"
+                        },
+                        {
+                            "fixed": "8.5.16"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                },
+                {
+                    "events": [
+                        {
+                            "introduced": "9.0.0"
+                        },
+                        {
+                            "fixed": "9.2.10"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                },
+                {
+                    "events": [
+                        {
+                            "introduced": "9.3.0"
+                        },
+                        {
+                            "fixed": "9.3.4"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        },
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "grafana8"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "introduced": "8.0.0"
+                        },
+                        {
+                            "fixed": "8.5.16"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        },
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "grafana9"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "introduced": "9.0.0"
+                        },
+                        {
+                            "fixed": "9.2.10"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                },
+                {
+                    "events": [
+                        {
+                            "introduced": "9.3.0"
+                        },
+                        {
+                            "fixed": "9.3.4"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "discovery": "2023-01-25T00:00:00Z",
+        "vid": "e6281d88-a7a7-11ed-8d6a-6c3be5272acd"
+    },
+    "details": "Grafana Labs reports:\n\n> A third-party penetration test of Grafana found a vulnerability\n> in the snapshot functionality. The value of the originalUrl parameter\n> is automatically generated. The purpose of the presented originalUrl parameter\n> is to provide a user who views the snapshot with the possibility to click\n> on the **Local Snapshot** button in the Grafana web UI\n> and be presented with the dashboard that the snapshot captured. The value\n> of the originalUrl parameter can be arbitrarily chosen by a malicious user that\n> creates the snapshot. (Note: This can be done by editing the query thanks\n> to a web proxy like Burp.)\n>\n> We have assessed this vulnerability as having a CVSS score of 6.7 MEDIUM\n> (CVSS:6.7/AV:N/AC:H/PR:L/UI:R/S:U/C:H/I:H/A:L).",
+    "id": "FreeBSD-kernel-2023-0348",
+    "modified": "2023-02-09T00:00:00Z",
+    "published": "2023-02-09T00:00:00Z",
+    "references": [
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2022-39324"
+        },
+        {
+            "type": "WEB",
+            "url": "https://github.com/grafana/grafana/security/advisories/GHSA-4724-7jwc-3fpw"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "Grafana -- Spoofing originalUrl of snapshots"
+}

@@ -1,0 +1,40 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "golddig"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "last_affected": "2.0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "discovery": "2004-11-11T00:00:00Z",
+        "vid": "949c470e-528f-11d9-ac20-00065be4b5b6"
+    },
+    "details": "Two buffer overflow vulnerabilities where detected. Both issues can\nbe used by local users to gain group games privileges on affected\nsystems.\n\nThe first overflow exists in the map name handling and can be\ntriggered when a very long name is given to the program during\ncommand-line execution\n\nThe second overflow exists in the username processing while writing\nthe players score to disk. Excessivly long usernames, set via the USER\nenvironment variable, are stored without any length checks in a memory\nbuffer.",
+    "id": "FreeBSD-kernel-2005-0324",
+    "modified": "2005-01-19T00:00:00Z",
+    "published": "2005-01-03T00:00:00Z",
+    "references": [
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2005-0121"
+        },
+        {
+            "type": "DISCUSSION",
+            "url": "http://docs.FreeBSD.org/cgi/mid.cgi?200412021055.iB2AtweU067125"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "golddig -- local buffer overflow vulnerabilities"
+}

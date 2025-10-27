@@ -1,0 +1,47 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "xen-kernel"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "4.7.1"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "discovery": "2016-10-04T00:00:00Z",
+        "vid": "4d7cf654-ba4d-11e6-ae1b-002590263bf5"
+    },
+    "details": "The Xen Project reports:\n\n> Instructions touching FPU, MMX, or XMM registers are required to\n> raise a Device Not Available Exception (#NM) when either CR0.EM or\n> CR0.TS are set. (Their AVX or AVX-512 extensions would consider only\n> CR0.TS.) While during normal operation this is ensured by the\n> hardware, if a guest modifies instructions while the hypervisor is\n> preparing to emulate them, the #NM delivery could be missed.\n>\n> Guest code in one task may thus (unintentionally or maliciously)\n> read or modify register state belonging to another task in the same\n> VM.\n>\n> A malicious unprivileged guest user may be able to obtain or\n> corrupt sensitive information (including cryptographic material) in\n> other programs in the same guest.",
+    "id": "FreeBSD-kernel-2016-0047",
+    "modified": "2016-12-04T00:00:00Z",
+    "published": "2016-12-04T00:00:00Z",
+    "references": [
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2016-7777"
+        },
+        {
+            "type": "REPORT",
+            "url": "https://bugs.freebsd.org/bugzilla/show_bug.cgi?id=214936"
+        },
+        {
+            "type": "WEB",
+            "url": "https://xenbits.xen.org/xsa/advisory-190.html"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "xen-kernel -- CR0.TS and CR0.EM not always honored for x86 HVM guests"
+}

@@ -1,0 +1,43 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "curl"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "7.40.0"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "discovery": "2014-12-25T00:00:00Z",
+        "vid": "caa98ffd-0a92-40d0-b234-fd79b429157e"
+    },
+    "details": "cURL reports:\n\n> When libcurl sends a request to a server via a HTTP proxy, it\n> copies the entire URL into the request and sends if off.\n> If the given URL contains line feeds and carriage returns those will\n> be sent along to the proxy too, which allows the program to for\n> example send a separate HTTP request injected embedded in the URL.\n> Many programs allow some kind of external sources to set the URL or\n> provide partial pieces for the URL to ask for, and if the URL as\n> received from the user is not stripped good enough this flaw allows\n> malicious users to do additional requests in a way that was not\n> intended, or just to insert request headers into the request that\n> the program didn't intend.\n> We are not aware of any exploit of this flaw.",
+    "id": "FreeBSD-kernel-2015-0423",
+    "modified": "2015-01-09T00:00:00Z",
+    "published": "2015-01-09T00:00:00Z",
+    "references": [
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2014-8150"
+        },
+        {
+            "type": "WEB",
+            "url": "http://curl.haxx.se/docs/adv_20150108B.html"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "cURL -- URL request injection vulnerability"
+}

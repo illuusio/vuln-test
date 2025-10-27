@@ -1,0 +1,66 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "subversion"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "1.6.17"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        },
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "subversion-freebsd"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "1.6.17"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "discovery": "2011-05-28T00:00:00Z",
+        "vid": "e27a1af3-8d21-11e0-a45d-001e8c75030d"
+    },
+    "details": "Subversion team reports:\n\n> Subversion's mod\\_dav\\_svn Apache HTTPD server module will\n> dereference a NULL pointer if asked to deliver baselined WebDAV\n> resources.\n>\n> This can lead to a DoS. An exploit has been tested, and tools\n> or users have been observed triggering this problem in the\n> wild.\n\n> Subversion's mod\\_dav\\_svn Apache HTTPD server module may in\n> certain scenarios enter a logic loop which does not exit and\n> which allocates memory in each iteration, ultimately exhausting\n> all the available memory on the server.\n>\n> This can lead to a DoS. There are no known instances of this\n> problem being observed in the wild, but an exploit has been\n> tested.\n\n> Subversion's mod\\_dav\\_svn Apache HTTPD server module may leak to\n> remote users the file contents of files configured to be\n> unreadable by those users.\n>\n> There are no known instances of this problem being observed in\n> the wild, but an exploit has been tested.",
+    "id": "FreeBSD-kernel-2011-0087",
+    "modified": "2011-06-02T00:00:00Z",
+    "published": "2011-06-02T00:00:00Z",
+    "references": [
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2011-1752"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2011-1783"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2011-1921"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "Subversion -- multiple vulnerabilities"
+}

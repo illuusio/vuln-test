@@ -1,0 +1,84 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "net-snmp"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "introduced": "5.7.0"
+                        },
+                        {
+                            "last_affected": "5.7.2.1"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                },
+                {
+                    "events": [
+                        {
+                            "introduced": "5.6.0"
+                        },
+                        {
+                            "last_affected": "5.6.2.1"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                },
+                {
+                    "events": [
+                        {
+                            "introduced": "5.5.0"
+                        },
+                        {
+                            "last_affected": "5.5.2.1"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                },
+                {
+                    "events": [
+                        {
+                            "introduced": "5.4.0"
+                        },
+                        {
+                            "last_affected": "5.4.4"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "discovery": "2014-07-31T00:00:00Z",
+        "vid": "4622635f-37a1-11e5-9970-14dae9d210b8"
+    },
+    "details": "Murray McAllister reports:\n\n> A remote denial-of-service flaw was found in the way\n> snmptrapd handled certain SNMP traps when started with the\n> \"-OQ\" option. If an attacker sent an SNMP trap containing a\n> variable with a NULL type where an integer variable type was\n> expected, it would cause snmptrapd to crash.",
+    "id": "FreeBSD-kernel-2015-0200",
+    "modified": "2015-07-31T00:00:00Z",
+    "published": "2015-07-31T00:00:00Z",
+    "references": [
+        {
+            "type": "WEB",
+            "url": "http://seclists.org/oss-sec/2014/q3/473"
+        },
+        {
+            "type": "WEB",
+            "url": "http://sourceforge.net/p/net-snmp/code/ci/7f4a7b891332899cea26e95be0337aae01648742/"
+        },
+        {
+            "type": "WEB",
+            "url": "https://sourceforge.net/p/net-snmp/official-patches/48/"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2014-3565"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "net-snmp -- snmptrapd crash"
+}

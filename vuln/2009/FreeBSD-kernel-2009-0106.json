@@ -1,0 +1,71 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "cups-base"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "1.3.10"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "discovery": "2009-05-05T00:00:00Z",
+        "vid": "736e55bc-39bb-11de-a493-001b77d09812"
+    },
+    "details": "Gentoo security team summarizes:\n\n> The following issues were reported in CUPS:\n>\n> * iDefense reported an integer overflow in the\n>   \\_cupsImageReadTIFF() function in the \"imagetops\" filter,\n>   leading to a heap-based buffer overflow (CVE-2009-0163).\n> * Aaron Siegel of Apple Product Security reported that the\n>   CUPS web interface does not verify the content of the \"Host\"\n>   HTTP header properly (CVE-2009-0164).\n> * Braden Thomas and Drew Yao of Apple Product Security\n>   reported that CUPS is vulnerable to CVE-2009-0146,\n>   CVE-2009-0147 and CVE-2009-0166, found earlier in xpdf and\n>   poppler.\n>\n> A remote attacker might send or entice a user to send a\n> specially crafted print job to CUPS, possibly resulting in the\n> execution of arbitrary code with the privileges of the\n> configured CUPS user -- by default this is \"lp\", or a Denial\n> of Service. Furthermore, the web interface could be used to\n> conduct DNS rebinding attacks.",
+    "id": "FreeBSD-kernel-2009-0106",
+    "modified": "2009-05-13T00:00:00Z",
+    "published": "2009-05-07T00:00:00Z",
+    "references": [
+        {
+            "type": "ADVISORY",
+            "url": "https://www.securityfocus.com/bid/34571/info"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://www.securityfocus.com/bid/34665/info"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://www.securityfocus.com/bid/34568/info"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2009-0163"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2009-0164"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2009-0146"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2009-0147"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2009-0166"
+        },
+        {
+            "type": "WEB",
+            "url": "http://www.cups.org/articles.php?L582"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "cups -- remote code execution and DNS rebinding"
+}

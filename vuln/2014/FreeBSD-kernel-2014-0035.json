@@ -1,0 +1,160 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "openssl"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "introduced": "1.0.1"
+                        },
+                        {
+                            "fixed": "1.0.1_16"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        },
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "mingw32-openssl"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "introduced": "1.0.1"
+                        },
+                        {
+                            "fixed": "1.0.1j"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        },
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "linux-c6-openssl"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "1.0.1e_1"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        },
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "FreeBSD"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "introduced": "8.4"
+                        },
+                        {
+                            "fixed": "8.4_17"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                },
+                {
+                    "events": [
+                        {
+                            "introduced": "9.1"
+                        },
+                        {
+                            "fixed": "9.1_20"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                },
+                {
+                    "events": [
+                        {
+                            "introduced": "9.2"
+                        },
+                        {
+                            "fixed": "9.2_13"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                },
+                {
+                    "events": [
+                        {
+                            "introduced": "9.3"
+                        },
+                        {
+                            "fixed": "9.3_3"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                },
+                {
+                    "events": [
+                        {
+                            "introduced": "10.0"
+                        },
+                        {
+                            "fixed": "10.0_10"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "discovery": "2014-10-15T00:00:00Z",
+        "vid": "03175e62-5494-11e4-9cc1-bc5ff4fb5e7b"
+    },
+    "details": "The OpenSSL Project reports:\n\n> A flaw in the DTLS SRTP extension parsing code allows an\n> attacker, who sends a carefully crafted handshake message,\n> to cause OpenSSL to fail to free up to 64k of memory causing\n> a memory leak. This could be exploited in a Denial Of Service\n> attack. This issue affects OpenSSL 1.0.1 server implementations\n> for both SSL/TLS and DTLS regardless of whether SRTP is used\n> or configured. Implementations of OpenSSL that have been\n> compiled with OPENSSL\\_NO\\_SRTP defined are not affected.\n> [CVE-2014-3513].\n>\n> When an OpenSSL SSL/TLS/DTLS server receives a session\n> ticket the integrity of that ticket is first verified.\n> In the event of a session ticket integrity check failing,\n> OpenSSL will fail to free memory causing a memory leak.\n> By sending a large number of invalid session tickets an\n> attacker could exploit this issue in a Denial Of Service\n> attack. [CVE-2014-3567].\n>\n> OpenSSL has added support for TLS\\_FALLBACK\\_SCSV to allow\n> applications to block the ability for a MITM attacker to\n> force a protocol downgrade.\n>\n> Some client applications (such as browsers) will reconnect\n> using a downgraded protocol to work around interoperability\n> bugs in older servers. This could be exploited by an active\n> man-in-the-middle to downgrade connections to SSL 3.0 even\n> if both sides of the connection support higher protocols.\n> SSL 3.0 contains a number of weaknesses including POODLE\n> [CVE-2014-3566].\n>\n> When OpenSSL is configured with \"no-ssl3\" as a build option,\n> servers could accept and complete a SSL 3.0 handshake, and\n> clients could be configured to send them. [CVE-2014-3568].",
+    "id": "FreeBSD-kernel-2014-0035",
+    "modified": "2016-08-09T00:00:00Z",
+    "published": "2014-10-15T00:00:00Z",
+    "references": [
+        {
+            "type": "ADVISORY",
+            "url": "https://www.freebsd.org/security/advisories/FreeBSD-SA-14:23.openssl.asc"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2014-3513"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2014-3566"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2014-3567"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2014-3568"
+        },
+        {
+            "type": "WEB",
+            "url": "https://www.openssl.org/news/secadv_20141015.txt"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "OpenSSL -- multiple vulnerabilities"
+}

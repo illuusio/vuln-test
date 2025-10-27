@@ -1,0 +1,140 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "bind99"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "9.9.9P5"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        },
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "bind910"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "9.10.4P5"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        },
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "bind911"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "9.11.0P2"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        },
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "bind9-devel"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "last_affected": "9.12.0.a.2016.12.28"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        },
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "FreeBSD"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "introduced": "9.3"
+                        },
+                        {
+                            "fixed": "10.0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "discovery": "2017-01-11T00:00:00Z",
+        "vid": "d4c7e9a9-d893-11e6-9b4d-d050996490d0"
+    },
+    "details": "ISC reports:\n\n> A malformed query response received by a recursive\n> server in response to a query of RTYPE ANY could\n> trigger an assertion failure while named is attempting\n> to add the RRs in the query response to the cache.\n\n> Depending on the type of query and the EDNS options\n> in the query they receive, DNSSEC-enabled authoritative\n> servers are expected to include RRSIG and other RRsets\n> in their responses to recursive servers.\n> DNSSEC-validating servers will also make specific queries\n> for DS and other RRsets.\n> Whether DNSSEC-validating or not, an error in processing\n> malformed query responses that contain DNSSEC-related\n> RRsets that are inconsistent with other RRsets in the\n> same query response can trigger an assertion failure.\n> Although the combination of properties which triggers\n> the assertion should not occur in normal traffic, it\n> is potentially possible for the assertion to be triggered\n> deliberately by an attacker sending a specially-constructed\n> answer.\n\n> An unusually-formed answer containing a DS resource\n> record could trigger an assertion failure. While the\n> combination of properties which triggers the assertion\n> should not occur in normal traffic, it is potentially\n> possible for the assertion to be triggered deliberately\n> by an attacker sending a specially-constructed answer\n> having the required properties.\n\n> An error in handling certain queries can cause an\n> assertion failure when a server is using the\n> nxdomain-redirect feature to cover a zone for which\n> it is also providing authoritative service.\n> A vulnerable server could be intentionally stopped\n> by an attacker if it was using a configuration that\n> met the criteria for the vulnerability and if the\n> attacker could cause it to accept a query that\n> possessed the required attributes.",
+    "id": "FreeBSD-kernel-2017-0309",
+    "modified": "2017-01-12T00:00:00Z",
+    "published": "2017-01-12T00:00:00Z",
+    "references": [
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2016-9131"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2016-9147"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2016-9444"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2016-9778"
+        },
+        {
+            "type": "WEB",
+            "url": "https://kb.isc.org/article/AA-01439/0"
+        },
+        {
+            "type": "WEB",
+            "url": "https://kb.isc.org/article/AA-01440/0"
+        },
+        {
+            "type": "WEB",
+            "url": "https://kb.isc.org/article/AA-01441/0"
+        },
+        {
+            "type": "WEB",
+            "url": "https://kb.isc.org/article/AA-01442/0"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "BIND -- multiple vulnerabilities"
+}

@@ -1,0 +1,39 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "tarsnap"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "introduced": "1.0.22"
+                        },
+                        {
+                            "last_affected": "1.0.27"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "discovery": "2011-01-18T00:00:00Z",
+        "vid": "2c2d4e83-2370-11e0-a91b-00e0815b8da8"
+    },
+    "details": "Colin Percival reports:\n\n> In versions 1.0.22 through 1.0.27 of Tarsnap, the CTR nonce value\n> is not incremented after each chunk is encrypted. (The CTR counter\n> is correctly incremented after each 16 bytes of data was processed,\n> but this counter is reset to zero for each new chunk.)\n>\n> Note that since the Tarsnap client-server protocol is encrypted,\n> being able to intercept Tarsnap client-server traffic does not\n> provide an attacker with access to the data.",
+    "id": "FreeBSD-kernel-2011-0153",
+    "modified": "2011-01-19T00:00:00Z",
+    "published": "2011-01-19T00:00:00Z",
+    "references": [
+        {
+            "type": "WEB",
+            "url": "http://www.daemonology.net/blog/2011-01-18-tarsnap-critical-security-bug.html"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "tarsnap -- cryptographic nonce reuse"
+}

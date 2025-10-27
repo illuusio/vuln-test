@@ -1,0 +1,65 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "FreeBSD"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "introduced": "12.2"
+                        },
+                        {
+                            "fixed": "12.2_1"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                },
+                {
+                    "events": [
+                        {
+                            "introduced": "12.1"
+                        },
+                        {
+                            "fixed": "12.1_11"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                },
+                {
+                    "events": [
+                        {
+                            "introduced": "11.4"
+                        },
+                        {
+                            "fixed": "11.4_5"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "discovery": "2020-12-01T00:00:00Z",
+        "vid": "e2748c9d-3483-11eb-b87a-901b0ef719ab"
+    },
+    "details": "Problem Description:\n====================\n\nTwo bugs exist in rtsold(8)'s RDNSS and DNSSL option handling.\nFirst, rtsold(8) failed to perform sufficient bounds checking on the\nextent of the option. In particular, it does not verify that the\noption does not extend past the end of the received packet before\nprocessing its contents. The kernel currently ignores such\nmalformed packets but still passes them to userspace programs.\n\nSecond, when processing a DNSSL option, rtsold(8) decodes domain\nname labels per an encoding specified in RFC 1035 in which the first\noctet of each label contains the label's length. rtsold(8) did not\nvalidate label lengths correctly and could overflow the destination\nbuffer.\n\nImpact:\n=======\n\nIt is believed that these bugs could be exploited to gain remote\ncode execution within the rtsold(8) daemon, which runs as root.\nNote that rtsold(8) only processes messages received from hosts\nattached to the same physical link as the interface(s) on which\nrtsold(8) is listening.\n\nIn FreeBSD 12.2 rtsold(8) runs in a Capsicum sandbox, limiting the\nscope of a compromised rtsold(8) process.",
+    "id": "FreeBSD-kernel-2020-0036",
+    "modified": "2020-12-02T00:00:00Z",
+    "published": "2020-12-02T00:00:00Z",
+    "references": [
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2020-25577"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://www.freebsd.org/security/advisories/FreeBSD-SA-20:32.rtsold.asc"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "FreeBSD -- Multiple vulnerabilities in rtsold"
+}

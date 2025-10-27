@@ -1,0 +1,173 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "mplayer"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "0.99.7"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        },
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "mplayer-gtk"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "0.99.7"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        },
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "mplayer-gtk2"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "0.99.7"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        },
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "mplayer-esound"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "0.99.7"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        },
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "mplayer-gtk-esound"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "0.99.7"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        },
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "mplayer-gtk2-esound"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "0.99.7"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        },
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "libxine"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "introduced": "0.9.9"
+                        },
+                        {
+                            "fixed": "1.0.1"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "discovery": "2005-04-16T00:00:00Z",
+        "vid": "91c606fc-b5d0-11d9-a788-0001020eed82"
+    },
+    "details": "A xine security announcement reports:\n\n> By a user receiving data from a malicious network\n> streaming server, an attacker can overrun a heap buffer,\n> which can, on some systems, lead to or help in executing\n> attacker-chosen malicious code with the permissions of the\n> user running a xine-lib based media application.\n>\n> Both the MMS and Real RTSP streaming client code made\n> some too-strong assumptions on the transferred\n> data. Several critical bounds checks were missing,\n> resulting in the possibility of heap overflows, should the\n> remote server not adhere to these assumptions. In the MMS\n> case, a remote server could present content with too many\n> individual streams; in the RTSP case, a remote server's\n> reply could have too many lines.\n>\n> An attacker can set up a server delivering malicious data\n> to the users. This can be used to overflow a heap buffer,\n> which can, with certain implementations of heap\n> management, lead to attacker chosen data written to the\n> stack. This can cause attacker-chosen code being executed\n> with the permissions of the user running the\n> application. By tricking users to retrieve a stream, which\n> can be as easy as providing a link on a website, this\n> vulnerability can be exploited remotely.",
+    "id": "FreeBSD-kernel-2005-0193",
+    "modified": "2005-04-25T00:00:00Z",
+    "published": "2005-04-25T00:00:00Z",
+    "references": [
+        {
+            "type": "ADVISORY",
+            "url": "https://www.securityfocus.com/bid/13270/info"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://www.securityfocus.com/bid/13271/info"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2005-1195"
+        },
+        {
+            "type": "WEB",
+            "url": "http://www.mplayerhq.hu/homepage/design7/news.html#vuln10"
+        },
+        {
+            "type": "WEB",
+            "url": "http://www.mplayerhq.hu/homepage/design7/news.html#vuln11"
+        },
+        {
+            "type": "WEB",
+            "url": "http://xinehq.de/index.php/security/XSA-2004-8"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "mplayer & libxine -- MMS and Real RTSP buffer overflow vulnerabilities"
+}

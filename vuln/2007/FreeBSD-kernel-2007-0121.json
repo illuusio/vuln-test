@@ -1,0 +1,59 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "p5-Imager"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "0.57"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "discovery": "2007-04-04T00:00:00Z",
+        "vid": "632c98be-aad2-4af2-849f-41a6862afd6a"
+    },
+    "details": "Imager 0.56 and all earlier versions with BMP support have\na security issue when reading compressed 8-bit per pixel BMP\nfiles where either a compressed run of data or a literal run\nof data overflows the scan-line.\n\nSuch an overflow causes a buffer overflow in a malloc()\nallocated memory buffer, possibly corrupting the memory arena\nheaders.\n\nThe effect depends on your system memory allocator, with glibc\nthis typically results in an abort, but with other memory\nallocators it may be possible to cause local code execution.",
+    "id": "FreeBSD-kernel-2007-0121",
+    "modified": "2010-05-12T00:00:00Z",
+    "published": "2007-04-30T00:00:00Z",
+    "references": [
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2007-1942"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2007-1943"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2007-1946"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2007-1948"
+        },
+        {
+            "type": "WEB",
+            "url": "https://rt.cpan.org/Public/Bug/Display.html?id=26811"
+        },
+        {
+            "type": "WEB",
+            "url": "http://ifsec.blogspot.com/2007/04/several-windows-image-viewers.html"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "p5-Imager -- possibly exploitable buffer overflow"
+}

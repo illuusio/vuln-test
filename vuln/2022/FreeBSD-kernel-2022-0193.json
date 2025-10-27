@@ -1,0 +1,43 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "go"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "1.17.8,1"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "discovery": "2022-02-09T00:00:00Z",
+        "vid": "e2af876f-a7c8-11ec-9a2a-002324b2fba8"
+    },
+    "details": "The Go project reports:\n\n> regexp: stack exhaustion compiling deeply nested expressions\n>\n> On 64-bit platforms, an extremely deeply nested expression can\n> cause regexp.Compile to cause goroutine stack exhaustion, forcing\n> the program to exit. Note this applies to very large expressions, on\n> the order of 2MB.",
+    "id": "FreeBSD-kernel-2022-0193",
+    "modified": "2022-03-19T00:00:00Z",
+    "published": "2022-03-19T00:00:00Z",
+    "references": [
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2022-24921"
+        },
+        {
+            "type": "WEB",
+            "url": "https://github.com/golang/go/issues/51112"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "go -- multiple vulnerabilities"
+}

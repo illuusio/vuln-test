@@ -1,0 +1,119 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "xorg-server"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "21.1.18,1"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        },
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "xephyr"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "21.1.18,1"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        },
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "xorg-vfbserver"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "21.1.18,1"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        },
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "xorg-nextserver"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "21.1.18,2"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        },
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "xwayland"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "24.1.8,1"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "discovery": "2025-06-17T00:00:00Z",
+        "vid": "8df49466-5664-11f0-943a-18c04d5ea3dc"
+    },
+    "details": "The X.Org project reports:\n\n> * CVE-2025-49176: Integer overflow in Big Requests Extension\n>\n>   The Big Requests extension allows requests larger than the 16-bit length\n>   limit.\n>   It uses integers for the request length and checks for the size not to\n>   exceed the maxBigRequestSize limit, but does so after translating the\n>   length to integer by multiplying the given size in bytes by 4.\n>   In doing so, it might overflow the integer size limit before actually\n>   checking for the overflow, defeating the purpose of the test.",
+    "id": "FreeBSD-ports-2025-0065",
+    "modified": "2025-07-01T00:00:00Z",
+    "published": "2025-07-01T00:00:00Z",
+    "references": [
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2025-49176"
+        },
+        {
+            "type": "WEB",
+            "url": "https://lists.x.org/archives/xorg/2025-June/062055.html"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "xorg server -- Multiple vulnerabilities"
+}

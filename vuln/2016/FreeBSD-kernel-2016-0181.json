@@ -1,0 +1,80 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:kernel",
+                "name": "FreeBSD-kernel"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "introduced": "10.0"
+                        },
+                        {
+                            "fixed": "10.0_7"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                },
+                {
+                    "events": [
+                        {
+                            "introduced": "9.2"
+                        },
+                        {
+                            "fixed": "9.2_10"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                },
+                {
+                    "events": [
+                        {
+                            "introduced": "9.1"
+                        },
+                        {
+                            "fixed": "9.1_17"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                },
+                {
+                    "events": [
+                        {
+                            "introduced": "8.4"
+                        },
+                        {
+                            "fixed": "8.4_14"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "discovery": "2014-07-08T00:00:00Z",
+        "vid": "7240de58-6007-11e6-a6c3-14dae9d210b8"
+    },
+    "details": "Problem Description:\n====================\n\nBuffer between control message header and data may not\nbe completely initialized before being copied to userland.\n[CVE-2014-3952]\n\nThree SCTP cmsgs, SCTP\\_SNDRCV, SCTP\\_EXTRCV and SCTP\\_RCVINFO,\nhave implicit padding that may not be completely initialized\nbefore being copied to userland. In addition, three SCTP\nnotifications, SCTP\\_PEER\\_ADDR\\_CHANGE, SCTP\\_REMOTE\\_ERROR and\nSCTP\\_AUTHENTICATION\\_EVENT, have padding in the returning\ndata structure that may not be completely initialized before\nbeing copied to userland. [CVE-2014-3953]\n\nImpact:\n=======\n\nAn unprivileged local process may be able to retrieve\nportion of kernel memory.\n\nFor the generic control message, the process may be able\nto retrieve a maximum of 4 bytes of kernel memory.\n\nFor SCTP, the process may be able to retrieve 2 bytes\nof kernel memory for all three control messages, plus 92\nbytes for SCTP\\_SNDRCV and 76 bytes for SCTP\\_EXTRCV. If the\nlocal process is permitted to receive SCTP notification, a\nmaximum of 112 bytes of kernel memory may be returned to\nuserland.\n\nThis information might be directly useful, or it might\nbe leveraged to obtain elevated privileges in some way. For\nexample, a terminal buffer might include a user-entered\npassword.",
+    "id": "FreeBSD-kernel-2016-0181",
+    "modified": "2016-08-11T00:00:00Z",
+    "published": "2016-08-11T00:00:00Z",
+    "references": [
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2014-3952"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2014-3953"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://www.freebsd.org/security/advisories/FreeBSD-SA-14:17.kmem.asc"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "FreeBSD -- Kernel memory disclosure in control messages and SCTP"
+}

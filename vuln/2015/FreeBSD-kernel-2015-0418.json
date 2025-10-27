@@ -1,0 +1,60 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "unzip"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "last_affected": "6.0_2"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "discovery": "2014-12-03T00:00:00Z",
+        "vid": "d9360908-9d52-11e4-87fd-10bf48e1088e"
+    },
+    "details": "oCERT reports:\n\n> The UnZip tool is an open source extraction utility for archives\n> compressed in the zip format.\n>\n> The unzip command line tool is affected by heap-based buffer\n> overflows within the CRC32 verification, the test\\_compr\\_eb() and\n> the getZip64Data() functions. The input errors may result in\n> arbitrary code execution.\n>\n> A specially crafted zip file, passed to unzip -t, can be used to\n> trigger the vulnerability.",
+    "id": "FreeBSD-kernel-2015-0418",
+    "modified": "2015-01-16T00:00:00Z",
+    "published": "2015-01-16T00:00:00Z",
+    "references": [
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2014-8139"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2014-8140"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2014-8141"
+        },
+        {
+            "type": "WEB",
+            "url": "http://www.info-zip.org/UnZip.html"
+        },
+        {
+            "type": "REPORT",
+            "url": "https://bugzilla.redhat.com/show_bug.cgi?id=1174844"
+        },
+        {
+            "type": "REPORT",
+            "url": "https://bugzilla.redhat.com/show_bug.cgi?id=CVE-2014-8140"
+        },
+        {
+            "type": "REPORT",
+            "url": "https://bugzilla.redhat.com/show_bug.cgi?id=1174856"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "unzip -- input sanitization errors"
+}

@@ -1,0 +1,81 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "krb5"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "1.21.1_1"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        },
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "krb5-121"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "1.21.1_1"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        },
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "krb5-devel"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "1.22.2023.08.07"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "discovery": "2023-08-07T00:00:00Z",
+        "vid": "a6986f0f-3ac0-11ee-9a88-206a8a720317"
+    },
+    "details": "SO-AND-SO reports:\n\n> When issuing a ticket for a TGS renew or validate request, copy\n> only the server field from the outer part of the header ticket\n> to the new ticket. Copying the whole structure causes the\n> enc\\_part pointer to be aliased to the header ticket until\n> krb5\\_encrypt\\_tkt\\_part() is called, resulting in a double-free\n> if handle\\_authdata() fails..",
+    "id": "FreeBSD-kernel-2023-0162",
+    "modified": "2023-08-14T00:00:00Z",
+    "published": "2023-08-14T00:00:00Z",
+    "references": [
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2023-39975"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2023-39975"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "krb5 -- Double-free in KDC TGS processing"
+}

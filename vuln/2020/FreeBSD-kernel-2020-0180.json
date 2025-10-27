@@ -1,0 +1,55 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "curl"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "introduced": "7.20.0"
+                        },
+                        {
+                            "fixed": "7.71.0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "discovery": "2020-06-24T00:00:00Z",
+        "vid": "6bff5ca6-b61a-11ea-aef4-08002728f74c"
+    },
+    "details": "curl security problems:\n\n> CVE-2020-8169: Partial password leak over DNS on HTTP redirect\n>\n> libcurl can be tricked to prepend a part of the password to the\n> host name before it resolves it, potentially leaking the partial\n> password over the network and to the DNS server(s).\n>\n> libcurl can be given a username and password for HTTP\n> authentication when requesting an HTTP resource - used for HTTP\n> Authentication such as Basic, Digest, NTLM and similar. The\n> credentials are set, either together with CURLOPT\\_USERPWD or\n> separately with CURLOPT\\_USERNAME and CURLOPT\\_PASSWORD. Important\n> detail: these strings are given to libcurl as plain C strings and\n> they are not supposed to be URL encoded.\n>\n> In addition, libcurl also allows the credentials to be set in the\n> URL, using the standard RFC 3986 format:\n> http://user:password@host/path. In this case, the name and password\n> are URL encoded as that's how they appear in URLs.\n>\n> If the options are set, they override the credentials set in the\n> URL.\n>\n> Internally, this is handled by storing the credentials in the \"URL\n> object\" so that there is only a single set of credentials stored\n> associated with this single URL.\n>\n> When libcurl handles a relative redirect (as opposed to an\n> absolute URL redirect) for an HTTP transfer, the server is only\n> sending a new path to the client and that path is applied on to the\n> existing URL. That \"applying\" of the relative path on top of an\n> absolute URL is done by libcurl first generating a full absolute\n> URL out of all the components it has, then it applies the redirect\n> and finally it deconstructs the URL again into its separate\n> components.\n>\n> This security vulnerability originates in the fact that curl did\n> not correctly URL encode the credential data when set using one of\n> the curl\\_easy\\_setopt options described above. This made curl\n> generate a badly formatted full URL when it would do a redirect and\n> the final re-parsing of the URL would then go bad and wrongly\n> consider a part of the password field to belong to the host name.\n>\n> The wrong host name would then be used in a name resolve lookup,\n> potentially leaking the host name + partial password in clear text\n> over the network (if plain DNS was used) and in particular to the\n> used DNS server(s).\n>\n> CVE-2020-8177: curl overwrite local file with -J\n>\n> curl can be tricked by a malicious server to overwrite a local\n> file when using -J (--remote-header-name) and -i (--include) in the\n> same command line.\n>\n> The command line tool offers the -J option that saves a remote\n> file using the file name present in the Content-Disposition:\n> response header. curl then refuses to overwrite an existing local\n> file using the same name, if one already exists in the current\n> directory.\n>\n> The -J flag is designed to save a response body, and so it doesn't\n> work together with -i and there's logic that forbids it. However,\n> the check is flawed and doesn't properly check for when the options\n> are used in the reversed order: first using -J and then -i were\n> mistakenly accepted.\n>\n> The result of this mistake was that incoming HTTP headers could\n> overwrite a local file if one existed, as the check to avoid the\n> local file was done first when body data was received, and due to\n> the mistake mentioned above, it could already have received and\n> saved headers by that time.\n>\n> The saved file would only get response headers added to it, as it\n> would abort the saving when the first body byte arrives. A\n> malicious server could however still be made to send back virtually\n> anything as headers and curl would save them like this, until the\n> first CRLF-CRLF sequence appears.\n>\n> (Also note that -J needs to be used in combination with -O to have\n> any effect.)",
+    "id": "FreeBSD-kernel-2020-0180",
+    "modified": "2020-06-24T00:00:00Z",
+    "published": "2020-06-24T00:00:00Z",
+    "references": [
+        {
+            "type": "WEB",
+            "url": "https://curl.haxx.se/docs/security.html"
+        },
+        {
+            "type": "WEB",
+            "url": "https://curl.haxx.se/docs/CVE-2020-8169.html"
+        },
+        {
+            "type": "WEB",
+            "url": "https://curl.haxx.se/docs/CVE-2020-8177.html"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2020-8169"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2020-8177"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "curl -- multiple vulnerabilities"
+}

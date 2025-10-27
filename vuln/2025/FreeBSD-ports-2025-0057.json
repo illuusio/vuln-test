@@ -1,0 +1,83 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "firefox"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "140.0,2"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "discovery": "2025-06-24T00:00:00Z",
+        "vid": "a55d2120-58cf-11f0-b4ad-b42e991fc52e"
+    },
+    "details": "security@mozilla.org reports:\n\n> An attacker was able to bypass the `connect-src`\n> directive of a Content Security Policy by manipulating\n> subdocuments. This would have also hidden the connections\n> from the Network tab in Devtools.\n>\n> When Multi-Account Containers was enabled, DNS requests\n> could have bypassed a SOCKS proxy when the domain name was\n> invalid or the SOCKS proxy was not responding.\n>\n> If a user visited a webpage with an invalid TLS\n> certificate, and granted an exception, the webpage was able to\n> provide a WebAuthn challenge that the user would be prompted\n> to complete. This is in violation of the WebAuthN spec which\n> requires \"a secure transport established without\n> errors\".\n>\n> The exception page for the HTTPS-Only feature, displayed\n> when a website is opened via HTTP, lacked an anti-clickjacking\n> delay, potentially allowing an attacker to trick a user into\n> granting an exception and loading a webpage over HTTP.\n>\n> If a user saved a response from the Network tab in Devtools\n> using the Save As context menu option, that file may not have\n> been saved with the `.download` file extension.\n> This could have led to the user inadvertently running a\n> malicious executable.\n>\n> Memory safety bugs present in Firefox 139 and Thunderbird\n> 139. Some of these bugs showed evidence of memory corruption\n> and we presume that with enough effort some of these could\n> have been exploited to run arbitrary code.",
+    "id": "FreeBSD-ports-2025-0057",
+    "modified": "2025-07-04T00:00:00Z",
+    "published": "2025-07-04T00:00:00Z",
+    "references": [
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2025-6427"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://nvd.nist.gov/vuln/detail/CVE-2025-6427"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2025-6432"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://nvd.nist.gov/vuln/detail/CVE-2025-6432"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2025-6433"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://nvd.nist.gov/vuln/detail/CVE-2025-6433"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2025-6434"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://nvd.nist.gov/vuln/detail/CVE-2025-6434"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2025-6435"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://nvd.nist.gov/vuln/detail/CVE-2025-6435"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2025-6436"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://nvd.nist.gov/vuln/detail/CVE-2025-6436"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "firefox -- multiple vulnerabilities"
+}

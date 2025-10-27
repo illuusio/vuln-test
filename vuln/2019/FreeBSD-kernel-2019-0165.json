@@ -1,0 +1,47 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "vlc"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "3.0.7,4"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "discovery": "2019-01-23T00:00:00Z",
+        "vid": "f2144530-936f-11e9-8fc4-5404a68ad561"
+    },
+    "details": "zhangyang reports:\n\n> The ReadFrame function in the avi.c file uses a variable i\\_width\\_bytes,\n> which is obtained directly from the file. It is a signed integer.\n> It does not do a strict check before the memory operation(memmove, memcpy),\n> which may cause a buffer overflow.",
+    "id": "FreeBSD-kernel-2019-0165",
+    "modified": "2019-06-20T00:00:00Z",
+    "published": "2019-06-20T00:00:00Z",
+    "references": [
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2019-5439"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2019-5439"
+        },
+        {
+            "type": "WEB",
+            "url": "https://hackerone.com/reports/484398"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "vlc -- Buffer overflow vulnerability"
+}

@@ -1,0 +1,84 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "file"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "4.21"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        },
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "FreeBSD"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "introduced": "6.2"
+                        },
+                        {
+                            "fixed": "6.2_5"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                },
+                {
+                    "events": [
+                        {
+                            "introduced": "6.1"
+                        },
+                        {
+                            "fixed": "6.1_17"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                },
+                {
+                    "events": [
+                        {
+                            "introduced": "5.5"
+                        },
+                        {
+                            "fixed": "5.5_13"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "discovery": "2007-05-23T00:00:00Z",
+        "vid": "8e01ab5b-0949-11dc-8163-000e0c2e438a"
+    },
+    "details": "Problem Description:\n====================\n\nWhen writing data into a buffer in the file\\_printf function,\nthe length of the unused portion of the buffer is not\ncorrectly tracked, resulting in a buffer overflow when\nprocessing certain files.\n\nImpact:\n=======\n\nAn attacker who can cause file(1) to be run on a maliciously\nconstructed input can cause file(1) to crash. It may be\npossible for such an attacker to execute arbitrary code with\nthe privileges of the user running file(1).\n\nThe above also applies to any other applications using the\nlibmagic(3) library.\n\nWorkaround:\n===========\n\nNo workaround is available, but systems where file(1) and\nother libmagic(3)-using applications are never run on\nuntrusted input are not vulnerable.",
+    "id": "FreeBSD-kernel-2007-0115",
+    "modified": "2016-08-09T00:00:00Z",
+    "published": "2007-05-23T00:00:00Z",
+    "references": [
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2007-1536"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://www.freebsd.org/security/advisories/FreeBSD-SA-07:04.file.asc"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "FreeBSD -- heap overflow in file(1)"
+}

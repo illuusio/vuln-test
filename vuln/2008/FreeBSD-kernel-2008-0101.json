@@ -1,0 +1,43 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "fetchmail"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "6.3.8_6"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "discovery": "2008-06-13T00:00:00Z",
+        "vid": "168190df-3e9a-11dd-87bc-000ea69a5213"
+    },
+    "details": "Matthias Andree reports:\n\n> Gunter Nau reported fetchmail crashing on some messages; further\n> debugging by Petr Uzel and Petr Cerny at Novell/SUSE Czech Republic\n> dug up that this happened when fetchmail was trying to print, in\n> -v -v verbose level, headers exceeding 2048 bytes. In this\n> situation, fetchmail would resize the buffer and fill in further\n> parts of the message, but forget to reinitialize its va\\_list\n> typed source pointer, thus reading data from a garbage address found\n> on the stack at addresses above the function arguments the caller\n> passed in; usually that would be the caller's stack frame.",
+    "id": "FreeBSD-kernel-2008-0101",
+    "modified": "2008-06-20T00:00:00Z",
+    "published": "2008-06-20T00:00:00Z",
+    "references": [
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2008-2711"
+        },
+        {
+            "type": "WEB",
+            "url": "http://www.fetchmail.info/fetchmail-SA-2008-01.txt"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "fetchmail -- potential crash in -v -v verbose mode"
+}

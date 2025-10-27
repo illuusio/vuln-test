@@ -1,0 +1,39 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "bro"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "2.6.3"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "discovery": "2019-06-22T00:00:00Z",
+        "vid": "f56669f5-d799-4ff5-9174-64a6d571c451"
+    },
+    "details": "Jon Siwek of Corelight reports:\n\n> This is a security patch release to address potential\n> Denial of Service vulnerabilities:\n>\n> * Null pointer dereference in the RPC analysis code. RPC\n>   analyzers (e.g. MOUNT or NFS) are not enabled in the\n>   default configuration.\n> * Signed integer overflow in BinPAC-generated parser code.\n>   The result of this is Undefined Behavior with respect to\n>   the array bounds checking conditions that BinPAC generates,\n>   so it's unpredictable what an optimizing compiler may\n>   actually do under the assumption that signed integer\n>   overlows should never happen. The specific symptom which\n>   lead to finding this issue was with the PE analyzer causing\n>   out-of-memory crashes due to large allocations that were\n>   otherwise prevented when the array bounds checking logic\n>   was changed to prevent any possible signed integer overlow.",
+    "id": "FreeBSD-kernel-2019-0118",
+    "modified": "2019-08-09T00:00:00Z",
+    "published": "2019-08-09T00:00:00Z",
+    "references": [
+        {
+            "type": "WEB",
+            "url": "https://raw.githubusercontent.com/zeek/zeek/1d874e5548a58b3b8fd2a342fe4aa0944e779809/NEWS"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "bro -- Null pointer dereference and Signed integer overflow"
+}

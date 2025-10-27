@@ -1,0 +1,43 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "kde-workspace"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "4.11.13_1"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "discovery": "2014-11-06T00:00:00Z",
+        "vid": "dafa13a8-6e9b-11e4-8ef7-5453ed2e2b49"
+    },
+    "details": "David Edmundson reports:\n\n> KDE workspace configuration module for setting the date and time\n> has a helper program which runs as root for performing actions.\n> This is secured with polkit.\n>\n> This helper takes the name of the ntp utility to run as an\n> argument. This allows a hacker to run any arbitrary command as root\n> under the guise of updating the time.\n>\n> An application can gain root priveledges from an admin user with\n> either misleading information or no interaction.\n>\n> On some systems the user will be shown a prompt to change the\n> time. However, if the system has policykit-desktop-privileges\n> installed, the datetime helper will be invoked by an admin user\n> without any prompts.",
+    "id": "FreeBSD-kernel-2014-0023",
+    "modified": "2014-11-17T00:00:00Z",
+    "published": "2014-11-17T00:00:00Z",
+    "references": [
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2014-8651"
+        },
+        {
+            "type": "DISCUSSION",
+            "url": "http://seclists.org/oss-sec/2014/q4/520"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "kde-workspace -- privilege escalation"
+}

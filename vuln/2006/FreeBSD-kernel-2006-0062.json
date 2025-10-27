@@ -1,0 +1,78 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "dokuwiki"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "20060309_5"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        },
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "dokuwiki-devel"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "20060609_2"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "discovery": "2006-09-26T00:00:00Z",
+        "vid": "450b76ee-5068-11db-a5ae-00508d6a62df"
+    },
+    "details": "Secunia reports:\n\n> Some vulnerabilities have been reported in DokuWiki, which\n> can be exploited by malicious people to cause a DoS (Denial\n> of Service) or potentially compromise a vulnerable system.\n>\n> Input passed to the \"w\" and \"h\" parameters in\n> lib/exec/fetch.php is not properly sanitised before being\n> passed as resize parameters to the \"convert\" application.\n> This can be exploited to cause a DoS due to excessive CPU\n> and memory consumption by passing very large numbers, or to\n> inject arbitrary shell commands by passing specially\n> crafted strings to the \"w\" and \"h\" parameter.\n>\n> Successful exploitation requires that the\n> \"$conf[imconvert]\" option is set.",
+    "id": "FreeBSD-kernel-2006-0062",
+    "modified": "2006-10-02T00:00:00Z",
+    "published": "2006-09-30T00:00:00Z",
+    "references": [
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2006-5098"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2006-5099"
+        },
+        {
+            "type": "WEB",
+            "url": "http://secunia.com/advisories/22192/"
+        },
+        {
+            "type": "WEB",
+            "url": "http://secunia.com/advisories/22199/"
+        },
+        {
+            "type": "WEB",
+            "url": "http://bugs.splitbrain.org/?do=details&id=924"
+        },
+        {
+            "type": "WEB",
+            "url": "http://bugs.splitbrain.org/?do=details&id=926"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "dokuwiki -- multiple vulnerabilities"
+}

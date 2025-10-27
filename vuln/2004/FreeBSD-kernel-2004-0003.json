@@ -1,0 +1,47 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "jabber"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "1.4.3.1"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "discovery": "2004-09-19T00:00:00Z",
+        "vid": "2e25d38b-54d1-11d9-b612-000c6e8f12ef"
+    },
+    "details": "Jos\u00e9 Antonio Calvo discovered a bug in the Jabber 1.x server.\nAccording to Matthias Wimmer:\n\n> Without this patch, it is possible to remotly crash\n> jabberd14, if there is access to one of the following types\n> of network sockets:\n>\n> * Socket accepting client connections\n> * Socket accepting connections from other servers\n> * Socket connecting to an other Jabber server\n> * Socket accepting connections from server components\n> * Socket connecting to server components\n>\n> This is any socket on which the jabberd server parses\n> XML!\n>\n> The problem existed in the included expat XML parser code.\n> This patch removes the included expat code from jabberd14\n> and links jabberd against an installed version of expat.",
+    "id": "FreeBSD-kernel-2004-0003",
+    "modified": "2005-01-19T00:00:00Z",
+    "published": "2004-12-26T00:00:00Z",
+    "references": [
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2004-1378"
+        },
+        {
+            "type": "WEB",
+            "url": "http://devel.amessage.info/jabberd14/README.html"
+        },
+        {
+            "type": "WEB",
+            "url": "http://mail.jabber.org/pipermail/jabberd/2004-September/002004.html"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "jabberd -- denial-of-service vulnerability"
+}

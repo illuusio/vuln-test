@@ -1,0 +1,43 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "p7zip"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "15.14_1"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "discovery": "2016-05-11T00:00:00Z",
+        "vid": "d706a3a3-4a7c-11e6-97f7-5453ed2e2b49"
+    },
+    "details": "Cisco Talos reports:\n\n> An out-of-bounds read vulnerability exists in the way 7-Zip\n> handles Universal Disk Format (UDF) files.\n>\n> Central to 7-Zip\u2019s processing of UDF files is the\n> CInArchive::ReadFileItem method. Because volumes can have more than\n> one partition map, their objects are kept in an object vector. To\n> start looking for an item, this method tries to reference the proper\n> object using the partition map\u2019s object vector and the \"PartitionRef\"\n> field from the Long Allocation Descriptor. Lack of checking whether\n> the \"PartitionRef\" field is bigger than the available amount of\n> partition map objects causes a read out-of-bounds and can lead, in\n> some circumstances, to arbitrary code execution.",
+    "id": "FreeBSD-kernel-2016-0223",
+    "modified": "2016-07-15T00:00:00Z",
+    "published": "2016-07-15T00:00:00Z",
+    "references": [
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2016-2335"
+        },
+        {
+            "type": "WEB",
+            "url": "http://blog.talosintel.com/2016/05/multiple-7-zip-vulnerabilities.html"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "p7zip -- out-of-bounds read vulnerability"
+}

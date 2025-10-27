@@ -1,0 +1,59 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "clamav"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "0.86.2"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        },
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "clamav-devel"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "last_affected": "20050704"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "discovery": "2005-07-24T00:00:00Z",
+        "vid": "1db7ecf5-fd24-11d9-b4d6-0007e900f87b"
+    },
+    "details": "An Secunia Advisory reports:\n\n> Neel Mehta and Alex Wheeler have reported some\n> vulnerabilities in Clam AntiVirus, which can be exploited\n> by malicious people to cause a DoS (Denial of Service)\n> or compromise a vulnerable system.\n>\n> 1. Two integer overflow errors in \"libclamav/tnef.c\"\n>    when processing TNEF files can be exploited to cause\n>    a heap-based buffer overflow via a specially crafted\n>    TNEF file with a length value of -1 in the header.\n> 2. An integer overflow error in \"libclamav/chmunpack.c\"\n>    can be exploited to cause a heap-based buffer overflow\n>    via a specially crafted CHM file with a chunk entry that\n>    has a filename length of -1.\n> 3. A boundary error in \"libclamav/fsg.c\" when\n>    processing a FSG compressed file can cause a heap-based\n>    buffer overflow.",
+    "id": "FreeBSD-kernel-2005-0102",
+    "modified": "2005-07-25T00:00:00Z",
+    "published": "2005-07-25T00:00:00Z",
+    "references": [
+        {
+            "type": "WEB",
+            "url": "http://www.rem0te.com/public/images/clamav.pdf"
+        },
+        {
+            "type": "WEB",
+            "url": "http://secunia.com/advisories/16180/"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "clamav -- multiple remote buffer overflows"
+}

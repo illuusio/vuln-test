@@ -1,0 +1,48 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "gforge"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "introduced": "0,1"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "discovery": "2005-07-27T00:00:00Z",
+        "vid": "d7cd5015-08c9-11da-bc08-0001020eed82"
+    },
+    "details": "Jose Antonio Coret reports that GForge contains multiple\nCross Site Scripting vulnerabilities and an e-mail flood\nvulnerability:\n\n> The login form is also vulnerable to XSS (Cross Site\n> Scripting) attacks. This may be used to launch phising\n> attacks by sending HTML e-mails (i.e.: saying that you\n> need to upgrade to the latest GForge version due to a\n> security problem) and putting in the e-mail an HTML link\n> that points to an specially crafted url that inserts an\n> html form in the GForge login page and when the user press\n> the login button, he/she send the credentials to the\n> attackers website.\n>\n> The 'forgot your password?' feature allows a remote user\n> to load a certain URL to cause the service to send a\n> validation e-mail to the specified user's e-mail address.\n> There is no limit to the number of messages sent over a\n> period of time, so a remote user can flood the target\n> user's secondary e-mail address. E-Mail Flood, E-Mail\n> bomber.",
+    "id": "FreeBSD-kernel-2005-0085",
+    "modified": "2005-08-09T00:00:00Z",
+    "published": "2005-08-09T00:00:00Z",
+    "references": [
+        {
+            "type": "ADVISORY",
+            "url": "https://www.securityfocus.com/bid/14405/info"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2005-2430"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2005-2431"
+        },
+        {
+            "type": "DISCUSSION",
+            "url": "http://marc.theaimsgroup.com/?l=bugtraq&m=112259845904350"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "gforge -- XSS and email flood vulnerabilities"
+}

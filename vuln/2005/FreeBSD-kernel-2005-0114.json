@@ -1,0 +1,47 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "net-snmp"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "5.2.1.2"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "discovery": "2005-05-23T00:00:00Z",
+        "vid": "3e0072d4-d05b-11d9-9aed-000e0c2e438a"
+    },
+    "details": "A Gentoo advisory reports:\n\n> Net-SNMP creates temporary files in an insecure manner,\n> possibly allowing the execution of arbitrary code.\n>\n> A malicious local attacker could exploit a race condition\n> to change the content of the temporary files before they\n> are executed by fixproc, possibly leading to the execution\n> of arbitrary code. A local attacker could also create\n> symbolic links in the temporary files directory, pointing\n> to a valid file somewhere on the filesystem. When fixproc\n> is executed, this would result in the file being\n> overwritten.",
+    "id": "FreeBSD-kernel-2005-0114",
+    "modified": "2005-07-13T00:00:00Z",
+    "published": "2005-07-09T00:00:00Z",
+    "references": [
+        {
+            "type": "ADVISORY",
+            "url": "https://www.securityfocus.com/bid/13715/info"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2005-1740"
+        },
+        {
+            "type": "WEB",
+            "url": "http://security.gentoo.org/glsa/glsa-200505-18.xml"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "net-snmp -- fixproc insecure temporary file creation"
+}

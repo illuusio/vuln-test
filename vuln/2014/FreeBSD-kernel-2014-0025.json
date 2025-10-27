@@ -1,0 +1,43 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "wget"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "1.16"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "discovery": "2014-10-27T00:00:00Z",
+        "vid": "ee7b4f9d-66c8-11e4-9ae1-e8e0b722a85e"
+    },
+    "details": "MITRE reports:\n\n> Absolute path traversal vulnerability in GNU Wget before\n> 1.16, when recursion is enabled, allows remote FTP servers\n> to write to arbitrary files, and consequently execute\n> arbitrary code, via a LIST response that references the same\n> filename within two entries, one of which indicates that the\n> filename is for a symlink.",
+    "id": "FreeBSD-kernel-2014-0025",
+    "modified": "2014-11-08T00:00:00Z",
+    "published": "2014-11-08T00:00:00Z",
+    "references": [
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2014-4877"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://www.kb.cert.org/vuls/id/685996"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "wget -- path traversal vulnerability in recursive FTP mode"
+}

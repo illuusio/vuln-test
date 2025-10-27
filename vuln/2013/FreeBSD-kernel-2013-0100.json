@@ -1,0 +1,47 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "BitchX"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "1.2.*,1"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "discovery": "2007-08-28T00:00:00Z",
+        "vid": "0a799a8e-c9d4-11e2-a424-14dae938ec40"
+    },
+    "details": "bannedit reports:\n\n> Stack-based buffer overflow in BitchX 1.1 Final allows remote IRC\n> servers to execute arbitrary code via a long string in a MODE\n> command, related to the p\\_mode variable.\n\nNico Golde reports:\n\n> There is a security issue in ircii-pana in bitchx' hostname\n> command. The e\\_hostname function (commands.c) uses tmpnam to\n> create a temporary file which is known to be insecure.\n\nChris reports:\n\n> Chris has reported a vulnerability in the Cypress script for\n> BitchX, which can be exploited by malicious people to disclose\n> potentially sensitive information or to compromise a vulnerable\n> system.\n>\n> The vulnerability is caused due to malicious code being present\n> in the modules/mdop.m file. This can be exploited to disclose the\n> content of various system files or to execute arbitrary shell\n> commands.\n>\n> Successful exploitation allows execution of arbitrary code, but\n> requires the control of the \"lsyn.webhop.net\" domain.",
+    "id": "FreeBSD-kernel-2013-0100",
+    "modified": "2013-05-31T00:00:00Z",
+    "published": "2013-05-31T00:00:00Z",
+    "references": [
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2007-4584"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2007-5839"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2007-5922"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "irc/bitchx -- multiple vulnerabilities"
+}

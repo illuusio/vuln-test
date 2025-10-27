@@ -1,0 +1,43 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "xen-kernel"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "introduced": "4.0"
+                        },
+                        {
+                            "fixed": "4.5.0_3"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "discovery": "2015-04-20T00:00:00Z",
+        "vid": "ce658051-27ea-11e5-a4a5-002590263bf5"
+    },
+    "details": "The Xen Project reports:\n\n> The handler for XEN\\_DOMCTL\\_gettscinfo failed to initialize a\n> padding field subsequently copied to guest memory.\n>\n> A similar leak existed in XEN\\_SYSCTL\\_getdomaininfolist, which is\n> being addressed here regardless of that operation being declared\n> unsafe for disaggregation by XSA-77.\n>\n> Malicious or buggy stub domain kernels or tool stacks otherwise\n> living outside of Domain0 may be able to read sensitive data\n> relating to the hypervisor or other guests not under the control of\n> that domain.",
+    "id": "FreeBSD-kernel-2015-0234",
+    "modified": "2015-07-11T00:00:00Z",
+    "published": "2015-07-11T00:00:00Z",
+    "references": [
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2015-3340"
+        },
+        {
+            "type": "WEB",
+            "url": "http://xenbits.xen.org/xsa/advisory-132.html"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "xen-kernel -- Information leak through XEN_DOMCTL_gettscinfo"
+}

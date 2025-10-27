@@ -1,0 +1,47 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "dropbear"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "2017.75"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "discovery": "2017-05-18T00:00:00Z",
+        "vid": "60931f98-55a7-11e7-8514-589cfc0654e1"
+    },
+    "details": "Matt Johnston reports:\n\n> Fix double-free in server TCP listener cleanup A double-free in\n> the server could be triggered by an authenticated user if dropbear\n> is running with -a (Allow connections to forwarded ports from any\n> host) This could potentially allow arbitrary code execution as root\n> by an authenticated user.\n>\n> Fix information disclosure with ~/.ssh/authorized\\_keys symlink.\n> Dropbear parsed authorized\\_keys as root, even if it were a symlink.\n> The fix is to switch to user permissions when opening authorized\\_keys.",
+    "id": "FreeBSD-kernel-2017-0180",
+    "modified": "2017-07-03T00:00:00Z",
+    "published": "2017-07-03T00:00:00Z",
+    "references": [
+        {
+            "type": "WEB",
+            "url": "https://matt.ucc.asn.au/dropbear/CHANGES"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2017-9078"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2017-9079"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "Dropbear -- two vulnerabilities"
+}

@@ -1,0 +1,51 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "wesnoth"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "1.12.4,1"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "discovery": "2015-06-28T00:00:00Z",
+        "vid": "2a8b7d21-1ecc-11e5-a4a5-002590263bf5"
+    },
+    "details": "Ignacio R. Morelle reports:\n\n> As mentioned in the Wesnoth 1.12.4 and Wesnoth 1.13.1 release\n> announcements, a security vulnerability targeting add-on authors\n> was found (bug #23504) which allowed a malicious user to obtain\n> add-on server passphrases from the client's .pbl files and transmit\n> them over the network, or store them in saved game files intended\n> to be shared by the victim. This vulnerability affects all existing\n> releases up to and including versions 1.12.2 and 1.13.0.\n> Additionally, version 1.12.3 included only a partial fix that failed\n> to guard users against attempts to read from .pbl files with an\n> uppercase or mixed-case extension. CVE-2015-5069 and CVE-2015-5070\n> have been assigned to the vulnerability affecting .pbl files with a\n> lowercase extension, and .pbl files with an uppercase or mixed-case\n> extension, respectively.",
+    "id": "FreeBSD-kernel-2015-0270",
+    "modified": "2015-07-01T00:00:00Z",
+    "published": "2015-07-01T00:00:00Z",
+    "references": [
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2015-5069"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2015-5070"
+        },
+        {
+            "type": "WEB",
+            "url": "http://forums.wesnoth.org/viewtopic.php?t=42776"
+        },
+        {
+            "type": "WEB",
+            "url": "http://forums.wesnoth.org/viewtopic.php?t=42775"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "wesnoth -- disclosure of .pbl files with lowercase, uppercase, and mixed-case extension"
+}

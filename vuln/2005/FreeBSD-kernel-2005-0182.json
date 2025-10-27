@@ -1,0 +1,80 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "FreeBSD"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "introduced": "5.4"
+                        },
+                        {
+                            "fixed": "5.4_1"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                },
+                {
+                    "events": [
+                        {
+                            "introduced": "5.0"
+                        },
+                        {
+                            "fixed": "5.3_15"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                },
+                {
+                    "events": [
+                        {
+                            "introduced": "4.11"
+                        },
+                        {
+                            "fixed": "4.11_9"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                },
+                {
+                    "events": [
+                        {
+                            "fixed": "4.10_14"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "discovery": "2005-05-13T00:00:00Z",
+        "vid": "180e9a38-060f-4c16-a6b7-49f3505ff22a"
+    },
+    "details": "Problem description and impact\n==============================\n\nWhen running on processors supporting Hyper-Threading Technology, it\nis possible for a malicious thread to monitor the execution of another\nthread.\n\nInformation may be disclosed to local users, allowing in many\ncases for privilege escalation. For example, on a multi-user\nsystem, it may be possible to steal cryptographic keys used in\napplications such as OpenSSH or SSL-enabled web servers.\n\n**NOTE:** Similar problems may exist in other\nsimultaneous multithreading implementations, or even some\nsystems in the absence of simultaneous multithreading.\nHowever, current research has only demonstrated this flaw in\nHyper-Threading Technology, where shared memory caches are\nused.\n\nWorkaround\n==========\n\nSystems not using processors with Hyper-Threading Technology\nsupport are not affected by this issue. On systems which are\naffected, the security flaw can be eliminated by setting the\n\"machdep.hlt\\_logical\\_cpus\" tunable:\n\n```\n# echo \"machdep.hlt_logical_cpus=1\" >> /boot/loader.conf\n```\n\nThe system must be rebooted in order for tunables to take effect.\n\nUse of this workaround is not recommended on \"dual-core\" systems, as\nthis workaround will also disable one of the processor\ncores.",
+    "id": "FreeBSD-kernel-2005-0182",
+    "modified": "2005-05-13T00:00:00Z",
+    "published": "2005-05-13T00:00:00Z",
+    "references": [
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2005-0109"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://www.freebsd.org/security/advisories/FreeBSD-SA-05:09.htt.asc"
+        },
+        {
+            "type": "WEB",
+            "url": "http://www.daemonology.net/hyperthreading-considered-harmful/"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "kernel -- information disclosure when using HTT"
+}

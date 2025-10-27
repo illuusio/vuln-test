@@ -1,0 +1,72 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "FreeBSD"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "introduced": "11.0"
+                        },
+                        {
+                            "fixed": "11.0_1"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                },
+                {
+                    "events": [
+                        {
+                            "introduced": "10.3"
+                        },
+                        {
+                            "fixed": "10.3_10"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                },
+                {
+                    "events": [
+                        {
+                            "introduced": "10.2"
+                        },
+                        {
+                            "fixed": "10.2_23"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                },
+                {
+                    "events": [
+                        {
+                            "introduced": "10.1"
+                        },
+                        {
+                            "fixed": "10.1_40"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "discovery": "2016-10-05T00:00:00Z",
+        "vid": "1a71a972-8ee7-11e6-a590-14dae9d210b8"
+    },
+    "details": "Problem Description:\n====================\n\nFlaws in libarchive's handling of symlinks and hard links\nallow overwriting files outside the extraction directory,\nor permission changes to a directory outside the extraction\ndirectory.\n\nImpact:\n=======\n\nAn attacker who can control freebsd-update's or portsnap's\ninput to tar(1) can change file content or permissions on\nfiles outside of the update tool's working sandbox.",
+    "id": "FreeBSD-kernel-2016-0108",
+    "modified": "2016-10-10T00:00:00Z",
+    "published": "2016-10-10T00:00:00Z",
+    "references": [
+        {
+            "type": "ADVISORY",
+            "url": "https://www.freebsd.org/security/advisories/FreeBSD-SA-16:31.libarchive.asc"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "FreeBSD -- Multiple libarchive vulnerabilities"
+}

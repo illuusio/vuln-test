@@ -1,0 +1,47 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "uriparser"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "0.9.6"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "discovery": "2022-01-06T00:00:00Z",
+        "vid": "b927b654-7146-11ec-ad4b-5404a68ad561"
+    },
+    "details": "Upstream project reports:\n\n> Fix a bug affecting both uriNormalizeSyntax\\* and uriMakeOwner\\*\n> functions where the text range in .hostText would not be duped using\n> malloc but remain unchanged (and hence \"not owned\") for URIs with\n> an IPv4 or IPv6 address hostname; depending on how an application\n> uses uriparser, this could lead the application into a use-after-free\n> situation.\n> As the second half, fix uriFreeUriMembers\\* functions that would not\n> free .hostText memory for URIs with an IPv4 or IPv6 address host;\n> also, calling uriFreeUriMembers\\* multiple times on a URI of this\n> very nature would result in trying to free pointers to stack\n> (rather than heap) memory.\n> Fix functions uriNormalizeSyntax\\* for out-of-memory situations\n> (i.e. malloc returning NULL) for URIs containing empty segments\n> (any of user info, host text, query, or fragment) where previously\n> pointers to stack (rather than heap) memory were freed.",
+    "id": "FreeBSD-kernel-2022-0247",
+    "modified": "2022-01-09T00:00:00Z",
+    "published": "2022-01-09T00:00:00Z",
+    "references": [
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2021-46141"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2021-46142"
+        },
+        {
+            "type": "WEB",
+            "url": "https://github.com/uriparser/uriparser/blob/uriparser-0.9.6/ChangeLog"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "uriparser -- Multiple vulnerabilities"
+}

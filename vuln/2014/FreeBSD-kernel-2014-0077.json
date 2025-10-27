@@ -1,0 +1,55 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "apache24"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "2.4.10"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "discovery": "2014-07-15T00:00:00Z",
+        "vid": "4364e1f1-0f44-11e4-b090-20cf30e32f6d"
+    },
+    "details": "Apache HTTP SERVER PROJECT reports:\n===================================\n\n> mod\\_proxy: Fix crash in Connection header handling which allowed a\n> denial of service attack against a reverse proxy with a threaded MPM.\n>\n> Fix a race condition in scoreboard handling, which could lead to a\n> heap buffer overflow.\n>\n> mod\\_deflate: The DEFLATE input filter (inflates request bodies) now\n> limits the length and compression ratio of inflated request bodies to avoid\n> denial of sevice via highly compressed bodies. See directives\n> DeflateInflateLimitRequestBody, DeflateInflateRatioLimit,\n> and DeflateInflateRatioBurst.\n>\n> mod\\_cgid: Fix a denial of service against CGI scripts that do\n> not consume stdin that could lead to lingering HTTPD child processes\n> filling up the scoreboard and eventually hanging the server. By\n> default, the client I/O timeout (Timeout directive) now applies to\n> communication with scripts. The CGIDScriptTimeout directive can be\n> used to set a different timeout for communication with scripts.",
+    "id": "FreeBSD-kernel-2014-0077",
+    "modified": "2014-07-19T00:00:00Z",
+    "published": "2014-07-19T00:00:00Z",
+    "references": [
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2014-0117"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2014-3523"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2014-0226"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2014-0118"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2014-0231"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "apache24 -- several vulnerabilities"
+}

@@ -1,0 +1,54 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:kernel",
+                "name": "FreeBSD-kernel"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "introduced": "12.1"
+                        },
+                        {
+                            "fixed": "12.1_3"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                },
+                {
+                    "events": [
+                        {
+                            "introduced": "11.3"
+                        },
+                        {
+                            "fixed": "11.3_7"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "discovery": "2020-03-19T00:00:00Z",
+        "vid": "3c10ccdf-6a09-11ea-92ab-00163e433440"
+    },
+    "details": "Problem Description:\n====================\n\nThe driver-specific ioctl(2) command handlers in oce(4) failed to\ncheck whether the caller has sufficient privileges to perform the\ncorresponding operation.\n\nImpact:\n=======\n\nThe oce(4) handler permits unprivileged users to send passthrough\ncommands to device firmware.",
+    "id": "FreeBSD-kernel-2020-0284",
+    "modified": "2020-03-19T00:00:00Z",
+    "published": "2020-03-19T00:00:00Z",
+    "references": [
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2019-15876"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://www.freebsd.org/security/advisories/FreeBSD-SA-20:05.if_oce_ioctl.asc"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "FreeBSD -- Insufficient oce(4) ioctl(2) privilege checking"
+}

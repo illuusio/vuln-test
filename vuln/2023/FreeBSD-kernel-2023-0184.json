@@ -1,0 +1,66 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "redis"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "7.0.12"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        },
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "redis-devel"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "7.0.12.20230710"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "discovery": "2023-07-10T00:00:00Z",
+        "vid": "6fae2d6c-1f38-11ee-a475-080027f5fec9"
+    },
+    "details": "Redis core team reports:\n\n> Extracting key names from a command and a list of\n> arguments may, in some cases, trigger a heap overflow and\n> result in reading random heap memory, heap corruption and\n> potentially remote code execution. Specifically: using\n> COMMAND GETKEYS\\* and validation of key names in ACL rules.",
+    "id": "FreeBSD-kernel-2023-0184",
+    "modified": "2023-07-10T00:00:00Z",
+    "published": "2023-07-10T00:00:00Z",
+    "references": [
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2023-36824"
+        },
+        {
+            "type": "WEB",
+            "url": "https://groups.google.com/g/redis-db/c/JDjKS0GubsQ"
+        },
+        {
+            "type": "WEB",
+            "url": "https://github.com/redis/redis/security/advisories/GHSA-4cfx-h9gq-xpx3"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "redis -- heap overflow in COMMAND GETKEYS and ACL evaluation"
+}

@@ -1,0 +1,47 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "powerdns"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "4.1.5"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "discovery": "2018-11-06T00:00:00Z",
+        "vid": "0aee2f13-ec1d-11e8-8c92-6805ca2fa271"
+    },
+    "details": "PowerDNS Team reports:\n\n> CVE-2018-10851: An issue has been found in PowerDNS Authoritative Server allowing\n> an authorized user to cause a memory leak by inserting a specially crafted record\n> in a zone under their control, then sending a DNS query for that record. The issue\n> is due to the fact that some memory is allocated before the parsing and is not\n> always properly released if the record is malformed. When the PowerDNS\n> Authoritative Server is run inside the guardian (--guardian), or inside a\n> supervisor like supervisord or systemd, an out-of-memory crash will lead to an\n> automatic restart, limiting the impact to a somewhat degraded service.\n>\n> CVE-2018-14626: An issue has been found in PowerDNS Authoritative Server allowing\n> a remote user to craft a DNS query that will cause an answer without DNSSEC\n> records to be inserted into the packet cache and be returned to clients asking for\n> DNSSEC records, thus hiding the presence of DNSSEC signatures for a specific qname\n> and qtype. For a DNSSEC-signed domain, this means that DNSSEC validating clients\n> will consider the answer to be bogus until it expires from the packet cache,\n> leading to a denial of service.",
+    "id": "FreeBSD-kernel-2018-0035",
+    "modified": "2018-11-19T00:00:00Z",
+    "published": "2018-11-19T00:00:00Z",
+    "references": [
+        {
+            "type": "WEB",
+            "url": "https://doc.powerdns.com/authoritative/changelog/4.1.html"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2018-10851"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2018-14626"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "powerdns -- Multiple vulnerabilities"
+}

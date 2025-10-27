@@ -1,0 +1,78 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "bugzilla"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "introduced": "2.4.*"
+                        },
+                        {
+                            "fixed": "3.6.7"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                },
+                {
+                    "events": [
+                        {
+                            "introduced": "4.0.*"
+                        },
+                        {
+                            "fixed": "4.0.3"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "discovery": "2011-11-28T00:00:00Z",
+        "vid": "0c7a3ee2-3654-11e1-b404-20cf30e32f6d"
+    },
+    "details": "A Bugzilla Security Advisory reports:\n\n> The following security issues have been discovered in Bugzilla:\n>\n> * Tabular and graphical reports, as well as new charts have\n>   a debug mode which displays raw data as plain text. This\n>   text is not correctly escaped and a crafted URL could use\n>   this vulnerability to inject code leading to XSS.\n> * The User.offer\\_account\\_by\\_email WebService method ignores\n>   the user\\_can\\_create\\_account setting of the authentication\n>   method and generates an email with a token in it which the\n>   user can use to create an account. Depending on the\n>   authentication method being active, this could allow the\n>   user to log in using this account.\n>   Installations where the createemailregexp parameter is\n>   empty are not vulnerable to this issue.\n> * The creation of bug reports and of attachments is not\n>   protected by a token and so they can be created without the\n>   consent of a user if the relevant code is embedded in an\n>   HTML page and the user visits this page. This behavior was\n>   intentional to let third-party applications submit new bug\n>   reports and attachments easily. But as this behavior can be\n>   abused by a malicious user, it has been decided to block\n>   submissions with no valid token starting from version 4.2rc1.\n>   Older branches are not patched to not break these third-party\n>   applications after the upgrade.\n>\n> All affected installations are encouraged to upgrade as soon\n> as possible.",
+    "id": "FreeBSD-kernel-2012-0229",
+    "modified": "2012-01-05T00:00:00Z",
+    "published": "2012-01-05T00:00:00Z",
+    "references": [
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2011-3657"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2011-3667"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2011-3668"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2011-3669"
+        },
+        {
+            "type": "REPORT",
+            "url": "https://bugzilla.mozilla.org/show_bug.cgi?id=697699"
+        },
+        {
+            "type": "REPORT",
+            "url": "https://bugzilla.mozilla.org/show_bug.cgi?id=711714"
+        },
+        {
+            "type": "REPORT",
+            "url": "https://bugzilla.mozilla.org/show_bug.cgi?id=703975"
+        },
+        {
+            "type": "REPORT",
+            "url": "https://bugzilla.mozilla.org/show_bug.cgi?id=703983"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "bugzilla -- multiple vulnerabilities"
+}

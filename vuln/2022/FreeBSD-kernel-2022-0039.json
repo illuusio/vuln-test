@@ -1,0 +1,43 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "sudo"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "introduced": "1.8.0"
+                        },
+                        {
+                            "fixed": "1.9.12p1"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "discovery": "2022-11-07T00:00:00Z",
+        "vid": "3310014a-5ef9-11ed-812b-206a8a720317"
+    },
+    "details": "SO-AND-SO reports:\n\n> Sudo 1.8.0 through 1.9.12, with the crypt() password backend,\n> contains a plugins/sudoers/auth/passwd.c array-out-of-bounds\n> error that can result in a heap-based buffer over-read. This\n> can be triggered by arbitrary local users with access to sudo\n> by entering a password of seven characters or fewer. The impact\n> could vary depending on the system libraries, compiler,\n> and processor architecture.",
+    "id": "FreeBSD-kernel-2022-0039",
+    "modified": "2022-11-07T00:00:00Z",
+    "published": "2022-11-07T00:00:00Z",
+    "references": [
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2022-43995"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2022-43995"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "sudo -- Potential out-of-bounds write for small passwords"
+}

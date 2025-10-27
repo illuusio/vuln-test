@@ -1,0 +1,43 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "kea"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "introduced": "0.9.2"
+                        },
+                        {
+                            "fixed": "1.0.0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "discovery": "2015-12-15T00:00:00Z",
+        "vid": "59e7eb28-b309-11e5-af83-80ee73b5dcf5"
+    },
+    "details": "ISC Support reports:\n\n> ISC Kea may terminate unexpectedly (crash) while handling\n> a malformed client packet. Related defects in the kea-dhcp4\n> and kea-dhcp6 servers can cause the server to crash during\n> option processing if a client sends a malformed packet.\n> An attacker sending a crafted malformed packet can cause\n> an ISC Kea server providing DHCP services to IPv4 or IPv6\n> clients to exit unexpectedly.\n>\n> * The kea-dhcp4 server is vulnerable only in versions\n>   0.9.2 and 1.0.0-beta, and furthermore only when logging\n>   at debug level 40 or higher. Servers running kea-dhcp4\n>   versions 0.9.1 or lower, and servers which are not\n>   logging or are logging at debug level 39 or below are\n>   not vulnerable.\n> * The kea-dhcp6 server is vulnerable only in versions\n>   0.9.2 and 1.0.0-beta, and furthermore only when\n>   logging at debug level 45 or higher. Servers running\n>   kea-dhcp6 versions 0.9.1 or lower, and servers\n>   which are not logging or are logging at debug level 44\n>   or below are not vulnerable.",
+    "id": "FreeBSD-kernel-2016-0477",
+    "modified": "2016-01-05T00:00:00Z",
+    "published": "2016-01-04T00:00:00Z",
+    "references": [
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2015-8373"
+        },
+        {
+            "type": "WEB",
+            "url": "https://kb.isc.org/article/AA-01318/0/CVE-2015-8373-ISC-Kea%3A-unexpected-termination-while-handling-a-malformed-packet.html"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "kea -- unexpected termination while handling a malformed packet"
+}

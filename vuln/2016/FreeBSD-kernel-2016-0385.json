@@ -1,0 +1,59 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "squid"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "3.5.15"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "discovery": "2016-02-24T00:00:00Z",
+        "vid": "660ebbf5-daeb-11e5-b2bd-002590263bf5"
+    },
+    "details": "Squid security advisory 2016:2 reports:\n\n> Due to incorrect bounds checking Squid is vulnerable to a denial\n> of service attack when processing HTTP responses.\n>\n> These problems allow remote servers delivering certain unusual\n> HTTP response syntax to trigger a denial of service for all\n> clients accessing the Squid service.\n>\n> HTTP responses containing malformed headers that trigger this\n> issue are becoming common. We are not certain at this time if\n> that is a sign of malware or just broken server scripting.",
+    "id": "FreeBSD-kernel-2016-0385",
+    "modified": "2016-02-28T00:00:00Z",
+    "published": "2016-02-24T00:00:00Z",
+    "references": [
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2016-2569"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2016-2570"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2016-2571"
+        },
+        {
+            "type": "REPORT",
+            "url": "https://bugs.freebsd.org/bugzilla/show_bug.cgi?id=207454"
+        },
+        {
+            "type": "WEB",
+            "url": "http://www.squid-cache.org/Advisories/SQUID-2016_2.txt"
+        },
+        {
+            "type": "WEB",
+            "url": "http://www.openwall.com/lists/oss-security/2016/02/24/12"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "squid -- remote DoS in HTTP response processing"
+}

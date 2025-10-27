@@ -1,0 +1,51 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "fetchmail"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "6.3.1"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "discovery": "2005-12-19T00:00:00Z",
+        "vid": "f7eb0b23-7099-11da-a15c-0060084a00e5"
+    },
+    "details": "The fetchmail team reports:\n\n> Fetchmail contains a bug that causes an application crash\n> when fetchmail is configured for multidrop mode and the\n> upstream mail server sends a message without headers. As\n> fetchmail does not record this message as \"previously fetched\",\n> it will crash with the same message if it is re-executed, so it\n> cannot make progress. A malicious or broken-into upstream server\n> could thus cause a denial of service in fetchmail clients.",
+    "id": "FreeBSD-kernel-2005-0006",
+    "modified": "2005-12-19T00:00:00Z",
+    "published": "2005-12-19T00:00:00Z",
+    "references": [
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2005-4348"
+        },
+        {
+            "type": "WEB",
+            "url": "http://www.fetchmail.info/fetchmail-SA-2005-03.txt"
+        },
+        {
+            "type": "WEB",
+            "url": "http://article.gmane.org/gmane.mail.fetchmail.user/7573"
+        },
+        {
+            "type": "WEB",
+            "url": "http://bugs.debian.org/343836"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "fetchmail -- null pointer dereference in multidrop mode with headerless email"
+}

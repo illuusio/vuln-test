@@ -1,0 +1,51 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "cups-filters"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "1.0.71"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "discovery": "2015-07-03T00:00:00Z",
+        "vid": "bf1d9331-21b6-11e5-86ff-14dae9d210b8"
+    },
+    "details": "Stefan Cornelius from Red Hat reports:\n\n> An integer overflow flaw leading to a heap-based buffer overflow was\n> discovered in the way the texttopdf utility of cups-filter processed\n> print jobs with a specially crafted line size. An attacker being able\n> to submit print jobs could exploit this flaw to crash texttopdf or,\n> possibly, execute arbitrary code with the privileges of the 'lp' user.\n\nTim Waugh reports:\n\n> The Page allocation is moved into textcommon.c, where it does all the\n> necessary checking: lower-bounds for CVE-2015-3258 and upper-bounds\n> for CVE-2015-3259 due to integer overflows for the calloc() call\n> initializing Page[0] and the memset() call in texttopdf.c's\n> WritePage() function zeroing the entire array.",
+    "id": "FreeBSD-kernel-2015-0268",
+    "modified": "2015-07-07T00:00:00Z",
+    "published": "2015-07-03T00:00:00Z",
+    "references": [
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2015-3279"
+        },
+        {
+            "type": "WEB",
+            "url": "https://access.redhat.com/security/cve/CVE-2015-3279"
+        },
+        {
+            "type": "WEB",
+            "url": "http://bzr.linuxfoundation.org/loggerhead/openprinting/cups-filters/revision/7365"
+        },
+        {
+            "type": "DISCUSSION",
+            "url": "http://osdir.com/ml/opensource-software-security/2015-07/msg00021.html"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "cups-filters -- texttopdf integer overflow"
+}

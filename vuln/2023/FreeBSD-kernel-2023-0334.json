@@ -1,0 +1,43 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "git"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "2.39.1"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "discovery": "2023-01-17T00:00:00Z",
+        "vid": "8fafbef4-b1d9-11ed-b0f4-002590f2a714"
+    },
+    "details": "git team reports:\n\n> gitattributes are used to define unique attributes corresponding\n> to paths in your repository. These attributes are defined by\n> .gitattributes file(s) within your repository.\n>\n> The parser used to read these files has multiple integer\n> overflows, which can occur when parsing either a large number\n> of patterns, a large number of attributes, or attributes with\n> overly-long names.\n>\n> These overflows may be triggered via a malicious\n> .gitattributes file. However, Git automatically splits lines at\n> 2KB when reading .gitattributes from a file, but not when parsing\n> it from the index. Successfully exploiting this vulnerability\n> depends on the location of the .gitattributes file in question.\n>\n> This integer overflow can result in arbitrary heap reads\n> and writes, which may result in remote code execution.",
+    "id": "FreeBSD-kernel-2023-0334",
+    "modified": "2023-02-21T00:00:00Z",
+    "published": "2023-02-21T00:00:00Z",
+    "references": [
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2022-23521"
+        },
+        {
+            "type": "WEB",
+            "url": "https://github.blog/2023-01-17-git-security-vulnerabilities-announced-2/#cve-2022-23521"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "git -- gitattributes parsing integer overflow"
+}

@@ -1,0 +1,43 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "polarssl"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "1.2.8"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "discovery": "2013-06-21T00:00:00Z",
+        "vid": "72bf9e21-03df-11e3-bd8d-080027ef73ec"
+    },
+    "details": "Paul Bakker reports:\n\n> A bug in the logic of the parsing of PEM encoded certificates in\n> x509parse\\_crt() can result in an infinite loop, thus hogging processing\n> power.\n>\n> While parsing a Certificate message during the SSL/TLS handshake,\n> PolarSSL extracts the presented certificates and sends them on to\n> be parsed. As the RFC specifies that the certificates in the\n> Certificate message are always X.509 certificates in DER format,\n> bugs in the decoding of PEM certificates should normally not be\n> triggerable via the SSL/TLS handshake.\n>\n> Versions of PolarSSL prior to 1.1.7 in the 1.1 branch and prior\n> to 1.2.8 in the 1.2 branch call the generic x509parse\\_crt()\n> function for parsing during the handshake. x509parse\\_crt() is a\n> generic functions that wraps parsing of both PEM-encoded and\n> DER-formatted certificates. As a result it is possible to craft\n> a Certificate message that includes a PEM encoded certificate in\n> the Certificate message that triggers the infinite loop.",
+    "id": "FreeBSD-kernel-2013-0053",
+    "modified": "2013-08-15T00:00:00Z",
+    "published": "2013-08-13T00:00:00Z",
+    "references": [
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2013-4623"
+        },
+        {
+            "type": "WEB",
+            "url": "https://polarssl.org/tech-updates/security-advisories/polarssl-security-advisory-2013-03"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "polarssl -- denial of service vulnerability"
+}

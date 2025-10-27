@@ -1,0 +1,47 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "pcre"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "8.37"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "discovery": "2015-04-28T00:00:00Z",
+        "vid": "4a88e3ed-00d3-11e5-a072-d050996490d0"
+    },
+    "details": "PCRE development team reports:\n\n> A pattern such as \"((?2){0,1999}())?\", which has a group\n> containing a forward reference repeated a large (but limited)\n> number of times within a repeated outer group that has a zero\n> minimum quantifier, caused incorrect code to be compiled,\n> leading to the error \"internal error: previously-checked\n> referenced subpattern not found\" when an incorrect memory\n> address was read. This bug was reported as \"heap overflow\",\n> discovered by Kai Lu of Fortinet's FortiGuard Labs and given\n> the CVE number CVE-2015-2325.\n>\n> A pattern such as \"((?+1)(\\1))/\" containing a forward\n> reference subroutine call within a group that also contained\n> a recursive back reference caused incorrect code to be\n> compiled. This bug was reported as \"heap overflow\",\n> discovered by Kai Lu of Fortinet's FortiGuard Labs,\n> and given the CVE number CVE-2015-2326.",
+    "id": "FreeBSD-kernel-2015-0327",
+    "modified": "2015-06-07T00:00:00Z",
+    "published": "2015-05-22T00:00:00Z",
+    "references": [
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2015-2325"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2015-2326"
+        },
+        {
+            "type": "WEB",
+            "url": "http://www.pcre.org/original/changelog.txt"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "pcre -- multiple vulnerabilities"
+}

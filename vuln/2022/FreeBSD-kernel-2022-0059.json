@@ -1,0 +1,43 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "routinator"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "introduced": "0.9.0"
+                        },
+                        {
+                            "fixed": "0.11.3"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "discovery": "2022-10-06T00:00:00Z",
+        "vid": "e4133d8b-ab33-451a-bc68-3719de73d54a"
+    },
+    "details": "Due to a mistake in error handling, data in RRDP snapshot and delta files\nthat isn\u2019t correctly base 64 encoded is treated as a fatal error and causes\nRoutinator to exit.\nWorst case impact of this vulnerability is denial of service for the RPKI\ndata that Routinator provides to routers. This may stop your network from\nvalidating route origins based on RPKI data. This vulnerability does not\nallow an attacker to manipulate RPKI data. We are not aware of exploitation\nof this vulnerability at this point in time.\nStarting with release 0.11.3, Routinator handles encoding errors by rejecting\nthe snapshot or delta file and continuing with validation. In case of an\ninvalid delta file, it will try using the snapshot instead. If a snapshot file\nis invalid, the update of the repository will fail and an update through rsync\nis attempted.\n\n> .",
+    "id": "FreeBSD-kernel-2022-0059",
+    "modified": "2022-10-07T00:00:00Z",
+    "published": "2022-10-07T00:00:00Z",
+    "references": [
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2022-3029"
+        },
+        {
+            "type": "WEB",
+            "url": "https://nlnetlabs.nl/downloads/routinator/CVE-2022-3029.txt"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "routinator -- potential DOS attack"
+}

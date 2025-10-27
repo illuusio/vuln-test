@@ -1,0 +1,55 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "moinmoin"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "1.9.6"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "discovery": "2012-12-29T00:00:00Z",
+        "vid": "a264b1b0-5726-11e2-9483-14dae938ec40"
+    },
+    "details": "MoinMoin developers report the following vulnerabilities\nas fixed in version 1.9.6:\n\n> * remote code execution vulnerability in\n>   twikidraw/anywikidraw action,\n> * path traversal vulnerability in AttachFile action,\n> * XSS issue, escape page name in rss link.\n\nCVE entries at MITRE furher clarify:\n\n> Multiple unrestricted file upload vulnerabilities in the\n> (1) twikidraw (action/twikidraw.py) and (2) anywikidraw\n> (action/anywikidraw.py) actions in MoinMoin before 1.9.6\n> allow remote authenticated users with write permissions to\n> execute arbitrary code by uploading a file with an\n> executable extension, then accessing it via a direct request\n> to the file in an unspecified directory, as exploited in the\n> wild in July 2012.\n\n> Directory traversal vulnerability in the\n> \\_do\\_attachment\\_move function in the AttachFile action\n> (action/AttachFile.py) in MoinMoin 1.9.3 through 1.9.5\n> allows remote attackers to overwrite arbitrary files via a\n> .. (dot dot) in a file name.\n\n> Cross-site scripting (XSS) vulnerability in the rsslink\n> function in theme/\\_\\_init\\_\\_.py in MoinMoin 1.9.5 allows\n> remote attackers to inject arbitrary web script or HTML\n> via the page name in a rss link.",
+    "id": "FreeBSD-kernel-2013-0191",
+    "modified": "2013-01-06T00:00:00Z",
+    "published": "2013-01-05T00:00:00Z",
+    "references": [
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2012-6081"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2012-6080"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2012-6082"
+        },
+        {
+            "type": "WEB",
+            "url": "http://hg.moinmo.in/moin/1.9/raw-file/1.9.6/docs/CHANGES"
+        },
+        {
+            "type": "WEB",
+            "url": "http://www.debian.org/security/2012/dsa-2593"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "moinmoin -- Multiple vulnerabilities"
+}

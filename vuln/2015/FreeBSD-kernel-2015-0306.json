@@ -1,0 +1,84 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "redis"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "introduced": "2.6.0"
+                        },
+                        {
+                            "fixed": "2.8.21"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                },
+                {
+                    "events": [
+                        {
+                            "introduced": "3.0"
+                        },
+                        {
+                            "fixed": "3.0.2"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        },
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "redis-devel"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "introduced": "2.6.0"
+                        },
+                        {
+                            "fixed": "2.8.21"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                },
+                {
+                    "events": [
+                        {
+                            "introduced": "3.0"
+                        },
+                        {
+                            "fixed": "3.0.2"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "discovery": "2015-06-04T00:00:00Z",
+        "vid": "838fa84a-0e25-11e5-90e4-d050996490d0"
+    },
+    "details": "Ben Murphy reports:\n\n> It is possible to break out of the Lua sandbox in\n> Redis and execute arbitrary code.\n>\n> This shouldn\u2019t pose a threat to users under the\n> trusted Redis security model where only trusted\n> users can connect to the database. However, in real\n> deployments there could be databases that can be\n> accessed by untrusted users. The main deployments\n> that are vulnerable are developers machines, places\n> where redis servers can be reached via SSRF attacks\n> and cloud hosting.",
+    "id": "FreeBSD-kernel-2015-0306",
+    "modified": "2015-06-08T00:00:00Z",
+    "published": "2015-06-08T00:00:00Z",
+    "references": [
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2015-4335"
+        },
+        {
+            "type": "WEB",
+            "url": "http://benmmurphy.github.io/blog/2015/06/04/redis-eval-lua-sandbox-escape/"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "redis -- EVAL Lua Sandbox Escape"
+}

@@ -1,0 +1,172 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "postgresql-client"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "introduced": "7.4"
+                        },
+                        {
+                            "fixed": "7.4.27"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                },
+                {
+                    "events": [
+                        {
+                            "introduced": "8.0"
+                        },
+                        {
+                            "fixed": "8.0.23"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                },
+                {
+                    "events": [
+                        {
+                            "introduced": "8.1"
+                        },
+                        {
+                            "fixed": "8.1.19"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                },
+                {
+                    "events": [
+                        {
+                            "introduced": "8.2"
+                        },
+                        {
+                            "fixed": "8.2.15"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                },
+                {
+                    "events": [
+                        {
+                            "introduced": "8.3"
+                        },
+                        {
+                            "fixed": "8.3.9"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                },
+                {
+                    "events": [
+                        {
+                            "introduced": "8.4"
+                        },
+                        {
+                            "fixed": "8.4.2"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        },
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "postgresql-server"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "introduced": "7.4"
+                        },
+                        {
+                            "fixed": "7.4.27"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                },
+                {
+                    "events": [
+                        {
+                            "introduced": "8.0"
+                        },
+                        {
+                            "fixed": "8.0.23"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                },
+                {
+                    "events": [
+                        {
+                            "introduced": "8.1"
+                        },
+                        {
+                            "fixed": "8.1.19"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                },
+                {
+                    "events": [
+                        {
+                            "introduced": "8.2"
+                        },
+                        {
+                            "fixed": "8.2.15"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                },
+                {
+                    "events": [
+                        {
+                            "introduced": "8.3"
+                        },
+                        {
+                            "fixed": "8.3.9"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                },
+                {
+                    "events": [
+                        {
+                            "introduced": "8.4"
+                        },
+                        {
+                            "fixed": "8.4.2"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "discovery": "2009-11-20T00:00:00Z",
+        "vid": "e7bc5600-eaa0-11de-bd9c-00215c6a37bb"
+    },
+    "details": "PostgreSQL project reports:\n\n> PostgreSQL 7.4.x before 7.4.27, 8.0.x before 8.0.23,\n> 8.1.x before 8.1.19, 8.2.x before 8.2.15, 8.3.x before 8.3.9,\n> and 8.4.x before 8.4.2 does not properly handle a '\\0' character\n> in a domain name in the subject's Common Name (CN) field of an\n> X.509 certificate, which (1) allows man-in-the-middle attackers\n> to spoof arbitrary SSL-based PostgreSQL servers via a crafted\n> server certificate issued by a legitimate Certification Authority,\n> and (2) allows remote attackers to bypass intended client-hostname\n> restrictions via a crafted client certificate issued by a legitimate\n> Certification Authority, a related issue to CVE-2009-2408.\n\n> PostgreSQL 7.4.x before 7.4.27, 8.0.x before 8.0.23,\n> 8.1.x before 8.1.19, 8.2.x before 8.2.15, 8.3.x before 8.3.9,\n> and 8.4.x before 8.4.2 does not properly manage session-local\n> state during execution of an index function by a database\n> superuser, which allows remote authenticated users to gain\n> privileges via a table with crafted index functions, as\n> demonstrated by functions that modify (1) search\\_path or\n> (2) a prepared statement, a related issue to CVE-2007-6600\n> and CVE-2009-3230.",
+    "id": "FreeBSD-kernel-2009-0005",
+    "modified": "2009-12-17T00:00:00Z",
+    "published": "2009-12-17T00:00:00Z",
+    "references": [
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2009-4034"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2009-4136"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "postgresql -- multiple vulnerabilities"
+}

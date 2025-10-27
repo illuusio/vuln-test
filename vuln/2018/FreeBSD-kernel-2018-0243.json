@@ -1,0 +1,33 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "strongswan"
+            },
+            "versions": [
+                "5.6.1"
+            ]
+        }
+    ],
+    "database_specific": {
+        "discovery": "2018-01-31T00:00:00Z",
+        "vid": "6a449a37-1570-11e8-8e00-000c294a5758"
+    },
+    "details": "Strongswan Release Notes reports:\n\n> Fixed a DoS vulnerability in the parser for PKCS#1 RSASSA-PSS signatures that\n> was caused by insufficient input validation. One of the configurable\n> parameters in algorithm identifier structures for RSASSA-PSS signatures is the\n> mask generation function (MGF). Only MGF1 is currently specified for this\n> purpose. However, this in turn takes itself a parameter that specifies the\n> underlying hash function. strongSwan's parser did not correctly handle the\n> case of this parameter being absent, causing an undefined data read.\n> his vulnerability has been registered as CVE-2018-6459.",
+    "id": "FreeBSD-kernel-2018-0243",
+    "modified": "2018-02-19T00:00:00Z",
+    "published": "2018-02-19T00:00:00Z",
+    "references": [
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2018-6459"
+        },
+        {
+            "type": "WEB",
+            "url": "https://github.com/strongswan/strongswan/commit/40da179f28b768ffcf6ff7e2f68675eb44806668"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "strongswan - Insufficient input validation in RSASSA-PSS signature parser"
+}

@@ -1,0 +1,39 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "bro"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "2.5.5"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "discovery": "2018-08-28T00:00:00Z",
+        "vid": "d0be41fe-2a20-4633-b057-4e8b25c41780"
+    },
+    "details": "Corelight reports:\n\n> Bro 2.5.5 primarily addresses security issues:\n>\n> * Fix array bounds checking in BinPAC: for arrays\n>   that are fields within a record, the bounds check\n>   was based on a pointer to the start of the record\n>   rather than the start of the array field, potentially\n>   resulting in a buffer over-read.\n> * Fix SMTP command string comparisons: the number\n>   of bytes compared was based on the user-supplied\n>   string length and can lead to incorrect matches.\n>   e.g. giving a command of \"X\" incorrectly matched\n>   \"X-ANONYMOUSTLS\" (and an empty commands match\n>   anything).\n>\n> Address potential vectors for Denial of Service:\n>\n> * \"Weird\" events are now generally suppressed/sampled\n>   by default according to some tunable parameters.\n> * Improved handling of empty lines in several text\n>   protocol analyzers that can cause performance issues\n>   when seen in long sequences.\n> * Add `smtp\\_excessive\\_pending\\_cmds' weird which\n>   serves as a notification for when the \"pending\n>   command\" queue has reached an upper limit and been\n>   cleared to prevent one from attempting to slowly\n>   exhaust memory.",
+    "id": "FreeBSD-kernel-2018-0097",
+    "modified": "2018-08-29T00:00:00Z",
+    "published": "2018-08-29T00:00:00Z",
+    "references": [
+        {
+            "type": "WEB",
+            "url": "https://www.bro.org/download/NEWS.bro.html"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "bro -- array bounds and potential DOS issues"
+}

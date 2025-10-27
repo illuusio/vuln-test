@@ -1,0 +1,80 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "postgresql"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "introduced": "7.2.0"
+                        },
+                        {
+                            "fixed": "7.2.8"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                },
+                {
+                    "events": [
+                        {
+                            "introduced": "7.3.0"
+                        },
+                        {
+                            "fixed": "7.3.10"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                },
+                {
+                    "events": [
+                        {
+                            "introduced": "7.4.0"
+                        },
+                        {
+                            "fixed": "7.4.8"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                },
+                {
+                    "events": [
+                        {
+                            "introduced": "8.0.0"
+                        },
+                        {
+                            "fixed": "8.0.3"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "discovery": "2005-05-02T00:00:00Z",
+        "vid": "486aff57-9ecd-11da-b410-000e0c2e438a"
+    },
+    "details": "The postgresql development team reports:\n\n> The more severe of the two errors is that the functions\n> that support client-to-server character set conversion\n> can be called from SQL commands by unprivileged users,\n> but these functions are not designed to be safe against\n> malicious choices of argument values. This problem exists\n> in PostgreSQL 7.3.\\* through 8.0.\\*. The recommended fix is\n> to disable public EXECUTE access for these functions. This\n> does not affect normal usage of the functions for character\n> set conversion, but it will prevent misuse.\n>\n> The other error is that the contrib/tsearch2 module\n> misdeclares several functions as returning type \"internal\"\n> when they do not have any \"internal\" argument. This breaks\n> the type safety of \"internal\" by allowing users to\n> construct SQL commands that invoke other functions accepting\n> \"internal\" arguments. The consequences of this have not been\n> investigated in detail, but it is certainly at least possible\n> to crash the backend.",
+    "id": "FreeBSD-kernel-2006-0204",
+    "modified": "2006-02-16T00:00:00Z",
+    "published": "2006-02-16T00:00:00Z",
+    "references": [
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CAN-2005-1409"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CAN-2005-1410"
+        },
+        {
+            "type": "WEB",
+            "url": "http://www.postgresql.org/about/news.315"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "postgresql -- character conversion and tsearch2 vulnerabilities"
+}
