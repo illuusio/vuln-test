@@ -1,32 +1,14 @@
 #!/usr/bin/env python
+# SPDX-License-Identifier: BSD-2-Clause
 #
-# Copyright (C) 1994-2024 The FreeBSD Project.
-#
-# Redistribution and use in source and binary forms, with or without
-# modification, are permitted provided that the following conditions
-# are met:
-# 1. Redistributions of source code must retain the above copyright
-#    notice, this list of conditions and the following disclaimer.
-# 2. Redistributions in binary form must reproduce the above copyright
-#    notice, this list of conditions and the following disclaimer in the
-#    documentation and/or other materials provided with the distribution.
-#
-# THIS SOFTWARE IS PROVIDED BY AUTHOR AND CONTRIBUTORS ``AS IS'' AND
-# ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE
-# IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE
-# ARE DISCLAIMED.  IN NO EVENT SHALL AUTHOR OR CONTRIBUTORS BE LIABLE
-# FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL
-# DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS
-# OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION)
-# HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT
-# LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY
-# OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF
-# SUCH DAMAGE.
-#
-# Copyright (c) 2024 The FreeBSD Foundation
+# Copyright (c) 2025 The FreeBSD Foundation
 #
 # Portions of this software were developed by Pierre Pronchery
 # <pierre@defora.net> at Defora Networks GmbH under sponsorship
+# from the FreeBSD Foundation.
+#
+# Portions of this software were developed by Tuukka Pasanen
+# <tuukka.pasanen@ilmi.fi> at Defora Networks GmbH under sponsorship
 # from the FreeBSD Foundation.
 
 """VuXML to OSV converter."""
@@ -117,6 +99,14 @@ def usage(e=None):
         "Usage: %s [-e ecosystem][-o output_directory][-F][-r] vuln.xml" % sys.argv[0],
         file=sys.stderr,
     )
+    print(
+        "\t-F\tFlat (all json files are in same directory)",
+        file=sys.stderr,
+    )
+    print(
+        "\t-r\tRunning id restarts every year",
+        file=sys.stderr,
+    )
     return 1
 
 
@@ -138,6 +128,7 @@ def main():
     output_json = False
     output_yaml = False
     output_toml = False
+    is_kernel = False
     yaml = None
 
     output_id = {}
@@ -173,6 +164,7 @@ def main():
 
     entries = []
     for vuln in root:
+        is_kernel = False
         if vuln.find(namespace + "cancelled") is not None:
             continue
 
@@ -301,7 +293,12 @@ def main():
                 if re_invalid_package_name.search(name.text) is not None:
                     ret = error("%s package with invalid name: %s" % (vid, name.text))
                     continue
-                p = {"ecosystem": ecosystem, "name": name.text}
+                cur_ecosystem = ecosystem
+                if name.text == "FreeBSD-kernel":
+                    cur_ecosystem = "FreeBSD:kernel"
+                    is_kernel = True
+
+                p = {"ecosystem": cur_ecosystem, "name": name.text}
                 a["package"] = p
 
                 # affected: ranges
@@ -319,7 +316,7 @@ def main():
                             event["introduced"] = ge.text
                         gt = e.find(namespace + "gt")
                         if gt is not None and len(gt.text) > 0 and gt.text != "*":
-                            # FIXME not accurate!!1
+                            # FIXME not accurate!!!
                             event["introduced"] = gt.text + ",1"
                         le = e.find(namespace + "le")
                         if le is not None and len(le.text) > 0 and le.text != "*":
@@ -384,36 +381,34 @@ def main():
                     year_str = dates["published"].strftime("%Y")
                     date_obj = dates["modified"]
 
+
+                file_base_name = "FreeBSD"
+                    
                 # File name can be with date of release:
-                # FBSD-20250101.json
+                # FreeBSD-20250101.json
                 # or just running number
-                # FBSD-2025-0001.json
+                # FreeBSD-2025-0001.json
                 # When using running id then there won't be yearly
                 # subdirs
                 if output_running is False:
                     if date_str not in output_id:
                         output_id[date_str] = 0
                     output_id[date_str] += 1
-                    output_file = (
-                        f"FBSD-" + date_str + "-" + str(output_id[date_str]).zfill(2)
-                    )
+                    output_file = f"{file_base_name}-{date_str}-{output_id[date_str]:02}"
                 else:
                     if year_str not in output_id:
                         output_id[year_str] = 0
                     output_id[year_str] += 1
-                    output_file = (
-                        f"FBSD-" + year_str + "-" + str(output_id[year_str]).zfill(4)
-                    )
+                    output_file = f"{file_base_name}-{year_str}-{output_id[year_str]:04}"
 
                 # Make sure that is same as filename
                 entry["id"] = output_file
 
                 if date_str is None:
-                    raise Exception("There is no date in " + str(entry["affected"]))
+                    raise Exception(f"There is no date in {entry["affected"]}")
 
                 if output_flat is False:
                     output_year_path = output + "/" + year_str
-                    print(output_year_path)
                 else:
                     output_year_path = output
 
@@ -425,14 +420,11 @@ def main():
 
                 affected_array = entry["affected"]
 
-                output_name = affected_array[0]["package"]["name"]
-
-                del affected_array[0]
-
                 # If output is not flat then output path will be like
                 # 2025/somepackage/ with flat only 2025/
                 if output_flat is False:
-                    output_path_with_name = output_year_path + "/" + output_name
+                    # output_path_with_name = output_year_path + "/" + output_name
+                    output_path_with_name = output_year_path
                 else:
                     output_path_with_name = output_year_path
 
@@ -449,7 +441,7 @@ def main():
                 output_full_path = output_path_with_name + "/" + output_with_suffix
 
                 if os.path.isfile(output_full_path) is True:
-                    print("already here: " + output_full_path)
+                    print("OSVf file already created: " + output_full_path)
 
                 # JSON and YAML take string but with TOML dump
                 # one have to open file with binary to write
@@ -468,25 +460,6 @@ def main():
                     timeint = int(date_obj.strftime("%s"))
                     os.utime(output_full_path, (timeint, timeint))
 
-                # If we are not havin flat system then for saving space link
-                # to original file do not make duplicates
-                if output_flat is False:
-                    for affected in affected_array:
-                        affected_year_with_name = (
-                            output_year_path + "/" + affected["package"]["name"]
-                        )
-
-                        if os.path.isdir(affected_year_with_name) is False:
-                            os.mkdir(affected_year_with_name)
-
-                        src_path = "../" + output_name + "/" + output_with_suffix
-                        to_path = affected_year_with_name + "/" + output_with_suffix
-
-                        if (
-                            os.path.isfile(to_path) is False
-                            and os.path.islink(to_path) is False
-                        ):
-                            os.symlink(src_path, to_path)
             except Exception as e:
                 print("There was an error: ", e)
                 ret = error(e)
