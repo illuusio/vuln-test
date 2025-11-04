@@ -1,0 +1,26 @@
+---
+name: Test Nginx config on Debian 12-13 and testing
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+    branches:
+      - main
+
+jobs:
+  debian_12_bookworm:
+    uses: ./.github/workflows/osvf-tool-validate.yml
+    with:
+      container: "debian:12"
+
+  debian_13_trixie:
+    uses: ./.github/workflows/osvf-tool-validate.yml
+    with:
+      container: "debian:13"
+
+  debian_sid_testing:
+    uses: ./.github/workflows/osvf-tool-validate.yml
+    with:
+      container: "debian:testing"

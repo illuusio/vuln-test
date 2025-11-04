@@ -1,0 +1,46 @@
+---
+name: Validate OSVF files with osvf-tool
+
+on:
+  workflow_call:
+    inputs:
+      container:
+        required: true
+        type: string
+
+jobs:
+  validate-osvf:
+    runs-on: ubuntu-latest
+    container: ${{ inputs.container }}
+
+    env:
+      DEBIAN_FRONTEND: noninteractive
+      TZ: Etc/GMT
+
+    steps:
+      - uses: actions/checkout@v4
+      - name: Link correct timezone to '/etc/localtime'
+        run: ln -snf /usr/share/zoneinfo/$TZ /etc/localtime && echo $TZ > /etc/timezone
+      - name: Enable automatic restarts from maint scripts
+        run : sed -i "s/101/0/g" -i /usr/sbin/policy-rc.d
+      - name: Fake /sbin/runlevel to avoid warnings of could not determine current runlevel
+        run: echo -e '#!/bin/sh\necho "N 5"' > /sbin/runlevel; chmod +x /sbin/runlevel
+      - name: Emit non-zero exit code also on warnings
+        run: echo 'APT::Update::Error-Mode "any";' > /etc/apt/apt.conf.d/non-zero-exit-on-warnings
+      - name: Run 'apt update'
+        run: apt update -qq
+      - name: Install package 'lua5.4' 'jq'
+        run: apt install -y lua5.4 liblua5.4-dev jq git autoconf automake libtool make wget
+      - name: Build libUCL (Universal configuration library parser)
+        run: |
+             wget https://github.com/vstakhov/libucl/archive/refs/tags/0.9.2.tar.gz
+             tar xvf 0.9.2.tar.gz
+             cd libucl-0.9.2
+             ./autogen.sh
+             ./configure --prefix=/usr --enable-lua
+             make install
+      - name: Run validation
+        run: |
+             LUA_PATH="${GITHUB_WORKSPACE}/bin/?.lua;;" lua5.4 bin/osvf-tool.lua vuln schema/osvf_schema-1.7.4.json > test.json
+      - name: Validate output with jq
+        run: cat test.json | jq -c > /dev/null
