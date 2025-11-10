@@ -165,6 +165,7 @@ def main():
     entries = []
     for vuln in root:
         is_kernel = False
+
         if vuln.find(namespace + "cancelled") is not None:
             continue
 
@@ -172,6 +173,8 @@ def main():
         vid = vuln.get("vid")
         entry = {"schema_version": "1.7.0"}
         dates = {"modified": None, "published": None}
+        # database_specific
+        database_specific = {"vid": vid}
 
         # modified
         try:
@@ -246,23 +249,34 @@ def main():
 
         # references
         references = []
+
         refs = vuln.find(namespace + "references")
         for ref in refs:
-            if ref.text is None or len(ref.text) == 0:
+            is_appendable = False
+            if ref.text is None or len(ref.text) == 0 or type(ref) is etree._Comment:
                 continue
+
+            cur_tag = ref.tag.removeprefix(namespace)
+
             if ref.tag == namespace + "bid":
                 reference = {"type": "ADVISORY", "url": url_bid % ref.text}
+                is_appendable = True
             elif ref.tag == namespace + "certsa":
                 reference = {"type": "ADVISORY", "url": url_certsa % ref.text}
+                is_appendable = True
             elif ref.tag == namespace + "certvu":
                 reference = {"type": "ADVISORY", "url": url_certvu % ref.text}
+                is_appendable = True
             elif ref.tag == namespace + "cvename":
                 reference = {"type": "ADVISORY", "url": url_cve % ref.text}
+                is_appendable = True
             elif ref.tag == namespace + "freebsdpr" and len(ref.text.split("/")) == 2:
                 id = ref.text.split("/")[1]
                 reference = {"type": "REPORT", "url": url_freebsd_bugzilla % id}
+                is_appendable = True
             elif ref.tag == namespace + "freebsdsa":
                 reference = {"type": "ADVISORY", "url": url_freebsd_sa % ref.text}
+                is_appendable = True
             elif ref.tag == namespace + "mlist":
                 reference = {"type": "DISCUSSION", "url": ref.text}
             elif ref.tag == namespace + "url":
@@ -278,6 +292,14 @@ def main():
                             break
             else:
                 continue
+
+            if is_appendable:
+                if "references" not in database_specific:
+                    database_specific["references"] = {}
+                if cur_tag not in database_specific["references"]:
+                    database_specific["references"][cur_tag] = []
+                database_specific["references"][cur_tag].append(ref.text)
+
             references.append(reference)
         if len(references) > 0:
             entry["references"] = references
@@ -312,18 +334,35 @@ def main():
                         # affected: ranges
                         event = {}
                         ge = e.find(namespace + "ge")
-                        if ge is not None and len(ge.text) > 0 and ge.text != "*":
-                            event["introduced"] = ge.text
+                        if ge is not None and len(ge.text) > 0:
+                            if ge.text != "*":
+                                event["introduced"] = ge.text
+                            else:
+                                event["introduced"] = "0"
                         gt = e.find(namespace + "gt")
-                        if gt is not None and len(gt.text) > 0 and gt.text != "*":
-                            # FIXME not accurate!!!
-                            event["introduced"] = gt.text + ",1"
+                        if gt is not None and len(gt.text) > 0:
+                            if gt.text != "*":
+                                # Not correct. Should be fixed
+                                event["introduced"] = gt.text + ",1"
+                            else:
+                                event["introduced"] = "0"
                         le = e.find(namespace + "le")
-                        if le is not None and len(le.text) > 0 and le.text != "*":
+                        if le is not None and len(le.text) > 0:
                             event["last_affected"] = le.text
+                            if le.text != "*":
+                                # Please see documentation about
+                                # last_affected and fixed for reasoning
+                                # behind this
+                                event["last_affected"] = le.text
+                                event["fixed"] = le.text
+                            else:
+                                event["last_affected"] = "0"
                         lt = e.find(namespace + "lt")
-                        if lt is not None and len(lt.text) > 0 and lt.text != "*":
-                            event["fixed"] = lt.text
+                        if lt is not None and len(lt.text) > 0:
+                            if lt.text != "*":
+                                event["fixed"] = lt.text
+                            else:
+                                event["fixed"] = "0"
                         if "fixed" in event or "introduced" in event:
                             if "introduced" not in event:
                                 event["introduced"] = "0"
@@ -333,6 +372,9 @@ def main():
                         # affected: versions
                         eq = e.find(namespace + "eq")
                         if eq is not None and len(eq.text) > 0 and eq.text != "*":
+                            events.append({"introduced": eq.text})
+                            events.append({"last_affected": eq.text})
+                            events.append({"fixed": eq.text})
                             versions.append(eq.text)
 
                         if len(events) > 0:
@@ -351,8 +393,6 @@ def main():
             if len(affected) > 0:
                 entry["affected"] = affected
 
-        # database_specific
-        database_specific = {"vid": vid}
         try:
             d = vuln.find(namespace + "dates").find(namespace + "discovery").text
             if not re_date.match(d):
@@ -381,9 +421,8 @@ def main():
                     year_str = dates["published"].strftime("%Y")
                     date_obj = dates["modified"]
 
-
                 file_base_name = "FreeBSD"
-                    
+
                 # File name can be with date of release:
                 # FreeBSD-20250101.json
                 # or just running number
@@ -394,12 +433,16 @@ def main():
                     if date_str not in output_id:
                         output_id[date_str] = 0
                     output_id[date_str] += 1
-                    output_file = f"{file_base_name}-{date_str}-{output_id[date_str]:02}"
+                    output_file = (
+                        f"{file_base_name}-{date_str}-{output_id[date_str]:02}"
+                    )
                 else:
                     if year_str not in output_id:
                         output_id[year_str] = 0
                     output_id[year_str] += 1
-                    output_file = f"{file_base_name}-{year_str}-{output_id[year_str]:04}"
+                    output_file = (
+                        f"{file_base_name}-{year_str}-{output_id[year_str]:04}"
+                    )
 
                 # Make sure that is same as filename
                 entry["id"] = output_file
