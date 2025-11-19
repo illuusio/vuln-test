@@ -48,7 +48,7 @@ local function osvf_tool_validate(schema_location, json_location)
 	is_error, err = parser:validate(schema_location)
 
 	if is_error == false then
-		logger:error("osvf_tool_validate: Can't validate OSVf JSON file with '" .. schema_location "': " .. err)
+		logger:error("osvf_tool_validate: Can't validate OSVf JSON file with '" .. schema_location .. "': " .. err)
 		logger:error("osvf_tool_validate: Please see schema at: " .. osvf_schema_url)
 		return false
 	end
@@ -122,23 +122,126 @@ local function osvf_tool_get_schema()
 	return true, tmp_file_location
 end
 
+local function oscf_tool_find_file(osv_location)
+	local output, rc = osvf_tool_run_cmd("find " .. osv_location .. " -type f -name '*.json' | sort -r")
+
+	if rc == false then
+		logger:error("Something went wrong with find in '" .. osv_location .. "'. Exiting")
+		return nil
+	end
+
+	return ports_make_split_string(output, "\n")
+end
+
+-------------------------------------------------------------------------------
+-- Download schema from git or use existing one if provided
+-- @param schema_location Schema location or nil wanted to download it
+-- @return True if succesfully merged files and false if not
+-------------------------------------------------------------------------------
+local function osvf_tool_download_schema(schema_location)
+	local schema_remove = false
+	local file_location = schema_location
+
+	if schema_location == nil then
+		is_success, file_location = osvf_tool_get_schema()
+		schema_remove = true
+
+		if is_success == false then
+			logger:error("Can't donwload schema file: '" .. osvf_schema_url .. "'. Exiting")
+			return false
+		end
+	else
+		if osvf_tool_file_exist(schema_location) == false then
+			logger:error("Can't find schema file: '" .. schema_location .. "'. Exiting")
+			return false
+		end
+
+		is_success = true
+		schema_remove = false
+	end
+
+	return schema_remove, file_location
+end
+
+-------------------------------------------------------------------------------
+-- Remove schema if wanted or bail out
+-- @param schema_location Schema location or nil wanted to download it
+-- @param schema_remove Remove schmea if true. Do nothing if false
+-- @return True if succesfully merged files and false if not
+-------------------------------------------------------------------------------
+local function osvf_tool_remove_schema(schema_location, schema_remove)
+	if not schema_remove then
+		return true
+	end
+
+	if osvf_tool_file_exist(schema_location) then
+		logging:error("Can't find schema to remove: " .. schema_location)
+		return false
+	end
+
+	if schema_remove then
+		local success, err = os.remove(schema_location)
+
+		if success == false then
+			logger:error("Can't delete tmp schema file: '" .. file_location .. "' (" .. err .. ")")
+			return false
+		end
+	end
+
+	return true
+end
+
+-------------------------------------------------------------------------------
+-- Validate all files all together from directory
+-- @param schema_location Schema location or nil wanted to download it
+-- @param osv_location Directory location of OSVf JSON files
+-- @return True if succesfully merged files and false if not
+-------------------------------------------------------------------------------
+local function osvf_tool_validate_osvf_files(schema_location, osv_location)
+	local find_table = oscf_tool_find_file(osv_location)
+
+	if find_table == nil then
+		logger:error("Something went wrong with find in '" .. osv_location .. "'. Exiting")
+		return false
+	end
+
+	local schema_remove, file_location = osvf_tool_download_schema(schema_location)
+	local is_valid = false
+
+	for find_table_pos, json_file in ipairs(find_table) do
+		is_valid = osvf_tool_validate(file_location, json_file)
+
+		if is_valid == false then
+			logger:error("Can't validate file: '" .. json_file .. "'. Exiting")
+			break
+		end
+	end
+
+	osvf_tool_remove_schema(file_location, schema_remove)
+
+	return is_valid
+end
+
 -------------------------------------------------------------------------------
 -- Merge OSVf files together in one big JSON array and validate files when
 -- merging them
 -- Function does not make any other loading for JSON after validation. JSON
 -- files are just pasted as if as they are valid.
+-- @param schema_location Schema location or nil wanted to download it
+-- @param osv_location Directory location of OSVf JSON files
 -- @return True if succesfully merged files and false if not
 -- @return Merged OSVf array as a string
 -------------------------------------------------------------------------------
 local function osvf_tool_merge_osvf_files(schema_location, osv_location)
-	local output, rc = osvf_tool_run_cmd("find " .. osv_location .. " -type f -name '*.json' | sort")
+	local find_table = oscf_tool_find_file(osv_location)
 
-	if rc == false then
+	if find_table == nil then
 		logger:error("Something went wrong with find in '" .. osv_location .. "'. Exiting")
 		return false, nil
 	end
 
-	local find_table = ports_make_split_string(output, "\n")
+	local schema_remove, file_location = osvf_tool_download_schema(schema_location)
+
 	local output_table = { "[\n" }
 	local output_table_pos = 1
 
@@ -147,7 +250,7 @@ local function osvf_tool_merge_osvf_files(schema_location, osv_location)
 		local pos = 1
 		-- Validate file and make sure it can be loaded as JSON and
 		-- it's valid OSVf 1.7.0 file. If not then don't go further
-		if osvf_tool_validate(schema_location, output_str) == false then
+		if osvf_tool_validate(file_location, output_str) == false then
 			logger:error("Can't validate: " .. output_str)
 			return false, nil
 		end
@@ -170,43 +273,57 @@ local function osvf_tool_merge_osvf_files(schema_location, osv_location)
 		end
 	end
 
+	osvf_tool_remove_schema(file_location, schema_remove)
+
 	output_table[output_table_pos + 1] = "]\n"
 
 	return true, table.concat(output_table)
 end
 
 if #arg == 0 then
-	print("Usage: osvf-tool.lua [OSVf dir location] [OSVf schema location]")
+	print("Usage:\tosvf-tool.lua validate|newentry|merge|commonmark|html\n")
+	print("\tvalidate\tValidate lastes entry or if last option is JSON file use that one\n")
+	print("\t\t\tExample: osvf-tool.lua validate")
+	print("\t\t\tWill validate all files in vuln directory\n")
+	print("\t\t\tExample: osvf-tool.lua validate vuln/2025/FreeBSD-2025-0001.json")
+	print("\t\t\tWill validate only file: 'vuln/2025/FreeBSD-2025-0001.json'\n")
+
+	print(
+		"\tnewentry\tCreate new entry and set ID for it. Create it from template tmpl/FreeBSD-tmpl.json and fill with defaults\n"
+	)
+	print("\t\t\tExample: osvf-tool.lua newentry")
+	print("\t\t\tCreate new entry with next ID which is available\n")
+	print("\t\t\tExample: osvf-tool.lua newentry ID")
+	print("\t\t\tCreate new entry with ID\n")
+	os.exit(1)
 end
 
-osvf_files_location = arg[1]
+local commands = {
+	validate = 1,
+	newentry = 2,
+	merge = 3,
+	commonmark = 4,
+	html = 5,
+}
 
-if #arg == 1 then
-	is_success, schema_file_location = osvf_tool_get_schema()
-	schema_remove = true
-else
-	if osvf_tool_file_exist(arg[2]) == false then
-		logger:error("Can't find schema file: '" .. arg[2] .. "'. Exiting")
-		os.exit(1)
+local which_command = commands[arg[1]]
+
+if which_command == 1 then
+	is_valid = osvf_tool_validate_osvf_files("schema/osvf_schema-1.7.4.json", "vuln")
+
+	if is_valid == true then
+		print("All OSVf JSON files are valid inside vuln-directory")
+	else
+		print("Validation of OSVf JSON files didn't succeeded please see error(s)")
 	end
+elseif which_command == 2 then
+	print("New entry needs to be implemented")
+elseif which_command == 3 then
+	is_error, output = osvf_tool_merge_osvf_files("schema/osvf_schema-1.7.4.json", "vuln")
 
-	is_success = true
-	schema_file_location = arg[2]
-	schema_remove = false
-end
-
-if is_success then
-	is_error, output = osvf_tool_merge_osvf_files(schema_file_location, osvf_files_location)
-
-	if is_error then
+	if is_error == true then
 		print(output)
 	end
-
-	if schema_remove then
-		local success, err = os.remove(schema_file_location)
-
-		if success == false then
-			logger:error("Can't delete tmp file: '" .. schema_file_location .. "' (" .. err .. ")")
-		end
-	end
 end
+
+os.exit(0)
