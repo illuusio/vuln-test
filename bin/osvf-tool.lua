@@ -22,8 +22,7 @@ require("ports-make")
 -- This one is official but does not yet contain FreeBSD namespace
 -- Use non-official until PR is included
 -- local osvf_schema_url = "https://raw.githubusercontent.com/ossf/osv-schema/main/validation/schema.json"
-local osvf_schema_url =
-	"https://raw.githubusercontent.com/illuusio/osv-schema/refs/heads/FreeBSD-ecosystem/validation/schema.json"
+local osvf_schema_url = "https://raw.githubusercontent.com/ossf/osv-schema/refs/heads/main/validation/schema.json"
 local logger = Logging.new(nil, "INFO")
 local schema_file_location = ""
 local schema_remoce = false
