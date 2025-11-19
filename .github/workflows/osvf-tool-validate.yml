@@ -41,6 +41,6 @@ jobs:
              make install
       - name: Run validation
         run: |
-             LUA_PATH="${GITHUB_WORKSPACE}/bin/?.lua;;" lua5.4 bin/osvf-tool.lua vuln schema/osvf_schema-1.7.4.json > test.json
+             LUA_PATH="${GITHUB_WORKSPACE}/bin/?.lua;;" lua5.4 bin/osvf-tool.lua merge > test.json
       - name: Validate output with jq
         run: cat test.json | jq -c > /dev/null
