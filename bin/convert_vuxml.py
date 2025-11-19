@@ -134,7 +134,7 @@ def main():
     ret = 0
 
     entries = []
-    for vuln in root:
+    for vuln in reversed(root):
         is_kernel = False
 
         if vuln.find(namespace + "cancelled") is not None:
