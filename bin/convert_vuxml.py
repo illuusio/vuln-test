@@ -22,11 +22,6 @@ import re
 import sys
 import pypandoc
 
-# ruamel.yaml is a YAML 1.2 loader/dumper package for Python.
-from ruamel.yaml import YAML
-from ruamel.yaml.scalarstring import LiteralScalarString
-import tomli_w
-
 re_date = re.compile(r"^(19|20)[0-9]{2}-[0-9]{2}-[0-9]{2}$")
 re_invalid_package_name = re.compile("[@!#$%^&*()<>?/\\|}{~:]")
 
@@ -84,6 +79,7 @@ def formatdate(date):
     # RFC 3339 ending with Z
     return date.strftime("%Y-%m-%dT%H:%M:%SZ")
 
+
 # error
 def error(string):
     print(f"{sys.argv[0]}: error: {string}", file=sys.stderr)
@@ -95,15 +91,7 @@ def usage(e=None):
     if e is not None:
         print(e, file=sys.stderr)
     print(
-        "Usage: %s [-e ecosystem][-o output_directory][-F][-r] vuln.xml" % sys.argv[0],
-        file=sys.stderr,
-    )
-    print(
-        "\t-F\tFlat (all json files are in same directory)",
-        file=sys.stderr,
-    )
-    print(
-        "\t-r\tRunning id restarts every year",
+        "Usage: %s [-e ecosystem][-o output_directory] vuln.xml" % sys.argv[0],
         file=sys.stderr,
     )
     return 1
@@ -122,13 +110,9 @@ def main():
         return usage(e)
     ecosystem = "FreeBSD:ports"
     output = None
-    output_flat = False
-    output_running = False
-    output_json = False
-    output_yaml = False
-    output_toml = False
+    output_running = True
+    output_json = True
     is_kernel = False
-    yaml = None
 
     output_id = {}
 
@@ -137,23 +121,11 @@ def main():
             ecosystem = optarg
         elif name == "-o":
             output = optarg
-        elif name == "-F":
-            output_flat = True
-        elif name == "-r":
-            output_running = True
-        elif name == "-Y":
-            output_yaml = True
-            yaml = YAML()
-        elif name == "-T":
-            output_toml = True
         else:
             return usage("%s: Unsupported option" % name)
 
     if len(args) != 1:
         return usage()
-
-    if output_yaml == False and output_toml == False:
-        output_json = True
 
     parser = etree.XMLParser(dtd_validation=False)
     tree = etree.parse(args[0], parser)
@@ -223,8 +195,7 @@ def main():
                     details, encoding="unicode", method="html"
                 )
 
-                if output_json or output_toml:
-                    details = pypandoc.convert_text(details_html, "md", format="html")
+                details = pypandoc.convert_text(details_html, "md", format="html")
 
                 tree = html.fromstring(details_html)
 
@@ -455,10 +426,7 @@ def main():
                 if date_str is None:
                     raise Exception(f"There is no date in {entry["affected"]}")
 
-                if output_flat is False:
-                    output_year_path = output + "/" + year_str
-                else:
-                    output_year_path = output
+                output_year_path = output + "/" + year_str
 
                 if os.path.isdir(output_year_path) is False:
                     os.mkdir(output_year_path)
@@ -470,39 +438,23 @@ def main():
 
                 # If output is not flat then output path will be like
                 # 2025/somepackage/ with flat only 2025/
-                if output_flat is False:
-                    # output_path_with_name = output_year_path + "/" + output_name
-                    output_path_with_name = output_year_path
-                else:
-                    output_path_with_name = output_year_path
+                # output_path_with_name = output_year_path + "/" + output_name
+                output_path_with_name = output_year_path
 
                 if os.path.isdir(output_path_with_name) is False:
                     os.mkdir(output_path_with_name)
 
-                if output_json:
-                    output_with_suffix = output_file + ".json"
-                elif output_yaml:
-                    output_with_suffix = output_file + ".yaml"
-                else:
-                    output_with_suffix = output_file + ".toml"
+                output_with_suffix = output_file + ".json"
 
                 output_full_path = output_path_with_name + "/" + output_with_suffix
 
                 if os.path.isfile(output_full_path) is True:
                     print("OSVf file already created: " + output_full_path)
 
-                # JSON and YAML take string but with TOML dump
-                # one have to open file with binary to write
+                # This one have to open file with binary to write
                 # as bytes
-                if output_json or output_yaml:
-                    with open(output_full_path, "w") as f:
-                        if output_json:
-                            print(json.dumps(entry, indent=4, sort_keys=True), file=f)
-                        elif output_yaml:
-                            yaml.dump(entry, f)
-                else:
-                    with open(output_full_path, "wb") as f:
-                        tomli_w.dump(entry, f, indent=4, multiline_strings=True)
+                with open(output_full_path, "w") as f:
+                    print(json.dumps(entry, indent=4, sort_keys=True), file=f)
 
                 if os.path.isfile(output_full_path):
                     timeint = int(date_obj.strftime("%s"))
@@ -520,11 +472,6 @@ def main():
                 print(json.dumps(entries[0], indent=4))
             else:
                 print(json.dumps(entries, indent=4))
-        elif output_yaml:
-            yaml.dump(entries, sys.stdout)
-        else:
-            for item in entries:
-                print(tomli_w.dumps(item, indent=4, multiline_strings=True))
 
     return ret
 
