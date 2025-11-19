@@ -15,12 +15,12 @@
 import datetime
 import getopt
 import json
-from lxml import etree
+from lxml import etree, html
 import os
 from pathlib import Path
 import re
 import sys
-from markdownify import markdownify as md
+import pypandoc
 
 # ruamel.yaml is a YAML 1.2 loader/dumper package for Python.
 from ruamel.yaml import YAML
@@ -83,7 +83,6 @@ def dateof(string):
 def formatdate(date):
     # RFC 3339 ending with Z
     return date.strftime("%Y-%m-%dT%H:%M:%SZ")
-
 
 # error
 def error(string):
@@ -222,18 +221,20 @@ def main():
             try:
                 details_html = etree.tostring(
                     details, encoding="unicode", method="html"
-                ).strip()
-                # Documentatio states that:
-                # The details field is CommonMark markdown (a subset of GitHub-Flavored Markdown).
-                # Input is in HTML5. Make conversion with markdownify.
+                )
+
                 if output_json or output_toml:
-                    details = str(md(details_html))
-                elif output_yaml == True:
-                    # With YAML we like to have output:
-                    # details: |-
-                    #    Some text here
-                    #    > Some quatation here
-                    details = LiteralScalarString(str(md(details_html)))
+                    details = pypandoc.convert_text(details_html, "md", format="html")
+
+                tree = html.fromstring(details_html)
+
+                for elem in tree.iterchildren():
+                    if elem.tag == "blockquote":
+                        cite = elem.get("cite")
+                        if cite:
+                            if "cite" not in database_specific:
+                                database_specific["cite"] = []
+                            database_specific["cite"].append(cite)
 
                 if len(details) > DESCRIPTION_LENGTH:
                     warn("%s: description truncated (> %s)" % (vid, DESCRIPTION_LENGTH))
@@ -249,6 +250,10 @@ def main():
 
         # references
         references = []
+
+        if "cite" in database_specific:
+            for cite in database_specific["cite"]:
+                references.append({"type": "REPORT", "url": cite})
 
         refs = vuln.find(namespace + "references")
         for ref in refs:
