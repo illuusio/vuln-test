@@ -1,0 +1,56 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "FreeBSD"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "introduced": "6.0"
+                        },
+                        {
+                            "fixed": "6.0_4"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "discovery": "2006-01-25T00:00:00Z",
+        "references": {
+            "cvename": [
+                "CVE-2006-0379",
+                "CVE-2006-0380"
+            ],
+            "freebsdsa": [
+                "SA-06:06.kmem"
+            ]
+        },
+        "vid": "7a4f2aca-9d40-11da-8c1d-000e0c2e438a"
+    },
+    "details": "Problem description:\n\nA buffer allocated from the kernel stack may not be completely\ninitialized before being copied to userland. \\[CVE-2006-0379\\]\n\nA logic error in computing a buffer length may allow too much data to be\ncopied into userland. \\[CVE-2006-0380\\]\n\nImpact:\n\nPortions of kernel memory may be disclosed to local users. Such memory\nmight contain sensitive information, such as portions of the file cache\nor terminal buffers. This information might be directly useful, or it\nmight be leveraged to obtain elevated privileges in some way. For\nexample, a terminal buffer might include a user-entered password.\n\nWorkaround:\n\nNo workaround is available.\n",
+    "id": "FreeBSD-2006-0016",
+    "modified": "2016-08-09T00:00:00Z",
+    "published": "2006-02-14T00:00:00Z",
+    "references": [
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2006-0379"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2006-0380"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://www.freebsd.org/security/advisories/FreeBSD-SA-06:06.kmem.asc"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "FreeBSD -- Local kernel memory disclosure"
+}

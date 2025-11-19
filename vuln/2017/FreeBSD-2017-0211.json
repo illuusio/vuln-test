@@ -1,0 +1,62 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "aacplusenc"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "last_affected": "0.17.5_2"
+                        },
+                        {
+                            "fixed": "0.17.5_2"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "cite": [
+            "https://blogs.gentoo.org/ago/2017/09/07/aacplusenc-null-pointer-dereference-in-deletebitbuffer-bitbuffer-c/"
+        ],
+        "discovery": "2017-09-07T00:00:00Z",
+        "references": {
+            "cvename": [
+                "CVE-2017-14181"
+            ]
+        },
+        "vid": "7801b1e1-99b4-42ac-ab22-7646235e7c16"
+    },
+    "details": "Gentoo developers report:\n\n> DeleteBitBuffer in libbitbuf/bitbuffer.c in mp4tools aacplusenc 0.17.5\n> allows remote attackers to cause a denial of service (invalid memory\n> write, SEGV on unknown address 0x000000000030, and application crash)\n> or possibly have unspecified other impact via a crafted .wav file, aka\n> a NULL pointer dereference.\n",
+    "id": "FreeBSD-2017-0211",
+    "modified": "2017-09-25T00:00:00Z",
+    "published": "2017-09-25T00:00:00Z",
+    "references": [
+        {
+            "type": "REPORT",
+            "url": "https://blogs.gentoo.org/ago/2017/09/07/aacplusenc-null-pointer-dereference-in-deletebitbuffer-bitbuffer-c/"
+        },
+        {
+            "type": "WEB",
+            "url": "https://blogs.gentoo.org/ago/2017/09/07/aacplusenc-null-pointer-dereference-in-deletebitbuffer-bitbuffer-c/"
+        },
+        {
+            "type": "WEB",
+            "url": "https://github.com/teknoraver/aacplusenc/issues/1"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2017-14181"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "aacplusenc -- denial of service"
+}

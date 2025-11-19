@@ -1,0 +1,136 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "qemu"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "2.5.0"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        },
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "qemu-devel"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "2.5.0"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        },
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "qemu-sbruno"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "2.5.50.g20160213"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        },
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "qemu-user-static"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "2.5.50.g20160213"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "cite": [
+            "http://www.openwall.com/lists/oss-security/2015/12/22/8"
+        ],
+        "discovery": "2015-12-23T00:00:00Z",
+        "references": {
+            "cvename": [
+                "CVE-2015-8619"
+            ],
+            "freebsdpr": [
+                "ports/205813",
+                "ports/205814"
+            ]
+        },
+        "vid": "62ab8707-b1bc-11e5-9728-002590263bf5"
+    },
+    "details": "Prasad J Pandit, Red Hat Product Security Team, reports:\n\n> Qemu emulator built with the Human Monitor Interface(HMP) support is\n> vulnerable to an OOB write issue. It occurs while processing\n> \\'sendkey\\' command in hmp_sendkey routine, if the command argument is\n> longer than the \\'keyname_buf\\' buffer size.\n>\n> A user/process could use this flaw to crash the Qemu process instance\n> resulting in DoS.\n",
+    "id": "FreeBSD-2016-0017",
+    "modified": "2016-07-06T00:00:00Z",
+    "published": "2016-01-03T00:00:00Z",
+    "references": [
+        {
+            "type": "REPORT",
+            "url": "http://www.openwall.com/lists/oss-security/2015/12/22/8"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2015-8619"
+        },
+        {
+            "type": "REPORT",
+            "url": "https://bugs.freebsd.org/bugzilla/show_bug.cgi?id=205813"
+        },
+        {
+            "type": "REPORT",
+            "url": "https://bugs.freebsd.org/bugzilla/show_bug.cgi?id=205814"
+        },
+        {
+            "type": "WEB",
+            "url": "http://www.openwall.com/lists/oss-security/2015/12/22/8"
+        },
+        {
+            "type": "WEB",
+            "url": "https://lists.gnu.org/archive/html/qemu-devel/2015-12/msg02930.html"
+        },
+        {
+            "type": "WEB",
+            "url": "http://git.qemu.org/?p=qemu.git;a=commit;h=64ffbe04eaafebf4045a3ace52a360c14959d196"
+        },
+        {
+            "type": "WEB",
+            "url": "https://github.com/seanbruno/qemu-bsd-user/commit/64ffbe04eaafebf4045a3ace52a360c14959d196"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "qemu -- denial of service vulnerability in Human Monitor Interface support"
+}

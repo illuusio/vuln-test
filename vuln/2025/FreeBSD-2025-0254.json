@@ -1,0 +1,183 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "rubygem-resolv"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "0.6.2"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        },
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "ruby"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "introduced": "3.2.0.p1,1"
+                        },
+                        {
+                            "fixed": "3.2.9,1"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                },
+                {
+                    "events": [
+                        {
+                            "introduced": "3.3.0.p1,1"
+                        },
+                        {
+                            "fixed": "3.3.9,1"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                },
+                {
+                    "events": [
+                        {
+                            "introduced": "3.4.0.p1,1"
+                        },
+                        {
+                            "fixed": "3.4.5,1"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                },
+                {
+                    "events": [
+                        {
+                            "introduced": "3.5.0.p1,1"
+                        },
+                        {
+                            "fixed": "3.5.0.p2,1"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        },
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "ruby32"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "3.2.9,1"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        },
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "ruby33"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "3.3.9,1"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        },
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "ruby34"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "3.4.5,1"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        },
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "ruby35"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "3.5.0.p2,1"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "cite": [
+            "https://www.ruby-lang.org/en/news/2025/07/08/dos-resolv-cve-2025-24294/"
+        ],
+        "discovery": "2025-07-08T00:00:00Z",
+        "references": {
+            "cvename": [
+                "CVE-2025-24294"
+            ]
+        },
+        "vid": "eed1a411-699b-11f0-91fe-000c295725e4"
+    },
+    "details": "Manu reports:\n\n> The vulnerability is caused by an insufficient check on the length of\n> a decompressed domain name within a DNS packet.\n>\n> An attacker can craft a malicious DNS packet containing a highly\n> compressed domain name. When the resolv library parses such a packet,\n> the name decompression process consumes a large amount of CPU\n> resources, as the library does not limit the resulting length of the\n> name.\n>\n> This resource consumption can cause the application thread to become\n> unresponsive, resulting in a Denial of Service condition.\n",
+    "id": "FreeBSD-2025-0254",
+    "modified": "2025-07-25T00:00:00Z",
+    "published": "2025-07-25T00:00:00Z",
+    "references": [
+        {
+            "type": "REPORT",
+            "url": "https://www.ruby-lang.org/en/news/2025/07/08/dos-resolv-cve-2025-24294/"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2025-24294"
+        },
+        {
+            "type": "WEB",
+            "url": "https://www.ruby-lang.org/en/news/2025/07/08/dos-resolv-cve-2025-24294/"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "rubygem-resolv -- Possible denial of service"
+}

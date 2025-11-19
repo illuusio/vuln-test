@@ -1,0 +1,116 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "xpdf"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "3.00_7"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        },
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "kdegraphics"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "3.4.2"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        },
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "gpdf"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "2.10.0_2"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        },
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "cups-base"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "1.1.23.0_5"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "discovery": "2005-08-09T00:00:00Z",
+        "references": {
+            "bid": [
+                "14529"
+            ],
+            "cvename": [
+                "CVE-2005-2097"
+            ]
+        },
+        "vid": "24eee285-09c7-11da-bc08-0001020eed82"
+    },
+    "details": "xpdf is vulnerable to a denial of service vulnerability which can cause\nxpdf to create an infinitely large file, thereby filling up the /tmp\npartition, when opening a specially crafted PDF file.\n\nNote that several applications contains an embedded version of xpdf,\ntherefor making them the vulnerable to the same DoS. In CUPS this\nvulnerability would cause the pdftops filter to crash.\n",
+    "id": "FreeBSD-2005-0248",
+    "modified": "2005-09-07T00:00:00Z",
+    "published": "2005-08-12T00:00:00Z",
+    "references": [
+        {
+            "type": "ADVISORY",
+            "url": "https://www.securityfocus.com/bid/14529/info"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2005-2097"
+        },
+        {
+            "type": "WEB",
+            "url": "http://rhn.redhat.com/errata/RHSA-2005-670.html"
+        },
+        {
+            "type": "WEB",
+            "url": "http://www.kde.org/info/security/advisory-20050809-1.txt"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "xpdf -- disk fill DoS vulnerability"
+}

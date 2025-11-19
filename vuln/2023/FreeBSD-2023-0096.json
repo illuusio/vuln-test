@@ -1,0 +1,245 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "ffmpeg"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "introduced": "5.1,1"
+                        },
+                        {
+                            "fixed": "5.1.3,1"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                },
+                {
+                    "events": [
+                        {
+                            "introduced": "5.0,1"
+                        },
+                        {
+                            "fixed": "5.0.3,1"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                },
+                {
+                    "events": [
+                        {
+                            "fixed": "4.4.4,1"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        },
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "ffmpeg4"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "4.4.4"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        },
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "avidemux"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "last_affected": "2.9"
+                        },
+                        {
+                            "fixed": "2.9"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        },
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "emby-server"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        },
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "emby-server-devel"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        },
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "handbrake"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "1.6.0"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        },
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "mythtv"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "last_affected": "33.0,1"
+                        },
+                        {
+                            "fixed": "33.0,1"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        },
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "mythtv-frontend"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "last_affected": "33.0,1"
+                        },
+                        {
+                            "fixed": "33.0,1"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "cite": [
+            "https://nvd.nist.gov/vuln/detail/CVE-2022-3109",
+            "https://nvd.nist.gov/vuln/detail/CVE-2022-3341",
+            "https://nvd.nist.gov/vuln/detail/CVE-2022-3964"
+        ],
+        "discovery": "2022-11-12T00:00:00Z",
+        "references": {
+            "cvename": [
+                "CVE-2022-3109",
+                "CVE-2022-3341",
+                "CVE-2022-3964"
+            ]
+        },
+        "vid": "faf7c1d0-f5bb-47b4-a6a8-ef57317b9766"
+    },
+    "details": "NVD reports:\n\n> An issue was discovered in the FFmpeg package, where vp3_decode_frame\n> in libavcodec/vp3.c lacks check of the return value of av_malloc() and\n> will cause a null pointer dereference, impacting availability.\n\n> A null pointer dereference issue was discovered in \\'FFmpeg\\' in\n> decode_main_header() function of libavformat/nutdec.c file. The flaw\n> occurs because the function lacks check of the return value of\n> avformat_new_stream() and triggers the null pointer dereference error,\n> causing an application to crash.\n\n> A vulnerability classified as problematic has been found in ffmpeg.\n> This affects an unknown part of the file libavcodec/rpzaenc.c of the\n> component QuickTime RPZA Video Encoder. The manipulation of the\n> argument y_size leads to out-of-bounds read. It is possible to\n> initiate the attack remotely. The name of the patch is\n> 92f9b28ed84a77138105475beba16c146bdaf984. It is recommended to apply a\n> patch to fix this issue. The associated identifier of this\n> vulnerability is VDB-213543.\n",
+    "id": "FreeBSD-2023-0096",
+    "modified": "2023-04-10T00:00:00Z",
+    "published": "2023-04-07T00:00:00Z",
+    "references": [
+        {
+            "type": "REPORT",
+            "url": "https://nvd.nist.gov/vuln/detail/CVE-2022-3109"
+        },
+        {
+            "type": "REPORT",
+            "url": "https://nvd.nist.gov/vuln/detail/CVE-2022-3341"
+        },
+        {
+            "type": "REPORT",
+            "url": "https://nvd.nist.gov/vuln/detail/CVE-2022-3964"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2022-3109"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2022-3341"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2022-3964"
+        },
+        {
+            "type": "WEB",
+            "url": "https://git.ffmpeg.org/gitweb/ffmpeg.git/commitdiff/2cdddcd6ec90c7a248ffe792d85faa4d89eab9f7"
+        },
+        {
+            "type": "WEB",
+            "url": "https://git.ffmpeg.org/gitweb/ffmpeg.git/commitdiff/481e81be1271ac9a0124ee615700390c2371bd89"
+        },
+        {
+            "type": "WEB",
+            "url": "https://git.ffmpeg.org/gitweb/ffmpeg.git/commitdiff/1eb002596e3761d88de4aeea3158692b82fb6307"
+        },
+        {
+            "type": "WEB",
+            "url": "https://ffmpeg.org/security.html"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "ffmpeg -- multiple vulnerabilities"
+}

@@ -1,0 +1,55 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "grafana"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "introduced": "11.6.0"
+                        },
+                        {
+                            "fixed": "11.6.0+security-01"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "cite": [
+            "https://grafana.com/blog/2025/04/22/grafana-security-release-medium-and-high-severity-fixes-for-cve-2025-3260-cve-2025-2703-cve-2025-3454/"
+        ],
+        "discovery": "2025-04-04T00:00:00Z",
+        "references": {
+            "cvename": [
+                "CVE-2025-3260"
+            ]
+        },
+        "vid": "6adfda5a-2118-11f0-8ca6-6c3be5272acd"
+    },
+    "details": "Grafana Labs reports:\n\n> During the development of a new feature in Grafana 11.6.x, a security\n> vulnerability was introduced that allows for Viewers and Editors to\n> bypass dashboard-specific permissions. As a result, users with the\n> Viewer role could view all the dashboards within their org and users\n> with the Editor role could view, edit, and delete all the dashboards\n> in their org.\n>\n> *Note: Organization isolation boundaries still apply, which means\n> viewers and editors in one organization cannot view or edit dashboards\n> in another org. Also this vulnerability does not allow users to query\n> data via data sources they don't have access to.*\n>\n> The CVSS score for this vulnerability is [8.3\n> HIGH](https://nvd.nist.gov/vuln-metrics/cvss/v3-calculator?vector=AV:N/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:L&version=3.1).\n",
+    "id": "FreeBSD-2025-0122",
+    "modified": "2025-04-24T00:00:00Z",
+    "published": "2025-04-24T00:00:00Z",
+    "references": [
+        {
+            "type": "REPORT",
+            "url": "https://grafana.com/blog/2025/04/22/grafana-security-release-medium-and-high-severity-fixes-for-cve-2025-3260-cve-2025-2703-cve-2025-3454/"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2025-3260"
+        },
+        {
+            "type": "WEB",
+            "url": "https://grafana.com/blog/2025/04/22/grafana-security-release-medium-and-high-severity-fixes-for-cve-2025-3260-cve-2025-2703-cve-2025-3454/"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "Grafana -- Bypass Viewer and Editor permissions"
+}

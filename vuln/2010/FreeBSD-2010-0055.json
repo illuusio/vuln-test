@@ -1,0 +1,55 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "sudo"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "1.7.2.7"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "cite": [
+            "http://sudo.ws/sudo/alerts/secure_path.html"
+        ],
+        "discovery": "2010-06-02T00:00:00Z",
+        "references": {
+            "cvename": [
+                "CVE-2010-1646"
+            ]
+        },
+        "vid": "d42e5b66-6ea0-11df-9c8d-00e0815b8da8"
+    },
+    "details": "Todd Miller reports:\n\n> Most versions of the C library function getenv() return the first\n> instance of an environment variable to the caller. However, some\n> programs, notably the GNU Bourne Again SHell (bash), do their own\n> environment parsing and may choose the last instance of a variable\n> rather than the first one.\n>\n> An attacker may manipulate the environment of the process that\n> executes Sudo such that a second PATH variable is present. When Sudo\n> runs a bash script, it is this second PATH variable that is used by\n> bash, regardless of whether or not Sudo has overwritten the first\n> instance of PATH. This may allow an attacker to subvert the program\n> being run under Sudo and execute commands he/she would not otherwise\n> be allowed to run.\n",
+    "id": "FreeBSD-2010-0055",
+    "modified": "2010-06-02T00:00:00Z",
+    "published": "2010-06-02T00:00:00Z",
+    "references": [
+        {
+            "type": "REPORT",
+            "url": "http://sudo.ws/sudo/alerts/secure_path.html"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2010-1646"
+        },
+        {
+            "type": "WEB",
+            "url": "http://sudo.ws/sudo/alerts/secure_path.html"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "sudo -- Secure path vulnerability"
+}

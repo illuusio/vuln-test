@@ -1,0 +1,46 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "bro"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "2.6.3"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "cite": [
+            "https://raw.githubusercontent.com/zeek/zeek/1d874e5548a58b3b8fd2a342fe4aa0944e779809/NEWS"
+        ],
+        "discovery": "2019-06-22T00:00:00Z",
+        "vid": "f56669f5-d799-4ff5-9174-64a6d571c451"
+    },
+    "details": "Jon Siwek of Corelight reports:\n\n> This is a security patch release to address potential Denial of\n> Service vulnerabilities:\n>\n> - Null pointer dereference in the RPC analysis code. RPC analyzers\n>   (e.g. MOUNT or NFS) are not enabled in the default configuration.\n> - Signed integer overflow in BinPAC-generated parser code. The result\n>   of this is Undefined Behavior with respect to the array bounds\n>   checking conditions that BinPAC generates, so it\\'s unpredictable\n>   what an optimizing compiler may actually do under the assumption\n>   that signed integer overlows should never happen. The specific\n>   symptom which lead to finding this issue was with the PE analyzer\n>   causing out-of-memory crashes due to large allocations that were\n>   otherwise prevented when the array bounds checking logic was changed\n>   to prevent any possible signed integer overlow.\n",
+    "id": "FreeBSD-2019-0173",
+    "modified": "2019-08-09T00:00:00Z",
+    "published": "2019-08-09T00:00:00Z",
+    "references": [
+        {
+            "type": "REPORT",
+            "url": "https://raw.githubusercontent.com/zeek/zeek/1d874e5548a58b3b8fd2a342fe4aa0944e779809/NEWS"
+        },
+        {
+            "type": "WEB",
+            "url": "https://raw.githubusercontent.com/zeek/zeek/1d874e5548a58b3b8fd2a342fe4aa0944e779809/NEWS"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "bro -- Null pointer dereference and Signed integer overflow"
+}

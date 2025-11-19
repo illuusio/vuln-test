@@ -1,0 +1,60 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "ipython"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "3.2.0"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "cite": [
+            "http://seclists.org/oss-sec/2015/q2/779"
+        ],
+        "discovery": "2015-06-22T00:00:00Z",
+        "references": {
+            "cvename": [
+                "CVE-2015-4706",
+                "CVE-2015-4707"
+            ]
+        },
+        "vid": "a4460ac7-192c-11e5-9c01-bcaec55be5e5"
+    },
+    "details": "Kyle Kelley reports:\n\n> Summary: JSON error responses from the IPython notebook REST API\n> contained URL parameters and were incorrectly reported as text/html\n> instead of application/json. The error messages included some of these\n> URL params, resulting in a cross site scripting attack. This affects\n> users on Mozilla Firefox but not Chromium/Google Chrome.\n>\n> API paths with issues:\n>\n> - /api/contents (3.0-3.1)\n> - /api/notebooks (2.0-2.4, 3.0-3.1)\n",
+    "id": "FreeBSD-2015-0144",
+    "modified": "2015-06-22T00:00:00Z",
+    "published": "2015-06-22T00:00:00Z",
+    "references": [
+        {
+            "type": "REPORT",
+            "url": "http://seclists.org/oss-sec/2015/q2/779"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2015-4706"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2015-4707"
+        },
+        {
+            "type": "WEB",
+            "url": "http://seclists.org/oss-sec/2015/q2/779"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "devel/ipython -- remote execution"
+}

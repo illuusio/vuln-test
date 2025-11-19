@@ -1,0 +1,87 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "xen-kernel"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "introduced": "3.4.0"
+                        },
+                        {
+                            "last_affected": "3.4.0"
+                        },
+                        {
+                            "fixed": "3.4.0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                },
+                {
+                    "events": [
+                        {
+                            "introduced": "3.4.1"
+                        },
+                        {
+                            "last_affected": "3.4.1"
+                        },
+                        {
+                            "fixed": "3.4.1"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                },
+                {
+                    "events": [
+                        {
+                            "introduced": "4.1"
+                        },
+                        {
+                            "fixed": "4.5.2_2"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ],
+            "versions": [
+                "3.4.0",
+                "3.4.1"
+            ]
+        }
+    ],
+    "database_specific": {
+        "cite": [
+            "http://xenbits.xen.org/xsa/advisory-167.html"
+        ],
+        "discovery": "2016-01-20T00:00:00Z",
+        "references": {
+            "cvename": [
+                "CVE-2016-1570"
+            ]
+        },
+        "vid": "7ed7c36f-ddaf-11e5-b2bd-002590263bf5"
+    },
+    "details": "The Xen Project reports:\n\n> The PV superpage functionality lacks certain validity checks on data\n> being passed to the hypervisor by guests. This is the case for the\n> page identifier (MFN) passed to MMUEXT_MARK_SUPER and\n> MMUEXT_UNMARK_SUPER sub-ops of the HYPERVISOR_mmuext_op hypercall as\n> well as for various forms of page table updates.\n>\n> Use of the feature, which is disabled by default, may have unknown\n> effects, ranging from information leaks through Denial of Service to\n> privilege escalation.\n",
+    "id": "FreeBSD-2016-0119",
+    "modified": "2016-02-28T00:00:00Z",
+    "published": "2016-02-28T00:00:00Z",
+    "references": [
+        {
+            "type": "REPORT",
+            "url": "http://xenbits.xen.org/xsa/advisory-167.html"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2016-1570"
+        },
+        {
+            "type": "WEB",
+            "url": "http://xenbits.xen.org/xsa/advisory-167.html"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "xen-kernel -- PV superpage functionality missing sanity checks"
+}

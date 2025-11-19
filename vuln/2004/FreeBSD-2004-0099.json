@@ -1,0 +1,58 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "xorg-clients"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "introduced": "6.7.0"
+                        },
+                        {
+                            "last_affected": "6.7.0"
+                        },
+                        {
+                            "fixed": "6.7.0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ],
+            "versions": [
+                "6.7.0"
+            ]
+        }
+    ],
+    "database_specific": {
+        "discovery": "2004-05-19T00:00:00Z",
+        "references": {
+            "cvename": [
+                "CVE-2004-0419"
+            ]
+        },
+        "vid": "ff00f2ce-c54c-11d8-b708-00061bc2ad93"
+    },
+    "details": "When the IPv6 code was added to xdm a critical test to disable xdmcp was\naccidentally removed. This caused xdm to create the chooser socket\nregardless if DisplayManager.requestPort was disabled in xdm-config or\nnot.\n",
+    "id": "FreeBSD-2004-0099",
+    "modified": "2004-06-28T00:00:00Z",
+    "published": "2004-06-28T00:00:00Z",
+    "references": [
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2004-0419"
+        },
+        {
+            "type": "WEB",
+            "url": "http://bugs.xfree86.org/show_bug.cgi?id=1376"
+        },
+        {
+            "type": "WEB",
+            "url": "https://bugzilla.redhat.com/bugzilla/show_bug.cgi?id=124900"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "XFree86 opens a chooserFd TCP socket even when DisplayManager.requestPort is 0"
+}

@@ -1,0 +1,55 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "ipsec-tools"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "0.8.2_3"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "cite": [
+            "https://gnats.netbsd.org/cgi-bin/query-pr-single.pl?number=51682"
+        ],
+        "discovery": "2016-12-02T00:00:00Z",
+        "references": {
+            "cvename": [
+                "CVE-2016-10396"
+            ]
+        },
+        "vid": "974a6d32-3fda-11e8-aea4-001b216d295b"
+    },
+    "details": "Robert Foggia via NetBSD GNATS reports:\n\n> The ipsec-tools racoon daemon contains a remotely exploitable\n> computational complexity attack when parsing and storing isakmp\n> fragments. The implementation permits a remote attacker to exhaust\n> computational resources on the remote endpoint by repeatedly sending\n> isakmp fragment packets in a particular order such that the worst-case\n> computational complexity is realized in the algorithm utilized to\n> determine if reassembly of the fragments can take place.\n",
+    "id": "FreeBSD-2018-0107",
+    "modified": "2018-04-14T00:00:00Z",
+    "published": "2018-04-14T00:00:00Z",
+    "references": [
+        {
+            "type": "REPORT",
+            "url": "https://gnats.netbsd.org/cgi-bin/query-pr-single.pl?number=51682"
+        },
+        {
+            "type": "WEB",
+            "url": "https://gnats.netbsd.org/cgi-bin/query-pr-single.pl?number=51682"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2016-10396"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "ipsec-tools -- remotely exploitable computational-complexity attack"
+}

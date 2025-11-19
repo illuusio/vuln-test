@@ -1,0 +1,55 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "moinmoin"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "introduced": "1.9"
+                        },
+                        {
+                            "fixed": "1.9.4_1"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "cite": [
+            "http://hg.moinmo.in/moin/1.9/rev/7b9f39289e16"
+        ],
+        "discovery": "2012-09-03T00:00:00Z",
+        "references": {
+            "cvename": [
+                "CVE-2012-4404"
+            ]
+        },
+        "vid": "4f99e2ef-f725-11e1-8bd8-0022156e8794"
+    },
+    "details": "MoinMoin developers report:\n\n> If you have group NAMES containing \\\"All\\\" or \\\"Known\\\" or\n> \\\"Trusted\\\", they behaved wrong until now (they erroneously included\n> All/Known/Trusted users even if you did not list them as members), but\n> will start working correctly with this changeset.\n>\n> E.g. AllFriendsGroup:\n>\n> - JoeDoe\n>\n> AllFriendsGroup will now (correctly) include only JoeDoe. It\n> (erroneously) contained all users (including JoeDoe) before.\n>\n> E.g. MyTrustedFriendsGroup:\n>\n> - JoeDoe\n>\n> MyTrustedFriendsGroup will now (correctly) include only JoeDoe. It\n> (erroneously) contained all trusted users and JoeDoe before.\n",
+    "id": "FreeBSD-2012-0169",
+    "modified": "2012-09-11T00:00:00Z",
+    "published": "2012-09-05T00:00:00Z",
+    "references": [
+        {
+            "type": "REPORT",
+            "url": "http://hg.moinmo.in/moin/1.9/rev/7b9f39289e16"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2012-4404"
+        },
+        {
+            "type": "WEB",
+            "url": "http://hg.moinmo.in/moin/1.9/rev/7b9f39289e16"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "moinmoin -- wrong processing of group membership"
+}

@@ -1,0 +1,82 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "FreeBSD"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "introduced": "13.1"
+                        },
+                        {
+                            "fixed": "13.1_4"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                },
+                {
+                    "events": [
+                        {
+                            "introduced": "12.3"
+                        },
+                        {
+                            "fixed": "12.3_9"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "discovery": "2022-11-15T00:00:00Z",
+        "references": {
+            "cvename": [
+                "CVE-2019-14870",
+                "CVE-2021-44758",
+                "CVE-2022-3437",
+                "CVE-2022-42898",
+                "CVE-2022-44640"
+            ],
+            "freebsdsa": [
+                "SA-22:14.heimdal"
+            ]
+        },
+        "vid": "97c1b0f7-47b9-11ee-8e38-002590c1f29c"
+    },
+    "details": "# Problem Description:\n\nMultiple security vulnerabilities have been discovered in the Heimdal\nimplementation of the Kerberos 5 network authentication protocols and\nKDC.\n\n- CVE-2022-42898 PAC parse integer overflows\n- CVE-2022-3437 Overflows and non-constant time leaks in DES{,3} and\n  arcfour\n- CVE-2021-44758 NULL dereference DoS in SPNEGO acceptors\n- CVE-2022-44640 Heimdal KDC: invalid free in ASN.1 codec\n- CVE-2019-14870 Validate client attributes in protocol-transition\n- CVE-2019-14870 Apply forwardable policy in protocol-transition\n- CVE-2019-14870 Always lookup impersonate client in DB\n\n# Impact:\n\nA malicious actor with control of the network between a client and a\nservice using Kerberos for authentication can impersonate either the\nclient or the service, enabling a man-in-the-middle (MITM) attack\ncircumventing mutual authentication.\n\nNote that, while CVE-2022-44640 is a severe vulnerability, possibly\nenabling remote code execution on other platforms, the version of\nHeimdal included with the FreeBSD base system cannot be exploited in\nthis way on FreeBSD.\n",
+    "id": "FreeBSD-2023-0237",
+    "modified": "2023-08-31T00:00:00Z",
+    "published": "2023-08-31T00:00:00Z",
+    "references": [
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2019-14870"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2021-44758"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2022-3437"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2022-42898"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2022-44640"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://www.freebsd.org/security/advisories/FreeBSD-SA-22:14.heimdal.asc"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "FreeBSD -- Multiple vulnerabilities in Heimdal"
+}

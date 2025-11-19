@@ -1,0 +1,62 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "xen-kernel"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "4.7.1"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "cite": [
+            "https://xenbits.xen.org/xsa/advisory-190.html"
+        ],
+        "discovery": "2016-10-04T00:00:00Z",
+        "references": {
+            "cvename": [
+                "CVE-2016-7777"
+            ],
+            "freebsdpr": [
+                "ports/214936"
+            ]
+        },
+        "vid": "4d7cf654-ba4d-11e6-ae1b-002590263bf5"
+    },
+    "details": "The Xen Project reports:\n\n> Instructions touching FPU, MMX, or XMM registers are required to raise\n> a Device Not Available Exception (#NM) when either CR0.EM or CR0.TS\n> are set. (Their AVX or AVX-512 extensions would consider only CR0.TS.)\n> While during normal operation this is ensured by the hardware, if a\n> guest modifies instructions while the hypervisor is preparing to\n> emulate them, the #NM delivery could be missed.\n>\n> Guest code in one task may thus (unintentionally or maliciously) read\n> or modify register state belonging to another task in the same VM.\n>\n> A malicious unprivileged guest user may be able to obtain or corrupt\n> sensitive information (including cryptographic material) in other\n> programs in the same guest.\n",
+    "id": "FreeBSD-2016-0451",
+    "modified": "2016-12-04T00:00:00Z",
+    "published": "2016-12-04T00:00:00Z",
+    "references": [
+        {
+            "type": "REPORT",
+            "url": "https://xenbits.xen.org/xsa/advisory-190.html"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2016-7777"
+        },
+        {
+            "type": "REPORT",
+            "url": "https://bugs.freebsd.org/bugzilla/show_bug.cgi?id=214936"
+        },
+        {
+            "type": "WEB",
+            "url": "https://xenbits.xen.org/xsa/advisory-190.html"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "xen-kernel -- CR0.TS and CR0.EM not always honored for x86 HVM guests"
+}

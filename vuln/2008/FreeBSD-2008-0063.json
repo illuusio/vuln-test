@@ -1,0 +1,55 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "spamdyke"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "3.1.8"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "cite": [
+            "http://www.spamdyke.org/documentation/Changelog.txt"
+        ],
+        "discovery": "2008-05-21T00:00:00Z",
+        "references": {
+            "cvename": [
+                "CVE-2008-2784"
+            ]
+        },
+        "vid": "555ac165-2bee-11dd-bbdc-00e0815b8da8"
+    },
+    "details": "Spamdyke Team reports:\n\n> Fixed smtp_filter() to reject the DATA command if no valid recipients\n> have been specified. Otherwise, a specific scenario could result in\n> every spamdyke installation being used as an open relay. If the remote\n> server connects and gives one or more recipients that are rejected\n> (for relaying or blacklisting), then gives the DATA command, spamdyke\n> will ignore all other commands, assuming that message data is being\n> transmitted. However, because all of the recipients were rejected,\n> qmail will reject the DATA command. From that point on, the remote\n> server can give as many recipients as it likes and spamdyke will\n> ignore them all \\-- they will not be filtered at all. After that, the\n> remote server can give the DATA command and send the actual message\n> data. Because spamdyke is controlling relaying, the RELAYCLIENT\n> environment variable is set and qmail won\\'t check for relaying\n> either. Thanks to Mirko Buffoni for reporting this one.\n",
+    "id": "FreeBSD-2008-0063",
+    "modified": "2010-05-12T00:00:00Z",
+    "published": "2008-05-27T00:00:00Z",
+    "references": [
+        {
+            "type": "REPORT",
+            "url": "http://www.spamdyke.org/documentation/Changelog.txt"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2008-2784"
+        },
+        {
+            "type": "WEB",
+            "url": "http://www.spamdyke.org/documentation/Changelog.txt"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "spamdyke -- open relay"
+}

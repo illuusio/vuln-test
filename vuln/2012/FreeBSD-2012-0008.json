@@ -1,0 +1,80 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "openssl"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "1.0.0_8"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "cite": [
+            "http://openssl.org/news/secadv_20120104.txt"
+        ],
+        "discovery": "2012-01-04T00:00:00Z",
+        "references": {
+            "cvename": [
+                "CVE-2011-4108",
+                "CVE-2011-4109",
+                "CVE-2011-4576",
+                "CVE-2011-4577",
+                "CVE-2011-4619",
+                "CVE-2012-0027"
+            ]
+        },
+        "vid": "78cc8a46-3e56-11e1-89b4-001ec9578670"
+    },
+    "details": "The OpenSSL Team reports:\n\n> 6 security flaws have been fixed in OpenSSL 1.0.0f:\n>\n> If X509_V_FLAG_POLICY_CHECK is set in OpenSSL 0.9.8, then a policy\n> check failure can lead to a double-free.\n>\n> OpenSSL prior to 1.0.0f and 0.9.8s failed to clear the bytes used as\n> block cipher padding in SSL 3.0 records. As a result, in each record,\n> up to 15 bytes of uninitialized memory may be sent, encrypted, to the\n> SSL peer. This could include sensitive contents of previously freed\n> memory.\n>\n> RFC 3779 data can be included in certificates, and if it is malformed,\n> may trigger an assertion failure. This could be used in a\n> denial-of-service attack.\n>\n> Support for handshake restarts for server gated cryptograpy (SGC) can\n> be used in a denial-of-service attack.\n>\n> A malicious TLS client can send an invalid set of GOST parameters\n> which will cause the server to crash due to lack of error checking.\n> This could be used in a denial-of-service attack.\n",
+    "id": "FreeBSD-2012-0008",
+    "modified": "2012-01-14T00:00:00Z",
+    "published": "2012-01-14T00:00:00Z",
+    "references": [
+        {
+            "type": "REPORT",
+            "url": "http://openssl.org/news/secadv_20120104.txt"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2011-4108"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2011-4109"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2011-4576"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2011-4577"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2011-4619"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2012-0027"
+        },
+        {
+            "type": "WEB",
+            "url": "http://openssl.org/news/secadv_20120104.txt"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "OpenSSL -- multiple vulnerabilities"
+}

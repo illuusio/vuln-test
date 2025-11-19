@@ -1,0 +1,73 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:kernel",
+                "name": "FreeBSD-kernel"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "introduced": "14.2"
+                        },
+                        {
+                            "fixed": "14.2_1"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                },
+                {
+                    "events": [
+                        {
+                            "introduced": "14.1"
+                        },
+                        {
+                            "fixed": "14.1_7"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                },
+                {
+                    "events": [
+                        {
+                            "introduced": "13.4"
+                        },
+                        {
+                            "fixed": "13.4_3"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "discovery": "2025-01-29T00:00:00Z",
+        "references": {
+            "cvename": [
+                "CVE-2025-0373"
+            ],
+            "freebsdsa": [
+                "SA-25:02.fs"
+            ]
+        },
+        "vid": "ab0cbe3f-debc-11ef-87ba-002590c1f29c"
+    },
+    "details": "# Problem Description:\n\nIn order to export a file system via NFS, the file system must define a\nfile system identifier (FID) for all exported files. Each FreeBSD file\nsystem implements operations to translate between FIDs and vnodes, the\nkernel\\'s in-memory representation of files. These operations are\nVOP_VPTOFH(9) and VFS_FHTOVP(9).\n\nOn 64-bit systems, the implementation of VOP_VPTOFH() in the cd9660,\ntarfs and ext2fs filesystems overflows the destination FID buffer by 4\nbytes, a stack buffer overflow.\n\n# Impact:\n\nA NFS server that exports a cd9660, tarfs, or ext2fs file system can be\nmade to panic by mounting and accessing the export with an NFS client.\nFurther exploitation (e.g., bypassing file permission checking or remote\nkernel code execution) is potentially possible, though this has not been\ndemonstrated. In particular, release kernels are compiled with stack\nprotection enabled, and some instances of the overflow are caught by\nthis mechanism, causing a panic.\n",
+    "id": "FreeBSD-2025-0026",
+    "modified": "2025-01-30T00:00:00Z",
+    "published": "2025-01-30T00:00:00Z",
+    "references": [
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2025-0373"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://www.freebsd.org/security/advisories/FreeBSD-SA-25:02.fs.asc"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "FreeBSD -- Buffer overflow in some filesystems via NFS"
+}

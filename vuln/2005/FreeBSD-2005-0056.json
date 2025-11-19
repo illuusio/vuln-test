@@ -1,0 +1,55 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "mod_dosevasive20"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "1.10"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "cite": [
+            "http://security.lss.hr/en/index.php?page=details&ID=LSS-2005-01-01"
+        ],
+        "discovery": "2005-01-04T00:00:00Z",
+        "references": {
+            "freebsdpr": [
+                "ports/77513"
+            ]
+        },
+        "vid": "88ff90f2-6e43-11d9-8c87-000a95bc6fae"
+    },
+    "details": "An LSS Security Advisory reports:\n\n> When a denial of service attack is detected, mod_dosevasive will,\n> among other things, create a temporary file which it will use to trace\n> actions from the offensive IP address. This file is insecurely created\n> in /tmp and it\\'s name is easily predictable.\n>\n> It is then easy for an attacker to create arbitrary files in any\n> directory that the user under which apache runs has privileges to\n> write.\n>\n> *\\[\\...\\]* once the target file is opened, there is a race attack\n> (although difficult to exploit) which can lead to mod_dosevasive\n> overwriting any file that the user under which apache runs has\n> privileges to write.\n",
+    "id": "FreeBSD-2005-0056",
+    "modified": "2005-02-22T00:00:00Z",
+    "published": "2005-01-24T00:00:00Z",
+    "references": [
+        {
+            "type": "REPORT",
+            "url": "http://security.lss.hr/en/index.php?page=details&ID=LSS-2005-01-01"
+        },
+        {
+            "type": "REPORT",
+            "url": "https://bugs.freebsd.org/bugzilla/show_bug.cgi?id=77513"
+        },
+        {
+            "type": "WEB",
+            "url": "http://security.lss.hr/en/index.php?page=details&ID=LSS-2005-01-01"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "mod_dosevasive -- insecure temporary file creation"
+}

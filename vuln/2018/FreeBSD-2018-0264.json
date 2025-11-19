@@ -1,0 +1,77 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "curl"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "introduced": "7.14.1"
+                        },
+                        {
+                            "fixed": "7.60.0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "cite": [
+            "https://curl.haxx.se/docs/security.html"
+        ],
+        "discovery": "2018-10-31T00:00:00Z",
+        "references": {
+            "cvename": [
+                "CVE-2018-16839",
+                "CVE-2018-16840",
+                "CVE-2018-16842"
+            ]
+        },
+        "vid": "e0ab1773-07c1-46c6-9170-4c5e81c00927"
+    },
+    "details": "curl security problems:\n\n> CVE-2018-16839: SASL password overflow via integer overflow\n>\n> libcurl contains a buffer overrun in the SASL authentication code.\n>\n> The internal function Curl_auth_create_plain_message fails to\n> correctly verify that the passed in lengths for name and password\n> aren\\'t too long, then calculates a buffer size to allocate.\n>\n> On systems with a 32 bit size_t, the math to calculate the buffer size\n> triggers an integer overflow when the user name length exceeds 2GB\n> (2\\^31 bytes). This integer overflow usually causes a very small\n> buffer to actually get allocated instead of the intended very huge\n> one, making the use of that buffer end up in a heap buffer overflow.\n>\n> This bug is very similar to CVE-2017-14618.\n>\n> It affects curl 7.33.0 to 7.61.1.\n>\n> CVE-2018-16840: use-after-free in handle close\n>\n> libcurl contains a heap use-after-free flaw in code related to closing\n> an easy handle.\n>\n> When closing and cleaning up an \\\"easy\\\" handle in the Curl_close()\n> function, the library code first frees a struct (without nulling the\n> pointer) and might then subsequently erroneously write to a struct\n> field within that already freed struct.\n>\n> It affects curl 7.59.0 to 7.61.1.\n>\n> CVE-2018-16842: warning message out-of-buffer read\n>\n> curl contains a heap out of buffer read vulnerability.\n>\n> The command line tool has a generic function for displaying warning\n> and informational messages to stderr for various situations. For\n> example if an unknown command line argument is used, or passed to it\n> in a \\\"config\\\" file.\n>\n> This display function formats the output to wrap at 80 columns. The\n> wrap logic is however flawed, so if a single word in the message is\n> itself longer than 80 bytes the buffer arithmetic calculates the\n> remainder wrong and will end up reading behind the end of the buffer.\n> This could lead to information disclosure or crash.\n>\n> This vulnerability could lead to a security issue if used in this or\n> similar situations:\n>\n> 1\\. a server somewhere uses the curl command line to run something\n>\n> 2\\. if it fails, it shows stderr to the user\n>\n> 3\\. the server takes user input for parts of its command line input\n>\n> 4\\. user provides something overly long that triggers this crash\n>\n> 5\\. the stderr output may now contain user memory contents that\n> wasn\\'t meant to be available\n>\n> It affects curl 7.14.1 to 7.61.1.\n",
+    "id": "FreeBSD-2018-0264",
+    "modified": "2018-11-01T00:00:00Z",
+    "published": "2018-11-01T00:00:00Z",
+    "references": [
+        {
+            "type": "REPORT",
+            "url": "https://curl.haxx.se/docs/security.html"
+        },
+        {
+            "type": "WEB",
+            "url": "https://curl.haxx.se/docs/security.html"
+        },
+        {
+            "type": "WEB",
+            "url": "https://curl.haxx.se/docs/CVE-2018-16839.html"
+        },
+        {
+            "type": "WEB",
+            "url": "https://curl.haxx.se/docs/CVE-2018-16840.html"
+        },
+        {
+            "type": "WEB",
+            "url": "https://curl.haxx.se/docs/CVE-2018-16842.html"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2018-16839"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2018-16840"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2018-16842"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "curl -- multiple vulnerabilities"
+}

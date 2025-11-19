@@ -1,0 +1,73 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:kernel",
+                "name": "FreeBSD-kernel"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "introduced": "14.1"
+                        },
+                        {
+                            "fixed": "14.1_3"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                },
+                {
+                    "events": [
+                        {
+                            "introduced": "14.0"
+                        },
+                        {
+                            "fixed": "14.0_9"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                },
+                {
+                    "events": [
+                        {
+                            "introduced": "13.3"
+                        },
+                        {
+                            "fixed": "13.3_5"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "discovery": "2024-08-07T00:00:00Z",
+        "references": {
+            "cvename": [
+                "CVE-2024-6759"
+            ],
+            "freebsdsa": [
+                "SA-24:07.nfsclient"
+            ]
+        },
+        "vid": "c02b8db5-771b-11ef-9a62-002590c1f29c"
+    },
+    "details": "# Problem Description:\n\nWhen mounting a remote filesystem using NFS, the kernel did not sanitize\nremotely provided filenames for the path separator character, \\\"/\\\".\nThis allows readdir(3) and related functions to return filesystem\nentries with names containing additional path components.\n\n# Impact:\n\nThe lack of validation described above gives rise to a confused deputy\nproblem. For example, a program copying files from an NFS mount could be\ntricked into copying from outside the intended source directory, and/or\nto a location outside the intended destination directory.\n",
+    "id": "FreeBSD-2024-0236",
+    "modified": "2024-09-20T00:00:00Z",
+    "published": "2024-09-20T00:00:00Z",
+    "references": [
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2024-6759"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://www.freebsd.org/security/advisories/FreeBSD-SA-24:07.nfsclient.asc"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "FreeBSD -- NFS client accepts file names containing path separators"
+}

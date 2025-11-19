@@ -1,0 +1,95 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "FreeBSD"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "introduced": "5.3"
+                        },
+                        {
+                            "fixed": "5.3_30"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                },
+                {
+                    "events": [
+                        {
+                            "introduced": "5.4"
+                        },
+                        {
+                            "fixed": "5.4_15"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                },
+                {
+                    "events": [
+                        {
+                            "introduced": "5.5"
+                        },
+                        {
+                            "fixed": "5.5_1"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                },
+                {
+                    "events": [
+                        {
+                            "introduced": "6.0"
+                        },
+                        {
+                            "fixed": "6.0_8"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                },
+                {
+                    "events": [
+                        {
+                            "introduced": "6.1"
+                        },
+                        {
+                            "fixed": "6.1_1"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "discovery": "2006-05-31T00:00:00Z",
+        "references": {
+            "cvename": [
+                "CVE-2006-2655"
+            ],
+            "freebsdsa": [
+                "SA-06:15.ypserv"
+            ]
+        },
+        "vid": "0ac1aace-f7b9-11da-9156-000e0c2e438a"
+    },
+    "details": "# Problem Description\n\nThere are two documented methods of restricting access to NIS maps\nthrough ypserv(8): through the use of the /var/yp/securenets file, and\nthrough the /etc/hosts.allow file. While both mechanisms are implemented\nin the server, a change in the build process caused the \\\"securenets\\\"\naccess restrictions to be inadvertantly disabled.\n\n# Impact\n\nypserv(8) will not load or process any of the networks or hosts\nspecified in the /var/yp/securenets file, rendering those access\ncontrols ineffective.\n\n# Workaround\n\nOne possible workaround is to use /etc/hosts.allow for access control,\nas shown by examples in that file.\n\nAnother workaround is to use a firewall (e.g., ipfw(4), ipf(4), or\npf(4)) to limit access to RPC functions from untrusted systems or\nnetworks, but due to the complexities of RPC, it might be difficult to\ncreate a set of firewall rules which accomplish this without blocking\nall access to the machine in question.\n",
+    "id": "FreeBSD-2006-0111",
+    "modified": "2006-06-09T00:00:00Z",
+    "published": "2006-06-09T00:00:00Z",
+    "references": [
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2006-2655"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://www.freebsd.org/security/advisories/FreeBSD-SA-06:15.ypserv.asc"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "ypserv -- Inoperative access controls in ypserv"
+}

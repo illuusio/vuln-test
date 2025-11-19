@@ -1,0 +1,63 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "glpi"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "9.4.6,1"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "cite": [
+            "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2020-11036"
+        ],
+        "discovery": "2020-03-30T00:00:00Z",
+        "references": {
+            "cvename": [
+                "CVE-2020-11036"
+            ]
+        },
+        "vid": "27a230a2-3b11-11eb-af2a-080027dbe4b7"
+    },
+    "details": "MITRE Corporation reports:\n\n> In GLPI before version 9.4.6 there are multiple related stored XSS\n> vulnerabilities. The package is vulnerable to Stored XSS in the\n> comments of items in the Knowledge base. Adding a comment with content\n> \\\"alert(1)\\\" reproduces the attack. This can be exploited by a user\n> with administrator privileges in the User-Agent field. It can also be\n> exploited by an outside party through the following steps: 1. Create a\n> user with the surname \\`\\\" onmouseover=\\\"alert(document.cookie)\\` and\n> an empty first name. 2. With this user, create a ticket 3. As an\n> administrator (or other privileged user) open the created ticket 4. On\n> the \\\"last update\\\" field, put your mouse on the name of the user 5.\n> The XSS fires This is fixed in version 9.4.6.\n",
+    "id": "FreeBSD-2020-0313",
+    "modified": "2024-04-25T00:00:00Z",
+    "published": "2020-03-30T00:00:00Z",
+    "references": [
+        {
+            "type": "REPORT",
+            "url": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2020-11036"
+        },
+        {
+            "type": "WEB",
+            "url": "https://github.com/glpi-project/glpi/security/advisories/GHSA-3g3h-rwhr-7385"
+        },
+        {
+            "type": "WEB",
+            "url": "https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/5WQMONZRWLWOXMHMYWR7A5Q5JJERPMVC/"
+        },
+        {
+            "type": "WEB",
+            "url": "https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/Q4BG2UTINBVV7MTJRXKBQ26GV2UINA6L/"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2020-11036"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "glpi -- multiple related stored XSS vulnerabilities"
+}

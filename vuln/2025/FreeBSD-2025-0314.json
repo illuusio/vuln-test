@@ -1,0 +1,150 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "redis"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "introduced": "8.2.0"
+                        },
+                        {
+                            "fixed": "8.2.2"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        },
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "redis80"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "introduced": "8.0.0"
+                        },
+                        {
+                            "fixed": "8.0.4"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        },
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "redis74"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "introduced": "7.4.0"
+                        },
+                        {
+                            "fixed": "7.4.6"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        },
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "redis72"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "introduced": "7.2.0"
+                        },
+                        {
+                            "fixed": "7.2.11"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        },
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "redis62"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "introduced": "6.2.0"
+                        },
+                        {
+                            "fixed": "6.2.20"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        },
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "valkey"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "8.1.4"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "cite": [
+            "https://github.com/redis/redis/security/advisories/GHSA-4c68-q8q8-3g4f"
+        ],
+        "discovery": "2025-10-03T00:00:00Z",
+        "references": {
+            "cvename": [
+                "CVE-2025-46819"
+            ]
+        },
+        "vid": "0af2f18e-a119-11f0-9446-f02f7497ecda"
+    },
+    "details": "redis reports:\n\n> An authenticated user may use a specially crafted LUA script to read\n> out-of-bound data or crash the server and subsequent denial of\n> service. The problem exists in all versions of Redis with Lua\n> scripting An additional workaround to mitigate the problem without\n> patching the redis-server executable is to prevent users from\n> executing Lua scripts. This can be done using ACL to block a script by\n> restricting both the EVAL and FUNCTION command families.\n",
+    "id": "FreeBSD-2025-0314",
+    "modified": "2025-10-04T00:00:00Z",
+    "published": "2025-10-04T00:00:00Z",
+    "references": [
+        {
+            "type": "REPORT",
+            "url": "https://github.com/redis/redis/security/advisories/GHSA-4c68-q8q8-3g4f"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2025-46819"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://nvd.nist.gov/vuln/detail/CVE-2025-46819"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "redis,valkey -- Out of bound read due to a bug in LUA"
+}

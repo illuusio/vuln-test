@@ -1,0 +1,55 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "hive"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "2.0.0"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "cite": [
+            "http://mail-archives.apache.org/mod_mbox/hive-user/201601.mbox/%3C20160128205008.2154F185EB%40minotaur.apache.org%3E"
+        ],
+        "discovery": "2016-01-28T00:00:00Z",
+        "references": {
+            "cvename": [
+                "CVE-2015-7521"
+            ]
+        },
+        "vid": "a5c204b5-4153-11e6-8dfe-002590263bf5"
+    },
+    "details": "Sushanth Sowmyan reports:\n\n> Some partition-level operations exist that do not explicitly also\n> authorize privileges of the parent table. This can lead to issues when\n> the parent table would have denied the operation, but no denial occurs\n> because the partition-level privilege is not checked by the\n> authorization framework, which defines authorization entities only\n> from the table level upwards.\n",
+    "id": "FreeBSD-2016-0260",
+    "modified": "2016-07-03T00:00:00Z",
+    "published": "2016-07-03T00:00:00Z",
+    "references": [
+        {
+            "type": "REPORT",
+            "url": "http://mail-archives.apache.org/mod_mbox/hive-user/201601.mbox/%3C20160128205008.2154F185EB%40minotaur.apache.org%3E"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2015-7521"
+        },
+        {
+            "type": "WEB",
+            "url": "http://mail-archives.apache.org/mod_mbox/hive-user/201601.mbox/%3C20160128205008.2154F185EB%40minotaur.apache.org%3E"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "hive -- authorization logic vulnerability"
+}

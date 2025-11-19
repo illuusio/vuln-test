@@ -1,0 +1,67 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "joomla"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "1.0.13"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "discovery": "2007-07-30T00:00:00Z",
+        "references": {
+            "cvename": [
+                "CVE-2007-4188",
+                "CVE-2007-4189",
+                "CVE-2007-4190",
+                "CVE-2007-5577"
+            ]
+        },
+        "vid": "4872d9a7-4128-11dc-bdb0-0016179b2dd5"
+    },
+    "details": "A Secunia Advisory reports:\n\njoomla can be exploited to conduct session fixation attacks, cross-site\nscripting attacks or HTTP response splitting attacks.\n\nCertain unspecified input passed in com_search, com_content and\nmod_login is not properly sanitised before being returned to a user.\nThis can be exploited to execute arbitrary HTML and script code in a\nuser\\'s browser session in context of an affected site.\n\nInput passed to the url parameter is not properly sanitised before being\nreturned to the user. This can be exploited to insert arbitrary HTTP\nheaders, which will be included in a response sent to the user, allowing\nfor execution of arbitrary HTML and script code in a user\\'s browser\nsession in context of an affected site.\n\nAn error exists in the handling of sessions and can be exploited to\nhijack another user\\'s session by tricking the user into logging in\nafter following a specially crafted link.\n",
+    "id": "FreeBSD-2007-0083",
+    "modified": "2010-05-12T00:00:00Z",
+    "published": "2007-08-02T00:00:00Z",
+    "references": [
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2007-4188"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2007-4189"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2007-4190"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2007-5577"
+        },
+        {
+            "type": "WEB",
+            "url": "http://www.joomla.org/content/view/3677/1/"
+        },
+        {
+            "type": "WEB",
+            "url": "http://secunia.com/advisories/26239/"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "joomla -- multiple vulnerabilities"
+}

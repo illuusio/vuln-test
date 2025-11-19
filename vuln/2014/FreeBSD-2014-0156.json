@@ -1,0 +1,146 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "nvidia-driver"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "340.65"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        },
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "nvidia-driver-304"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "304.125"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        },
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "nvidia-driver-173"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "last_affected": "173.14.35_3"
+                        },
+                        {
+                            "fixed": "173.14.35_3"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        },
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "nvidia-driver-96"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "last_affected": "96.43.23_2"
+                        },
+                        {
+                            "fixed": "96.43.23_2"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        },
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "nvidia-driver-71"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "last_affected": "71.86.15_4"
+                        },
+                        {
+                            "fixed": "71.86.15_4"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "cite": [
+            "http://nvidia.custhelp.com/app/answers/detail/a_id/3610"
+        ],
+        "discovery": "2014-12-03T00:00:00Z",
+        "references": {
+            "cvename": [
+                "CVE-2014-8298",
+                "CVE-2014-8093",
+                "CVE-2014-8098"
+            ]
+        },
+        "vid": "fdf72a0e-8371-11e4-bc20-001636d274f3"
+    },
+    "details": "NVIDIA Unix security team reports:\n\n> The GLX indirect rendering support supplied on NVIDIA products is\n> subject to the recently disclosed X.Org vulnerabilities\n> (CVE-2014-8093, CVE-2014-8098) as well as internally identified\n> vulnerabilities (CVE-2014-8298).\n>\n> Depending on how it is configured, the X server typically runs with\n> raised privileges, and listens for GLX indirect rendering protocol\n> requests from a local socket and potentially a TCP/IP port. The\n> vulnerabilities could be exploited in a way that causes the X server\n> to access uninitialized memory or overwrite arbitrary memory in the X\n> server process. This can cause a denial of service (e.g., an X server\n> segmentation fault), or could be exploited to achieve arbitrary code\n> execution.\n",
+    "id": "FreeBSD-2014-0156",
+    "modified": "2014-12-14T00:00:00Z",
+    "published": "2014-12-14T00:00:00Z",
+    "references": [
+        {
+            "type": "REPORT",
+            "url": "http://nvidia.custhelp.com/app/answers/detail/a_id/3610"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2014-8298"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2014-8093"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2014-8098"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "NVIDIA UNIX driver -- remote denial of service or arbitrary code execution"
+}

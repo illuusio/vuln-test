@@ -1,0 +1,91 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "FreeBSD"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "introduced": "7.3"
+                        },
+                        {
+                            "fixed": "7.3_5"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                },
+                {
+                    "events": [
+                        {
+                            "introduced": "7.4"
+                        },
+                        {
+                            "fixed": "7.4_1"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                },
+                {
+                    "events": [
+                        {
+                            "introduced": "8.1"
+                        },
+                        {
+                            "fixed": "8.1_3"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                },
+                {
+                    "events": [
+                        {
+                            "introduced": "8.2"
+                        },
+                        {
+                            "fixed": "8.2_1"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "cite": [
+            "http://security.freebsd.org/advisories/FreeBSD-SA-11:01.mountd.asc"
+        ],
+        "discovery": "2011-04-20T00:00:00Z",
+        "references": {
+            "cvename": [
+                "CVE-2011-1739"
+            ],
+            "freebsdsa": [
+                "SA-11:01.mountd"
+            ]
+        },
+        "vid": "87261557-a450-11e2-9898-001060e06fd4"
+    },
+    "details": "> # Problem Description:\n>\n> While parsing the exports(5) table, a network mask in the form of\n> \\\"-network=netname/prefixlength\\\" results in an incorrect network mask\n> being computed if the prefix length is not a multiple of 8.\n>\n> For example, specifying the ACL for an export as \\\"-network\n> 192.0.2.0/23\\\" would result in a netmask of 255.255.127.0 being used\n> instead of the correct netmask of 255.255.254.0.\n",
+    "id": "FreeBSD-2012-0020",
+    "modified": "2012-01-29T00:00:00Z",
+    "published": "2012-01-29T00:00:00Z",
+    "references": [
+        {
+            "type": "REPORT",
+            "url": "http://security.freebsd.org/advisories/FreeBSD-SA-11:01.mountd.asc"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://www.freebsd.org/security/advisories/FreeBSD-SA-11:01.mountd.asc"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2011-1739"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "FreeBSD -- Network ACL mishandling in mountd(8)"
+}

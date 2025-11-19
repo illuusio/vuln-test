@@ -1,0 +1,86 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "putty"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "0.63"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "cite": [
+            "http://lists.tartarus.org/pipermail/putty-announce/2013/000018.html"
+        ],
+        "discovery": "2013-07-08T00:00:00Z",
+        "references": {
+            "cvename": [
+                "CVE-2013-4206",
+                "CVE-2013-4207",
+                "CVE-2013-4208",
+                "CVE-2013-4852"
+            ]
+        },
+        "vid": "4b448a96-ff73-11e2-b28d-080027ef73ec"
+    },
+    "details": "Simon Tatham reports:\n\n> This \\[0.63\\] release fixes multiple security holes in previous\n> versions of PuTTY, which can allow an SSH-2 server to make PuTTY\n> overrun or underrun buffers and crash. \\[\\...\\]\n>\n> These vulnerabilities can be triggered before host key verification,\n> which means that you are not even safe if you trust the server you\n> *think* you\\'re connecting to, since it could be spoofed over the\n> network and the host key check would not detect this before the attack\n> could take place.\n>\n> Additionally, when PuTTY authenticated with a user\\'s private key, the\n> private key or information equivalent to it was accidentally kept in\n> PuTTY\\'s memory for the rest of its run, where it could be retrieved\n> by other processes reading PuTTY\\'s memory, or written out to swap\n> files or crash dumps. This release fixes that as well.\n",
+    "id": "FreeBSD-2013-0138",
+    "modified": "2013-08-07T00:00:00Z",
+    "published": "2013-08-07T00:00:00Z",
+    "references": [
+        {
+            "type": "REPORT",
+            "url": "http://lists.tartarus.org/pipermail/putty-announce/2013/000018.html"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2013-4206"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2013-4207"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2013-4208"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2013-4852"
+        },
+        {
+            "type": "DISCUSSION",
+            "url": "http://lists.tartarus.org/pipermail/putty-announce/2013/000018.html"
+        },
+        {
+            "type": "WEB",
+            "url": "http://www.chiark.greenend.org.uk/~sgtatham/putty/wishlist/vuln-modmul.html"
+        },
+        {
+            "type": "WEB",
+            "url": "http://www.chiark.greenend.org.uk/~sgtatham/putty/wishlist/vuln-bignum-division-by-zero.html"
+        },
+        {
+            "type": "WEB",
+            "url": "http://www.chiark.greenend.org.uk/~sgtatham/putty/wishlist/private-key-not-wiped.html"
+        },
+        {
+            "type": "WEB",
+            "url": "http://www.chiark.greenend.org.uk/~sgtatham/putty/wishlist/vuln-signature-stringlen.html"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "PuTTY -- Four security holes in versions before 0.63"
+}

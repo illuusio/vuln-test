@@ -1,0 +1,65 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "memcached"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "1.4.33"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "cite": [
+            "http://blog.talosintel.com/2016/10/memcached-vulnerabilities.html"
+        ],
+        "discovery": "2016-10-31T00:00:00Z",
+        "references": {
+            "cvename": [
+                "CVE-2016-8704",
+                "CVE-2016-8705",
+                "CVE-2016-8706"
+            ]
+        },
+        "vid": "f4bf713f-6ac7-4b76-8980-47bf90c5419f"
+    },
+    "details": "Cisco Talos reports:\n\n> Multiple integer overflow vulnerabilities exist within Memcached that\n> could be exploited to achieve remote code execution on the targeted\n> system. These vulnerabilities manifest in various Memcached functions\n> that are used in inserting, appending, prepending, or modifying\n> key-value data pairs. Systems which also have Memcached compiled with\n> support for SASL authentication are also vulnerable to a third flaw\n> due to how Memcached handles SASL authentication commands.\n>\n> An attacker could exploit these vulnerabilities by sending a\n> specifically crafted Memcached command to the targeted server.\n> Additionally, these vulnerabilities could also be exploited to leak\n> sensitive process information which an attacker could use to bypass\n> common exploitation mitigations, such as ASLR, and can be triggered\n> multiple times. This enables reliable exploitation which makes these\n> vulnerabilities severe.\n",
+    "id": "FreeBSD-2016-0419",
+    "modified": "2016-11-02T00:00:00Z",
+    "published": "2016-11-02T00:00:00Z",
+    "references": [
+        {
+            "type": "REPORT",
+            "url": "http://blog.talosintel.com/2016/10/memcached-vulnerabilities.html"
+        },
+        {
+            "type": "WEB",
+            "url": "http://blog.talosintel.com/2016/10/memcached-vulnerabilities.html"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2016-8704"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2016-8705"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2016-8706"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "memcached -- multiple vulnerabilities"
+}

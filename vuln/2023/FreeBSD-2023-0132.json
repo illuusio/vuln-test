@@ -1,0 +1,131 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "py37-cryptography"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "introduced": "1.8"
+                        },
+                        {
+                            "fixed": "39.0.1"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        },
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "py38-cryptography"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "introduced": "1.8"
+                        },
+                        {
+                            "fixed": "39.0.1"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        },
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "py39-cryptography"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "introduced": "1.8"
+                        },
+                        {
+                            "fixed": "39.0.1"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        },
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "py310-cryptography"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "introduced": "1.8"
+                        },
+                        {
+                            "fixed": "39.0.1"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        },
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "py311-cryptography"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "introduced": "1.8"
+                        },
+                        {
+                            "fixed": "39.0.1"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "cite": [
+            "https://osv.dev/vulnerability/GHSA-w7pp-m8wf-vj6r"
+        ],
+        "discovery": "2023-02-07T00:00:00Z",
+        "references": {
+            "cvename": [
+                "CVE-2023-23931"
+            ]
+        },
+        "vid": "a32ef450-9781-414b-a944-39f2f61677f2"
+    },
+    "details": "alex reports:\n\n> Previously, \\`Cipher.update_into\\` would accept Python objects which\n> implement the buffer protocol, but provide only immutable buffers.\n>\n> This would allow immutable objects (such as \\`bytes\\`) to be mutated,\n> thus violating fundamental rules of Python.\n>\n> This is a soundness bug \\-- it allows programmers to misuse an API, it\n> cannot be exploited by attacker controlled data alone.\n>\n> This now correctly raises an exception.\n>\n> This issue has been present since \\`update_into\\` was originally\n> introduced in cryptography 1.8.\n",
+    "id": "FreeBSD-2023-0132",
+    "modified": "2023-04-10T00:00:00Z",
+    "published": "2023-04-10T00:00:00Z",
+    "references": [
+        {
+            "type": "REPORT",
+            "url": "https://osv.dev/vulnerability/GHSA-w7pp-m8wf-vj6r"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2023-23931"
+        },
+        {
+            "type": "WEB",
+            "url": "https://osv.dev/vulnerability/GHSA-w7pp-m8wf-vj6r"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "py-cryptography -- allows programmers to misuse an API"
+}

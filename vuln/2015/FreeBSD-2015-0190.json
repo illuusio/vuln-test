@@ -1,0 +1,55 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "xen-kernel"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "introduced": "4.3"
+                        },
+                        {
+                            "fixed": "4.5.0_3"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "cite": [
+            "http://xenbits.xen.org/xsa/advisory-127.html"
+        ],
+        "discovery": "2015-03-31T00:00:00Z",
+        "references": {
+            "cvename": [
+                "CVE-2015-2751"
+            ]
+        },
+        "vid": "103a47d5-27e7-11e5-a4a5-002590263bf5"
+    },
+    "details": "The Xen Project reports:\n\n> XSA-77 put the majority of the domctl operations on a list excepting\n> them from having security advisories issued for them if any effects\n> their use might have could hamper security. Subsequently some of them\n> got declared disaggregation safe, but for a small subset this was not\n> really correct: Their (mis-)use may result in host lockups.\n>\n> As a result, the potential security benefits of toolstack\n> disaggregation are not always fully realised.\n>\n> Domains deliberately given partial management control may be able to\n> deny service to the entire host.\n>\n> As a result, in a system designed to enhance security by radically\n> disaggregating the management, the security may be reduced. But, the\n> security will be no worse than a non-disaggregated design.\n",
+    "id": "FreeBSD-2015-0190",
+    "modified": "2015-07-11T00:00:00Z",
+    "published": "2015-07-11T00:00:00Z",
+    "references": [
+        {
+            "type": "REPORT",
+            "url": "http://xenbits.xen.org/xsa/advisory-127.html"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2015-2751"
+        },
+        {
+            "type": "WEB",
+            "url": "http://xenbits.xen.org/xsa/advisory-127.html"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "xen-kernel -- Certain domctl operations may be abused to lock up the host"
+}

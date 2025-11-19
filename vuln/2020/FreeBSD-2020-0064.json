@@ -1,0 +1,112 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "postgresql12-server"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "12.2"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        },
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "postgresql11-server"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "11.7"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        },
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "postgresql10-server"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "10.12"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        },
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "postgresql96-server"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "9.6.17"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "cite": [
+            "https://www.postgresql.org/about/news/2011/"
+        ],
+        "discovery": "2020-02-13T00:00:00Z",
+        "references": {
+            "cvename": [
+                "CVE-2020-1720"
+            ]
+        },
+        "vid": "d331f691-71f4-11ea-8bb5-6cc21735f730"
+    },
+    "details": "The PostgreSQL project reports:\n\n> Versions Affected: 9.6 - 12\n>\n> The ALTER \\... DEPENDS ON EXTENSION sub-commands do not perform\n> authorization checks, which can allow an unprivileged user to drop any\n> function, procedure, materialized view, index, or trigger under\n> certain conditions. This attack is possible if an administrator has\n> installed an extension and an unprivileged user can CREATE, or an\n> extension owner either executes DROP EXTENSION predictably or can be\n> convinced to execute DROP EXTENSION.\n",
+    "id": "FreeBSD-2020-0064",
+    "modified": "2020-03-29T00:00:00Z",
+    "published": "2020-03-29T00:00:00Z",
+    "references": [
+        {
+            "type": "REPORT",
+            "url": "https://www.postgresql.org/about/news/2011/"
+        },
+        {
+            "type": "WEB",
+            "url": "https://www.postgresql.org/about/news/1960/"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2020-1720"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "PostgresSQL -- ALTER ... DEPENDS ON EXTENSION is missing authorization checks"
+}

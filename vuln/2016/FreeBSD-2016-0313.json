@@ -1,0 +1,73 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:kernel",
+                "name": "FreeBSD-kernel"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "introduced": "9.2"
+                        },
+                        {
+                            "fixed": "9.2_7"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                },
+                {
+                    "events": [
+                        {
+                            "introduced": "9.1"
+                        },
+                        {
+                            "fixed": "9.1_14"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                },
+                {
+                    "events": [
+                        {
+                            "introduced": "8.4"
+                        },
+                        {
+                            "fixed": "8.4_11"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "discovery": "2014-06-03T00:00:00Z",
+        "references": {
+            "cvename": [
+                "CVE-2014-3873"
+            ],
+            "freebsdsa": [
+                "SA-14:12.ktrace"
+            ]
+        },
+        "vid": "6e04048b-6007-11e6-a6c3-14dae9d210b8"
+    },
+    "details": "# Problem Description:\n\nDue to an overlooked merge to -STABLE branches, the size for page fault\nkernel trace entries was set incorrectly.\n\n# Impact:\n\nA user who can enable kernel process tracing could end up reading the\ncontents of kernel memory.\n\nSuch memory might contain sensitive information, such as portions of the\nfile cache or terminal buffers. This information might be directly\nuseful, or it might be leveraged to obtain elevated privileges in some\nway; for example, a terminal buffer might include a user-entered\npassword.\n",
+    "id": "FreeBSD-2016-0313",
+    "modified": "2016-08-11T00:00:00Z",
+    "published": "2016-08-11T00:00:00Z",
+    "references": [
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2014-3873"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://www.freebsd.org/security/advisories/FreeBSD-SA-14:12.ktrace.asc"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "FreeBSD -- ktrace kernel memory disclosure"
+}

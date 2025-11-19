@@ -1,0 +1,59 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "logstash"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "1.4.3"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "cite": [
+            "https://www.elastic.co/blog/logstash-1-4-3-released"
+        ],
+        "discovery": "2015-06-09T00:00:00Z",
+        "references": {
+            "cvename": [
+                "CVE-2015-4152"
+            ]
+        },
+        "vid": "24bde04f-1a10-11e5-b43d-002590263bf5"
+    },
+    "details": "Elastic reports:\n\n> An attacker could use the File output plugin with dynamic field\n> references in the path option to traverse paths outside of Logstash\n> directory. This technique could also be used to overwrite any files\n> which can be accessed with permissions associated with Logstash user.\n> This release sandboxes the paths which can be traversed using the\n> configuration. We have also disallowed use of dynamic field references\n> if the path options is pointing to an absolute path.\n>\n> We have added this vulnerability to our CVE page and are working on\n> filling out the CVE. We would like to thank Colin Coghill for\n> reporting the issue and working with us on the resolution.\n",
+    "id": "FreeBSD-2015-0150",
+    "modified": "2015-06-24T00:00:00Z",
+    "published": "2015-06-24T00:00:00Z",
+    "references": [
+        {
+            "type": "REPORT",
+            "url": "https://www.elastic.co/blog/logstash-1-4-3-released"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2015-4152"
+        },
+        {
+            "type": "WEB",
+            "url": "https://www.elastic.co/blog/logstash-1-4-3-released"
+        },
+        {
+            "type": "WEB",
+            "url": "https://www.elastic.co/community/security"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "logstash -- Directory traversal vulnerability in the file output plugin"
+}

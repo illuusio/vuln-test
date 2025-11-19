@@ -1,0 +1,73 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:kernel",
+                "name": "FreeBSD-kernel"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "introduced": "10.1"
+                        },
+                        {
+                            "fixed": "10.1_9"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                },
+                {
+                    "events": [
+                        {
+                            "introduced": "9.3"
+                        },
+                        {
+                            "fixed": "9.3_13"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                },
+                {
+                    "events": [
+                        {
+                            "introduced": "8.4"
+                        },
+                        {
+                            "fixed": "8.4_27"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "discovery": "2015-04-07T00:00:00Z",
+        "references": {
+            "cvename": [
+                "CVE-2015-2923"
+            ],
+            "freebsdsa": [
+                "SA-15:09.ipv6"
+            ]
+        },
+        "vid": "0bb55a18-600a-11e6-a6c3-14dae9d210b8"
+    },
+    "details": "# Problem Description:\n\nThe Neighbor Discover Protocol allows a local router to advertise a\nsuggested Current Hop Limit value of a link, which will replace Current\nHop Limit on an interface connected to the link on the FreeBSD system.\n\n# Impact:\n\nWhen the Current Hop Limit (similar to IPv4\\'s TTL) is small, IPv6\npackets may get dropped before they reached their destinations.\n\nBy sending specifically crafted Router Advertisement packets, an\nattacker on the local network can cause the FreeBSD system to lose the\nability to communicate with another IPv6 node on a different network.\n",
+    "id": "FreeBSD-2016-0330",
+    "modified": "2016-08-11T00:00:00Z",
+    "published": "2016-08-11T00:00:00Z",
+    "references": [
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2015-2923"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://www.freebsd.org/security/advisories/FreeBSD-SA-15:09.ipv6.asc"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "FreeBSD -- Denial of Service with IPv6 Router Advertisements"
+}

@@ -1,0 +1,55 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "mongodb70"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "7.0.22"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "cite": [
+            "https://jira.mongodb.org/browse/SERVER-101230"
+        ],
+        "discovery": "2025-11-03T00:00:00Z",
+        "references": {
+            "cvename": [
+                "CVE-2025-12657"
+            ]
+        },
+        "vid": "970159e6-ba60-11f0-8447-b42e991fc52e"
+    },
+    "details": "https://jira.mongodb.org/browse/SERVER-101230 reports:\n\n> The KMIP response parser built into mongo binaries is overly tolerant\n> of certain malformed packets, and may parse them into invalid objects.\n> Later reads of this object can result in read access violations.\n",
+    "id": "FreeBSD-2025-0374",
+    "modified": "2025-11-05T00:00:00Z",
+    "published": "2025-11-05T00:00:00Z",
+    "references": [
+        {
+            "type": "REPORT",
+            "url": "https://jira.mongodb.org/browse/SERVER-101230"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2025-12657"
+        },
+        {
+            "type": "WEB",
+            "url": "https://cveawg.mitre.org/api/cve/CVE-2025-12657"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "MongoDB -- Improper Check for Unusual or Exceptional Conditions"
+}

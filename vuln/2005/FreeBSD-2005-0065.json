@@ -1,0 +1,68 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "perl"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "introduced": "5.8"
+                        },
+                        {
+                            "fixed": "5.8.6_2"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        },
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "perl-threaded"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "introduced": "5.8"
+                        },
+                        {
+                            "fixed": "5.8.6_2"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "discovery": "2005-02-02T00:00:00Z",
+        "references": {
+            "cvename": [
+                "CVE-2005-0155",
+                "CVE-2005-0156"
+            ]
+        },
+        "vid": "a5eb760a-753c-11d9-a36f-000a95bc6fae"
+    },
+    "details": "Kevin Finisterre discovered bugs in perl\\'s I/O debug support:\n\n- The environmental variable PERLIO_DEBUG is honored even by the\n  set-user-ID perl command (usually named `sperl` or `suidperl`). As a\n  result, a local attacker may be able to gain elevated privileges.\n  *(CVE-2005-0155)*\n- A buffer overflow may occur in threaded versions of perl when the full\n  pathname of the script being executed is very long. *(CVE-2005-0156)*.\n\n**Note:** By default, no set-user-ID perl binary is installed. An\nadministrator must enable it manually at build time with the\n`ENABLE_SUIDPERL` port flag.\n",
+    "id": "FreeBSD-2005-0065",
+    "modified": "2007-11-07T00:00:00Z",
+    "published": "2005-02-02T00:00:00Z",
+    "references": [
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2005-0155"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2005-0156"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "perl -- vulnerabilities in PERLIO_DEBUG handling"
+}

@@ -1,0 +1,199 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "postgresql"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "introduced": "7.3"
+                        },
+                        {
+                            "fixed": "7.3.21"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                },
+                {
+                    "events": [
+                        {
+                            "introduced": "7.4"
+                        },
+                        {
+                            "fixed": "7.4.19"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                },
+                {
+                    "events": [
+                        {
+                            "introduced": "8.0"
+                        },
+                        {
+                            "fixed": "8.0.15"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                },
+                {
+                    "events": [
+                        {
+                            "introduced": "8.1"
+                        },
+                        {
+                            "fixed": "8.1.11"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                },
+                {
+                    "events": [
+                        {
+                            "introduced": "8.2"
+                        },
+                        {
+                            "fixed": "8.2.6"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        },
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "postgresql-server"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "introduced": "7.3"
+                        },
+                        {
+                            "fixed": "7.3.21"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                },
+                {
+                    "events": [
+                        {
+                            "introduced": "7.4"
+                        },
+                        {
+                            "fixed": "7.4.19"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                },
+                {
+                    "events": [
+                        {
+                            "introduced": "8.0"
+                        },
+                        {
+                            "fixed": "8.0.15"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                },
+                {
+                    "events": [
+                        {
+                            "introduced": "8.1"
+                        },
+                        {
+                            "fixed": "8.1.11"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                },
+                {
+                    "events": [
+                        {
+                            "introduced": "8.2"
+                        },
+                        {
+                            "fixed": "8.2.6"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "cite": [
+            "http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2007-6600",
+            "http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2007-4772",
+            "http://cve.mitre.org/cgi-bin/cvename.cgi?name="
+        ],
+        "discovery": "2008-01-06T00:00:00Z",
+        "references": {
+            "bid": [
+                "27163"
+            ],
+            "cvename": [
+                "CVE-2007-6600",
+                "CVE-2007-4772",
+                "CVE-2007-6067",
+                "CVE-2007-4769",
+                "CVE-2007-6601"
+            ]
+        },
+        "vid": "51436b4c-1250-11dd-bab7-0016179b2dd5"
+    },
+    "details": "The PostgreSQL developers report:\n\n> PostgreSQL allows users to create indexes on the results of\n> user-defined functions, known as \\\"expression indexes\\\". This provided\n> two vulnerabilities to privilege escalation: (1) index functions were\n> executed as the superuser and not the table owner during VACUUM and\n> ANALYZE, and (2) that SET ROLE and SET SESSION AUTHORIZATION were\n> permitted within index functions. Both of these holes have now been\n> closed.\n\n> PostgreSQL allowed malicious users to initiate a denial-of-service by\n> passing certain regular expressions in SQL queries. First, users could\n> create infinite loops using some specific regular expressions. Second,\n> certain complex regular expressions could consume excessive amounts of\n> memory. Third, out-of-range backref numbers could be used to crash the\n> backend.\n\n> DBLink functions combined with local trust or ident authentication\n> could be used by a malicious user to gain superuser privileges. This\n> issue has been fixed, and does not affect users who have not installed\n> DBLink (an optional module), or who are using password authentication\n> for local access. This same problem was addressed in the previous\n> release cycle, but that patch failed to close all forms of the\n> loophole.\n",
+    "id": "FreeBSD-2008-0044",
+    "modified": "2008-04-24T00:00:00Z",
+    "published": "2008-04-24T00:00:00Z",
+    "references": [
+        {
+            "type": "REPORT",
+            "url": "http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2007-6600"
+        },
+        {
+            "type": "REPORT",
+            "url": "http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2007-4772"
+        },
+        {
+            "type": "REPORT",
+            "url": "http://cve.mitre.org/cgi-bin/cvename.cgi?name="
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2007-6600"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2007-4772"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2007-6067"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2007-4769"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2007-6601"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://www.securityfocus.com/bid/27163/info"
+        },
+        {
+            "type": "WEB",
+            "url": "http://www.postgresql.org/about/news.905"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "postgresql -- multiple vulnerabilities"
+}

@@ -1,0 +1,62 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "phpMyAdmin"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "2.11.5"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "cite": [
+            "http://www.phpmyadmin.net/home_page/security.php?issue=PMASA-2008-1"
+        ],
+        "discovery": "2008-03-01T00:00:00Z",
+        "references": {
+            "bid": [
+                "28068"
+            ],
+            "cvename": [
+                "CVE-2008-1149"
+            ]
+        },
+        "vid": "ce2f2ade-e7df-11dc-a701-000bcdc1757a"
+    },
+    "details": "A phpMyAdmin security announcement report:\n\n> phpMyAdmin used the \\$\\_REQUEST superglobal as a source for its\n> parameters, instead of \\$\\_GET and \\$\\_POST. This means that on most\n> servers, a cookie with the same name as one of phpMyAdmin\\'s\n> parameters can interfere.\n>\n> Another application could set a cookie for the root path \\\"/\\\" with a\n> \\\"sql_query\\\" name, therefore overriding the user-submitted sql_query\n> because by default, the \\$\\_REQUEST superglobal imports first GET,\n> then POST then COOKIE data.\n>\n> ### Mitigation factor\n>\n> An attacker must trick the victim into visiting a page on the same web\n> server where he has placed code that creates a malicious cookie.\n",
+    "id": "FreeBSD-2008-0026",
+    "modified": "2010-05-12T00:00:00Z",
+    "published": "2008-03-04T00:00:00Z",
+    "references": [
+        {
+            "type": "REPORT",
+            "url": "http://www.phpmyadmin.net/home_page/security.php?issue=PMASA-2008-1"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://www.securityfocus.com/bid/28068/info"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2008-1149"
+        },
+        {
+            "type": "WEB",
+            "url": "http://www.phpmyadmin.net/home_page/security.php?issue=PMASA-2008-1"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "phpmyadmin -- SQL injection vulnerability"
+}

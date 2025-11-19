@@ -1,0 +1,52 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "sudo"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "1.7.2.6"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "discovery": "2010-04-09T00:00:00Z",
+        "references": {
+            "cvename": [
+                "CVE-2010-1163"
+            ]
+        },
+        "vid": "1a9f678d-48ca-11df-85f8-000c29a67389"
+    },
+    "details": "Todd Miller reports:\n\n> Sudo\\'s command matching routine expects actual commands to include\n> one or more slash (\\'/\\') characters. The flaw is that sudo\\'s path\n> resolution code did not add a \\\"./\\\" prefix to commands found in the\n> current working directory. This creates an ambiguity between a\n> \\\"sudoedit\\\" command found in the cwd and the \\\"sudoedit\\\"\n> pseudo-command in the sudoers file. As a result, a user may be able to\n> run an arbitrary command named \\\"sudoedit\\\" in the current working\n> directory. For the attack to be successful, the PATH environment\n> variable must include \\\".\\\" and may not include any other directory\n> that contains a \\\"sudoedit\\\" command.\n",
+    "id": "FreeBSD-2010-0030",
+    "modified": "2010-04-15T00:00:00Z",
+    "published": "2010-04-15T00:00:00Z",
+    "references": [
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2010-1163"
+        },
+        {
+            "type": "WEB",
+            "url": "http://www.sudo.ws/pipermail/sudo-announce/2010-April/000093.html"
+        },
+        {
+            "type": "WEB",
+            "url": "http://www.sudo.ws/sudo/alerts/sudoedit_escalate2.html"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "sudo -- Privilege escalation with sudoedit"
+}

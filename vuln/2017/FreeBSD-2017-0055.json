@@ -1,0 +1,55 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "curl"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "introduced": "7.52.0"
+                        },
+                        {
+                            "fixed": "7.53.0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "cite": [
+            "https://curl.haxx.se/docs/adv_20170222.html"
+        ],
+        "discovery": "2017-02-22T00:00:00Z",
+        "references": {
+            "cvename": [
+                "CVE-2017-2629"
+            ]
+        },
+        "vid": "311e4b1c-f8ee-11e6-9940-b499baebfeaf"
+    },
+    "details": "The cURL project reports:\n\n> SSL_VERIFYSTATUS ignored\\\n> curl and libcurl support \\\"OCSP stapling\\\", also known as the TLS\n> Certificate Status Request extension (using the\n> CURLOPT_SSL_VERIFYSTATUS option). When telling curl to use this\n> feature, it uses that TLS extension to ask for a fresh proof of the\n> server\\'s certificate\\'s validity. If the server doesn\\'t support the\n> extension, or fails to provide said proof, curl is expected to return\n> an error.\\\n> Due to a coding mistake, the code that checks for a test success or\n> failure, ends up always thinking there\\'s valid proof, even when there\n> is none or if the server doesn\\'t support the TLS extension in\n> question. Contrary to how it used to function and contrary to how this\n> feature is documented to work.\\\n> This could lead to users not detecting when a server\\'s certificate\n> goes invalid or otherwise be mislead that the server is in a better\n> shape than it is in reality.\n",
+    "id": "FreeBSD-2017-0055",
+    "modified": "2017-02-22T00:00:00Z",
+    "published": "2017-02-22T00:00:00Z",
+    "references": [
+        {
+            "type": "REPORT",
+            "url": "https://curl.haxx.se/docs/adv_20170222.html"
+        },
+        {
+            "type": "WEB",
+            "url": "https://curl.haxx.se/docs/adv_20170222.html"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2017-2629"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "cURL -- ocsp status validation error"
+}

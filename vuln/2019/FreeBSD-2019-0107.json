@@ -1,0 +1,55 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "suricata"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "4.1.4"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "cite": [
+            "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2019-10053"
+        ],
+        "discovery": "2019-03-15T00:00:00Z",
+        "references": {
+            "cvename": [
+                "CVE-2019-10053"
+            ]
+        },
+        "vid": "3b903bf3-7f94-11e9-8a5f-c85b76ce9b5a"
+    },
+    "details": "Mitre reports:\n\n> An issue was discovered in Suricata 4.1.x before 4.1.4. If the input\n> of the function SSHParseBanner is composed only of a \\\\n character,\n> then the program runs into a heap-based buffer over-read. This occurs\n> because the erroneous search for \\\\r results in an integer underflow.\n",
+    "id": "FreeBSD-2019-0107",
+    "modified": "2019-05-26T00:00:00Z",
+    "published": "2019-05-26T00:00:00Z",
+    "references": [
+        {
+            "type": "REPORT",
+            "url": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2019-10053"
+        },
+        {
+            "type": "WEB",
+            "url": "https://suricata-ids.org/2019/04/30/suricata-4-1-4-released/"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2019-10053"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "suricata -- buffer over-read"
+}

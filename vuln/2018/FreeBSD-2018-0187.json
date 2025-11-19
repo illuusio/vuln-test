@@ -1,0 +1,64 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "mantis"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "2.15.0,1"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "cite": [
+            "https://github.com/mantisbt/mantisbt/commit/8b5fa243dbf04344a55fe880135ec149fc1f439f"
+        ],
+        "discovery": "2018-07-13T00:00:00Z",
+        "references": {
+            "cvename": [
+                "CVE-2018-14504",
+                "CVE-2018-13066"
+            ]
+        },
+        "vid": "0822a4cf-9318-11e8-8d88-00e04c1ea73d"
+    },
+    "details": "mantis reports:\n\n> Teun Beijers reported a cross-site scripting (XSS) vulnerability in\n> the Edit Filter page which allows execution of arbitrary code (if CSP\n> settings permit it) when displaying a filter with a crafted name.\n> Prevent the attack by sanitizing the filter name before display.\n>\n> \u00d6mer C\u0131tak, Security Researcher at Netsparker, reported this\n> vulnerability, allowing remote attackers to inject arbitrary code (if\n> CSP settings permit it) through a crafted PATH_INFO on\n> view_filters_page.php. Prevent the attack by sanitizing the output of\n> \\$\\_SERVER\\[\\'PHP_SELF\\'\\] before display.\n",
+    "id": "FreeBSD-2018-0187",
+    "modified": "2018-08-24T00:00:00Z",
+    "published": "2018-07-29T00:00:00Z",
+    "references": [
+        {
+            "type": "REPORT",
+            "url": "https://github.com/mantisbt/mantisbt/commit/8b5fa243dbf04344a55fe880135ec149fc1f439f"
+        },
+        {
+            "type": "WEB",
+            "url": "https://github.com/mantisbt/mantisbt/commit/8b5fa243dbf04344a55fe880135ec149fc1f439f"
+        },
+        {
+            "type": "WEB",
+            "url": "https://github.com/mantisbt/mantisbt/commit/4efac90ed89a5c009108b641e2e95683791a165a"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2018-14504"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2018-13066"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "mantis -- multiple vulnerabilities"
+}

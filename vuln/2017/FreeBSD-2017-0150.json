@@ -1,0 +1,189 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "libevhtp"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "1.2.14"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        },
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "oniguruma4"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "4.7.2"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        },
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "oniguruma5"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "5.9.7"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        },
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "oniguruma6"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "6.4.0"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        },
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "php56-mbstring"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "5.6.31"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        },
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "php70-mbstring"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "7.0.21"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        },
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "php71-mbstring"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "7.1.7"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "cite": [
+            "http://php.net/ChangeLog-7.php"
+        ],
+        "discovery": "2017-07-06T00:00:00Z",
+        "references": {
+            "cvename": [
+                "CVE-2017-9224",
+                "CVE-2017-9226",
+                "CVE-2017-9227",
+                "CVE-2017-9228",
+                "CVE-2017-9228"
+            ]
+        },
+        "vid": "b396cf6c-62e6-11e7-9def-b499baebfeaf"
+    },
+    "details": "the PHP project reports:\n\n> - A stack out-of-bounds read occurs in match_at() during regular\n>   expression searching. A logical error involving order of validation\n>   and access in match_at() could result in an out-of-bounds read from\n>   a stack buffer (CVE-2017-9224).\n> - A heap out-of-bounds write or read occurs in next_state_val() during\n>   regular expression compilation. Octal numbers larger than 0xff are\n>   not handled correctly in fetch_token() and fetch_token_in_cc(). A\n>   malformed regular expression containing an octal number in the form\n>   of \\'\\\\700\\' would produce an invalid code point value larger than\n>   0xff in next_state_val(), resulting in an out-of-bounds write memory\n>   corruption (CVE-2017-9226).\n> - A stack out-of-bounds read occurs in mbc_enc_len() during regular\n>   expression searching. Invalid handling of reg-\\>dmin in\n>   forward_search_range() could result in an invalid pointer\n>   dereference, as an out-of-bounds read from a stack buffer\n>   (CVE-2017-9227).\n> - A heap out-of-bounds write occurs in bitset_set_range() during\n>   regular expression compilation due to an uninitialized variable from\n>   an incorrect state transition. An incorrect state transition in\n>   parse_char_class() could create an execution path that leaves a\n>   critical local variable uninitialized until it\\'s used as an index,\n>   resulting in an out-of-bounds write memory corruption\n>   (CVE-2017-9228).\n> - A SIGSEGV occurs in left_adjust_char_head() during regular\n>   expression compilation. Invalid handling of reg-\\>dmax in\n>   forward_search_range() could result in an invalid pointer\n>   dereference, normally as an immediate denial-of-service condition\n>   (CVE-2017-9228).\n",
+    "id": "FreeBSD-2017-0150",
+    "modified": "2018-01-04T00:00:00Z",
+    "published": "2017-07-07T00:00:00Z",
+    "references": [
+        {
+            "type": "REPORT",
+            "url": "http://php.net/ChangeLog-7.php"
+        },
+        {
+            "type": "WEB",
+            "url": "http://php.net/ChangeLog-7.php"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2017-9224"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2017-9226"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2017-9227"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2017-9228"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2017-9228"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "oniguruma -- multiple vulnerabilities"
+}

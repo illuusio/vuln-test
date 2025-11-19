@@ -1,0 +1,54 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "gogs"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "0.11.53_1"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "cite": [
+            "https://github.com/gogs/gogs/issues/5364"
+        ],
+        "discovery": "2018-08-06T00:00:00Z",
+        "vid": "e53a908d-a645-11e8-8acd-10c37b4ac2ea"
+    },
+    "details": "bluecatli (Tencent\\'s Xuanwu Lab) reports:\n\n> The function isValidRedirect in gogs/routes/user/auth.go is used in\n> login action to validate if url is on the same site.\n>\n> If the Location header startswith /\\\\, it will be transformed to // by\n> browsers.\n",
+    "id": "FreeBSD-2018-0208",
+    "modified": "2018-08-22T00:00:00Z",
+    "published": "2018-08-22T00:00:00Z",
+    "references": [
+        {
+            "type": "REPORT",
+            "url": "https://github.com/gogs/gogs/issues/5364"
+        },
+        {
+            "type": "WEB",
+            "url": "https://github.com/gogs/gogs/issues/5364"
+        },
+        {
+            "type": "WEB",
+            "url": "https://github.com/gogs/gogs/pull/5365"
+        },
+        {
+            "type": "WEB",
+            "url": "https://github.com/gogs/gogs/commit/1f247cf8139cb483276cd8dd06385a800ce9d4b2"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "gogs -- open redirect vulnerability"
+}

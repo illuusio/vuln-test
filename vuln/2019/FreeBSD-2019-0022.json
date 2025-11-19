@@ -1,0 +1,60 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "powerdns-recursor"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "4.1.9"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "cite": [
+            "https://doc.powerdns.com/recursor/changelog/4.1.html"
+        ],
+        "discovery": "2019-01-21T00:00:00Z",
+        "references": {
+            "cvename": [
+                "CVE-2019-3806",
+                "CVE-2019-3807"
+            ]
+        },
+        "vid": "40d92cc5-1e2b-11e9-bef6-6805ca2fa271"
+    },
+    "details": "PowerDNS Team reports:\n\n> CVE-2019-3806: An issue has been found in PowerDNS Recursor where Lua\n> hooks are not properly applied to queries received over TCP in some\n> specific combination of settings, possibly bypassing security policies\n> enforced using Lua. When the recursor is configured to run with more\n> than one thread (threads=X) and to do the distribution of incoming\n> queries to the worker threads itself (pdns-distributes-queries=yes),\n> the Lua script is not properly loaded in the thread handling incoming\n> TCP queries, causing the Lua hooks to not be properly applied.\n>\n> CVE-2019-3807: An issue has been found in PowerDNS Recursor where\n> records in the answer section of responses received from authoritative\n> servers with the AA flag not set were not properly validated, allowing\n> an attacker to bypass DNSSEC validation.\n",
+    "id": "FreeBSD-2019-0022",
+    "modified": "2019-01-22T00:00:00Z",
+    "published": "2019-01-22T00:00:00Z",
+    "references": [
+        {
+            "type": "REPORT",
+            "url": "https://doc.powerdns.com/recursor/changelog/4.1.html"
+        },
+        {
+            "type": "WEB",
+            "url": "https://doc.powerdns.com/recursor/changelog/4.1.html"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2019-3806"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2019-3807"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "powerdns-recursor -- multiple vulnerabilities"
+}

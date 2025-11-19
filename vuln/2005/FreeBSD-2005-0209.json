@@ -1,0 +1,74 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "clamav"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "0.86"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        },
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "clamav-devel"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "20050620"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "cite": [
+            "http://marc.theaimsgroup.com/?l=bugtraq&m=112006456809016"
+        ],
+        "discovery": "2005-06-29T00:00:00Z",
+        "references": {
+            "cvename": [
+                "CVE-2005-1923"
+            ]
+        },
+        "vid": "d8e1aadd-ee68-11d9-8310-0001020eed82"
+    },
+    "details": "An iDEFENSE Security Advisory reports:\n\n> Remote exploitation of an input validation error in Clam AntiVirus\n> ClamAV allows attackers to cause a denial of service condition.\n>\n> The vulnerability specifically exists due to insufficient validation\n> on cabinet file header data. The `ENSURE_BITS()` macro fails to check\n> for zero length reads, allowing a carefully constructed cabinet file\n> to cause an infinite loop.\n>\n> ClamAV is used in a number of mail gateway products. Successful\n> exploitation requires an attacker to send a specially constructed CAB\n> file through a mail gateway or personal anti-virus client utilizing\n> the ClamAV scanning engine. The infinate loop will cause the ClamAV\n> software to use all available processor resources, resulting in a\n> denial of service or severe degradation to system performance. Remote\n> exploitation can be achieved by sending a malicious file in an e-mail\n> message or during an HTTP session.\n",
+    "id": "FreeBSD-2005-0209",
+    "modified": "2005-07-06T00:00:00Z",
+    "published": "2005-07-06T00:00:00Z",
+    "references": [
+        {
+            "type": "REPORT",
+            "url": "http://marc.theaimsgroup.com/?l=bugtraq&m=112006456809016"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2005-1923"
+        },
+        {
+            "type": "DISCUSSION",
+            "url": "http://marc.theaimsgroup.com/?l=bugtraq&m=112006456809016"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "clamav -- cabinet file handling DoS vulnerability"
+}

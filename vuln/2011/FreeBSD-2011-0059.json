@@ -1,0 +1,83 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "krb5"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "introduced": "1.7"
+                        },
+                        {
+                            "fixed": "1.7.2"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                },
+                {
+                    "events": [
+                        {
+                            "introduced": "1.8"
+                        },
+                        {
+                            "fixed": "1.8.4"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                },
+                {
+                    "events": [
+                        {
+                            "introduced": "1.9"
+                        },
+                        {
+                            "last_affected": "1.9"
+                        },
+                        {
+                            "fixed": "1.9"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ],
+            "versions": [
+                "1.9"
+            ]
+        }
+    ],
+    "database_specific": {
+        "cite": [
+            "http://web.mit.edu/kerberos/advisories/MITKRB5-SA-2011-003.txt"
+        ],
+        "discovery": "2011-03-15T00:00:00Z",
+        "references": {
+            "cvename": [
+                "CVE-2011-0284"
+            ]
+        },
+        "vid": "7edac52a-66cd-11e0-9398-5d45f3aa24f0"
+    },
+    "details": "An advisory published by the MIT Kerberos team says:\n\n> The MIT Kerberos 5 Key Distribution Center (KDC) daemon is vulnerable\n> to a double-free condition if the Public Key Cryptography for Initial\n> Authentication (PKINIT) capability is enabled, resulting in daemon\n> crash or arbitrary code execution (which is believed to be difficult).\n>\n> An unauthenticated remote attacker can induce a double-free event,\n> causing the KDC daemon to crash (denial of service), or to execute\n> arbitrary code. Exploiting a double-free event to execute arbitrary\n> code is believed to be difficult.\n",
+    "id": "FreeBSD-2011-0059",
+    "modified": "2011-04-14T00:00:00Z",
+    "published": "2011-04-14T00:00:00Z",
+    "references": [
+        {
+            "type": "REPORT",
+            "url": "http://web.mit.edu/kerberos/advisories/MITKRB5-SA-2011-003.txt"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2011-0284"
+        },
+        {
+            "type": "WEB",
+            "url": "http://web.mit.edu/kerberos/advisories/MITKRB5-SA-2011-003.txt"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "krb5 -- MITKRB5-SA-2011-003, KDC vulnerable to double-free when PKINIT enabled"
+}

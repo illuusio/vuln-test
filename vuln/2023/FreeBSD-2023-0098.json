@@ -1,0 +1,104 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "go119"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "1.19.8"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        },
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "go120"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "1.20.3"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "cite": [
+            "https://go.dev/issue/59180",
+            "https://go.dev/issue/59234",
+            "https://go.dev/issue/58975",
+            "https://go.dev/issue/59153"
+        ],
+        "discovery": "2023-04-04T00:00:00Z",
+        "references": {
+            "cvename": [
+                "CVE-2023-24537",
+                "CVE-2023-24538",
+                "CVE-2023-24534",
+                "CVE-2023-24536"
+            ]
+        },
+        "vid": "348ee234-d541-11ed-ad86-a134a566f1e6"
+    },
+    "details": "The Go project reports:\n\n> go/parser: infinite loop in parsing\n>\n> Calling any of the Parse functions on Go source code which contains\n> //line directives with very large line numbers can cause an infinite\n> loop due to integer overflow.\n\n> html/template: backticks not treated as string delimiters\n>\n> Templates did not properly consider backticks (\\`) as Javascript\n> string delimiters, and as such did not escape them as expected.\n> Backticks are used, since ES6, for JS template literals. If a template\n> contained a Go template action within a Javascript template literal,\n> the contents of the action could be used to terminate the literal,\n> injecting arbitrary Javascript code into the Go template. As ES6\n> template literals are rather complex, and themselves can do string\n> interpolation, we\\'ve decided to simply disallow Go template actions\n> from being used inside of them (e.g. \\\"var a = {{.}}\\\"), since there\n> is no obviously safe way to allow this behavior. This takes the same\n> approach as github.com/google/safehtml. Template.Parse will now return\n> an Error when it encounters templates like this, with a currently\n> unexported ErrorCode with a value of 12. This ErrorCode will be\n> exported in the next major release.\n\n> net/http, net/textproto: denial of service from excessive memory\n> allocation\n>\n> HTTP and MIME header parsing could allocate large amounts of memory,\n> even when parsing small inputs. Certain unusual patterns of input data\n> could cause the common function used to parse HTTP and MIME headers to\n> allocate substantially more memory than required to hold the parsed\n> headers. An attacker can exploit this behavior to cause an HTTP server\n> to allocate large amounts of memory from a small request, potentially\n> leading to memory exhaustion and a denial of service. Header parsing\n> now correctly allocates only the memory required to hold parsed\n> headers.\n\n> net/http, net/textproto, mime/multipart: denial of service from\n> excessive resource consumption\n>\n> Multipart form parsing can consume large amounts of CPU and memory\n> when processing form inputs containing very large numbers of parts.\n> This stems from several causes: mime/multipart.Reader.ReadForm limits\n> the total memory a parsed multipart form can consume. ReadForm could\n> undercount the amount of memory consumed, leading it to accept larger\n> inputs than intended. Limiting total memory does not account for\n> increased pressure on the garbage collector from large numbers of\n> small allocations in forms with many parts. ReadForm could allocate a\n> large number of short-lived buffers, further increasing pressure on\n> the garbage collector. The combination of these factors can permit an\n> attacker to cause an program that parses multipart forms to consume\n> large amounts of CPU and memory, potentially resulting in a denial of\n> service. This affects programs that use\n> mime/multipart.Reader.ReadForm, as well as form parsing in the\n> net/http package with the Request methods FormFile, FormValue,\n> ParseMultipartForm, and PostFormValue. ReadForm now does a better job\n> of estimating the memory consumption of parsed forms, and performs\n> many fewer short-lived allocations. In addition, mime/multipart.Reader\n> now imposes the following limits on the size of parsed forms: Forms\n> parsed with ReadForm may contain no more than 1000 parts. This limit\n> may be adjusted with the environment variable\n> GODEBUG=multipartmaxparts=. Form parts parsed with NextPart and\n> NextRawPart may contain no more than 10,000 header fields. In\n> addition, forms parsed with ReadForm may contain no more than 10,000\n> header fields across all parts. This limit may be adjusted with the\n> environment variable GODEBUG=multipartmaxheaders=.\n",
+    "id": "FreeBSD-2023-0098",
+    "modified": "2023-04-07T00:00:00Z",
+    "published": "2023-04-07T00:00:00Z",
+    "references": [
+        {
+            "type": "REPORT",
+            "url": "https://go.dev/issue/59180"
+        },
+        {
+            "type": "REPORT",
+            "url": "https://go.dev/issue/59234"
+        },
+        {
+            "type": "REPORT",
+            "url": "https://go.dev/issue/58975"
+        },
+        {
+            "type": "REPORT",
+            "url": "https://go.dev/issue/59153"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2023-24537"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2023-24538"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2023-24534"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2023-24536"
+        },
+        {
+            "type": "WEB",
+            "url": "https://groups.google.com/g/golang-dev/c/P-sOFU28bj0/m/QE_cqf22AgAJ"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "go -- multiple vulnerabilities"
+}

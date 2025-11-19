@@ -1,0 +1,93 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "openssl"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "1.1.1m,1"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        },
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "openssl-devel"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "3.0.1"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        },
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "openssl-quictls"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "3.0.1"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "cite": [
+            "https://www.openssl.org/news/secadv/20220128.txt"
+        ],
+        "discovery": "2022-01-28T00:00:00Z",
+        "references": {
+            "cvename": [
+                "CVE-2021-4160"
+            ]
+        },
+        "vid": "1aaaa5c6-804d-11ec-8be6-d4c9ef517024"
+    },
+    "details": "The OpenSSL project reports:\n\n> BN_mod_exp may produce incorrect results on MIPS (Moderate)\n>\n> There is a carry propagation bug in the MIPS32 and MIPS64 squaring\n> procedure. Many EC algorithms are affected, including some of the TLS\n> 1.3 default curves. Impact was not analyzed in detail, because the\n> pre-requisites for attack are considered unlikely and include reusing\n> private keys. Analysis suggests that attacks against RSA and DSA as a\n> result of this defect would be very difficult to perform and are not\n> believed likely. Attacks against DH are considered just feasible\n> (although very difficult) because most of the work necessary to deduce\n> information about a private key may be performed offline. The amount\n> of resources required for such an attack would be significant.\n> However, for an attack on TLS to be meaningful, the server would have\n> to share the DH private key among multiple clients, which is no longer\n> an option since CVE-2016-0701.\n",
+    "id": "FreeBSD-2022-0017",
+    "modified": "2022-01-28T00:00:00Z",
+    "published": "2022-01-28T00:00:00Z",
+    "references": [
+        {
+            "type": "REPORT",
+            "url": "https://www.openssl.org/news/secadv/20220128.txt"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2021-4160"
+        },
+        {
+            "type": "WEB",
+            "url": "https://www.openssl.org/news/secadv/20220128.txt"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "OpenSSL -- BN_mod_exp incorrect results on MIPS"
+}

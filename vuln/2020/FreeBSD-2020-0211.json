@@ -1,0 +1,85 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "dovecot"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "2.3.11"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "cite": [
+            "https://dovecot.org/pipermail/dovecot-news/2020-August/000440.html",
+            "https://dovecot.org/pipermail/dovecot-news/2020-August/000440.html",
+            "https://dovecot.org/pipermail/dovecot-news/2020-August/000440.html",
+            "https://dovecot.org/pipermail/dovecot-news/2020-August/000440.html"
+        ],
+        "discovery": "2020-04-23T00:00:00Z",
+        "references": {
+            "cvename": [
+                "CVE-2020-12100",
+                "CVE-2020-12673",
+                "CVE-2020-10967",
+                "CVE-2020-12674"
+            ]
+        },
+        "vid": "87a07de1-e55e-4d51-bb64-8d117829a26a"
+    },
+    "details": "Aki Tuomi reports:\n\n> Parsing mails with a large number of MIME parts could have resulted in\n> excessive CPU usage or a crash due to running out of stack memory..\n\n> Dovecot\\'s NTLM implementation does not correctly check message buffer\n> size, which leads to reading past allocation which can lead to crash\n\n> lmtp/submission: Issuing the RCPT command with an address that has the\n> empty quoted string as local-part causes the lmtp service to crash.\n\n> Dovecot\\'s RPA mechanism implementation accepts zero-length message,\n> which leads to assert-crash later on.\n",
+    "id": "FreeBSD-2020-0211",
+    "modified": "2020-08-13T00:00:00Z",
+    "published": "2020-08-13T00:00:00Z",
+    "references": [
+        {
+            "type": "REPORT",
+            "url": "https://dovecot.org/pipermail/dovecot-news/2020-August/000440.html"
+        },
+        {
+            "type": "REPORT",
+            "url": "https://dovecot.org/pipermail/dovecot-news/2020-August/000440.html"
+        },
+        {
+            "type": "REPORT",
+            "url": "https://dovecot.org/pipermail/dovecot-news/2020-August/000440.html"
+        },
+        {
+            "type": "REPORT",
+            "url": "https://dovecot.org/pipermail/dovecot-news/2020-August/000440.html"
+        },
+        {
+            "type": "WEB",
+            "url": "https://dovecot.org/pipermail/dovecot-news/2020-August/000440.html"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2020-12100"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2020-12673"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2020-10967"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2020-12674"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "mail/dovecot -- multiple vulnerabilities"
+}

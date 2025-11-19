@@ -1,0 +1,55 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "freexl"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "1.0.1"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "cite": [
+            "http://www.openwall.com/lists/oss-security/2015/03/25/1"
+        ],
+        "discovery": "2015-03-24T00:00:00Z",
+        "references": {
+            "cvename": [
+                "CVE-2015-2776"
+            ]
+        },
+        "vid": "ac98d090-45cc-11e5-adde-14dae9d210b8"
+    },
+    "details": "Jodie Cunningham reports:\n\n> #1: A flaw was found in the way FreeXL reads sectors from the input\n> file. A specially crafted file could possibly result in stack\n> corruption near freexl.c:3752.\n>\n> #2: A flaw was found in the function allocate_cells(). A specially\n> crafted file with invalid workbook dimensions could possibly result in\n> stack corruption near freexl.c:1074\n>\n> #3: A flaw was found in the way FreeXL handles a premature EOF. A\n> specially crafted input file could possibly result in stack corruption\n> near freexl.c:1131\n>\n> #4: FreeXL 1.0.0g did not properly check requests for workbook memory\n> allocation. A specially crafted input file could cause a Denial of\n> Service, or possibly write onto the stack.\n",
+    "id": "FreeBSD-2015-0253",
+    "modified": "2015-08-18T00:00:00Z",
+    "published": "2015-08-18T00:00:00Z",
+    "references": [
+        {
+            "type": "REPORT",
+            "url": "http://www.openwall.com/lists/oss-security/2015/03/25/1"
+        },
+        {
+            "type": "WEB",
+            "url": "http://www.openwall.com/lists/oss-security/2015/03/25/1"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2015-2776"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "freexl -- multiple vulnerabilities"
+}

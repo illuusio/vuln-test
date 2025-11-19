@@ -1,0 +1,70 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "jenkins"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "1.514"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "cite": [
+            "https://wiki.jenkins-ci.org/display/SECURITY/Jenkins+Security+Advisory+2013-05-02"
+        ],
+        "discovery": "2013-05-02T00:00:00Z",
+        "references": {
+            "cvename": [
+                "CVE-2013-2034",
+                "CVE-2013-2033",
+                "CVE-2013-2034",
+                "CVE-2013-1808"
+            ]
+        },
+        "vid": "622e14b1-b40c-11e2-8441-00e0814cab4e"
+    },
+    "details": "Jenkins Security Advisory reports:\n\n> This advisory announces multiple security vulnerabilities that were\n> found in Jenkins core.\n>\n> 1.  SECURITY-63 / CVE-2013-2034\n>\n>     This creates a cross-site request forgery (CSRF) vulnerability on\n>     Jenkins master, where an anonymous attacker can trick an\n>     administrator to execute arbitrary code on Jenkins master by\n>     having him open a specifically crafted attack URL.\n>\n>     There\\'s also a related vulnerability where the permission check\n>     on this ability is done imprecisely, which may affect those who\n>     are running Jenkins instances with a custom authorization strategy\n>     plugin.\n>\n> 2.  SECURITY-67 / CVE-2013-2033\n>\n>     This creates a cross-site scripting (XSS) vulnerability, where an\n>     attacker with a valid user account on Jenkins can execute\n>     JavaScript in the browser of other users, if those users are using\n>     certain browsers.\n>\n> 3.  SECURITY-69 / CVE-2013-2034\n>\n>     This is another CSRF vulnerability that allows an attacker to\n>     cause a deployment of binaries to Maven repositories. This\n>     vulnerability has the same CVE ID as SEUCRITY-63.\n>\n> 4.  SECURITY-71 / CVE-2013-1808\n>\n>     This creates a cross-site scripting (XSS) vulnerability.\n",
+    "id": "FreeBSD-2013-0080",
+    "modified": "2013-05-03T00:00:00Z",
+    "published": "2013-05-03T00:00:00Z",
+    "references": [
+        {
+            "type": "REPORT",
+            "url": "https://wiki.jenkins-ci.org/display/SECURITY/Jenkins+Security+Advisory+2013-05-02"
+        },
+        {
+            "type": "WEB",
+            "url": "https://wiki.jenkins-ci.org/display/SECURITY/Jenkins+Security+Advisory+2013-05-02"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2013-2034"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2013-2033"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2013-2034"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2013-1808"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "jenkins -- multiple vulnerabilities"
+}

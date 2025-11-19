@@ -1,0 +1,169 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "qemu"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "last_affected": "0.11.1_20"
+                        },
+                        {
+                            "fixed": "0.11.1_20"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                },
+                {
+                    "events": [
+                        {
+                            "introduced": "0.12"
+                        },
+                        {
+                            "last_affected": "2.3.0_2"
+                        },
+                        {
+                            "fixed": "2.3.0_2"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        },
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "qemu-devel"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "last_affected": "0.11.1_20"
+                        },
+                        {
+                            "fixed": "0.11.1_20"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                },
+                {
+                    "events": [
+                        {
+                            "introduced": "0.12"
+                        },
+                        {
+                            "last_affected": "2.3.0_2"
+                        },
+                        {
+                            "fixed": "2.3.0_2"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        },
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "qemu-sbruno"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "2.4.50.g20150814"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        },
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "qemu-user-static"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "2.4.50.g20150814"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        },
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "xen-tools"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "4.5.1"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "cite": [
+            "http://xenbits.xen.org/xsa/advisory-139.html"
+        ],
+        "discovery": "2015-08-03T00:00:00Z",
+        "references": {
+            "cvename": [
+                "CVE-2015-5166"
+            ]
+        },
+        "vid": "ee99899d-4347-11e5-93ad-002590263bf5"
+    },
+    "details": "The Xen Project reports:\n\n> When unplugging an emulated block device the device was not fully\n> unplugged, meaning a second unplug attempt would attempt to unplug the\n> device a second time using a previously freed pointer.\n>\n> An HVM guest which has access to an emulated IDE disk device may be\n> able to exploit this vulnerability in order to take over the qemu\n> process elevating its privilege to that of the qemu process.\n",
+    "id": "FreeBSD-2015-0250",
+    "modified": "2015-08-19T00:00:00Z",
+    "published": "2015-08-17T00:00:00Z",
+    "references": [
+        {
+            "type": "REPORT",
+            "url": "http://xenbits.xen.org/xsa/advisory-139.html"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2015-5166"
+        },
+        {
+            "type": "WEB",
+            "url": "http://xenbits.xen.org/xsa/advisory-139.html"
+        },
+        {
+            "type": "WEB",
+            "url": "http://git.qemu.org/?p=qemu.git;a=commit;h=260425ab405ea76c44dd59744d05176d4f579a52"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "qemu, xen-tools -- use-after-free in QEMU/Xen block unplug protocol"
+}

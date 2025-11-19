@@ -1,0 +1,156 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "grafana8"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "introduced": "8.0.0"
+                        },
+                        {
+                            "fixed": "8.1.6"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                },
+                {
+                    "events": [
+                        {
+                            "introduced": "2.0.1"
+                        },
+                        {
+                            "fixed": "7.5.11"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        },
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "grafana7"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "introduced": "8.0.0"
+                        },
+                        {
+                            "fixed": "8.1.6"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                },
+                {
+                    "events": [
+                        {
+                            "introduced": "2.0.1"
+                        },
+                        {
+                            "fixed": "7.5.11"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        },
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "grafana6"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "introduced": "8.0.0"
+                        },
+                        {
+                            "fixed": "8.1.6"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                },
+                {
+                    "events": [
+                        {
+                            "introduced": "2.0.1"
+                        },
+                        {
+                            "fixed": "7.5.11"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        },
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "grafana"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "introduced": "8.0.0"
+                        },
+                        {
+                            "fixed": "8.1.6"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                },
+                {
+                    "events": [
+                        {
+                            "introduced": "2.0.1"
+                        },
+                        {
+                            "fixed": "7.5.11"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "cite": [
+            "https://grafana.com/blog/2021/10/05/grafana-7.5.11-and-8.1.6-released-with-critical-security-fix/"
+        ],
+        "discovery": "2021-09-15T00:00:00Z",
+        "references": {
+            "cvename": [
+                "CVE-2021-39226"
+            ]
+        },
+        "vid": "757ee63b-269a-11ec-a616-6c3be5272acd"
+    },
+    "details": "Grafana Labs reports:\n\n> Unauthenticated and authenticated users are able to view the snapshot\n> with the lowest database key by accessing the literal paths:\n>\n> - `/dashboard/snapshot/:key`, or\n> - `/api/snapshots/:key`\n>\n> If the snapshot \\\"public_mode\\\" configuration setting is set to true\n> (vs default of false), unauthenticated users are able to delete the\n> snapshot with the lowest database key by accessing the literal path:\n>\n> - `/api/snapshots-delete/:deleteKey`\n>\n> Regardless of the snapshot \\\"public_mode\\\" setting, authenticated\n> users are able to delete the snapshot with the lowest database key by\n> accessing the literal paths:\n>\n> - `/api/snapshots/:key`, or\n> - `/api/snapshots-delete/:deleteKey`\n>\n> The combination of deletion and viewing enables a complete walk\n> through all snapshot data while resulting in complete snapshot data\n> loss.\n",
+    "id": "FreeBSD-2021-0262",
+    "modified": "2021-10-06T00:00:00Z",
+    "published": "2021-10-06T00:00:00Z",
+    "references": [
+        {
+            "type": "REPORT",
+            "url": "https://grafana.com/blog/2021/10/05/grafana-7.5.11-and-8.1.6-released-with-critical-security-fix/"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2021-39226"
+        },
+        {
+            "type": "WEB",
+            "url": "https://grafana.com/blog/2021/10/05/grafana-7.5.11-and-8.1.6-released-with-critical-security-fix/"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "Grafana -- Snapshot authentication bypass"
+}

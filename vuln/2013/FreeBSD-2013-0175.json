@@ -1,0 +1,78 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "ruby19"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "1.9.3.484,1"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        },
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "ruby20"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "2.0.0.353,1"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "cite": [
+            "https://www.ruby-lang.org/en/news/2013/11/22/heap-overflow-in-floating-point-parsing-cve-2013-4164/"
+        ],
+        "discovery": "2013-11-22T00:00:00Z",
+        "references": {
+            "cvename": [
+                "CVE-2013-4164"
+            ]
+        },
+        "vid": "cc9043cf-7f7a-426e-b2cc-8d1980618113"
+    },
+    "details": "Ruby developers report:\n\n> Any time a string is converted to a floating point value, a specially\n> crafted string can cause a heap overflow. This can lead to a denial of\n> service attack via segmentation faults and possibly arbitrary code\n> execution. Any program that converts input of unknown origin to\n> floating point values (especially common when accepting JSON) are\n> vulnerable.\n",
+    "id": "FreeBSD-2013-0175",
+    "modified": "2013-11-23T00:00:00Z",
+    "published": "2013-11-23T00:00:00Z",
+    "references": [
+        {
+            "type": "REPORT",
+            "url": "https://www.ruby-lang.org/en/news/2013/11/22/heap-overflow-in-floating-point-parsing-cve-2013-4164/"
+        },
+        {
+            "type": "WEB",
+            "url": "https://www.ruby-lang.org/en/news/2013/11/22/ruby-1-9-3-p484-is-released/"
+        },
+        {
+            "type": "WEB",
+            "url": "https://www.ruby-lang.org/en/news/2013/11/22/ruby-2-0-0-p353-is-released/"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2013-4164"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "ruby -- Heap Overflow in Floating Point Parsing"
+}

@@ -1,0 +1,84 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "mysql-server"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "last_affected": "3.23.58_3"
+                        },
+                        {
+                            "fixed": "3.23.58_3"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                },
+                {
+                    "events": [
+                        {
+                            "introduced": "4.*"
+                        },
+                        {
+                            "fixed": "4.0.21"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "cite": [
+            "http://rhn.redhat.com/errata/RHSA-2004-611.html"
+        ],
+        "discovery": "2004-03-23T00:00:00Z",
+        "references": {
+            "bid": [
+                "11357"
+            ],
+            "cvename": [
+                "CVE-2004-0835"
+            ]
+        },
+        "vid": "035d17b2-484a-11d9-813c-00065be4b5b6"
+    },
+    "details": "A Red Hat advisory reports:\n\n> Oleksandr Byelkin discovered that \\\"ALTER TABLE \\... RENAME\\\" checked\n> the CREATE/INSERT rights of the old table instead of the new one.\n\nTable access restrictions, on the affected MySQL servers, may accidently\nor intentially be bypassed due to this bug.\n",
+    "id": "FreeBSD-2004-0270",
+    "modified": "2005-03-15T00:00:00Z",
+    "published": "2004-12-16T00:00:00Z",
+    "references": [
+        {
+            "type": "REPORT",
+            "url": "http://rhn.redhat.com/errata/RHSA-2004-611.html"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2004-0835"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://www.securityfocus.com/bid/11357/info"
+        },
+        {
+            "type": "WEB",
+            "url": "http://bugs.mysql.com/bug.php?id=3270"
+        },
+        {
+            "type": "WEB",
+            "url": "http://rhn.redhat.com/errata/RHSA-2004-611.html"
+        },
+        {
+            "type": "WEB",
+            "url": "http://xforce.iss.net/xforce/xfdb/17666"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "mysql -- erroneous access restrictions applied to table renames"
+}

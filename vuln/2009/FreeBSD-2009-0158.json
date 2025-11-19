@@ -1,0 +1,65 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "kdebase-runtime"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "introduced": "4.0.*"
+                        },
+                        {
+                            "fixed": "4.3.1_2"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        },
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "kdelibs"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "introduced": "4.0.*"
+                        },
+                        {
+                            "fixed": "4.3.1_5"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "cite": [
+            "http://www.ocert.org/advisories/ocert-2009-015.html"
+        ],
+        "discovery": "2009-10-30T00:00:00Z",
+        "vid": "6f358f5a-c7ea-11de-a9f3-0030843d3802"
+    },
+    "details": "oCERT reports:\n\n> Ark input sanitization errors: The KDE archiving tool, Ark, performs\n> insufficient validation which leads to specially crafted archive\n> files, using unknown MIME types, to be rendered using a KHTML\n> instance, this can trigger uncontrolled XMLHTTPRequests to remote\n> sites.\n>\n> IO Slaves input sanitization errors: KDE protocol handlers perform\n> insufficient input validation, an attacker can craft malicious URI\n> that would trigger JavaScript execution. Additionally the \\'help://\\'\n> protocol handler suffer from directory traversal. It should be noted\n> that the scope of this issue is limited as the malicious URIs cannot\n> be embedded in Internet hosted content.\n>\n> KMail input sanitization errors: The KDE mail client, KMail, performs\n> insufficient validation which leads to specially crafted email\n> attachments, using unknown MIME types, to be rendered using a KHTML\n> instance, this can trigger uncontrolled XMLHTTPRequests to remote\n> sites.\n>\n> The exploitation of these vulnerabilities is unlikely according to\n> Portcullis and KDE but the execution of active content is nonetheless\n> unexpected and might pose a threat.\n",
+    "id": "FreeBSD-2009-0158",
+    "modified": "2009-11-02T00:00:00Z",
+    "published": "2009-11-02T00:00:00Z",
+    "references": [
+        {
+            "type": "REPORT",
+            "url": "http://www.ocert.org/advisories/ocert-2009-015.html"
+        },
+        {
+            "type": "WEB",
+            "url": "http://www.ocert.org/advisories/ocert-2009-015.html"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "KDE -- multiple vulnerabilities"
+}

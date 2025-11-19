@@ -1,0 +1,72 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "plone"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "4.3.7"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "cite": [
+            "https://plone.org/products/plone/security/advisories/20150910-announcement",
+            "https://plone.org/security/20150910/non-persistent-xss-in-plone"
+        ],
+        "discovery": "2015-09-10T00:00:00Z",
+        "references": {
+            "freebsdpr": [
+                "ports/203255"
+            ]
+        },
+        "vid": "6b3374d4-6b0b-11e5-9909-002590263bf5"
+    },
+    "details": "Plone.org reports:\n\n> Versions Affected: All current Plone versions.\n>\n> Versions Not Affected: None.\n>\n> Nature of vulnerability: Allows creation of members by anonymous users\n> on sites that have self-registration enabled, allowing bypass of\n> CAPTCHA and similar protections against scripted attacks.\n>\n> The patch can be added to buildouts as Products.PloneHotfix20150910\n> (available from PyPI) or downloaded from Plone.org.\n>\n> Immediate Measures You Should Take: Disable self-registration until\n> you have applied the patch.\n\n> Plone\\'s URL checking infrastructure includes a method for checking if\n> URLs valid and located in the Plone site. By passing HTML into this\n> specially crafted url, XSS can be achieved.\n",
+    "id": "FreeBSD-2015-0313",
+    "modified": "2015-10-05T00:00:00Z",
+    "published": "2015-10-05T00:00:00Z",
+    "references": [
+        {
+            "type": "REPORT",
+            "url": "https://plone.org/products/plone/security/advisories/20150910-announcement"
+        },
+        {
+            "type": "REPORT",
+            "url": "https://plone.org/security/20150910/non-persistent-xss-in-plone"
+        },
+        {
+            "type": "REPORT",
+            "url": "https://bugs.freebsd.org/bugzilla/show_bug.cgi?id=203255"
+        },
+        {
+            "type": "WEB",
+            "url": "https://plone.org/products/plone-hotfix/releases/20150910"
+        },
+        {
+            "type": "WEB",
+            "url": "https://plone.org/products/plone/security/advisories/20150910-announcement"
+        },
+        {
+            "type": "WEB",
+            "url": "https://plone.org/security/20150910/non-persistent-xss-in-plone"
+        },
+        {
+            "type": "WEB",
+            "url": "https://github.com/plone/Products.CMFPlone/commit/3da710a2cd68587f0bf34f2e7ea1167d6eeee087"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "plone -- multiple vulnerabilities"
+}

@@ -1,0 +1,55 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "xen-kernel"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "4.7.1_3"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "cite": [
+            "https://xenbits.xen.org/xsa/advisory-202.html"
+        ],
+        "discovery": "2016-12-21T00:00:00Z",
+        "references": {
+            "cvename": [
+                "CVE-2016-10024"
+            ]
+        },
+        "vid": "3ae078ca-c7eb-11e6-ae1b-002590263bf5"
+    },
+    "details": "The Xen Project reports:\n\n> Certain PV guest kernel operations (page table writes in particular)\n> need emulation, and use Xen\\'s general x86 instruction emulator. This\n> allows a malicious guest kernel which asynchronously modifies its\n> instruction stream to effect the clearing of EFLAGS.IF from the state\n> used to return to guest context.\n>\n> A malicious guest kernel administrator can cause a host hang or crash,\n> resulting in a Denial of Service.\n",
+    "id": "FreeBSD-2016-0479",
+    "modified": "2016-12-22T00:00:00Z",
+    "published": "2016-12-22T00:00:00Z",
+    "references": [
+        {
+            "type": "REPORT",
+            "url": "https://xenbits.xen.org/xsa/advisory-202.html"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2016-10024"
+        },
+        {
+            "type": "WEB",
+            "url": "https://xenbits.xen.org/xsa/advisory-202.html"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "xen-kernel -- x86 PV guests may be able to mask interrupts"
+}

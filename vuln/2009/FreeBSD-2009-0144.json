@@ -1,0 +1,85 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "drupal5"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "5.20"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        },
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "drupal6"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "6.14"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "cite": [
+            "http://drupal.org/node/579482"
+        ],
+        "discovery": "2009-09-17T00:00:00Z",
+        "vid": "bad1b090-a7ca-11de-873f-0030843d3802"
+    },
+    "details": "Drupal Team reports:\n\n> The core OpenID module does not correctly implement Form API for the\n> form that allows one to link user accounts with OpenID identifiers. A\n> malicious user is therefore able to use cross site request forgeries\n> to add attacker controlled OpenID identities to existing accounts.\n> These OpenID identities can then be used to gain access to the\n> affected accounts.\n>\n> The OpenID module is not a compliant implementation of the OpenID\n> Authentication 2.0 specification. An implementation error allows a\n> user to access the account of another user when they share the same\n> OpenID 2.0 provider.\n>\n> File uploads with certain extensions are not correctly processed by\n> the File API. This may lead to the creation of files that are\n> executable by Apache. The .htaccess that is saved into the files\n> directory by Drupal should normally prevent execution. The files are\n> only executable when the server is configured to ignore the directives\n> in the .htaccess file.\n>\n> Drupal doesn\\'t regenerate the session ID when an anonymous user\n> follows the one time login link used to confirm email addresses and\n> reset forgotten passwords. This enables a malicious user to fix and\n> reuse the session id of a victim under certain circumstances.\n",
+    "id": "FreeBSD-2009-0144",
+    "modified": "2009-09-22T00:00:00Z",
+    "published": "2009-09-22T00:00:00Z",
+    "references": [
+        {
+            "type": "REPORT",
+            "url": "http://drupal.org/node/579482"
+        },
+        {
+            "type": "WEB",
+            "url": "http://drupal.org/node/579482"
+        },
+        {
+            "type": "WEB",
+            "url": "http://secunia.com/advisories/36787/"
+        },
+        {
+            "type": "WEB",
+            "url": "http://secunia.com/advisories/36786/"
+        },
+        {
+            "type": "WEB",
+            "url": "http://secunia.com/advisories/36781/"
+        },
+        {
+            "type": "WEB",
+            "url": "http://secunia.com/advisories/36776/"
+        },
+        {
+            "type": "WEB",
+            "url": "http://secunia.com/advisories/36785/"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "drupal -- multiple vulnerabilities"
+}

@@ -1,0 +1,79 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "openvpn"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "introduced": "2.6.0"
+                        },
+                        {
+                            "fixed": "2.6.7_1"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        },
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "openvpn-devel"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "g20231109,1"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "cite": [
+            "https://github.com/OpenVPN/openvpn/blob/v2.6.7/Changes.rst#overview-of-changes-in-267"
+        ],
+        "discovery": "2023-08-29T00:00:00Z",
+        "references": {
+            "cvename": [
+                "CVE-2023-46849",
+                "CVE-2023-46850"
+            ]
+        },
+        "vid": "2fe004f5-83fd-11ee-9f5d-31909fb2f495"
+    },
+    "details": "The OpenVPN community project team reports:\n\n> CVE-2023-46849 OpenVPN versions between 2.6.0 and 2.6.6 incorrectly\n> restore \\\"\\--fragment\\\" configuration in some circumstances, leading\n> to a division by zero when \\\"\\--fragment\\\" is used. On platforms where\n> division by zero is fatal, this will cause an OpenVPN crash.\\\n> Reported by Niccolo Belli and WIPocket (Github #400, #417).\n>\n> CVE-2023-46850 OpenVPN versions between 2.6.0 and 2.6.6 incorrectly\n> use a send buffer after it has been free()d in some circumstances,\n> causing some free()d memory to be sent to the peer. All configurations\n> using TLS (e.g. not using \\--secret) are affected by this issue.\n> (found while tracking down CVE-2023-46849 / Github #400, #417)\n",
+    "id": "FreeBSD-2023-0343",
+    "modified": "2023-12-31T00:00:00Z",
+    "published": "2023-11-15T00:00:00Z",
+    "references": [
+        {
+            "type": "REPORT",
+            "url": "https://github.com/OpenVPN/openvpn/blob/v2.6.7/Changes.rst#overview-of-changes-in-267"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2023-46849"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2023-46850"
+        },
+        {
+            "type": "WEB",
+            "url": "https://github.com/OpenVPN/openvpn/blob/v2.6.7/Changes.rst#overview-of-changes-in-267"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "openvpn -- 2.6.0...2.6.6 --fragment option division by zero crash, and TLS data leak"
+}

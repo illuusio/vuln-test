@@ -1,0 +1,42 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "cyrus-imapd"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "introduced": "2.2.7"
+                        },
+                        {
+                            "last_affected": "2.2.8"
+                        },
+                        {
+                            "fixed": "2.2.8"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "discovery": "2004-11-06T00:00:00Z",
+        "vid": "31952117-3d17-11d9-8818-008088034841"
+    },
+    "details": "To support MULTIAPPENDS the cmd_append handler uses the global stage\narray. This array is one of the things that gets destructed when the\nfatal() function is triggered. When the Cyrus IMAP code adds new entries\nto this array this is done with the help of the postfix increment\noperator in combination with memory allocation functions. The increment\nis performed on a global variable counting the number of allocated\nstages. Because the memory allocation function can fail and therefore\ninternally call fatal() this construct is undefined arcording to ANSI C.\nThis means that it is not clearly defined if the numstage counter is\nalready increased when fatal() is called or not. While older gcc\nversions increase the counter after the memory allocation function has\nreturned, on newer gcc versions (3.x) the counter gets actually\nincreased before. In such a case the stage destructing process will try\nto free an uninitialised and maybe attacker supplied pointer. Which\nagain could lead to remote code execution. (Because it is hard for an\nattacker to let the memory allocation functions fail in the right moment\nno PoC code for this problem was designed)\n",
+    "id": "FreeBSD-2004-0250",
+    "modified": "2004-11-22T00:00:00Z",
+    "published": "2004-11-22T00:00:00Z",
+    "references": [
+        {
+            "type": "WEB",
+            "url": "http://security.e-matters.de/advisories/152004.html"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "Cyrus IMAPd -- APPEND command uses undefined programming construct"
+}

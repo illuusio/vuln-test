@@ -1,0 +1,90 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "zgv"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "5.8_1"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        },
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "xzgv"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "0.8_2"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "cite": [
+            "http://marc.theaimsgroup.com/?l=bugtraq&m=109886210702781"
+        ],
+        "discovery": "2004-10-26T00:00:00Z",
+        "references": {
+            "cvename": [
+                "CVE-2004-0994"
+            ]
+        },
+        "vid": "249a8c42-6973-11d9-ae49-000c41e2cdad"
+    },
+    "details": "infamous41md reports:\n\n> zgv uses malloc() frequently to allocate memory for storing image\n> data. When calculating how much to allocate, user supplied data from\n> image headers is multiplied and/or added without any checks for\n> arithmetic overflows. We can overflow numerous calculations, and cause\n> small buffers to be allocated. Then we can overflow the buffer, and\n> eventually execute code. There are a total of 11 overflows that are\n> exploitable to execute arbitrary code.\n\nThese bugs exist in both zgv and xzgv.\n",
+    "id": "FreeBSD-2005-0036",
+    "modified": "2005-01-21T00:00:00Z",
+    "published": "2005-01-18T00:00:00Z",
+    "references": [
+        {
+            "type": "REPORT",
+            "url": "http://marc.theaimsgroup.com/?l=bugtraq&m=109886210702781"
+        },
+        {
+            "type": "DISCUSSION",
+            "url": "http://marc.theaimsgroup.com/?l=bugtraq&m=109886210702781"
+        },
+        {
+            "type": "DISCUSSION",
+            "url": "http://marc.theaimsgroup.com/?l=bugtraq&m=109898111915661"
+        },
+        {
+            "type": "WEB",
+            "url": "http://rus.members.beeb.net/xzgv.html"
+        },
+        {
+            "type": "WEB",
+            "url": "http://www.svgalib.org/rus/zgv/"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2004-0994"
+        },
+        {
+            "type": "WEB",
+            "url": "http://www.idefense.com/application/poi/display?id=160&type=vulnerabilities&flashstatus=false"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "zgv -- exploitable heap overflows"
+}

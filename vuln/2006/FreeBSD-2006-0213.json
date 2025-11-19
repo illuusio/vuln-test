@@ -1,0 +1,59 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "gnupg"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "1.4.6"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "cite": [
+            "http://lists.gnupg.org/pipermail/gnupg-announce/2006q4/000491.html"
+        ],
+        "discovery": "2006-12-04T00:00:00Z",
+        "references": {
+            "cvename": [
+                "CVE-2006-6235"
+            ]
+        },
+        "vid": "4db1669c-8589-11db-ac4f-02e081235dab"
+    },
+    "details": "Werner Koch reports:\n\n> GnuPG uses data structures called filters to process OpenPGP messages.\n> These filters are used in a similar way as a pipelines in the shell.\n> For communication between these filters context structures are used.\n> These are usually allocated on the stack and passed to the filter\n> functions. At most places the OpenPGP data stream fed into these\n> filters is closed before the context structure gets deallocated. While\n> decrypting encrypted packets, this may not happen in all cases and the\n> filter may use a void contest structure filled with garbage. An\n> attacker may control this garbage. The filter context includes another\n> context used by the low-level decryption to access the decryption\n> algorithm. This is done using a function pointer. By carefully\n> crafting an OpenPGP message, an attacker may control this function\n> pointer and call an arbitrary function of the process. Obviously an\n> exploit needs to prepared for a specific version, compiler, libc, etc\n> to be successful - but it is definitely doable.\n>\n> Fixing this is obvious: We need to allocate the context on the heap\n> and use a reference count to keep it valid as long as either the\n> controlling code or the filter code needs it.\n>\n> We have checked all other usages of such a stack based filter contexts\n> but fortunately found no other vulnerable places. This allows to\n> release a relatively small patch. However, for reasons of code\n> cleanness and easier audits we will soon start to change all these\n> stack based filter contexts to heap based ones.\n",
+    "id": "FreeBSD-2006-0213",
+    "modified": "2006-12-15T00:00:00Z",
+    "published": "2006-12-07T00:00:00Z",
+    "references": [
+        {
+            "type": "REPORT",
+            "url": "http://lists.gnupg.org/pipermail/gnupg-announce/2006q4/000491.html"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2006-6235"
+        },
+        {
+            "type": "WEB",
+            "url": "http://lists.gnupg.org/pipermail/gnupg-announce/2006q4/000246.html"
+        },
+        {
+            "type": "WEB",
+            "url": "http://secunia.com/advisories/23245/"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "gnupg -- remotely controllable function pointer"
+}

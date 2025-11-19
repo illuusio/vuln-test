@@ -1,0 +1,65 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "openssl-devel"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "1.1.0c"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "cite": [
+            "https://www.openssl.org/news/secadv/20161110.txt"
+        ],
+        "discovery": "2016-11-10T00:00:00Z",
+        "references": {
+            "cvename": [
+                "CVE-2016-7054",
+                "CVE-2016-7053",
+                "CVE-2016-7055"
+            ]
+        },
+        "vid": "50751310-a763-11e6-a881-b499baebfeaf"
+    },
+    "details": "OpenSSL reports:\n\n> - ChaCha20/Poly1305 heap-buffer-overflow (CVE-2016-7054)\\\n>   Severity: High\\\n>   TLS connections using \\*-CHACHA20-POLY1305 ciphersuites are\n>   susceptible to a DoS attack by corrupting larger payloads. This can\n>   result in an OpenSSL crash. This issue is not considered to be\n>   exploitable beyond a DoS.\n> - CMS Null dereference (CVE-2016-7053)\\\n>   Severity: Medium\\\n>   Applications parsing invalid CMS structures can crash with a NULL\n>   pointer dereference. This is caused by a bug in the handling of the\n>   ASN.1 CHOICE type in OpenSSL 1.1.0 which can result in a NULL value\n>   being passed to the structure callback if an attempt is made to free\n>   certain invalid encodings. Only CHOICE structures using a callback\n>   which do not handle NULL value are affected.\n> - Montgomery multiplication may produce incorrect results\n>   (CVE-2016-7055)i\\\n>   Severity: Low\\\n>   There is a carry propagating bug in the Broadwell-specific\n>   Montgomery multiplication procedure that handles input lengths\n>   divisible by, but longer than 256 bits.\n",
+    "id": "FreeBSD-2016-0428",
+    "modified": "2016-11-11T00:00:00Z",
+    "published": "2016-11-10T00:00:00Z",
+    "references": [
+        {
+            "type": "REPORT",
+            "url": "https://www.openssl.org/news/secadv/20161110.txt"
+        },
+        {
+            "type": "WEB",
+            "url": "https://www.openssl.org/news/secadv/20161110.txt"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2016-7054"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2016-7053"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2016-7055"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "openssl -- multiple vulnerabilities"
+}

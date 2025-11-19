@@ -1,0 +1,55 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "kanboard"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "1.2.43"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "cite": [
+            "https://github.com/kanboard/kanboard/blob/main/app/Core/Session/SessionHandler.php#L40"
+        ],
+        "discovery": "2024-12-19T00:00:00Z",
+        "references": {
+            "cvename": [
+                "CVE-2024-55603"
+            ]
+        },
+        "vid": "94b2d58a-c1e9-11ef-aa3f-dcfe074bd614"
+    },
+    "details": "security-advisories@github.com reports:\n\n> Kanboard is project management software that focuses on the Kanban\n> methodology. In affected versions sessions are still usable even\n> though their lifetime has exceeded. Kanboard implements a cutom\n> session handler (\\`app/Core/Session/SessionHandler.php\\`), to store\n> the session data in a database. Therefore, when a \\`session_id\\` is\n> given, kanboard queries the data from the \\`sessions\\` sql table. At\n> this point, it does not correctly verify, if a given \\`session_id\\`\n> has already exceeded its lifetime (\\`expires_at\\`). Thus, a session\n> which\\'s lifetime is already \\`\\> time()\\`, is still queried from the\n> database and hence a valid login. The implemented\n> \\*\\*SessionHandlerInterface::gc\\*\\* function, that does remove invalid\n> sessions, is called only \\*\\*with a certain probability\\*\\* (\\_Cleans\n> up expired sessions. Called by \\`session_start()\\`, based on\n> \\`session.gc_divisor\\`, \\`session.gc_probability\\` and\n> \\`session.gc_maxlifetime\\` settings\\_) accordingly to the php\n> documentation. In the official Kanboard docker image these values\n> default to: session.gc_probability=1, session.gc_divisor=1000. Thus,\n> an expired session is only terminated with probability 1/1000. There\n> are no known workarounds for this vulnerability.\n",
+    "id": "FreeBSD-2024-0332",
+    "modified": "2024-12-24T00:00:00Z",
+    "published": "2024-12-24T00:00:00Z",
+    "references": [
+        {
+            "type": "REPORT",
+            "url": "https://github.com/kanboard/kanboard/blob/main/app/Core/Session/SessionHandler.php#L40"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2024-55603"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://nvd.nist.gov/vuln/detail/CVE-2024-55603"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "kanboard -- Insufficient session invalidation"
+}

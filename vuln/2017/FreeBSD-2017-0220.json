@@ -1,0 +1,88 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "sugarcrm"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "last_affected": "6.5.26"
+                        },
+                        {
+                            "fixed": "6.5.26"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "cite": [
+            "https://blog.ripstech.com/2017/sugarcrm-security-diet-multiple-vulnerabilities/"
+        ],
+        "discovery": "2017-09-17T00:00:00Z",
+        "references": {
+            "cvename": [
+                "CVE-2017-14508",
+                "CVE-2017-14509",
+                "CVE-2017-14510"
+            ]
+        },
+        "vid": "3b776502-f601-44e0-87cd-b63f1b9ae42a"
+    },
+    "details": "sugarcrm developers report:\n\n> An issue was discovered in SugarCRM before 7.7.2.3, 7.8.x before\n> 7.8.2.2, and 7.9.x before 7.9.2.0 (and Sugar Community Edition\n> 6.5.26). Several areas have been identified in the Documents and\n> Emails module that could allow an authenticated user to perform SQL\n> injection, as demonstrated by a backslash character at the end of a\n> bean_id to modules/Emails/DetailView.php. An attacker could exploit\n> these vulnerabilities by sending a crafted SQL request to the affected\n> areas. An exploit could allow the attacker to modify the SQL database.\n> Proper SQL escaping has been added to prevent such exploits.\n>\n> An issue was discovered in SugarCRM before 7.7.2.3, 7.8.x before\n> 7.8.2.2, and 7.9.x before 7.9.2.0 (and Sugar Community Edition\n> 6.5.26). A remote file inclusion has been identified in the Connectors\n> module allowing authenticated users to include remotely accessible\n> system files via a query string. Proper input validation has been\n> added to mitigate this issue.\n>\n> An issue was discovered in SugarCRM before 7.7.2.3, 7.8.x before\n> 7.8.2.2, and 7.9.x before 7.9.2.0 (and Sugar Community Edition\n> 6.5.26). The WebToLeadCapture functionality is found vulnerable to\n> unauthenticated cross-site scripting (XSS) attacks. This attack vector\n> is mitigated by proper validating the redirect URL values being passed\n> along.\n",
+    "id": "FreeBSD-2017-0220",
+    "modified": "2017-09-26T00:00:00Z",
+    "published": "2017-09-26T00:00:00Z",
+    "references": [
+        {
+            "type": "REPORT",
+            "url": "https://blog.ripstech.com/2017/sugarcrm-security-diet-multiple-vulnerabilities/"
+        },
+        {
+            "type": "WEB",
+            "url": "https://blog.ripstech.com/2017/sugarcrm-security-diet-multiple-vulnerabilities/"
+        },
+        {
+            "type": "WEB",
+            "url": "https://support.sugarcrm.com/Resources/Security/sugarcrm-sa-2017-006/"
+        },
+        {
+            "type": "WEB",
+            "url": "https://blog.ripstech.com/2017/sugarcrm-security-diet-multiple-vulnerabilities/"
+        },
+        {
+            "type": "WEB",
+            "url": "https://support.sugarcrm.com/Resources/Security/sugarcrm-sa-2017-007/"
+        },
+        {
+            "type": "WEB",
+            "url": "https://blog.ripstech.com/2017/sugarcrm-security-diet-multiple-vulnerabilities/"
+        },
+        {
+            "type": "WEB",
+            "url": "https://support.sugarcrm.com/Resources/Security/sugarcrm-sa-2017-008/"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2017-14508"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2017-14509"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2017-14510"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "sugarcrm -- multiple vulnerabilities"
+}

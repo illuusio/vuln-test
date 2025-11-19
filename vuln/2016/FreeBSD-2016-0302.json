@@ -1,0 +1,62 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:kernel",
+                "name": "FreeBSD-kernel"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "introduced": "9.1"
+                        },
+                        {
+                            "fixed": "9.1_5"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                },
+                {
+                    "events": [
+                        {
+                            "introduced": "8.3"
+                        },
+                        {
+                            "fixed": "8.3_9"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "discovery": "2013-07-06T00:00:00Z",
+        "references": {
+            "cvename": [
+                "CVE-2013-4851"
+            ],
+            "freebsdsa": [
+                "SA-13:08.nfsserver"
+            ]
+        },
+        "vid": "e5d2442d-5e76-11e6-a6c3-14dae9d210b8"
+    },
+    "details": "Problem Description:\n\nThe kernel incorrectly uses client supplied credentials instead of the\none configured in exports(5) when filling out the anonymous credential\nfor a NFS export, when -network or -host restrictions are used at the\nsame time.\n\nImpact:\n\nThe remote client may supply privileged credentials (e.g. the root user)\nwhen accessing a file under the NFS share, which will bypass the normal\naccess checks.\n",
+    "id": "FreeBSD-2016-0302",
+    "modified": "2016-08-09T00:00:00Z",
+    "published": "2016-08-09T00:00:00Z",
+    "references": [
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2013-4851"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://www.freebsd.org/security/advisories/FreeBSD-SA-13:08.nfsserver.asc"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "FreeBSD -- Incorrect privilege validation in the NFS server"
+}

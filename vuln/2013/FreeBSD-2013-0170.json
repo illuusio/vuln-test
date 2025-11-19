@@ -1,0 +1,65 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "openssh-portable"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "introduced": "6.2.p2,1"
+                        },
+                        {
+                            "fixed": "6.4.p1,1"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        },
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "openssh-portable-base"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "introduced": "6.2.p2,1"
+                        },
+                        {
+                            "fixed": "6.4.p1,1"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "cite": [
+            "http://www.openssh.com/txt/gcmrekey.adv"
+        ],
+        "discovery": "2013-11-07T00:00:00Z",
+        "vid": "5709d244-4873-11e3-8a46-000d601460a4"
+    },
+    "details": "The OpenSSH development team reports:\n\n> A memory corruption vulnerability exists in the post- authentication\n> sshd process when an AES-GCM cipher (aes128-gcm@openssh.com or\n> aes256-gcm@openssh.com) is selected during kex exchange.\n>\n> If exploited, this vulnerability might permit code execution with the\n> privileges of the authenticated user and may therefore allow bypassing\n> restricted shell/command configurations.\n>\n> Either upgrade to 6.4 or disable AES-GCM in the server configuration.\n> The following sshd_config option will disable AES-GCM while leaving\n> other ciphers active:\n>\n> Ciphers\n> aes128-ctr,aes192-ctr,aes256-ctr,aes128-cbc,3des-cbc,blowfish-cbc,cast128-cbc,aes192-cbc,aes256-cbc\n",
+    "id": "FreeBSD-2013-0170",
+    "modified": "2013-11-13T00:00:00Z",
+    "published": "2013-11-08T00:00:00Z",
+    "references": [
+        {
+            "type": "REPORT",
+            "url": "http://www.openssh.com/txt/gcmrekey.adv"
+        },
+        {
+            "type": "WEB",
+            "url": "http://www.openssh.com/txt/gcmrekey.adv"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "OpenSSH -- Memory corruption in sshd"
+}

@@ -1,0 +1,55 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "FreeBSD"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "introduced": "6.3"
+                        },
+                        {
+                            "fixed": "6.4_7"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                },
+                {
+                    "events": [
+                        {
+                            "introduced": "6.4"
+                        },
+                        {
+                            "fixed": "6.3_13"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "discovery": "2009-10-02T00:00:00Z",
+        "references": {
+            "freebsdsa": [
+                "SA-09:13.pipe"
+            ]
+        },
+        "vid": "90d2e58f-b25a-11de-8c83-02e0185f8d72"
+    },
+    "details": "# Problem Description\n\nA race condition exists in the pipe close() code relating to kqueues,\ncausing use-after-free for kernel memory, which may lead to an\nexploitable NULL pointer vulnerability in the kernel, kernel memory\ncorruption, and other unpredictable results.\n\n# Impact:\n\nSuccessful exploitation of the race condition can lead to local kernel\nprivilege escalation, kernel data corruption and/or crash.\n\nTo exploit this vulnerability, an attacker must be able to run code on\nthe target system.\n\n# Workaround\n\nAn errata notice, FreeBSD-EN-09:05.null has been released simultaneously\nto this advisory, and contains a kernel patch implementing a workaround\nfor a more broad class of vulnerabilities. However, prior to those\nchanges, no workaround is available.\n",
+    "id": "FreeBSD-2009-0146",
+    "modified": "2016-08-09T00:00:00Z",
+    "published": "2009-10-06T00:00:00Z",
+    "references": [
+        {
+            "type": "ADVISORY",
+            "url": "https://www.freebsd.org/security/advisories/FreeBSD-SA-09:13.pipe.asc"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "FreeBSD -- kqueue pipe race conditions"
+}

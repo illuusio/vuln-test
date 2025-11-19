@@ -1,0 +1,88 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "FreeBSD"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "introduced": "6.3"
+                        },
+                        {
+                            "fixed": "6.3_14"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                },
+                {
+                    "events": [
+                        {
+                            "introduced": "6.4"
+                        },
+                        {
+                            "fixed": "6.4_8"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                },
+                {
+                    "events": [
+                        {
+                            "introduced": "7.1"
+                        },
+                        {
+                            "fixed": "7.1_9"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                },
+                {
+                    "events": [
+                        {
+                            "introduced": "7.2"
+                        },
+                        {
+                            "fixed": "7.2_5"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                },
+                {
+                    "events": [
+                        {
+                            "introduced": "8.0"
+                        },
+                        {
+                            "fixed": "8.0_1"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "discovery": "2009-12-03T00:00:00Z",
+        "references": {
+            "freebsdsa": [
+                "SA-09:17.freebsd-update"
+            ]
+        },
+        "vid": "6e87b696-ca3e-11df-aade-0050568f000c"
+    },
+    "details": "# Problem Description:\n\nWhen downloading updates to FreeBSD via \\'freebsd-update fetch\\' or\n\\'freebsd-update upgrade\\', the freebsd-update(8) utility copies\ncurrently installed files into its working directory\n(/var/db/freebsd-update by default) both for the purpose of merging\nchanges to configuration files and in order to be able to roll back\ninstalled updates.\n\nThe default working directory used by freebsd-update(8) is normally\ncreated during the installation of FreeBSD with permissions which allow\nall local users to see its contents, and freebsd-update(8) does not take\nany steps to restrict access to files stored in said directory.\n",
+    "id": "FreeBSD-2010-0111",
+    "modified": "2016-08-09T00:00:00Z",
+    "published": "2010-10-24T00:00:00Z",
+    "references": [
+        {
+            "type": "ADVISORY",
+            "url": "https://www.freebsd.org/security/advisories/FreeBSD-SA-09:17.freebsd-update.asc"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "FreeBSD -- Inappropriate directory permissions in freebsd-update(8)"
+}

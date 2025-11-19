@@ -1,0 +1,82 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "irssi"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "1.0.5,1"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "cite": [
+            "https://irssi.org/security/irssi_sa_2017_10.txt"
+        ],
+        "discovery": "2017-10-10T00:00:00Z",
+        "references": {
+            "cvename": [
+                "CVE-2017-15721",
+                "CVE-2017-15722",
+                "CVE-2017-15723",
+                "CVE-2017-15227",
+                "CVE-2017-15228"
+            ],
+            "freebsdpr": [
+                "ports/223169"
+            ]
+        },
+        "vid": "85e2c7eb-b74b-11e7-8546-5cf3fcfdd1f1"
+    },
+    "details": "Irssi reports:\n\n> When installing themes with unterminated colour formatting sequences,\n> Irssi may access data beyond the end of the string.\n>\n> While waiting for the channel synchronisation, Irssi may incorrectly\n> fail to remove destroyed channels from the query list, resulting in\n> use after free conditions when updating the state later on.\n>\n> Certain incorrectly formatted DCC CTCP messages could cause NULL\n> pointer dereference.\n>\n> Overlong nicks or targets may result in a NULL pointer dereference\n> while splitting the message.\n>\n> In certain cases Irssi may fail to verify that a Safe channel ID is\n> long enough, causing reads beyond the end of the string.\n",
+    "id": "FreeBSD-2017-0258",
+    "modified": "2017-12-31T00:00:00Z",
+    "published": "2017-10-22T00:00:00Z",
+    "references": [
+        {
+            "type": "REPORT",
+            "url": "https://irssi.org/security/irssi_sa_2017_10.txt"
+        },
+        {
+            "type": "WEB",
+            "url": "https://irssi.org/security/irssi_sa_2017_10.txt"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2017-15721"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2017-15722"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2017-15723"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2017-15227"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2017-15228"
+        },
+        {
+            "type": "REPORT",
+            "url": "https://bugs.freebsd.org/bugzilla/show_bug.cgi?id=223169"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "irssi -- multiple vulnerabilities"
+}

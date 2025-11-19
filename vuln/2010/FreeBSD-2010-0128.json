@@ -1,0 +1,62 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "proftpd"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "1.3.3c"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "cite": [
+            "http://www.zerodayinitiative.com/advisories/ZDI-10-229/"
+        ],
+        "discovery": "2010-11-02T00:00:00Z",
+        "references": {
+            "bid": [
+                "44562"
+            ],
+            "cvename": [
+                "CVE-2010-4221"
+            ]
+        },
+        "vid": "533d20e7-f71f-11df-9ae1-000bcdf0a03b"
+    },
+    "details": "Tippingpoint reports:\n\n> This vulnerability allows remote attackers to execute arbitrary code\n> on vulnerable installations of ProFTPD. Authentication is not required\n> to exploit this vulnerability.\n>\n> The flaw exists within the proftpd server component which listens by\n> default on TCP port 21. When reading user input if a TELNET_IAC escape\n> sequence is encountered the process miscalculates a buffer length\n> counter value allowing a user controlled copy of data to a stack\n> buffer. A remote attacker can exploit this vulnerability to execute\n> arbitrary code under the context of the proftpd process.\n",
+    "id": "FreeBSD-2010-0128",
+    "modified": "2010-11-23T00:00:00Z",
+    "published": "2010-11-23T00:00:00Z",
+    "references": [
+        {
+            "type": "REPORT",
+            "url": "http://www.zerodayinitiative.com/advisories/ZDI-10-229/"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://www.securityfocus.com/bid/44562/info"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2010-4221"
+        },
+        {
+            "type": "WEB",
+            "url": "http://www.zerodayinitiative.com/advisories/ZDI-10-229/"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "proftpd -- remote code execution vulnerability"
+}

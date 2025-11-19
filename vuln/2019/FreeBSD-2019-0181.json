@@ -1,0 +1,83 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "libnghttp2"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "1.39.2"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        },
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "nghttp2"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "1.39.2"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "cite": [
+            "https://github.com/nghttp2/nghttp2/releases"
+        ],
+        "discovery": "2019-08-13T00:00:00Z",
+        "references": {
+            "cvename": [
+                "CVE-2019-9511",
+                "CVE-2019-9513"
+            ]
+        },
+        "vid": "121fec01-c042-11e9-a73f-b36f5969f162"
+    },
+    "details": "nghttp2 GitHub releases:\n\n> This release fixes CVE-2019-9511 \\\"Data Dribble\\\" and CVE-2019-9513\n> \\\"Resource Loop\\\" vulnerability in nghttpx and nghttpd. Specially\n> crafted HTTP/2 frames cause Denial of Service by consuming CPU time.\n> Check out\n> https://github.com/Netflix/security-bulletins/blob/master/advisories/third-party/2019-002.md\n> for details. For nghttpx, additionally limiting inbound traffic by\n> \\--read-rate and \\--read-burst options is quite effective against this\n> kind of attack.\n>\n> CVE-2019-9511 \\\"Data Dribble\\\": The attacker requests a large amount\n> of data from a specified resource over multiple streams. They\n> manipulate window size and stream priority to force the server to\n> queue the data in 1-byte chunks. Depending on how efficiently this\n> data is queued, this can consume excess CPU, memory, or both,\n> potentially leading to a denial of service.\n>\n> CVE-2019-9513 \\\"Ping Flood\\\": The attacker sends continual pings to an\n> HTTP/2 peer, causing the peer to build an internal queue of responses.\n> Depending on how efficiently this data is queued, this can consume\n> excess CPU, memory, or both, potentially leading to a denial of\n> service.\n",
+    "id": "FreeBSD-2019-0181",
+    "modified": "2019-08-16T00:00:00Z",
+    "published": "2019-08-16T00:00:00Z",
+    "references": [
+        {
+            "type": "REPORT",
+            "url": "https://github.com/nghttp2/nghttp2/releases"
+        },
+        {
+            "type": "WEB",
+            "url": "https://github.com/nghttp2/nghttp2/releases"
+        },
+        {
+            "type": "WEB",
+            "url": "https://github.com/Netflix/security-bulletins/blob/master/advisories/third-party/2019-002.md"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2019-9511"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2019-9513"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "nghttp2 -- multiple vulnerabilities"
+}

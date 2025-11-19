@@ -1,0 +1,65 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "curl"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "7.88.0"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "cite": [
+            "https://curl.se/docs/security.html"
+        ],
+        "discovery": "2023-02-15T00:00:00Z",
+        "references": {
+            "cvename": [
+                "CVE-2023-23914",
+                "CVE-2023-23915",
+                "CVE-2023-23916"
+            ]
+        },
+        "vid": "be233fc6-bae7-11ed-a4fb-080027f5fec9"
+    },
+    "details": "Harry Sintonen and Patrick Monnerat report:\n\n> \n>\n> CVE-2023-23914\n> :   A cleartext transmission of sensitive information vulnerability\n>     exists in curl \\< v7.88.0 that could cause HSTS functionality fail\n>     when multiple URLs are requested serially. Using its HSTS support,\n>     curl can be instructed to use HTTPS instead of using an insecure\n>     clear-text HTTP step even when HTTP is provided in the URL. This\n>     HSTS mechanism would however surprisingly be ignored by subsequent\n>     transfers when done on the same command line because the state\n>     would not be properly carried on.\n>\n> CVE-2023-23915\n> :   A cleartext transmission of sensitive information vulnerability\n>     exists in curl \\< v7.88.0 that could cause HSTS functionality to\n>     behave incorrectly when multiple URLs are requested in parallel.\n>     Using its HSTS support, curl can be instructed to use HTTPS\n>     instead of using an insecure clear-text HTTP step even when HTTP\n>     is provided in the URL. This HSTS mechanism would however\n>     surprisingly fail when multiple transfers are done in parallel as\n>     the HSTS cache file gets overwritten by the most recently\n>     completed transfer. A later HTTP-only transfer to the earlier host\n>     name would then \\*not\\* get upgraded properly to HSTS.\n>\n> CVE-2023-23916\n> :   An allocation of resources without limits or throttling\n>     vulnerability exists in curl \\< v7.88.0 based on the \\\"chained\\\"\n>     HTTP compression algorithms, meaning that a server response can be\n>     compressed multiple times and potentially with different\n>     algorithms. The number of acceptable \\\"links\\\" in this\n>     \\\"decompression chain\\\" was capped, but the cap was implemented on\n>     a per-header basis allowing a malicious server to insert a\n>     virtually unlimited number of compression steps simply by using\n>     many headers. The use of such a decompression chain could result\n>     in a \\\"malloc bomb\\\", making curl end up spending enormous amounts\n>     of allocated heap memory, or trying to and returning out of memory\n>     errors.\n",
+    "id": "FreeBSD-2023-0069",
+    "modified": "2023-03-05T00:00:00Z",
+    "published": "2023-03-05T00:00:00Z",
+    "references": [
+        {
+            "type": "REPORT",
+            "url": "https://curl.se/docs/security.html"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2023-23914"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2023-23915"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2023-23916"
+        },
+        {
+            "type": "WEB",
+            "url": "https://curl.se/docs/security.html"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "curl -- multiple vulnerabilities"
+}

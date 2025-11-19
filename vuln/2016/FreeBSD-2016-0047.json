@@ -1,0 +1,55 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "claws-mail"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "3.13.2"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "cite": [
+            "http://www.thewildbeast.co.uk/claws-mail/bugzilla/show_bug.cgi?id=3557"
+        ],
+        "discovery": "2015-11-04T00:00:00Z",
+        "references": {
+            "cvename": [
+                "CVE-2015-8614"
+            ]
+        },
+        "vid": "51358314-bec8-11e5-82cd-bcaec524bf84"
+    },
+    "details": "DrWhax reports:\n\n> So in codeconv.c there is a function for Japanese character set\n> conversion called conv_jistoeuc(). There is no bounds checking on the\n> output buffer, which is created on the stack with alloca() Bug can be\n> triggered by sending an email to TAILS_luser@riseup.net or whatever.\n> Since my C is completely rusty, you might be able to make a better\n> judgment on the severity of this issue. Marking critical for now.\n",
+    "id": "FreeBSD-2016-0047",
+    "modified": "2016-01-19T00:00:00Z",
+    "published": "2016-01-19T00:00:00Z",
+    "references": [
+        {
+            "type": "REPORT",
+            "url": "http://www.thewildbeast.co.uk/claws-mail/bugzilla/show_bug.cgi?id=3557"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2015-8614"
+        },
+        {
+            "type": "WEB",
+            "url": "https://security-tracker.debian.org/tracker/CVE-2015-8614"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "claws-mail -- no bounds checking on the output buffer in conv_jistoeuc, conv_euctojis, conv_sjistoeuc"
+}

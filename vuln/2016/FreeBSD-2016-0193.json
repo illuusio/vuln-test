@@ -1,0 +1,99 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "subversion"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "introduced": "1.9.0"
+                        },
+                        {
+                            "fixed": "1.9.4"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                },
+                {
+                    "events": [
+                        {
+                            "introduced": "1.0.0"
+                        },
+                        {
+                            "fixed": "1.8.15"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        },
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "subversion18"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "introduced": "1.0.0"
+                        },
+                        {
+                            "fixed": "1.8.15"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "cite": [
+            "http://subversion.apache.org/security/CVE-2016-2167-advisory.txt",
+            "http://subversion.apache.org/security/CVE-2016-2168-advisory.txt"
+        ],
+        "discovery": "2016-04-21T00:00:00Z",
+        "references": {
+            "cvename": [
+                "CVE-2016-2167",
+                "CVE-2016-2168"
+            ]
+        },
+        "vid": "c8174b63-0d3a-11e6-b06e-d43d7eed0ce2"
+    },
+    "details": "Subversion project reports:\n\n> svnserve, the svn:// protocol server, can optionally use the Cyrus\n> SASL library for authentication, integrity protection, and encryption.\n> Due to a programming oversight, authentication against Cyrus SASL\n> would permit the remote user to specify a realm string which is a\n> prefix of the expected realm string.\n\n> Subversion\\'s httpd servers are vulnerable to a remotely triggerable\n> crash in the mod_authz_svn module. The crash can occur during an\n> authorization check for a COPY or MOVE request with a specially\n> crafted header value.\n>\n> This allows remote attackers to cause a denial of service.\n",
+    "id": "FreeBSD-2016-0193",
+    "modified": "2016-04-28T00:00:00Z",
+    "published": "2016-04-28T00:00:00Z",
+    "references": [
+        {
+            "type": "REPORT",
+            "url": "http://subversion.apache.org/security/CVE-2016-2167-advisory.txt"
+        },
+        {
+            "type": "REPORT",
+            "url": "http://subversion.apache.org/security/CVE-2016-2168-advisory.txt"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2016-2167"
+        },
+        {
+            "type": "WEB",
+            "url": "http://subversion.apache.org/security/CVE-2016-2167-advisory.txt"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2016-2168"
+        },
+        {
+            "type": "WEB",
+            "url": "http://subversion.apache.org/security/CVE-2016-2168-advisory.txt"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "subversion -- multiple vulnerabilities"
+}

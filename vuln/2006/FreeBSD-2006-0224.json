@@ -1,0 +1,119 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "FreeBSD"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "introduced": "6.1"
+                        },
+                        {
+                            "fixed": "6.1_6"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                },
+                {
+                    "events": [
+                        {
+                            "introduced": "6.0"
+                        },
+                        {
+                            "fixed": "6.0_11"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                },
+                {
+                    "events": [
+                        {
+                            "introduced": "5.5"
+                        },
+                        {
+                            "fixed": "5.5_4"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                },
+                {
+                    "events": [
+                        {
+                            "introduced": "5.4"
+                        },
+                        {
+                            "fixed": "5.4_18"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                },
+                {
+                    "events": [
+                        {
+                            "introduced": "5.0"
+                        },
+                        {
+                            "fixed": "5.3_33"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        },
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "bind9"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "introduced": "9.0"
+                        },
+                        {
+                            "fixed": "9.3.2.1"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "discovery": "2006-09-06T00:00:00Z",
+        "references": {
+            "cvename": [
+                "CVE-2006-4095",
+                "CVE-2006-4096"
+            ],
+            "freebsdsa": [
+                "SA-06:20.bind"
+            ]
+        },
+        "vid": "ef3306fc-8f9b-11db-ab33-000e0c2e438a"
+    },
+    "details": "# Problem Description\n\nFor a recursive DNS server, a remote attacker sending enough recursive\nqueries for the replies to arrive after all the interested clients have\nleft the recursion queue will trigger an INSIST failure in the named(8)\ndaemon. Also for a recursive DNS server, an assertion failure can occur\nwhen processing a query whose reply will contain more than one\nSIG(covered) RRset.\n\nFor an authoritative DNS server serving a RFC 2535 DNSSEC zone which is\nqueried for the SIG records where there are multiple SIG(covered) RRsets\n(e.g. a zone apex), named(8) will trigger an assertion failure when it\ntries to construct the response.\n\n# Impact\n\nAn attacker who can perform recursive lookups on a DNS server and is\nable to send a sufficiently large number of recursive queries, or is\nable to get the DNS server to return more than one SIG(covered) RRsets\ncan stop the functionality of the DNS service.\n\nAn attacker querying an authoritative DNS server serving a RFC 2535\nDNSSEC zone may be able to crash the DNS server.\n\n# Workaround\n\nA possible workaround is to only allow trusted clients to perform\nrecursive queries.\n",
+    "id": "FreeBSD-2006-0224",
+    "modified": "2016-08-09T00:00:00Z",
+    "published": "2006-12-19T00:00:00Z",
+    "references": [
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2006-4095"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2006-4096"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://www.freebsd.org/security/advisories/FreeBSD-SA-06:20.bind.asc"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "bind9 -- Denial of Service in named(8)"
+}

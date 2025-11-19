@@ -1,0 +1,62 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:kernel",
+                "name": "FreeBSD-kernel"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "introduced": "14.0"
+                        },
+                        {
+                            "fixed": "14.0_5"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                },
+                {
+                    "events": [
+                        {
+                            "introduced": "13.2"
+                        },
+                        {
+                            "fixed": "13.2_10"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "discovery": "2024-02-14T00:00:00Z",
+        "references": {
+            "cvename": [
+                "CVE-2024-25941"
+            ],
+            "freebsdsa": [
+                "SA-24:02.tty"
+            ]
+        },
+        "vid": "46a29f83-cb47-11ee-b609-002590c1f29c"
+    },
+    "details": "# Problem Description:\n\nThe jail(2) system call has not limited a visiblity of allocated TTYs\n(the kern.ttys sysctl). This gives rise to an information leak about\nprocesses outside the current jail.\n\n# Impact:\n\nAttacker can get information about TTYs allocated on the host or in\nother jails. Effectively, the information printed by \\\"pstat -t\\\" may be\nleaked.\n",
+    "id": "FreeBSD-2024-0043",
+    "modified": "2024-02-14T00:00:00Z",
+    "published": "2024-02-14T00:00:00Z",
+    "references": [
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2024-25941"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://www.freebsd.org/security/advisories/FreeBSD-SA-24:02.tty.asc"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "FreeBSD -- jail(2) information leak"
+}

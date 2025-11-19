@@ -1,0 +1,148 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "openssl"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "introduced": "1.0.1"
+                        },
+                        {
+                            "fixed": "1.0.1_13"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        },
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "mingw32-openssl"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "introduced": "1.0.1"
+                        },
+                        {
+                            "fixed": "1.0.1h"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        },
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "FreeBSD"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "introduced": "8.0"
+                        },
+                        {
+                            "fixed": "8.4_12"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                },
+                {
+                    "events": [
+                        {
+                            "introduced": "9.1"
+                        },
+                        {
+                            "fixed": "9.1_15"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                },
+                {
+                    "events": [
+                        {
+                            "introduced": "9.2"
+                        },
+                        {
+                            "fixed": "9.2_8"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                },
+                {
+                    "events": [
+                        {
+                            "introduced": "10.0"
+                        },
+                        {
+                            "fixed": "10.0_5"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "cite": [
+            "http://www.openssl.org/news/secadv_20140605.txt"
+        ],
+        "discovery": "2014-06-05T00:00:00Z",
+        "references": {
+            "cvename": [
+                "CVE-2014-0195",
+                "CVE-2014-0221",
+                "CVE-2014-0224",
+                "CVE-2014-3470"
+            ],
+            "freebsdsa": [
+                "SA-14:14.openssl"
+            ]
+        },
+        "vid": "5ac53801-ec2e-11e3-9cf3-3c970e169bc2"
+    },
+    "details": "The OpenSSL Project reports:\n\n> An attacker using a carefully crafted handshake can force the use of\n> weak keying material in OpenSSL SSL/TLS clients and servers. This can\n> be exploited by a Man-in-the-middle (MITM) attack where the attacker\n> can decrypt and modify traffic from the attacked client and server.\n> \\[CVE-2014-0224\\]\n>\n> By sending an invalid DTLS handshake to an OpenSSL DTLS client the\n> code can be made to recurse eventually crashing in a DoS attack.\n> \\[CVE-2014-0221\\]\n>\n> A buffer overrun attack can be triggered by sending invalid DTLS\n> fragments to an OpenSSL DTLS client or server. This is potentially\n> exploitable to run arbitrary code on a vulnerable client or server.\n> \\[CVE-2014-0195\\]\n>\n> OpenSSL TLS clients enabling anonymous ECDH ciphersuites are subject\n> to a denial of service attack. \\[CVE-2014-3470\\]\n",
+    "id": "FreeBSD-2014-0071",
+    "modified": "2014-06-05T00:00:00Z",
+    "published": "2014-06-05T00:00:00Z",
+    "references": [
+        {
+            "type": "REPORT",
+            "url": "http://www.openssl.org/news/secadv_20140605.txt"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2014-0195"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2014-0221"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2014-0224"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2014-3470"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://www.freebsd.org/security/advisories/FreeBSD-SA-14:14.openssl.asc"
+        },
+        {
+            "type": "WEB",
+            "url": "http://www.openssl.org/news/secadv_20140605.txt"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "OpenSSL -- multiple vulnerabilities"
+}

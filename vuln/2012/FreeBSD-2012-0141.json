@@ -1,0 +1,55 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "py-libcloud"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "0.11.1"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "cite": [
+            "http://libcloud.apache.org/security.html"
+        ],
+        "discovery": "2012-08-01T00:00:00Z",
+        "references": {
+            "cvename": [
+                "CVE-2012-3446"
+            ]
+        },
+        "vid": "a14dee30-e3d7-11e1-a084-50e5492bd3dc"
+    },
+    "details": "The libcloud development team reports:\n\n> When establishing a secure (SSL / TLS) connection to a target server\n> an invalid regular expression has been used for performing the\n> hostname verification. Subset instead of the full target server\n> hostname has been marked an an acceptable match for the given\n> hostname. For example, certificate with a hostname field of\n> \\\"aexample.com\\\" was considered a valid certificate for domain\n> \\\"example.com\\\".\n",
+    "id": "FreeBSD-2012-0141",
+    "modified": "2012-08-11T00:00:00Z",
+    "published": "2012-08-11T00:00:00Z",
+    "references": [
+        {
+            "type": "REPORT",
+            "url": "http://libcloud.apache.org/security.html"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2012-3446"
+        },
+        {
+            "type": "WEB",
+            "url": "http://seclists.org/fulldisclosure/2012/Aug/55"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "libcloud -- possible SSL MITM due to invalid regexp used to validate target server hostname"
+}

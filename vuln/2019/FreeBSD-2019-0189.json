@@ -1,0 +1,128 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "node"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "12.8.1"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        },
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "node10"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "10.16.3"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        },
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "node8"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "8.16.1"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "cite": [
+            "https://nodejs.org/en/blog/vulnerability/aug-2019-security-releases/"
+        ],
+        "discovery": "2019-08-16T00:00:00Z",
+        "references": {
+            "cvename": [
+                "CVE-2019-9511",
+                "CVE-2019-9512",
+                "CVE-2019-9513",
+                "CVE-2019-9514",
+                "CVE-2019-9515",
+                "CVE-2019-9516",
+                "CVE-2019-9517",
+                "CVE-2019-9518"
+            ]
+        },
+        "vid": "c97a940b-c392-11e9-bb38-000d3ab229d6"
+    },
+    "details": "Node.js reports:\n\n> Node.js, as well as many other implementations of HTTP/2, have been\n> found vulnerable to Denial of Service attacks. See\n> https://github.com/Netflix/security-bulletins/blob/master/advisories/third-party/2019-002.md\n> for more information.\n>\n> Updates are now available for all active Node.js release lines,\n> including Linux ARMv6 builds for Node.js 8.x (which had been delayed).\n>\n> We recommend that all Node.js users upgrade to a version listed below\n> as soon as possible.\n>\n> # Vulnerabilities Fixed\n>\n> Impact: All versions of Node.js 8 (LTS \\\"Carbon\\\"), Node.js 10 (LTS\n> \\\"Dubnium\\\"), and Node.js 12 (Current) are vulnerable to the\n> following:\n>\n> - CVE-2019-9511 \\\"Data Dribble\\\": The attacker requests a large amount\n>   of data from a specified resource over multiple streams. They\n>   manipulate window size and stream priority to force the server to\n>   queue the data in 1-byte chunks. Depending on how efficiently this\n>   data is queued, this can consume excess CPU, memory, or both,\n>   potentially leading to a denial of service.\n> - CVE-2019-9512 \\\"Ping Flood\\\": The attacker sends continual pings to\n>   an HTTP/2 peer, causing the peer to build an internal queue of\n>   responses. Depending on how efficiently this data is queued, this\n>   can consume excess CPU, memory, or both, potentially leading to a\n>   denial of service.\n> - CVE-2019-9513 \\\"Resource Loop\\\": The attacker creates multiple\n>   request streams and continually shuffles the priority of the streams\n>   in a way that causes substantial churn to the priority tree. This\n>   can consume excess CPU, potentially leading to a denial of service.\n> - CVE-2019-9514 \\\"Reset Flood\\\": The attacker opens a number of\n>   streams and sends an invalid request over each stream that should\n>   solicit a stream of RST_STREAM frames from the peer. Depending on\n>   how the peer queues the RST_STREAM frames, this can consume excess\n>   memory, CPU, or both, potentially leading to a denial of service.\n> - CVE-2019-9515 \\\"Settings Flood\\\": The attacker sends a stream of\n>   SETTINGS frames to the peer. Since the RFC requires that the peer\n>   reply with one acknowledgement per SETTINGS frame, an empty SETTINGS\n>   frame is almost equivalent in behavior to a ping. Depending on how\n>   efficiently this data is queued, this can consume excess CPU,\n>   memory, or both, potentially leading to a denial of service.\n> - CVE-2019-9516 \\\"0-Length Headers Leak\\\": The attacker sends a stream\n>   of headers with a 0-length header name and 0-length header value,\n>   optionally Huffman encoded into 1-byte or greater headers. Some\n>   implementations allocate memory for these headers and keep the\n>   allocation alive until the session dies. This can consume excess\n>   memory, potentially leading to a denial of service.\n> - CVE-2019-9517 \\\"Internal Data Buffering\\\": The attacker opens the\n>   HTTP/2 window so the peer can send without constraint; however, they\n>   leave the TCP window closed so the peer cannot actually write (many\n>   of) the bytes on the wire. The attacker then sends a stream of\n>   requests for a large response object. Depending on how the servers\n>   queue the responses, this can consume excess memory, CPU, or both,\n>   potentially leading to a denial of service.\n> - CVE-2019-9518 \\\"Empty Frames Flood\\\": The attacker sends a stream of\n>   frames with an empty payload and without the end-of-stream flag.\n>   These frames can be DATA, HEADERS, CONTINUATION and/or PUSH_PROMISE.\n>   The peer spends time processing each frame disproportionate to\n>   attack bandwidth. This can consume excess CPU, potentially leading\n>   to a denial of service. (Discovered by Piotr Sikora of Google)\n",
+    "id": "FreeBSD-2019-0189",
+    "modified": "2019-08-21T00:00:00Z",
+    "published": "2019-08-21T00:00:00Z",
+    "references": [
+        {
+            "type": "REPORT",
+            "url": "https://nodejs.org/en/blog/vulnerability/aug-2019-security-releases/"
+        },
+        {
+            "type": "WEB",
+            "url": "https://nodejs.org/en/blog/vulnerability/aug-2019-security-releases/"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2019-9511"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2019-9512"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2019-9513"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2019-9514"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2019-9515"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2019-9516"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2019-9517"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2019-9518"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "Node.js -- multiple vulnerabilities"
+}

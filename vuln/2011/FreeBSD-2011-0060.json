@@ -1,0 +1,83 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "krb5"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "introduced": "1.7"
+                        },
+                        {
+                            "fixed": "1.7.2"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                },
+                {
+                    "events": [
+                        {
+                            "introduced": "1.8"
+                        },
+                        {
+                            "fixed": "1.8.4"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                },
+                {
+                    "events": [
+                        {
+                            "introduced": "1.9"
+                        },
+                        {
+                            "last_affected": "1.9"
+                        },
+                        {
+                            "fixed": "1.9"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ],
+            "versions": [
+                "1.9"
+            ]
+        }
+    ],
+    "database_specific": {
+        "cite": [
+            "http://web.mit.edu/kerberos/advisories/MITKRB5-SA-2011-004.txt"
+        ],
+        "discovery": "2011-04-12T00:00:00Z",
+        "references": {
+            "cvename": [
+                "CVE-2011-0285"
+            ]
+        },
+        "vid": "6a3c3e5c-66cb-11e0-a116-c535f3aa24f0"
+    },
+    "details": "An advisory published by the MIT Kerberos team says:\n\n> The password-changing capability of the MIT krb5 administration daemon\n> (kadmind) has a bug that can cause it to attempt to free() an invalid\n> pointer under certain error conditions. This can cause the daemon to\n> crash or induce the execution of arbitrary code (which is believed to\n> be difficult). No exploit that executes arbitrary code is known to\n> exist, but it is easy to trigger a denial of service manually.\n>\n> Some platforms detect attempted freeing of invalid pointers and\n> protectively terminate the process, preventing arbitrary code\n> execution on those platforms.\n",
+    "id": "FreeBSD-2011-0060",
+    "modified": "2011-04-14T00:00:00Z",
+    "published": "2011-04-14T00:00:00Z",
+    "references": [
+        {
+            "type": "REPORT",
+            "url": "http://web.mit.edu/kerberos/advisories/MITKRB5-SA-2011-004.txt"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2011-0285"
+        },
+        {
+            "type": "WEB",
+            "url": "http://web.mit.edu/kerberos/advisories/MITKRB5-SA-2011-004.txt"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "krb5 -- MITKRB5-SA-2011-004, kadmind invalid pointer free() [CVE-2011-0285]"
+}

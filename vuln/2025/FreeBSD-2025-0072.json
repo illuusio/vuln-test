@@ -1,0 +1,46 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "opensaml"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "3.3.1"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "cite": [
+            "https://shibboleth.net/community/advisories/secadv_20250313.txt"
+        ],
+        "discovery": "2025-03-13T00:00:00Z",
+        "vid": "0b43fac4-005d-11f0-a540-6cc21735f730"
+    },
+    "details": "The Shibboleth Project reports:\n\n> An updated version of the OpenSAML C++ library is available which\n> corrects a parameter manipulation vulnerability when using SAML\n> bindings that rely on non-XML signatures. The Shibboleth Service\n> Provider is impacted by this issue, and it manifests as a critical\n> security issue in that context.\n>\n> Parameter manipulation allows the forging of signed SAML messages\n>\n> A number of vulnerabilities in the OpenSAML library used by the\n> Shibboleth Service Provider allowed for creative manipulation of\n> parameters combined with reuse of the contents of older requests to\n> fool the library\\'s signature verification of non-XML based signed\n> messages.\n>\n> Most uses of that feature involve very low or low impact use cases\n> without critical security implications; however, there are two\n> scenarios that are much more critical, one affecting the SP and one\n> affecting some implementers who have implemented their own code on top\n> of our OpenSAML library and done so improperly.\n>\n> The SP\\'s support for the HTTP-POST-SimpleSign SAML binding for Single\n> Sign-On responses is its critical vulnerability, and it is enabled by\n> default (regardless of what one\\'s published SAML metadata may\n> advertise).\n>\n> The other critical case involves a mistake that does \\*not\\* impact\n> the Shibboleth SP, allowing SSO to occur over the HTTP-Redirect\n> binding contrary to the plain language of the SAML Browser SSO\n> profile. The SP does not support this, but other implementers may have\n> done so.\n>\n> Prior to updating, it is possible to mitigate the POST-SimpleSign\n> vulnerability by editing the protocols.xml configuration file and\n> removing this line:\n> `<Binding id=\"urn:oasis:names:tc:SAML:2.0:bindings:HTTP-POST-SimpleSign\" path=\"/SAML2/POST-SimpleSign\" />`\n",
+    "id": "FreeBSD-2025-0072",
+    "modified": "2025-03-13T00:00:00Z",
+    "published": "2025-03-13T00:00:00Z",
+    "references": [
+        {
+            "type": "REPORT",
+            "url": "https://shibboleth.net/community/advisories/secadv_20250313.txt"
+        },
+        {
+            "type": "WEB",
+            "url": "https://shibboleth.net/community/advisories/secadv_20250313.txt"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "shibboleth-sp -- Parameter manipulation allows the forging of signed SAML messages"
+}

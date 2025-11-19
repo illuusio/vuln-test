@@ -1,0 +1,60 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "botan110"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "1.10.10"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "cite": [
+            "http://botan.randombit.net/"
+        ],
+        "discovery": "2015-08-03T00:00:00Z",
+        "references": {
+            "cvename": [
+                "CVE-2015-5726",
+                "CVE-2015-5727"
+            ]
+        },
+        "vid": "2004616d-f66c-11e5-b94c-001999f8d30b"
+    },
+    "details": "The botan developers reports:\n\n> Excess memory allocation in BER decoder - The BER decoder would\n> allocate a fairly arbitrary amount of memory in a length field, even\n> if there was no chance the read request would succeed. This might\n> cause the process to run out of memory or invoke the OOM killer.\n>\n> Crash in BER decoder - The BER decoder would crash due to reading from\n> offset 0 of an empty vector if it encountered a BIT STRING which did\n> not contain any data at all. This can be used to easily crash\n> applications reading untrusted ASN.1 data, but does not seem\n> exploitable for code execution.\n",
+    "id": "FreeBSD-2016-0169",
+    "modified": "2016-03-31T00:00:00Z",
+    "published": "2016-03-31T00:00:00Z",
+    "references": [
+        {
+            "type": "REPORT",
+            "url": "http://botan.randombit.net/"
+        },
+        {
+            "type": "WEB",
+            "url": "http://botan.randombit.net/security.html"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2015-5726"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2015-5727"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "Botan BER Decoder vulnerabilities"
+}

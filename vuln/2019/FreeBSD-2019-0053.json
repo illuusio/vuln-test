@@ -1,0 +1,55 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "openssl111"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "1.1.1b_1"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "cite": [
+            "https://www.openssl.org/news/secadv/20190306.txt"
+        ],
+        "discovery": "2019-03-06T00:00:00Z",
+        "references": {
+            "cvename": [
+                "CVE-2019-1543"
+            ]
+        },
+        "vid": "e56f2f7c-410e-11e9-b95c-b499baebfeaf"
+    },
+    "details": "The OpenSSL project reports:\n\n> Low: ChaCha20-Poly1305 with long nonces (CVE-2019-1543)\n>\n> ChaCha20-Poly1305 is an AEAD cipher, and requires a unique nonce input\n> for every encryption operation. RFC 7539 specifies that the nonce\n> value (IV) should be 96 bits (12 bytes). OpenSSL allows a variable\n> nonce length and front pads the nonce with 0 bytes if it is less than\n> 12 bytes. However it also incorrectly allows a nonce to be set of up\n> to 16 bytes. In this case only the last 12 bytes are significant and\n> any additional leading bytes are ignored.\n",
+    "id": "FreeBSD-2019-0053",
+    "modified": "2019-03-07T00:00:00Z",
+    "published": "2019-03-07T00:00:00Z",
+    "references": [
+        {
+            "type": "REPORT",
+            "url": "https://www.openssl.org/news/secadv/20190306.txt"
+        },
+        {
+            "type": "WEB",
+            "url": "https://www.openssl.org/news/secadv/20190306.txt"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2019-1543"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "OpenSSL -- ChaCha20-Poly1305 nonce vulnerability"
+}

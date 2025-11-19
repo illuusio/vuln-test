@@ -1,0 +1,51 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:kernel",
+                "name": "FreeBSD-kernel"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "introduced": "12.0"
+                        },
+                        {
+                            "fixed": "12.0_3"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "discovery": "2019-02-05T00:00:00Z",
+        "references": {
+            "cvename": [
+                "CVE-2019-5596"
+            ],
+            "freebsdsa": [
+                "SA-19:02.fd"
+            ]
+        },
+        "vid": "86c89abf-2d91-11e9-bf3e-a4badb2f4699"
+    },
+    "details": "# Problem Description:\n\nFreeBSD 12.0 attempts to handle the case where the receiving process\ndoes not provide a sufficiently large buffer for an incoming control\nmessage containing rights. In particular, to avoid leaking the\ncorresponding descriptors into the receiving process\\' descriptor table,\nthe kernel handles the truncation case by closing descriptors referenced\nby the discarded message.\n\nThe code which performs this operation failed to release a reference\nobtained on the file corresponding to a received right. This bug can be\nused to cause the reference counter to wrap around and free the file\nstructure.\n\n# Impact:\n\nA local user can exploit the bug to gain root privileges or escape from\na jail.\n",
+    "id": "FreeBSD-2019-0035",
+    "modified": "2019-02-11T00:00:00Z",
+    "published": "2019-02-11T00:00:00Z",
+    "references": [
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2019-5596"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://www.freebsd.org/security/advisories/FreeBSD-SA-19:02.fd.asc"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "FreeBSD -- File description reference count leak"
+}

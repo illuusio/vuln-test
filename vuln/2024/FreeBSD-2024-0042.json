@@ -1,0 +1,62 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "FreeBSD"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "introduced": "14.0"
+                        },
+                        {
+                            "fixed": "14.0_5"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                },
+                {
+                    "events": [
+                        {
+                            "introduced": "13.2"
+                        },
+                        {
+                            "fixed": "13.2_10"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "discovery": "2024-02-14T00:00:00Z",
+        "references": {
+            "cvename": [
+                "CVE-2024-25940"
+            ],
+            "freebsdsa": [
+                "SA-24:01.bhyveload"
+            ]
+        },
+        "vid": "c62285cb-cb46-11ee-b609-002590c1f29c"
+    },
+    "details": "# Problem Description:\n\n\\`bhyveload -h \\<host-path\\>\\` may be used to grant loader access to the\n\\<host-path\\> directory tree on the host. Affected versions of\nbhyveload(8) do not make any attempt to restrict loader\\'s access to\n\\<host-path\\>, allowing the loader to read any file the host user has\naccess to.\n\n# Impact:\n\nIn the bhyveload(8) model, the host supplies a userboot.so to boot with,\nbut the loader scripts generally come from the guest image. A\nmaliciously crafted script could be used to exfiltrate sensitive data\nfrom the host accessible to the user running bhyhveload(8), which is\noften the system root.\n",
+    "id": "FreeBSD-2024-0042",
+    "modified": "2024-02-14T00:00:00Z",
+    "published": "2024-02-14T00:00:00Z",
+    "references": [
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2024-25940"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://www.freebsd.org/security/advisories/FreeBSD-SA-24:01.bhyveload.asc"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "FreeBSD -- bhyveload(8) host file access"
+}

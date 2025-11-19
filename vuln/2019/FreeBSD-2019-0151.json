@@ -1,0 +1,84 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "putty"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "0.72"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        },
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "putty-gtk2"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "0.72"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        },
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "putty-nogtk"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "0.72"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "cite": [
+            "https://lists.tartarus.org/pipermail/putty-announce/2019/000028.html"
+        ],
+        "discovery": "2019-07-14T00:00:00Z",
+        "vid": "5914705c-ab03-11e9-a4f9-080027ac955c"
+    },
+    "details": "Simon Tatham reports:\n\n> Vulnerabilities fixed in this release include:\n>\n> - A malicious SSH-1 server could trigger a buffer overrun by sending\n>   extremely short RSA keys, or certain bad packet length fields.\n>   Either of these could happen before host key verification, so even\n>   if you trust the server you \\*intended\\* to connect to, you would\n>   still be at risk.\\\n>   (However, the SSH-1 protocol is obsolete, and recent versions of\n>   PuTTY do not try it by default, so you are only at risk if you work\n>   with old servers and have explicitly configured SSH-1.)\n> - If a malicious process found a way to impersonate Pageant, then it\n>   could cause an integer overflow in any of the SSH client tools\n>   (PuTTY, Plink, PSCP, PSFTP) which accessed the malicious Pageant.\n>\n> Other security-related bug fixes include:\n>\n> - The \\'trust sigil\\' system introduced in PuTTY 0.71 to protect\n>   against server spoofing attacks had multiple bugs. Trust sigils were\n>   not turned off after login in the SSH-1 and Rlogin protocols, and\n>   not turned back on if you used the Restart Session command. Both are\n>   now fixed.\n",
+    "id": "FreeBSD-2019-0151",
+    "modified": "2019-07-20T00:00:00Z",
+    "published": "2019-07-20T00:00:00Z",
+    "references": [
+        {
+            "type": "REPORT",
+            "url": "https://lists.tartarus.org/pipermail/putty-announce/2019/000028.html"
+        },
+        {
+            "type": "WEB",
+            "url": "https://lists.tartarus.org/pipermail/putty-announce/2019/000028.html"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "PuTTY 0.72 -- buffer overflow in SSH-1 and integer overflow in SSH client"
+}

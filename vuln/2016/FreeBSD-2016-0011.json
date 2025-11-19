@@ -1,0 +1,165 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "qemu"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "2.5.0"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        },
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "qemu-devel"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "2.5.0"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        },
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "qemu-sbruno"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "2.5.50.g20151224"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        },
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "qemu-user-static"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "2.5.50.g20151224"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        },
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "xen-tools"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "4.5.2_1"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "cite": [
+            "http://www.openwall.com/lists/oss-security/2015/11/30/2",
+            "http://www.openwall.com/lists/oss-security/2015/11/30/3"
+        ],
+        "discovery": "2015-11-30T00:00:00Z",
+        "references": {
+            "cvename": [
+                "CVE-2015-7504",
+                "CVE-2015-7512"
+            ]
+        },
+        "vid": "405446f4-b1b3-11e5-9728-002590263bf5"
+    },
+    "details": "Prasad J Pandit, Red Hat Product Security Team, reports:\n\n> Qemu emulator built with the AMD PC-Net II Ethernet Controller support\n> is vulnerable to a heap buffer overflow flaw. While receiving packets\n> in the loopback mode, it appends CRC code to the receive buffer. If\n> the data size given is same as the receive buffer size, the appended\n> CRC code overwrites 4 bytes beyond this \\'s-\\>buffer\\' array.\n>\n> A privileged(CAP_SYS_RAWIO) user inside guest could use this flaw to\n> crash the Qemu instance resulting in DoS or potentially execute\n> arbitrary code with privileges of the Qemu process on the host.\n\n> The AMD PC-Net II emulator(hw/net/pcnet.c), while receiving packets\n> from a remote host(non-loopback mode), fails to validate the received\n> data size, thus resulting in a buffer overflow issue. It could\n> potentially lead to arbitrary code execution on the host, with\n> privileges of the Qemu process. It requires the guest NIC to have\n> larger MTU limit.\n>\n> A remote user could use this flaw to crash the guest instance\n> resulting in DoS or potentially execute arbitrary code on a remote\n> host with privileges of the Qemu process.\n",
+    "id": "FreeBSD-2016-0011",
+    "modified": "2016-01-06T00:00:00Z",
+    "published": "2016-01-03T00:00:00Z",
+    "references": [
+        {
+            "type": "REPORT",
+            "url": "http://www.openwall.com/lists/oss-security/2015/11/30/2"
+        },
+        {
+            "type": "REPORT",
+            "url": "http://www.openwall.com/lists/oss-security/2015/11/30/3"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2015-7504"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2015-7512"
+        },
+        {
+            "type": "WEB",
+            "url": "http://www.openwall.com/lists/oss-security/2015/11/30/2"
+        },
+        {
+            "type": "WEB",
+            "url": "http://www.openwall.com/lists/oss-security/2015/11/30/3"
+        },
+        {
+            "type": "WEB",
+            "url": "http://git.qemu.org/?p=qemu.git;a=commit;h=837f21aacf5a714c23ddaadbbc5212f9b661e3f7"
+        },
+        {
+            "type": "WEB",
+            "url": "http://git.qemu.org/?p=qemu.git;a=commit;h=8b98a2f07175d46c3f7217639bd5e03f2ec56343"
+        },
+        {
+            "type": "WEB",
+            "url": "https://github.com/seanbruno/qemu-bsd-user/commit/837f21aacf5a714c23ddaadbbc5212f9b661e3f7"
+        },
+        {
+            "type": "WEB",
+            "url": "https://github.com/seanbruno/qemu-bsd-user/commit/8b98a2f07175d46c3f7217639bd5e03f2ec56343"
+        },
+        {
+            "type": "WEB",
+            "url": "http://xenbits.xen.org/xsa/advisory-162.html"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "qemu and xen-tools -- denial of service vulnerabilities in AMD PC-Net II NIC support"
+}

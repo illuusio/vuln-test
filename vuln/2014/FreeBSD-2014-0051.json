@@ -1,0 +1,74 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "dbus-glib"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "0.100.1"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        },
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "linux-f10-dbus-glib"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "0.100.1"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "cite": [
+            "https://bugs.freedesktop.org/show_bug.cgi?id=60916"
+        ],
+        "discovery": "2013-02-15T00:00:00Z",
+        "references": {
+            "cvename": [
+                "CVE-2013-0292"
+            ]
+        },
+        "vid": "77bb0541-c1aa-11e3-a5ac-001b21614864"
+    },
+    "details": "Sebastian Krahmer reports:\n\n> A privilege escalation flaw was found in the way dbus-glib, the D-Bus\n> add-on library to integrate the standard D-Bus library with the GLib\n> thread abstraction and main loop, performed filtering of the message\n> sender (message source subject), when the NameOwnerChanged signal was\n> received. A local attacker could use this flaw to escalate their\n> privileges.\n",
+    "id": "FreeBSD-2014-0051",
+    "modified": "2014-04-30T00:00:00Z",
+    "published": "2014-04-11T00:00:00Z",
+    "references": [
+        {
+            "type": "REPORT",
+            "url": "https://bugs.freedesktop.org/show_bug.cgi?id=60916"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2013-0292"
+        },
+        {
+            "type": "WEB",
+            "url": "https://bugs.freedesktop.org/show_bug.cgi?id=60916"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "dbus-glib -- privledge escalation"
+}

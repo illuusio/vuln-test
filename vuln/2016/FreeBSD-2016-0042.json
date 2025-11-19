@@ -1,0 +1,105 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "ffmpeg"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "introduced": "2.0,1,1"
+                        },
+                        {
+                            "fixed": "2.8.5,1"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        },
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "mplayer"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "1.2.r20151219_2"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        },
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "mencoder"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "1.2.r20151219_2"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "cite": [
+            "https://bugs.archlinux.org/task/47738"
+        ],
+        "discovery": "2016-01-13T00:00:00Z",
+        "references": {
+            "cvename": [
+                "CVE-2016-1897",
+                "CVE-2016-1898"
+            ],
+            "freebsdpr": [
+                "ports/206282"
+            ]
+        },
+        "vid": "046fedd1-bd01-11e5-bbf4-5404a68ad561"
+    },
+    "details": "Arch Linux reports:\n\n> ffmpeg has a vulnerability in the current version that allows the\n> attacker to create a specially crafted video file, downloading which\n> will send files from a user PC to a remote attacker server. The attack\n> does not even require the user to open that file --- for example, KDE\n> Dolphin thumbnail generation is enough.\n",
+    "id": "FreeBSD-2016-0042",
+    "modified": "2016-01-17T00:00:00Z",
+    "published": "2016-01-17T00:00:00Z",
+    "references": [
+        {
+            "type": "REPORT",
+            "url": "https://bugs.archlinux.org/task/47738"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2016-1897"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2016-1898"
+        },
+        {
+            "type": "REPORT",
+            "url": "https://bugs.freebsd.org/bugzilla/show_bug.cgi?id=206282"
+        },
+        {
+            "type": "WEB",
+            "url": "https://www.ffmpeg.org/security.html"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "ffmpeg -- remote attacker can access local files"
+}

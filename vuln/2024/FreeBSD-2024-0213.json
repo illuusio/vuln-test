@@ -1,0 +1,73 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "FreeBSD"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "introduced": "14.1"
+                        },
+                        {
+                            "fixed": "14.1_4"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                },
+                {
+                    "events": [
+                        {
+                            "introduced": "14.0"
+                        },
+                        {
+                            "fixed": "14.0_10"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                },
+                {
+                    "events": [
+                        {
+                            "introduced": "13.3"
+                        },
+                        {
+                            "fixed": "13.3_6"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "discovery": "2024-09-04T00:00:00Z",
+        "references": {
+            "cvename": [
+                "CVE-2024-32668"
+            ],
+            "freebsdsa": [
+                "SA-24:12.bhyve"
+            ]
+        },
+        "vid": "4edaa9f4-6b51-11ef-9a62-002590c1f29c"
+    },
+    "details": "# Problem Description:\n\nbhyve can be configured to emulate devices on a virtual USB controller\n(XHCI), such as USB tablet devices. An insufficient boundary validation\nin the USB code could lead to an out-of-bounds write on the heap, with\ndata controlled by the caller.\n\n# Impact:\n\nA malicious, privileged software running in a guest VM can exploit the\nvulnerability to achieve code execution on the host in the bhyve\nuserspace process, which typically runs as root. Note that bhyve runs in\na Capsicum sandbox, so malicious code is constrained by the capabilities\navailable to the bhyve process.\n",
+    "id": "FreeBSD-2024-0213",
+    "modified": "2024-09-05T00:00:00Z",
+    "published": "2024-09-05T00:00:00Z",
+    "references": [
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2024-32668"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://www.freebsd.org/security/advisories/FreeBSD-SA-24:12.bhyve.asc"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "FreeBSD -- bhyve(8) privileged guest escape via USB controller"
+}

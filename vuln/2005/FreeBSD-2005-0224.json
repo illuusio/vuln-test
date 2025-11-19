@@ -1,0 +1,59 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "fetchmail"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "6.2.5.1"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "discovery": "2005-07-20T00:00:00Z",
+        "references": {
+            "cvename": [
+                "CVE-2005-2335"
+            ],
+            "freebsdpr": [
+                "ports/83805"
+            ]
+        },
+        "vid": "3497d7be-2fef-45f4-8162-9063751b573a"
+    },
+    "details": "fetchmail\\'s POP3/UIDL code does not truncate received UIDs properly. A\nmalicious or compromised POP3 server can thus corrupt fetchmail\\'s stack\nand inject code when fetchmail is using UIDL, either through\nconfiguration, or as a result of certain server capabilities. Note that\nfetchmail is run as root on some sites, so an attack might compromise\nthe root account and thus the whole machine.\n",
+    "id": "FreeBSD-2005-0224",
+    "modified": "2005-07-21T00:00:00Z",
+    "published": "2005-07-20T00:00:00Z",
+    "references": [
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2005-2335"
+        },
+        {
+            "type": "REPORT",
+            "url": "https://bugs.freebsd.org/bugzilla/show_bug.cgi?id=83805"
+        },
+        {
+            "type": "WEB",
+            "url": "http://bugs.debian.org/cgi-bin/bugreport.cgi?bug=212762"
+        },
+        {
+            "type": "WEB",
+            "url": "http://www.fetchmail.info/fetchmail-SA-2005-01.txt"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "fetchmail -- remote root/code injection from malicious POP3 server"
+}

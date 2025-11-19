@@ -1,0 +1,55 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "xen-tools"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "introduced": "3.3"
+                        },
+                        {
+                            "fixed": "4.5.0_6"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "cite": [
+            "http://xenbits.xen.org/xsa/advisory-128.html"
+        ],
+        "discovery": "2015-06-02T00:00:00Z",
+        "references": {
+            "cvename": [
+                "CVE-2015-4103"
+            ]
+        },
+        "vid": "af38cfec-27e7-11e5-a4a5-002590263bf5"
+    },
+    "details": "The Xen Project reports:\n\n> Logic is in place to avoid writes to certain host config space fields\n> when the guest must nevertheless be able to access their virtual\n> counterparts. A bug in how this logic deals with accesses spanning\n> multiple fields allows the guest to write to the host MSI message data\n> field.\n>\n> While generally the writes write back the values previously read,\n> their value in config space may have got changed by the host between\n> the qemu read and write. In such a case host side interrupt handling\n> could become confused, possibly losing interrupts or allowing spurious\n> interrupt injection into other guests.\n>\n> Certain untrusted guest administrators may be able to confuse host\n> side interrupt handling, leading to a Denial of Service.\n",
+    "id": "FreeBSD-2015-0191",
+    "modified": "2015-07-11T00:00:00Z",
+    "published": "2015-07-11T00:00:00Z",
+    "references": [
+        {
+            "type": "REPORT",
+            "url": "http://xenbits.xen.org/xsa/advisory-128.html"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2015-4103"
+        },
+        {
+            "type": "WEB",
+            "url": "http://xenbits.xen.org/xsa/advisory-128.html"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "xen-tools -- Potential unintended writes to host MSI message data field via qemu"
+}

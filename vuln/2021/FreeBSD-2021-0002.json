@@ -1,0 +1,65 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "dovecot"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "2.3.13"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "cite": [
+            "https://dovecot.org/pipermail/dovecot-news/2021-January/000450.html",
+            "https://dovecot.org/pipermail/dovecot-news/2021-January/000451.html"
+        ],
+        "discovery": "2020-08-17T00:00:00Z",
+        "references": {
+            "cvename": [
+                "CVE-2020-24386",
+                "CVE-2020-25275"
+            ]
+        },
+        "vid": "bd98066d-4ea4-11eb-b412-e86a64caca56"
+    },
+    "details": "Aki Tuomi reports:\n\n> When imap hibernation is active, an attacker can cause Dovecot to\n> discover file system directory structure and access other users\\'\n> emails using specially crafted command. The attacker must have valid\n> credentials to access the mail server.\n\n> Mail delivery / parsing crashed when the 10 000th MIME part was\n> message/rfc822 (or if parent was multipart/digest). This happened due\n> to earlier MIME parsing changes for CVE-2020-12100.\n",
+    "id": "FreeBSD-2021-0002",
+    "modified": "2021-01-04T00:00:00Z",
+    "published": "2021-01-04T00:00:00Z",
+    "references": [
+        {
+            "type": "REPORT",
+            "url": "https://dovecot.org/pipermail/dovecot-news/2021-January/000450.html"
+        },
+        {
+            "type": "REPORT",
+            "url": "https://dovecot.org/pipermail/dovecot-news/2021-January/000451.html"
+        },
+        {
+            "type": "WEB",
+            "url": "https://dovecot.org/pipermail/dovecot-news/2021-January/000448.html"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2020-24386"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2020-25275"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "mail/dovecot -- multiple vulnerabilities"
+}

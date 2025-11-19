@@ -1,0 +1,97 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "asterisk14"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "introduced": "1.4.*,1"
+                        },
+                        {
+                            "fixed": "1.4.40.1"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        },
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "asterisk16"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "introduced": "1.6.*,1"
+                        },
+                        {
+                            "fixed": "1.6.2.17.3"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        },
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "asterisk18"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "introduced": "1.8.*,1"
+                        },
+                        {
+                            "fixed": "1.8.3.3"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "cite": [
+            "http://lists.digium.com/pipermail/asterisk-announce/2011-April/000316.html"
+        ],
+        "discovery": "2011-04-21T00:00:00Z",
+        "references": {
+            "cvename": [
+                "CVE-2011-1507"
+            ]
+        },
+        "vid": "3c7d565a-6c64-11e0-813a-6c626dd55a41"
+    },
+    "details": "The Asterisk Development Team reports:\n\n> It is possible for a user of the Asterisk Manager Interface to bypass\n> a security check and execute shell commands when they should not have\n> that ability. Sending the \\\"Async\\\" header with the \\\"Application\\\"\n> header during an Originate action, allows authenticated manager users\n> to execute shell commands. Only users with the \\\"system\\\" privilege\n> should be able to do this.\n>\n> On systems that have the Asterisk Manager Interface, Skinny, SIP over\n> TCP, or the built in HTTP server enabled, it is possible for an\n> attacker to open as many connections to asterisk as he wishes. This\n> will cause Asterisk to run out of available file descriptors and stop\n> processing any new calls. Additionally, disk space can be exhausted as\n> Asterisk logs failures to open new file descriptors.\n",
+    "id": "FreeBSD-2011-0064",
+    "modified": "2011-04-21T00:00:00Z",
+    "published": "2011-04-21T00:00:00Z",
+    "references": [
+        {
+            "type": "REPORT",
+            "url": "http://lists.digium.com/pipermail/asterisk-announce/2011-April/000316.html"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2011-1507"
+        },
+        {
+            "type": "WEB",
+            "url": "http://downloads.asterisk.org/pub/security/AST-2011-005.pdf"
+        },
+        {
+            "type": "WEB",
+            "url": "http://downloads.asterisk.org/pub/security/AST-2011-006.pdf"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "Asterisk -- multiple vulnerabilities"
+}

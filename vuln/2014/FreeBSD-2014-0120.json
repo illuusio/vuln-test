@@ -1,0 +1,84 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "bash"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "4.3.27_1"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        },
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "bash-static"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "4.3.27_1"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "cite": [
+            "https://access.redhat.com/security/cve/CVE-2014-7186",
+            "https://access.redhat.com/security/cve/CVE-2014-7187"
+        ],
+        "discovery": "2014-09-25T00:00:00Z",
+        "references": {
+            "cvename": [
+                "CVE-2014-7186",
+                "CVE-2014-7187"
+            ]
+        },
+        "vid": "4a4e9f88-491c-11e4-ae2c-c80aa9043978"
+    },
+    "details": "RedHat security team reports:\n\n> It was discovered that the fixed-sized redir_stack could be forced to\n> overflow in the Bash parser, resulting in memory corruption, and\n> possibly leading to arbitrary code execution when evaluating untrusted\n> input that would not otherwise be run as code.\n\n> An off-by-one error was discovered in the way Bash was handling deeply\n> nested flow control constructs. Depending on the layout of the .bss\n> segment, this could allow arbitrary execution of code that would not\n> otherwise be executed by Bash.\n",
+    "id": "FreeBSD-2014-0120",
+    "modified": "2014-10-01T00:00:00Z",
+    "published": "2014-10-01T00:00:00Z",
+    "references": [
+        {
+            "type": "REPORT",
+            "url": "https://access.redhat.com/security/cve/CVE-2014-7186"
+        },
+        {
+            "type": "REPORT",
+            "url": "https://access.redhat.com/security/cve/CVE-2014-7187"
+        },
+        {
+            "type": "WEB",
+            "url": "https://access.redhat.com/security/cve/CVE-2014-7186"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2014-7186"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2014-7187"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "bash -- out-of-bounds memory access in parser"
+}

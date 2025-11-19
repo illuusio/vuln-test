@@ -1,0 +1,138 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "FreeBSD"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "introduced": "5.4"
+                        },
+                        {
+                            "fixed": "5.4_2"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                },
+                {
+                    "events": [
+                        {
+                            "introduced": "5.0"
+                        },
+                        {
+                            "fixed": "5.3_16"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                },
+                {
+                    "events": [
+                        {
+                            "introduced": "4.11"
+                        },
+                        {
+                            "fixed": "4.11_10"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                },
+                {
+                    "events": [
+                        {
+                            "introduced": "4.10"
+                        },
+                        {
+                            "fixed": "4.10_15"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                },
+                {
+                    "events": [
+                        {
+                            "introduced": "4.9"
+                        },
+                        {
+                            "fixed": "4.9_18"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                },
+                {
+                    "events": [
+                        {
+                            "fixed": "4.8_33"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        },
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "gzip"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "1.3.5_2"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "discovery": "2005-04-20T00:00:00Z",
+        "references": {
+            "cvename": [
+                "CVE-2005-0988",
+                "CVE-2005-1228"
+            ],
+            "freebsdsa": [
+                "SA-05:11.gzip"
+            ]
+        },
+        "vid": "63bd4bad-dffe-11d9-b875-0001020eed82"
+    },
+    "details": "# Problem Description\n\nTwo problems related to extraction of files exist in gzip:\n\nThe first problem is that gzip does not properly sanitize filenames\ncontaining \\\"/\\\" when uncompressing files using the -N command line\noption.\n\nThe second problem is that gzip does not set permissions on newly\nextracted files until after the file has been created and the file\ndescriptor has been closed.\n\n# Impact\n\nThe first problem can allow an attacker to overwrite arbitrary local\nfiles when uncompressing a file using the -N command line option.\n\nThe second problem can allow a local attacker to change the permissions\nof arbitrary local files, on the same partition as the one the user is\nuncompressing a file on, by removing the file the user is uncompressing\nand replacing it with a hardlink before the uncompress operation is\nfinished.\n\n# Workaround\n\nDo not use the -N command line option on untrusted files and do not\nuncompress files in directories where untrusted users have write access.\n",
+    "id": "FreeBSD-2005-0182",
+    "modified": "2005-07-06T00:00:00Z",
+    "published": "2005-06-18T00:00:00Z",
+    "references": [
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2005-0988"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2005-1228"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://www.freebsd.org/security/advisories/FreeBSD-SA-05:11.gzip.asc"
+        },
+        {
+            "type": "DISCUSSION",
+            "url": "http://marc.theaimsgroup.com/?l=bugtraq&m=111271860708210"
+        },
+        {
+            "type": "DISCUSSION",
+            "url": "http://marc.theaimsgroup.com/?l=bugtraq&m=111402732406477"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "gzip -- directory traversal and permission race vulnerabilities"
+}

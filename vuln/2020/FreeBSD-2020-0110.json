@@ -1,0 +1,62 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:kernel",
+                "name": "FreeBSD-kernel"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "introduced": "12.1"
+                        },
+                        {
+                            "fixed": "12.1_5"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                },
+                {
+                    "events": [
+                        {
+                            "introduced": "11.3"
+                        },
+                        {
+                            "fixed": "11.3_9"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "discovery": "2020-01-20T00:00:00Z",
+        "references": {
+            "cvename": [
+                "CVE-2019-15879"
+            ],
+            "freebsdsa": [
+                "SA-20:15.cryptodev"
+            ]
+        },
+        "vid": "9f15c2da-947e-11ea-92ab-00163e433440"
+    },
+    "details": "# Problem Description:\n\nA race condition permitted a data structure in the kernel to be used\nafter it was freed by the cryptodev module.\n\n# Impact:\n\nAn unprivileged process can overwrite arbitrary kernel memory.\n",
+    "id": "FreeBSD-2020-0110",
+    "modified": "2020-05-12T00:00:00Z",
+    "published": "2020-05-12T00:00:00Z",
+    "references": [
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2019-15879"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://www.freebsd.org/security/advisories/FreeBSD-SA-20:15.cryptodev.asc"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "FreeBSD -- Use after free in cryptodev module"
+}

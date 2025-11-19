@@ -1,0 +1,61 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "nginx-devel"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "introduced": "1.5.10"
+                        },
+                        {
+                            "last_affected": "1.5.10"
+                        },
+                        {
+                            "fixed": "1.5.10"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ],
+            "versions": [
+                "1.5.10"
+            ]
+        }
+    ],
+    "database_specific": {
+        "cite": [
+            "http://mailman.nginx.org/pipermail/nginx-announce/2014/000132.html"
+        ],
+        "discovery": "2014-03-04T00:00:00Z",
+        "references": {
+            "cvename": [
+                "CVE-2014-0088"
+            ]
+        },
+        "vid": "89db3b31-a4c3-11e3-978f-f0def16c5c1b"
+    },
+    "details": "The nginx project reports:\n\n> A bug in the experimental SPDY implementation in nginx 1.5.10 was\n> found, which might allow an attacker to corrupt worker process memory\n> by using a specially crafted request, potentially resulting in\n> arbitrary code execution (CVE-2014-0088).\n>\n> The problem only affects nginx 1.5.10 on 32-bit platforms, compiled\n> with the ngx_http_spdy_module module (which is not compiled by\n> default), if the \\\"spdy\\\" option of the \\\"listen\\\" directive is used\n> in a configuration file.\n",
+    "id": "FreeBSD-2014-0028",
+    "modified": "2014-03-06T00:00:00Z",
+    "published": "2014-03-06T00:00:00Z",
+    "references": [
+        {
+            "type": "REPORT",
+            "url": "http://mailman.nginx.org/pipermail/nginx-announce/2014/000132.html"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2014-0088"
+        },
+        {
+            "type": "WEB",
+            "url": "http://mailman.nginx.org/pipermail/nginx-announce/2014/000132.html"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "nginx -- SPDY memory corruption"
+}

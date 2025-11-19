@@ -1,0 +1,121 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "samba416"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "4.16.10"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        },
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "samba417"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "4.17.7"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        },
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "samba418"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "4.18.1"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "cite": [
+            "https://www.samba.org/samba/security/CVE-2023-0225.html",
+            "https://www.samba.org/samba/security/CVE-2023-0922.html",
+            "https://www.samba.org/samba/security/CVE-2023-0614.html"
+        ],
+        "discovery": "2023-03-29T00:00:00Z",
+        "references": {
+            "cvename": [
+                "CVE-2023-0225",
+                "CVE-2023-0922",
+                "CVE-2023-0614"
+            ]
+        },
+        "vid": "e86b8e4d-d551-11ed-8d1e-005056a311d1"
+    },
+    "details": "The Samba Team reports:\n\n> An incomplete access check on dnsHostName allows authenticated but\n> otherwise unprivileged users to delete this attribute from any object\n> in the directory.\n\n> The Samba AD DC administration tool, when operating against a remote\n> LDAP server, will by default send new or reset passwords over a\n> signed-only connection.\n\n> The fix in 4.6.16, 4.7.9, 4.8.4 and 4.9.7 for CVE-2018-10919\n> Confidential attribute disclosure via LDAP filters was insufficient\n> and an attacker may be able to obtain confidential BitLocker recovery\n> keys from a Samba AD DC.\n>\n> Installations with such secrets in their Samba AD should assume they\n> have been obtained and need replacing.\n",
+    "id": "FreeBSD-2023-0097",
+    "modified": "2023-04-07T00:00:00Z",
+    "published": "2023-04-07T00:00:00Z",
+    "references": [
+        {
+            "type": "REPORT",
+            "url": "https://www.samba.org/samba/security/CVE-2023-0225.html"
+        },
+        {
+            "type": "REPORT",
+            "url": "https://www.samba.org/samba/security/CVE-2023-0922.html"
+        },
+        {
+            "type": "REPORT",
+            "url": "https://www.samba.org/samba/security/CVE-2023-0614.html"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2023-0225"
+        },
+        {
+            "type": "WEB",
+            "url": "https://www.samba.org/samba/security/CVE-2023-0225.html"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2023-0922"
+        },
+        {
+            "type": "WEB",
+            "url": "https://www.samba.org/samba/security/CVE-2023-0922.html"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2023-0614"
+        },
+        {
+            "type": "WEB",
+            "url": "https://www.samba.org/samba/security/CVE-2023-0614.html"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "samba -- multiple vulnerabilities"
+}

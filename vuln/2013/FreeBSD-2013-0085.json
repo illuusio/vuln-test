@@ -1,0 +1,55 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "plib"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "1.8.5_4"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "cite": [
+            "https://secunia.com/advisories/47297"
+        ],
+        "discovery": "2011-12-21T00:00:00Z",
+        "references": {
+            "cvename": [
+                "CVE-2011-4620"
+            ]
+        },
+        "vid": "13bf0602-c08a-11e2-bb21-083e8ed0f47b"
+    },
+    "details": "Secunia reports:\n\n> A vulnerability has been discovered in PLIB, which can be exploited by\n> malicious people to compromise an application using the library. The\n> vulnerability is caused due to a boundary error within the\n> \\\"ulSetError()\\\" function (src/util/ulError.cxx) when creating the\n> error message, which can be exploited to overflow a static buffer.\n>\n> Successful exploitation allows the execution of arbitrary code but\n> requires that the attacker can e.g. control the content of an overly\n> long error message passed to the \\\"ulSetError()\\\" function.\n>\n> The vulnerability is confirmed in version 1.8.5. Other versions may\n> also be affected.\n>\n> Originally reported in TORCS by Andres Gomez.\n",
+    "id": "FreeBSD-2013-0085",
+    "modified": "2013-05-19T00:00:00Z",
+    "published": "2013-05-19T00:00:00Z",
+    "references": [
+        {
+            "type": "REPORT",
+            "url": "https://secunia.com/advisories/47297"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2011-4620"
+        },
+        {
+            "type": "DISCUSSION",
+            "url": "http://openwall.com/lists/oss-security/2011/12/21/2"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "plib -- buffer overflow"
+}

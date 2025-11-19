@@ -1,0 +1,64 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "routinator"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "0.12.2"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "cite": [
+            "https://nlnetlabs.nl/news/2023/Sep/13/routinator-0.12.2-released/"
+        ],
+        "discovery": "2022-12-08T00:00:00Z",
+        "references": {
+            "cvename": [
+                "CVE-2022-39915",
+                "CVE-2022-39916"
+            ]
+        },
+        "vid": "11982747-544c-11ee-ac3e-a04a5edf46d9"
+    },
+    "details": "NLnet Labs report:\n\n> This release fixes two issues in Routinator that can be exploited\n> remotely by rogue RPKI CAs and repositories. We therefore advise all\n> users of Routinator to upgrade to this release at their earliest\n> convenience.\n>\n> The first issue, CVE-2022-39915, can lead to Routinator crashing when\n> trying to decode certain illegal RPKI objects.\n>\n> The second issue, CVE-2022-39916, only affects users that have the\n> rrdp-keep-responses option enabled which allows storing all received\n> RRDP responses on disk. Because the file name for these responses is\n> derived from the URI and the path wasn\\'t checked properly, a RRDP URI\n> could be constructed that results in the response stored outside the\n> directory, possibly overwriting existing files.\n",
+    "id": "FreeBSD-2023-0286",
+    "modified": "2023-09-16T00:00:00Z",
+    "published": "2023-09-16T00:00:00Z",
+    "references": [
+        {
+            "type": "REPORT",
+            "url": "https://nlnetlabs.nl/news/2023/Sep/13/routinator-0.12.2-released/"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2022-39915"
+        },
+        {
+            "type": "WEB",
+            "url": "https://nlnetlabs.nl/downloads/routinator/CVE-2023-39915.txt"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2022-39916"
+        },
+        {
+            "type": "WEB",
+            "url": "https://nlnetlabs.nl/downloads/routinator/CVE-2023-39916.txt"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "routinator -- multiple vulnerabilities"
+}

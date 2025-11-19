@@ -1,0 +1,55 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "wget"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "introduced": "1.19"
+                        },
+                        {
+                            "fixed": "1.20.1"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "cite": [
+            "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2018-20483"
+        ],
+        "discovery": "2018-12-25T00:00:00Z",
+        "references": {
+            "cvename": [
+                "CVE-2018-20483"
+            ]
+        },
+        "vid": "a737eb11-5cfc-11e9-ab87-8cec4bf8fcfb"
+    },
+    "details": "Gynvael Coldwind reports:\n\n> set_file_metadata in xattr.c in GNU Wget before 1.20.1 stores a\n> file\\'s origin URL in the user.xdg.origin.url metadata attribute of\n> the extended attributes of the downloaded file, which allows local\n> users to obtain sensitive information (e.g., credentials contained in\n> the URL) by reading this attribute, as demonstrated by getfattr. This\n> also applies to Referer information in the user.xdg.referrer.url\n> metadata attribute.\n",
+    "id": "FreeBSD-2019-0077",
+    "modified": "2019-04-12T00:00:00Z",
+    "published": "2019-04-12T00:00:00Z",
+    "references": [
+        {
+            "type": "REPORT",
+            "url": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2018-20483"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2018-20483"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2018-20483"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "wget -- security flaw in caching credentials passed as a part of the URL"
+}

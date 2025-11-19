@@ -1,0 +1,117 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "node6"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "6.14.3"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        },
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "node8"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "8.11.3"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        },
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "node"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "10.4.1"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "cite": [
+            "https://nodejs.org/en/blog/vulnerability/june-2018-security-releases/"
+        ],
+        "discovery": "2018-06-12T00:00:00Z",
+        "references": {
+            "cvename": [
+                "CVE-2018-7161",
+                "CVE-2018-7162",
+                "CVE-2018-7164",
+                "CVE-2018-7167",
+                "CVE-2018-1000168"
+            ]
+        },
+        "vid": "45b8e2eb-7056-11e8-8fab-63ca6e0e13a2"
+    },
+    "details": "Node.js reports:\n\n> # Denial of Service Vulnerability in HTTP/2 (CVE-2018-7161)\n>\n> All versions of 8.x and later are vulnerable and the severity is HIGH.\n> An attacker can cause a denial of service (DoS) by causing a node\n> server providing an http2 server to crash. This can be accomplished by\n> interacting with the http2 server in a manner that triggers a cleanup\n> bug where objects are used in native code after they are no longer\n> available. This has been addressed by updating the http2\n> implementation. Thanks to Jordan Zebor at F5 Networks for reporting\n> this issue.\n>\n> # Denial of Service, nghttp2 dependency (CVE-2018-1000168)\n>\n> All versions of 9.x and later are vulnerable and the severity is HIGH.\n> Under certain conditions, a malicious client can trigger an\n> uninitialized read (and a subsequent segfault) by sending a malformed\n> ALTSVC frame. This has been addressed through an by updating nghttp2.\n>\n> # Denial of Service Vulnerability in TLS (CVE-2018-7162)\n>\n> All versions of 9.x and later are vulnerable and the severity is HIGH.\n> An attacker can cause a denial of service (DoS) by causing a node\n> process which provides an http server supporting TLS server to crash.\n> This can be accomplished by sending duplicate/unexpected messages\n> during the handshake. This vulnerability has been addressed by\n> updating the TLS implementation. Thanks to Jordan Zebor at F5 Networks\n> all of his help investigating this issue with the Node.js team.\n>\n> # Memory exhaustion DoS on v9.x (CVE-2018-7164)\n>\n> Versions 9.7.0 and later are vulnerable and the severity is MEDIUM. A\n> bug introduced in 9.7.0 increases the memory consumed when reading\n> from the network into JavaScript using the net.Socket object directly\n> as a stream. An attacker could use this cause a denial of service by\n> sending tiny chunks of data in short succession. This vulnerability\n> was restored by reverting to the prior behaviour.\n>\n> # Calls to Buffer.fill() and/or Buffer.alloc() may hang (CVE-2018-7167)\n>\n> Calling Buffer.fill() or Buffer.alloc() with some parameters can lead\n> to a hang which could result in a Denial of Service. In order to\n> address this vulnerability, the implementations of Buffer.alloc() and\n> Buffer.fill() were updated so that they zero fill instead of hanging\n> in these cases.\n",
+    "id": "FreeBSD-2018-0148",
+    "modified": "2018-06-15T00:00:00Z",
+    "published": "2018-06-15T00:00:00Z",
+    "references": [
+        {
+            "type": "REPORT",
+            "url": "https://nodejs.org/en/blog/vulnerability/june-2018-security-releases/"
+        },
+        {
+            "type": "WEB",
+            "url": "https://nodejs.org/en/blog/vulnerability/june-2018-security-releases/"
+        },
+        {
+            "type": "WEB",
+            "url": "https://nghttp2.org/blog/2018/04/12/nghttp2-v1-31-1/"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2018-7161"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2018-7162"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2018-7164"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2018-7167"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2018-1000168"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "node.js -- multiple vulnerabilities"
+}

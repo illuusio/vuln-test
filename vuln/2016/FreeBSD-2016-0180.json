@@ -1,0 +1,46 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "asterisk13"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "13.8.1"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "cite": [
+            "http://www.asterisk.org/downloads/security-advisories"
+        ],
+        "discovery": "2016-01-19T00:00:00Z",
+        "vid": "ee50726e-0319-11e6-aa86-001999f8d30b"
+    },
+    "details": "The Asterisk project reports:\n\n> Asterisk may crash when processing an incoming REGISTER request if\n> that REGISTER contains a Contact header with a lengthy URI.\n>\n> This crash will only happen for requests that pass authentication.\n> Unauthenticated REGISTER requests will not result in a crash\n> occurring.\n>\n> This vulnerability only affects Asterisk when using PJSIP as its SIP\n> stack. The chan_sip module does not have this problem.\n",
+    "id": "FreeBSD-2016-0180",
+    "modified": "2016-04-15T00:00:00Z",
+    "published": "2016-04-15T00:00:00Z",
+    "references": [
+        {
+            "type": "REPORT",
+            "url": "http://www.asterisk.org/downloads/security-advisories"
+        },
+        {
+            "type": "WEB",
+            "url": "http://downloads.asterisk.org/pub/security/AST-2016-004.html"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "asterisk -- Long Contact URIs in REGISTER requests can crash Asterisk"
+}

@@ -1,0 +1,59 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "glpi"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "9.4.6,1"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "cite": [
+            "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2020-5248"
+        ],
+        "discovery": "2020-01-02T00:00:00Z",
+        "references": {
+            "cvename": [
+                "CVE-2020-5248"
+            ]
+        },
+        "vid": "b3695b08-3b3a-11eb-af2a-080027dbe4b7"
+    },
+    "details": "MITRE Corporation reports:\n\n> GLPI before before version 9.4.6 has a vulnerability involving a\n> default encryption key. GLPIKEY is public and is used on every\n> instance. This means anyone can decrypt sensitive data stored using\n> this key. It is possible to change the key before installing GLPI. But\n> on existing instances, data must be reencrypted with the new key.\n> Problem is we can not know which columns or rows in the database are\n> using that; espcially from plugins. Changing the key without updating\n> data would lend in bad password sent from glpi; but storing them again\n> from the UI will work.\n",
+    "id": "FreeBSD-2020-0325",
+    "modified": "2024-04-25T00:00:00Z",
+    "published": "2020-01-02T00:00:00Z",
+    "references": [
+        {
+            "type": "REPORT",
+            "url": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2020-5248"
+        },
+        {
+            "type": "WEB",
+            "url": "https://github.com/glpi-project/glpi/security/advisories/GHSA-j222-j9mf-h6j9"
+        },
+        {
+            "type": "WEB",
+            "url": "https://github.com/glpi-project/glpi/commit/efd14468c92c4da43333aa9735e65fd20cbc7c6c"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2020-5248"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "glpi -- Public GLPIKEY can be used to decrypt any data"
+}

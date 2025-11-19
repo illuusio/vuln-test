@@ -1,0 +1,77 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "quagga"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "last_affected": "0.99.20.1"
+                        },
+                        {
+                            "fixed": "0.99.20.1"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        },
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "quagga-re"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "0.99.17.10"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "cite": [
+            "http://www.kb.cert.org/vuls/id/962587"
+        ],
+        "discovery": "2012-06-04T00:00:00Z",
+        "references": {
+            "cvename": [
+                "CVE-2012-1820"
+            ]
+        },
+        "vid": "1e14d46f-af1f-11e1-b242-00215af774f0"
+    },
+    "details": "CERT reports:\n\n> If a pre-configured BGP peer sends a specially-crafted OPEN message\n> with a malformed ORF capability TLV, Quagga bgpd process will\n> erroneously try to consume extra bytes from the input packet buffer.\n> The process will detect a buffer overrun attempt before it happens and\n> immediately terminate with an error message. All BGP sessions\n> established by the attacked router will be closed and its BGP routing\n> disrupted.\n",
+    "id": "FreeBSD-2012-0105",
+    "modified": "2012-06-05T00:00:00Z",
+    "published": "2012-06-05T00:00:00Z",
+    "references": [
+        {
+            "type": "REPORT",
+            "url": "http://www.kb.cert.org/vuls/id/962587"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2012-1820"
+        },
+        {
+            "type": "WEB",
+            "url": "http://www.kb.cert.org/vuls/id/962587"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "quagga -- BGP OPEN denial of service vulnerability"
+}

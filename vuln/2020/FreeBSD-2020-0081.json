@@ -1,0 +1,66 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "libssh"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "introduced": "0.8.0"
+                        },
+                        {
+                            "fixed": "0.8.9"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                },
+                {
+                    "events": [
+                        {
+                            "introduced": "0.9.0"
+                        },
+                        {
+                            "fixed": "0.9.4"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "cite": [
+            "https://www.libssh.org/security/advisories/CVE-2020-1730.txt"
+        ],
+        "discovery": "2020-01-25T00:00:00Z",
+        "references": {
+            "cvename": [
+                "CVE-2020-1730"
+            ]
+        },
+        "vid": "3d7dfd63-823b-11ea-b3a8-240a644dd835"
+    },
+    "details": "The libssh team reports (originally reported by Yasheng Yang from\nGoogle):\n\n> A malicious client or server could crash the counterpart implemented\n> with libssh AES-CTR ciphers are used and don\\'t get fully initialized.\n> It will crash when it tries to cleanup the AES-CTR ciphers when\n> closing the connection.\n",
+    "id": "FreeBSD-2020-0081",
+    "modified": "2020-04-19T00:00:00Z",
+    "published": "2020-04-19T00:00:00Z",
+    "references": [
+        {
+            "type": "REPORT",
+            "url": "https://www.libssh.org/security/advisories/CVE-2020-1730.txt"
+        },
+        {
+            "type": "WEB",
+            "url": "https://www.libssh.org/security/advisories/CVE-2020-1730.txt\""
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2020-1730"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "Client/server denial of service when handling AES-CTR ciphers"
+}

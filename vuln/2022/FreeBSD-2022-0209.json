@@ -1,0 +1,74 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "go118"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "1.18.8"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        },
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "go119"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "1.19.3"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "cite": [
+            "https://go.dev/issue/56284"
+        ],
+        "discovery": "2022-10-17T00:00:00Z",
+        "references": {
+            "cvename": [
+                "CVE-2022-41716"
+            ]
+        },
+        "vid": "26b1100a-5a27-11ed-abfe-29ac76ec31b5"
+    },
+    "details": "The Go project reports:\n\n> syscall, os/exec: unsanitized NUL in environment variables\n>\n> On Windows, syscall.StartProcess and os/exec.Cmd did not properly\n> check for invalid environment variable values. A malicious environment\n> variable value could exploit this behavior to set a value for a\n> different environment variable. For example, the environment variable\n> string \\\"A=B\\\\x00C=D\\\" set the variables \\\"A=B\\\" and \\\"C=D\\\".\n",
+    "id": "FreeBSD-2022-0209",
+    "modified": "2022-11-01T00:00:00Z",
+    "published": "2022-11-01T00:00:00Z",
+    "references": [
+        {
+            "type": "REPORT",
+            "url": "https://go.dev/issue/56284"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2022-41716"
+        },
+        {
+            "type": "WEB",
+            "url": "https://groups.google.com/g/golang-dev/c/83nKqv2W1Dk/m/gEJdD5vjDwAJ"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "go -- syscall, os/exec: unsanitized NUL in environment variables"
+}

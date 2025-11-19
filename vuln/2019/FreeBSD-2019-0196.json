@@ -1,0 +1,74 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "dovecot"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "2.3.7.2"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        },
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "dovecot-pigeonhole"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "0.5.7.2"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "cite": [
+            "https://dovecot.org/pipermail/dovecot/2019-August/116874.html"
+        ],
+        "discovery": "2019-04-13T00:00:00Z",
+        "references": {
+            "cvename": [
+                "CVE-2019-11500"
+            ]
+        },
+        "vid": "abaaecda-ea16-43e2-bad0-d34a9ac576b1"
+    },
+    "details": "Aki Tuomi reports:\n\n> Vulnerability Details: IMAP and ManageSieve protocol parsers do not\n> properly handle NUL byte when scanning data in quoted strings, leading\n> to out of bounds heap memory writes. Risk: This vulnerability allows\n> for out-of-bounds writes to objects stored on the heap up to 8096\n> bytes in pre-login phase, and 65536 bytes post-login phase, allowing\n> sufficiently skilled attacker to perform complicated attacks that can\n> lead to leaking private information or remote code execution. Abuse of\n> this bug is very difficult to observe, as it does not necessarily\n> cause a crash. Attempts to abuse this bug are not directly evident\n> from logs.\n",
+    "id": "FreeBSD-2019-0196",
+    "modified": "2019-08-28T00:00:00Z",
+    "published": "2019-08-28T00:00:00Z",
+    "references": [
+        {
+            "type": "REPORT",
+            "url": "https://dovecot.org/pipermail/dovecot/2019-August/116874.html"
+        },
+        {
+            "type": "WEB",
+            "url": "https://dovecot.org/pipermail/dovecot/2019-August/116874.html"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2019-11500"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "Dovecot -- improper input validation"
+}

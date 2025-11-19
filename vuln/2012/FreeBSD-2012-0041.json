@@ -1,0 +1,81 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "torcs"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "1.3.3"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        },
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "plib"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "last_affected": "1.8.5_3"
+                        },
+                        {
+                            "fixed": "1.8.5_3"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "cite": [
+            "http://secunia.com/advisories/47297/"
+        ],
+        "discovery": "2011-12-21T00:00:00Z",
+        "references": {
+            "cvename": [
+                "CVE-2011-4620"
+            ]
+        },
+        "vid": "ba51c2f7-5b43-11e1-8288-00262d5ed8ee"
+    },
+    "details": "Secunia reports:\n\n> A vulnerability has been discovered in PLIB, which can be exploited by\n> malicious people to compromise an application using the library.\n>\n> The vulnerability is caused due to a boundary error within the\n> \\\"ulSetError()\\\" function (src/util/ulError.cxx) when creating the\n> error message, which can be exploited to overflow a static buffer.\n>\n> Successful exploitation allows the execution of arbitrary code but\n> requires that the attacker can e.g. control the content of an overly\n> long error message passed to the \\\"ulSetError()\\\" function.\n>\n> The vulnerability is confirmed in version 1.8.5. Other versions may\n> also be affected.\n",
+    "id": "FreeBSD-2012-0041",
+    "modified": "2012-02-19T00:00:00Z",
+    "published": "2012-02-19T00:00:00Z",
+    "references": [
+        {
+            "type": "REPORT",
+            "url": "http://secunia.com/advisories/47297/"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2011-4620"
+        },
+        {
+            "type": "WEB",
+            "url": "http://secunia.com/advisories/47297/"
+        },
+        {
+            "type": "WEB",
+            "url": "http://torcs.sourceforge.net/index.php?name=News&file=article&sid=79"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "plib -- remote code execution via buffer overflow"
+}

@@ -1,0 +1,78 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "clamav"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "introduced": "0.80"
+                        },
+                        {
+                            "fixed": "0.88.2"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        },
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "clamav-devel"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "introduced": "20040826"
+                        },
+                        {
+                            "fixed": "20060502"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "cite": [
+            "http://secunia.com/advisories/19880/"
+        ],
+        "discovery": "2006-05-01T00:00:00Z",
+        "references": {
+            "cvename": [
+                "CVE-2006-1989"
+            ]
+        },
+        "vid": "b088bf48-da3b-11da-93e0-00123ffe8333"
+    },
+    "details": "Secunia reports:\n\n> A vulnerability has been reported in ClamAV, which can be exploited by\n> malicious people to cause a DoS (Denial of Service) and potentially to\n> compromise a vulnerable system.\n>\n> The vulnerability is caused due to a boundary error within the HTTP\n> client in the Freshclam command line utility. This can be exploited to\n> cause a stack-based buffer overflow when the HTTP headers received\n> from a web server exceeds 8KB.\n>\n> Successful exploitation requires that Freshclam is used to download\n> virus signature updates from a malicious mirror web server e.g. via\n> DNS poisoning.\n",
+    "id": "FreeBSD-2006-0089",
+    "modified": "2006-05-03T00:00:00Z",
+    "published": "2006-05-03T00:00:00Z",
+    "references": [
+        {
+            "type": "REPORT",
+            "url": "http://secunia.com/advisories/19880/"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2006-1989"
+        },
+        {
+            "type": "WEB",
+            "url": "http://www.clamav.net/security/0.88.2.html"
+        },
+        {
+            "type": "WEB",
+            "url": "http://secunia.com/advisories/19880/"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "clamav -- Freshclam HTTP Header Buffer Overflow Vulnerability"
+}

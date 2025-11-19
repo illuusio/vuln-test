@@ -1,0 +1,93 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "firefox"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "138.0,2"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        },
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "firefox-esr"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "128.10"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        },
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "thunderbird"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "128.0"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "cite": [
+            "https://bugzilla.mozilla.org/show_bug.cgi?id=1917536"
+        ],
+        "discovery": "2025-04-29T00:00:00Z",
+        "references": {
+            "cvename": [
+                "CVE-2025-2817"
+            ]
+        },
+        "vid": "201cccc1-4a01-11f0-b0f8-b42e991fc52e"
+    },
+    "details": "security@mozilla.org reports:\n\n> Thunderbird\\'s update mechanism allowed a medium-integrity user\n> process to interfere with the SYSTEM-level updater by manipulating the\n> file-locking behavior. By injecting code into the user-privileged\n> process, an attacker could bypass intended access controls, allowing\n> SYSTEM-level file operations on paths controlled by a non-privileged\n> user and enabling privilege escalation. This vulnerability affects\n> Firefox \\< 138, Firefox ESR \\< 128.10, Firefox ESR \\< 115.23,\n> Thunderbird \\< 138, and Thunderbird \\< 128.10.\n",
+    "id": "FreeBSD-2025-0185",
+    "modified": "2025-06-15T00:00:00Z",
+    "published": "2025-06-15T00:00:00Z",
+    "references": [
+        {
+            "type": "REPORT",
+            "url": "https://bugzilla.mozilla.org/show_bug.cgi?id=1917536"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2025-2817"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://nvd.nist.gov/vuln/detail/CVE-2025-2817"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "Mozilla -- control access bypass"
+}

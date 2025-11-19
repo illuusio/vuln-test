@@ -1,0 +1,59 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "py39-celery"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "5.2.2"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "cite": [
+            "https://osv.dev/vulnerability/PYSEC-2021-858"
+        ],
+        "discovery": "2021-12-09T00:00:00Z",
+        "references": {
+            "cvename": [
+                "CVE-2021-23727"
+            ]
+        },
+        "vid": "0a38a0d9-757f-4ac3-9561-b439e933dfa9"
+    },
+    "details": "Snyk reports:\n\n> This affects the package celery before 5.2.2.\n>\n> It by default trusts the messages and metadata stored in backends\n> (result stores).\n>\n> When reading task metadata from the backend, the data is deserialized.\n>\n> Given that an attacker can gain access to, or somehow manipulate the\n> metadata within a celery backend, they could trigger a stored command\n> injection vulnerability and potentially gain further access to the\n> system.\n",
+    "id": "FreeBSD-2023-0108",
+    "modified": "2023-04-09T00:00:00Z",
+    "published": "2023-04-09T00:00:00Z",
+    "references": [
+        {
+            "type": "REPORT",
+            "url": "https://osv.dev/vulnerability/PYSEC-2021-858"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2021-23727"
+        },
+        {
+            "type": "WEB",
+            "url": "https://osv.dev/vulnerability/PYSEC-2021-858"
+        },
+        {
+            "type": "WEB",
+            "url": "https://osv.dev/vulnerability/GHSA-q4xr-rc97-m4xx"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "py39-celery -- command injection vulnerability"
+}

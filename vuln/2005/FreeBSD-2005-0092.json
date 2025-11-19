@@ -1,0 +1,76 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "curl"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "7.13.1"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "cite": [
+            "http://marc.theaimsgroup.com/?l=bugtraq&m=110902601221592",
+            "http://marc.theaimsgroup.com/?l=bugtraq&m=110902850731457"
+        ],
+        "discovery": "2004-12-21T00:00:00Z",
+        "references": {
+            "bid": [
+                "12615",
+                "12616"
+            ],
+            "cvename": [
+                "CVE-2005-0490"
+            ]
+        },
+        "vid": "96df5fd0-8900-11d9-aa18-0001020eed82"
+    },
+    "details": "Two iDEFENSE Security Advisories reports:\n\n> An exploitable stack-based buffer overflow condition exists when using\n> NT Lan Manager (NTLM) authentication. The problem specifically exists\n> within `Curl_input_ntlm()` defined in lib/http_ntlm.c.\n>\n> Successful exploitation allows remote attackers to execute arbitrary\n> code under the privileges of the target user. Exploitation requires\n> that an attacker either coerce or force a target to connect to a\n> malicious server using NTLM authentication.\n\n> An exploitable stack-based buffer overflow condition exists when using\n> Kerberos authentication. The problem specifically exists within the\n> functions `Curl_krb_kauth()` and `krb4_auth()` defined in lib/krb4.c.\n>\n> Successful exploitation allows remote attackers to execute arbitrary\n> code under the privileges of the target user. Exploitation requires\n> that an attacker either coerce or force a target to connect to a\n> malicious server using Kerberos authentication.\n",
+    "id": "FreeBSD-2005-0092",
+    "modified": "2005-02-27T00:00:00Z",
+    "published": "2005-02-27T00:00:00Z",
+    "references": [
+        {
+            "type": "REPORT",
+            "url": "http://marc.theaimsgroup.com/?l=bugtraq&m=110902601221592"
+        },
+        {
+            "type": "REPORT",
+            "url": "http://marc.theaimsgroup.com/?l=bugtraq&m=110902850731457"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://www.securityfocus.com/bid/12615/info"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://www.securityfocus.com/bid/12616/info"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2005-0490"
+        },
+        {
+            "type": "DISCUSSION",
+            "url": "http://marc.theaimsgroup.com/?l=bugtraq&m=110902850731457"
+        },
+        {
+            "type": "DISCUSSION",
+            "url": "http://marc.theaimsgroup.com/?l=bugtraq&m=110902601221592"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "curl -- authentication buffer overflow vulnerability"
+}

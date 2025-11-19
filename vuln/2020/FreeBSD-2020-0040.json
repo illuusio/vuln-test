@@ -1,0 +1,74 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "librsvg2"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "2.40.21"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        },
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "librsvg2-rust"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "introduced": "2.41.0"
+                        },
+                        {
+                            "fixed": "2.46.3"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "cite": [
+            "https://mail.gnome.org/archives/ftp-release-list/2020-February/msg00133.htmlE"
+        ],
+        "discovery": "2020-02-26T00:00:00Z",
+        "references": {
+            "cvename": [
+                "CVE-2019-20446"
+            ]
+        },
+        "vid": "b66583ae-5aee-4cd5-bb31-b2d397f8b6b3"
+    },
+    "details": "Librsvg2 developers reports:\n\n> Backport the following fixes from 2.46.x:\n>\n> Librsvg now has limits on the number of loaded XML elements, and the\n> number of referenced elements within an SVG document. This is to\n> mitigate malicious SVGs which try to consume all memory, and those\n> which try to consume an exponential amount of CPU time.\n>\n> Fix stack exhaustion with circular references in \\<use\\> elements.\n>\n> Fix a denial-of-service condition from exponential explosion of\n> rendered elements, through nested use of SVG \\<use\\> elements in\n> malicious SVGs. This is similar to the XML \\\"billion laughs attack\\\"\n> but for SVG instancing.\n",
+    "id": "FreeBSD-2020-0040",
+    "modified": "2020-03-02T00:00:00Z",
+    "published": "2020-03-02T00:00:00Z",
+    "references": [
+        {
+            "type": "REPORT",
+            "url": "https://mail.gnome.org/archives/ftp-release-list/2020-February/msg00133.htmlE"
+        },
+        {
+            "type": "WEB",
+            "url": "https://mail.gnome.org/archives/ftp-release-list/2020-February/msg00133.html"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2019-20446"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "librsvg2 -- multiple vulnerabilities"
+}

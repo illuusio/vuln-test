@@ -1,0 +1,59 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "openvpn"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "introduced": "2.0"
+                        },
+                        {
+                            "fixed": "2.0.4"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "cite": [
+            "http://openvpn.net/changelog.html"
+        ],
+        "discovery": "2005-10-31T00:00:00Z",
+        "references": {
+            "cvename": [
+                "CVE-2005-3393"
+            ]
+        },
+        "vid": "6129fdc7-6462-456d-a3ef-8fc3fbf44d16"
+    },
+    "details": "James Yonan reports:\n\n> A format string vulnerability in the foreign_option function in\n> options.c could potentially allow a malicious or compromised server to\n> execute arbitrary code on the client. Only non-Windows clients are\n> affected. The vulnerability only exists if (a) the client\\'s TLS\n> negotiation with the server succeeds, (b) the server is malicious or\n> has been compromised such that it is configured to push a maliciously\n> crafted options string to the client, and (c) the client indicates its\n> willingness to accept pushed options from the server by having\n> \\\"pull\\\" or \\\"client\\\" in its configuration file (Credit: Vade79).\n",
+    "id": "FreeBSD-2005-0299",
+    "modified": "2005-11-04T00:00:00Z",
+    "published": "2005-11-01T00:00:00Z",
+    "references": [
+        {
+            "type": "REPORT",
+            "url": "http://openvpn.net/changelog.html"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2005-3393"
+        },
+        {
+            "type": "DISCUSSION",
+            "url": "http://www.securityfocus.com/archive/1/415293/30/0/threaded"
+        },
+        {
+            "type": "WEB",
+            "url": "http://openvpn.net/changelog.html"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "openvpn -- arbitrary code execution on client through malicious or compromised server"
+}

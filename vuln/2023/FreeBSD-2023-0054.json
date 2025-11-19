@@ -1,0 +1,55 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "git"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "2.39.1"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "cite": [
+            "https://github.com/git/git/security/advisories/GHSA-c738-c5qq-xg89"
+        ],
+        "discovery": "2023-01-17T00:00:00Z",
+        "references": {
+            "cvename": [
+                "CVE-2022-23521"
+            ]
+        },
+        "vid": "8fafbef4-b1d9-11ed-b0f4-002590f2a714"
+    },
+    "details": "git team reports:\n\n> gitattributes are used to define unique attributes corresponding to\n> paths in your repository. These attributes are defined by\n> .gitattributes file(s) within your repository.\n>\n> The parser used to read these files has multiple integer overflows,\n> which can occur when parsing either a large number of patterns, a\n> large number of attributes, or attributes with overly-long names.\n>\n> These overflows may be triggered via a malicious .gitattributes file.\n> However, Git automatically splits lines at 2KB when reading\n> .gitattributes from a file, but not when parsing it from the index.\n> Successfully exploiting this vulnerability depends on the location of\n> the .gitattributes file in question.\n>\n> This integer overflow can result in arbitrary heap reads and writes,\n> which may result in remote code execution.\n",
+    "id": "FreeBSD-2023-0054",
+    "modified": "2023-02-21T00:00:00Z",
+    "published": "2023-02-21T00:00:00Z",
+    "references": [
+        {
+            "type": "REPORT",
+            "url": "https://github.com/git/git/security/advisories/GHSA-c738-c5qq-xg89"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2022-23521"
+        },
+        {
+            "type": "WEB",
+            "url": "https://github.blog/2023-01-17-git-security-vulnerabilities-announced-2/#cve-2022-23521"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "git -- gitattributes parsing integer overflow"
+}

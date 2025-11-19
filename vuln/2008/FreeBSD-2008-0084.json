@@ -1,0 +1,55 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "openvpn-devel"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "introduced": "2.1.b14"
+                        },
+                        {
+                            "fixed": "2.1.r9"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "cite": [
+            "http://openvpn.net/index.php/documentation/change-log/changelog-21.html"
+        ],
+        "discovery": "2008-07-31T00:00:00Z",
+        "references": {
+            "cvename": [
+                "CVE-2008-3459"
+            ]
+        },
+        "vid": "c61ca9cb-64c3-11dd-954d-006097bcc5f4"
+    },
+    "details": "James Yonan reports:\n\n> Security Fix - affects non-Windows OpenVPN clients running OpenVPN\n> 2.1-beta14 through 2.1-rc8 (OpenVPN 2.0.x clients are NOT vulnerable\n> nor are any versions of the OpenVPN server vulnerable).\n>\n> An OpenVPN client connecting to a malicious or compromised server\n> could potentially receive an \\\"lladdr\\\" or \\\"iproute\\\" configuration\n> directive from the server which could cause arbitrary code execution\n> on the client. A successful attack requires that (a) the client has\n> agreed to allow the server to push configuration directives to it by\n> including \\\"pull\\\" or the macro \\\"client\\\" in its configuration file,\n> (b) the client succesfully authenticates the server, (c) the server is\n> malicious or has been compromised and is under the control of the\n> attacker, and (d) the client is running a non-Windows OS.\n",
+    "id": "FreeBSD-2008-0084",
+    "modified": "2008-08-07T00:00:00Z",
+    "published": "2008-08-07T00:00:00Z",
+    "references": [
+        {
+            "type": "REPORT",
+            "url": "http://openvpn.net/index.php/documentation/change-log/changelog-21.html"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2008-3459"
+        },
+        {
+            "type": "WEB",
+            "url": "http://openvpn.net/index.php/documentation/change-log/changelog-21.html"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "openvpn-devel -- arbitrary code execution"
+}

@@ -1,0 +1,77 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "py39-cinder"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "14.1.0"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                },
+                {
+                    "events": [
+                        {
+                            "introduced": "15.0.0"
+                        },
+                        {
+                            "fixed": "15.2.0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                },
+                {
+                    "events": [
+                        {
+                            "introduced": "16.0.0"
+                        },
+                        {
+                            "fixed": "15.1.0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "cite": [
+            "https://osv.dev/vulnerability/PYSEC-2020-228"
+        ],
+        "discovery": "2020-06-10T00:00:00Z",
+        "references": {
+            "cvename": [
+                "CVE-2020-10755"
+            ]
+        },
+        "vid": "f767d615-01db-47e9-b4ab-07bb8d3409fd"
+    },
+    "details": "OpenStack project reports:\n\n> An insecure-credentials flaw was found in all openstack-cinder\n> versions before openstack-cinder 14.1.0, all openstack-cinder 15.x.x\n> versions before openstack-cinder 15.2.0 and all openstack-cinder\n> 16.x.x versions before openstack-cinder 16.1.0.\n>\n> When using openstack-cinder with the Dell EMC ScaleIO or VxFlex OS\n> backend storage driver, credentials for the entire backend are exposed\n> in the \\`\\`connection_info\\`\\` element in all Block Storage v3\n> Attachments API calls containing that element.\n>\n> This flaw enables an end-user to create a volume, make an API call to\n> show the attachment detail information, and retrieve a username and\n> password that may be used to connect to another user\\'s volume.\n>\n> Additionally, these credentials are valid for the ScaleIO or VxFlex OS\n> Management API, should an attacker discover the Management API\n> endpoint.\n",
+    "id": "FreeBSD-2023-0119",
+    "modified": "2023-04-09T00:00:00Z",
+    "published": "2023-04-09T00:00:00Z",
+    "references": [
+        {
+            "type": "REPORT",
+            "url": "https://osv.dev/vulnerability/PYSEC-2020-228"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2020-10755"
+        },
+        {
+            "type": "WEB",
+            "url": "https://osv.dev/vulnerability/PYSEC-2020-228"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "py39-cinder -- insecure-credentials flaw"
+}

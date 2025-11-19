@@ -1,0 +1,74 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "ikiwiki"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "3.20161229"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "cite": [
+            "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2016-10026",
+            "https://ikiwiki.info/security/#index47h2"
+        ],
+        "discovery": "2016-12-19T00:00:00Z",
+        "references": {
+            "cvename": [
+                "CVE-2016-10026",
+                "CVE-2016-9645",
+                "CVE-2016-9646"
+            ]
+        },
+        "vid": "5ed094a0-0150-11e7-ae1b-002590263bf5"
+    },
+    "details": "Mitre reports:\n\n> ikiwiki 3.20161219 does not properly check if a revision changes the\n> access permissions for a page on sites with the git and recentchanges\n> plugins and the CGI interface enabled, which allows remote attackers\n> to revert certain changes by leveraging permissions to change the page\n> before the revision was made.\n\n> When CGI::FormBuilder-\\>field(\\\"foo\\\") is called in list context (and\n> in particular in the arguments to a subroutine that takes named\n> arguments), it can return zero or more values for foo from the CGI\n> request, rather than the expected single value. This breaks the usual\n> Perl parsing convention for named arguments, similar to CVE-2014-1572\n> in Bugzilla (which was caused by a similar API design issue in\n> CGI.pm).\n",
+    "id": "FreeBSD-2017-0058",
+    "modified": "2017-03-05T00:00:00Z",
+    "published": "2017-03-05T00:00:00Z",
+    "references": [
+        {
+            "type": "REPORT",
+            "url": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2016-10026"
+        },
+        {
+            "type": "REPORT",
+            "url": "https://ikiwiki.info/security/#index47h2"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2016-10026"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2016-9645"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2016-9646"
+        },
+        {
+            "type": "WEB",
+            "url": "https://ikiwiki.info/security/#index46h2"
+        },
+        {
+            "type": "WEB",
+            "url": "https://ikiwiki.info/security/#index47h2"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "ikiwiki -- multiple vulnerabilities"
+}

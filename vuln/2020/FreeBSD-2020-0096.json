@@ -1,0 +1,46 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "vlc"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "3.0.10,4"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "cite": [
+            "https://www.videolan.org/security/sb-vlc309.html"
+        ],
+        "discovery": "2020-04-01T00:00:00Z",
+        "vid": "4a10902f-8a48-11ea-8668-e0d55e2a8bf9"
+    },
+    "details": "VideoLAN reports:\n\n> ### Details\n>\n> A remote user could:\n>\n> - Create a specifically crafted image file that could trigger an out\n>   of bounds read\n> - Send a specifically crafter request to the microdns service\n>   discovery, potentially triggering various memory management issues\n>\n> ### Impact\n>\n> If successful, a malicious third party could trigger either a crash of\n> VLC or an arbitratry code execution with the privileges of the target\n> user.\n>\n> While these issues in themselves are most likely to just crash the\n> player, we can\\'t exclude that they could be combined to leak user\n> informations or remotely execute code. ASLR and DEP help reduce the\n> likelyness of code execution, but may be bypassed.\n>\n> We have not seen exploits performing code execution through these\n> vulnerabilities\n>\n> CVE-2019-19721 affects VLC 3.0.8 and earlier, and only reads 1 byte\n> out of bound\n",
+    "id": "FreeBSD-2020-0096",
+    "modified": "2020-04-29T00:00:00Z",
+    "published": "2020-04-29T00:00:00Z",
+    "references": [
+        {
+            "type": "REPORT",
+            "url": "https://www.videolan.org/security/sb-vlc309.html"
+        },
+        {
+            "type": "WEB",
+            "url": "https://www.videolan.org/security/sb-vlc309.html"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "vlc -- Multiple vulnerabilities fixed in VLC media player"
+}

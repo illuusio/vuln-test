@@ -1,0 +1,55 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "newsgrab"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "last_affected": "0.4.0"
+                        },
+                        {
+                            "fixed": "0.4.0"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "discovery": "2005-01-18T00:00:00Z",
+        "references": {
+            "cvename": [
+                "CVE-2005-0154"
+            ]
+        },
+        "vid": "cd7e260a-6bff-11d9-a5df-00065be4b5b6"
+    },
+    "details": "The newsgrab script uses insecure permissions during the creation of the\nlocal output directory and downloaded files.\n\nAfter a file is created, permissions on it are set using the mode value\nof the newsgroup posting. This can potentially be a problem when the\nmode is not restrictive enough. In addition, the output directory is\ncreated with world writable permissions allowing other users to drop\nsymlinks or other files at that location.\n",
+    "id": "FreeBSD-2005-0064",
+    "modified": "2005-02-01T00:00:00Z",
+    "published": "2005-02-01T00:00:00Z",
+    "references": [
+        {
+            "type": "WEB",
+            "url": "http://people.freebsd.org/~niels/issues/newsgrab-20050114.txt"
+        },
+        {
+            "type": "WEB",
+            "url": "http://sourceforge.net/project/shownotes.php?release_id=300562"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2005-0154"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "newsgrab -- insecure file and directory creation"
+}

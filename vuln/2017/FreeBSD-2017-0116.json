@@ -1,0 +1,46 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "asterisk13"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "13.15.1"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "cite": [
+            "http://www.asterisk.org/downloads/security-advisories"
+        ],
+        "discovery": "2017-04-13T00:00:00Z",
+        "vid": "fab87bff-3ce5-11e7-bf9d-001999f8d30b"
+    },
+    "details": "The Asterisk project reports:\n\n> A remote memory exhaustion can be triggered by sending an SCCP packet\n> to Asterisk system with \\\"chan_skinny\\\" enabled that is larger than\n> the length of the SCCP header but smaller than the packet length\n> specified in the header. The loop that reads the rest of the packet\n> doesn\\'t detect that the call to read() returned end-of-file before\n> the expected number of bytes and continues infinitely. The \\\"partial\n> data\\\" message logging in that tight loop causes Asterisk to exhaust\n> all available memory.\n",
+    "id": "FreeBSD-2017-0116",
+    "modified": "2017-05-19T00:00:00Z",
+    "published": "2017-05-19T00:00:00Z",
+    "references": [
+        {
+            "type": "REPORT",
+            "url": "http://www.asterisk.org/downloads/security-advisories"
+        },
+        {
+            "type": "WEB",
+            "url": "http://downloads.asterisk.org/pub/security/AST-2017-004.html"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "asterisk -- Memory exhaustion on short SCCP packets"
+}

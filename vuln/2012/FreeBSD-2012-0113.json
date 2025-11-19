@@ -1,0 +1,59 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "py-pycrypto"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "introduced": "2.5"
+                        },
+                        {
+                            "fixed": "2.6"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "cite": [
+            "http://lists.dlitz.net/pipermail/pycrypto/2012q2/000587.html"
+        ],
+        "discovery": "2012-05-24T00:00:00Z",
+        "references": {
+            "cvename": [
+                "CVE-2012-2417"
+            ]
+        },
+        "vid": "f45c0049-be72-11e1-a284-0023ae8e59f0"
+    },
+    "details": "Dwayne C. Litzenberger of PyCrypto reports:\n\n> In the ElGamal schemes (for both encryption and signatures), g is\n> supposed to be the generator of the entire Z\\^\\*\\_p group. However, in\n> PyCrypto 2.5 and earlier, g is more simply the generator of a random\n> sub-group of Z\\^\\*\\_p.\n>\n> The result is that the signature space (when the key is used for\n> signing) or the public key space (when the key is used for encryption)\n> may be greatly reduced from its expected size of log(p) bits, possibly\n> down to 1 bit (the worst case if the order of g is 2).\n>\n> While it has not been confirmed, it has also been suggested that an\n> attacker might be able to use this fact to determine the private key.\n>\n> Anyone using ElGamal keys should generate new keys as soon as\n> practical.\n>\n> Any additional information about this bug will be tracked at\n> https://bugs.launchpad.net/pycrypto/+bug/985164\n",
+    "id": "FreeBSD-2012-0113",
+    "modified": "2012-06-24T00:00:00Z",
+    "published": "2012-06-24T00:00:00Z",
+    "references": [
+        {
+            "type": "REPORT",
+            "url": "http://lists.dlitz.net/pipermail/pycrypto/2012q2/000587.html"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2012-2417"
+        },
+        {
+            "type": "WEB",
+            "url": "http://lists.dlitz.net/pipermail/pycrypto/2012q2/000587.html"
+        },
+        {
+            "type": "WEB",
+            "url": "https://bugs.launchpad.net/pycrypto/+bug/985164"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "pycrypto -- vulnerable ElGamal key generation"
+}

@@ -1,0 +1,76 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "joomla15"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "introduced": "1.5.1"
+                        },
+                        {
+                            "last_affected": "1.5.15"
+                        },
+                        {
+                            "fixed": "1.5.15"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "cite": [
+            "http://developer.joomla.org/security/news/311-20100423-core-negative-values-for-limit-and-offset.html",
+            "http://developer.joomla.org/security/news/310-20100423-core-installer-migration-script.html",
+            "http://developer.joomla.org/security/news/309-20100423-core-sessation-fixation.html",
+            "http://developer.joomla.org/security/news/308-20100423-core-password-reset-tokens.html"
+        ],
+        "discovery": "2010-04-23T00:00:00Z",
+        "vid": "8d10038e-515c-11df-83fb-0015587e2cc1"
+    },
+    "details": "Joomla! reported the following vulnerabilities:\n\n> If a user entered a URL with a negative query limit or offset, a PHP\n> notice would display revealing information about the system..\n\n> The migration script in the Joomla! installer does not check the file\n> type being uploaded. If the installation application is present, an\n> attacker could use it to upload malicious files to a server.\n\n> Session id doesn\\'t get modified when user logs in. A remote site may\n> be able to forward a visitor to the Joomla! site and set a specific\n> cookie. If the user then logs in, the remote site can use that cookie\n> to authenticate as that user.\n\n> When a user requests a password reset, the reset tokens were stored in\n> plain text in the database. While this is not a vulnerability in\n> itself, it allows user accounts to be compromised if there is an\n> extension on the site with an SQL injection vulnerability.\n",
+    "id": "FreeBSD-2010-0045",
+    "modified": "2010-04-26T00:00:00Z",
+    "published": "2010-04-26T00:00:00Z",
+    "references": [
+        {
+            "type": "REPORT",
+            "url": "http://developer.joomla.org/security/news/311-20100423-core-negative-values-for-limit-and-offset.html"
+        },
+        {
+            "type": "REPORT",
+            "url": "http://developer.joomla.org/security/news/310-20100423-core-installer-migration-script.html"
+        },
+        {
+            "type": "REPORT",
+            "url": "http://developer.joomla.org/security/news/309-20100423-core-sessation-fixation.html"
+        },
+        {
+            "type": "REPORT",
+            "url": "http://developer.joomla.org/security/news/308-20100423-core-password-reset-tokens.html"
+        },
+        {
+            "type": "WEB",
+            "url": "http://developer.joomla.org/security/news/308-20100423-core-password-reset-tokens.html"
+        },
+        {
+            "type": "WEB",
+            "url": "http://developer.joomla.org/security/news/309-20100423-core-sessation-fixation.html"
+        },
+        {
+            "type": "WEB",
+            "url": "http://developer.joomla.org/security/news/310-20100423-core-installer-migration-script.html"
+        },
+        {
+            "type": "WEB",
+            "url": "http://developer.joomla.org/security/news/311-20100423-core-negative-values-for-limit-and-offset.html"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "joomla -- multiple vulnerabilities"
+}

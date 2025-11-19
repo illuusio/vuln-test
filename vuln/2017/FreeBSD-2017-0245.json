@@ -1,0 +1,73 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "apache-solr"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "introduced": "5.1"
+                        },
+                        {
+                            "last_affected": "6.6.1"
+                        },
+                        {
+                            "fixed": "6.6.1"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                },
+                {
+                    "events": [
+                        {
+                            "introduced": "7.0.0"
+                        },
+                        {
+                            "fixed": "7.1"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "cite": [
+            "http://lucene.472066.n3.nabble.com/Re-Several-critical-vulnerabilities-discovered-in-Apache-Solr-XXE-amp-RCE-td4358308.html"
+        ],
+        "discovery": "2017-10-13T00:00:00Z",
+        "references": {
+            "cvename": [
+                "CVE-2017-12629"
+            ]
+        },
+        "vid": "e837390d-0ceb-46b8-9b32-29c1195f5dc7"
+    },
+    "details": "Solr developers report:\n\n> Lucene XML parser does not explicitly prohibit doctype declaration and\n> expansion of external entities which leads to arbitrary HTTP requests\n> to the local SOLR instance and to bypass all firewall restrictions.\n>\n> Solr \\\"RunExecutableListener\\\" class can be used to execute arbitrary\n> commands on specific events, for example after each update query. The\n> problem is that such listener can be enabled with any parameters just\n> by using Config API with add-listener command.\n",
+    "id": "FreeBSD-2017-0245",
+    "modified": "2017-10-16T00:00:00Z",
+    "published": "2017-10-13T00:00:00Z",
+    "references": [
+        {
+            "type": "REPORT",
+            "url": "http://lucene.472066.n3.nabble.com/Re-Several-critical-vulnerabilities-discovered-in-Apache-Solr-XXE-amp-RCE-td4358308.html"
+        },
+        {
+            "type": "WEB",
+            "url": "http://lucene.472066.n3.nabble.com/Re-Several-critical-vulnerabilities-discovered-in-Apache-Solr-XXE-amp-RCE-td4358308.html"
+        },
+        {
+            "type": "WEB",
+            "url": "https://marc.info/?l=apache-announce&m=150786685013286"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2017-12629"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "solr -- Code execution via entity expansion"
+}

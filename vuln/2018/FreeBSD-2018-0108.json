@@ -1,0 +1,80 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "perl5"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "introduced": "5.24.0"
+                        },
+                        {
+                            "fixed": "5.24.4"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                },
+                {
+                    "events": [
+                        {
+                            "introduced": "5.26.0"
+                        },
+                        {
+                            "fixed": "5.26.2"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "cite": [
+            "https://metacpan.org/changes/release/SHAY/perl-5.26.2"
+        ],
+        "discovery": "2018-04-14T00:00:00Z",
+        "references": {
+            "cvename": [
+                "CVE-2018-6797",
+                "CVE-2018-6798",
+                "CVE-2018-6913"
+            ]
+        },
+        "vid": "41c96ffd-29a6-4dcc-9a88-65f5038fa6eb"
+    },
+    "details": "perldelta:\n\n> CVE-2018-6797: heap-buffer-overflow (WRITE of size 1) in S_regatom\n> (regcomp.c)\n>\n> A crafted regular expression could cause a heap buffer write overflow,\n> with control over the bytes written. \\[perl #132227\\]\n>\n> CVE-2018-6798: Heap-buffer-overflow in Perl\\_\\_byte_dump_string\n> (utf8.c)\n>\n> Matching a crafted locale dependent regular expression could cause a\n> heap buffer read overflow and potentially information disclosure.\n> \\[perl #132063\\]\n>\n> CVE-2018-6913: heap-buffer-overflow in S_pack_rec\n>\n> pack() could cause a heap buffer write overflow with a large item\n> count. \\[perl #131844\\]\n",
+    "id": "FreeBSD-2018-0108",
+    "modified": "2018-04-15T00:00:00Z",
+    "published": "2018-04-15T00:00:00Z",
+    "references": [
+        {
+            "type": "REPORT",
+            "url": "https://metacpan.org/changes/release/SHAY/perl-5.26.2"
+        },
+        {
+            "type": "WEB",
+            "url": "https://metacpan.org/changes/release/SHAY/perl-5.26.2"
+        },
+        {
+            "type": "WEB",
+            "url": "https://metacpan.org/changes/release/SHAY/perl-5.24.4"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2018-6797"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2018-6798"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2018-6913"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "perl -- multiple vulnerabilities"
+}

@@ -1,0 +1,59 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "libssh"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "0.7.3"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "cite": [
+            "https://www.libssh.org/2016/02/23/libssh-0-7-3-security-and-bugfix-release/"
+        ],
+        "discovery": "2016-02-23T00:00:00Z",
+        "references": {
+            "cvename": [
+                "CVE-2016-0739"
+            ]
+        },
+        "vid": "6b3591ea-e2d2-11e5-a6be-5453ed2e2b49"
+    },
+    "details": "Andreas Schneider reports:\n\n> libssh versions 0.1 and above have a bits/bytes confusion bug and\n> generate an abnormally short ephemeral secret for the\n> diffie-hellman-group1 and diffie-hellman-group14 key exchange methods.\n> The resulting secret is 128 bits long, instead of the recommended\n> sizes of 1024 and 2048 bits respectively. There are practical\n> algorithms (Baby steps/Giant steps, Pollard's rho) that can solve this\n> problem in O(2\\^63) operations.\n>\n> Both client and server are are vulnerable, pre-authentication. This\n> vulnerability could be exploited by an eavesdropper with enough\n> resources to decrypt or intercept SSH sessions. The bug was found\n> during an internal code review by Aris Adamantiadis of the libssh\n> team.\n",
+    "id": "FreeBSD-2016-0131",
+    "modified": "2016-03-05T00:00:00Z",
+    "published": "2016-03-05T00:00:00Z",
+    "references": [
+        {
+            "type": "REPORT",
+            "url": "https://www.libssh.org/2016/02/23/libssh-0-7-3-security-and-bugfix-release/"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2016-0739"
+        },
+        {
+            "type": "REPORT",
+            "url": "https://bugzilla.redhat.com/show_bug.cgi?id=CVE-2016-0739"
+        },
+        {
+            "type": "WEB",
+            "url": "https://www.libssh.org/2016/02/23/libssh-0-7-3-security-and-bugfix-release/"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "libssh -- weak Diffie-Hellman secret generation"
+}

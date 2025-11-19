@@ -1,0 +1,59 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "gdm"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "2.30.5_2"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "cite": [
+            "http://mail.gnome.org/archives/distributor-list/2011-March/msg00008.html"
+        ],
+        "discovery": "2011-03-28T00:00:00Z",
+        "references": {
+            "cvename": [
+                "CVE-2011-0727"
+            ]
+        },
+        "vid": "c6fbd447-59ed-11e0-8d04-0015f2db7bde"
+    },
+    "details": "Sebastian Krahmer reports:\n\n> It was discovered that the GNOME Display Manager (gdm) cleared the\n> cache directory, which is owned by an unprivileged user, with the\n> privileges of the root user. A race condition exists in gdm where a\n> local user could take advantage of this by writing to the cache\n> directory between ending the session and the signal to clean up the\n> session, which could lead to the execution of arbitrary code as the\n> root user.\n",
+    "id": "FreeBSD-2011-0051",
+    "modified": "2011-03-29T00:00:00Z",
+    "published": "2011-03-29T00:00:00Z",
+    "references": [
+        {
+            "type": "REPORT",
+            "url": "http://mail.gnome.org/archives/distributor-list/2011-March/msg00008.html"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2011-0727"
+        },
+        {
+            "type": "WEB",
+            "url": "http://mail.gnome.org/archives/distributor-list/2011-March/msg00008.html"
+        },
+        {
+            "type": "REPORT",
+            "url": "https://bugzilla.redhat.com/show_bug.cgi?id=688323"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "gdm -- privilege escalation vulnerability"
+}

@@ -1,0 +1,55 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "sqlite3"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "introduced": "3.39.2,1"
+                        },
+                        {
+                            "fixed": "3.41.2,1"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "cite": [
+            "https://sqlite.org/forum/forumpost/16ce2bb7a639e29b"
+        ],
+        "discovery": "2025-07-29T00:00:00Z",
+        "references": {
+            "cvename": [
+                "CVE-2025-7458"
+            ]
+        },
+        "vid": "f51077bd-6dd7-11f0-9d62-b42e991fc52e"
+    },
+    "details": "cve-coordination@google.com reports:\n\n> An integer overflow in the sqlite3KeyInfoFromExprList function in\n> SQLite versions 3.39.2 through 3.41.1 allows an attacker with the\n> ability to execute arbitrary SQL statements to cause a denial of\n> service or disclose sensitive information from process memory via a\n> crafted SELECT statement with a large number of expressions in the\n> ORDER BY clause.\n",
+    "id": "FreeBSD-2025-0257",
+    "modified": "2025-08-01T00:00:00Z",
+    "published": "2025-07-31T00:00:00Z",
+    "references": [
+        {
+            "type": "REPORT",
+            "url": "https://sqlite.org/forum/forumpost/16ce2bb7a639e29b"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2025-7458"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://nvd.nist.gov/vuln/detail/CVE-2025-7458"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "SQLite -- integer overflow in key info allocation"
+}

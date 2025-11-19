@@ -1,0 +1,46 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "zeek"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "6.0.2"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "cite": [
+            "https://github.com/zeek/zeek/releases/tag/v6.0.2"
+        ],
+        "discovery": "2023-10-27T00:00:00Z",
+        "vid": "386a14bb-1a21-41c6-a2cf-08d79213379b"
+    },
+    "details": "Tim Wojtulewicz of Corelight reports:\n\n> A specially-crafted SSL packet could cause Zeek to leak memory and\n> potentially crash.\n>\n> A specially-crafted series of FTP packets could cause Zeek to log\n> entries for requests that have already been completed, using resources\n> unnecessarily and potentially causing Zeek to lose other traffic.\n>\n> A specially-crafted series of SSL packets could cause Zeek to output a\n> very large number of unnecessary alerts for the same record.\n>\n> A specially-crafted series of SSL packets could cause Zeek to generate\n> very long ssl_history fields in the ssl.log, potentially using a large\n> amount of memory due to unbounded state growth\n>\n> A specially-crafted IEEE802.11 packet could cause Zeek to overflow\n> memory and potentially crash\n",
+    "id": "FreeBSD-2023-0326",
+    "modified": "2023-10-27T00:00:00Z",
+    "published": "2023-10-27T00:00:00Z",
+    "references": [
+        {
+            "type": "REPORT",
+            "url": "https://github.com/zeek/zeek/releases/tag/v6.0.2"
+        },
+        {
+            "type": "WEB",
+            "url": "https://github.com/zeek/zeek/releases/tag/v6.0.2"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "zeek -- potential DoS vulnerabilities"
+}

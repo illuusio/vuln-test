@@ -1,0 +1,150 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "redis"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "introduced": "8.2.0"
+                        },
+                        {
+                            "fixed": "8.2.2"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        },
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "redis80"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "introduced": "8.0.0"
+                        },
+                        {
+                            "fixed": "8.0.4"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        },
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "redis74"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "introduced": "7.4.0"
+                        },
+                        {
+                            "fixed": "7.4.6"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        },
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "redis72"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "introduced": "7.2.0"
+                        },
+                        {
+                            "fixed": "7.2.11"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        },
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "redis62"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "introduced": "6.2.0"
+                        },
+                        {
+                            "fixed": "6.2.20"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        },
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "valkey"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "8.1.4"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "cite": [
+            "https://github.com/redis/redis/security/advisories/GHSA-m8fj-85cg-7vhp"
+        ],
+        "discovery": "2025-10-03T00:00:00Z",
+        "references": {
+            "cvename": [
+                "CVE-2025-46817"
+            ]
+        },
+        "vid": "f6b8de04-a116-11f0-9446-f02f7497ecda"
+    },
+    "details": "redis reports:\n\n> An authenticated user may use a specially crafted Lua script to cause\n> an integer overflow and potentially lead to remote code execution The\n> problem exists in all versions of Redis with Lua scripting. An\n> additional workaround to mitigate the problem without patching the\n> redis-server executable is to prevent users from executing Lua\n> scripts. This can be done using ACL to block a script by restricting\n> both the EVAL and FUNCTION command families.\n",
+    "id": "FreeBSD-2025-0312",
+    "modified": "2025-10-04T00:00:00Z",
+    "published": "2025-10-04T00:00:00Z",
+    "references": [
+        {
+            "type": "REPORT",
+            "url": "https://github.com/redis/redis/security/advisories/GHSA-m8fj-85cg-7vhp"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2025-46817"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://nvd.nist.gov/vuln/detail/CVE-2025-46817"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "redis,valkey -- Lua library commands may lead to integer overflow and potential RCE"
+}

@@ -1,0 +1,55 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "xen-kernel"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "4.5.0_3"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "cite": [
+            "http://xenbits.xen.org/xsa/advisory-121.html"
+        ],
+        "discovery": "2015-03-05T00:00:00Z",
+        "references": {
+            "cvename": [
+                "CVE-2015-2044"
+            ]
+        },
+        "vid": "5023f559-27e2-11e5-a4a5-002590263bf5"
+    },
+    "details": "The Xen Project reports:\n\n> Emulation routines in the hypervisor dealing with certain system\n> devices check whether the access size by the guest is a supported one.\n> When the access size is unsupported these routines failed to set the\n> data to be returned to the guest for read accesses, so that hypervisor\n> stack contents are copied into the destination of the operation, thus\n> becoming visible to the guest.\n>\n> A malicious HVM guest might be able to read sensitive data relating to\n> other guests.\n",
+    "id": "FreeBSD-2015-0185",
+    "modified": "2015-07-11T00:00:00Z",
+    "published": "2015-07-11T00:00:00Z",
+    "references": [
+        {
+            "type": "REPORT",
+            "url": "http://xenbits.xen.org/xsa/advisory-121.html"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2015-2044"
+        },
+        {
+            "type": "WEB",
+            "url": "http://xenbits.xen.org/xsa/advisory-121.html"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "xen-kernel -- Information leak via internal x86 system device emulation"
+}

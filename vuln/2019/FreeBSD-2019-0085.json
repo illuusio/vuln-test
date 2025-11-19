@@ -1,0 +1,93 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "FreeBSD"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "introduced": "12.0"
+                        },
+                        {
+                            "fixed": "12.0_3"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                },
+                {
+                    "events": [
+                        {
+                            "introduced": "11.2"
+                        },
+                        {
+                            "fixed": "11.2_9"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        },
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "wpa_supplicant"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "2.8"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        },
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "hostapd"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "2.8"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "discovery": "2019-04-10T00:00:00Z",
+        "references": {
+            "cvename": [
+                "CVE-2019-9494"
+            ]
+        },
+        "vid": "7e53f9cc-656d-11e9-8e67-206a8a720317"
+    },
+    "details": "# Problem Description:\n\nSide channel attacks in the SAE implementations used by both hostapd\n(AP) and wpa_supplicant (infrastructure BSS station/mesh station). SAE\n(Simultaneous Authentication of Equals) is also known as WPA3-Personal.\nThe discovered side channel attacks may be able to leak information\nabout the used password based on observable timing differences and cache\naccess patterns. This might result in full password recovery when\ncombined with an offline dictionary attack and if the password is not\nstrong enough to protect against dictionary attacks.\n\nSee https://w1.fi/security/2019-1/sae-side-channel-attacks.txt for a\ndetailed description of the bug.\n\n# Impact:\n\nAll wpa_supplicant and hostapd versions with SAE support (CONFIG_SAE=y\nin the build configuration and SAE being enabled in the runtime\nconfiguration).\n",
+    "id": "FreeBSD-2019-0085",
+    "modified": "2019-04-23T00:00:00Z",
+    "published": "2019-04-23T00:00:00Z",
+    "references": [
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2019-9494"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "FreeBSD -- SAE side-channel attacks"
+}

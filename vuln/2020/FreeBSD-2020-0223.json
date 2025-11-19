@@ -1,0 +1,59 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "elasticsearch6"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "6.8.12"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "cite": [
+            "https://discuss.elastic.co/t/elastic-stack-7-9-0-and-6-8-12-security-update/245456"
+        ],
+        "discovery": "2020-08-19T00:00:00Z",
+        "references": {
+            "cvename": [
+                "CVE-2020-7019"
+            ]
+        },
+        "vid": "fbca6863-e2ad-11ea-9d39-00a09858faf5"
+    },
+    "details": "Elastic reports:\n\n> A field disclosure flaw was found in Elasticsearch when running a\n> scrolling search with Field Level Security. If a user runs the same\n> query another more privileged user recently ran, the scrolling search\n> can leak fields that should be hidden. This could result in an\n> attacker gaining additional permissions against a restricted index.\n",
+    "id": "FreeBSD-2020-0223",
+    "modified": "2020-08-20T00:00:00Z",
+    "published": "2020-08-20T00:00:00Z",
+    "references": [
+        {
+            "type": "REPORT",
+            "url": "https://discuss.elastic.co/t/elastic-stack-7-9-0-and-6-8-12-security-update/245456"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2020-7019"
+        },
+        {
+            "type": "WEB",
+            "url": "https://discuss.elastic.co/t/elastic-stack-7-9-0-and-6-8-12-security-update/245456"
+        },
+        {
+            "type": "WEB",
+            "url": "https://github.com/elastic/elasticsearch/pull/39490"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "textproc/elasticsearch6 -- field disclosure flaw"
+}

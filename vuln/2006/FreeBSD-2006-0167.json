@@ -1,0 +1,110 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "dokuwiki"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "20060309c"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        },
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "dokuwiki-devel"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "20060909"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "cite": [
+            "http://secunia.com/advisories/21819/",
+            "http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2006-4674",
+            "http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2006-4675",
+            "http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2006-4679"
+        ],
+        "discovery": "2006-09-08T00:00:00Z",
+        "references": {
+            "bid": [
+                "19911"
+            ],
+            "cvename": [
+                "CVE-2006-4674",
+                "CVE-2006-4675",
+                "CVE-2006-4679"
+            ]
+        },
+        "vid": "fcba5764-506a-11db-a5ae-00508d6a62df"
+    },
+    "details": "Secunia reports:\n\n> rgod has discovered a vulnerability in DokuWiki, which can be\n> exploited by malicious people to compromise a vulnerable system.\n>\n> Input passed to the \\\"TARGET_FN\\\" parameter in bin/dwpage.php is not\n> properly sanitised before being used to copy files. This can be\n> exploited via directory traversal attacks in combination with\n> DokuWiki\\'s file upload feature to execute arbitrary PHP code.\n\nCVE Mitre reports:\n\n> Direct static code injection vulnerability in doku.php in DokuWiki\n> before 2006-03-09c allows remote attackers to execute arbitrary PHP\n> code via the X-FORWARDED-FOR HTTP header, which is stored in\n> config.php.\n\n> Unrestricted file upload vulnerability in lib/exe/media.php in\n> DokuWiki before 2006-03-09c allows remote attackers to upload\n> executable files into the data/media folder via unspecified vectors.\n\n> DokuWiki before 2006-03-09c enables the debug feature by default,\n> which allows remote attackers to obtain sensitive information by\n> calling doku.php with the X-DOKUWIKI-DO HTTP header set to \\\"debug\\\".\n",
+    "id": "FreeBSD-2006-0167",
+    "modified": "2006-10-02T00:00:00Z",
+    "published": "2006-09-30T00:00:00Z",
+    "references": [
+        {
+            "type": "REPORT",
+            "url": "http://secunia.com/advisories/21819/"
+        },
+        {
+            "type": "REPORT",
+            "url": "http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2006-4674"
+        },
+        {
+            "type": "REPORT",
+            "url": "http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2006-4675"
+        },
+        {
+            "type": "REPORT",
+            "url": "http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2006-4679"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://www.securityfocus.com/bid/19911/info"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2006-4674"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2006-4675"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2006-4679"
+        },
+        {
+            "type": "WEB",
+            "url": "http://secunia.com/advisories/21819/"
+        },
+        {
+            "type": "WEB",
+            "url": "http://bugs.splitbrain.org/index.php?do=details&id=906"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "dokuwiki -- multiple vulnerabilities"
+}

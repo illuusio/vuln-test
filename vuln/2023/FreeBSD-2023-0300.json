@@ -1,0 +1,62 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:kernel",
+                "name": "FreeBSD-kernel"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "introduced": "13.2"
+                        },
+                        {
+                            "fixed": "13.2_4"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                },
+                {
+                    "events": [
+                        {
+                            "introduced": "12.4"
+                        },
+                        {
+                            "fixed": "12.4_6"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "discovery": "2023-10-03T00:00:00Z",
+        "references": {
+            "cvename": [
+                "CVE-2023-5368"
+            ],
+            "freebsdsa": [
+                "SA-23:12.msdosfs"
+            ]
+        },
+        "vid": "fefcd340-624f-11ee-8e38-002590c1f29c"
+    },
+    "details": "# Problem Description:\n\nIn certain cases using the truncate or ftruncate system call to extend a\nfile size populates the additional space in the file with unallocated\ndata from the underlying disk device, rather than zero bytes.\n\n# Impact:\n\nA user with write access to files on a msdosfs file system may be able\nto read unintended data (for example, from a previously deleted file).\n",
+    "id": "FreeBSD-2023-0300",
+    "modified": "2023-10-04T00:00:00Z",
+    "published": "2023-10-04T00:00:00Z",
+    "references": [
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2023-5368"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://www.freebsd.org/security/advisories/FreeBSD-SA-23:12.msdosfs.asc"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "FreeBSD -- msdosfs data disclosure"
+}

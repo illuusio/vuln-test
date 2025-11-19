@@ -1,0 +1,104 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "a2ps-a4"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "4.13b_2"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        },
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "a2ps-letter"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "4.13b_2"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        },
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "a2ps-letterdj"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "4.13b_2"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "discovery": "2004-08-18T00:00:00Z",
+        "references": {
+            "bid": [
+                "11025"
+            ],
+            "cvename": [
+                "CVE-2004-1170"
+            ],
+            "freebsdpr": [
+                "ports/70618"
+            ]
+        },
+        "vid": "8091fcea-f35e-11d8-81b0-000347a4fa7d"
+    },
+    "details": "Rudolf Polzer reports:\n\n> a2ps builds a command line for file() containing an unescaped version\n> of the file name, thus might call external programs described by the\n> file name. Running a cronjob over a public writable directory a2ps-ing\n> all files in it - or simply typing \\\"a2ps \\*.txt\\\" in /tmp - is\n> therefore dangerous.\n",
+    "id": "FreeBSD-2004-0209",
+    "modified": "2004-12-30T00:00:00Z",
+    "published": "2004-10-20T00:00:00Z",
+    "references": [
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2004-1170"
+        },
+        {
+            "type": "REPORT",
+            "url": "https://bugs.freebsd.org/bugzilla/show_bug.cgi?id=70618"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://www.securityfocus.com/bid/11025/info"
+        },
+        {
+            "type": "WEB",
+            "url": "http://www.osvdb.org/9176"
+        },
+        {
+            "type": "DISCUSSION",
+            "url": "http://marc.theaimsgroup.com/?l=full-disclosure&m=109334851517137"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "a2ps -- insecure command line argument handling"
+}

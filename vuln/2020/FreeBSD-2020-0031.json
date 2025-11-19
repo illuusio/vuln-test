@@ -1,0 +1,51 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:kernel",
+                "name": "FreeBSD-kernel"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "introduced": "12.0"
+                        },
+                        {
+                            "fixed": "12.0_13"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "discovery": "2020-01-28T00:00:00Z",
+        "references": {
+            "cvename": [
+                "CVE-2019-5613"
+            ],
+            "freebsdsa": [
+                "SA-20:02.ipsec"
+            ]
+        },
+        "vid": "5797c807-4279-11ea-b184-f8b156ac3ff9"
+    },
+    "details": "# Problem Description:\n\nA missing check means that an attacker can reinject an old packet and it\nwill be accepted and processed by the IPsec endpoint.\n\n# Impact:\n\nThe impact depends on the higher-level protocols in use over IPsec. For\nexample, an attacker who can capture and inject packets could cause an\naction that was intentionally performed once to be repeated.\n",
+    "id": "FreeBSD-2020-0031",
+    "modified": "2020-01-29T00:00:00Z",
+    "published": "2020-01-29T00:00:00Z",
+    "references": [
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2019-5613"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://www.freebsd.org/security/advisories/FreeBSD-SA-20:02.ipsec.asc"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "FreeBSD -- Missing IPsec anti-replay window check"
+}

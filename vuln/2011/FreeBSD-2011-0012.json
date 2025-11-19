@@ -1,0 +1,59 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "sudo"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "introduced": "1.7.0"
+                        },
+                        {
+                            "fixed": "1.7.4.5"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "cite": [
+            "http://www.sudo.ws/sudo/alerts/runas_group_pw.html"
+        ],
+        "discovery": "2011-01-11T00:00:00Z",
+        "references": {
+            "cvename": [
+                "CVE-2011-0010"
+            ]
+        },
+        "vid": "908f4cf2-1e8b-11e0-a587-001b77d09812"
+    },
+    "details": "Todd Miller reports:\n\n> Beginning with sudo version 1.7.0 it has been possible to grant\n> permission to run a command using a specified group via sudo\\'s -g\n> option (run as group), if allowed by the sudoers file. A flaw exists\n> in sudo\\'s password checking logic that allows a user to run a command\n> with only the group changed without being prompted for a password.\n",
+    "id": "FreeBSD-2011-0012",
+    "modified": "2011-01-13T00:00:00Z",
+    "published": "2011-01-13T00:00:00Z",
+    "references": [
+        {
+            "type": "REPORT",
+            "url": "http://www.sudo.ws/sudo/alerts/runas_group_pw.html"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2011-0010"
+        },
+        {
+            "type": "WEB",
+            "url": "http://www.sudo.ws/sudo/alerts/runas_group_pw.html"
+        },
+        {
+            "type": "WEB",
+            "url": "http://bugs.debian.org/cgi-bin/bugreport.cgi?bug=609641"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "sudo -- local privilege escalation"
+}

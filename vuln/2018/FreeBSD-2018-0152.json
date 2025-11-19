@@ -1,0 +1,69 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "phpmyadmin"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "4.8.2"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "cite": [
+            "https://www.phpmyadmin.net/security/PMASA-2018-3/",
+            "https://www.phpmyadmin.net/security/PMASA-2018-4/"
+        ],
+        "discovery": "2018-06-21T00:00:00Z",
+        "references": {
+            "cvename": [
+                "CVE-2018-12581",
+                "CVE-2018-12613"
+            ]
+        },
+        "vid": "17cb6ff3-7670-11e8-8854-6805ca0b3d42"
+    },
+    "details": "The phpMyAdmin development team reports:\n\n> ### Summary\n>\n> XSS in Designer feature\n>\n> ### Description\n>\n> A Cross-Site Scripting vulnerability was found in the Designer\n> feature, where an attacker can deliver a payload to a user through a\n> specially-crafted database name.\n>\n> ### Severity\n>\n> We consider this attack to be of moderate severity.\n\n> ### Summary\n>\n> File inclusion and remote code execution attack\n>\n> ### Description\n>\n> A flaw has been discovered where an attacker can include (view and\n> potentially execute) files on the server.\n>\n> The vulnerability comes from a portion of code where pages are\n> redirected and loaded within phpMyAdmin, and an improper test for\n> whitelisted pages.\n>\n> An attacker must be authenticated, except in these situations:\n>\n> - \\$cfg\\[\\'AllowArbitraryServer\\'\\] = true: attacker can specify any\n>   host he/she is already in control of, and execute arbitrary code on\n>   phpMyAdmin\n> - \\$cfg\\[\\'ServerDefault\\'\\] = 0: this bypasses the login and runs the\n>   vulnerable code without any authentication\n>\n> ### Severity\n>\n> We consider this to be severe.\n>\n> ### Mitigation factor\n>\n> Configuring PHP with a restrictive \\`open_basedir\\` can greatly\n> restrict an attacker\\'s ability to view files on the server.\n> Vulnerable systems should not be run with the phpMyAdmin directives\n> \\$cfg\\[\\'AllowArbitraryServer\\'\\] = true or \\$cfg\\[\\'ServerDefault\\'\\]\n> = 0\n",
+    "id": "FreeBSD-2018-0152",
+    "modified": "2018-06-22T00:00:00Z",
+    "published": "2018-06-22T00:00:00Z",
+    "references": [
+        {
+            "type": "REPORT",
+            "url": "https://www.phpmyadmin.net/security/PMASA-2018-3/"
+        },
+        {
+            "type": "REPORT",
+            "url": "https://www.phpmyadmin.net/security/PMASA-2018-4/"
+        },
+        {
+            "type": "WEB",
+            "url": "https://www.phpmyadmin.net/security/PMASA-2018-3/"
+        },
+        {
+            "type": "WEB",
+            "url": "https://www.phpmyadmin.net/security/PMASA-2018-4/"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2018-12581"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2018-12613"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "phpmyadmin -- remote code inclusion and XSS scripting"
+}

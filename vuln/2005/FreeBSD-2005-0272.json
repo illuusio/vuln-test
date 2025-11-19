@@ -1,0 +1,93 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "unzip"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "5.52_2"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        },
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "zh-unzip"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "5.52_2"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        },
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "ko-unzip"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "5.52_2"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "discovery": "2005-08-02T00:00:00Z",
+        "references": {
+            "bid": [
+                "14450"
+            ],
+            "cvename": [
+                "CVE-2005-2475"
+            ]
+        },
+        "vid": "9750cf22-216d-11da-bc01-000e0c2e438a"
+    },
+    "details": "Imran Ghory reports a vulnerability within unzip. The vulnerability is\ncaused by a race condition between extracting an archive and changing\nthe permissions of the extracted files. This would give an attacker\nenough time to remove a file and hardlink it to another file owned by\nthe user running unzip. When unzip changes the permissions of the file\nit could give the attacker access to files that normally would not have\nbeen accessible for others.\n",
+    "id": "FreeBSD-2005-0272",
+    "modified": "2005-09-13T00:00:00Z",
+    "published": "2005-09-13T00:00:00Z",
+    "references": [
+        {
+            "type": "ADVISORY",
+            "url": "https://www.securityfocus.com/bid/14450/info"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2005-2475"
+        },
+        {
+            "type": "DISCUSSION",
+            "url": "http://marc.theaimsgroup.com/?l=bugtraq&m=112300046224117"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "unzip -- permission race vulnerability"
+}

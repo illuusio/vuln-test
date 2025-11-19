@@ -1,0 +1,112 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "erlang"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "introduced": "17.0"
+                        },
+                        {
+                            "fixed": "26.2.5.13,4"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        },
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "erlang-runtime26"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "26.2.5.13"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        },
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "erlang-runtime27"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "27.3.4.1"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        },
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "erlang-runtime28"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "28.0.1"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "cite": [
+            "https://github.com/erlang/otp/security/advisories/GHSA-9g37-pgj9-wrhc"
+        ],
+        "discovery": "2025-06-16T00:00:00Z",
+        "references": {
+            "cvename": [
+                "CVE-2025-4748"
+            ]
+        },
+        "vid": "237f4f57-b50f-11f0-ae9b-b42e991fc52e"
+    },
+    "details": "https://github.com/erlang/otp/security/advisories/GHSA-9g37-pgj9-wrhc\nreports:\n\n> Improper Limitation of a Pathname to a Restricted Directory (\\'Path\n> Traversal\\') vulnerability in Erlang OTP (stdlib modules) allows\n> Absolute Path Traversal, File Manipulation. This vulnerability is\n> associated with program files lib/stdlib/src/zip.erl and program\n> routines zip:unzip/1, zip:unzip/2, zip:extract/1, zip:extract/2unless\n> the memory option is passed. This issue affects OTP from OTP 17.0\n> until OTP28.0.1, OTP27.3.4.1 and OTP26.2.5.13, corresponding to stdlib\n> from 2.0 until 7.0.1, 6.2.2.1 and 5.2.3.4.\n",
+    "id": "FreeBSD-2025-0356",
+    "modified": "2025-10-29T00:00:00Z",
+    "published": "2025-10-29T00:00:00Z",
+    "references": [
+        {
+            "type": "REPORT",
+            "url": "https://github.com/erlang/otp/security/advisories/GHSA-9g37-pgj9-wrhc"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2025-4748"
+        },
+        {
+            "type": "WEB",
+            "url": "https://cveawg.mitre.org/api/cve/CVE-2025-4748"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "Erlang - Absolute Path in Zip Module"
+}

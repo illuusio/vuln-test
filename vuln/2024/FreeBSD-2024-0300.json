@@ -1,0 +1,74 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "xorg-server"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "21.1.14,1"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        },
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "xwayland"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "24.1.4,1"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "cite": [
+            "https://lists.x.org/archives/xorg-announce/2024-October/003545.html"
+        ],
+        "discovery": "2024-10-29T00:00:00Z",
+        "references": {
+            "cvename": [
+                "CVE-2024-9632"
+            ]
+        },
+        "vid": "141f2a22-a6a7-11ef-b282-0c9d92850f7a"
+    },
+    "details": "The X.Org project reports:\n\n> - CVE-2024-9632: Heap buffer Heap-based buffer overflow privilege\n>   escalation in \\_XkbSetCompatMap\n>\n>   The \\_XkbSetCompatMap() function attempts to resize the\n>   \\`sym_interpret\\` buffer. However, It didn\\'t update its size\n>   properly. It updated \\`num_si\\` only, without updating \\`size_si\\`.\n>   This may lead to local privilege escalation if the server is run as\n>   root or remote code execution (e.g. x11 over ssh).\n",
+    "id": "FreeBSD-2024-0300",
+    "modified": "2024-11-19T00:00:00Z",
+    "published": "2024-11-19T00:00:00Z",
+    "references": [
+        {
+            "type": "REPORT",
+            "url": "https://lists.x.org/archives/xorg-announce/2024-October/003545.html"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2024-9632"
+        },
+        {
+            "type": "WEB",
+            "url": "https://lists.x.org/archives/xorg-announce/2024-October/003545.html"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "xorg server -- _XkbSetCompatMap vulnerability"
+}

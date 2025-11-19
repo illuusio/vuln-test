@@ -1,0 +1,66 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "twiki"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "4.0.4,1"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "cite": [
+            "http://twiki.org/cgi-bin/view/Codev/SecurityAlertSecureFileUploads"
+        ],
+        "discovery": "2006-07-05T00:00:00Z",
+        "references": {
+            "bid": [
+                "18854"
+            ],
+            "cvename": [
+                "CVE-2006-3336"
+            ]
+        },
+        "vid": "a876df84-0fef-11db-ac96-000c6ec775d9"
+    },
+    "details": "A TWiki Security Alert reports:\n\n> The TWiki upload filter already prevents executable scripts such as\n> .php, .php1, .phps, .pl from potentially getting executed by appending\n> a .txt suffix to the uploaded filename. However, PHP and some other\n> types allows additional file suffixes, such as .php.en, .php.1, and\n> .php.2. TWiki does not check for these suffixes, e.g. it is possible\n> to upload php scripts with such suffixes without the .txt filename\n> padding.\n\nThis issue can also be worked around with a restrictive web server\nconfiguration. See the [TWiki Security\nAlert](http://twiki.org/cgi-bin/view/Codev/SecurityAlertSecureFileUploads)\nfor more information about how to do this.\n",
+    "id": "FreeBSD-2006-0127",
+    "modified": "2006-07-10T00:00:00Z",
+    "published": "2006-07-10T00:00:00Z",
+    "references": [
+        {
+            "type": "REPORT",
+            "url": "http://twiki.org/cgi-bin/view/Codev/SecurityAlertSecureFileUploads"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://www.securityfocus.com/bid/18854/info"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2006-3336"
+        },
+        {
+            "type": "WEB",
+            "url": "http://secunia.com/advisories/20992/"
+        },
+        {
+            "type": "WEB",
+            "url": "http://twiki.org/cgi-bin/view/Codev/SecurityAlertSecureFileUploads"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "twiki -- multiple file extensions file upload vulnerability"
+}

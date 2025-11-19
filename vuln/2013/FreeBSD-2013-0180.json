@@ -1,0 +1,63 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "openttd"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "introduced": "0.3.6"
+                        },
+                        {
+                            "fixed": "1.3.3"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "cite": [
+            "https://security.openttd.org/en/CVE-2013-6411"
+        ],
+        "discovery": "2013-11-28T00:00:00Z",
+        "references": {
+            "cvename": [
+                "CVE-2013-6411"
+            ]
+        },
+        "vid": "d2073237-5b52-11e3-80f7-c86000cbc6ec"
+    },
+    "details": "The OpenTTD Team reports:\n\n> The problem is caused by incorrectly handling the fact that the\n> aircraft circling the corner airport will be outside of the bounds of\n> the map. In the \\'out of fuel\\' crash code the height of the tile\n> under the aircraft is determined. In this case that means a tile\n> outside of the allocated map array, which could occasionally trigger\n> invalid reads.\n",
+    "id": "FreeBSD-2013-0180",
+    "modified": "2013-11-28T00:00:00Z",
+    "published": "2013-11-28T00:00:00Z",
+    "references": [
+        {
+            "type": "REPORT",
+            "url": "https://security.openttd.org/en/CVE-2013-6411"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2013-6411"
+        },
+        {
+            "type": "WEB",
+            "url": "https://security.openttd.org/en/CVE-2013-6411"
+        },
+        {
+            "type": "WEB",
+            "url": "http://bugs.openttd.org/task/5820"
+        },
+        {
+            "type": "WEB",
+            "url": "http://vcs.openttd.org/svn/changeset/26134"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "OpenTTD -- Denial of service using forcefully crashed aircrafts"
+}

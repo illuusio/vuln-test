@@ -1,0 +1,84 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "node14"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "14.17.4"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        },
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "node"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "16.6.2"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "cite": [
+            "https://nodejs.org/en/blog/vulnerability/aug-2021-security-releases/"
+        ],
+        "discovery": "2021-08-11T00:00:00Z",
+        "references": {
+            "cvename": [
+                "CVE-2021-22931",
+                "CVE-2021-22940",
+                "CVE-2021-22939"
+            ]
+        },
+        "vid": "b092bd4f-1b16-11ec-9d9d-0022489ad614"
+    },
+    "details": "Node.js reports:\n\n> # cares upgrade - Improper handling of untypical characters in domain names (High) (CVE-2021-22931)\n>\n> Node.js was vulnerable to Remote Code Execution, XSS, application\n> crashes due to missing input validation of host names returned by\n> Domain Name Servers in the Node.js DNS library which can lead to\n> output of wrong hostnames (leading to Domain Hijacking) and injection\n> vulnerabilities in applications using the library.\n>\n> # Use after free on close http2 on stream canceling (High) (CVE-2021-22940)\n>\n> Node.js was vulnerable to a use after free attack where an attacker\n> might be able to exploit memory corruption to change process behavior.\n> The issue is a follow on to CVE-2021-22930 as the issue was not\n> completely resolved in the fix for CVE-2021-22930.\n>\n> # Incomplete validation of rejectUnauthorized parameter (Low) (CVE-2021-22939)\n>\n> If the Node.js https API was used incorrectly and \\\"undefined\\\" was in\n> passed for the \\\"rejectUnauthorized\\\" parameter, no error was returned\n> and connections to servers with an expired certificate would have been\n> accepted.\n",
+    "id": "FreeBSD-2021-0234",
+    "modified": "2021-09-21T00:00:00Z",
+    "published": "2021-09-21T00:00:00Z",
+    "references": [
+        {
+            "type": "REPORT",
+            "url": "https://nodejs.org/en/blog/vulnerability/aug-2021-security-releases/"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2021-22931"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2021-22940"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2021-22939"
+        },
+        {
+            "type": "WEB",
+            "url": "https://nodejs.org/en/blog/vulnerability/aug-2021-security-releases/"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "Node.js -- August 2021 Security Releases"
+}

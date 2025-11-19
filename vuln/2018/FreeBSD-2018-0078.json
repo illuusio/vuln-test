@@ -1,0 +1,73 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:kernel",
+                "name": "FreeBSD-kernel"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "introduced": "11.1"
+                        },
+                        {
+                            "fixed": "11.1_7"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                },
+                {
+                    "events": [
+                        {
+                            "introduced": "10.4"
+                        },
+                        {
+                            "fixed": "10.4_7"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                },
+                {
+                    "events": [
+                        {
+                            "introduced": "10.3"
+                        },
+                        {
+                            "fixed": "10.3_28"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "discovery": "2018-03-07T00:00:00Z",
+        "references": {
+            "cvename": [
+                "CVE-2018-6916"
+            ],
+            "freebsdsa": [
+                "SA-18:01.ipsec"
+            ]
+        },
+        "vid": "dca7ced0-2796-11e8-95ec-a4badb2f4699"
+    },
+    "details": "# Problem Description:\n\nDue to a lack of strict checking, an attacker from a trusted host can\nsend a specially constructed IP packet that may lead to a system crash.\n\nAdditionally, a use-after-free vulnerability in the AH handling code\ncould cause unpredictable results.\n\n# Impact:\n\nAccess to out of bounds or freed mbuf data can lead to a kernel panic or\nother unpredictable results.\n",
+    "id": "FreeBSD-2018-0078",
+    "modified": "2018-03-14T00:00:00Z",
+    "published": "2018-03-14T00:00:00Z",
+    "references": [
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2018-6916"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://www.freebsd.org/security/advisories/FreeBSD-SA-18:01.ipsec.asc"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "FreeBSD -- ipsec validation and use-after-free"
+}

@@ -1,0 +1,55 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "prometheus"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "0.8.1"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "cite": [
+            "https://github.com/prometheus/exporter-toolkit/security/advisories/GHSA-7rg2-cxvp-9p7p"
+        ],
+        "discovery": "2022-11-28T00:00:00Z",
+        "references": {
+            "cvename": [
+                "CVE-2022-46146"
+            ]
+        },
+        "vid": "791a09c5-a086-11ed-954d-b42e991fc52e"
+    },
+    "details": "Prometheus team reports:\n\n> Prometheus and its exporters can be secured by a web.yml file that\n> specifies usernames and hashed passwords for basic authentication.\n> Passwords are hashed with bcrypt, which means that even if you have\n> access to the hash, it is very hard to find the original password\n> back. Passwords are hashed with bcrypt, which means that even if you\n> have access to the hash, it is very hard to find the original password\n> back. However, a flaw in the way this mechanism was implemented in the\n> exporter toolkit makes it possible with people who know the hashed\n> password to authenticate against Prometheus. A request can be forged\n> by an attacker to poison the internal cache used to cache the\n> computation of hashes and make subsequent requests successful. This\n> cache is used in both happy and unhappy scenarios in order to limit\n> side channel attacks that could tell an attacker if a user is present\n> in the file or not.\n",
+    "id": "FreeBSD-2023-0027",
+    "modified": "2023-01-30T00:00:00Z",
+    "published": "2023-01-30T00:00:00Z",
+    "references": [
+        {
+            "type": "REPORT",
+            "url": "https://github.com/prometheus/exporter-toolkit/security/advisories/GHSA-7rg2-cxvp-9p7p"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2022-46146"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2022-46146"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "prometheus2 -- basic authentication bypass"
+}

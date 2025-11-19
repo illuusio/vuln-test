@@ -1,0 +1,83 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "bugzilla44"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "4.4.11"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        },
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "bugzilla50"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "5.0.2"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "cite": [
+            "https://www.bugzilla.org/security/4.2.15/"
+        ],
+        "discovery": "2015-12-22T00:00:00Z",
+        "references": {
+            "cvename": [
+                "CVE-2015-8508",
+                "CVE-2015-8509"
+            ]
+        },
+        "vid": "54075861-a95a-11e5-8b40-20cf30e32f6d"
+    },
+    "details": "Bugzilla Security Advisory\n\n> During the generation of a dependency graph, the code for the HTML\n> image map is generated locally if a local dot installation is used.\n> With escaped HTML characters in a bug summary, it is possible to\n> inject unfiltered HTML code in the map file which the CreateImagemap\n> function generates. This could be used for a cross-site scripting\n> attack.\n>\n> If an external HTML page contains a \\<script\\> element with its src\n> attribute pointing to a buglist in CSV format, some web browsers\n> incorrectly try to parse the CSV file as valid JavaScript code. As the\n> buglist is generated based on the privileges of the user logged into\n> Bugzilla, the external page could collect confidential data contained\n> in the CSV file.\n",
+    "id": "FreeBSD-2015-0418",
+    "modified": "2015-12-23T00:00:00Z",
+    "published": "2015-12-23T00:00:00Z",
+    "references": [
+        {
+            "type": "REPORT",
+            "url": "https://www.bugzilla.org/security/4.2.15/"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2015-8508"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2015-8509"
+        },
+        {
+            "type": "REPORT",
+            "url": "https://bugzilla.mozilla.org/show_bug.cgi?id=1221518"
+        },
+        {
+            "type": "REPORT",
+            "url": "https://bugzilla.mozilla.org/show_bug.cgi?id=1232785"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "Bugzilla security issues"
+}

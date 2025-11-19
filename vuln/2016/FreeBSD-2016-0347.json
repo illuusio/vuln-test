@@ -1,0 +1,84 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:kernel",
+                "name": "FreeBSD-kernel"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "introduced": "10.3"
+                        },
+                        {
+                            "fixed": "10.3_3"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                },
+                {
+                    "events": [
+                        {
+                            "introduced": "10.2"
+                        },
+                        {
+                            "fixed": "10.2_17"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                },
+                {
+                    "events": [
+                        {
+                            "introduced": "10.1"
+                        },
+                        {
+                            "fixed": "10.1_34"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                },
+                {
+                    "events": [
+                        {
+                            "introduced": "9.3"
+                        },
+                        {
+                            "fixed": "9.3_42"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "discovery": "2016-05-17T00:00:00Z",
+        "references": {
+            "cvename": [
+                "CVE-2016-1886"
+            ],
+            "freebsdsa": [
+                "SA-16:18.atkbd"
+            ]
+        },
+        "vid": "7bbc0e8c-600a-11e6-a6c3-14dae9d210b8"
+    },
+    "details": "# Problem Description:\n\nIncorrect signedness comparison in the ioctl(2) handler allows a\nmalicious local user to overwrite a portion of the kernel memory.\n\n# Impact:\n\nA local user may crash the kernel, read a portion of kernel memory and\nexecute arbitrary code in kernel context. The result of executing an\narbitrary kernel code is privilege escalation.\n",
+    "id": "FreeBSD-2016-0347",
+    "modified": "2016-08-11T00:00:00Z",
+    "published": "2016-08-11T00:00:00Z",
+    "references": [
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2016-1886"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://www.freebsd.org/security/advisories/FreeBSD-SA-16:18.atkbd.asc"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "FreeBSD -- Buffer overflow in keyboard driver"
+}

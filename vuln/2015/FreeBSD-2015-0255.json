@@ -1,0 +1,73 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "jasper"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "1.900.1_16"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "cite": [
+            "https://bugzilla.redhat.com/show_bug.cgi?id=1254242#c0",
+            "http://seclists.org/oss-sec/2015/q3/408"
+        ],
+        "discovery": "2015-08-17T00:00:00Z",
+        "references": {
+            "cvename": [
+                "CVE-2015-5203",
+                "CVE-2015-5221"
+            ]
+        },
+        "vid": "f1692469-45ce-11e5-adde-14dae9d210b8"
+    },
+    "details": "Martin Prpic reports:\n\n> A double free flaw was found in the way JasPer\\'s\n> jasper_image_stop_load() function parsed certain JPEG 2000 image\n> files. A specially crafted file could cause an application using\n> JasPer to crash.\n\nFeist Josselin reports:\n\n> A new use-after-free was found in Jasper JPEG-200. The use-after-free\n> appears in the function mif_process_cmpt of the\n> src/libjasper/mif/mif_cod.c file.\n",
+    "id": "FreeBSD-2015-0255",
+    "modified": "2016-02-24T00:00:00Z",
+    "published": "2015-08-18T00:00:00Z",
+    "references": [
+        {
+            "type": "REPORT",
+            "url": "https://bugzilla.redhat.com/show_bug.cgi?id=1254242#c0"
+        },
+        {
+            "type": "REPORT",
+            "url": "http://seclists.org/oss-sec/2015/q3/408"
+        },
+        {
+            "type": "REPORT",
+            "url": "https://bugzilla.redhat.com/show_bug.cgi?id=1254242#c0"
+        },
+        {
+            "type": "WEB",
+            "url": "http://seclists.org/oss-sec/2015/q3/366"
+        },
+        {
+            "type": "WEB",
+            "url": "http://seclists.org/oss-sec/2015/q3/408"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2015-5203"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2015-5221"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "jasper -- multiple vulnerabilities"
+}

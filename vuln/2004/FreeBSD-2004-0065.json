@@ -1,0 +1,99 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "FreeBSD"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "introduced": "5.2"
+                        },
+                        {
+                            "fixed": "5.2.1_2"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                },
+                {
+                    "events": [
+                        {
+                            "introduced": "5.0"
+                        },
+                        {
+                            "fixed": "5.1_15"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                },
+                {
+                    "events": [
+                        {
+                            "introduced": "4.9"
+                        },
+                        {
+                            "fixed": "4.9_3"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                },
+                {
+                    "events": [
+                        {
+                            "introduced": "4.8"
+                        },
+                        {
+                            "fixed": "4.8_16"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                },
+                {
+                    "events": [
+                        {
+                            "fixed": "4.7_26"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "discovery": "2004-02-18T00:00:00Z",
+        "references": {
+            "cvename": [
+                "CVE-2004-0171"
+            ],
+            "freebsdsa": [
+                "SA-04:04.tcp"
+            ]
+        },
+        "vid": "e289f7fd-88ac-11d8-90d1-0020ed76ef5a"
+    },
+    "details": "FreeBSD does not limit the number of TCP segments that may be held in a\nreassembly queue. A remote attacker may conduct a low-bandwidth\ndenial-of-service attack against a machine providing services based on\nTCP (there are many such services, including HTTP, SMTP, and FTP). By\nsending many out-of-sequence TCP segments, the attacker can cause the\ntarget machine to consume all available memory buffers (\\`\\`mbufs\\'\\'),\nlikely leading to a system crash.\n",
+    "id": "FreeBSD-2004-0065",
+    "modified": "2004-05-05T00:00:00Z",
+    "published": "2004-04-07T00:00:00Z",
+    "references": [
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2004-0171"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://www.freebsd.org/security/advisories/FreeBSD-SA-04:04.tcp.asc"
+        },
+        {
+            "type": "WEB",
+            "url": "http://www.idefense.com/application/poi/display?id=78&type=vulnerabilities"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "many out-of-sequence TCP packets denial-of-service"
+}

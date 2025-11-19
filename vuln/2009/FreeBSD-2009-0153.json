@@ -1,0 +1,69 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "squidGuard"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "1.4_2"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "cite": [
+            "http://www.squidguard.org/Downloads/Patches/1.4/Readme.Patch-20091015",
+            "http://www.squidguard.org/Downloads/Patches/1.4/Readme.Patch-20091019"
+        ],
+        "discovery": "2009-10-15T00:00:00Z",
+        "references": {
+            "cvename": [
+                "CVE-2009-3700",
+                "CVE-2009-3826"
+            ]
+        },
+        "vid": "692ab645-bf5d-11de-849b-00151797c2d4"
+    },
+    "details": "SquidGuard website reports:\n\n> Patch 20091015 fixes one buffer overflow problem in sgLog.c when\n> overlong URLs are requested. SquidGuard will then go into emergency\n> mode were no blocking occurs. This is not required in this situation.\n\n> Patch 20091019 fixes two bypass problems with URLs which length is\n> close to the limit defined by MAX_BUF (default: 4096) in squidGuard\n> and MAX_URL (default: 4096 in squid 2.x and 8192 in squid 3.x) in\n> squid. For this kind of URLs the proxy request exceeds MAX_BUF causing\n> squidGuard to complain about not being able to parse the squid\n> request. Increasing the buffer limit to be higher than the one defined\n> in MAX_URL solves the issue.\n",
+    "id": "FreeBSD-2009-0153",
+    "modified": "2010-05-06T00:00:00Z",
+    "published": "2009-10-22T00:00:00Z",
+    "references": [
+        {
+            "type": "REPORT",
+            "url": "http://www.squidguard.org/Downloads/Patches/1.4/Readme.Patch-20091015"
+        },
+        {
+            "type": "REPORT",
+            "url": "http://www.squidguard.org/Downloads/Patches/1.4/Readme.Patch-20091019"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2009-3700"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2009-3826"
+        },
+        {
+            "type": "WEB",
+            "url": "http://www.squidguard.org/Downloads/Patches/1.4/Readme.Patch-20091015"
+        },
+        {
+            "type": "WEB",
+            "url": "http://www.squidguard.org/Downloads/Patches/1.4/Readme.Patch-20091019"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "squidGuard -- multiple vulnerabilities"
+}

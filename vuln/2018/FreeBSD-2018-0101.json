@@ -1,0 +1,73 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:kernel",
+                "name": "FreeBSD-kernel"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "introduced": "11.1"
+                        },
+                        {
+                            "fixed": "11.1_9"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                },
+                {
+                    "events": [
+                        {
+                            "introduced": "10.4"
+                        },
+                        {
+                            "fixed": "10.4_8"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                },
+                {
+                    "events": [
+                        {
+                            "introduced": "10.3"
+                        },
+                        {
+                            "fixed": "10.3_29"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "discovery": "2018-04-04T00:00:00Z",
+        "references": {
+            "cvename": [
+                "CVE-2018-6918"
+            ],
+            "freebsdsa": [
+                "SA-18:05.ipsec"
+            ]
+        },
+        "vid": "c0c5afef-38db-11e8-8b7f-a4badb2f469b"
+    },
+    "details": "# Problem Description:\n\nThe length field of the option header does not count the size of the\noption header itself. This causes a problem when the length is zero, the\ncount is then incremented by zero, which causes an infinite loop.\n\nIn addition there are pointer/offset mistakes in the handling of IPv4\noptions.\n\n# Impact:\n\nA remote attacker who is able to send an arbitrary packet, could cause\nthe remote target machine to crash.\n",
+    "id": "FreeBSD-2018-0101",
+    "modified": "2018-04-05T00:00:00Z",
+    "published": "2018-04-05T00:00:00Z",
+    "references": [
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2018-6918"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://www.freebsd.org/security/advisories/FreeBSD-SA-18:05.ipsec.asc"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "FreeBSD -- ipsec crash or denial of service"
+}

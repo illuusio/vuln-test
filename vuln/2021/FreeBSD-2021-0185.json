@@ -1,0 +1,55 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "pjsip"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "2.11.1"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "cite": [
+            "https://github.com/pjsip/pjproject/security/advisories"
+        ],
+        "discovery": "2021-07-23T00:00:00Z",
+        "references": {
+            "cvename": [
+                "CVE-2021-32686"
+            ]
+        },
+        "vid": "92ad12b8-ec09-11eb-aef1-0897988a1c07"
+    },
+    "details": "pjsip reports:\n\n> There are a couple of issues found in the SSL socket:\n>\n> - A race condition between callback and destroy, due to the accepted\n>   socket having no group lock.\n> - SSL socket parent/listener may get destroyed during handshake.\n",
+    "id": "FreeBSD-2021-0185",
+    "modified": "2021-07-23T00:00:00Z",
+    "published": "2021-07-23T00:00:00Z",
+    "references": [
+        {
+            "type": "REPORT",
+            "url": "https://github.com/pjsip/pjproject/security/advisories"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2021-32686"
+        },
+        {
+            "type": "WEB",
+            "url": "https://github.com/pjsip/pjproject/security/advisories/GHSA-cv8x-p47p-99wr"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "pjsip -- Race condition in SSL socket server"
+}

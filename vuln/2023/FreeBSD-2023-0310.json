@@ -1,0 +1,65 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "libX11"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "1.8.7"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "cite": [
+            "https://lists.x.org/archives/xorg/2023-October/061506.html"
+        ],
+        "discovery": "2023-09-22T00:00:00Z",
+        "references": {
+            "cvename": [
+                "CVE-2023-43785",
+                "CVE-2023-43786",
+                "CVE-2023-43787"
+            ]
+        },
+        "vid": "bd92f1ab-690c-11ee-9ed0-001fc69cd6dc"
+    },
+    "details": "The X.Org project reports:\n\n> \n>\n> CVE-2023-43785: out-of-bounds memory access in \\_XkbReadKeySyms()\n> :   When libX11 is processing the reply from the X server to the\n>     XkbGetMap request, if it detected the number of symbols in the new\n>     map was less than the size of the buffer it had allocated, it\n>     always added room for 128 more symbols, instead of the actual size\n>     needed. While the \\_XkbReadBufferCopyKeySyms() helper function\n>     returned an error if asked to copy more keysyms into the buffer\n>     than there was space allocated for, the caller never checked for\n>     an error and assumed the full set of keysyms was copied into the\n>     buffer and could then try to read out of bounds when accessing the\n>     buffer. libX11 1.8.7 has been patched to both fix the size\n>     allocated and check for error returns from\n>     \\_XkbReadBufferCopyKeySyms().\n>\n> CVE-2023-43786: stack exhaustion in XPutImage\n> :   When splitting a single line of pixels into chunks that fit in a\n>     single request (not using the BIG-REQUESTS extension) to send to\n>     the X server, the code did not take into account the number of\n>     bits per pixel, so would just loop forever finding it needed to\n>     send more pixels than fit in the given request size and not\n>     breaking them down into a small enough chunk to fit. An XPM file\n>     was provided that triggered this bug when loaded via libXpm\\'s\n>     XpmReadFileToPixmap() function, which in turn calls XPutImage()\n>     and hit this bug.\n>\n> CVE-2023-43787: integer overflow in XCreateImage() leading to a heap overflow\n> :   When creating an image, there was no validation that the\n>     multiplication of the caller-provided width by the visual\\'s\n>     bits_per_pixel did not overflow and thus result in the allocation\n>     of a buffer too small to hold the data that would be copied into\n>     it. An XPM file was provided that triggered this bug when loaded\n>     via libXpm\\'s XpmReadFileToPixmap() function, which in turn calls\n>     XCreateImage() and hit this bug.i\n",
+    "id": "FreeBSD-2023-0310",
+    "modified": "2023-10-12T00:00:00Z",
+    "published": "2023-10-12T00:00:00Z",
+    "references": [
+        {
+            "type": "REPORT",
+            "url": "https://lists.x.org/archives/xorg/2023-October/061506.html"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2023-43785"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2023-43786"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2023-43787"
+        },
+        {
+            "type": "WEB",
+            "url": "https://lists.x.org/archives/xorg/2023-October/061506.html"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "11/libX11 multiple vulnerabilities"
+}

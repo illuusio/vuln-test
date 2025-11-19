@@ -1,0 +1,59 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "freerdp"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "2.2.0"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "cite": [
+            "https://github.com/FreeRDP/FreeRDP/security/advisories/GHSA-4r38-6hq7-j3j9"
+        ],
+        "discovery": "2020-06-25T00:00:00Z",
+        "references": {
+            "cvename": [
+                "CVE-2020-15103"
+            ]
+        },
+        "vid": "a955cdb7-d089-11ea-8c6f-080027eedc6a"
+    },
+    "details": "Bernhard Miklautz reports:\n\n> - Integer overflow due to missing input sanitation in rdpegfx channel\n> - All FreeRDP clients are affected\n> - The input rectangles from the server are not checked against local\n>   surface coordinates and blindly accepted. A malicious server can\n>   send data that will crash the client later on (invalid length\n>   arguments to a memcpy)\n",
+    "id": "FreeBSD-2020-0192",
+    "modified": "2020-07-28T00:00:00Z",
+    "published": "2020-07-28T00:00:00Z",
+    "references": [
+        {
+            "type": "REPORT",
+            "url": "https://github.com/FreeRDP/FreeRDP/security/advisories/GHSA-4r38-6hq7-j3j9"
+        },
+        {
+            "type": "WEB",
+            "url": "https://www.freerdp.com/2020/07/20/2_2_0-released"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2020-15103"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2020-15103"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "FreeRDP -- Integer overflow in RDPEGFX channel"
+}

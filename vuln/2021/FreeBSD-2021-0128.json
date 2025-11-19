@@ -1,0 +1,84 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "postgresql13-server"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "13.3"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        },
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "postgresql12-server"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "12.7"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        },
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "postgresql11-server"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "11.12"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "cite": [
+            "https://www.postgresql.org/support/security/CVE-2021-32029/"
+        ],
+        "discovery": "2021-05-13T00:00:00Z",
+        "vid": "76e0bb86-b4cb-11eb-b9c9-6cc21735f730"
+    },
+    "details": "The PostgreSQL project reports:\n\n> Using an UPDATE \\... RETURNING on a purpose-crafted partitioned table,\n> an attacker can read arbitrary bytes of server memory. In the default\n> configuration, any authenticated database user can create prerequisite\n> objects and complete this attack at will. A user lacking the CREATE\n> and TEMPORARY privileges on all databases and the CREATE privilege on\n> all schemas typically cannot use this attack at will.\n",
+    "id": "FreeBSD-2021-0128",
+    "modified": "2021-05-14T00:00:00Z",
+    "published": "2021-05-14T00:00:00Z",
+    "references": [
+        {
+            "type": "REPORT",
+            "url": "https://www.postgresql.org/support/security/CVE-2021-32029/"
+        },
+        {
+            "type": "WEB",
+            "url": "https://www.postgresql.org/support/security/CVE-2021-32029/"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "PostgreSQL -- Memory disclosure in partitioned-table UPDATE ... RETURNING"
+}

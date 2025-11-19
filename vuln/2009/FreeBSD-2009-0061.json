@@ -1,0 +1,73 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "gstreamer-plugins-good"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "introduced": "0.10.9,3"
+                        },
+                        {
+                            "fixed": "0.10.12,3"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "cite": [
+            "http://secunia.com/advisories/33650/"
+        ],
+        "discovery": "2009-01-22T00:00:00Z",
+        "references": {
+            "cvename": [
+                "CVE-2009-0386",
+                "CVE-2009-0387",
+                "CVE-2009-0397"
+            ]
+        },
+        "vid": "37a365ed-1269-11de-a964-0030843d3802"
+    },
+    "details": "Secunia reports:\n\n> Tobias Klein has reported some vulnerabilities in GStreamer Good\n> Plug-ins, which can potentially be exploited by malicious people to\n> compromise a vulnerable system.\n>\n> A boundary error occurs within the \\\"qtdemux_parse_samples()\\\"\n> function in gst/gtdemux/qtdemux.c when performing QuickTime \\\"ctts\\\"\n> Atom parsing. This can be exploited to cause a heap-based buffer\n> overflow via a specially crafted QuickTime media file.\n>\n> An array indexing error exists in the \\\"qtdemux_parse_samples()\\\"\n> function in gst/gtdemux/qtdemux.c when performing QuickTime \\\"stss\\\"\n> Atom parsing. This can be exploited to corrupt memory via a specially\n> crafted QuickTime media file.\n>\n> A boundary error occurs within the \\\"qtdemux_parse_samples()\\\"\n> function in gst/gtdemux/qtdemux.c when performing QuickTime \\\"stts\\\"\n> Atom parsing. This can be exploited to cause a heap-based buffer\n> overflow via a specially crafted QuickTime media file.\n",
+    "id": "FreeBSD-2009-0061",
+    "modified": "2009-03-16T00:00:00Z",
+    "published": "2009-03-16T00:00:00Z",
+    "references": [
+        {
+            "type": "REPORT",
+            "url": "http://secunia.com/advisories/33650/"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2009-0386"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2009-0387"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2009-0397"
+        },
+        {
+            "type": "WEB",
+            "url": "http://secunia.com/advisories/33650/"
+        },
+        {
+            "type": "WEB",
+            "url": "http://trapkit.de/advisories/TKADV2009-003.txt"
+        },
+        {
+            "type": "WEB",
+            "url": "http://gstreamer.freedesktop.org/releases/gst-plugins-good/0.10.12.html"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "gstreamer-plugins-good -- multiple memory overflows"
+}

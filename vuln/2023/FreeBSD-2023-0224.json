@@ -1,0 +1,55 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "postgresql-server"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "15.4"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "cite": [
+            "https://www.postgresql.org/support/security/CVE-2023-39418/"
+        ],
+        "discovery": "2023-08-10T00:00:00Z",
+        "references": {
+            "cvename": [
+                "CVE-2023-39418"
+            ]
+        },
+        "vid": "59a43a73-3786-11ee-94b4-6cc21735f730"
+    },
+    "details": "PostgreSQL Project reports\n\n> PostgreSQL 15 introduced the MERGE command, which fails to test new\n> rows against row security policies defined for UPDATE and SELECT. If\n> UPDATE and SELECT policies forbid some row that INSERT policies do not\n> forbid, a user could store such rows. Subsequent consequences are\n> application-dependent. This affects only databases that have used\n> CREATE POLICY to define a row security policy.\n",
+    "id": "FreeBSD-2023-0224",
+    "modified": "2023-08-10T00:00:00Z",
+    "published": "2023-08-10T00:00:00Z",
+    "references": [
+        {
+            "type": "REPORT",
+            "url": "https://www.postgresql.org/support/security/CVE-2023-39418/"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2023-39418"
+        },
+        {
+            "type": "WEB",
+            "url": "https://www.postgresql.org/support/security/CVE-2023-39418/"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "postgresql-server -- MERGE fails to enforce UPDATE or SELECT row security policies"
+}

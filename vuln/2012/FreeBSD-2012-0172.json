@@ -1,0 +1,80 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "emacs"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "introduced": "24.*,1"
+                        },
+                        {
+                            "fixed": "24.2"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                },
+                {
+                    "events": [
+                        {
+                            "introduced": "23.*,1"
+                        },
+                        {
+                            "last_affected": "23.4_2"
+                        },
+                        {
+                            "fixed": "23.4_2"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "cite": [
+            "http://www.openwall.com/lists/oss-security/2012/08/13/1"
+        ],
+        "discovery": "2012-08-13T00:00:00Z",
+        "references": {
+            "bid": [
+                "54969"
+            ],
+            "cvename": [
+                "CVE-2012-3479"
+            ]
+        },
+        "vid": "c1e5f35e-f93d-11e1-b07f-00235a5f2c9a"
+    },
+    "details": "Chong Yidong reports:\n\n> Paul Ling has found a security flaw in the file-local variables code\n> in GNU Emacs.\n>\n> When the Emacs user option \\`enable-local-variables\\' is set to\n> \\`:safe\\' (the default value is t), Emacs should automatically refuse\n> to evaluate \\`eval\\' forms in file-local variable sections. Due to the\n> bug, Emacs instead automatically evaluates such \\`eval\\' forms. Thus,\n> if the user changes the value of \\`enable-local-variables\\' to\n> \\`:safe\\', visiting a malicious file can cause automatic execution of\n> arbitrary Emacs Lisp code with the permissions of the user.\n>\n> The bug is present in Emacs 23.2, 23.3, 23.4, and 24.1.\n",
+    "id": "FreeBSD-2012-0172",
+    "modified": "2013-05-13T00:00:00Z",
+    "published": "2012-09-08T00:00:00Z",
+    "references": [
+        {
+            "type": "REPORT",
+            "url": "http://www.openwall.com/lists/oss-security/2012/08/13/1"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://www.securityfocus.com/bid/54969/info"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2012-3479"
+        },
+        {
+            "type": "WEB",
+            "url": "https://lists.gnu.org/archive/html/emacs-devel/2012-08/msg00802.html"
+        },
+        {
+            "type": "WEB",
+            "url": "http://debbugs.gnu.org/cgi/bugreport.cgi?bug=12155"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "emacs -- remote code execution vulnerability"
+}

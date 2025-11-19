@@ -1,0 +1,59 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "fetchmail"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "6.3.20"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "cite": [
+            "http://www.fetchmail.info/fetchmail-SA-2011-01.txt"
+        ],
+        "discovery": "2011-04-28T00:00:00Z",
+        "references": {
+            "cvename": [
+                "CVE-2011-1947"
+            ]
+        },
+        "vid": "f7d838f2-9039-11e0-a051-080027ef73ec"
+    },
+    "details": "Matthias Andree reports:\n\n> Fetchmail version 5.9.9 introduced STLS support for POP3, version\n> 6.0.0 added STARTTLS for IMAP. However, the actual\n> S(TART)TLS-initiated in-band SSL/TLS negotiation was not guarded by a\n> timeout.\n>\n> Depending on the operating system defaults as to TCP stream keepalive\n> mode, fetchmail hangs in excess of one week after sending STARTTLS\n> were observed if the connection failed without notifying the operating\n> system, for instance, through network outages or hard server crashes.\n>\n> A malicious server that does not respond, at the network level, after\n> acknowledging fetchmail\\'s STARTTLS or STLS request, can hold\n> fetchmail in this protocol state, and thus render fetchmail unable to\n> complete the poll, or proceed to the next server, effecting a denial\n> of service.\n>\n> SSL-wrapped mode on dedicated ports was unaffected by this problem, so\n> can be used as a workaround.\n",
+    "id": "FreeBSD-2011-0083",
+    "modified": "2011-06-06T00:00:00Z",
+    "published": "2011-06-06T00:00:00Z",
+    "references": [
+        {
+            "type": "REPORT",
+            "url": "http://www.fetchmail.info/fetchmail-SA-2011-01.txt"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2011-1947"
+        },
+        {
+            "type": "WEB",
+            "url": "http://www.fetchmail.info/fetchmail-SA-2011-01.txt"
+        },
+        {
+            "type": "WEB",
+            "url": "https://gitorious.org/fetchmail/fetchmail/commit/7dc67b8cf06f74aa57525279940e180c99701314"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "fetchmail -- STARTTLS denial of service"
+}

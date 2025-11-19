@@ -1,0 +1,62 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:kernel",
+                "name": "FreeBSD-kernel"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "introduced": "12.2"
+                        },
+                        {
+                            "fixed": "12.2_6"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                },
+                {
+                    "events": [
+                        {
+                            "introduced": "11.4"
+                        },
+                        {
+                            "fixed": "11.4_9"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "discovery": "2021-04-06T00:00:00Z",
+        "references": {
+            "cvename": [
+                "CVE-2021-29626"
+            ],
+            "freebsdsa": [
+                "SA-21:08.vm"
+            ]
+        },
+        "vid": "13d37672-9791-11eb-b87a-901b0ef719ab"
+    },
+    "details": "# Problem Description:\n\nA particular case of memory sharing is mishandled in the virtual memory\nsystem. It is possible and legal to establish a relationship where\nmultiple descendant processes share a mapping which shadows memory of an\nancestor process. In this scenario, when one process modifies memory\nthrough such a mapping, the copy-on-write logic fails to invalidate\nother mappings of the source page. These stale mappings may remain even\nafter the mapped pages have been reused for another purpose.\n\n# Impact:\n\nAn unprivileged local user process can maintain a mapping of a page\nafter it is freed, allowing that process to read private data belonging\nto other processes or the kernel.\n",
+    "id": "FreeBSD-2021-0080",
+    "modified": "2021-04-07T00:00:00Z",
+    "published": "2021-04-07T00:00:00Z",
+    "references": [
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2021-29626"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://www.freebsd.org/security/advisories/FreeBSD-SA-21:08.vm.asc"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "FreeBSD -- Memory disclosure by stale virtual memory mapping"
+}

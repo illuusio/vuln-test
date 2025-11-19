@@ -1,0 +1,73 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:kernel",
+                "name": "FreeBSD-kernel"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "introduced": "12.1"
+                        },
+                        {
+                            "fixed": "12.1_10"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                },
+                {
+                    "events": [
+                        {
+                            "introduced": "11.4"
+                        },
+                        {
+                            "fixed": "11.4_4"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                },
+                {
+                    "events": [
+                        {
+                            "introduced": "11.3"
+                        },
+                        {
+                            "fixed": "11.3_14"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "discovery": "2020-09-15T00:00:00Z",
+        "references": {
+            "cvename": [
+                "CVE-2020-7464"
+            ],
+            "freebsdsa": [
+                "SA-20:27.ure"
+            ]
+        },
+        "vid": "bb53af7b-f7e4-11ea-88f8-901b0ef719ab"
+    },
+    "details": "# Problem Description:\n\nA programming error in the ure(4) device driver caused some Realtek USB\nEthernet interfaces to incorrectly report packets with more than 2048\nbytes in a single USB transfer as having a length of only 2048 bytes.\n\nAn adversary can exploit this to cause the driver to misinterpret part\nof the payload of a large packet as a separate packet, and thereby\ninject packets across security boundaries such as VLANs.\n\n# Impact:\n\nAn attacker that can send large frames (larger than 2048 bytes in size)\nto be received by the host (be it VLAN, or non-VLAN tagged packet), can\ninject arbitrary packets to be received and processed by the host. This\nincludes spoofing packets from other hosts, or injecting packets to\nother VLANs than the host is on.\n",
+    "id": "FreeBSD-2020-0246",
+    "modified": "2020-09-16T00:00:00Z",
+    "published": "2020-09-16T00:00:00Z",
+    "references": [
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2020-7464"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://www.freebsd.org/security/advisories/FreeBSD-SA-20:27.ure.asc"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "FreeBSD -- ure device driver susceptible to packet-in-packet attack"
+}

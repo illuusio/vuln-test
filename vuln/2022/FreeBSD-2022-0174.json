@@ -1,0 +1,46 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "dendrite"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "0.9.8"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "cite": [
+            "https://github.com/matrix-org/dendrite/security/advisories/GHSA-pfw4-xjgm-267c"
+        ],
+        "discovery": "2022-09-12T00:00:00Z",
+        "vid": "4ebaa983-3299-11ed-95f8-901b0e9408dc"
+    },
+    "details": "Dendrite team reports:\n\n> Events retrieved from a remote homeserver using /get_missing_events\n> did not have their signatures verified correctly. This could\n> potentially allow a remote homeserver to provide invalid/modified\n> events to Dendrite via this endpoint.\n>\n> Note that this does not apply to events retrieved through other\n> endpoints (e.g. /event, /state) as they have been correctly verified.\n>\n> Homeservers that have federation disabled are not vulnerable.\n",
+    "id": "FreeBSD-2022-0174",
+    "modified": "2022-09-12T00:00:00Z",
+    "published": "2022-09-12T00:00:00Z",
+    "references": [
+        {
+            "type": "REPORT",
+            "url": "https://github.com/matrix-org/dendrite/security/advisories/GHSA-pfw4-xjgm-267c"
+        },
+        {
+            "type": "WEB",
+            "url": "https://github.com/matrix-org/dendrite/security/advisories/GHSA-pfw4-xjgm-267c"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "dendrite -- Signature checks not applied to some retrieved missing events"
+}

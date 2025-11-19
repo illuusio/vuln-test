@@ -1,0 +1,63 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "gnutls"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "3.3.17"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "cite": [
+            "http://www.gnutls.org/security.html#GNUTLS-SA-2015-3"
+        ],
+        "discovery": "2015-07-20T00:00:00Z",
+        "references": {
+            "cvename": [
+                "CVE-2015-6251"
+            ]
+        },
+        "vid": "ec6a2a1e-429d-11e5-9daa-14dae9d210b8"
+    },
+    "details": "gnutls.org reports:\n\n> Kurt Roeckx reported that decoding a specific certificate with very\n> long DistinguishedName (DN) entries leads to double free, which may\n> result to a denial of service. Since the DN decoding occurs in almost\n> all applications using certificates it is recommended to upgrade the\n> latest GnuTLS version fixing the issue. Recommendation: Upgrade to\n> GnuTLS 3.4.4, or 3.3.17.\n",
+    "id": "FreeBSD-2015-0246",
+    "modified": "2015-08-18T00:00:00Z",
+    "published": "2015-08-14T00:00:00Z",
+    "references": [
+        {
+            "type": "REPORT",
+            "url": "http://www.gnutls.org/security.html#GNUTLS-SA-2015-3"
+        },
+        {
+            "type": "WEB",
+            "url": "http://www.gnutls.org/security.html#GNUTLS-SA-2015-3"
+        },
+        {
+            "type": "DISCUSSION",
+            "url": "http://seclists.org/oss-sec/2015/q3/308"
+        },
+        {
+            "type": "WEB",
+            "url": "https://gitlab.com/gnutls/gnutls/commit/272854367efc130fbd4f1a51840d80c630214e12"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2015-6251"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "gnutls -- double free in certificate DN decoding"
+}

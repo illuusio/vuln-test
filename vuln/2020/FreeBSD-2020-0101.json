@@ -1,0 +1,118 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "mailman"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "2.1.30_4"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                },
+                {
+                    "events": [
+                        {
+                            "introduced": "2.1.31"
+                        },
+                        {
+                            "fixed": "2.1.33"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        },
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "mailman-with-htdig"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "2.1.30_4"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                },
+                {
+                    "events": [
+                        {
+                            "introduced": "2.1.31"
+                        },
+                        {
+                            "fixed": "2.1.33"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "cite": [
+            "https://bazaar.launchpad.net/~mailman-coders/mailman/2.1/view/1845/NEWS#L8",
+            "https://bugs.launchpad.net/mailman/+bug/1873722",
+            "https://bugs.launchpad.net/mailman/+bug/1877379"
+        ],
+        "discovery": "2020-04-20T00:00:00Z",
+        "references": {
+            "cvename": [
+                "CVE-2018-13796"
+            ]
+        },
+        "vid": "88760f4d-8ef7-11ea-a66d-4b2ef158be83"
+    },
+    "details": "Mark Sapiro reports:\n\n> A content injection vulnerability via the options login page has been\n> discovered and reported by Vishal Singh.\n\n> An issue similar to CVE-2018-13796 exists at different endpoint &\n> param. It can lead to a phishing attack.\n\n> (added 2020-05-07) This is essentially the same as\n> https://bugs.launchpad.net/mailman/+bug/1873722 except the vector is\n> the private archive login page and the attack only succeeds if the\n> list\\'s roster visibility (private_roster) setting is \\'Anyone\\'.\n",
+    "id": "FreeBSD-2020-0101",
+    "modified": "2020-05-07T00:00:00Z",
+    "published": "2020-05-07T00:00:00Z",
+    "references": [
+        {
+            "type": "REPORT",
+            "url": "https://bazaar.launchpad.net/~mailman-coders/mailman/2.1/view/1845/NEWS#L8"
+        },
+        {
+            "type": "REPORT",
+            "url": "https://bugs.launchpad.net/mailman/+bug/1873722"
+        },
+        {
+            "type": "REPORT",
+            "url": "https://bugs.launchpad.net/mailman/+bug/1877379"
+        },
+        {
+            "type": "WEB",
+            "url": "https://bazaar.launchpad.net/~mailman-coders/mailman/2.1/view/1845/NEWS#L8"
+        },
+        {
+            "type": "WEB",
+            "url": "https://bugs.launchpad.net/mailman/+bug/1873722"
+        },
+        {
+            "type": "WEB",
+            "url": "https://bugs.launchpad.net/mailman/+bug/1877379"
+        },
+        {
+            "type": "WEB",
+            "url": "https://mail.python.org/archives/list/mailman-developers@python.org/thread/SYBIZ3MNSQZLKN6PVKO7ZKR7QMOBMS45/"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2018-13796"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "mailman -- arbitrary content injection vulnerability via options or private archive login pages"
+}

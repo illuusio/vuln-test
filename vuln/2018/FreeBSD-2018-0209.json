@@ -1,0 +1,67 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:kernel",
+                "name": "FreeBSD-kernel"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "introduced": "11.2"
+                        },
+                        {
+                            "fixed": "11.2_2"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                },
+                {
+                    "events": [
+                        {
+                            "introduced": "11.1"
+                        },
+                        {
+                            "fixed": "11.1_13"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "discovery": "2018-08-14T00:00:00Z",
+        "references": {
+            "cvename": [
+                "CVE-2018-3620",
+                "CVE-2018-3646"
+            ],
+            "freebsdsa": [
+                "SA-18:09.l1tf"
+            ]
+        },
+        "vid": "2310b814-a652-11e8-805b-a4badb2f4699"
+    },
+    "details": "# Problem Description:\n\nOn certain Intel 64-bit x86 systems there is a period of time during\nterminal fault handling where the CPU may use speculative execution to\ntry to load data. The CPU may speculatively access the level 1 data\ncache (L1D). Data which would otherwise be protected may then be\ndetermined by using side channel methods.\n\nThis issue affects bhyve on FreeBSD/amd64 systems.\n\n# Impact:\n\nAn attacker executing user code, or kernel code inside of a virtual\nmachine, may be able to read secret data from the kernel or from another\nvirtual machine.\n",
+    "id": "FreeBSD-2018-0209",
+    "modified": "2018-08-22T00:00:00Z",
+    "published": "2018-08-22T00:00:00Z",
+    "references": [
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2018-3620"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2018-3646"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://www.freebsd.org/security/advisories/FreeBSD-SA-18:09.l1tf.asc"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "FreeBSD -- L1 Terminal Fault (L1TF) Kernel Information Disclosure"
+}

@@ -1,0 +1,79 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "node"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "16.11.1"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        },
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "node14"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "14.18.1"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "cite": [
+            "https://nodejs.org/en/blog/vulnerability/oct-2021-security-releases/"
+        ],
+        "discovery": "2021-10-12T00:00:00Z",
+        "references": {
+            "cvename": [
+                "CVE-2021-22959",
+                "CVE-2021-22960"
+            ]
+        },
+        "vid": "a9c5e89d-2d15-11ec-8363-0022489ad614"
+    },
+    "details": "Node.js reports:\n\n> # HTTP Request Smuggling due to spaced in headers (Medium)(CVE-2021-22959)\n>\n> The http parser accepts requests with a space (SP) right after the\n> header name before the colon. This can lead to HTTP Request Smuggling\n> (HRS).\n>\n> # HTTP Request Smuggling when parsing the body (Medium)(CVE-2021-22960)\n>\n> The parse ignores chunk extensions when parsing the body of chunked\n> requests. This leads to HTTP Request Smuggling (HRS) under certain\n> conditions.\n",
+    "id": "FreeBSD-2021-0257",
+    "modified": "2021-10-14T00:00:00Z",
+    "published": "2021-10-14T00:00:00Z",
+    "references": [
+        {
+            "type": "REPORT",
+            "url": "https://nodejs.org/en/blog/vulnerability/oct-2021-security-releases/"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2021-22959"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2021-22960"
+        },
+        {
+            "type": "WEB",
+            "url": "https://nodejs.org/en/blog/vulnerability/oct-2021-security-releases/"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "Node.js -- October 2021 Security Releases"
+}

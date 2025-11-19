@@ -1,0 +1,104 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "grafana"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "introduced": "8.0.0"
+                        },
+                        {
+                            "fixed": "8.5.15"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                },
+                {
+                    "events": [
+                        {
+                            "introduced": "9.0.0"
+                        },
+                        {
+                            "fixed": "9.2.4"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        },
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "grafana8"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "introduced": "8.0.0"
+                        },
+                        {
+                            "fixed": "8.5.15"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        },
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "grafana9"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "introduced": "9.0.0"
+                        },
+                        {
+                            "fixed": "9.2.4"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "cite": [
+            "https://grafana.com/blog/2022/11/08/security-release-new-versions-of-grafana-with-critical-and-moderate-fixes-for-cve-2022-39328-cve-2022-39307-and-cve-2022-39306/"
+        ],
+        "discovery": "2022-10-24T00:00:00Z",
+        "references": {
+            "cvename": [
+                "CVE-2022-39307"
+            ]
+        },
+        "vid": "0a80f159-629b-11ed-9ca2-6c3be5272acd"
+    },
+    "details": "Grafana Labs reports:\n\n> When using the forget password on the login page, a POST request is\n> made to the `/api/user/password/sent-reset-email` URL. When the\n> username or email does not exist, a JSON response contains a \"user not\n> found\" message.\n>\n> The CVSS score for this vulnerability is 5.3 Moderate\n",
+    "id": "FreeBSD-2022-0226",
+    "modified": "2022-11-12T00:00:00Z",
+    "published": "2022-11-12T00:00:00Z",
+    "references": [
+        {
+            "type": "REPORT",
+            "url": "https://grafana.com/blog/2022/11/08/security-release-new-versions-of-grafana-with-critical-and-moderate-fixes-for-cve-2022-39328-cve-2022-39307-and-cve-2022-39306/"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2022-39307"
+        },
+        {
+            "type": "WEB",
+            "url": "https://github.com/grafana/grafana/security/advisories/GHSA-3p62-42x7-gxg5"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "Grafana -- Username enumeration"
+}

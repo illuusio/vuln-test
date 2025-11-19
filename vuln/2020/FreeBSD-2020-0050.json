@@ -1,0 +1,46 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "zeek"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "3.0.3"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "cite": [
+            "https://raw.githubusercontent.com/zeek/zeek/9dda3602a760f00d9532c6314ea79108106033fa/NEWS"
+        ],
+        "discovery": "2020-02-25T00:00:00Z",
+        "vid": "4ae135f7-85cd-4c32-ad94-358271b31f7f"
+    },
+    "details": "Jon Siwek of Corelight reports:\n\n> This release addresses the following security issues:\n>\n> - Potential Denial of Service due to memory leak in DNS TSIG message\n>   parsing.\n> - Potential Denial of Service due to memory leak (or assertion when\n>   compiling with assertions enabled) when receiving a second SSH KEX\n>   message after a first.\n> - Potential Denial of Service due to buffer read overflow and/or\n>   memory leaks in Kerberos analyzer. The buffer read overflow could\n>   occur when the Kerberos message indicates it contains an IPv6\n>   address, but does not send enough data to parse out a full IPv6\n>   address. A memory leak could occur when processing KRB_KDC_REQ\n>   KRB_KDC_REP messages for message types that do not match a\n>   known/expected type.\n> - Potential Denial of Service when sending many zero-length SSL/TLS\n>   certificate data. Such messages underwent the full Zeek file\n>   analysis treatment which is expensive (and meaninguless here)\n>   compared to how cheaply one can \\\"create\\\" or otherwise indicate\n>   many zero-length contained in an SSL message.\n> - Potential Denial of Service due to buffer read overflow in SMB\n>   transaction data string handling. The length of strings being parsed\n>   from SMB messages was trusted to be whatever the message claimed\n>   instead of the actual length of data found in the message.\n> - Potential Denial of Service due to null pointer dereference in FTP\n>   ADAT Base64 decoding.\n> - Potential Denial of Service due buffer read overflow in FTP analyzer\n>   word/whitespace handling. This typically won\\'t be a problem in most\n>   default deployments of Zeek since the FTP analyzer receives data\n>   from a ContentLine (NVT) support analyzer which first\n>   null-terminates the buffer used for further FTP parsing.\n",
+    "id": "FreeBSD-2020-0050",
+    "modified": "2020-03-15T00:00:00Z",
+    "published": "2020-03-15T00:00:00Z",
+    "references": [
+        {
+            "type": "REPORT",
+            "url": "https://raw.githubusercontent.com/zeek/zeek/9dda3602a760f00d9532c6314ea79108106033fa/NEWS"
+        },
+        {
+            "type": "WEB",
+            "url": "https://github.com/zeek/zeek/blob/9dda3602a760f00d9532c6314ea79108106033fa/NEWS"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "zeek -- potential denial of service issues"
+}

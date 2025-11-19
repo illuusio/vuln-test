@@ -1,0 +1,122 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "node"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "11.10.1"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        },
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "node10"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "10.15.2"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        },
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "node8"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "8.15.1"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        },
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "node6"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "6.17.0"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "cite": [
+            "https://nodejs.org/en/blog/vulnerability/february-2019-security-releases/"
+        ],
+        "discovery": "2019-02-28T00:00:00Z",
+        "references": {
+            "cvename": [
+                "CVE-2019-5737",
+                "CVE-2019-5739",
+                "CVE-2019-1559"
+            ]
+        },
+        "vid": "b71d7193-3c54-11e9-a3f9-00155d006b02"
+    },
+    "details": "Node.js reports:\n\n> Updates are now available for all active Node.js release lines. In\n> addition to fixes for security flaws in Node.js, they also include\n> upgrades of Node.js 6 and 8 to OpenSSL 1.0.2r which contains a fix for\n> a moderate severity security vulnerability.\n>\n> For these releases, we have decided to withhold the fix for the\n> Misinterpretation of Input (CWE-115) flaw mentioned in the original\n> announcement. This flaw is very low severity and we are not satisfied\n> that we had a complete and stable fix ready for release. We will be\n> seeking to address this flaw via alternate mechanisms in the near\n> future. In addition, we have introduced an additional CVE for a change\n> in Node.js 6 that we have decided to classify as a Denial of Service\n> (CWE-400) flaw.\n>\n> We recommend that all Node.js users upgrade to a version listed below\n> as soon as possible.\n>\n> # OpenSSL: 0-byte record padding oracle (CVE-2019-1559)\n>\n> OpenSSL 1.0.2r contains a fix for CVE-2019-1559 and is included in the\n> releases for Node.js versions 6 and 8 only. Node.js 10 and 11 are not\n> impacted by this vulnerability as they use newer versions of OpenSSL\n> which do not contain the flaw.\n>\n> Under certain circumstances, a TLS server can be forced to respond\n> differently to a client if a zero-byte record is received with an\n> invalid padding compared to a zero-byte record with an invalid MAC.\n> This can be used as the basis of a padding oracle attack to decrypt\n> data.\n>\n> Only TLS connections using certain ciphersuites executing under\n> certain conditions are exploitable. We are currently unable to\n> determine whether the use of OpenSSL in Node.js exposes this\n> vulnerability. We are taking a cautionary approach and recommend the\n> same for users. For more information, see the advisory and a detailed\n> write-up by the reporters of the vulnerability.\n",
+    "id": "FreeBSD-2019-0046",
+    "modified": "2019-03-03T00:00:00Z",
+    "published": "2019-03-03T00:00:00Z",
+    "references": [
+        {
+            "type": "REPORT",
+            "url": "https://nodejs.org/en/blog/vulnerability/february-2019-security-releases/"
+        },
+        {
+            "type": "WEB",
+            "url": "https://nodejs.org/en/blog/vulnerability/february-2019-security-releases/"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2019-5737"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2019-5739"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2019-1559"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "Node.js -- multiple vulnerabilities"
+}

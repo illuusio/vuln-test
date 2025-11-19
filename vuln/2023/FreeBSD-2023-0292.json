@@ -1,0 +1,55 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "routinator"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "introduced": "0.9.0"
+                        },
+                        {
+                            "fixed": "0.12.2"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "cite": [
+            "https://nlnetlabs.nl/downloads/routinator/CVE-2023-39916.txt"
+        ],
+        "discovery": "2023-09-13T00:00:00Z",
+        "references": {
+            "cvename": [
+                "CVE-2023-39916"
+            ]
+        },
+        "vid": "ea9d1fd2-5d24-11ee-8507-b42e991fc52e"
+    },
+    "details": "sep@nlnetlabs.nl reports:\n\n> NLnet Labs Routinator 0.9.0 up to and including 0.12.1 contains a\n> possible path traversal vulnerability in the optional, off-by-default\n> keep-rrdp-responses feature that allows users to store the content of\n> responses received for RRDP requests. The location of these stored\n> responses is constructed from the URL of the request. Due to\n> insufficient sanitation of the URL, it is possible for an attacker to\n> craft a URL that results in the response being stored outside of the\n> directory specified for it.\n",
+    "id": "FreeBSD-2023-0292",
+    "modified": "2023-09-27T00:00:00Z",
+    "published": "2023-09-27T00:00:00Z",
+    "references": [
+        {
+            "type": "REPORT",
+            "url": "https://nlnetlabs.nl/downloads/routinator/CVE-2023-39916.txt"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2023-39916"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://nvd.nist.gov/vuln/detail/CVE-2023-39916"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "routinator -- Possible path traversal when storing RRDP responses"
+}

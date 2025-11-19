@@ -1,0 +1,55 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "powerdns-recursor"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "4.1.8"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "cite": [
+            "https://doc.powerdns.com/recursor/changelog/4.1.html"
+        ],
+        "discovery": "2018-11-26T00:00:00Z",
+        "references": {
+            "cvename": [
+                "CVE-2018-16855"
+            ]
+        },
+        "vid": "f6d6308a-f2ec-11e8-b005-6805ca2fa271"
+    },
+    "details": "powerdns Team reports:\n\n> CVE-2018-16855: An issue has been found in PowerDNS Recursor where a\n> remote attacker sending a DNS query can trigger an out-of-bounds\n> memory read while computing the hash of the query for a packet cache\n> lookup, possibly leading to a crash. When the PowerDNS Recursor is run\n> inside a supervisor like supervisord or systemd, a crash will lead to\n> an automatic restart, limiting the impact to a somewhat degraded\n> service.\n",
+    "id": "FreeBSD-2018-0293",
+    "modified": "2018-12-09T00:00:00Z",
+    "published": "2018-12-09T00:00:00Z",
+    "references": [
+        {
+            "type": "REPORT",
+            "url": "https://doc.powerdns.com/recursor/changelog/4.1.html"
+        },
+        {
+            "type": "WEB",
+            "url": "https://doc.powerdns.com/recursor/changelog/4.1.html"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2018-16855"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "powerdns-recursor -- Crafted query can cause a denial of service"
+}

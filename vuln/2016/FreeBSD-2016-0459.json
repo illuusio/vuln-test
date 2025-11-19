@@ -1,0 +1,100 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "qemu"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "2.3.0"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        },
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "qemu-devel"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "2.3.0"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        },
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "qemu-sbruno"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "2.3.0"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "cite": [
+            "https://lists.gnu.org/archive/html/qemu-devel/2015-03/msg04895.html"
+        ],
+        "discovery": "2015-03-23T00:00:00Z",
+        "references": {
+            "cvename": [
+                "CVE-2015-1779"
+            ],
+            "freebsdpr": [
+                "ports/206725"
+            ]
+        },
+        "vid": "a228c7a0-ba66-11e6-b1cf-14dae9d210b8"
+    },
+    "details": "Daniel P. Berrange reports:\n\n> The VNC server websockets decoder will read and buffer data from\n> websockets clients until it sees the end of the HTTP headers, as\n> indicated by \\\\r\\\\n\\\\r\\\\n. In theory this allows a malicious to trick\n> QEMU into consuming an arbitrary amount of RAM.\n",
+    "id": "FreeBSD-2016-0459",
+    "modified": "2016-12-06T00:00:00Z",
+    "published": "2016-12-04T00:00:00Z",
+    "references": [
+        {
+            "type": "REPORT",
+            "url": "https://lists.gnu.org/archive/html/qemu-devel/2015-03/msg04895.html"
+        },
+        {
+            "type": "WEB",
+            "url": "https://lists.gnu.org/archive/html/qemu-devel/2015-03/msg04895.html"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2015-1779"
+        },
+        {
+            "type": "REPORT",
+            "url": "https://bugs.freebsd.org/bugzilla/show_bug.cgi?id=206725"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "qemu -- denial of service vulnerability"
+}

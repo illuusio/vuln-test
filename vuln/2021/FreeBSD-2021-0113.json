@@ -1,0 +1,55 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "rubygem-rdoc"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "6.3.1"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "cite": [
+            "https://www.ruby-lang.org/en/news/2021/05/02/os-command-injection-in-rdoc/"
+        ],
+        "discovery": "2021-05-02T00:00:00Z",
+        "references": {
+            "cvename": [
+                "CVE-2021-31799"
+            ]
+        },
+        "vid": "57027417-ab7f-11eb-9596-080027f515ea"
+    },
+    "details": "Alexandr Savca reports:\n\n> RDoc used to call Kernel#open to open a local file. If a Ruby project\n> has a file whose name starts with \\| and ends with tags, the command\n> following the pipe character is executed. A malicious Ruby project\n> could exploit it to run an arbitrary command execution against a user\n> who attempts to run rdoc command.\n",
+    "id": "FreeBSD-2021-0113",
+    "modified": "2021-05-02T00:00:00Z",
+    "published": "2021-05-02T00:00:00Z",
+    "references": [
+        {
+            "type": "REPORT",
+            "url": "https://www.ruby-lang.org/en/news/2021/05/02/os-command-injection-in-rdoc/"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2021-31799"
+        },
+        {
+            "type": "WEB",
+            "url": "https://www.ruby-lang.org/en/news/2021/05/02/os-command-injection-in-rdoc/"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "RDoc -- command injection vulnerability"
+}

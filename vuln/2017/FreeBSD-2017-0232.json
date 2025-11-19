@@ -1,0 +1,55 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "curl"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "7.56.0"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "cite": [
+            "https://curl.haxx.se/docs/adv_20171004.html"
+        ],
+        "discovery": "2017-10-04T00:00:00Z",
+        "references": {
+            "cvename": [
+                "CVE-2017-1000254"
+            ]
+        },
+        "vid": "ccace707-a8d8-11e7-ac58-b499baebfeaf"
+    },
+    "details": "The cURL project reports:\n\n> FTP PWD response parser out of bounds read\n>\n> libcurl may read outside of a heap allocated buffer when doing FTP.\n>\n> When libcurl connects to an FTP server and successfully logs in\n> (anonymous or not), it asks the server for the current directory with\n> the PWD command. The server then responds with a 257 response\n> containing the path, inside double quotes. The returned path name is\n> then kept by libcurl for subsequent uses.\n>\n> Due to a flaw in the string parser for this directory name, a\n> directory name passed like this but without a closing double quote\n> would lead to libcurl not adding a trailing NUL byte to the buffer\n> holding the name. When libcurl would then later access the string, it\n> could read beyond the allocated heap buffer and crash or wrongly\n> access data beyond the buffer, thinking it was part of the path.\n>\n> A malicious server could abuse this fact and effectively prevent\n> libcurl-based clients to work with it - the PWD command is always\n> issued on new FTP connections and the mistake has a high chance of\n> causing a segfault.\n",
+    "id": "FreeBSD-2017-0232",
+    "modified": "2017-10-04T00:00:00Z",
+    "published": "2017-10-04T00:00:00Z",
+    "references": [
+        {
+            "type": "REPORT",
+            "url": "https://curl.haxx.se/docs/adv_20171004.html"
+        },
+        {
+            "type": "WEB",
+            "url": "https://curl.haxx.se/docs/adv_20171004.html"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2017-1000254"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "cURL -- out of bounds read"
+}

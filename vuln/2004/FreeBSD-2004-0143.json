@@ -1,0 +1,82 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "isakmpd"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "last_affected": "20030903"
+                        },
+                        {
+                            "fixed": "20030903"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "cite": [
+            "http://www.rapid7.com/advisories/R7-0018.html"
+        ],
+        "discovery": "2004-03-17T00:00:00Z",
+        "references": {
+            "cvename": [
+                "CVE-2004-0218",
+                "CVE-2004-0219",
+                "CVE-2004-0220",
+                "CVE-2004-0221",
+                "CVE-2004-0222"
+            ]
+        },
+        "vid": "b7cb488c-8349-11d8-a41f-0020ed76ef5a"
+    },
+    "details": "Numerous errors in isakmpd\\'s input packet validation lead to\ndenial-of-service vulnerabilities. From the Rapid7 advisory:\n\n> The ISAKMP packet processing functions in OpenBSD\\'s isakmpd daemon\n> contain multiple payload handling flaws that allow a remote attacker\n> to launch a denial of service attack against the daemon.\n>\n> Carefully crafted ISAKMP packets will cause the isakmpd daemon to\n> attempt out-of-bounds reads, exhaust available memory, or loop\n> endlessly (consuming 100% of the CPU).\n",
+    "id": "FreeBSD-2004-0143",
+    "modified": "2004-09-14T00:00:00Z",
+    "published": "2004-03-31T00:00:00Z",
+    "references": [
+        {
+            "type": "REPORT",
+            "url": "http://www.rapid7.com/advisories/R7-0018.html"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2004-0218"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2004-0219"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2004-0220"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2004-0221"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2004-0222"
+        },
+        {
+            "type": "WEB",
+            "url": "http://www.rapid7.com/advisories/R7-0018.html"
+        },
+        {
+            "type": "WEB",
+            "url": "http://www.openbsd.org/errata34.html"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "isakmpd payload handling denial-of-service vulnerabilities"
+}

@@ -1,0 +1,62 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "cyrus-imapd"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "2.1.17"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                },
+                {
+                    "events": [
+                        {
+                            "introduced": "2.2.*"
+                        },
+                        {
+                            "last_affected": "2.2.8"
+                        },
+                        {
+                            "fixed": "2.2.8"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "discovery": "2004-11-06T00:00:00Z",
+        "references": {
+            "cvename": [
+                "CVE-2004-1013"
+            ]
+        },
+        "vid": "c0a269d5-3d16-11d9-8818-008088034841"
+    },
+    "details": "The argument parser of the fetch command suffers a bug very similiar to\nthe partial command problem. Arguments like \\\"body\\[p\\\", \\\"binary\\[p\\\"\nor \\\"binary\\[p\\\" will be wrongly detected and the bufferposition can\npoint outside of the allocated buffer for the rest of the parsing\nprocess. When the parser triggers the PARSE_PARTIAL macro after such a\nmalformed argument was received this can lead to a similiar one byte\nmemory corruption and allows remote code execution, when the heap layout\nwas successfully controlled by the attacker.\n",
+    "id": "FreeBSD-2004-0249",
+    "modified": "2004-11-24T00:00:00Z",
+    "published": "2004-11-22T00:00:00Z",
+    "references": [
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2004-1013"
+        },
+        {
+            "type": "WEB",
+            "url": "http://security.e-matters.de/advisories/152004.html"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "Cyrus IMAPd -- FETCH command out of bounds memory corruption"
+}

@@ -1,0 +1,116 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "py27-buildbot"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "2.3.1"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        },
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "py35-buildbot"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "2.3.1"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        },
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "py36-buildbot"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "2.3.1"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        },
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "py37-buildbot"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "2.3.1"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "cite": [
+            "https://github.com/buildbot/buildbot/wiki/OAuth-vulnerability-in-using-submitted-authorization-token-for-authentication"
+        ],
+        "discovery": "2019-05-07T00:00:00Z",
+        "references": {
+            "cvename": [
+                "CVE-2019-12300"
+            ]
+        },
+        "vid": "ada8db8a-8471-11e9-8170-0050562a4d7b"
+    },
+    "details": "> Buildbot accepted user-submitted authorization token from OAuth and\n> used it to authenticate user.\n>\n> The vulnerability can lead to malicious attackers to authenticate as\n> legitimate users of a Buildbot instance without knowledge of the\n> victim\\'s login credentials on certain scenarios.\n>\n> If an attacker has an application authorized to access data of another\n> user at the same Identity Provider as the used by the Buildbot\n> instance, then he can acquire a token to access the data of that user,\n> supply the token to the Buildbot instance and successfully login as\n> the victim.\n",
+    "id": "FreeBSD-2019-0113",
+    "modified": "2019-06-01T00:00:00Z",
+    "published": "2019-06-01T00:00:00Z",
+    "references": [
+        {
+            "type": "REPORT",
+            "url": "https://github.com/buildbot/buildbot/wiki/OAuth-vulnerability-in-using-submitted-authorization-token-for-authentication"
+        },
+        {
+            "type": "WEB",
+            "url": "https://github.com/buildbot/buildbot/wiki/OAuth-vulnerability-in-using-submitted-authorization-token-for-authentication"
+        },
+        {
+            "type": "WEB",
+            "url": "https://github.com/buildbot/buildbot/pull/4763"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2019-12300"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "buildbot -- OAuth Authentication Vulnerability"
+}

@@ -1,0 +1,75 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "postgresql95-server"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "introduced": "9.5.0"
+                        },
+                        {
+                            "fixed": "9.5.2"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        },
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "postgresql95-contrib"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "introduced": "9.5.0"
+                        },
+                        {
+                            "fixed": "9.5.2"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "cite": [
+            "http://www.postgresql.org/about/news/1656/"
+        ],
+        "discovery": "2016-03-01T00:00:00Z",
+        "references": {
+            "cvename": [
+                "CVE-2016-2193",
+                "CVE-2016-3065"
+            ]
+        },
+        "vid": "97a24d2e-f74c-11e5-8458-6cc21735f730"
+    },
+    "details": "PostgreSQL project reports:\n\n> Security Fixes for RLS, BRIN\n>\n> This release closes security hole CVE-2016-2193\n> (https://access.redhat.com/security/cve/CVE-2016-2193), where a query\n> plan might get reused for more than one ROLE in the same session. This\n> could cause the wrong set of Row Level Security (RLS) policies to be\n> used for the query.\n>\n> The update also fixes CVE-2016-3065\n> (https://access.redhat.com/security/cve/CVE-2016-3065), a server crash\n> bug triggered by using \\`pageinspect\\` with BRIN index pages. Since an\n> attacker might be able to expose a few bytes of server memory, this\n> crash is being treated as a security issue.\n",
+    "id": "FreeBSD-2016-0172",
+    "modified": "2016-03-31T00:00:00Z",
+    "published": "2016-03-31T00:00:00Z",
+    "references": [
+        {
+            "type": "REPORT",
+            "url": "http://www.postgresql.org/about/news/1656/"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2016-2193"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2016-3065"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "PostgreSQL -- minor security problems."
+}

@@ -1,0 +1,59 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "chicken"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "4.10.0.r1,1"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "cite": [
+            "http://lists.gnu.org/archive/html/chicken-users/2015-01/msg00048.html"
+        ],
+        "discovery": "2015-01-12T00:00:00Z",
+        "references": {
+            "cvename": [
+                "CVE-2014-9651"
+            ]
+        },
+        "vid": "e7b7f2b5-177a-11e5-ad33-f8d111029e6a"
+    },
+    "details": "chicken developer Moritz Heidkamp reports:\n\n> The substring-index\\[-ci\\] procedures of the data-structures unit are\n> vulnerable to a buffer overrun attack when passed an integer greater\n> than zero as the optional START argument.\n>\n> As a work-around you can switch to SRFI 13\\'s string-contains\n> procedure which also returns the substring\\'s index in case it is\n> found.\n",
+    "id": "FreeBSD-2015-0140",
+    "modified": "2015-06-23T00:00:00Z",
+    "published": "2015-06-22T00:00:00Z",
+    "references": [
+        {
+            "type": "REPORT",
+            "url": "http://lists.gnu.org/archive/html/chicken-users/2015-01/msg00048.html"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2014-9651"
+        },
+        {
+            "type": "DISCUSSION",
+            "url": "http://lists.gnu.org/archive/html/chicken-users/2015-01/msg00048.html"
+        },
+        {
+            "type": "DISCUSSION",
+            "url": "http://lists.nongnu.org/archive/html/chicken-hackers/2014-12/txt2UqAS9CtvH.txt"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "chicken -- buffer overrun in substring-index[-ci]"
+}

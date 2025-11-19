@@ -1,0 +1,76 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "squid"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "3.5.15"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "cite": [
+            "http://www.squid-cache.org/Advisories/SQUID-2016_2.txt"
+        ],
+        "discovery": "2016-02-24T00:00:00Z",
+        "references": {
+            "cvename": [
+                "CVE-2016-2569",
+                "CVE-2016-2570",
+                "CVE-2016-2571"
+            ],
+            "freebsdpr": [
+                "ports/207454"
+            ]
+        },
+        "vid": "660ebbf5-daeb-11e5-b2bd-002590263bf5"
+    },
+    "details": "Squid security advisory 2016:2 reports:\n\n> Due to incorrect bounds checking Squid is vulnerable to a denial of\n> service attack when processing HTTP responses.\n>\n> These problems allow remote servers delivering certain unusual HTTP\n> response syntax to trigger a denial of service for all clients\n> accessing the Squid service.\n>\n> HTTP responses containing malformed headers that trigger this issue\n> are becoming common. We are not certain at this time if that is a sign\n> of malware or just broken server scripting.\n",
+    "id": "FreeBSD-2016-0113",
+    "modified": "2016-02-28T00:00:00Z",
+    "published": "2016-02-24T00:00:00Z",
+    "references": [
+        {
+            "type": "REPORT",
+            "url": "http://www.squid-cache.org/Advisories/SQUID-2016_2.txt"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2016-2569"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2016-2570"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2016-2571"
+        },
+        {
+            "type": "REPORT",
+            "url": "https://bugs.freebsd.org/bugzilla/show_bug.cgi?id=207454"
+        },
+        {
+            "type": "WEB",
+            "url": "http://www.squid-cache.org/Advisories/SQUID-2016_2.txt"
+        },
+        {
+            "type": "WEB",
+            "url": "http://www.openwall.com/lists/oss-security/2016/02/24/12"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "squid -- remote DoS in HTTP response processing"
+}

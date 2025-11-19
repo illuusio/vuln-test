@@ -1,0 +1,71 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "jenkins"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "last_affected": "1.600"
+                        },
+                        {
+                            "fixed": "1.600"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        },
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "jenkins-lts"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "last_affected": "1.580.3"
+                        },
+                        {
+                            "fixed": "1.580.3"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "cite": [
+            "https://wiki.jenkins-ci.org/display/SECURITY/Jenkins+Security+Advisory+2015-02-27"
+        ],
+        "discovery": "2015-03-01T00:00:00Z",
+        "vid": "7480b6ac-adf1-443e-a33c-3a3c0becba1e"
+    },
+    "details": "Kohsuke Kawaguchi from Jenkins team reports:\n\n> # Description\n>\n> ##### SECURITY-125 (Combination filter Groovy script unsecured)\n>\n> This vulnerability allows users with the job configuration privilege\n> to escalate his privileges, resulting in arbitrary code execution to\n> the master.\n>\n> ##### SECURITY-162 (directory traversal from artifacts via symlink)\n>\n> This vulnerability allows users with the job configuration privilege\n> or users with commit access to the build script to access arbitrary\n> files/directories on the master, resulting in the exposure of\n> sensitive information, such as encryption keys.\n>\n> ##### SECURITY-163 (update center metadata retrieval DoS attack)\n>\n> This vulnerability allows authenticated users to disrupt the operation\n> of Jenkins by feeding malicious update center data into Jenkins,\n> affecting plugin installation and tool installation.\n>\n> ##### SECURITY-165 (external entity injection via XPath)\n>\n> This vulnerability allows users with the read access to Jenkins to\n> retrieve arbitrary XML document on the server, resulting in the\n> exposure of sensitive information inside/outside Jenkins.\n>\n> ##### SECURITY-166 (HudsonPrivateSecurityRealm allows creation of reserved names)\n>\n> For users using \\\"Jenkins\\' own user database\\\" setting, Jenkins\n> doesn\\'t refuse reserved names, thus allowing privilege escalation.\n>\n> ##### SECURITY-167 (External entity processing in XML can reveal sensitive local files)\n>\n> This vulnerability allows attackers to create malicious XML documents\n> and feed that into Jenkins, which causes Jenkins to retrieve arbitrary\n> XML document on the server, resulting in the exposure of sensitive\n> information inside/outside Jenkins.\n>\n> # Severity\n>\n> SECURITY-125 is rated **critical**. This attack can be only mounted by\n> users with some trust, but it results in arbitrary code execution on\n> the master.\n>\n> SECURITY-162 is rated **critical**. This attack can be only mounted by\n> users with some trust, but it results in the exposure of sensitive\n> information.\n>\n> SECURITY-163 is rated **medium**, as it results in the loss of\n> functionality.\n>\n> SECURITY-165 is rated **critical**. This attack is easy to mount, and\n> it results in the exposure of sensitive information.\n>\n> SECURITY-166 is rated **critical**. For users who use the affected\n> feature, this attack results in arbitrary code execution on the\n> master.\n>\n> SECURITY-167 is rated **critical**. This attack is easy to mount, and\n> it results in the exposure of sensitive information.\n",
+    "id": "FreeBSD-2015-0041",
+    "modified": "2015-03-01T00:00:00Z",
+    "published": "2015-03-01T00:00:00Z",
+    "references": [
+        {
+            "type": "REPORT",
+            "url": "https://wiki.jenkins-ci.org/display/SECURITY/Jenkins+Security+Advisory+2015-02-27"
+        },
+        {
+            "type": "WEB",
+            "url": "https://wiki.jenkins-ci.org/display/SECURITY/Jenkins+Security+Advisory+2015-02-27"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "jenkins -- multiple vulnerabilities"
+}

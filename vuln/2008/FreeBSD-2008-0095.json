@@ -1,0 +1,62 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "FreeBSD"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "introduced": "6.3"
+                        },
+                        {
+                            "fixed": "6.3_4"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                },
+                {
+                    "events": [
+                        {
+                            "introduced": "7.0"
+                        },
+                        {
+                            "fixed": "7.0_4"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "discovery": "2008-09-03T00:00:00Z",
+        "references": {
+            "cvename": [
+                "CVE-2008-3531"
+            ],
+            "freebsdsa": [
+                "SA-08:08.nmount"
+            ]
+        },
+        "vid": "7dbb7197-7b68-11dd-80ba-000bcdf0a03b"
+    },
+    "details": "# Problem Description:\n\nVarious user defined input such as mount points, devices, and mount\noptions are prepared and passed as arguments to nmount(2) into the\nkernel. Under certain error conditions, user defined data will be copied\ninto a stack allocated buffer stored in the kernel without sufficient\nbounds checking.\n\n# Impact:\n\nIf the system is configured to allow unprivileged users to mount file\nsystems, it is possible for a local adversary to exploit this\nvulnerability and execute code in the context of the kernel.\n\n# Workaround:\n\nIt is possible to work around this issue by allowing only privileged\nusers to mount file systems by running the following sysctl(8) command:\n\n    # sysctl vfs.usermount=0\n",
+    "id": "FreeBSD-2008-0095",
+    "modified": "2016-08-09T00:00:00Z",
+    "published": "2008-09-05T00:00:00Z",
+    "references": [
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2008-3531"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://www.freebsd.org/security/advisories/FreeBSD-SA-08:08.nmount.asc"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "FreeBSD -- nmount(2) local arbitrary code execution"
+}

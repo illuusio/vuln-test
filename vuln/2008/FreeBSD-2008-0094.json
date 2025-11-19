@@ -1,0 +1,62 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "FreeBSD"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "introduced": "6.3"
+                        },
+                        {
+                            "fixed": "6.3_4"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                },
+                {
+                    "events": [
+                        {
+                            "introduced": "7.0"
+                        },
+                        {
+                            "fixed": "7.0_4"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "discovery": "2008-09-03T00:00:00Z",
+        "references": {
+            "cvename": [
+                "CVE-2008-3890"
+            ],
+            "freebsdsa": [
+                "SA-08:07.amd64"
+            ]
+        },
+        "vid": "6d4e4759-7b67-11dd-80ba-000bcdf0a03b"
+    },
+    "details": "# Problem Description:\n\nIf a General Protection Fault happens on a FreeBSD/amd64 system while it\nis returning from an interrupt, trap or system call, the swapgs CPU\ninstruction may be called one extra time when it should not resulting in\nuserland and kernel state being mixed.\n\n# Impact:\n\nA local attacker can by causing a General Protection Fault while the\nkernel is returning from an interrupt, trap or system call while\nmanipulating stack frames and, run arbitrary code with kernel\nprivileges.\n\nThe vulnerability can be used to gain kernel / supervisor privilege.\nThis can for example be used by normal users to gain root privileges, to\nbreak out of jails, or bypass Mandatory Access Control (MAC)\nrestrictions.\n\n# Workaround:\n\nNo workaround is available, but only systems running the 64 bit\nFreeBSD/amd64 kernels are vulnerable.\n\nSystems with 64 bit capable CPUs, but running the 32 bit FreeBSD/i386\nkernel are not vulnerable.\n",
+    "id": "FreeBSD-2008-0094",
+    "modified": "2016-08-09T00:00:00Z",
+    "published": "2008-09-05T00:00:00Z",
+    "references": [
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2008-3890"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://www.freebsd.org/security/advisories/FreeBSD-SA-08:07.amd64.asc"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "FreeBSD -- amd64 swapgs local privilege escalation"
+}

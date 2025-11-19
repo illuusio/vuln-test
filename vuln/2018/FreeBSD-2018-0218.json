@@ -1,0 +1,78 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "curl"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "introduced": "7.15.4"
+                        },
+                        {
+                            "fixed": "7.61.1"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        },
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "linux-c7-curl"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "7.29.0_6"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "cite": [
+            "https://curl.haxx.se/docs/security.html"
+        ],
+        "discovery": "2018-09-05T00:00:00Z",
+        "references": {
+            "cvename": [
+                "CVE-2018-14618"
+            ]
+        },
+        "vid": "f4d638b9-e6e5-4dbe-8c70-571dbc116174"
+    },
+    "details": "curl security problems:\n\n> CVE-2018-14618: NTLM password overflow via integer overflow\n>\n> The internal function Curl_ntlm_core_mk_nt_hash multiplies the length\n> of the password by two (SUM) to figure out how large temporary storage\n> area to allocate from the heap.\n>\n> The length value is then subsequently used to iterate over the\n> password and generate output into the allocated storage buffer. On\n> systems with a 32 bit size_t, the math to calculate SUM triggers an\n> integer overflow when the password length exceeds 2GB (2\\^31 bytes).\n> This integer overflow usually causes a very small buffer to actually\n> get allocated instead of the intended very huge one, making the use of\n> that buffer end up in a heap buffer overflow.\n>\n> This bug is almost identical to CVE-2017-8816.\n",
+    "id": "FreeBSD-2018-0218",
+    "modified": "2019-08-03T00:00:00Z",
+    "published": "2018-09-05T00:00:00Z",
+    "references": [
+        {
+            "type": "REPORT",
+            "url": "https://curl.haxx.se/docs/security.html"
+        },
+        {
+            "type": "WEB",
+            "url": "https://curl.haxx.se/docs/security.html"
+        },
+        {
+            "type": "WEB",
+            "url": "https://curl.haxx.se/docs/CVE-2018-14618.html"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2018-14618"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "curl -- password overflow vulnerability"
+}

@@ -1,0 +1,100 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "ghostscript9-agpl-base"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "9.50"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        },
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "ghostscript9-agpl-x11"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "9.50"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "cite": [
+            "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2019-14811",
+            "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2019-14812",
+            "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2019-14813",
+            "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2019-14817"
+        ],
+        "discovery": "2019-08-20T00:00:00Z",
+        "references": {
+            "cvename": [
+                "CVE-2019-14811",
+                "CVE-2019-14812",
+                "CVE-2019-14813",
+                "CVE-2019-14817"
+            ]
+        },
+        "vid": "22ae307a-1ac4-11ea-b267-001cc0382b2f"
+    },
+    "details": "Cedric Buissart (Red Hat) reports:\n\n> A flaw was found in, ghostscript versions prior to 9.50, in the\n> .pdf_hook_DSC_Creator procedure where it did not properly secure its\n> privileged calls, enabling scripts to bypass \\`-dSAFER\\` restrictions.\n> A specially crafted PostScript file could disable security protection\n> and then have access to the file system, or execute arbitrary\n> commands.\n\n> A flaw was found in all ghostscript versions 9.x before 9.50, in the\n> .setuserparams2 procedure where it did not properly secure its\n> privileged calls, enabling scripts to bypass \\`-dSAFER\\` restrictions.\n> A specially crafted PostScript file could disable security protection\n> and then have access to the file system, or execute arbitrary\n> commands.\n\n> A flaw was found in ghostscript, versions 9.x before 9.50, in the\n> setsystemparams procedure where it did not properly secure its\n> privileged calls, enabling scripts to bypass \\`-dSAFER\\` restrictions.\n> A specially crafted PostScript file could disable security protection\n> and then have access to the file system, or execute arbitrary\n> commands.\n\n> A flaw was found in, ghostscript versions prior to 9.50, in the\n> .pdfexectoken and other procedures where it did not properly secure\n> its privileged calls, enabling scripts to bypass \\`-dSAFER\\`\n> restrictions. A specially crafted PostScript file could disable\n> security protection and then have access to the file system, or\n> execute arbitrary commands.\n",
+    "id": "FreeBSD-2019-0277",
+    "modified": "2019-12-09T00:00:00Z",
+    "published": "2019-12-09T00:00:00Z",
+    "references": [
+        {
+            "type": "REPORT",
+            "url": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2019-14811"
+        },
+        {
+            "type": "REPORT",
+            "url": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2019-14812"
+        },
+        {
+            "type": "REPORT",
+            "url": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2019-14813"
+        },
+        {
+            "type": "REPORT",
+            "url": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2019-14817"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2019-14811"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2019-14812"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2019-14813"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2019-14817"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "Ghostscript -- Security bypass vulnerabilities"
+}

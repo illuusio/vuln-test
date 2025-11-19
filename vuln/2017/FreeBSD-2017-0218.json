@@ -1,0 +1,67 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "libbson"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "1.8.0"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "cite": [
+            "http://www.securityfocus.com/bid/100825"
+        ],
+        "discovery": "2017-09-09T00:00:00Z",
+        "references": {
+            "cvename": [
+                "CVE-2017-14227"
+            ]
+        },
+        "vid": "10214bda-0902-4e3b-a2f9-9a68ef206a73"
+    },
+    "details": "mongodb developers report:\n\n> In MongoDB libbson 1.7.0, the bson_iter_codewscope function in\n> bson-iter.c miscalculates a bson_utf8_validate length argument, which\n> allows remote attackers to cause a denial of service (heap-based\n> buffer over-read in the bson_utf8_validate function in bson-utf8.c),\n> as demonstrated by bson-to-json.c.\n",
+    "id": "FreeBSD-2017-0218",
+    "modified": "2017-09-26T00:00:00Z",
+    "published": "2017-09-26T00:00:00Z",
+    "references": [
+        {
+            "type": "REPORT",
+            "url": "http://www.securityfocus.com/bid/100825"
+        },
+        {
+            "type": "WEB",
+            "url": "http://www.securityfocus.com/bid/100825"
+        },
+        {
+            "type": "REPORT",
+            "url": "https://bugzilla.redhat.com/show_bug.cgi?id=1489355"
+        },
+        {
+            "type": "REPORT",
+            "url": "https://bugzilla.redhat.com/show_bug.cgi?id=1489356"
+        },
+        {
+            "type": "REPORT",
+            "url": "https://bugzilla.redhat.com/show_bug.cgi?id=1489362"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2017-14227"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "libbson -- Denial of Service"
+}

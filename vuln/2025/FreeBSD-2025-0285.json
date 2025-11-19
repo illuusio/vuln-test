@@ -1,0 +1,55 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "exiv2"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "0.28.6"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "cite": [
+            "https://github.com/Exiv2/exiv2/security/advisories/GHSA-496f-x7cq-cq39"
+        ],
+        "discovery": "2025-08-29T00:00:00Z",
+        "references": {
+            "cvename": [
+                "CVE-2025-54080"
+            ]
+        },
+        "vid": "84a77710-8958-11f0-b6e5-4ccc6adda413"
+    },
+    "details": "Kevin Backhouse reports:\n\n> An out-of-bounds read was found in Exiv2 versions v0.28.5 and earlier.\n> Exiv2 is a command-line utility and C++ library for reading, writing,\n> deleting, and modifying the metadata of image files. The out-of-bounds\n> read is triggered when Exiv2 is used to write metadata into a crafted\n> image file. An attacker could potentially exploit the vulnerability to\n> cause a denial of service by crashing Exiv2, if they can trick the\n> victim into running Exiv2 on a crafted image file.\n>\n> Note that this bug is only triggered when writing the metadata, which\n> is a less frequently used Exiv2 operation than reading the metadata.\n> For example, to trigger the bug in the Exiv2 command-line application,\n> you need to add an extra command-line argument such as delete.\n",
+    "id": "FreeBSD-2025-0285",
+    "modified": "2025-09-04T00:00:00Z",
+    "published": "2025-09-04T00:00:00Z",
+    "references": [
+        {
+            "type": "REPORT",
+            "url": "https://github.com/Exiv2/exiv2/security/advisories/GHSA-496f-x7cq-cq39"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2025-54080"
+        },
+        {
+            "type": "WEB",
+            "url": "https://github.com/Exiv2/exiv2/security/advisories/GHSA-496f-x7cq-cq39"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "exiv2 -- Out-of-bounds read in Exiv2::EpsImage::writeMetadata()"
+}

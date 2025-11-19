@@ -1,0 +1,59 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "ZendFramework1"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "1.12.16"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "cite": [
+            "http://framework.zend.com/security/advisory/ZF2015-08"
+        ],
+        "discovery": "2015-09-15T00:00:00Z",
+        "references": {
+            "cvename": [
+                "CVE-2015-7695"
+            ]
+        },
+        "vid": "d3324fdb-6bf0-11e5-bc5e-00505699053e"
+    },
+    "details": "Zend Framework developers report:\n\n> The PDO adapters of Zend Framework 1 do not filter null bytes values\n> in SQL statements. A PDO adapter can treat null bytes in a query as a\n> string terminator, allowing an attacker to add arbitrary SQL following\n> a null byte, and thus create a SQL injection.\n",
+    "id": "FreeBSD-2015-0318",
+    "modified": "2015-10-12T00:00:00Z",
+    "published": "2015-10-06T00:00:00Z",
+    "references": [
+        {
+            "type": "REPORT",
+            "url": "http://framework.zend.com/security/advisory/ZF2015-08"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2015-7695"
+        },
+        {
+            "type": "WEB",
+            "url": "http://www.openwall.com/lists/oss-security/2015/09/30/6"
+        },
+        {
+            "type": "WEB",
+            "url": "http://framework.zend.com/security/advisory/ZF2015-08"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "ZendFramework1 -- SQL injection vulnerability"
+}

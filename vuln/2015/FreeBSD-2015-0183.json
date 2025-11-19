@@ -1,0 +1,55 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "xen-kernel"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "introduced": "4.4"
+                        },
+                        {
+                            "fixed": "4.5.0_3"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "cite": [
+            "http://xenbits.xen.org/xsa/advisory-118.html"
+        ],
+        "discovery": "2015-01-29T00:00:00Z",
+        "references": {
+            "cvename": [
+                "CVE-2015-1563"
+            ]
+        },
+        "vid": "912cb7f7-27df-11e5-a4a5-002590263bf5"
+    },
+    "details": "The Xen Project reports:\n\n> On ARM systems the code which deals with virtualizing the GIC\n> distributor would, under various circumstances, log messages on a\n> guest accessible code path without appropriate rate limiting.\n>\n> A malicious guest could cause repeated logging to the hypervisor\n> console, leading to a Denial of Service attack.\n",
+    "id": "FreeBSD-2015-0183",
+    "modified": "2015-07-11T00:00:00Z",
+    "published": "2015-07-11T00:00:00Z",
+    "references": [
+        {
+            "type": "REPORT",
+            "url": "http://xenbits.xen.org/xsa/advisory-118.html"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2015-1563"
+        },
+        {
+            "type": "WEB",
+            "url": "http://xenbits.xen.org/xsa/advisory-118.html"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "xen-kernel -- arm: vgic: incorrect rate limiting of guest triggered logging"
+}

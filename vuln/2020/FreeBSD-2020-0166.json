@@ -1,0 +1,77 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "powerdns-recursor"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "introduced": "4.3.0"
+                        },
+                        {
+                            "fixed": "4.3.2"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                },
+                {
+                    "events": [
+                        {
+                            "introduced": "4.2.0"
+                        },
+                        {
+                            "fixed": "4.2.3"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                },
+                {
+                    "events": [
+                        {
+                            "introduced": "4.1.0"
+                        },
+                        {
+                            "fixed": "4.1.17"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "cite": [
+            "https://doc.powerdns.com/recursor/changelog/4.3.html#change-4.3.2"
+        ],
+        "discovery": "2020-07-01T00:00:00Z",
+        "references": {
+            "cvename": [
+                "CVE-2020-14196"
+            ]
+        },
+        "vid": "641cd669-bc37-11ea-babf-6805ca2fa271"
+    },
+    "details": "PowerDNS Team reports:\n\n> CVE-2020-14196: An issue has been found in PowerDNS Recursor where the\n> ACL applied to the internal web server via webserver-allow-from is not\n> properly enforced, allowing a remote attacker to send HTTP queries to\n> the internal web server, bypassing the restriction. In the default\n> configuration the API webserver is not enabled. Only installations\n> using a non-default value for webserver and webserver-address are\n> affected.\n",
+    "id": "FreeBSD-2020-0166",
+    "modified": "2020-07-02T00:00:00Z",
+    "published": "2020-07-02T00:00:00Z",
+    "references": [
+        {
+            "type": "REPORT",
+            "url": "https://doc.powerdns.com/recursor/changelog/4.3.html#change-4.3.2"
+        },
+        {
+            "type": "WEB",
+            "url": "https://doc.powerdns.com/recursor/security-advisories/index.html"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2020-14196"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "powerdns-recursor -- access restriction bypass"
+}

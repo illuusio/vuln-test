@@ -1,0 +1,93 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "typo3-8"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "8.7.30"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        },
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "typo3-9"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "9.5.13"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "cite": [
+            "https://typo3.org/article/typo3-10-2-1-9-5-12-and-8-7-30-security-releases-published"
+        ],
+        "discovery": "2019-12-17T00:00:00Z",
+        "vid": "1c9178aa-2709-11ea-9673-4c72b94353b5"
+    },
+    "details": "Typo3 core team reports:\n\n> It has been discovered that the output of field validation errors in\n> the Form Framework is vulnerable to cross-site scripting.\n>\n> It has been discovered that t3:// URL handling and typolink\n> functionality are vulnerable to cross-site scripting. Not only regular\n> backend forms are affected but also frontend extensions which use the\n> rendering with typolink.\n>\n> It has been discovered that the output table listing in the Files\n> backend module is vulnerable to cross-site scripting when a file\n> extension contains malicious sequences. Access to the file system of\n> the server - either directly or through synchronization - is required\n> to exploit the vulnerability.\n>\n> It has been discovered that the extraction of manually uploaded ZIP\n> archives in Extension Manager is vulnerable to directory traversal.\n> Admin privileges are required in order to exploit this vulnerability.\n> Since TYPO3 v9 LTS, System Maintainer privileges are required as well.\n>\n> Failing to properly escape user submitted content, class\n> QueryGenerator is vulnerable to SQL injection. Having system extension\n> ext:lowlevel installed and a valid backend user having administrator\n> privileges are required to exploit this vulnerability.\n>\n> It has been discovered that classes QueryGenerator and QueryView are\n> vulnerable to insecure deserialization. Requirements for successfully\n> exploiting this vulnerability (one of the following): - having system\n> extension ext:lowlevel (Backend Module: DB Check) installed and valid\n> backend user having administrator privileges - having system extension\n> ext:sys_action installed and valid backend user having limited\n> privileges\n>\n> TYPO3 allows to upload files either in the backend user interface as\n> well as in custom developed extensions. To reduce the possibility to\n> upload potential malicious code TYPO3 uses the fileDenyPattern to deny\n> e.g. user submitted PHP scripts from being persisted. Besides that it\n> is possible for any editor to upload file assets using the file module\n> (fileadmin) or changing their avatar image shown in the TYPO3 backend.\n> Per default TYPO3 allows to upload and store HTML and SVG files as\n> well using the mentioned functionalities. Custom extension\n> implementations probably would also accept those files when only the\n> fileDenyPattern is evaluated. Since HTML and SVG files - which might\n> contain executable JavaScript code per W3C standard - could be\n> directly displayed in web clients, the whole web application is\n> exposed to be vulnerable concerning Cross-Site Scripting. Currently\n> the following scenarios are known - given an authenticated regular\n> editor is able to upload files using the TYPO3 backend: - directly\n> target a potential victim to a known public resource in a URL, e.g.\n> /fileadmin/malicious.svg or /fileadmin/malicious.html - using the\n> TypoScript content object \"SVG\" (implemented in class\n> ScalableVectorGraphicsContentObject) having renderMode set to inline\n> for SVG files (available since TYPO3 v9.0) - custom implementations\n> that directly output and render markup of HTML and SVG files SVG files\n> that are embedded using an img src=\"malicious.svg\" tag are not\n> vulnerable since potential scripts are not executed in these scenarios\n> (see https://www.w3.org/wiki/SVG_Security). The icon API of TYPO3 is\n> not scope of this announcement since SVG icons need to be registered\n> using an individual implementation, which is not considered as user\n> submitted content.\n>\n> It has been discovered that request handling in Extbase can be\n> vulnerable to insecure deserialization. User submitted payload has to\n> be signed with a corresponding HMAC-SHA1 using the sensitive TYPO3\n> encryptionKey as secret - invalid or unsigned payload is not\n> deserialized. However, since sensitive information could have been\n> leaked by accident (e.g. in repositories or in commonly known and\n> unprotected backup files), there is the possibility that attackers\n> know the private encryptionKey and are able to calculate the required\n> HMAC-SHA1 to allow a malicious payload to be deserialized.\n> Requirements for successfully exploiting this vulnerability (all of\n> the following): - rendering at least one Extbase plugin in the\n> frontend - encryptionKey has been leaked (from LocalConfiguration.php\n> or corresponding .env file).\n",
+    "id": "FreeBSD-2019-0286",
+    "modified": "2019-12-25T00:00:00Z",
+    "published": "2019-12-25T00:00:00Z",
+    "references": [
+        {
+            "type": "REPORT",
+            "url": "https://typo3.org/article/typo3-10-2-1-9-5-12-and-8-7-30-security-releases-published"
+        },
+        {
+            "type": "WEB",
+            "url": "https://typo3.org/security/advisory/typo3-core-sa-2019-021/"
+        },
+        {
+            "type": "WEB",
+            "url": "https://typo3.org/security/advisory/typo3-core-sa-2019-022/"
+        },
+        {
+            "type": "WEB",
+            "url": "https://typo3.org/security/advisory/typo3-core-sa-2019-023/"
+        },
+        {
+            "type": "WEB",
+            "url": "https://typo3.org/security/advisory/typo3-core-sa-2019-024/"
+        },
+        {
+            "type": "WEB",
+            "url": "https://typo3.org/security/advisory/typo3-core-sa-2019-025/"
+        },
+        {
+            "type": "WEB",
+            "url": "https://typo3.org/security/advisory/typo3-core-sa-2019-026/"
+        },
+        {
+            "type": "WEB",
+            "url": "https://typo3.org/security/advisory/typo3-psa-2019-010/"
+        },
+        {
+            "type": "WEB",
+            "url": "https://typo3.org/security/advisory/typo3-psa-2019-011/"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "typo3 -- multiple vulnerabilities"
+}

@@ -1,0 +1,183 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "krb5"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "1.14.6"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                },
+                {
+                    "events": [
+                        {
+                            "introduced": "1.15"
+                        },
+                        {
+                            "fixed": "1.15.2"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        },
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "krb5-devel"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "1.14.6"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                },
+                {
+                    "events": [
+                        {
+                            "introduced": "1.15"
+                        },
+                        {
+                            "fixed": "1.15.2"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        },
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "krb5-115"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "1.15.2"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        },
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "krb5-114"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "1.14.6"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        },
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "krb5-113"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "1.14.6"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "cite": [
+            "http://krbdev.mit.edu/rt/Ticket/Display.html?id=8599",
+            "http://krbdev.mit.edu/rt/Ticket/Display.html?id=8598"
+        ],
+        "discovery": "2017-07-14T00:00:00Z",
+        "references": {
+            "cvename": [
+                "CVE-2017-11368",
+                "CVE-2017-11462"
+            ]
+        },
+        "vid": "3f3837cc-48fb-4414-aa46-5b1c23c9feae"
+    },
+    "details": "MIT reports:\n\n> CVE-2017-11368:\n>\n> In MIT krb5 1.7 and later, an authenticated attacker can cause an\n> assertion failure in krb5kdc by sending an invalid S4U2Self or\n> S4U2Proxy request.\n\n> CVE-2017-11462:\n>\n> RFC 2744 permits a GSS-API implementation to delete an existing\n> security context on a second or subsequent call to\n> gss_init_sec_context() or gss_accept_sec_context() if the call results\n> in an error. This API behavior has been found to be dangerous, leading\n> to the possibility of memory errors in some callers. For safety,\n> GSS-API implementations should instead preserve existing security\n> contexts on error until the caller deletes them.\n>\n> All versions of MIT krb5 prior to this change may delete acceptor\n> contexts on error. Versions 1.13.4 through 1.13.7, 1.14.1 through\n> 1.14.5, and 1.15 through 1.15.1 may also delete initiator contexts on\n> error.\n",
+    "id": "FreeBSD-2017-0254",
+    "modified": "2017-10-18T00:00:00Z",
+    "published": "2017-10-18T00:00:00Z",
+    "references": [
+        {
+            "type": "REPORT",
+            "url": "http://krbdev.mit.edu/rt/Ticket/Display.html?id=8599"
+        },
+        {
+            "type": "REPORT",
+            "url": "http://krbdev.mit.edu/rt/Ticket/Display.html?id=8598"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://nvd.nist.gov/vuln/detail/CVE-2017-11368"
+        },
+        {
+            "type": "WEB",
+            "url": "https://krbdev.mit.edu/rt/Ticket/Display.html?id=8599"
+        },
+        {
+            "type": "WEB",
+            "url": "https://github.com/krb5/krb5/commit/ffb35baac6981f9e8914f8f3bffd37f284b85970"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://nvd.nist.gov/vuln/detail/CVE-2017-11462"
+        },
+        {
+            "type": "WEB",
+            "url": "https://krbdev.mit.edu/rt/Ticket/Display.html?id=8598"
+        },
+        {
+            "type": "WEB",
+            "url": "https://github.com/krb5/krb5/commit/56f7b1bc95a2a3eeb420e069e7655fb181ade5cf"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2017-11368"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2017-11462"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "krb5 -- Multiple vulnerabilities"
+}

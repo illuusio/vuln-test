@@ -1,0 +1,50 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "phpldapadmin"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "introduced": "1.2.0"
+                        },
+                        {
+                            "fixed": "1.2.1.1_1,1"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "cite": [
+            "http://packetstormsecurity.org/files/106120/phpldapadmin-inject.txt"
+        ],
+        "discovery": "2011-10-23T00:00:00Z",
+        "vid": "edf47177-fe3f-11e0-a207-0014a5e3cda6"
+    },
+    "details": "EgiX (n0b0d13s at gmail dot com) reports:\n\n> The \\$sortby parameter passed to \\'masort\\' function in file\n> lib/functions.php isn\\'t properly sanitized before being used in a\n> call to create_function() at line 1080. This can be exploited to\n> inject and execute arbitrary PHP code. The only possible attack vector\n> is when handling the \\'query_engine\\' command, in which input passed\n> through \\$\\_REQUEST\\[\\'orderby\\'\\] is passed as \\$sortby parameter to\n> \\'masort\\' function.\n",
+    "id": "FreeBSD-2011-0137",
+    "modified": "2011-10-24T00:00:00Z",
+    "published": "2011-10-24T00:00:00Z",
+    "references": [
+        {
+            "type": "REPORT",
+            "url": "http://packetstormsecurity.org/files/106120/phpldapadmin-inject.txt"
+        },
+        {
+            "type": "WEB",
+            "url": "http://packetstormsecurity.org/files/106120/phpldapadmin-inject.txt"
+        },
+        {
+            "type": "WEB",
+            "url": "http://sourceforge.net/tracker/?func=detail&aid=3417184&group_id=61828&atid=498546"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "phpLDAPadmin -- Remote PHP code injection vulnerability"
+}

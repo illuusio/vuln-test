@@ -1,0 +1,113 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "openssh-portable"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "7.0.p1,1"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        },
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "FreeBSD"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "introduced": "10.2"
+                        },
+                        {
+                            "fixed": "10.2_2"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                },
+                {
+                    "events": [
+                        {
+                            "introduced": "10.1"
+                        },
+                        {
+                            "fixed": "10.1_19"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                },
+                {
+                    "events": [
+                        {
+                            "introduced": "9.3"
+                        },
+                        {
+                            "fixed": "9.3_24"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "cite": [
+            "http://www.openssh.com/txt/release-7.0"
+        ],
+        "discovery": "2015-08-11T00:00:00Z",
+        "references": {
+            "cvename": [
+                "CVE-2015-6563",
+                "CVE-2015-6564",
+                "CVE-2015-6565"
+            ],
+            "freebsdsa": [
+                "SA-15:22.openssh"
+            ]
+        },
+        "vid": "2920c449-4850-11e5-825f-c80aa9043978"
+    },
+    "details": "> OpenSSH 6.8 and 6.9 incorrectly set TTYs to be world-writable. Local\n> attackers may be able to write arbitrary messages to logged-in users,\n> including terminal escape sequences. Reported by Nikolay Edigaryev.\n>\n> Fixed a privilege separation weakness related to PAM support.\n> Attackers who could successfully compromise the pre-authentication\n> process for remote code execution and who had valid credentials on the\n> host could impersonate other users.\n>\n> Fixed a use-after-free bug related to PAM support that was reachable\n> by attackers who could compromise the pre-authentication process for\n> remote code execution.\n",
+    "id": "FreeBSD-2015-0263",
+    "modified": "2016-08-09T00:00:00Z",
+    "published": "2015-08-21T00:00:00Z",
+    "references": [
+        {
+            "type": "REPORT",
+            "url": "http://www.openssh.com/txt/release-7.0"
+        },
+        {
+            "type": "WEB",
+            "url": "http://www.openssh.com/txt/release-7.0"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2015-6563"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2015-6564"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2015-6565"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://www.freebsd.org/security/advisories/FreeBSD-SA-15:22.openssh.asc"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "OpenSSH -- PAM vulnerabilities"
+}

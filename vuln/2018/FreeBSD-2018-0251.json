@@ -1,0 +1,66 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "libssh"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "introduced": "0.6"
+                        },
+                        {
+                            "fixed": "0.7.6"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                },
+                {
+                    "events": [
+                        {
+                            "introduced": "0.8"
+                        },
+                        {
+                            "fixed": "0.8.4"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "cite": [
+            "https://www.libssh.org/2018/10/16/libssh-0-8-4-and-0-7-6-security-and-bugfix-release/"
+        ],
+        "discovery": "2018-10-16T00:00:00Z",
+        "references": {
+            "cvename": [
+                "CVE-2018-10933"
+            ]
+        },
+        "vid": "2383767c-d224-11e8-9623-a4badb2f4699"
+    },
+    "details": "gladiac reports:\n\n> libssh versions 0.6 and above have an authentication bypass\n> vulnerability in the server code. By presenting the server an\n> SSH2_MSG_USERAUTH_SUCCESS message in place of the\n> SSH2_MSG_USERAUTH_REQUEST message which the server would expect to\n> initiate authentication, the attacker could successfully authentciate\n> without any credentials.\n",
+    "id": "FreeBSD-2018-0251",
+    "modified": "2018-10-17T00:00:00Z",
+    "published": "2018-10-17T00:00:00Z",
+    "references": [
+        {
+            "type": "REPORT",
+            "url": "https://www.libssh.org/2018/10/16/libssh-0-8-4-and-0-7-6-security-and-bugfix-release/"
+        },
+        {
+            "type": "WEB",
+            "url": "https://www.libssh.org/2018/10/16/libssh-0-8-4-and-0-7-6-security-and-bugfix-release/"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2018-10933"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "libssh -- authentication bypass vulnerability"
+}

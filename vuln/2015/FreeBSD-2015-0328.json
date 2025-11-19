@@ -1,0 +1,60 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "libressl"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "2.2.4"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "cite": [
+            "http://www.openwall.com/lists/oss-security/2015/10/16/1"
+        ],
+        "discovery": "2015-10-15T00:00:00Z",
+        "references": {
+            "cvename": [
+                "CVE-2015-5333",
+                "CVE-2015-5334"
+            ]
+        },
+        "vid": "e75a96df-73ca-11e5-9b45-b499baebfeaf"
+    },
+    "details": "Qualys reports:\n\n> During the code review of OpenSMTPD a memory leak and buffer overflow\n> (an off-by-one, usually stack-based) were discovered in LibreSSL\\'s\n> OBJ_obj2txt() function. This function is called automatically during a\n> TLS handshake (both client-side, unless an anonymous mode is used, and\n> server-side, if client authentication is requested).\n",
+    "id": "FreeBSD-2015-0328",
+    "modified": "2015-10-26T00:00:00Z",
+    "published": "2015-10-16T00:00:00Z",
+    "references": [
+        {
+            "type": "REPORT",
+            "url": "http://www.openwall.com/lists/oss-security/2015/10/16/1"
+        },
+        {
+            "type": "WEB",
+            "url": "http://marc.info/?l=openbsd-announce&m=144495690528446"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2015-5333"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2015-5334"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "LibreSSL -- Memory leak and buffer overflow"
+}

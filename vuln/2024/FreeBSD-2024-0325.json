@@ -1,0 +1,86 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "forgejo"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "9.0.2"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        },
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "forgejo7"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "7.0.11"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "discovery": "2024-12-12T00:00:00Z",
+        "vid": "5ca064a6-bca1-11ef-8926-9b4f2d14eb53"
+    },
+    "details": "# Problem Description:\n\n- It was possible to use a token sent via email for secondary email\n  validation to reset the password instead. In other words, a token sent\n  for a given action (registration, password reset or secondary email\n  validation) could be used to perform a different action. It is no\n  longer possible to use a token for an action that is different from\n  its original purpose.\n- A fork of a public repository would show in the list of forks, even if\n  its owner was not a public user or organization. Such a fork is now\n  hidden from the list of forks of the public repository.\n- The members of an organization team with read access to a repository\n  (e.g. to read issues) but no read access to the code could read the\n  RSS or atom feeds which include the commit activity. Reading the RSS\n  or atom feeds is now denied unless the team has read permissions on\n  the code.\n- The tokens used when replying by email to issues or pull requests were\n  weaker than the rfc2104 recommendations. The tokens are now truncated\n  to 128 bits instead of 80 bits. It is no longer possible to reply to\n  emails sent before the upgrade because the weaker tokens are invalid.\n- A registered user could modify the update frequency of any push mirror\n  (e.g. every 4h instead of every 8h). They are now only able to do that\n  if they have administrative permissions on the repository.\n- It was possible to use basic authorization (i.e. user:password) for\n  requests to the API even when security keys were enrolled for a user.\n  It is no longer possible, an application token must be used instead.\n- Some markup sanitation rules were not as strong as they could be (e.g.\n  allowing emoji somethingelse as well as emoji). The rules are now\n  stricter and do not allow for such cases.\n- When Forgejo is configured to enable instance wide search (e.g. with\n  bleve), results found in the repositories of private or limited users\n  were displayed to anonymous visitors. The results found in private or\n  limited organizations were not displayed. The search results found in\n  the repositories of private or limited user are no longer displayed to\n  anonymous visitors.\n",
+    "id": "FreeBSD-2024-0325",
+    "modified": "2024-12-18T00:00:00Z",
+    "published": "2024-12-17T00:00:00Z",
+    "references": [
+        {
+            "type": "WEB",
+            "url": "https://codeberg.org/forgejo/forgejo/pulls/5974"
+        },
+        {
+            "type": "WEB",
+            "url": "https://codeberg.org/forgejo/forgejo/pulls/5974"
+        },
+        {
+            "type": "WEB",
+            "url": "https://codeberg.org/forgejo/forgejo/pulls/5974"
+        },
+        {
+            "type": "WEB",
+            "url": "https://codeberg.org/forgejo/forgejo/pulls/5974"
+        },
+        {
+            "type": "WEB",
+            "url": "https://codeberg.org/forgejo/forgejo/pulls/5974"
+        },
+        {
+            "type": "WEB",
+            "url": "https://codeberg.org/forgejo/forgejo/pulls/5974"
+        },
+        {
+            "type": "WEB",
+            "url": "https://codeberg.org/forgejo/forgejo/pulls/5974"
+        },
+        {
+            "type": "WEB",
+            "url": "https://codeberg.org/forgejo/forgejo/pulls/5974"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "forgejo -- multiple vulnerabilities"
+}

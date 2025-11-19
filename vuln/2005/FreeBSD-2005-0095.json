@@ -1,0 +1,66 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "ja-uim"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "0.4.6"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "cite": [
+            "http://lists.freedesktop.org/pipermail/uim/2005-February/000996.html"
+        ],
+        "discovery": "2005-02-21T00:00:00Z",
+        "references": {
+            "bid": [
+                "12604"
+            ],
+            "cvename": [
+                "CVE-2005-0503"
+            ]
+        },
+        "vid": "fb03b1c6-8a8a-11d9-81f7-02023f003c9f"
+    },
+    "details": "The uim developers reports:\n\n> Takumi ASAKI discovered that uim always trusts environment variables.\n> But this is not correct behavior, sometimes environment variables\n> shouldn\\'t be trusted. This bug causes privilege escalation when\n> libuim is linked against setuid/setgid application. Since GTK+\n> prohibits setuid/setgid applications, the bug appears only in\n> \\'immodule for Qt\\' enabled Qt. (Normal Qt is also safe.)\n",
+    "id": "FreeBSD-2005-0095",
+    "modified": "2005-03-01T00:00:00Z",
+    "published": "2005-03-01T00:00:00Z",
+    "references": [
+        {
+            "type": "REPORT",
+            "url": "http://lists.freedesktop.org/pipermail/uim/2005-February/000996.html"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2005-0503"
+        },
+        {
+            "type": "DISCUSSION",
+            "url": "http://lists.freedesktop.org/pipermail/uim/2005-February/000996.html"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://www.securityfocus.com/bid/12604/info"
+        },
+        {
+            "type": "WEB",
+            "url": "http://secunia.com/advisories/13981"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "uim -- privilege escalation vulnerability"
+}

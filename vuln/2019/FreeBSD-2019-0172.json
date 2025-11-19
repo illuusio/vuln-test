@@ -1,0 +1,141 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "postgresql11-server"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "11.5"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        },
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "postgresql10-server"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "10.10"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        },
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "postgresql96-server"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "9.6.15"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        },
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "postgresql95-server"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "9.5.19"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        },
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "postgresql94-server"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "9.4.24"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "cite": [
+            "https://www.postgresql.org/about/news/1960/",
+            "https://www.postgresql.org/about/news/1960/"
+        ],
+        "discovery": "2019-08-08T00:00:00Z",
+        "references": {
+            "cvename": [
+                "CVE-2019-10208",
+                "CVE-2019-10209"
+            ]
+        },
+        "vid": "9de4c1c1-b9ee-11e9-82aa-6cc21735f730"
+    },
+    "details": "The PostgreSQL project reports:\n\n> Versions Affected: 9.4 - 11\n>\n> Given a suitable \\`SECURITY DEFINER\\` function, an attacker can\n> execute arbitrary SQL under the identity of the function owner. An\n> attack requires \\`EXECUTE\\` permission on the function, which must\n> itself contain a function call having inexact argument type match. For\n> example, \\`length(\\'foo\\'::varchar)\\` and \\`length(\\'foo\\')\\` are\n> inexact, while \\`length(\\'foo\\'::text)\\` is exact. As part of\n> exploiting this vulnerability, the attacker uses \\`CREATE DOMAIN\\` to\n> create a type in a \\`pg_temp\\` schema. The attack pattern and fix are\n> similar to that for CVE-2007-2138.\n>\n> Writing \\`SECURITY DEFINER\\` functions continues to require following\n> the considerations noted in the documentation:\n>\n> https://www.postgresql.org/docs/devel/sql-createfunction.html#SQL-CREATEFUNCTION-SECURITY\n\n> Versions Affected: 11\n>\n> In a database containing hypothetical, user-defined hash equality\n> operators, an attacker could read arbitrary bytes of server memory.\n> For an attack to become possible, a superuser would need to create\n> unusual operators. It is possible for operators not purpose-crafted\n> for attack to have the properties that enable an attack, but we are\n> not aware of specific examples.\n",
+    "id": "FreeBSD-2019-0172",
+    "modified": "2019-08-08T00:00:00Z",
+    "published": "2019-08-08T00:00:00Z",
+    "references": [
+        {
+            "type": "REPORT",
+            "url": "https://www.postgresql.org/about/news/1960/"
+        },
+        {
+            "type": "REPORT",
+            "url": "https://www.postgresql.org/about/news/1960/"
+        },
+        {
+            "type": "WEB",
+            "url": "https://www.postgresql.org/about/news/1960/"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2019-10208"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2019-10209"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "PostgresSQL -- TYPE in pg_temp execute arbitrary SQL during `SECURITY DEFINER` execution"
+}

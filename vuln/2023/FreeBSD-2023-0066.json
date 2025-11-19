@@ -1,0 +1,96 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "grafana"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "introduced": "9.2.0"
+                        },
+                        {
+                            "fixed": "9.2.10"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                },
+                {
+                    "events": [
+                        {
+                            "introduced": "9.3.0"
+                        },
+                        {
+                            "fixed": "9.3.4"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        },
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "grafana9"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "introduced": "9.2.0"
+                        },
+                        {
+                            "fixed": "9.2.10"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                },
+                {
+                    "events": [
+                        {
+                            "introduced": "9.3.0"
+                        },
+                        {
+                            "fixed": "9.3.4"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "cite": [
+            "https://grafana.com/blog/2023/02/28/grafana-security-release-new-versions-with-security-fixes-for-cve-2023-0594-cve-2023-0507-and-cve-2023-22462/"
+        ],
+        "discovery": "2023-01-01T00:00:00Z",
+        "references": {
+            "cvename": [
+                "CVE-2023-22462"
+            ]
+        },
+        "vid": "6dccc186-b824-11ed-b695-6c3be5272acd"
+    },
+    "details": "Grafana Labs reports:\n\n> During an internal audit of Grafana on January 1, a member of the\n> security team found a stored XSS vulnerability affecting the core text\n> plugin.\n>\n> The stored XSS vulnerability requires several user interactions in\n> order to be fully exploited. The vulnerability was possible due to\n> React's render cycle that will pass through the unsanitized HTML code,\n> but in the next cycle, the HTML is cleaned up and saved in Grafana's\n> database.\n>\n> The CVSS score for this vulnerability is 6.4 Medium\n> (CVSS:6.4/AV:N/AC:H/PR:L/UI:R/S:U/C:H/I:H/A:N).\n",
+    "id": "FreeBSD-2023-0066",
+    "modified": "2023-03-01T00:00:00Z",
+    "published": "2023-03-01T00:00:00Z",
+    "references": [
+        {
+            "type": "REPORT",
+            "url": "https://grafana.com/blog/2023/02/28/grafana-security-release-new-versions-with-security-fixes-for-cve-2023-0594-cve-2023-0507-and-cve-2023-22462/"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2023-22462"
+        },
+        {
+            "type": "WEB",
+            "url": "https://github.com/grafana/grafana/security/advisories/GHSA-7rqg-hjwc-6mjf"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "Grafana -- Stored XSS in text panel plugin"
+}

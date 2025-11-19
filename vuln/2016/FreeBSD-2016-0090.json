@@ -1,0 +1,130 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "py27-pillow"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "2.9.0_1"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        },
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "py33-pillow"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "2.9.0_1"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        },
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "py34-pillow"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "2.9.0_1"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        },
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "py35-pillow"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "2.9.0_1"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        },
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "py27-imaging"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "1.1.7_6"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "cite": [
+            "https://pillow.readthedocs.org/en/3.1.x/releasenotes/3.1.1.html"
+        ],
+        "discovery": "2016-02-02T00:00:00Z",
+        "vid": "a8de962a-cf15-11e5-805c-5453ed2e2b49"
+    },
+    "details": "The Pillow maintainers report:\n\n> In all versions of Pillow, dating back at least to the last PIL 1.1.7\n> release, PcdDecode.c has a buffer overflow error.\n>\n> The state.buffer for PcdDecode.c is allocated based on a 3 bytes per\n> pixel sizing, where PcdDecode.c wrote into the buffer assuming 4 bytes\n> per pixel. This writes 768 bytes beyond the end of the buffer into\n> other Python object storage. In some cases, this causes a segfault, in\n> others an internal Python malloc error.\n",
+    "id": "FreeBSD-2016-0090",
+    "modified": "2016-02-09T00:00:00Z",
+    "published": "2016-02-09T00:00:00Z",
+    "references": [
+        {
+            "type": "REPORT",
+            "url": "https://pillow.readthedocs.org/en/3.1.x/releasenotes/3.1.1.html"
+        },
+        {
+            "type": "DISCUSSION",
+            "url": "http://openwall.com/lists/oss-security/2016/02/02/5"
+        },
+        {
+            "type": "WEB",
+            "url": "https://github.com/python-pillow/Pillow/commit/ae453aa18b66af54e7ff716f4ccb33adca60afd4"
+        },
+        {
+            "type": "WEB",
+            "url": "https://github.com/python-pillow/Pillow/issues/568"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "py-imaging, py-pillow -- Buffer overflow in PCD decoder"
+}

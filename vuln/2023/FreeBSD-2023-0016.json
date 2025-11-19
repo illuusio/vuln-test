@@ -1,0 +1,115 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "rubygem-rack"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "3.0.4.1,3"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        },
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "rubygem-rack22"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "2.2.6.2,3"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        },
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "rubygem-rack16"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "1.6.14"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "cite": [
+            "https://github.com/rack/rack/blob/v3.0.4.1/CHANGELOG.md"
+        ],
+        "discovery": "2023-01-17T00:00:00Z",
+        "references": {
+            "cvename": [
+                "CVE-2022-44570",
+                "CVE-2022-44571",
+                "CVE-2022-44572"
+            ]
+        },
+        "vid": "95176ba5-9796-11ed-bfbf-080027f5fec9"
+    },
+    "details": "Aaron Patterson reports:\n\n> \n>\n> CVE-2022-44570\n> :   Carefully crafted input can cause the Range header parsing\n>     component in Rack to take an unexpected amount of time, possibly\n>     resulting in a denial of service attack vector. Any applications\n>     that deal with Range requests (such as streaming applications, or\n>     applications that serve files) may be impacted.\n>\n> CVE-2022-44571\n> :   Carefully crafted input can cause Content-Disposition header\n>     parsing in Rack to take an unexpected amount of time, possibly\n>     resulting in a denial of service attack vector. This header is\n>     used typically used in multipart parsing. Any applications that\n>     parse multipart posts using Rack (virtually all Rails\n>     applications) are impacted.\n>\n> CVE-2022-44572\n> :   Carefully crafted input can cause RFC2183 multipart boundary\n>     parsing in Rack to take an unexpected amount of time, possibly\n>     resulting in a denial of service attack vector. Any applications\n>     that parse multipart posts using Rack (virtually all Rails\n>     applications) are impacted.\n",
+    "id": "FreeBSD-2023-0016",
+    "modified": "2023-01-19T00:00:00Z",
+    "published": "2023-01-19T00:00:00Z",
+    "references": [
+        {
+            "type": "REPORT",
+            "url": "https://github.com/rack/rack/blob/v3.0.4.1/CHANGELOG.md"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2022-44570"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2022-44571"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2022-44572"
+        },
+        {
+            "type": "WEB",
+            "url": "https://github.com/rack/rack/blob/v3.0.4.1/CHANGELOG.md"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://github.com/advisories/GHSA-65f5-mfpf-vfhj"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://github.com/advisories/GHSA-93pm-5p5f-3ghx"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://github.com/advisories/GHSA-rqv2-275x-2jq5"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "rack -- Multiple vulnerabilities"
+}

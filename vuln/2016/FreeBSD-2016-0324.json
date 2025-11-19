@@ -1,0 +1,95 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "FreeBSD"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "introduced": "10.0"
+                        },
+                        {
+                            "fixed": "10.0_12"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                },
+                {
+                    "events": [
+                        {
+                            "introduced": "9.3"
+                        },
+                        {
+                            "fixed": "9.3_5"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                },
+                {
+                    "events": [
+                        {
+                            "introduced": "9.2"
+                        },
+                        {
+                            "fixed": "9.2_15"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                },
+                {
+                    "events": [
+                        {
+                            "introduced": "9.1"
+                        },
+                        {
+                            "fixed": "9.1_22"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                },
+                {
+                    "events": [
+                        {
+                            "introduced": "8.4"
+                        },
+                        {
+                            "fixed": "8.4_19"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "discovery": "2014-11-04T00:00:00Z",
+        "references": {
+            "cvename": [
+                "CVE-2014-8517"
+            ],
+            "freebsdsa": [
+                "SA-14:26.ftp"
+            ]
+        },
+        "vid": "7488378d-6007-11e6-a6c3-14dae9d210b8"
+    },
+    "details": "# Problem Description:\n\nA malicious HTTP server could cause ftp(1) to execute arbitrary\ncommands.\n\n# Impact:\n\nWhen operating on HTTP URIs, the ftp(1) client follows HTTP redirects,\nand uses the part of the path after the last \\'/\\' from the last\nresource it accesses as the output filename if \\'-o\\' is not specified.\n\nIf the output file name provided by the server begins with a pipe\n(\\'\\|\\'), the output is passed to popen(3), which might be used to\nexecute arbitrary commands on the ftp(1) client machine.\n",
+    "id": "FreeBSD-2016-0324",
+    "modified": "2016-08-11T00:00:00Z",
+    "published": "2016-08-11T00:00:00Z",
+    "references": [
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2014-8517"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://www.freebsd.org/security/advisories/FreeBSD-SA-14:26.ftp.asc"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "FreeBSD -- Remote command execution in ftp(1)"
+}

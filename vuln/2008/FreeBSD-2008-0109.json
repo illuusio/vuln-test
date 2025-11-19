@@ -1,0 +1,65 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "squirrelmail"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "last_affected": "1.4.15_1"
+                        },
+                        {
+                            "fixed": "1.4.15_1"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "cite": [
+            "http://seclists.org/bugtraq/2008/Sep/0239.html"
+        ],
+        "discovery": "2008-08-12T00:00:00Z",
+        "references": {
+            "bid": [
+                "31321"
+            ],
+            "cvename": [
+                "CVE-2008-3663"
+            ]
+        },
+        "vid": "a0afb4b9-89a1-11dd-a65b-00163e000016"
+    },
+    "details": "Hanno Boeck reports:\n\n> When configuring a web application to use only ssl (e.g. by forwarding\n> all http-requests to https), a user would expect that sniffing and\n> hijacking the session is impossible.\n>\n> Though, for this to be secure, one needs to set the session cookie to\n> have the secure flag. Otherwise the cookie will be transferred through\n> HTTP if the victim\\'s browser does a single HTTP request on the same\n> domain.\n>\n> Squirrelmail does not set that flag. It is fixed in the 1.5 test\n> versions, but current 1.4.15 is vulnerable.\n",
+    "id": "FreeBSD-2008-0109",
+    "modified": "2008-09-23T00:00:00Z",
+    "published": "2008-09-23T00:00:00Z",
+    "references": [
+        {
+            "type": "REPORT",
+            "url": "http://seclists.org/bugtraq/2008/Sep/0239.html"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://www.securityfocus.com/bid/31321/info"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2008-3663"
+        },
+        {
+            "type": "DISCUSSION",
+            "url": "http://seclists.org/bugtraq/2008/Sep/0239.html"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "squirrelmail -- Session hijacking vulnerability"
+}

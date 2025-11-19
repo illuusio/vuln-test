@@ -1,0 +1,120 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "qemu"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "2.5.0"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        },
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "qemu-devel"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "2.5.0"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        },
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "qemu-sbruno"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "2.5.50.g20151224"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        },
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "qemu-user-static"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "2.5.50.g20151224"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "cite": [
+            "http://www.openwall.com/lists/oss-security/2015/12/08/4"
+        ],
+        "discovery": "2015-12-08T00:00:00Z",
+        "references": {
+            "cvename": [
+                "CVE-2015-8504"
+            ]
+        },
+        "vid": "67feba97-b1b5-11e5-9728-002590263bf5"
+    },
+    "details": "Prasad J Pandit, Red Hat Product Security Team, reports:\n\n> Qemu emulator built with the VNC display driver support is vulnerable\n> to an arithmetic exception flaw. It occurs on the VNC server side\n> while processing the \\'SetPixelFormat\\' messages from a client.\n>\n> A privileged remote client could use this flaw to crash the guest\n> resulting in DoS.\n",
+    "id": "FreeBSD-2016-0012",
+    "modified": "2016-01-03T00:00:00Z",
+    "published": "2016-01-03T00:00:00Z",
+    "references": [
+        {
+            "type": "REPORT",
+            "url": "http://www.openwall.com/lists/oss-security/2015/12/08/4"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2015-8504"
+        },
+        {
+            "type": "WEB",
+            "url": "http://www.openwall.com/lists/oss-security/2015/12/08/4"
+        },
+        {
+            "type": "WEB",
+            "url": "http://git.qemu.org/?p=qemu.git;a=commitdiff;h=4c65fed8bdf96780735dbdb92a8bd0d6b6526cc3"
+        },
+        {
+            "type": "WEB",
+            "url": "https://github.com/seanbruno/qemu-bsd-user/commit/4c65fed8bdf96780735dbdb92a8bd0d6b6526cc3"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "qemu -- denial of service vulnerability in VNC"
+}

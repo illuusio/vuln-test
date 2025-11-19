@@ -1,0 +1,74 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "webmin"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "1.930"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        },
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "usermin"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "1.780"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "cite": [
+            "https://virtualmin.com/node/66890"
+        ],
+        "discovery": "2019-08-17T00:00:00Z",
+        "references": {
+            "cvename": [
+                "CVE-2019-15107"
+            ]
+        },
+        "vid": "ece65d3b-c20c-11e9-8af4-bcaec55be5e5"
+    },
+    "details": "Joe Cooper reports:\n\n> I\\'ve rolled out Webmin version 1.930 and Usermin version 1.780 for\n> all repositories. This release includes several security fixes,\n> including one potentially serious one caused by malicious code\n> inserted into Webmin and Usermin at some point on our build\n> infrastructure. We\\'re still investigating how and when, but the\n> exploitable code has never existed in our github repositories, so\n> we\\'ve rebuilt from git source on new infrastructure (and checked to\n> be sure the result does not contain the malicious code).\n>\n> I don\\'t have a changelog for these releases yet, but I wanted to\n> announce them immediately due to the severity of this issue. To\n> exploit the malicious code, your Webmin installation must have Webmin\n> -\\> Webmin Configuration -\\> Authentication -\\> Password expiry policy\n> set to Prompt users with expired passwords to enter a new one. This\n> option is not set by default, but if it is set, it allows remote code\n> execution.\n>\n> This release addresses CVE-2019-15107, which was disclosed earlier\n> today. It also addresses a handful of XSS issues that we were notified\n> about, and a bounty was awarded to the researcher (a different one)\n> who found them.\n",
+    "id": "FreeBSD-2019-0186",
+    "modified": "2019-08-17T00:00:00Z",
+    "published": "2019-08-17T00:00:00Z",
+    "references": [
+        {
+            "type": "REPORT",
+            "url": "https://virtualmin.com/node/66890"
+        },
+        {
+            "type": "WEB",
+            "url": "https://virtualmin.com/node/66890"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2019-15107"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "webmin -- unauthenticated remote code execution"
+}

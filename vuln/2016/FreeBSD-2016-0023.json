@@ -1,0 +1,67 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "unzip"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "6.0_7"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "cite": [
+            "http://www.openwall.com/lists/oss-security/2015/09/07/4"
+        ],
+        "discovery": "2015-09-26T00:00:00Z",
+        "references": {
+            "cvename": [
+                "CVE-2015-7696",
+                "CVE-2015-7697"
+            ],
+            "freebsdpr": [
+                "ports/204413"
+            ]
+        },
+        "vid": "86c3c66e-b2f5-11e5-863a-b499baebfeaf"
+    },
+    "details": "Gustavo Grieco reports:\n\n> Two issues were found in unzip 6.0:\n>\n> \\* A heap overflow triggered by unzipping a file with password (e.g\n> unzip -p -P x sigsegv.zip).\n>\n> \\* A denegation of service with a file that never finishes unzipping\n> (e.g. unzip sigxcpu.zip).\n",
+    "id": "FreeBSD-2016-0023",
+    "modified": "2016-01-04T00:00:00Z",
+    "published": "2016-01-04T00:00:00Z",
+    "references": [
+        {
+            "type": "REPORT",
+            "url": "http://www.openwall.com/lists/oss-security/2015/09/07/4"
+        },
+        {
+            "type": "WEB",
+            "url": "http://www.openwall.com/lists/oss-security/2015/09/07/4"
+        },
+        {
+            "type": "REPORT",
+            "url": "https://bugs.freebsd.org/bugzilla/show_bug.cgi?id=204413"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2015-7696"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2015-7697"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "unzip -- multiple vulnerabilities"
+}

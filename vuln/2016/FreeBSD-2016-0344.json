@@ -1,0 +1,73 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:kernel",
+                "name": "FreeBSD-kernel"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "introduced": "10.2"
+                        },
+                        {
+                            "fixed": "10.2_11"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                },
+                {
+                    "events": [
+                        {
+                            "introduced": "10.1"
+                        },
+                        {
+                            "fixed": "10.1_28"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                },
+                {
+                    "events": [
+                        {
+                            "introduced": "9.3"
+                        },
+                        {
+                            "fixed": "9.3_35"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "discovery": "2016-01-27T00:00:00Z",
+        "references": {
+            "cvename": [
+                "CVE-2016-1883"
+            ],
+            "freebsdsa": [
+                "SA-16:10.linux"
+            ]
+        },
+        "vid": "7ac28df1-600a-11e6-a6c3-14dae9d210b8"
+    },
+    "details": "# Problem Description:\n\nA programming error in the Linux compatibility layer could cause the\nissetugid(2) system call to return incorrect information.\n\n# Impact:\n\nIf an application relies on output of the issetugid(2) system call and\nthat information is incorrect, this could lead to a privilege\nescalation.\n",
+    "id": "FreeBSD-2016-0344",
+    "modified": "2016-08-11T00:00:00Z",
+    "published": "2016-08-11T00:00:00Z",
+    "references": [
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2016-1883"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://www.freebsd.org/security/advisories/FreeBSD-SA-16:10.linux.asc"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "FreeBSD -- Linux compatibility layer issetugid(2) system call"
+}

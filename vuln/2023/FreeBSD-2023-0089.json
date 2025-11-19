@@ -1,0 +1,117 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "openssl"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "1.1.1t,1_2"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        },
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "openssl30"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "3.0.8_2"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        },
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "openssl31"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "3.1.0_2"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        },
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "openssl-quic"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "3.0.8_2"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "cite": [
+            "https://www.openssl.org/news/secadv/20230328.txt"
+        ],
+        "discovery": "2023-03-28T00:00:00Z",
+        "references": {
+            "cvename": [
+                "CVE-2023-0465",
+                "CVE-2023-0466"
+            ]
+        },
+        "vid": "425b9538-ce5f-11ed-ade3-d4c9ef517024"
+    },
+    "details": "The OpenSSL project reports:\n\n> Severity: low\n>\n> Applications that use a non-default option when verifying certificates\n> may be vulnerable to an attack from a malicious CA to circumvent\n> certain checks.\n>\n> The function X509_VERIFY_PARAM_add0_policy() is documented to\n> implicitly enable the certificate policy check when doing certificate\n> verification. However the implementation of the function does not\n> enable the check which allows certificates with invalid or incorrect\n> policies to pass the certificate verification.\n",
+    "id": "FreeBSD-2023-0089",
+    "modified": "2023-03-29T00:00:00Z",
+    "published": "2023-03-29T00:00:00Z",
+    "references": [
+        {
+            "type": "REPORT",
+            "url": "https://www.openssl.org/news/secadv/20230328.txt"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2023-0465"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2023-0466"
+        },
+        {
+            "type": "WEB",
+            "url": "https://www.openssl.org/news/secadv/20230328.txt"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "OpenSSL -- Multiple vulnerabilities"
+}

@@ -1,0 +1,76 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "dovecot"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "introduced": "2.0,1"
+                        },
+                        {
+                            "last_affected": "2.2.33.2_3"
+                        },
+                        {
+                            "fixed": "2.2.33.2_3"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                },
+                {
+                    "events": [
+                        {
+                            "introduced": "2.3"
+                        },
+                        {
+                            "last_affected": "2.3.0"
+                        },
+                        {
+                            "fixed": "2.3.0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "cite": [
+            "https://bugzilla.redhat.com/show_bug.cgi?id=1532768"
+        ],
+        "discovery": "2018-01-09T00:00:00Z",
+        "references": {
+            "cvename": [
+                "CVE-2017-15132"
+            ]
+        },
+        "vid": "92b8b284-a3a2-41b1-956c-f9cf8b74f500"
+    },
+    "details": "Pedro Sampaio reports:\n\n> A flaw was found in dovecot 2.0 up to 2.2.33 and 2.3.0. A abort of\n> SASL authentication results in a memory leak in Dovecot auth client\n> used by login processes. The leak has impact in high performance\n> configuration where same login processes are reused and can cause the\n> process to crash due to memory exhaustion.\n",
+    "id": "FreeBSD-2018-0019",
+    "modified": "2018-02-01T00:00:00Z",
+    "published": "2018-01-26T00:00:00Z",
+    "references": [
+        {
+            "type": "REPORT",
+            "url": "https://bugzilla.redhat.com/show_bug.cgi?id=1532768"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2017-15132"
+        },
+        {
+            "type": "REPORT",
+            "url": "https://bugzilla.redhat.com/show_bug.cgi?id=1532768"
+        },
+        {
+            "type": "WEB",
+            "url": "https://github.com/dovecot/core/commit/1a29ed2f96da1be22fa5a4d96c7583aa81b8b060.patch"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "dovecot -- abort of SASL authentication results in a memory leak"
+}

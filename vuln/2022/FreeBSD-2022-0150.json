@@ -1,0 +1,55 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "rsync"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "3.2.5"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "cite": [
+            "https://www.openwall.com/lists/oss-security/2022/08/02/1"
+        ],
+        "discovery": "2022-08-02T00:00:00Z",
+        "references": {
+            "cvename": [
+                "CVE-2022-29154"
+            ]
+        },
+        "vid": "21f43976-1887-11ed-9911-40b034429ecf"
+    },
+    "details": "Openwall oss-security reports:\n\n> We have discovered a critical arbitrary file write vulnerability in\n> the rsync utility that allows malicious remote servers to write\n> arbitrary files inside the directories of connecting peers. The server\n> chooses which files/directories are sent to the client. Due to the\n> insufficient controls inside the do_server_recv function a malicious\n> rysnc server (or Man-in-The-Middle attacker) can overwrite arbitrary\n> files in the rsync client target directory and subdirectories.\n",
+    "id": "FreeBSD-2022-0150",
+    "modified": "2022-08-10T00:00:00Z",
+    "published": "2022-08-10T00:00:00Z",
+    "references": [
+        {
+            "type": "REPORT",
+            "url": "https://www.openwall.com/lists/oss-security/2022/08/02/1"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2022-29154"
+        },
+        {
+            "type": "WEB",
+            "url": "https://www.openwall.com/lists/oss-security/2022/08/02/1"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "rsync -- client-side arbitrary file write vulnerability"
+}

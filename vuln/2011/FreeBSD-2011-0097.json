@@ -1,0 +1,55 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "rsync"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "introduced": "3.0,1"
+                        },
+                        {
+                            "fixed": "3.0.8"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "cite": [
+            "http://rsync.samba.org/ftp/rsync/src/rsync-3.0.8-NEWS"
+        ],
+        "discovery": "2011-04-08T00:00:00Z",
+        "references": {
+            "cvename": [
+                "CVE-2011-1097"
+            ]
+        },
+        "vid": "9a777c23-b310-11e0-832d-00215c6a37bb"
+    },
+    "details": "rsync development team reports:\n\n> Fixed a data-corruption issue when preserving hard-links without\n> preserving file ownership, and doing deletions either before or during\n> the transfer (CVE-2011-1097). This fixes some assert errors in the\n> hard-linking code, and some potential failed checksums (via -c) that\n> should have matched.\n",
+    "id": "FreeBSD-2011-0097",
+    "modified": "2011-07-20T00:00:00Z",
+    "published": "2011-07-20T00:00:00Z",
+    "references": [
+        {
+            "type": "REPORT",
+            "url": "http://rsync.samba.org/ftp/rsync/src/rsync-3.0.8-NEWS"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2011-1097"
+        },
+        {
+            "type": "WEB",
+            "url": "https://bugzilla.samba.org/show_bug.cgi?id=7936"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "rsync -- incremental recursion memory corruption vulnerability"
+}

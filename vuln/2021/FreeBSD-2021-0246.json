@@ -1,0 +1,147 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "redis-devel"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "7.0.0.20211005"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        },
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "redis"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "6.2.6"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        },
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "redis6"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "6.0.16"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        },
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "redis5"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "5.0.14"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "cite": [
+            "https://groups.google.com/g/redis-db/c/GS_9L2KCk9g/m/Q7ZN1R1cDAAJ"
+        ],
+        "discovery": "2021-10-04T00:00:00Z",
+        "references": {
+            "cvename": [
+                "CVE-2021-41099",
+                "CVE-2021-32762",
+                "CVE-2021-32687",
+                "CVE-2021-32675",
+                "CVE-2021-32672",
+                "CVE-2021-32628",
+                "CVE-2021-32627",
+                "CVE-2021-32626"
+            ]
+        },
+        "vid": "9b4806c1-257f-11ec-9db5-0800270512f4"
+    },
+    "details": "The Redis Team reports:\n\n> \n>\n> CVE-2021-41099\n> :   Integer to heap buffer overflow handling certain string commands\n>     and network payloads, when proto-max-bulk-len is manually\n>     configured.\n>\n> CVE-2021-32762\n> :   Integer to heap buffer overflow issue in redis-cli and\n>     redis-sentinel parsing large multi-bulk replies on some older and\n>     less common platforms.\n>\n> CVE-2021-32687\n> :   Integer to heap buffer overflow with intsets, when\n>     set-max-intset-entries is manually configured to a non-default,\n>     very large value.\n>\n> CVE-2021-32675\n> :   Denial Of Service when processing RESP request payloads with a\n>     large number of elements on many connections.\n>\n> CVE-2021-32672\n> :   Random heap reading issue with Lua Debugger.\n>\n> CVE-2021-32628\n> :   Integer to heap buffer overflow handling ziplist-encoded data\n>     types, when configuring a large, non-default value for\n>     hash-max-ziplist-entries, hash-max-ziplist-value,\n>     zset-max-ziplist-entries or zset-max-ziplist-value.\n>\n> CVE-2021-32627\n> :   Integer to heap buffer overflow issue with streams, when\n>     configuring a non-default, large value for proto-max-bulk-len and\n>     client-query-buffer-limit.\n>\n> CVE-2021-32626\n> :   Specially crafted Lua scripts may result with Heap buffer\n>     overflow.\n",
+    "id": "FreeBSD-2021-0246",
+    "modified": "2021-10-05T00:00:00Z",
+    "published": "2021-10-05T00:00:00Z",
+    "references": [
+        {
+            "type": "REPORT",
+            "url": "https://groups.google.com/g/redis-db/c/GS_9L2KCk9g/m/Q7ZN1R1cDAAJ"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2021-41099"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2021-32762"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2021-32687"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2021-32675"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2021-32672"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2021-32628"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2021-32627"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2021-32626"
+        },
+        {
+            "type": "WEB",
+            "url": "https://groups.google.com/g/redis-db/c/GS_9L2KCk9g"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "redis -- multiple vulnerabilities"
+}

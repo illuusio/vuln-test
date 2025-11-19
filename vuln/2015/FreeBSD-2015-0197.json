@@ -1,0 +1,55 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "xen-kernel"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "introduced": "3.1"
+                        },
+                        {
+                            "fixed": "4.5.0_3"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "cite": [
+            "http://xenbits.xen.org/xsa/advisory-136.html"
+        ],
+        "discovery": "2015-06-11T00:00:00Z",
+        "references": {
+            "cvename": [
+                "CVE-2015-4164"
+            ]
+        },
+        "vid": "8c31b288-27ec-11e5-a4a5-002590263bf5"
+    },
+    "details": "The Xen Project reports:\n\n> A buggy loop in Xen\\'s compat_iret() function iterates the wrong way\n> around a 32-bit index. Any 32-bit PV guest kernel can trigger this\n> vulnerability by attempting a hypercall_iret with EFLAGS.VM set.\n>\n> Given the use of \\_\\_get/put_user(), and that the virtual addresses in\n> question are contained within the lower canonical half, the guest\n> cannot clobber any hypervisor data. Instead, Xen will take up to 2\\^33\n> pagefaults, in sequence, effectively hanging the host.\n>\n> Malicious guest administrators can cause a denial of service affecting\n> the whole system.\n",
+    "id": "FreeBSD-2015-0197",
+    "modified": "2015-07-11T00:00:00Z",
+    "published": "2015-07-11T00:00:00Z",
+    "references": [
+        {
+            "type": "REPORT",
+            "url": "http://xenbits.xen.org/xsa/advisory-136.html"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2015-4164"
+        },
+        {
+            "type": "WEB",
+            "url": "http://xenbits.xen.org/xsa/advisory-136.html"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "xen-kernel -- vulnerability in the iret hypercall handler"
+}

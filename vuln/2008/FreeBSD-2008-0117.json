@@ -1,0 +1,96 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "drupal5"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "5.11"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        },
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "drupal6"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "6.5"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "cite": [
+            "http://drupal.org/node/318706"
+        ],
+        "discovery": "2008-10-08T00:00:00Z",
+        "references": {
+            "cvename": [
+                "CVE-2008-4791",
+                "CVE-2008-4792",
+                "CVE-2008-4793"
+            ]
+        },
+        "vid": "12efc567-9879-11dd-a5e7-0030843d3802"
+    },
+    "details": "The Drupal Project reports:\n\n> A logic error in the core upload module validation allowed\n> unprivileged users to attach files to content. Users can view files\n> attached to content which they do not otherwise have access to. If the\n> core upload module is not enabled, your site will not be affected.\n>\n> A deficiency in the user module allowed users who had been blocked by\n> access rules to continue logging into the site under certain\n> conditions. If you do not use the \\'access rules\\' functionality in\n> core, your site will not be affected.\n>\n> The BlogAPI module does not implement correct validation for certain\n> content fields, allowing for values to be set for fields which would\n> otherwise be inaccessible on an internal Drupal form. We have hardened\n> these checks in BlogAPI module for this release, but the security team\n> would like to re-iterate that the \\'Administer content with BlogAPI\\'\n> permission should only be given to trusted users. If the core BlogAPI\n> module is not enabled, your site will not be affected.\n>\n> A weakness in the node module API allowed for node validation to be\n> bypassed in certain circumstances for contributed modules implementing\n> the API. Additional checks have been added to ensure that validation\n> is performed in all cases. This vulnerability only affects sites using\n> one of a very small number of contributed modules, all of which will\n> continue to work correctly with the improved API. None of them were\n> found vulnerable, so our correction is a preventative measure.\n",
+    "id": "FreeBSD-2008-0117",
+    "modified": "2010-05-12T00:00:00Z",
+    "published": "2008-10-12T00:00:00Z",
+    "references": [
+        {
+            "type": "REPORT",
+            "url": "http://drupal.org/node/318706"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2008-4791"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2008-4792"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2008-4793"
+        },
+        {
+            "type": "WEB",
+            "url": "http://drupal.org/node/318706"
+        },
+        {
+            "type": "WEB",
+            "url": "http://secunia.com/advisories/32200/"
+        },
+        {
+            "type": "WEB",
+            "url": "http://secunia.com/advisories/32201/"
+        },
+        {
+            "type": "WEB",
+            "url": "http://secunia.com/advisories/32198/"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "drupal -- multiple vulnerabilities"
+}

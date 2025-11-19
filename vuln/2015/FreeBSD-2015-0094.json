@@ -1,0 +1,178 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "qemu"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "0.11.1_19"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                },
+                {
+                    "events": [
+                        {
+                            "introduced": "0.12"
+                        },
+                        {
+                            "fixed": "2.3.0_1"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        },
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "qemu-devel"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "0.11.1_19"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                },
+                {
+                    "events": [
+                        {
+                            "introduced": "0.12"
+                        },
+                        {
+                            "fixed": "2.3.0_1"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        },
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "qemu-sbruno"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "2.3.50.g20150501_1"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        },
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "virtualbox-ose"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "4.3.28"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        },
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "xen-tools"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "introduced": "4.5.0"
+                        },
+                        {
+                            "fixed": "4.5.0_5"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "cite": [
+            "http://venom.crowdstrike.com/"
+        ],
+        "discovery": "2015-04-29T00:00:00Z",
+        "references": {
+            "cvename": [
+                "CVE-2015-3456"
+            ],
+            "freebsdpr": [
+                "ports/200255",
+                "ports/200256",
+                "ports/200257"
+            ]
+        },
+        "vid": "2780e442-fc59-11e4-b18b-6805ca1d3bb1"
+    },
+    "details": "Jason Geffner, CrowdStrike Senior Security Researcher reports:\n\n> VENOM, CVE-2015-3456, is a security vulnerability in the virtual\n> floppy drive code used by many computer virtualization platforms. This\n> vulnerability may allow an attacker to escape from the confines of an\n> affected virtual machine (VM) guest and potentially obtain\n> code-execution access to the host. Absent mitigation, this VM escape\n> could open access to the host system and all other VMs running on that\n> host, potentially giving adversaries significant elevated access to\n> the host\\'s local network and adjacent systems.\n",
+    "id": "FreeBSD-2015-0094",
+    "modified": "2015-09-28T00:00:00Z",
+    "published": "2015-05-17T00:00:00Z",
+    "references": [
+        {
+            "type": "REPORT",
+            "url": "http://venom.crowdstrike.com/"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2015-3456"
+        },
+        {
+            "type": "REPORT",
+            "url": "https://bugs.freebsd.org/bugzilla/show_bug.cgi?id=200255"
+        },
+        {
+            "type": "REPORT",
+            "url": "https://bugs.freebsd.org/bugzilla/show_bug.cgi?id=200256"
+        },
+        {
+            "type": "REPORT",
+            "url": "https://bugs.freebsd.org/bugzilla/show_bug.cgi?id=200257"
+        },
+        {
+            "type": "WEB",
+            "url": "http://venom.crowdstrike.com/"
+        },
+        {
+            "type": "WEB",
+            "url": "http://www.oracle.com/technetwork/topics/security/alert-cve-2015-3456-2542656.html"
+        },
+        {
+            "type": "WEB",
+            "url": "http://xenbits.xen.org/xsa/advisory-133.html"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "qemu, xen and VirtualBox OSE -- possible VM escape and code execution (\"VENOM\")"
+}

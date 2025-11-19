@@ -1,0 +1,59 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "libssh"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "0.6.3"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "cite": [
+            "http://www.openwall.com/lists/oss-security/2014/03/05/1"
+        ],
+        "discovery": "2014-03-05T00:00:00Z",
+        "references": {
+            "cvename": [
+                "CVE-2014-0017"
+            ]
+        },
+        "vid": "f8c88d50-5fb3-11e4-81bd-5453ed2e2b49"
+    },
+    "details": "Aris Adamantiadis reports:\n\n> When accepting a new connection, the server forks and the child\n> process handles the request. The RAND_bytes() function of openssl\n> doesn\\'t reset its state after the fork, but simply adds the current\n> process id (getpid) to the PRNG state, which is not guaranteed to be\n> unique.\n",
+    "id": "FreeBSD-2014-0134",
+    "modified": "2014-10-29T00:00:00Z",
+    "published": "2014-10-29T00:00:00Z",
+    "references": [
+        {
+            "type": "REPORT",
+            "url": "http://www.openwall.com/lists/oss-security/2014/03/05/1"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2014-0017"
+        },
+        {
+            "type": "DISCUSSION",
+            "url": "http://www.openwall.com/lists/oss-security/2014/03/05/1"
+        },
+        {
+            "type": "WEB",
+            "url": "http://secunia.com/advisories/57407"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "libssh -- PRNG state reuse on forking servers"
+}

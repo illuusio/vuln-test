@@ -1,0 +1,94 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "ZendFramework"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "1.11.13"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        },
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "magento"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "1.7.0.2"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "cite": [
+            "http://framework.zend.com/security/advisory/ZF2012-01"
+        ],
+        "discovery": "2012-06-26T00:00:00Z",
+        "references": {
+            "cvename": [
+                "CVE-2012-3363"
+            ]
+        },
+        "vid": "ec34d0c2-1799-11e2-b4ab-000c29033c32"
+    },
+    "details": "The Zend Framework team reports:\n\n> The XmlRpc package of Zend Framework is vulnerable to XML eXternal\n> Entity Injection attacks (both server and client). The\n> SimpleXMLElement class (SimpleXML PHP extension) is used in an\n> insecure way to parse XML data. External entities can be specified by\n> adding a specific DOCTYPE element to XML-RPC requests. By exploiting\n> this vulnerability an application may be coerced to open arbitrary\n> files and/or TCP connections.\n>\n> Additionally, the Zend_Dom, Zend_Feed, Zend_Soap, and Zend_XmlRpc\n> components are vulnerable to XML Entity Expansion (XEE) vectors,\n> leading to Denial of Service vectors. XEE attacks occur when the XML\n> DOCTYPE declaration includes XML entity definitions that contain\n> either recursive or circular references; this leads to CPU and memory\n> consumption, making Denial of Service exploits trivial to implement.\n",
+    "id": "FreeBSD-2012-0188",
+    "modified": "2015-10-14T00:00:00Z",
+    "published": "2012-10-16T00:00:00Z",
+    "references": [
+        {
+            "type": "REPORT",
+            "url": "http://framework.zend.com/security/advisory/ZF2012-01"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2012-3363"
+        },
+        {
+            "type": "WEB",
+            "url": "https://www.sec-consult.com/files/20120626-0_zend_framework_xxe_injection.txt"
+        },
+        {
+            "type": "WEB",
+            "url": "http://framework.zend.com/security/advisory/ZF2012-01"
+        },
+        {
+            "type": "WEB",
+            "url": "http://framework.zend.com/security/advisory/ZF2012-02"
+        },
+        {
+            "type": "WEB",
+            "url": "http://www.openwall.com/lists/oss-security/2012/06/26/2"
+        },
+        {
+            "type": "WEB",
+            "url": "https://secunia.com/advisories/49665/"
+        },
+        {
+            "type": "WEB",
+            "url": "http://www.magentocommerce.com/download/release_notes"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "Zend Framework -- Multiple vulnerabilities via XXE injection"
+}

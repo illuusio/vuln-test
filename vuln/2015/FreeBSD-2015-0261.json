@@ -1,0 +1,50 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "tarsnap"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "1.0.36"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "cite": [
+            "http://mail.tarsnap.com/tarsnap-announce/msg00032.html"
+        ],
+        "discovery": "2015-08-21T00:00:00Z",
+        "vid": "2fe40238-480f-11e5-adde-14dae9d210b8"
+    },
+    "details": "Colin Percival reports:\n\n> 1\\. SECURITY FIX: When constructing paths of objects being archived, a\n> buffer could overflow by one byte upon encountering 1024, 2048, 4096,\n> etc. byte paths. Theoretically this could be exploited by an\n> unprivileged user whose files are being archived; I do not believe it\n> is exploitable in practice, but I am offering a \\$1000 bounty for the\n> first person who can prove me wrong:\n> http://www.daemonology.net/blog/2015-08-21-tarsnap-1000-exploit-bounty.html\n>\n> 2\\. SECURITY FIX: An attacker with a machine\\'s write keys, or with\n> read keys and control of the tarsnap service, could make tarsnap\n> allocate a large amount of memory upon listing archives or reading an\n> archive the attacker created; on 32-bit machines, tarsnap can be\n> caused to crash under the aforementioned conditions.\n",
+    "id": "FreeBSD-2015-0261",
+    "modified": "2015-08-21T00:00:00Z",
+    "published": "2015-08-21T00:00:00Z",
+    "references": [
+        {
+            "type": "REPORT",
+            "url": "http://mail.tarsnap.com/tarsnap-announce/msg00032.html"
+        },
+        {
+            "type": "WEB",
+            "url": "http://mail.tarsnap.com/tarsnap-announce/msg00032.html"
+        },
+        {
+            "type": "WEB",
+            "url": "http://www.daemonology.net/blog/2015-08-21-tarsnap-1000-exploit-bounty.html"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "tarsnap -- buffer overflow and local DoS"
+}

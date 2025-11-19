@@ -1,0 +1,55 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "exim"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "introduced": "4.70"
+                        },
+                        {
+                            "fixed": "4.80.1"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "cite": [
+            "https://lists.exim.org/lurker/message/20121026.080330.74b9147b.en.html"
+        ],
+        "discovery": "2012-10-25T00:00:00Z",
+        "references": {
+            "cvename": [
+                "CVE-2012-5671"
+            ]
+        },
+        "vid": "b0f3ab1f-1f3b-11e2-8fe9-0022156e8794"
+    },
+    "details": "This vulnerability affects Exim instances built with DKIM enabled (this\nis the default for FreeBSD Exim port) and running verification of DKIM\nsignatures on the incoming mail messages.\n\nPhil Penncock reports:\n\n> This is a SECURITY release, addressing a CRITICAL remote code\n> execution flaw in versions of Exim between 4.70 and 4.80 inclusive,\n> when built with DKIM support (the default).\n>\n> This security vulnerability can be exploited by anyone who can send\n> email from a domain for which they control the DNS.\n>\n> You are not vulnerable if you built Exim with DISABLE_DKIM or if you\n> put this at the start of an ACL plumbed into acl_smtp_connect or\n> acl_smtp_rcpt:\n>\n>     warn control = dkim_disable_verify\n",
+    "id": "FreeBSD-2012-0193",
+    "modified": "2012-10-26T00:00:00Z",
+    "published": "2012-10-26T00:00:00Z",
+    "references": [
+        {
+            "type": "REPORT",
+            "url": "https://lists.exim.org/lurker/message/20121026.080330.74b9147b.en.html"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2012-5671"
+        },
+        {
+            "type": "WEB",
+            "url": "https://lists.exim.org/lurker/message/20121026.080330.74b9147b.en.html"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "Exim -- remote code execution"
+}

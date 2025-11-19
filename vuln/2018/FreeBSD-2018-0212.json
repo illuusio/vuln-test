@@ -1,0 +1,103 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "node"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "10.9.0"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        },
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "node8"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "8.11.4"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        },
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "node6"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "6.14.4"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "cite": [
+            "https://nodejs.org/en/blog/vulnerability/august-2018-security-releases/"
+        ],
+        "discovery": "2018-08-16T00:00:00Z",
+        "references": {
+            "cvename": [
+                "CVE-2018-0732",
+                "CVE-2018-7166",
+                "CVE-2018-12115"
+            ]
+        },
+        "vid": "0904e81f-a89d-11e8-afbb-bc5ff4f77b71"
+    },
+    "details": "Node.js reports:\n\n> # OpenSSL: Client DoS due to large DH parameter\n>\n> This fixes a potential denial of service (DoS) attack against client\n> connections by a malicious server. During a TLS communication\n> handshake, where both client and server agree to use a cipher-suite\n> using DH or DHE (Diffie-Hellman, in both ephemeral and non-ephemeral\n> modes), a malicious server can send a very large prime value to the\n> client. Because this has been unbounded in OpenSSL, the client can be\n> forced to spend an unreasonably long period of time to generate a key,\n> potentially causing a denial of service.\n>\n> # OpenSSL: ECDSA key extraction via local side-channel\n>\n> Attackers with access to observe cache-timing may be able to extract\n> DSA or ECDSA private keys by causing the victim to create several\n> signatures and watching responses. This flaw does not have a CVE due\n> to OpenSSL policy to not assign itself CVEs for local-only\n> vulnerabilities that are more academic than practical. This\n> vulnerability was discovered by Keegan Ryan at NCC Group and impacts\n> many cryptographic libraries including OpenSSL.\n>\n> # Unintentional exposure of uninitialized memory\n>\n> Only Node.js 10 is impacted by this flaw.\n>\n> Node.js TSC member Nikita Skovoroda discovered an argument processing\n> flaw that causes Buffer.alloc() to return uninitialized memory. This\n> method is intended to be safe and only return initialized, or cleared,\n> memory. The third argument specifying encoding can be passed as a\n> number, this is misinterpreted by Buffer\\'s internal \\\"fill\\\" method\n> as the start to a fill operation. This flaw may be abused where\n> Buffer.alloc() arguments are derived from user input to return\n> uncleared memory blocks that may contain sensitive information.\n>\n> # Out of bounds (OOB) write\n>\n> Node.js TSC member Nikita Skovoroda discovered an OOB write in Buffer\n> that can be used to write to memory outside of a Buffer\\'s memory\n> space. This can corrupt unrelated Buffer objects or cause the Node.js\n> process to crash.\n>\n> When used with UCS-2 encoding (recognized by Node.js under the names\n> \\'ucs2\\', \\'ucs-2\\', \\'utf16le\\' and \\'utf-16le\\'), Buffer#write() can\n> be abused to write outside of the bounds of a single Buffer. Writes\n> that start from the second-to-last position of a buffer cause a\n> miscalculation of the maximum length of the input bytes to be written.\n",
+    "id": "FreeBSD-2018-0212",
+    "modified": "2018-08-25T00:00:00Z",
+    "published": "2018-08-25T00:00:00Z",
+    "references": [
+        {
+            "type": "REPORT",
+            "url": "https://nodejs.org/en/blog/vulnerability/august-2018-security-releases/"
+        },
+        {
+            "type": "WEB",
+            "url": "https://nodejs.org/en/blog/vulnerability/august-2018-security-releases/"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2018-0732"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2018-7166"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2018-12115"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "node.js -- multiple vulnerabilities"
+}

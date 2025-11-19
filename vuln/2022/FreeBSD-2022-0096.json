@@ -1,0 +1,102 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "go"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "1.18.1,1"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        },
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "go117"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "1.17.9"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "cite": [
+            "https://github.com/golang/go/issues/51853",
+            "https://github.com/golang/go/issues/52075",
+            "https://github.com/golang/go/issues/51759"
+        ],
+        "discovery": "2022-04-12T00:00:00Z",
+        "references": {
+            "cvename": [
+                "CVE-2022-24675",
+                "CVE-2022-28327",
+                "CVE-2022-27536"
+            ]
+        },
+        "vid": "61bce714-ca0c-11ec-9cfc-10c37b4ac2ea"
+    },
+    "details": "The Go project reports:\n\n> encoding/pem: fix stack overflow in Decode.\n>\n> A large (more than 5 MB) PEM input can cause a stack overflow in\n> Decode, leading the program to crash.\n\n> crypto/elliptic: tolerate all oversized scalars in generic P-256.\n>\n> A crafted scalar input longer than 32 bytes can cause\n> P256().ScalarMult or P256().ScalarBaseMult to panic. Indirect uses\n> through crypto/ecdsa and crypto/tls are unaffected. amd64, arm64,\n> ppc64le, and s390x are unaffected.\n\n> crypto/x509: non-compliant certificates can cause a panic in Verify on\n> macOS in Go 1.18.\n>\n> Verifying certificate chains containing certificates which are not\n> compliant with RFC 5280 causes Certificate.Verify to panic on macOS.\n> These chains can be delivered through TLS and can cause a crypto/tls\n> or net/http client to crash.\n",
+    "id": "FreeBSD-2022-0096",
+    "modified": "2022-05-02T00:00:00Z",
+    "published": "2022-05-02T00:00:00Z",
+    "references": [
+        {
+            "type": "REPORT",
+            "url": "https://github.com/golang/go/issues/51853"
+        },
+        {
+            "type": "REPORT",
+            "url": "https://github.com/golang/go/issues/52075"
+        },
+        {
+            "type": "REPORT",
+            "url": "https://github.com/golang/go/issues/51759"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2022-24675"
+        },
+        {
+            "type": "WEB",
+            "url": "https://github.com/golang/go/issues/51853"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2022-28327"
+        },
+        {
+            "type": "WEB",
+            "url": "https://github.com/golang/go/issues/52075"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2022-27536"
+        },
+        {
+            "type": "WEB",
+            "url": "https://github.com/golang/go/issues/51759"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "go -- multiple vulnerabilities"
+}

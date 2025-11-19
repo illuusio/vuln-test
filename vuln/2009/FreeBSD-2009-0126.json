@@ -1,0 +1,55 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "fetchmail"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "6.3.11"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "cite": [
+            "http://www.fetchmail.info/fetchmail-SA-2009-01.txt"
+        ],
+        "discovery": "2009-08-06T00:00:00Z",
+        "references": {
+            "cvename": [
+                "CVE-2009-2666"
+            ]
+        },
+        "vid": "5179d85c-8683-11de-91b9-0022157515b2"
+    },
+    "details": "Matthias Andree reports:\n\n> Moxie Marlinspike demonstrated in July 2009 that some CAs would sign\n> certificates that contain embedded NUL characters in the Common Name\n> or subjectAltName fields of ITU-T X.509 certificates.\n>\n> Applications that would treat such X.509 strings as NUL-terminated C\n> strings (rather than strings that contain an explicit length field)\n> would only check the part up to and excluding the NUL character, so\n> that certificate names such as www.good.example\\\\0www.bad.example.com\n> would be mistaken as a certificate name for www.good.example.\n> fetchmail also had this design and implementation flaw.\n",
+    "id": "FreeBSD-2009-0126",
+    "modified": "2009-08-13T00:00:00Z",
+    "published": "2009-08-11T00:00:00Z",
+    "references": [
+        {
+            "type": "REPORT",
+            "url": "http://www.fetchmail.info/fetchmail-SA-2009-01.txt"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2009-2666"
+        },
+        {
+            "type": "WEB",
+            "url": "http://www.fetchmail.info/fetchmail-SA-2009-01.txt"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "fetchmail -- improper SSL certificate subject verification"
+}

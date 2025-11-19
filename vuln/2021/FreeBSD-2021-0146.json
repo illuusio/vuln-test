@@ -1,0 +1,46 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "zeek"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "4.0.2"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "cite": [
+            "https://github.com/zeek/zeek/releases/tag/v4.0.2"
+        ],
+        "discovery": "2021-04-30T00:00:00Z",
+        "vid": "a550d62c-f78d-4407-97d9-93876b6741b9"
+    },
+    "details": "Tim Wojtulewicz of Corelight reports:\n\n> Fix potential Undefined Behavior in decode_netbios_name() and\n> decode_netbios_name_type() BIFs. The latter has a possibility of a\n> remote heap-buffer-overread, making this a potential DoS\n> vulnerability.\n>\n> Add some extra length checking when parsing mobile ipv6 packets. Due\n> to the possibility of reading invalid headers from remote sources,\n> this is a potential DoS vulnerability.\n",
+    "id": "FreeBSD-2021-0146",
+    "modified": "2021-06-02T00:00:00Z",
+    "published": "2021-06-02T00:00:00Z",
+    "references": [
+        {
+            "type": "REPORT",
+            "url": "https://github.com/zeek/zeek/releases/tag/v4.0.2"
+        },
+        {
+            "type": "WEB",
+            "url": "https://github.com/zeek/zeek/releases/tag/v4.0.2"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "zeek -- several potential DoS vulnerabilities"
+}

@@ -1,0 +1,112 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "bind99"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "9.9.1.1"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        },
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "bind98"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "9.8.3.1"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        },
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "bind97"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "9.7.6.1"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        },
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "bind96"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "9.6.3.1.ESV.R7.1"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "cite": [
+            "http://www.isc.org/software/bind/advisories/cve-2012-1667"
+        ],
+        "discovery": "2012-06-04T00:00:00Z",
+        "references": {
+            "cvename": [
+                "CVE-2012-1667"
+            ]
+        },
+        "vid": "1ecc0d3f-ae8e-11e1-965b-0024e88a8c98"
+    },
+    "details": "ISC reports:\n\n> Processing of DNS resource records where the rdata field is zero\n> length may cause various issues for the servers handling them.\n>\n> Processing of these records may lead to unexpected outcomes. Recursive\n> servers may crash or disclose some portion of memory to the client.\n> Secondary servers may crash on restart after transferring a zone\n> containing these records. Master servers may corrupt zone data if the\n> zone option \\\"auto-dnssec\\\" is set to \\\"maintain\\\". Other unexpected\n> problems that are not listed here may also be encountered.\n>\n> Impact: This issue primarily affects recursive nameservers.\n> Authoritative nameservers will only be impacted if an administrator\n> configures experimental record types with no data. If the server is\n> configured this way, then secondaries can crash on restart after\n> transferring that zone. Zone data on the master can become corrupted\n> if the zone with those records has named configured to manage the\n> DNSSEC key rotation.\n",
+    "id": "FreeBSD-2012-0103",
+    "modified": "2012-06-06T00:00:00Z",
+    "published": "2012-06-04T00:00:00Z",
+    "references": [
+        {
+            "type": "REPORT",
+            "url": "http://www.isc.org/software/bind/advisories/cve-2012-1667"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2012-1667"
+        },
+        {
+            "type": "WEB",
+            "url": "http://www.isc.org/software/bind/advisories/cve-2012-1667"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "dns/bind9* -- zero-length RDATA can cause named to terminate, reveal memory"
+}

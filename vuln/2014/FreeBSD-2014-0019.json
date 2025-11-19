@@ -1,0 +1,83 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "lighttpd"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "1.4.34"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "cite": [
+            "http://download.lighttpd.net/lighttpd/security/lighttpd_sa_2013_01.txt",
+            "http://download.lighttpd.net/lighttpd/security/lighttpd_sa_2013_02.txt",
+            "http://download.lighttpd.net/lighttpd/security/lighttpd_sa_2013_03.txt"
+        ],
+        "discovery": "2013-11-28T00:00:00Z",
+        "references": {
+            "cvename": [
+                "CVE-2013-4508",
+                "CVE-2013-4559",
+                "CVE-2013-4560"
+            ]
+        },
+        "vid": "90b27045-9530-11e3-9d09-000c2980a9f3"
+    },
+    "details": "lighttpd security advisories report:\n\n> It is possible to inadvertantly enable vulnerable ciphers when using\n> ssl.cipher-list.\n\n> In certain cases setuid() and similar can fail, potentially triggering\n> lighttpd to restart running as root.\n\n> If FAMMonitorDirectory fails, the memory intended to store the context\n> is released; some lines below the \\\"version\\\" compoment of that\n> context is read. Reading invalid data doesn\\'t matter, but the memory\n> access could trigger a segfault.\n",
+    "id": "FreeBSD-2014-0019",
+    "modified": "2014-02-14T00:00:00Z",
+    "published": "2014-02-14T00:00:00Z",
+    "references": [
+        {
+            "type": "REPORT",
+            "url": "http://download.lighttpd.net/lighttpd/security/lighttpd_sa_2013_01.txt"
+        },
+        {
+            "type": "REPORT",
+            "url": "http://download.lighttpd.net/lighttpd/security/lighttpd_sa_2013_02.txt"
+        },
+        {
+            "type": "REPORT",
+            "url": "http://download.lighttpd.net/lighttpd/security/lighttpd_sa_2013_03.txt"
+        },
+        {
+            "type": "WEB",
+            "url": "http://download.lighttpd.net/lighttpd/security/lighttpd_sa_2013_01.txt"
+        },
+        {
+            "type": "WEB",
+            "url": "http://download.lighttpd.net/lighttpd/security/lighttpd_sa_2013_02.txt"
+        },
+        {
+            "type": "WEB",
+            "url": "http://download.lighttpd.net/lighttpd/security/lighttpd_sa_2013_03.txt"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2013-4508"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2013-4559"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2013-4560"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "lighttpd -- multiple vulnerabilities"
+}

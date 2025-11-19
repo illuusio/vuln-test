@@ -1,0 +1,62 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "xen-kernel"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "introduced": "4.5,1"
+                        },
+                        {
+                            "fixed": "4.7.0_3"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "cite": [
+            "http://xenbits.xen.org/xsa/advisory-183.html"
+        ],
+        "discovery": "2016-07-26T00:00:00Z",
+        "references": {
+            "cvename": [
+                "CVE-2016-6259"
+            ],
+            "freebsdpr": [
+                "ports/211482"
+            ]
+        },
+        "vid": "04cf89e3-5854-11e6-b334-002590263bf5"
+    },
+    "details": "The Xen Project reports:\n\n> Supervisor Mode Access Prevention is a hardware feature designed to\n> make an Operating System more robust, by raising a pagefault rather\n> than accidentally following a pointer into userspace. However,\n> legitimate accesses into userspace require whitelisting, and the\n> exception delivery mechanism for 32bit PV guests wasn\\'t whitelisted.\n>\n> A malicious 32-bit PV guest kernel can trigger a safety check,\n> crashing the hypervisor and causing a denial of service to other VMs\n> on the host.\n",
+    "id": "FreeBSD-2016-0291",
+    "modified": "2016-08-02T00:00:00Z",
+    "published": "2016-08-02T00:00:00Z",
+    "references": [
+        {
+            "type": "REPORT",
+            "url": "http://xenbits.xen.org/xsa/advisory-183.html"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2016-6259"
+        },
+        {
+            "type": "REPORT",
+            "url": "https://bugs.freebsd.org/bugzilla/show_bug.cgi?id=211482"
+        },
+        {
+            "type": "WEB",
+            "url": "http://xenbits.xen.org/xsa/advisory-183.html"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "xen-kernel -- x86: Missing SMAP whitelisting in 32-bit exception / event delivery"
+}

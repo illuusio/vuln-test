@@ -1,0 +1,112 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "postgresql15-client"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "15.2"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        },
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "postgresql14-client"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "14.7"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        },
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "postgresql13-client"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "13.10"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        },
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "postgresql12-client"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "12.14"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "cite": [
+            "https://www.postgresql.org/support/security/CVE-2022-41862/"
+        ],
+        "discovery": "2023-02-09T00:00:00Z",
+        "references": {
+            "cvename": [
+                "CVE-2022-41862"
+            ]
+        },
+        "vid": "7a8b6170-a889-11ed-bbae-6cc21735f730"
+    },
+    "details": "PostgreSQL Project reports:\n\n> A modified, unauthenticated server can send an unterminated string\n> during the establishment of Kerberos transport encryption. When a\n> libpq client application has a Kerberos credential cache and doesn\\'t\n> explicitly disable option gssencmode, a server can cause libpq to\n> over-read and report an error message containing uninitialized bytes\n> from and following its receive buffer. If libpq\\'s caller somehow\n> makes that message accessible to the attacker, this achieves a\n> disclosure of the over-read bytes. We have not confirmed or ruled out\n> viability of attacks that arrange for a crash or for presence of\n> notable, confidential information in disclosed bytes.\n",
+    "id": "FreeBSD-2023-0042",
+    "modified": "2023-02-09T00:00:00Z",
+    "published": "2023-02-09T00:00:00Z",
+    "references": [
+        {
+            "type": "REPORT",
+            "url": "https://www.postgresql.org/support/security/CVE-2022-41862/"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2022-41862"
+        },
+        {
+            "type": "WEB",
+            "url": "https://www.postgresql.org/support/security/CVE-2022-41862/"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "PostgreSQL server -- Client memory disclosure when connecting, with Kerberos, to modified server."
+}

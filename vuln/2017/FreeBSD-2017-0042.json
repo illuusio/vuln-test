@@ -1,0 +1,77 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "chicken"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "4.12,1"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "cite": [
+            "http://lists.nongnu.org/archive/html/chicken-announce/2016-08/msg00001.html",
+            "http://lists.nongnu.org/archive/html/chicken-announce/2016-12/msg00000.html"
+        ],
+        "discovery": "2016-08-12T00:00:00Z",
+        "references": {
+            "cvename": [
+                "CVE-2016-6830",
+                "CVE-2016-6831",
+                "CVE-2016-9954"
+            ],
+            "freebsdpr": [
+                "ports/216661"
+            ]
+        },
+        "vid": "c6932dd4-eaff-11e6-9ac1-a4badb2f4699"
+    },
+    "details": "Peter Bex reports:\n\n> A buffer overflow error was found in the POSIX unit\\'s procedures\n> process-execute and process-spawn.\n>\n> Additionally, a memory leak existed in this code, which would be\n> triggered when an error is raised during argument and environment\n> processing.\n\n> Irregex versions before 0.9.6 contain a resource exhaustion\n> vulnerability: when compiling deeply nested regexes containing the\n> \\\"+\\\" operator due to exponential expansion behaviour.\n",
+    "id": "FreeBSD-2017-0042",
+    "modified": "2017-03-05T00:00:00Z",
+    "published": "2017-02-04T00:00:00Z",
+    "references": [
+        {
+            "type": "REPORT",
+            "url": "http://lists.nongnu.org/archive/html/chicken-announce/2016-08/msg00001.html"
+        },
+        {
+            "type": "REPORT",
+            "url": "http://lists.nongnu.org/archive/html/chicken-announce/2016-12/msg00000.html"
+        },
+        {
+            "type": "WEB",
+            "url": "http://lists.nongnu.org/archive/html/chicken-announce/2016-08/msg00001.html"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2016-6830"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2016-6831"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2016-9954"
+        },
+        {
+            "type": "REPORT",
+            "url": "https://bugs.freebsd.org/bugzilla/show_bug.cgi?id=216661"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "chicken -- multiple vulnerabilities"
+}

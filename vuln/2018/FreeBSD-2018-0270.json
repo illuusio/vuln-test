@@ -1,0 +1,55 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "kio-extras"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "18.08.3_2"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "cite": [
+            "https://www.kde.org/info/security/advisory-20181012-1.txt"
+        ],
+        "discovery": "2018-11-12T00:00:00Z",
+        "references": {
+            "cvename": [
+                "CVE-2018-19120"
+            ]
+        },
+        "vid": "1460aa25-e6ab-11e8-a733-e0d55e2a8bf9"
+    },
+    "details": "Albert Astals Cid reports:\n\n> Various KDE applications share a plugin system to create thumbnails of\n> various file types for displaying in file managers, file dialogs, etc.\n> kio-extras contains a thumbnailer plugin for HTML files.\n>\n> The HTML thumbnailer was incorrectly accessing some content of remote\n> URLs listed in HTML files. This meant that the owners of the servers\n> referred in HTML files in your system could have seen in their access\n> logs your IP address every time the thumbnailer tried to create the\n> thumbnail.\n>\n> The HTML thumbnailer has been removed in upcoming KDE Applications\n> 18.12.0 because it was actually not creating thumbnails for files at\n> all.\n",
+    "id": "FreeBSD-2018-0270",
+    "modified": "2018-11-12T00:00:00Z",
+    "published": "2018-11-12T00:00:00Z",
+    "references": [
+        {
+            "type": "REPORT",
+            "url": "https://www.kde.org/info/security/advisory-20181012-1.txt"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2018-19120"
+        },
+        {
+            "type": "WEB",
+            "url": "https://www.kde.org/info/security/advisory-20181012-1.txt"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "kio-extras -- HTML Thumbnailer automatic remote file access"
+}

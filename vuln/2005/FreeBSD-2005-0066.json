@@ -1,0 +1,140 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "python"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "introduced": "2.2"
+                        },
+                        {
+                            "fixed": "2.2.3_7"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                },
+                {
+                    "events": [
+                        {
+                            "introduced": "2.3"
+                        },
+                        {
+                            "fixed": "2.3.4_4"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                },
+                {
+                    "events": [
+                        {
+                            "introduced": "2.4"
+                        },
+                        {
+                            "fixed": "2.4_1"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                },
+                {
+                    "events": [
+                        {
+                            "introduced": "2.5.a0.20050129"
+                        },
+                        {
+                            "fixed": "2.5.a0.20050129_1"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        },
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "python+ipv6"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "introduced": "2.2"
+                        },
+                        {
+                            "fixed": "2.2.3_7"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                },
+                {
+                    "events": [
+                        {
+                            "introduced": "2.3"
+                        },
+                        {
+                            "fixed": "2.3.4_4"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                },
+                {
+                    "events": [
+                        {
+                            "introduced": "2.4"
+                        },
+                        {
+                            "fixed": "2.4_1"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                },
+                {
+                    "events": [
+                        {
+                            "introduced": "2.5.a0.20050129"
+                        },
+                        {
+                            "fixed": "2.5.a0.20050129_1"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "cite": [
+            "http://www.python.org/security/PSF-2005-001/"
+        ],
+        "discovery": "2005-02-03T00:00:00Z",
+        "references": {
+            "cvename": [
+                "CVE-2005-0089"
+            ]
+        },
+        "vid": "6afa87d3-764b-11d9-b0e7-0000e249a0a2"
+    },
+    "details": "According to Python Security Advisory PSF-2005-001,\n\n> The Python development team has discovered a flaw in the\n> `SimpleXMLRPCServer` library module which can give remote attackers\n> access to internals of the registered object or its module or possibly\n> other modules. The flaw only affects Python XML-RPC servers that use\n> the `register_instance()` method to register an object without a\n> `_dispatch()` method. Servers using only `register_function()` are not\n> affected.\n>\n> On vulnerable XML-RPC servers, a remote attacker may be able to view\n> or modify globals of the module(s) containing the registered\n> instance\\'s class(es), potentially leading to data loss or arbitrary\n> code execution. If the registered object is a module, the danger is\n> particularly serious. For example, if the registered module imports\n> the `os` module, an attacker could invoke the `os.system()` function.\n\n**Note:** This vulnerability affects your system only if you\\'re running\n`SimpleXMLRPCServer`-based server. This isn\\'t harmful at all if you\ndon\\'t run any internet server written in Python or your server doesn\\'t\nserve in XML-RPC protocol.\n",
+    "id": "FreeBSD-2005-0066",
+    "modified": "2006-10-08T00:00:00Z",
+    "published": "2005-02-03T00:00:00Z",
+    "references": [
+        {
+            "type": "REPORT",
+            "url": "http://www.python.org/security/PSF-2005-001/"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2005-0089"
+        },
+        {
+            "type": "WEB",
+            "url": "http://www.python.org/security/PSF-2005-001/"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "python -- SimpleXMLRPCServer.py allows unrestricted traversal"
+}

@@ -1,0 +1,74 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "xmltooling"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "1.6.3"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        },
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "xerces-c3"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "3.1.4"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "cite": [
+            "https://shibboleth.net/community/advisories/secadv_20180112.txt"
+        ],
+        "discovery": "2018-01-12T00:00:00Z",
+        "references": {
+            "cvename": [
+                "CVE-2018-0486"
+            ]
+        },
+        "vid": "3dbe9492-f7b8-11e7-a12d-6cc21735f730"
+    },
+    "details": "Shibboleth consortium reports:\n\n> Shibboleth SP software vulnerable to forged user attribute data\n>\n> The Service Provider software relies on a generic XML parser to\n> process SAML responses and there are limitations in older versions of\n> the parser that make it impossible to fully disable Document Type\n> Definition (DTD) processing.\n>\n> Through addition/manipulation of a DTD, it\\'s possible to make changes\n> to an XML document that do not break a digital signature but are\n> mishandled by the SP and its libraries. These manipulations can alter\n> the user data passed through to applications behind the SP and result\n> in impersonation attacks and exposure of protected information.\n>\n> While newer versions of the xerces-c3 parser are configured by the SP\n> into disallowing the use of a DTD via an environment variable, this\n> feature is not present in the xerces-c3 parser before version 3.1.4,\n> so an additional fix is being provided now that an actual DTD exploit\n> has been identified. Xerces-c3-3.1.4 was committed to the ports tree\n> already on 2016-07-26.\n",
+    "id": "FreeBSD-2018-0005",
+    "modified": "2018-01-12T00:00:00Z",
+    "published": "2018-01-12T00:00:00Z",
+    "references": [
+        {
+            "type": "REPORT",
+            "url": "https://shibboleth.net/community/advisories/secadv_20180112.txt"
+        },
+        {
+            "type": "WEB",
+            "url": "https://shibboleth.net/community/advisories/secadv_20180112.txt"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2018-0486"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "shibboleth-sp -- vulnerable to forged user attribute data"
+}

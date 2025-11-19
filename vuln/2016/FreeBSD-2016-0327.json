@@ -1,0 +1,84 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:kernel",
+                "name": "FreeBSD-kernel"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "introduced": "10.1"
+                        },
+                        {
+                            "fixed": "10.1_5"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                },
+                {
+                    "events": [
+                        {
+                            "introduced": "10.0"
+                        },
+                        {
+                            "fixed": "10.0_17"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                },
+                {
+                    "events": [
+                        {
+                            "introduced": "9.3"
+                        },
+                        {
+                            "fixed": "9.3_9"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                },
+                {
+                    "events": [
+                        {
+                            "introduced": "8.4"
+                        },
+                        {
+                            "fixed": "8.4_23"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "discovery": "2015-01-27T00:00:00Z",
+        "references": {
+            "cvename": [
+                "CVE-2014-8613"
+            ],
+            "freebsdsa": [
+                "SA-15:03.sctp"
+            ]
+        },
+        "vid": "0aad3ce5-600a-11e6-a6c3-14dae9d210b8"
+    },
+    "details": "# Problem Description:\n\nThe input validation of received SCTP RE_CONFIG chunks is insufficient,\nand can result in a NULL pointer deference later.\n\n# Impact:\n\nA remote attacker who can send a malformed SCTP packet to a FreeBSD\nsystem that serves SCTP can cause a kernel panic, resulting in a Denial\nof Service.\n",
+    "id": "FreeBSD-2016-0327",
+    "modified": "2016-08-11T00:00:00Z",
+    "published": "2016-08-11T00:00:00Z",
+    "references": [
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2014-8613"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://www.freebsd.org/security/advisories/FreeBSD-SA-15:03.sctp.asc"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "FreeBSD -- SCTP stream reset vulnerability"
+}

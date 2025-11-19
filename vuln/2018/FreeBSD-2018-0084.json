@@ -1,0 +1,62 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "squirrelmail"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "last_affected": "20170705"
+                        },
+                        {
+                            "fixed": "20170705"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "cite": [
+            "https://insinuator.net/2018/03/squirrelmail-full-disclosure-troopers18/"
+        ],
+        "discovery": "2017-05-21T00:00:00Z",
+        "references": {
+            "cvename": [
+                "CVE-2018-8741"
+            ]
+        },
+        "vid": "928d5c59-2a5a-11e8-a712-0025908740c2"
+    },
+    "details": "Florian Grunow reports:\n\n> An attacker able to exploit this vulnerability can extract files of\n> the server the application is running on. This may include\n> configuration files, log files and additionally all files that are\n> readable for all users on the system. This issue is\n> post-authentication. That means an attacker would need valid\n> credentials for the application to log in or needs to exploit an\n> additional vulnerability of which we are not aware of at this point of\n> time.\n>\n> An attacker would also be able to delete files on the system, if the\n> user running the application has the rights to do so.\n>\n> Does this issue affect me?\n>\n> Likely yes, if you are using Squirrelmail. We checked the latest\n> development version, which is 1.5.2-svn and the latest version\n> available for download at this point of time, 1.4.22. Both contain the\n> vulnerable code.\n",
+    "id": "FreeBSD-2018-0084",
+    "modified": "2018-03-17T00:00:00Z",
+    "published": "2018-03-17T00:00:00Z",
+    "references": [
+        {
+            "type": "REPORT",
+            "url": "https://insinuator.net/2018/03/squirrelmail-full-disclosure-troopers18/"
+        },
+        {
+            "type": "WEB",
+            "url": "http://www.openwall.com/lists/oss-security/2018/03/17/2"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://nvd.nist.gov/vuln/detail/CVE-2018-8741"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2018-8741"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "SquirrelMail -- post-authentication access privileges"
+}

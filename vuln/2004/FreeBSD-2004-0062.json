@@ -1,0 +1,96 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "heimdal"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "0.6.1"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        },
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "FreeBSD"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "introduced": "5.0"
+                        },
+                        {
+                            "fixed": "5.2_6"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                },
+                {
+                    "events": [
+                        {
+                            "introduced": "4.9"
+                        },
+                        {
+                            "fixed": "4.9_6"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                },
+                {
+                    "events": [
+                        {
+                            "introduced": "4.0"
+                        },
+                        {
+                            "fixed": "4.8_19"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "discovery": "2004-04-01T00:00:00Z",
+        "references": {
+            "cvename": [
+                "CVE-2004-0371"
+            ],
+            "freebsdsa": [
+                "SA-04:08.heimdal"
+            ]
+        },
+        "vid": "bfb36941-84fa-11d8-a41f-0020ed76ef5a"
+    },
+    "details": "Heimdal does not correctly validate the \\`transited\\' field of Kerberos\ntickets when computing the authentication path. This could allow a rogue\nKDC with which cross-realm relationships have been established to\nimpersonate any KDC in the authentication path.\n",
+    "id": "FreeBSD-2004-0062",
+    "modified": "2004-05-05T00:00:00Z",
+    "published": "2004-04-02T00:00:00Z",
+    "references": [
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2004-0371"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://www.freebsd.org/security/advisories/FreeBSD-SA-04:08.heimdal.asc"
+        },
+        {
+            "type": "WEB",
+            "url": "http://www.pdc.kth.se/heimdal/advisory/2004-04-01/"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "Incorrect cross-realm trust handling in Heimdal"
+}

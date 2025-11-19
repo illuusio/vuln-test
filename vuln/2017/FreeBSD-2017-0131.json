@@ -1,0 +1,60 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "irssi"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "1.0.3"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "cite": [
+            "https://irssi.org/security/irssi_sa_2017_06.txt"
+        ],
+        "discovery": "2017-06-06T00:00:00Z",
+        "references": {
+            "cvename": [
+                "CVE-2017-9468",
+                "CVE-2017-9469"
+            ]
+        },
+        "vid": "165e8951-4be0-11e7-a539-0050569f7e80"
+    },
+    "details": "Joseph Bisch reports:\n\n> When receiving a DCC message without source nick/host, Irssi would\n> attempt to dereference a NULL pointer.\n>\n> When receiving certain incorrectly quoted DCC files, Irssi would try\n> to find the terminating quote one byte before the allocated memory.\n",
+    "id": "FreeBSD-2017-0131",
+    "modified": "2017-06-08T00:00:00Z",
+    "published": "2017-06-08T00:00:00Z",
+    "references": [
+        {
+            "type": "REPORT",
+            "url": "https://irssi.org/security/irssi_sa_2017_06.txt"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2017-9468"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2017-9469"
+        },
+        {
+            "type": "WEB",
+            "url": "https://irssi.org/security/irssi_sa_2017_06.txt"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "irssi -- remote DoS"
+}

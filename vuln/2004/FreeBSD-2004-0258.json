@@ -1,0 +1,62 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "zip"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "2.3_2"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "cite": [
+            "http://www.hexview.com/docs/20041103-1.txt"
+        ],
+        "discovery": "2004-10-03T00:00:00Z",
+        "references": {
+            "bid": [
+                "11603"
+            ],
+            "cvename": [
+                "CVE-2004-1010"
+            ]
+        },
+        "vid": "40549bbf-43b5-11d9-a9e7-0001020eed82"
+    },
+    "details": "A HexView security advisory reports:\n\n> When zip performs recursive folder compression, it does not check for\n> the length of resulting path. If the path is too long, a buffer\n> overflow occurs leading to stack corruption and segmentation fault. It\n> is possible to exploit this vulnerability by embedding a shellcode in\n> directory or file name. While the issue is not of primary concern for\n> regular users, it can be critical for environments where zip archives\n> are re-compressed automatically using Info-Zip application.\n",
+    "id": "FreeBSD-2004-0258",
+    "modified": "2004-12-12T00:00:00Z",
+    "published": "2004-12-01T00:00:00Z",
+    "references": [
+        {
+            "type": "REPORT",
+            "url": "http://www.hexview.com/docs/20041103-1.txt"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2004-1010"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://www.securityfocus.com/bid/11603/info"
+        },
+        {
+            "type": "WEB",
+            "url": "http://www.hexview.com/docs/20041103-1.txt"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "zip -- long path buffer overflow"
+}

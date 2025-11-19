@@ -1,0 +1,73 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:kernel",
+                "name": "FreeBSD-kernel"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "introduced": "13.1"
+                        },
+                        {
+                            "fixed": "13.1_1"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                },
+                {
+                    "events": [
+                        {
+                            "introduced": "13.0"
+                        },
+                        {
+                            "fixed": "13.0_12"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                },
+                {
+                    "events": [
+                        {
+                            "introduced": "12.3"
+                        },
+                        {
+                            "fixed": "12.3_6"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "discovery": "2022-08-09T00:00:00Z",
+        "references": {
+            "cvename": [
+                "CVE-2022-23091"
+            ],
+            "freebsdsa": [
+                "SA-22:11.vm"
+            ]
+        },
+        "vid": "02fb9764-1893-11ed-9b22-002590c1f29c"
+    },
+    "details": "# Problem Description:\n\nA particular case of memory sharing is mishandled in the virtual memory\nsystem. This is very similar to SA-21:08.vm, but with a different root\ncause.\n\n# Impact:\n\nAn unprivileged local user process can maintain a mapping of a page\nafter it is freed, allowing that process to read private data belonging\nto other processes or the kernel.\n",
+    "id": "FreeBSD-2022-0153",
+    "modified": "2022-08-10T00:00:00Z",
+    "published": "2022-08-10T00:00:00Z",
+    "references": [
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2022-23091"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://www.freebsd.org/security/advisories/FreeBSD-SA-22:11.vm.asc"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "FreeBSD -- Memory disclosure by stale virtual memory mapping"
+}

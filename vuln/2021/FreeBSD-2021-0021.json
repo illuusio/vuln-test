@@ -1,0 +1,55 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "mutt"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "2.0.5"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "cite": [
+            "https://gitlab.com/muttmua/mutt/-/issues/323"
+        ],
+        "discovery": "2021-01-17T00:00:00Z",
+        "references": {
+            "cvename": [
+                "CVE-2021-3181"
+            ]
+        },
+        "vid": "387bbade-5d1d-11eb-bf20-4437e6ad11c4"
+    },
+    "details": "Tavis Ormandy reports:\n\n> rfc822.c in Mutt through 2.0.4 allows remote attackers to cause a\n> denial of service (mailbox unavailability) by sending email messages\n> with sequences of semicolon characters in RFC822 address fields (aka\n> terminators of empty groups). A small email message from the attacker\n> can cause large memory consumption, and the victim may then be unable\n> to see email messages from other persons.\n",
+    "id": "FreeBSD-2021-0021",
+    "modified": "2021-01-23T00:00:00Z",
+    "published": "2021-01-23T00:00:00Z",
+    "references": [
+        {
+            "type": "REPORT",
+            "url": "https://gitlab.com/muttmua/mutt/-/issues/323"
+        },
+        {
+            "type": "WEB",
+            "url": "https://gitlab.com/muttmua/mutt/-/issues/323"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2021-3181"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "mutt -- denial of service"
+}

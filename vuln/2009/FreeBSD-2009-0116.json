@@ -1,0 +1,59 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "firefox"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "introduced": "3.5.*,1"
+                        },
+                        {
+                            "fixed": "3.5.1,1"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "cite": [
+            "http://www.mozilla.org/security/announce/2009/mfsa2009-41.html"
+        ],
+        "discovery": "2009-07-16T00:00:00Z",
+        "references": {
+            "cvename": [
+                "CVE-2009-2477"
+            ]
+        },
+        "vid": "c1ef9b33-72a6-11de-82ea-0030843d3802"
+    },
+    "details": "Mozilla Project reports:\n\n> Firefox user zbyte reported a crash that we determined could result in\n> an exploitable memory corruption problem. In certain cases after a\n> return from a native function, such as escape(), the Just-in-Time\n> (JIT) compiler could get into a corrupt state. This could be exploited\n> by an attacker to run arbitrary code such as installing malware.\n>\n> This vulnerability does not affect earlier versions of Firefox which\n> do not support the JIT feature.\n",
+    "id": "FreeBSD-2009-0116",
+    "modified": "2010-05-02T00:00:00Z",
+    "published": "2009-07-17T00:00:00Z",
+    "references": [
+        {
+            "type": "REPORT",
+            "url": "http://www.mozilla.org/security/announce/2009/mfsa2009-41.html"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2009-2477"
+        },
+        {
+            "type": "WEB",
+            "url": "http://www.mozilla.org/security/announce/2009/mfsa2009-41.html"
+        },
+        {
+            "type": "WEB",
+            "url": "http://www.kb.cert.org/vuls/id/443060"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "mozilla -- corrupt JIT state after deep return from native function"
+}

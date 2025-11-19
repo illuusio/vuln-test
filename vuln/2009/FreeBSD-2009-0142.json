@@ -1,0 +1,65 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "bugzilla"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "introduced": "3.3.1,1"
+                        },
+                        {
+                            "fixed": "3.4.2"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "cite": [
+            "http://www.bugzilla.org/security/3.4/"
+        ],
+        "discovery": "2009-09-11T00:00:00Z",
+        "references": {
+            "cvename": [
+                "CVE-2009-3125",
+                "CVE-2009-3165",
+                "CVE-2009-3166"
+            ]
+        },
+        "vid": "b9ec7fe3-a38a-11de-9c6b-003048818f40"
+    },
+    "details": "A Bugzilla Security Advisory reports:\n\n> - It is possible to inject raw SQL into the Bugzilla database via the\n>   \\\"Bug.create\\\" and \\\"Bug.search\\\" WebService functions.\n> - When a user would change his password, his new password would be\n>   exposed in the URL field of the browser if he logged in right after\n>   changing his password.\n",
+    "id": "FreeBSD-2009-0142",
+    "modified": "2009-09-17T00:00:00Z",
+    "published": "2009-09-17T00:00:00Z",
+    "references": [
+        {
+            "type": "REPORT",
+            "url": "http://www.bugzilla.org/security/3.4/"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2009-3125"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2009-3165"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2009-3166"
+        },
+        {
+            "type": "WEB",
+            "url": "http://www.bugzilla.org/security/3.0.8/"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "bugzilla -- two SQL injections, sensitive data exposure"
+}

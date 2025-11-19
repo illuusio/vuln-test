@@ -1,0 +1,65 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "gcpio"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "2.13"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "cite": [
+            "https://lists.gnu.org/archive/html/bug-cpio/2019-11/msg00000.html"
+        ],
+        "discovery": "2019-11-06T00:00:00Z",
+        "references": {
+            "cvename": [
+                "CVE-2015-1197",
+                "CVE-2016-2037",
+                "CVE-2019-14866"
+            ]
+        },
+        "vid": "f59af308-07f3-11ea-8c56-f8b156b6dcc8"
+    },
+    "details": "Sergey Poznyakoff reports:\n\n> This stable release fixes several potential vulnerabilities\n>\n> CVE-2015-1197: cpio, when using the \\--no-absolute-filenames option,\n> allows local users to write to arbitrary files via a symlink attack on\n> a file in an archive.\n>\n> CVE-2016-2037: The cpio_safer_name_suffix function in util.c allows\n> remote attackers to cause a denial of service (out-of-bounds write)\n> via a crafted cpio file.\n>\n> CVE-2019-14866: Improper input validation when writing tar header\n> fields leads to unexpected tar generation.\n",
+    "id": "FreeBSD-2019-0257",
+    "modified": "2019-11-15T00:00:00Z",
+    "published": "2019-11-15T00:00:00Z",
+    "references": [
+        {
+            "type": "REPORT",
+            "url": "https://lists.gnu.org/archive/html/bug-cpio/2019-11/msg00000.html"
+        },
+        {
+            "type": "WEB",
+            "url": "https://lists.gnu.org/archive/html/bug-cpio/2019-11/msg00000.html"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2015-1197"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2016-2037"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2019-14866"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "GNU cpio -- multiple vulnerabilities"
+}

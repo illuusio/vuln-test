@@ -1,0 +1,113 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "mupdf"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "1.9a_1,1"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        },
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "llpp"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "22_2"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        },
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "zathura-pdf-mupdf"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "0.3.0_2"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "cite": [
+            "http://openbsd-archive.7691.n7.nabble.com/mupdf-CVE-2016-6525-amp-CVE-2016-6265-td302904.html"
+        ],
+        "discovery": "2016-08-27T00:00:00Z",
+        "references": {
+            "cvename": [
+                "CVE-2016-6525",
+                "CVE-2016-6265"
+            ],
+            "freebsdpr": [
+                "ports/212207"
+            ]
+        },
+        "vid": "47157c14-9013-11e6-a590-14dae9d210b8"
+    },
+    "details": "Tobias Kortkamp reports:\n\n> Heap-based buffer overflow in the pdf_load_mesh_params function in\n> pdf/pdf-shade.c in MuPDF allows remote attackers to cause a denial of\n> service (crash) or execute arbitrary code via a large decode array.\n>\n> Use-after-free vulnerability in the pdf_load_xref function in\n> pdf/pdf-xref.c in MuPDF allows remote attackers to cause a denial of\n> service (crash) via a crafted PDF file.\n",
+    "id": "FreeBSD-2016-0393",
+    "modified": "2016-10-18T00:00:00Z",
+    "published": "2016-10-12T00:00:00Z",
+    "references": [
+        {
+            "type": "REPORT",
+            "url": "http://openbsd-archive.7691.n7.nabble.com/mupdf-CVE-2016-6525-amp-CVE-2016-6265-td302904.html"
+        },
+        {
+            "type": "WEB",
+            "url": "http://openbsd-archive.7691.n7.nabble.com/mupdf-CVE-2016-6525-amp-CVE-2016-6265-td302904.html"
+        },
+        {
+            "type": "WEB",
+            "url": "http://bugs.ghostscript.com/show_bug.cgi?id=696941"
+        },
+        {
+            "type": "WEB",
+            "url": "http://bugs.ghostscript.com/show_bug.cgi?id=696954"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2016-6525"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2016-6265"
+        },
+        {
+            "type": "REPORT",
+            "url": "https://bugs.freebsd.org/bugzilla/show_bug.cgi?id=212207"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "mupdf -- multiple vulnerabilities"
+}

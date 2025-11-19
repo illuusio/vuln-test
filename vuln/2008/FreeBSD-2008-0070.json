@@ -1,0 +1,79 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "xorg-server"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "1.4.2,1"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "cite": [
+            "http://lists.freedesktop.org/archives/xorg/2008-June/036026.html"
+        ],
+        "discovery": "2008-06-11T00:00:00Z",
+        "references": {
+            "cvename": [
+                "CVE-2008-1377",
+                "CVE-2008-1379",
+                "CVE-2008-2360",
+                "CVE-2008-2361",
+                "CVE-2008-2362"
+            ]
+        },
+        "vid": "800e8bd5-3acb-11dd-8842-001302a18722"
+    },
+    "details": "Matthieu Herrb of X.Org reports:\n\n> Several vulnerabilities have been found in the server-side code of\n> some extensions in the X Window System. Improper validation of\n> client-provided data can cause data corruption.\n>\n> Exploiting these overflows will crash the X server or, under certain\n> circumstances allow the execution of arbitray machine code.\n>\n> When the X server is running with root privileges (which is the case\n> for the Xorg server and for most kdrive based servers), these\n> vulnerabilities can thus also be used to raise privileges.\n>\n> All these vulnerabilities, to be exploited successfully, require\n> either an already established connection to a running X server (and\n> normally running X servers are only accepting authenticated\n> connections), or a shell access with a valid user on the machine where\n> the vulnerable server is installed.\n",
+    "id": "FreeBSD-2008-0070",
+    "modified": "2008-06-15T00:00:00Z",
+    "published": "2008-06-15T00:00:00Z",
+    "references": [
+        {
+            "type": "REPORT",
+            "url": "http://lists.freedesktop.org/archives/xorg/2008-June/036026.html"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2008-1377"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2008-1379"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2008-2360"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2008-2361"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2008-2362"
+        },
+        {
+            "type": "WEB",
+            "url": "http://lists.freedesktop.org/archives/xorg/2008-June/036026.html"
+        },
+        {
+            "type": "WEB",
+            "url": "http://secunia.com/advisories/30627/"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "xorg -- multiple vulnerabilities"
+}

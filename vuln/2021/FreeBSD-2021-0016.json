@@ -1,0 +1,108 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "dnsmasq"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "2.83"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        },
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "dnsmasq-devel"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "2.83"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "cite": [
+            "http://lists.thekelleys.org.uk/pipermail/dnsmasq-discuss/2021q1/014599.html"
+        ],
+        "discovery": "2020-09-16T00:00:00Z",
+        "references": {
+            "cvename": [
+                "CVE-2020-25684",
+                "CVE-2020-25685",
+                "CVE-2020-25686",
+                "CVE-2020-25681",
+                "CVE-2020-25682",
+                "CVE-2020-25683",
+                "CVE-2020-25687"
+            ]
+        },
+        "vid": "5b5cf6e5-5b51-11eb-95ac-7f9491278677"
+    },
+    "details": "Simon Kelley reports:\n\n> There are broadly two sets of problems. The first is subtle errors in\n> dnsmasq\\'s protections against the chronic weakness of the DNS\n> protocol to cache-poisoning attacks; the Birthday attack, Kaminsky,\n> etc.\\[\\...\\]\n>\n> the second set of errors is a good old fashioned buffer overflow in\n> dnsmasq\\'s DNSSEC code. If DNSSEC validation is enabled, an\n> installation is at risk.\n",
+    "id": "FreeBSD-2021-0016",
+    "modified": "2021-01-20T00:00:00Z",
+    "published": "2021-01-20T00:00:00Z",
+    "references": [
+        {
+            "type": "REPORT",
+            "url": "http://lists.thekelleys.org.uk/pipermail/dnsmasq-discuss/2021q1/014599.html"
+        },
+        {
+            "type": "WEB",
+            "url": "https://lists.thekelleys.org.uk/pipermail/dnsmasq-discuss/2021q1/014599.html"
+        },
+        {
+            "type": "WEB",
+            "url": "https://www.jsof-tech.com/disclosures/dnspooq/"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2020-25684"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2020-25685"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2020-25686"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2020-25681"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2020-25682"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2020-25683"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2020-25687"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "dnsmasq -- DNS cache poisoning, and DNSSEC buffer overflow, vulnerabilities"
+}

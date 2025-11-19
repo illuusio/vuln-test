@@ -1,0 +1,90 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "apache24"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "2.4.54"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "cite": [
+            "http://downloads.apache.org/httpd/CHANGES_2.4.54"
+        ],
+        "discovery": "2022-06-08T00:00:00Z",
+        "references": {
+            "cvename": [
+                "CVE-2022-31813",
+                "CVE-2022-30556",
+                "CVE-2022-30522",
+                "CVE-2022-29404",
+                "CVE-2022-28615",
+                "CVE-2022-28614",
+                "CVE-2022-28330",
+                "CVE-2022-26377"
+            ]
+        },
+        "vid": "49adfbe5-e7d1-11ec-8fbd-d4c9ef517024"
+    },
+    "details": "The Apache httpd project reports:\n\n> - CVE-2022-31813: mod_proxy X-Forwarded-For dropped by hop-by-hop\n>   mechanism. Apache HTTP Server 2.4.53 and earlier may not send the\n>   X-Forwarded-\\* headers to the origin server based on client side\n>   Connection header hop-by-hop mechanism. This may be used to bypass\n>   IP based authentication on the origin server/application.\n> - CVE-2022-30556: Information Disclosure in mod_lua with websockets.\n>   Apache HTTP Server 2.4.53 and earlier may return lengths to\n>   applications calling r:wsread() that point past the end of the\n>   storage allocated for the buffer.\n> - CVE-2022-30522: mod_sed denial of service. If Apache HTTP Server\n>   2.4.53 is configured to do transformations with mod_sed in contexts\n>   where the input to mod_sed may be very large, mod_sed may make\n>   excessively large memory allocations and trigger an abort.\n> - CVE-2022-29404: Denial of service in mod_lua r:parsebody. In Apache\n>   HTTP Server 2.4.53 and earlier, a malicious request to a lua script\n>   that calls r:parsebody(0) may cause a denial of service due to no\n>   default limit on possible input size.\n> - CVE-2022-28615: Read beyond bounds in ap_strcmp_match(). Apache HTTP\n>   Server 2.4.53 and earlier may crash or disclose information due to a\n>   read beyond bounds in ap_strcmp_match() when provided with an\n>   extremely large input buffer. While no code distributed with the\n>   server can be coerced into such a call, third-party modules or lua\n>   scripts that use ap_strcmp_match() may hypothetically be affected.\n> - CVE-2022-28614: read beyond bounds via ap_rwrite(). The ap_rwrite()\n>   function in Apache HTTP Server 2.4.53 and earlier may read\n>   unintended memory if an attacker can cause the server to reflect\n>   very large input using ap_rwrite() or ap_rputs(), such as with\n>   mod_luas r:puts() function.\n> - CVE-2022-28330: read beyond bounds in mod_isapi. Apache HTTP Server\n>   2.4.53 and earlier on Windows may read beyond bounds when configured\n>   to process requests with the mod_isapi module.\n> - CVE-2022-26377: mod_proxy_ajp: Possible request smuggling.\n>   Inconsistent Interpretation of HTTP Requests (\\'HTTP Request\n>   Smuggling\\') vulnerability in mod_proxy_ajp of Apache HTTP Server\n>   allows an attacker to smuggle requests to the AJP server it forwards\n>   requests to.\n",
+    "id": "FreeBSD-2022-0113",
+    "modified": "2022-06-10T00:00:00Z",
+    "published": "2022-06-09T00:00:00Z",
+    "references": [
+        {
+            "type": "REPORT",
+            "url": "http://downloads.apache.org/httpd/CHANGES_2.4.54"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2022-31813"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2022-30556"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2022-30522"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2022-29404"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2022-28615"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2022-28614"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2022-28330"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2022-26377"
+        },
+        {
+            "type": "WEB",
+            "url": "http://downloads.apache.org/httpd/CHANGES_2.4.54"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "Apache httpd -- Multiple vulnerabilities"
+}

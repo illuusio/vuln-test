@@ -1,0 +1,108 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "krb5"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "1.13_1"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        },
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "krb5-112"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "1.12.2_1"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        },
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "krb5-111"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "1.11.5_4"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "cite": [
+            "http://web.mit.edu/kerberos/advisories/MITKRB5-SA-2015-001.txt"
+        ],
+        "discovery": "2015-02-03T00:00:00Z",
+        "references": {
+            "cvename": [
+                "CVE-2014-5352",
+                "CVE-2014-9421",
+                "CVE-2014-9422",
+                "CVE-2014-9423"
+            ]
+        },
+        "vid": "24ce5597-acab-11e4-a847-206a8a720317"
+    },
+    "details": "MIT krb5 Security Advisory 2015-001 reports:\n\n> CVE-2014-5352: In the MIT krb5 libgssapi_krb5 library, after\n> gss_process_context_token() is used to process a valid context\n> deletion token, the caller is left with a security context handle\n> containing a dangling pointer. Further uses of this handle will result\n> in use-after-free and double-free memory access violations. libgssrpc\n> server applications such as kadmind are vulnerable as they can be\n> instructed to call gss_process_context_token().\n>\n> CVE-2014-9421: If the MIT krb5 kadmind daemon receives invalid XDR\n> data from an authenticated user, it may perform use-after-free and\n> double-free memory access violations while cleaning up the partial\n> deserialization results. Other libgssrpc server applications may also\n> be vulnerable if they contain insufficiently defensive XDR functions.\n>\n> CVE-2014-9422: The MIT krb5 kadmind daemon incorrectly accepts\n> authentications to two-component server principals whose first\n> component is a left substring of \\\"kadmin\\\" or whose realm is a left\n> prefix of the default realm.\n>\n> CVE-2014-9423: libgssrpc applications including kadmind output four or\n> eight bytes of uninitialized memory to the network as part of an\n> unused \\\"handle\\\" field in replies to clients.\n",
+    "id": "FreeBSD-2015-0026",
+    "modified": "2015-02-04T00:00:00Z",
+    "published": "2015-02-04T00:00:00Z",
+    "references": [
+        {
+            "type": "REPORT",
+            "url": "http://web.mit.edu/kerberos/advisories/MITKRB5-SA-2015-001.txt"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2014-5352"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2014-9421"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2014-9422"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2014-9423"
+        },
+        {
+            "type": "WEB",
+            "url": "http://web.mit.edu/kerberos/advisories/MITKRB5-SA-2015-001.txt"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "krb5 -- Vulnerabilities in kadmind, libgssrpc, gss_process_context_token VU#540092"
+}

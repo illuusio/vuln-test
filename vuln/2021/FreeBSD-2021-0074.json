@@ -1,0 +1,65 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "nettle"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "3.7.2"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        },
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "linux-c7-nettle"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "3.7.2"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "cite": [
+            "https://lists.lysator.liu.se/pipermail/nettle-bugs/2021/009458.html"
+        ],
+        "discovery": "2021-03-21T00:00:00Z",
+        "vid": "80f9dbd3-8eec-11eb-b9e8-3525f51429a0"
+    },
+    "details": "Niels M\u00f6ller reports:\n\n> I\\'ve prepared a new bug-fix release of Nettle, a low-level\n> cryptographics library, to fix a serious bug in the function to verify\n> ECDSA signatures. Implications include an assertion failure, which\n> could be used for denial-of-service, when verifying signatures on the\n> secp_224r1 and secp521_r1 curves.\n>\n> Even when no assert is triggered in ecdsa_verify, ECC point\n> multiplication may get invalid intermediate values as input, and\n> produce incorrect results. \\[\\...\\] It appears difficult to construct\n> an alleged signature that makes the function misbehave in such a way\n> that an invalid signature is accepted as valid, but such attacks\n> can\\'t be ruled out without further analysis.\n",
+    "id": "FreeBSD-2021-0074",
+    "modified": "2021-03-27T00:00:00Z",
+    "published": "2021-03-27T00:00:00Z",
+    "references": [
+        {
+            "type": "REPORT",
+            "url": "https://lists.lysator.liu.se/pipermail/nettle-bugs/2021/009458.html"
+        },
+        {
+            "type": "WEB",
+            "url": "https://lists.lysator.liu.se/pipermail/nettle-bugs/2021/009458.html"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "nettle 3.7.2 -- fix serious ECDSA signature verify bug"
+}

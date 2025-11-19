@@ -1,0 +1,207 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "libsndfile"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "1.0.28_2"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        },
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "linux-c6-libsndfile"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "1.0.28_2"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        },
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "linux-c7-libsndfile"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "1.0.28_2"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "cite": [
+            "https://blogs.gentoo.org/ago/2017/04/29/libsndfile-global-buffer-overflow-in-flac_buffer_copy-flac-c/",
+            "https://blogs.gentoo.org/ago/2017/04/29/libsndfile-invalid-memory-read-in-flac_buffer_copy-flac-c/",
+            "https://blogs.gentoo.org/ago/2017/04/29/libsndfile-heap-based-buffer-overflow-in-flac_buffer_copy-flac-c/",
+            "https://blogs.gentoo.org/ago/2017/04/29/libsndfile-global-buffer-overflow-in-i2les_array-pcm-c/",
+            "https://github.com/erikd/libsndfile/issues/292",
+            "https://github.com/erikd/libsndfile/issues/318"
+        ],
+        "discovery": "2017-04-12T00:00:00Z",
+        "references": {
+            "cvename": [
+                "CVE-2017-8361",
+                "CVE-2017-8362",
+                "CVE-2017-8363",
+                "CVE-2017-8365",
+                "CVE-2017-12562",
+                "CVE-2017-14634"
+            ]
+        },
+        "vid": "2b386075-1d9c-11e8-b6aa-4ccc6adda413"
+    },
+    "details": "Agostino Sarubbo, Gentoo reports:\n\n> CVE-2017-8361 (Medium): The flac_buffer_copy function in flac.c in\n> libsndfile 1.0.28 allows remote attackers to cause a denial of service\n> (buffer overflow and application crash) or possibly have unspecified\n> other impact via a crafted audio file.\n\n> CVE-2017-8362 (Medium): The flac_buffer_copy function in flac.c in\n> libsndfile 1.0.28 allows remote attackers to cause a denial of service\n> (invalid read and application crash) via a crafted audio file.\n\n> CVE-2017-8363 (Medium): The flac_buffer_copy function in flac.c in\n> libsndfile 1.0.28 allows remote attackers to cause a denial of service\n> (heap-based buffer over-read and application crash) via a crafted\n> audio file.\n\n> CVE-2017-8365 (Medium): The i2les_array function in pcm.c in\n> libsndfile 1.0.28 allows remote attackers to cause a denial of service\n> (buffer over-read and application crash) via a crafted audio file.\n\nmanxorist on Github reports:\n\n> CVE-2017-12562 (High): Heap-based Buffer Overflow in the\n> psf_binheader_writef function in common.c in libsndfile through 1.0.28\n> allows remote attackers to cause a denial of service (application\n> crash) or possibly have unspecified other impact.\n\nXin-Jiang on Github reports:\n\n> CVE-2017-14634 (Medium): In libsndfile 1.0.28, a divide-by-zero error\n> exists in the function double64_init() in double64.c, which may lead\n> to DoS when playing a crafted audio file.\n",
+    "id": "FreeBSD-2018-0069",
+    "modified": "2018-03-01T00:00:00Z",
+    "published": "2018-03-01T00:00:00Z",
+    "references": [
+        {
+            "type": "REPORT",
+            "url": "https://blogs.gentoo.org/ago/2017/04/29/libsndfile-global-buffer-overflow-in-flac_buffer_copy-flac-c/"
+        },
+        {
+            "type": "REPORT",
+            "url": "https://blogs.gentoo.org/ago/2017/04/29/libsndfile-invalid-memory-read-in-flac_buffer_copy-flac-c/"
+        },
+        {
+            "type": "REPORT",
+            "url": "https://blogs.gentoo.org/ago/2017/04/29/libsndfile-heap-based-buffer-overflow-in-flac_buffer_copy-flac-c/"
+        },
+        {
+            "type": "REPORT",
+            "url": "https://blogs.gentoo.org/ago/2017/04/29/libsndfile-global-buffer-overflow-in-i2les_array-pcm-c/"
+        },
+        {
+            "type": "REPORT",
+            "url": "https://github.com/erikd/libsndfile/issues/292"
+        },
+        {
+            "type": "REPORT",
+            "url": "https://github.com/erikd/libsndfile/issues/318"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2017-8361"
+        },
+        {
+            "type": "WEB",
+            "url": "https://blogs.gentoo.org/ago/2017/04/29/libsndfile-global-buffer-overflow-in-flac_buffer_copy-flac-c/"
+        },
+        {
+            "type": "WEB",
+            "url": "https://github.com/erikd/libsndfile/issues/232"
+        },
+        {
+            "type": "WEB",
+            "url": "https://github.com/erikd/libsndfile/commit/fd0484aba8e51d16af1e3a880f9b8b857b385eb3"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2017-8362"
+        },
+        {
+            "type": "WEB",
+            "url": "https://blogs.gentoo.org/ago/2017/04/29/libsndfile-invalid-memory-read-in-flac_buffer_copy-flac-c/"
+        },
+        {
+            "type": "WEB",
+            "url": "https://github.com/erikd/libsndfile/issues/231"
+        },
+        {
+            "type": "WEB",
+            "url": "https://github.com/erikd/libsndfile/commit/ef1dbb2df1c0e741486646de40bd638a9c4cd808"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2017-8363"
+        },
+        {
+            "type": "WEB",
+            "url": "https://blogs.gentoo.org/ago/2017/04/29/libsndfile-heap-based-buffer-overflow-in-flac_buffer_copy-flac-c/"
+        },
+        {
+            "type": "WEB",
+            "url": "https://github.com/erikd/libsndfile/issues/233"
+        },
+        {
+            "type": "WEB",
+            "url": "https://github.com/erikd/libsndfile/commit/fd0484aba8e51d16af1e3a880f9b8b857b385eb3"
+        },
+        {
+            "type": "WEB",
+            "url": "https://github.com/erikd/libsndfile/commit/cd7da8dbf6ee4310d21d9e44b385d6797160d9e8"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2017-8365"
+        },
+        {
+            "type": "WEB",
+            "url": "https://blogs.gentoo.org/ago/2017/04/29/libsndfile-global-buffer-overflow-in-i2les_array-pcm-c/"
+        },
+        {
+            "type": "WEB",
+            "url": "https://github.com/erikd/libsndfile/issues/230"
+        },
+        {
+            "type": "WEB",
+            "url": "https://github.com/erikd/libsndfile/commit/fd0484aba8e51d16af1e3a880f9b8b857b385eb3"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2017-12562"
+        },
+        {
+            "type": "WEB",
+            "url": "https://github.com/erikd/libsndfile/issues/292/"
+        },
+        {
+            "type": "WEB",
+            "url": "https://github.com/erikd/libsndfile/commit/cf7a8182c2642c50f1cf90dddea9ce96a8bad2e8"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2017-14634"
+        },
+        {
+            "type": "WEB",
+            "url": "https://github.com/erikd/libsndfile/issues/318"
+        },
+        {
+            "type": "WEB",
+            "url": "https://github.com/erikd/libsndfile/commit/85c877d5072866aadbe8ed0c3e0590fbb5e16788"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "libsndfile -- multiple vulnerabilities"
+}

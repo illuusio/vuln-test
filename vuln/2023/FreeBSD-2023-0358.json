@@ -1,0 +1,155 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "xorg-server"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "21.1.10,1"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        },
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "xephyr"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "21.1.10,1"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        },
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "xorg-vfbserver"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "21.1.10,1"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        },
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "xorg-nestserver"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "21.1.10,2"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        },
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "xwayland"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "23.2.3,1"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        },
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "xwayland-devel"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "21.0.99.1.582"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "cite": [
+            "https://lists.x.org/archives/xorg-announce/2023-December/003435.html"
+        ],
+        "discovery": "2023-12-13T00:00:00Z",
+        "references": {
+            "cvename": [
+                "CVE-2023-6377",
+                "CVE-2023-6478"
+            ]
+        },
+        "vid": "972568d6-3485-40ab-80ff-994a8aaf9683"
+    },
+    "details": "The X.Org project reports:\n\n> - CVE-2023-6377/ZDI-CAN-22412/ZDI-CAN-22413: X.Org server:\n>   Out-of-bounds memory write in XKB button actions\n>\n>   A device has XKB button actions for each button on the device. When\n>   a logical device switch happens (e.g. moving from a touchpad to a\n>   mouse), the server re-calculates the information available on the\n>   respective master device (typically the Virtual Core Pointer). This\n>   re-calculation only allocated enough memory for a single XKB action\n>   rather instead of enough for the newly active physical device\\'s\n>   number of button. As a result, querying or changing the XKB button\n>   actions results in out-of-bounds memory reads and writes.\n>\n>   This may lead to local privilege escalation if the server is run as\n>   root or remote code execution (e.g. x11 over ssh).\n>\n> - CVE-2023-6478/ZDI-CAN-22561: X.Org server: Out-of-bounds memory read\n>   in RRChangeOutputProperty and RRChangeProviderProperty\n>\n>   This fixes an OOB read and the resulting information disclosure.\n>\n>   Length calculation for the request was clipped to a 32-bit integer.\n>   With the correct stuff-\\>nUnits value the expected request size was\n>   truncated, passing the REQUEST_FIXED_SIZE check.\n>\n>   The server then proceeded with reading at least stuff-\\>nUnits bytes\n>   (depending on stuff-\\>format) from the request and stuffing whatever\n>   it finds into the property. In the process it would also allocate at\n>   least stuff-\\>nUnits bytes, i.e. 4GB.\n",
+    "id": "FreeBSD-2023-0358",
+    "modified": "2023-12-13T00:00:00Z",
+    "published": "2023-12-13T00:00:00Z",
+    "references": [
+        {
+            "type": "REPORT",
+            "url": "https://lists.x.org/archives/xorg-announce/2023-December/003435.html"
+        },
+        {
+            "type": "WEB",
+            "url": "https://lists.x.org/archives/xorg-announce/2023-December/003435.html"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2023-6377"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2023-6478"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "xorg-server -- Multiple vulnerabilities"
+}

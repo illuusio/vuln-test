@@ -1,0 +1,55 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "rsyslog"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "8.2204.1"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "cite": [
+            "https://github.com/rsyslog/rsyslog/security/advisories/GHSA-ggw7-xr6h-mmr8"
+        ],
+        "discovery": "2022-05-05T00:00:00Z",
+        "references": {
+            "cvename": [
+                "CVE-2022-24903"
+            ]
+        },
+        "vid": "b9837fa1-cd72-11ec-98f1-6805ca0b3d42"
+    },
+    "details": "Rainer Gerhards reports:\n\n> Modules for TCP syslog reception have a heap buffer overflow when\n> octet-counted framing is used. The attacker can corrupt heap values,\n> leading to data integrity issues and availability impact. Remote code\n> execution is unlikely to happen but not impossible..\n",
+    "id": "FreeBSD-2022-0101",
+    "modified": "2022-05-06T00:00:00Z",
+    "published": "2022-05-06T00:00:00Z",
+    "references": [
+        {
+            "type": "REPORT",
+            "url": "https://github.com/rsyslog/rsyslog/security/advisories/GHSA-ggw7-xr6h-mmr8"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2022-24903"
+        },
+        {
+            "type": "WEB",
+            "url": "https://github.com/rsyslog/rsyslog/security/advisories/GHSA-ggw7-xr6h-mmr8"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "rsyslog8 -- heap buffer overflow on receiving TCP syslog"
+}

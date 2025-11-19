@@ -1,0 +1,83 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:kernel",
+                "name": "FreeBSD-kernel"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "introduced": "13.0"
+                        },
+                        {
+                            "fixed": "13.0_8"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                },
+                {
+                    "events": [
+                        {
+                            "introduced": "12.3"
+                        },
+                        {
+                            "fixed": "12.3_3"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                },
+                {
+                    "events": [
+                        {
+                            "introduced": "12.2"
+                        },
+                        {
+                            "fixed": "12.2_14"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "discovery": "2022-03-15T00:00:00Z",
+        "references": {
+            "cvename": [
+                "CVE-2020-26147",
+                "CVE-2020-24588",
+                "CVE-2020-26144"
+            ],
+            "freebsdsa": [
+                "SA-22:02.wifi"
+            ]
+        },
+        "vid": "8d20bd48-a4f3-11ec-90de-1c697aa5a594"
+    },
+    "details": "# Problem Description:\n\nThe paper \\\"Fragment and Forge: Breaking Wi-Fi Through Frame Aggregation\nand Fragmentation\\\" reported a number of security vulnerabilities in the\n802.11 specification related to frame aggregation and fragmentation.\n\nAdditionally, FreeBSD 12.x missed length validation of SSIDs and\nInformation Elements (IEs).\n\n# Impact:\n\nAs reported on the FragAttacks website, the \\\"design flaws are hard to\nabuse because doing so requires user interaction or is only possible\nwhen using uncommon network settings.\\\" Under suitable conditions an\nattacker may be able to extract sensitive data or inject data.\n",
+    "id": "FreeBSD-2022-0053",
+    "modified": "2022-03-16T00:00:00Z",
+    "published": "2022-03-16T00:00:00Z",
+    "references": [
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2020-26147"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2020-24588"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2020-26144"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://www.freebsd.org/security/advisories/FreeBSD-SA-22:02.wifi.asc"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "FreeBSD-kernel -- Multiple WiFi issues"
+}

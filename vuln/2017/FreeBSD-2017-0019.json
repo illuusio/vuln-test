@@ -1,0 +1,176 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "bind99"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "9.9.9P5"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        },
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "bind910"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "9.10.4P5"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        },
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "bind911"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "9.11.0P2"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        },
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "bind9-devel"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "last_affected": "9.12.0.a.2016.12.28"
+                        },
+                        {
+                            "fixed": "9.12.0.a.2016.12.28"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        },
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "FreeBSD"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "introduced": "9.3"
+                        },
+                        {
+                            "fixed": "10.0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "cite": [
+            "https://kb.isc.org/article/AA-01439/0",
+            "https://kb.isc.org/article/AA-01440/0",
+            "https://kb.isc.org/article/AA-01441/0",
+            "https://kb.isc.org/article/AA-01442/0"
+        ],
+        "discovery": "2017-01-11T00:00:00Z",
+        "references": {
+            "cvename": [
+                "CVE-2016-9131",
+                "CVE-2016-9147",
+                "CVE-2016-9444",
+                "CVE-2016-9778"
+            ]
+        },
+        "vid": "d4c7e9a9-d893-11e6-9b4d-d050996490d0"
+    },
+    "details": "ISC reports:\n\n> A malformed query response received by a recursive server in response\n> to a query of RTYPE ANY could trigger an assertion failure while named\n> is attempting to add the RRs in the query response to the cache.\n\n> Depending on the type of query and the EDNS options in the query they\n> receive, DNSSEC-enabled authoritative servers are expected to include\n> RRSIG and other RRsets in their responses to recursive servers.\n> DNSSEC-validating servers will also make specific queries for DS and\n> other RRsets. Whether DNSSEC-validating or not, an error in processing\n> malformed query responses that contain DNSSEC-related RRsets that are\n> inconsistent with other RRsets in the same query response can trigger\n> an assertion failure. Although the combination of properties which\n> triggers the assertion should not occur in normal traffic, it is\n> potentially possible for the assertion to be triggered deliberately by\n> an attacker sending a specially-constructed answer.\n\n> An unusually-formed answer containing a DS resource record could\n> trigger an assertion failure. While the combination of properties\n> which triggers the assertion should not occur in normal traffic, it is\n> potentially possible for the assertion to be triggered deliberately by\n> an attacker sending a specially-constructed answer having the required\n> properties.\n\n> An error in handling certain queries can cause an assertion failure\n> when a server is using the nxdomain-redirect feature to cover a zone\n> for which it is also providing authoritative service. A vulnerable\n> server could be intentionally stopped by an attacker if it was using a\n> configuration that met the criteria for the vulnerability and if the\n> attacker could cause it to accept a query that possessed the required\n> attributes.\n",
+    "id": "FreeBSD-2017-0019",
+    "modified": "2017-01-12T00:00:00Z",
+    "published": "2017-01-12T00:00:00Z",
+    "references": [
+        {
+            "type": "REPORT",
+            "url": "https://kb.isc.org/article/AA-01439/0"
+        },
+        {
+            "type": "REPORT",
+            "url": "https://kb.isc.org/article/AA-01440/0"
+        },
+        {
+            "type": "REPORT",
+            "url": "https://kb.isc.org/article/AA-01441/0"
+        },
+        {
+            "type": "REPORT",
+            "url": "https://kb.isc.org/article/AA-01442/0"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2016-9131"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2016-9147"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2016-9444"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2016-9778"
+        },
+        {
+            "type": "WEB",
+            "url": "https://kb.isc.org/article/AA-01439/0"
+        },
+        {
+            "type": "WEB",
+            "url": "https://kb.isc.org/article/AA-01440/0"
+        },
+        {
+            "type": "WEB",
+            "url": "https://kb.isc.org/article/AA-01441/0"
+        },
+        {
+            "type": "WEB",
+            "url": "https://kb.isc.org/article/AA-01442/0"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "BIND -- multiple vulnerabilities"
+}

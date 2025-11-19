@@ -1,0 +1,80 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "perl5"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "introduced": "5.24.0"
+                        },
+                        {
+                            "fixed": "5.24.3"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                },
+                {
+                    "events": [
+                        {
+                            "introduced": "5.26.0"
+                        },
+                        {
+                            "fixed": "5.26.1"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "cite": [
+            "https://metacpan.org/changes/release/SHAY/perl-5.26.1#Security"
+        ],
+        "discovery": "2017-09-19T00:00:00Z",
+        "references": {
+            "cvename": [
+                "CVE-2017-12814",
+                "CVE-2017-12837",
+                "CVE-2017-12883"
+            ]
+        },
+        "vid": "d9e82328-a129-11e7-987e-4f174049b30a"
+    },
+    "details": "Meta CPAN reports:\n\n> CVE-2017-12814: \\$ENV{\\$key} stack buffer overflow on Windows\n>\n> A possible stack buffer overflow in the %ENV code on Windows has been\n> fixed by removing the buffer completely since it was superfluous\n> anyway.\n>\n> CVE-2017-12837: Heap buffer overflow in regular expression compiler\n>\n> Compiling certain regular expression patterns with the\n> case-insensitive modifier could cause a heap buffer overflow and crash\n> perl. This has now been fixed.\n>\n> CVE-2017-12883: Buffer over-read in regular expression parser\n>\n> For certain types of syntax error in a regular expression pattern, the\n> error message could either contain the contents of a random, possibly\n> large, chunk of memory, or could crash perl. This has now been fixed.\n",
+    "id": "FreeBSD-2017-0208",
+    "modified": "2017-09-24T00:00:00Z",
+    "published": "2017-09-24T00:00:00Z",
+    "references": [
+        {
+            "type": "REPORT",
+            "url": "https://metacpan.org/changes/release/SHAY/perl-5.26.1#Security"
+        },
+        {
+            "type": "WEB",
+            "url": "https://metacpan.org/changes/release/SHAY/perl-5.24.3"
+        },
+        {
+            "type": "WEB",
+            "url": "https://metacpan.org/changes/release/SHAY/perl-5.26.1"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2017-12814"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2017-12837"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2017-12883"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "perl -- multiple vulnerabilities"
+}

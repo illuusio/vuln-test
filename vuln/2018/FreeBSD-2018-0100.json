@@ -1,0 +1,73 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:kernel",
+                "name": "FreeBSD-kernel"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "introduced": "11.1"
+                        },
+                        {
+                            "fixed": "11.1_9"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                },
+                {
+                    "events": [
+                        {
+                            "introduced": "10.4"
+                        },
+                        {
+                            "fixed": "10.4_8"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                },
+                {
+                    "events": [
+                        {
+                            "introduced": "10.3"
+                        },
+                        {
+                            "fixed": "10.3_29"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "discovery": "2018-04-04T00:00:00Z",
+        "references": {
+            "cvename": [
+                "CVE-2018-6917"
+            ],
+            "freebsdsa": [
+                "SA-18:04.vt"
+            ]
+        },
+        "vid": "a5cf3ecd-38db-11e8-8b7f-a4badb2f469b"
+    },
+    "details": "# Problem Description:\n\nInsufficient validation of user-provided font parameters can result in\nan integer overflow, leading to the use of arbitrary kernel memory as\nglyph data. Characters that reference this data can be displayed on the\nscreen, effectively disclosing kernel memory.\n\n# Impact:\n\nUnprivileged users may be able to access privileged kernel data.\n\nSuch memory might contain sensitive information, such as portions of the\nfile cache or terminal buffers. This information might be directly\nuseful, or it might be leveraged to obtain elevated privileges in some\nway; for example, a terminal buffer might include a user-entered\npassword.\n",
+    "id": "FreeBSD-2018-0100",
+    "modified": "2018-04-05T00:00:00Z",
+    "published": "2018-04-05T00:00:00Z",
+    "references": [
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2018-6917"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://www.freebsd.org/security/advisories/FreeBSD-SA-18:04.vt.asc"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "FreeBSD -- vt console memory disclosure"
+}

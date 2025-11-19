@@ -1,0 +1,60 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "libXpm"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "3.5.17"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "cite": [
+            "https://lists.x.org/archives/xorg/2023-October/061506.html"
+        ],
+        "discovery": "2023-09-22T00:00:00Z",
+        "references": {
+            "cvename": [
+                "CVE-2023-43788",
+                "CVE-2023-43789"
+            ]
+        },
+        "vid": "199cdb4d-690d-11ee-9ed0-001fc69cd6dc"
+    },
+    "details": "The X.Org project reports:\n\n> \n>\n> CVE-2023-43788: Out of bounds read in XpmCreateXpmImageFromBuffer\n> :   An out-of-bounds read is located in ParseComment() when reading\n>     from a memory buffer instead of a file, as it continued to look\n>     for the closing comment marker past the end of the buffer.\n>\n> CVE-2023-43789: Out of bounds read on XPM with corrupted colormap\n> :   A corrupted colormap section may cause libXpm to read out of\n>     bounds.\n",
+    "id": "FreeBSD-2023-0311",
+    "modified": "2023-10-12T00:00:00Z",
+    "published": "2023-10-12T00:00:00Z",
+    "references": [
+        {
+            "type": "REPORT",
+            "url": "https://lists.x.org/archives/xorg/2023-October/061506.html"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2023-43788"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2023-43789"
+        },
+        {
+            "type": "WEB",
+            "url": "https://lists.x.org/archives/xorg/2023-October/061506.html"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "x11/libXpm multiple vulnerabilities"
+}

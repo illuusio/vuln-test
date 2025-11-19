@@ -1,0 +1,66 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "snort"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "introduced": "2.6.1"
+                        },
+                        {
+                            "fixed": "2.6.1.3"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "cite": [
+            "http://iss.net/threats/257.html"
+        ],
+        "discovery": "2007-02-19T00:00:00Z",
+        "references": {
+            "certvu": [
+                "196240"
+            ],
+            "cvename": [
+                "CVE-2006-5276"
+            ]
+        },
+        "vid": "afdf500f-c1f6-11db-95c5-000c6ec775d9"
+    },
+    "details": "A IBM Internet Security Systems Protection Advisory reports:\n\n> Snort is vulnerable to a stack-based buffer overflow as a result of\n> DCE/RPC reassembly. This vulnerability is in a dynamic-preprocessor\n> enabled in the default configuration, and the configuration for this\n> preprocessor allows for auto-recognition of SMB traffic to perform\n> reassembly on. No checks are performed to see if the traffic is part\n> of a valid TCP session, and multiple Write AndX requests can be\n> chained in the same TCP segment. As a result, an attacker can exploit\n> this overflow with a single TCP PDU sent across a network monitored by\n> Snort or Sourcefire.\n>\n> Snort users who cannot upgrade immediately are advised to disable the\n> DCE/RPC preprocessor by removing the DCE/RPC preprocessor directives\n> from snort.conf and restarting Snort. However, be advised that\n> disabling the DCE/RPC preprocessor reduces detection capabilities for\n> attacks in DCE/RPC traffic. After upgrading, customers should\n> re-enable the DCE/RPC preprocessor.\n",
+    "id": "FreeBSD-2007-0013",
+    "modified": "2007-02-21T00:00:00Z",
+    "published": "2007-02-21T00:00:00Z",
+    "references": [
+        {
+            "type": "REPORT",
+            "url": "http://iss.net/threats/257.html"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://www.kb.cert.org/vuls/id/196240"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2006-5276"
+        },
+        {
+            "type": "WEB",
+            "url": "http://xforce.iss.net/xforce/xfdb/31275"
+        },
+        {
+            "type": "WEB",
+            "url": "http://www.snort.org/docs/advisory-2007-02-19.html"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "snort -- DCE/RPC preprocessor vulnerability"
+}

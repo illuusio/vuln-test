@@ -1,0 +1,178 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "cvs+ipv6"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "1.11.17"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        },
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "FreeBSD"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "introduced": "5.2"
+                        },
+                        {
+                            "fixed": "5.2.1_10"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                },
+                {
+                    "events": [
+                        {
+                            "introduced": "4.10"
+                        },
+                        {
+                            "fixed": "4.10_3"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                },
+                {
+                    "events": [
+                        {
+                            "introduced": "4.9"
+                        },
+                        {
+                            "fixed": "4.9_12"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                },
+                {
+                    "events": [
+                        {
+                            "introduced": "4.8"
+                        },
+                        {
+                            "fixed": "4.8_25"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "discovery": "2004-05-20T00:00:00Z",
+        "references": {
+            "bid": [
+                "10499"
+            ],
+            "cvename": [
+                "CVE-2004-0414",
+                "CVE-2004-0416",
+                "CVE-2004-0417",
+                "CVE-2004-0418",
+                "CVE-2004-0778"
+            ],
+            "freebsdsa": [
+                "SA-04:14.cvs"
+            ]
+        },
+        "vid": "d2102505-f03d-11d8-81b0-000347a4fa7d"
+    },
+    "details": "A number of vulnerabilities were discovered in CVS by Stefan Esser,\nSebastian Krahmer, and Derek Price.\n\n- Insufficient input validation while processing \\\"Entry\\\" lines.\n  (CVE-2004-0414)\n- A double-free resulting from erroneous state handling while processing\n  \\\"Argumentx\\\" commands. (CVE-2004-0416)\n- Integer overflow while processing \\\"Max-dotdot\\\" commands.\n  (CVE-2004-0417)\n- Erroneous handling of empty entries handled while processing\n  \\\"Notify\\\" commands. (CVE-2004-0418)\n- A format string bug while processing CVS wrappers.\n- Single-byte buffer underflows while processing configuration files\n  from CVSROOT.\n- Various other integer overflows.\n\nAdditionally, iDEFENSE reports an undocumented command-line flag used in\ndebugging does not perform input validation on the given path names.\n\nCVS servers (\\\"cvs server\\\" or :pserver: modes) are affected by these\nvulnerabilities. They vary in impact but include information disclosure\n(the iDEFENSE-reported bug), denial-of-service (CVE-2004-0414,\nCVE-2004-0416, CVE-2004-0417 and other bugs), or possibly arbitrary code\nexecution (CVE-2004-0418). In very special situations where the attacker\nmay somehow influence the contents of CVS configuration files in\nCVSROOT, additional attacks may be possible.\n",
+    "id": "FreeBSD-2004-0158",
+    "modified": "2004-09-19T00:00:00Z",
+    "published": "2004-08-17T00:00:00Z",
+    "references": [
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2004-0414"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2004-0416"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2004-0417"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2004-0418"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2004-0778"
+        },
+        {
+            "type": "WEB",
+            "url": "http://secunia.com/advisories/11817"
+        },
+        {
+            "type": "WEB",
+            "url": "http://secunia.com/advisories/12309"
+        },
+        {
+            "type": "WEB",
+            "url": "http://security.e-matters.de/advisories/092004.html"
+        },
+        {
+            "type": "WEB",
+            "url": "http://www.idefense.com/application/poi/display?id=130&type=vulnerabilities&flashstatus=false"
+        },
+        {
+            "type": "WEB",
+            "url": "https://ccvs.cvshome.org/source/browse/ccvs/NEWS?rev=1.116.2.104"
+        },
+        {
+            "type": "WEB",
+            "url": "http://www.osvdb.org/6830"
+        },
+        {
+            "type": "WEB",
+            "url": "http://www.osvdb.org/6831"
+        },
+        {
+            "type": "WEB",
+            "url": "http://www.osvdb.org/6832"
+        },
+        {
+            "type": "WEB",
+            "url": "http://www.osvdb.org/6833"
+        },
+        {
+            "type": "WEB",
+            "url": "http://www.osvdb.org/6834"
+        },
+        {
+            "type": "WEB",
+            "url": "http://www.osvdb.org/6835"
+        },
+        {
+            "type": "WEB",
+            "url": "http://www.osvdb.org/6836"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://www.securityfocus.com/bid/10499/info"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://www.freebsd.org/security/advisories/FreeBSD-SA-04:14.cvs.asc"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "cvs -- numerous vulnerabilities"
+}

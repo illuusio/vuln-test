@@ -1,0 +1,89 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "FreeBSD"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "introduced": "11.1"
+                        },
+                        {
+                            "fixed": "11.1_5"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                },
+                {
+                    "events": [
+                        {
+                            "introduced": "11.0"
+                        },
+                        {
+                            "fixed": "11.0_16"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                },
+                {
+                    "events": [
+                        {
+                            "introduced": "10.4"
+                        },
+                        {
+                            "fixed": "10.4_4"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                },
+                {
+                    "events": [
+                        {
+                            "introduced": "10.3"
+                        },
+                        {
+                            "fixed": "10.3_25"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "discovery": "2017-11-29T00:00:00Z",
+        "references": {
+            "cvename": [
+                "CVE-2017-3735",
+                "CVE-2017-3736"
+            ],
+            "freebsdsa": [
+                "SA-17:11.openssl"
+            ]
+        },
+        "vid": "9442a811-dab3-11e7-b5af-a4badb2f4699"
+    },
+    "details": "# Problem Description:\n\nIf an X.509 certificate has a malformed IPAddressFamily extension,\nOpenSSL could do a one-byte buffer overread. \\[CVE-2017-3735\\]\n\nThere is a carry propagating bug in the x86_64 Montgomery squaring\nprocedure. This only affects processors that support the BMI1, BMI2 and\nADX extensions like Intel Broadwell (5th generation) and later or AMD\nRyzen. \\[CVE-2017-3736\\] This bug only affects FreeBSD 11.x.\n\n# Impact:\n\nApplication using OpenSSL may display erroneous certificate in text\nformat. \\[CVE-2017-3735\\]\n\nMishandling of carry propagation will produce incorrect output, and make\nit easier for a remote attacker to obtain sensitive private-key\ninformation. No EC algorithms are affected, analysis suggests that\nattacks against RSA and DSA as a result of this defect would be very\ndifficult to perform and are not believed likely.\n\nAttacks against DH are considered just feasible (although very\ndifficult) because most of the work necessary to deduce information\nabout a private key may be performed offline. The amount of resources\nrequired for such an attack would be very significant and likely only\naccessible to a limited number of attackers. An attacker would\nadditionally need online access to an unpatched system using the target\nprivate key in a scenario with persistent DH parameters and a private\nkey that is shared between multiple clients. \\[CVE-2017-3736\\]\n",
+    "id": "FreeBSD-2017-0305",
+    "modified": "2017-12-06T00:00:00Z",
+    "published": "2017-12-06T00:00:00Z",
+    "references": [
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2017-3735"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2017-3736"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://www.freebsd.org/security/advisories/FreeBSD-SA-17:11.openssl.asc"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "FreeBSD -- OpenSSL multiple vulnerabilities"
+}

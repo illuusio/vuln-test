@@ -1,0 +1,99 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "FreeBSD"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "introduced": "10.0"
+                        },
+                        {
+                            "fixed": "10.0_6"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                },
+                {
+                    "events": [
+                        {
+                            "introduced": "9.2"
+                        },
+                        {
+                            "fixed": "9.2_9"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                },
+                {
+                    "events": [
+                        {
+                            "introduced": "9.1"
+                        },
+                        {
+                            "fixed": "9.1_16"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                },
+                {
+                    "events": [
+                        {
+                            "introduced": "8.4"
+                        },
+                        {
+                            "fixed": "8.4_13"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "discovery": "2014-06-24T00:00:00Z",
+        "references": {
+            "cvename": [
+                "CVE-2012-1571",
+                "CVE-2013-7345",
+                "CVE-2014-1943",
+                "CVE-2014-2270"
+            ],
+            "freebsdsa": [
+                "SA-14:16.file"
+            ]
+        },
+        "vid": "70140f20-6007-11e6-a6c3-14dae9d210b8"
+    },
+    "details": "# Problem Description:\n\nA specifically crafted Composite Document File (CDF) file can trigger an\nout-of-bounds read or an invalid pointer dereference. \\[CVE-2012-1571\\]\n\nA flaw in regular expression in the awk script detector makes use of\nmultiple wildcards with unlimited repetitions. \\[CVE-2013-7345\\]\n\nA malicious input file could trigger infinite recursion in libmagic(3).\n\\[CVE-2014-1943\\]\n\nA specifically crafted Portable Executable (PE) can trigger\nout-of-bounds read. \\[CVE-2014-2270\\]\n\n# Impact:\n\nAn attacker who can cause file(1) or any other applications using the\nlibmagic(3) library to be run on a maliciously constructed input can the\napplication to crash or consume excessive CPU resources, resulting in a\ndenial-of-service.\n",
+    "id": "FreeBSD-2016-0316",
+    "modified": "2016-08-11T00:00:00Z",
+    "published": "2016-08-11T00:00:00Z",
+    "references": [
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2012-1571"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2013-7345"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2014-1943"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2014-2270"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://www.freebsd.org/security/advisories/FreeBSD-SA-14:16.file.asc"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "FreeBSD -- Multiple vulnerabilities in file(1) and libmagic(3)"
+}

@@ -1,0 +1,65 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "asterisk11"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "11.23.1"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        },
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "asterisk13"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "13.11.1"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "cite": [
+            "http://www.asterisk.org/downloads/security-advisories"
+        ],
+        "discovery": "2016-08-05T00:00:00Z",
+        "vid": "5cb18881-7604-11e6-b362-001999f8d30b"
+    },
+    "details": "The Asterisk project reports:\n\n> The overlap dialing feature in chan_sip allows chan_sip to report to a\n> device that the number that has been dialed is incomplete and more\n> digits are required. If this functionality is used with a device that\n> has performed username/password authentication RTP resources are\n> leaked. This occurs because the code fails to release the old RTP\n> resources before allocating new ones in this scenario. If all\n> resources are used then RTP port exhaustion will occur and no RTP\n> sessions are able to be set up.\n>\n> If overlap dialing support is not needed the \\\"allowoverlap\\\" option\n> can be set to no. This will stop any usage of the scenario which\n> causes the resource exhaustion.\n",
+    "id": "FreeBSD-2016-0367",
+    "modified": "2016-09-08T00:00:00Z",
+    "published": "2016-09-08T00:00:00Z",
+    "references": [
+        {
+            "type": "REPORT",
+            "url": "http://www.asterisk.org/downloads/security-advisories"
+        },
+        {
+            "type": "WEB",
+            "url": "http://downloads.asterisk.org/pub/security/AST-2016-007.html"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "asterisk -- RTP Resource Exhaustion"
+}

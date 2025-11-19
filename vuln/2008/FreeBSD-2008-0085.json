@@ -1,0 +1,96 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "bugzilla"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "introduced": "2.22.1"
+                        },
+                        {
+                            "fixed": "2.22.4"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                },
+                {
+                    "events": [
+                        {
+                            "introduced": "3.*"
+                        },
+                        {
+                            "fixed": "3.0.4"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        },
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "ja-bugzilla"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "introduced": "2.22.1"
+                        },
+                        {
+                            "fixed": "2.22.4"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                },
+                {
+                    "events": [
+                        {
+                            "introduced": "3.*"
+                        },
+                        {
+                            "fixed": "3.0.4"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "cite": [
+            "http://www.bugzilla.org/security/2.22.4/"
+        ],
+        "discovery": "2008-06-03T00:00:00Z",
+        "references": {
+            "cvename": [
+                "CVE-2008-4437"
+            ]
+        },
+        "vid": "1d96305d-6ae6-11dd-91d5-000c29d47fd7"
+    },
+    "details": "A Bugzilla Security Advisory reports:\n\n> When importing bugs using importxml.pl, the \\--attach_path option can\n> be specified, pointing to the directory where attachments to import\n> are stored. If the XML file being read by importxml.pl contains a\n> malicious\n>\n>     ../relative_path/to/local_file\n>\n> node, the script follows this relative path and attaches the local\n> file pointed by it to the bug, making the file public. The security\n> fix makes sure the relative path is always ignored.\n",
+    "id": "FreeBSD-2008-0085",
+    "modified": "2010-05-12T00:00:00Z",
+    "published": "2008-08-15T00:00:00Z",
+    "references": [
+        {
+            "type": "REPORT",
+            "url": "http://www.bugzilla.org/security/2.22.4/"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2008-4437"
+        },
+        {
+            "type": "REPORT",
+            "url": "https://bugzilla.mozilla.org/show_bug.cgi?id=437169"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "Bugzilla -- Directory Traversal in importxml.pl"
+}

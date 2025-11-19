@@ -1,0 +1,63 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "libraw"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "0.17.1"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "cite": [
+            "http://seclists.org/fulldisclosure/2015/Nov/108"
+        ],
+        "discovery": "2015-11-30T00:00:00Z",
+        "references": {
+            "cvename": [
+                "CVE-2015-8366"
+            ]
+        },
+        "vid": "db04bf07-9cc8-11e5-8c2b-c335fa8985d7"
+    },
+    "details": "ChenQin reports:\n\n> The LibRaw raw image decoder has multiple vulnerabilities that can\n> cause memory errors which may lead to code execution or other\n> problems.\n>\n> In CVE-2015-8366, LibRaw\\'s smal_decode_segment function does not\n> handle indexes carefully, which can cause an index overflow.\n",
+    "id": "FreeBSD-2015-0385",
+    "modified": "2015-12-07T00:00:00Z",
+    "published": "2015-12-07T00:00:00Z",
+    "references": [
+        {
+            "type": "REPORT",
+            "url": "http://seclists.org/fulldisclosure/2015/Nov/108"
+        },
+        {
+            "type": "WEB",
+            "url": "http://www.libraw.org/news/libraw-0-17-1"
+        },
+        {
+            "type": "WEB",
+            "url": "https://github.com/LibRaw/LibRaw/commit/89d065424f09b788f443734d44857289489ca9e2"
+        },
+        {
+            "type": "DISCUSSION",
+            "url": "http://seclists.org/fulldisclosure/2015/Nov/108"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2015-8366"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "libraw -- index overflow in smal_decode_segment"
+}

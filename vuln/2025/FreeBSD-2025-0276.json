@@ -1,0 +1,55 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "p5-Catalyst-Authentication-Credential-HTTP"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "1.019"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "cite": [
+            "https://nvd.nist.gov/vuln/detail/CVE-2025-40920"
+        ],
+        "discovery": "2025-08-11T00:00:00Z",
+        "references": {
+            "cvename": [
+                "CVE-2025-40920"
+            ]
+        },
+        "vid": "c323bab5-80dd-11f0-97c4-40b034429ecf"
+    },
+    "details": "perl-catalyst project reports:\n\n> Catalyst::Authentication::Credential::HTTP versions 1.018 and earlier\n> for Perl generate nonces using the Perl Data::UUID library. \\*\n> Data::UUID does not use a strong cryptographic source for generating\n> UUIDs.\\* Data::UUID returns v3 UUIDs, which are generated from known\n> information and are unsuitable for security, as per RFC 9562. \\* The\n> nonces should be generated from a strong cryptographic source, as per\n> RFC 7616.\n",
+    "id": "FreeBSD-2025-0276",
+    "modified": "2025-08-24T00:00:00Z",
+    "published": "2025-08-24T00:00:00Z",
+    "references": [
+        {
+            "type": "REPORT",
+            "url": "https://nvd.nist.gov/vuln/detail/CVE-2025-40920"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2025-40920"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://nvd.nist.gov/vuln/detail/CVE-2025-40920"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "p5-Catalyst-Authentication-Credential-HTTP -- Insecure source of randomness"
+}

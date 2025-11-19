@@ -1,0 +1,88 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "openfire"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "3.6.1"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "cite": [
+            "http://www.andreas-kurtz.de/advisories/AKADV2008-001-v1.0.txt"
+        ],
+        "discovery": "2008-11-07T00:00:00Z",
+        "references": {
+            "cvename": [
+                "CVE-2008-6510",
+                "CVE-2008-6511",
+                "CVE-2008-6508",
+                "CVE-2009-1595",
+                "CVE-2008-1728",
+                "CVE-2008-6509"
+            ]
+        },
+        "vid": "937adf01-b64a-11dd-a55e-00163e000016"
+    },
+    "details": "Andreas Kurtz reports:\n\n> The jabber server Openfire (\\<= version 3.6.0a) contains several\n> serious vulnerabilities. Depending on the particular runtime\n> environment these issues can potentially even be used by an attacker\n> to execute code on operating system level.\n>\n> 1.  Authentication bypass - This vulnerability provides an attacker\n>     full access to all functions in the admin webinterface without\n>     providing any user credentials. The Tomcat filter which is\n>     responsible for authentication could be completely circumvented.\n> 2.  SQL injection - It is possible to pass SQL statements to the\n>     backend database through a SQL injection vulnerability. Depending\n>     on the particular runtime environment and database permissions it\n>     is even possible to write files to disk and execute code on\n>     operating system level.\n> 3.  Multiple Cross-Site Scripting - Permits arbitrary insertion of\n>     HTML- and JavaScript code in login.jsp. An attacker could also\n>     manipulate a parameter to specify a destination to which a user\n>     will be forwarded to after successful authentication.\n",
+    "id": "FreeBSD-2008-0140",
+    "modified": "2010-05-02T00:00:00Z",
+    "published": "2008-11-19T00:00:00Z",
+    "references": [
+        {
+            "type": "REPORT",
+            "url": "http://www.andreas-kurtz.de/advisories/AKADV2008-001-v1.0.txt"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2008-6510"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2008-6511"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2008-6508"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2009-1595"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2008-1728"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2008-6509"
+        },
+        {
+            "type": "WEB",
+            "url": "http://www.andreas-kurtz.de/advisories/AKADV2008-001-v1.0.txt"
+        },
+        {
+            "type": "WEB",
+            "url": "http://www.igniterealtime.org/builds/openfire/docs/latest/changelog.html"
+        },
+        {
+            "type": "WEB",
+            "url": "http://secunia.com/Advisories/32478/"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "openfire -- multiple vulnerabilities"
+}

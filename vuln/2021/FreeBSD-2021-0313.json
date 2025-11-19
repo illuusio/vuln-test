@@ -1,0 +1,66 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "mbedtls"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "2.16.12"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                },
+                {
+                    "events": [
+                        {
+                            "introduced": "2.17.0"
+                        },
+                        {
+                            "fixed": "2.28.0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "cite": [
+            "https://tls.mbed.org/tech-updates/security-advisories/mbedtls-security-advisory-2021-12"
+        ],
+        "discovery": "2021-12-14T00:00:00Z",
+        "references": {
+            "cvename": [
+                "CVE-2021-44732"
+            ]
+        },
+        "vid": "c1b2b492-6999-11ec-a50c-001cc0382b2f"
+    },
+    "details": "Manuel P\u00e9gouri\u00e9-Gonnard reports:\n\n> If mbedtls_ssl_set_session() or mbedtls_ssl_get_session() were to fail\n> with MBEDTLS_ERR_SSL_ALLOC_FAILED (in an out of memory condition),\n> then calling mbedtls_ssl_session_free() and mbedtls_ssl_free() in the\n> usual manner would cause an internal session buffer to be freed twice,\n> due to two structures both having valid pointers to it after a call to\n> ssl_session_copy().\n>\n> An attacker could potentially trigger the out of memory condition, and\n> therefore use this bug to create memory corruption, which could then\n> be further exploited or targetted.\n",
+    "id": "FreeBSD-2021-0313",
+    "modified": "2021-12-30T00:00:00Z",
+    "published": "2021-12-30T00:00:00Z",
+    "references": [
+        {
+            "type": "REPORT",
+            "url": "https://tls.mbed.org/tech-updates/security-advisories/mbedtls-security-advisory-2021-12"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2021-44732"
+        },
+        {
+            "type": "WEB",
+            "url": "https://tls.mbed.org/tech-updates/security-advisories/mbedtls-security-advisory-2021-12"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "Mbed TLS -- Potential double-free after an out of memory error"
+}

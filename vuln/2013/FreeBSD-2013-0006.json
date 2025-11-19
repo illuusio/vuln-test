@@ -1,0 +1,46 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "jenkins"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "1.498"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "cite": [
+            "https://wiki.jenkins-ci.org/display/SECURITY/Jenkins+Security+Advisory+2013-01-04"
+        ],
+        "discovery": "2013-01-04T00:00:00Z",
+        "vid": "3a65d33b-5950-11e2-b66b-00e0814cab4e"
+    },
+    "details": "Jenkins Security Advisory reports:\n\n> This advisory announces a security vulnerability that was found in\n> Jenkins core.\n>\n> An attacker can then use this master cryptographic key to mount remote\n> code execution attack against the Jenkins master, or impersonate\n> arbitrary users in making REST API calls.\n>\n> There are several factors that mitigate some of these problems that\n> may apply to specific installations.\n>\n> - The particular attack vector is only applicable on Jenkins instances\n>   that have slaves attached to them, and allow anonymous read access.\n> - Jenkins allows users to re-generate the API tokens. Those\n>   re-generated API tokens cannot be impersonated by the attacker.\n",
+    "id": "FreeBSD-2013-0006",
+    "modified": "2013-01-08T00:00:00Z",
+    "published": "2013-01-08T00:00:00Z",
+    "references": [
+        {
+            "type": "REPORT",
+            "url": "https://wiki.jenkins-ci.org/display/SECURITY/Jenkins+Security+Advisory+2013-01-04"
+        },
+        {
+            "type": "WEB",
+            "url": "https://wiki.jenkins-ci.org/display/SECURITY/Jenkins+Security+Advisory+2013-01-04"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "jenkins -- HTTP access to the server to retrieve the master cryptographic key"
+}

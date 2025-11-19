@@ -1,0 +1,124 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "openvpn"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "2.3.17"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                },
+                {
+                    "events": [
+                        {
+                            "introduced": "2.4.0"
+                        },
+                        {
+                            "fixed": "2.4.3"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        },
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "openvpn-mbedtls"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "2.4.3"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        },
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "openvpn-polarssl"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "2.3.17"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "cite": [
+            "https://community.openvpn.net/openvpn/wiki/VulnerabilitiesFixedInOpenVPN243"
+        ],
+        "discovery": "2017-05-19T00:00:00Z",
+        "references": {
+            "cvename": [
+                "CVE-2017-7508",
+                "CVE-2017-7512",
+                "CVE-2017-7520",
+                "CVE-2017-7521",
+                "CVE-2017-7522"
+            ]
+        },
+        "vid": "9f65d382-56a4-11e7-83e3-080027ef73ec"
+    },
+    "details": "Samuli Sepp\u00e4nen reports:\n\n> In May/June 2017 Guido Vranken threw a fuzzer at OpenVPN 2.4.2. In the\n> process he found several vulnerabilities and reported them to the\n> OpenVPN project. \\[\\...\\] The first releases to have these fixes are\n> OpenVPN 2.4.3 and 2.3.17.\n>\n> This is a list of fixed important vulnerabilities:\n>\n> - Remotely-triggerable ASSERT() on malformed IPv6 packet\n> - Pre-authentication remote crash/information disclosure for clients\n> - Potential double-free in \\--x509-alt-username\n> - Remote-triggerable memory leaks\n> - Post-authentication remote DoS when using the \\--x509-track option\n> - Null-pointer dereference in establish_http_proxy_passthru()\n",
+    "id": "FreeBSD-2017-0140",
+    "modified": "2017-06-21T00:00:00Z",
+    "published": "2017-06-21T00:00:00Z",
+    "references": [
+        {
+            "type": "REPORT",
+            "url": "https://community.openvpn.net/openvpn/wiki/VulnerabilitiesFixedInOpenVPN243"
+        },
+        {
+            "type": "WEB",
+            "url": "https://community.openvpn.net/openvpn/wiki/VulnerabilitiesFixedInOpenVPN243"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2017-7508"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2017-7512"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2017-7520"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2017-7521"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2017-7522"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "OpenVPN -- several vulnerabilities"
+}

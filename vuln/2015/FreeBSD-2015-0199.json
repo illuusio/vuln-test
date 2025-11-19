@@ -1,0 +1,90 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "freeradius2"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "2.2.8"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        },
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "freeradius3"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "3.0.9"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "cite": [
+            "http://www.ocert.org/advisories/ocert-2015-008.html"
+        ],
+        "discovery": "2015-06-22T00:00:00Z",
+        "references": {
+            "cvename": [
+                "CVE-2015-4680"
+            ],
+            "freebsdpr": [
+                "ports/201058",
+                "ports/201059"
+            ]
+        },
+        "vid": "379788f3-2900-11e5-a4a5-002590263bf5"
+    },
+    "details": "oCERT reports:\n\n> The FreeRADIUS server relies on OpenSSL to perform certificate\n> validation, including Certificate Revocation List (CRL) checks. The\n> FreeRADIUS usage of OpenSSL, in CRL application, limits the checks to\n> leaf certificates, therefore not detecting revocation of intermediate\n> CA certificates.\n>\n> An unexpired client certificate, issued by an intermediate CA with a\n> revoked certificate, is therefore accepted by FreeRADIUS.\n>\n> Specifically sets the X509_V_FLAG_CRL_CHECK flag for leaf certificate\n> CRL checks, but does not use X509_V_FLAG_CRL_CHECK_ALL for CRL checks\n> on the complete trust chain.\n>\n> The FreeRADIUS project advises that the recommended configuration is\n> to use self-signed CAs for all EAP-TLS methods.\n",
+    "id": "FreeBSD-2015-0199",
+    "modified": "2015-07-13T00:00:00Z",
+    "published": "2015-07-13T00:00:00Z",
+    "references": [
+        {
+            "type": "REPORT",
+            "url": "http://www.ocert.org/advisories/ocert-2015-008.html"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2015-4680"
+        },
+        {
+            "type": "REPORT",
+            "url": "https://bugs.freebsd.org/bugzilla/show_bug.cgi?id=201058"
+        },
+        {
+            "type": "REPORT",
+            "url": "https://bugs.freebsd.org/bugzilla/show_bug.cgi?id=201059"
+        },
+        {
+            "type": "WEB",
+            "url": "http://www.ocert.org/advisories/ocert-2015-008.html"
+        },
+        {
+            "type": "WEB",
+            "url": "http://freeradius.org/security.html"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "freeradius -- insufficient CRL application vulnerability"
+}

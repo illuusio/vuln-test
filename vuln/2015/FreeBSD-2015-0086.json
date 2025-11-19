@@ -1,0 +1,55 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "libssh"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "0.6.5"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "cite": [
+            "https://www.libssh.org/2015/04/30/libssh-0-6-5-security-and-bugfix-release/"
+        ],
+        "discovery": "2015-04-30T00:00:00Z",
+        "references": {
+            "cvename": [
+                "CVE-2015-3146"
+            ]
+        },
+        "vid": "0b040e24-f751-11e4-b24d-5453ed2e2b49"
+    },
+    "details": "Andreas Schneider reports:\n\n> libssh versions 0.5.1 and above have a logical error in the handling\n> of a SSH_MSG_NEWKEYS and SSH_MSG_KEXDH_REPLY package. A detected error\n> did not set the session into the error state correctly and further\n> processed the packet which leads to a null pointer dereference. This\n> is the packet after the initial key exchange and doesn't require\n> authentication.\n>\n> This could be used for a Denial of Service (DoS) attack.\n",
+    "id": "FreeBSD-2015-0086",
+    "modified": "2015-05-10T00:00:00Z",
+    "published": "2015-05-10T00:00:00Z",
+    "references": [
+        {
+            "type": "REPORT",
+            "url": "https://www.libssh.org/2015/04/30/libssh-0-6-5-security-and-bugfix-release/"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2015-3146"
+        },
+        {
+            "type": "WEB",
+            "url": "https://www.libssh.org/2015/04/30/libssh-0-6-5-security-and-bugfix-release"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "libssh -- null pointer dereference"
+}

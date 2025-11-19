@@ -1,0 +1,73 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "FreeBSD"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "introduced": "6.0"
+                        },
+                        {
+                            "fixed": "6.0_4"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                },
+                {
+                    "events": [
+                        {
+                            "introduced": "5.4"
+                        },
+                        {
+                            "fixed": "5.4_10"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                },
+                {
+                    "events": [
+                        {
+                            "introduced": "5.3"
+                        },
+                        {
+                            "fixed": "5.3_25"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "discovery": "2006-01-25T00:00:00Z",
+        "references": {
+            "cvename": [
+                "CVE-2006-0381"
+            ],
+            "freebsdsa": [
+                "SA-06:07.pf"
+            ]
+        },
+        "vid": "52ba7713-9d42-11da-8c1d-000e0c2e438a"
+    },
+    "details": "Problem description:\n\nA logic bug in pf\\'s IP fragment cache may result in a packet fragment\nbeing inserted twice, violating a kernel invariant.\n\nImpact:\n\nBy sending carefully crafted sequence of IP packet fragments, a remote\nattacker can cause a system running pf with a ruleset containing a\n\\'scrub fragment crop\\' or \\'scrub fragment drop-ovl\\' rule to crash.\n\nWorkaround:\n\nDo not use \\'scrub fragment crop\\' or \\'scrub fragment drop-ovl\\' rules\non systems running pf. In most cases, such rules can be replaced by\n\\'scrub fragment reassemble\\' rules; see the pf.conf(5) manual page for\nmore details.\n\nSystems which do not use pf, or use pf but do not use the aforementioned\nrules, are not affected by this issue.\n",
+    "id": "FreeBSD-2006-0017",
+    "modified": "2016-08-09T00:00:00Z",
+    "published": "2006-02-14T00:00:00Z",
+    "references": [
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2006-0381"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://www.freebsd.org/security/advisories/FreeBSD-SA-06:07.pf.asc"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "pf -- IP fragment handling panic"
+}

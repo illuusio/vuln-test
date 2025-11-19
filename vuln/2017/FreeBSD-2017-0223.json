@@ -1,0 +1,108 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "openvpn-polarssl"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "2.3.18"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        },
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "openvpn-mbedtls"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "introduced": "2.4.0"
+                        },
+                        {
+                            "fixed": "2.4.4"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        },
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "openvpn"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "introduced": "2.4.0"
+                        },
+                        {
+                            "fixed": "2.4.4"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                },
+                {
+                    "events": [
+                        {
+                            "fixed": "2.3.18"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "cite": [
+            "https://community.openvpn.net/openvpn/wiki/CVE-2017-12166"
+        ],
+        "discovery": "2017-09-21T00:00:00Z",
+        "references": {
+            "cvename": [
+                "CVE-2017-12166"
+            ]
+        },
+        "vid": "3dd6ccf4-a3c6-11e7-a52e-0800279f2ff8"
+    },
+    "details": "Steffan Karger reports:\n\n> The bounds check in read_key() was performed after using the value,\n> instead of before. If \\'key-method 1\\' is used, this allowed an\n> attacker to send a malformed packet to trigger a stack buffer\n> overflow. \\[\\...\\]\n>\n> Note that \\'key-method 1\\' has been replaced by \\'key method 2\\' as\n> the default in OpenVPN 2.0 (released on 2005-04-17), and explicitly\n> deprecated in 2.4 and marked for removal in 2.5. This should limit the\n> amount of users impacted by this issue.\n",
+    "id": "FreeBSD-2017-0223",
+    "modified": "2017-09-27T00:00:00Z",
+    "published": "2017-09-27T00:00:00Z",
+    "references": [
+        {
+            "type": "REPORT",
+            "url": "https://community.openvpn.net/openvpn/wiki/CVE-2017-12166"
+        },
+        {
+            "type": "WEB",
+            "url": "https://community.openvpn.net/openvpn/wiki/CVE-2017-12166"
+        },
+        {
+            "type": "WEB",
+            "url": "https://www.mail-archive.com/openvpn-devel@lists.sourceforge.net/msg15492.html"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2017-12166"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "OpenVPN -- out-of-bounds write in legacy key-method 1"
+}

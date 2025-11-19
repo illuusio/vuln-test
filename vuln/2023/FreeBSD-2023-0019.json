@@ -1,0 +1,55 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "fish"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "introduced": "3.1.0"
+                        },
+                        {
+                            "fixed": "3.4.0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "cite": [
+            "https://nvd.nist.gov/vuln/detail/CVE-2022-20001"
+        ],
+        "discovery": "2021-12-26T00:00:00Z",
+        "references": {
+            "cvename": [
+                "CVE-2022-20001"
+            ]
+        },
+        "vid": "a3b10c9b-99d9-11ed-aa55-d05099fed512"
+    },
+    "details": "Peter Ammon reports:\n\n> fish is a command line shell. fish version 3.1.0 through version 3.3.1\n> is vulnerable to arbitrary code execution. git repositories can\n> contain per-repository configuration that change the behavior of git,\n> including running arbitrary commands. When using the default\n> configuration of fish, changing to a directory automatically runs git\n> commands in order to display information about the current repository\n> in the prompt. If an attacker can convince a user to change their\n> current directory into one controlled by the attacker, such as on a\n> shared file system or extracted archive, fish will run arbitrary\n> commands under the attacker\\'s control. This problem has been fixed in\n> fish 3.4.0. Note that running git in these directories, including\n> using the git tab completion, remains a potential trigger for this\n> issue. As a workaround, remove the fish_git_prompt function from the\n> prompt.\n",
+    "id": "FreeBSD-2023-0019",
+    "modified": "2023-01-21T00:00:00Z",
+    "published": "2023-01-21T00:00:00Z",
+    "references": [
+        {
+            "type": "REPORT",
+            "url": "https://nvd.nist.gov/vuln/detail/CVE-2022-20001"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2022-20001"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2022-20001"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "shells/fish -- arbitrary code execution via git"
+}

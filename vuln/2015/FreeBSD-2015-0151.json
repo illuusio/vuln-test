@@ -1,0 +1,110 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "elasticsearch"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "1.2.0"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        },
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "logstash"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "1.4.3"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "cite": [
+            "https://www.elastic.co/community/security",
+            "https://www.elastic.co/blog/logstash-1-4-3-released"
+        ],
+        "discovery": "2014-05-22T00:00:00Z",
+        "references": {
+            "bid": [
+                "67731"
+            ],
+            "cvename": [
+                "CVE-2014-3120"
+            ]
+        },
+        "vid": "43ac9d42-1b9a-11e5-b43d-002590263bf5"
+    },
+    "details": "Elastic reports:\n\n> Vulnerability Summary: In Elasticsearch versions 1.1.x and prior,\n> dynamic scripting is enabled by default. This could allow an attacker\n> to execute OS commands.\n>\n> Remediation Summary: Disable dynamic scripting.\n\n> Logstash 1.4.2 was bundled with Elasticsearch 1.1.1, which is\n> vulnerable to CVE-2014-3120. These binaries are used in Elasticsearch\n> output specifically when using the node protocol. Since a node client\n> joins the Elasticsearch cluster, the attackers could use scripts to\n> execute commands on the host OS using the node client\\'s URL endpoint.\n> With 1.4.3 release, we are packaging Logstash with Elasticsearch 1.5.2\n> binaries which by default disables the ability to run scripts. This\n> also affects users who are using the configuration option\n> embedded=\\>true in the Elasticsearch output which starts a local\n> embedded Elasticsearch cluster. This is typically used in development\n> environment and proof of concept deployments. Regardless of this\n> vulnerability, we strongly recommend not using embedded in production.\n>\n> Note that users of transport and http protocol are not vulnerable to\n> this attack.\n",
+    "id": "FreeBSD-2015-0151",
+    "modified": "2015-06-26T00:00:00Z",
+    "published": "2015-06-26T00:00:00Z",
+    "references": [
+        {
+            "type": "REPORT",
+            "url": "https://www.elastic.co/community/security"
+        },
+        {
+            "type": "REPORT",
+            "url": "https://www.elastic.co/blog/logstash-1-4-3-released"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2014-3120"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://www.securityfocus.com/bid/67731/info"
+        },
+        {
+            "type": "WEB",
+            "url": "https://www.elastic.co/community/security"
+        },
+        {
+            "type": "WEB",
+            "url": "https://www.elastic.co/blog/elasticsearch-1-2-0-released"
+        },
+        {
+            "type": "WEB",
+            "url": "https://www.elastic.co/blog/logstash-1-4-3-released"
+        },
+        {
+            "type": "WEB",
+            "url": "https://www.exploit-db.com/exploits/33370/"
+        },
+        {
+            "type": "WEB",
+            "url": "http://bouk.co/blog/elasticsearch-rce/"
+        },
+        {
+            "type": "WEB",
+            "url": "http://www.rapid7.com/db/modules/exploit/multi/elasticsearch/script_mvel_rce"
+        },
+        {
+            "type": "WEB",
+            "url": "https://www.found.no/foundation/elasticsearch-security/#staying-safe-while-developing-with-elasticsearch"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "elasticsearch and logstash -- remote OS command execution via dynamic scripting"
+}

@@ -1,0 +1,103 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "libXfont"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "1.5.1"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        },
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "linux-c6-xorg-libs"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "7.4_4"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        },
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "linux-f10-xorg-libs"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "7.4_4"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "cite": [
+            "http://lists.x.org/archives/xorg-announce/2015-March/002550.html"
+        ],
+        "discovery": "2015-03-17T00:00:00Z",
+        "references": {
+            "cvename": [
+                "CVE-2015-1802",
+                "CVE-2015-1803",
+                "CVE-2015-1804"
+            ]
+        },
+        "vid": "f7d79fac-cd49-11e4-898f-bcaec565249c"
+    },
+    "details": "Alan Coopersmith reports:\n\n> Ilja van Sprundel, a security researcher with IOActive, has discovered\n> an issue in the parsing of BDF font files by libXfont. Additional\n> testing by Alan Coopersmith and William Robinet with the American\n> Fuzzy Lop (afl) tool uncovered two more issues in the parsing of BDF\n> font files.\n>\n> As libXfont is used by the X server to read font files, and an\n> unprivileged user with access to the X server can tell the X server to\n> read a given font file from a path of their choosing, these\n> vulnerabilities have the potential to allow unprivileged users to run\n> code with the privileges of the X server (often root access).\n",
+    "id": "FreeBSD-2015-0050",
+    "modified": "2016-01-31T00:00:00Z",
+    "published": "2015-03-18T00:00:00Z",
+    "references": [
+        {
+            "type": "REPORT",
+            "url": "http://lists.x.org/archives/xorg-announce/2015-March/002550.html"
+        },
+        {
+            "type": "WEB",
+            "url": "http://lists.x.org/archives/xorg-announce/2015-March/002550.html"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2015-1802"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2015-1803"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2015-1804"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "libXfont -- BDF parsing issues"
+}

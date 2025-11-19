@@ -1,0 +1,62 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "rkhunter"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "1.2.5"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "cite": [
+            "http://www.gentoo.org/security/en/glsa/glsa-200504-25.xml"
+        ],
+        "discovery": "2005-04-26T00:00:00Z",
+        "references": {
+            "bid": [
+                "13399"
+            ],
+            "cvename": [
+                "CVE-2005-1270"
+            ]
+        },
+        "vid": "f14ad681-5b88-11dc-812d-0011098b2f36"
+    },
+    "details": "Gentoo reports:\n\n> Sune Kloppenborg Jeppesen and Tavis Ormandy of the Gentoo Linux\n> Security Team have reported that the check_update.sh script and the\n> main rkhunter script insecurely creates several temporary files with\n> predictable filenames.\n>\n> A local attacker could create symbolic links in the temporary files\n> directory, pointing to a valid file somewhere on the filesystem. When\n> rkhunter or the check_update.sh script runs, this would result in the\n> file being overwritten with the rights of the user running the\n> utility, which could be the root user.\n",
+    "id": "FreeBSD-2007-0091",
+    "modified": "2007-09-05T00:00:00Z",
+    "published": "2007-09-05T00:00:00Z",
+    "references": [
+        {
+            "type": "REPORT",
+            "url": "http://www.gentoo.org/security/en/glsa/glsa-200504-25.xml"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://www.securityfocus.com/bid/13399/info"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2005-1270"
+        },
+        {
+            "type": "WEB",
+            "url": "http://www.gentoo.org/security/en/glsa/glsa-200504-25.xml"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "rkhunter -- insecure temporary file creation"
+}

@@ -1,0 +1,141 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "py23-django"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "0.96.1"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        },
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "py24-django"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "0.96.1"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        },
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "py25-django"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "0.96.1"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        },
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "py23-django-devel"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "20071026"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        },
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "py24-django-devel"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "20071026"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        },
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "py25-django-devel"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "20071026"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "cite": [
+            "http://www.djangoproject.com/weblog/2007/oct/26/security-fix/"
+        ],
+        "discovery": "2007-10-26T00:00:00Z",
+        "vid": "d2c2952d-85a1-11dc-bfff-003048705d5a"
+    },
+    "details": "Django project reports:\n\n> A per-process cache used by Django\\'s internationalization (\\\"i18n\\\")\n> system to store the results of translation lookups for particular\n> values of the HTTP Accept-Language header used the full value of that\n> header as a key. An attacker could take advantage of this by sending\n> repeated requests with extremely large strings in the Accept-Language\n> header, potentially causing a denial of service by filling available\n> memory.\n>\n> Due to limitations imposed by Web server software on the size of HTTP\n> header fields, combined with reasonable limits on the number of\n> requests which may be handled by a single server process over its\n> lifetime, this vulnerability may be difficult to exploit.\n> Additionally, it is only present when the \\\"USE_I18N\\\" setting in\n> Django is \\\"True\\\" and the i18n middleware component is enabled\\*.\n> Nonetheless, all users of affected versions of Django are encouraged\n> to update.\n",
+    "id": "FreeBSD-2007-0121",
+    "modified": "2007-10-27T00:00:00Z",
+    "published": "2007-10-27T00:00:00Z",
+    "references": [
+        {
+            "type": "REPORT",
+            "url": "http://www.djangoproject.com/weblog/2007/oct/26/security-fix/"
+        },
+        {
+            "type": "WEB",
+            "url": "http://www.djangoproject.com/weblog/2007/oct/26/security-fix/"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "py-django -- denial of service vulnerability"
+}

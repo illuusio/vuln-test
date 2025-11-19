@@ -1,0 +1,78 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "sqlite3"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "3.13.0"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "cite": [
+            "https://www.korelogic.com/Resources/Advisories/KL-001-2016-003.txt"
+        ],
+        "discovery": "2016-07-01T00:00:00Z",
+        "references": {
+            "cvename": [
+                "CVE-2016-6153"
+            ],
+            "freebsdpr": [
+                "ports/209827"
+            ]
+        },
+        "vid": "546deeea-3fc6-11e6-a671-60a44ce6887b"
+    },
+    "details": "KoreLogic security reports:\n\n> Affected versions of SQLite reject potential tempdir locations if they\n> are not readable, falling back to \\'.\\'. Thus, SQLite will favor e.g.\n> using cwd for tempfiles on such a system, even if cwd is an unsafe\n> location. Notably, SQLite also checks the permissions of \\'.\\', but\n> ignores the results of that check.\n",
+    "id": "FreeBSD-2016-0259",
+    "modified": "2016-07-03T00:00:00Z",
+    "published": "2016-07-03T00:00:00Z",
+    "references": [
+        {
+            "type": "REPORT",
+            "url": "https://www.korelogic.com/Resources/Advisories/KL-001-2016-003.txt"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2016-6153"
+        },
+        {
+            "type": "REPORT",
+            "url": "https://bugs.freebsd.org/bugzilla/show_bug.cgi?id=209827"
+        },
+        {
+            "type": "WEB",
+            "url": "https://www.korelogic.com/Resources/Advisories/KL-001-2016-003.txt"
+        },
+        {
+            "type": "WEB",
+            "url": "http://openwall.com/lists/oss-security/2016/07/01/2"
+        },
+        {
+            "type": "WEB",
+            "url": "http://www.sqlite.org/cgi/src/info/67985761aa93fb61"
+        },
+        {
+            "type": "WEB",
+            "url": "http://www.sqlite.org/cgi/src/info/b38fe522cfc971b3"
+        },
+        {
+            "type": "WEB",
+            "url": "http://www.sqlite.org/cgi/src/info/614bb709d34e1148"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "SQLite3 -- Tempdir Selection Vulnerability"
+}

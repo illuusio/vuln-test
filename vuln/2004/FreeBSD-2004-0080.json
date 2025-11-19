@@ -1,0 +1,81 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "mysql-client"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "introduced": "4.0"
+                        },
+                        {
+                            "fixed": "4.0.20"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                },
+                {
+                    "events": [
+                        {
+                            "introduced": "4.1"
+                        },
+                        {
+                            "fixed": "4.1.1_2"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                },
+                {
+                    "events": [
+                        {
+                            "introduced": "5.0"
+                        },
+                        {
+                            "fixed": "5.0.0_2"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "discovery": "2004-03-25T00:00:00Z",
+        "references": {
+            "bid": [
+                "9976"
+            ],
+            "cvename": [
+                "CVE-2004-0381"
+            ]
+        },
+        "vid": "2e129846-8fbb-11d8-8b29-0020ed76ef5a"
+    },
+    "details": "Shaun Colley reports that the script \\`mysqlbug\\' included with MySQL\nsometimes creates temporary files in an unsafe manner. As a result, an\nattacker may create a symlink in /tmp so that if another user invokes\n\\`mysqlbug\\' and *quits without making **any** changes*, an arbitrary\nfile may be overwritten with the bug report template.\n",
+    "id": "FreeBSD-2004-0080",
+    "modified": "2004-05-21T00:00:00Z",
+    "published": "2004-04-16T00:00:00Z",
+    "references": [
+        {
+            "type": "DISCUSSION",
+            "url": "http://marc.theaimsgroup.com/?l=bugtraq&m=108023246916294&w=2"
+        },
+        {
+            "type": "WEB",
+            "url": "http://bugs.mysql.com/bug.php?id=3284"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://www.securityfocus.com/bid/9976/info"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2004-0381"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "MySQL insecure temporary file creation (mysqlbug)"
+}

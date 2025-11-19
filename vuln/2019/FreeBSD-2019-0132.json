@@ -1,0 +1,74 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "postgresql11-server"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "11.4"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        },
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "postgresql10-server"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "10.9"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "cite": [
+            "https://www.postgresql.org/about/news/1949/"
+        ],
+        "discovery": "2019-06-20T00:00:00Z",
+        "references": {
+            "cvename": [
+                "CVE-2019-10164"
+            ]
+        },
+        "vid": "245629d4-991e-11e9-82aa-6cc21735f730"
+    },
+    "details": "The PostgreSQL project reports:\n\n> An authenticated user could create a stack-based buffer overflow by\n> changing their own password to a purpose-crafted value. In addition to\n> the ability to crash the PostgreSQL server, this could be further\n> exploited to execute arbitrary code as the PostgreSQL operating system\n> account.\n>\n> Additionally, a rogue server could send a specifically crafted message\n> during the SCRAM authentication process and cause a libpq-enabled\n> client to either crash or execute arbitrary code as the client\\'s\n> operating system account.\n>\n> This issue is fixed by upgrading and restarting your PostgreSQL server\n> as well as your libpq installations. All users running PostgreSQL 10,\n> 11, and 12 beta are encouraged to upgrade as soon as possible.\n",
+    "id": "FreeBSD-2019-0132",
+    "modified": "2019-06-27T00:00:00Z",
+    "published": "2019-06-27T00:00:00Z",
+    "references": [
+        {
+            "type": "REPORT",
+            "url": "https://www.postgresql.org/about/news/1949/"
+        },
+        {
+            "type": "WEB",
+            "url": "https://www.postgresql.org/about/news/1949/"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2019-10164"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "PostgreSQL -- Stack-based buffer overflow via setting a password"
+}

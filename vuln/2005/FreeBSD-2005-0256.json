@@ -1,0 +1,55 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "openvpn"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "2.0.1"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "cite": [
+            "http://openvpn.net/changelog.html"
+        ],
+        "discovery": "2005-08-03T00:00:00Z",
+        "references": {
+            "cvename": [
+                "CVE-2005-2531"
+            ]
+        },
+        "vid": "a51ad838-2077-48b2-a136-e888a7db5f8d"
+    },
+    "details": "James Yonan reports:\n\n> DoS attack against server when run with \\\"verb 0\\\" and without\n> \\\"tls-auth\\\". If a client connection to the server fails certificate\n> verification, the OpenSSL error queue is not properly flushed, which\n> can result in another unrelated client instance on the server seeing\n> the error and responding to it, resulting in disconnection of the\n> unrelated client.\n",
+    "id": "FreeBSD-2005-0256",
+    "modified": "2005-08-19T00:00:00Z",
+    "published": "2005-08-19T00:00:00Z",
+    "references": [
+        {
+            "type": "REPORT",
+            "url": "http://openvpn.net/changelog.html"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2005-2531"
+        },
+        {
+            "type": "WEB",
+            "url": "http://openvpn.net/changelog.html"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "openvpn -- denial of service: client certificate validation can disconnect unrelated clients"
+}

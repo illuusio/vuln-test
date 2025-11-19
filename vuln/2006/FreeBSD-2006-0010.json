@@ -1,0 +1,102 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "FreeBSD"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "introduced": "6.0"
+                        },
+                        {
+                            "fixed": "6.0_2"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                },
+                {
+                    "events": [
+                        {
+                            "introduced": "5.4"
+                        },
+                        {
+                            "fixed": "5.4_9"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                },
+                {
+                    "events": [
+                        {
+                            "introduced": "5.3"
+                        },
+                        {
+                            "fixed": "5.3_24"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                },
+                {
+                    "events": [
+                        {
+                            "introduced": "4.11"
+                        },
+                        {
+                            "fixed": "4.11_14"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                },
+                {
+                    "events": [
+                        {
+                            "introduced": "4.10"
+                        },
+                        {
+                            "fixed": "4.10_20"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "discovery": "2006-01-11T00:00:00Z",
+        "references": {
+            "bid": [
+                "14854"
+            ],
+            "cvename": [
+                "CAN-2005-3011"
+            ],
+            "freebsdsa": [
+                "SA-06:01.texindex"
+            ]
+        },
+        "vid": "c01a25f5-8f20-11da-8c1d-000e0c2e438a"
+    },
+    "details": "Problem description\n\nThe \\\"sort_offline\\\" function used by texindex(1) employs the\n\\\"maketempname\\\" function, which produces predictable file names and\nfails to validate that the paths do not exist.\n\nImpact\n\nThese predictable temporary file names are problematic because they\nallow an attacker to take advantage of a race condition in order to\nexecute a symlink attack, which could enable them to overwrite files on\nthe system in the context of the user running the texindex(1) utility.\n\nWorkaround\n\nNo workaround is available, but the problematic code is only executed if\nthe input file being processed is 500kB or more in length; as a result,\nusers working with documents of less than several hundred pages are very\nunlikely to be affected.\n",
+    "id": "FreeBSD-2006-0010",
+    "modified": "2006-01-27T00:00:00Z",
+    "published": "2006-01-27T00:00:00Z",
+    "references": [
+        {
+            "type": "ADVISORY",
+            "url": "https://www.securityfocus.com/bid/14854/info"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CAN-2005-3011"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://www.freebsd.org/security/advisories/FreeBSD-SA-06:01.texindex.asc"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "texindex -- temporary file privilege escalation"
+}

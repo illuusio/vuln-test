@@ -1,0 +1,88 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "asterisk13"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "13.15.1"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        },
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "pjsip"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "2.6_1"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        },
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "pjsip-extsrtp"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "2.6_1"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "cite": [
+            "http://www.asterisk.org/downloads/security-advisories"
+        ],
+        "discovery": "2017-04-12T00:00:00Z",
+        "vid": "0537afa3-3ce0-11e7-bf9d-001999f8d30b"
+    },
+    "details": "The Asterisk project reports:\n\n> A remote crash can be triggered by sending a SIP packet to Asterisk\n> with a specially crafted CSeq header and a Via header with no branch\n> parameter. The issue is that the PJSIP RFC 2543 transaction key\n> generation algorithm does not allocate a large enough buffer. By\n> overrunning the buffer, the memory allocation table becomes corrupted,\n> leading to an eventual crash.\n>\n> The multi-part body parser in PJSIP contains a logical error that can\n> make certain multi-part body parts attempt to read memory from outside\n> the allowed boundaries. A specially-crafted packet can trigger these\n> invalid reads and potentially induce a crash.\n>\n> This issues is in PJSIP, and so the issue can be fixed without\n> performing an upgrade of Asterisk at all. However, we are releasing a\n> new version of Asterisk with the bundled PJProject updated to include\n> the fix.\n>\n> If you are running Asterisk with chan_sip, this issue does not affect\n> you.\n",
+    "id": "FreeBSD-2017-0115",
+    "modified": "2017-05-19T00:00:00Z",
+    "published": "2017-05-19T00:00:00Z",
+    "references": [
+        {
+            "type": "REPORT",
+            "url": "http://www.asterisk.org/downloads/security-advisories"
+        },
+        {
+            "type": "WEB",
+            "url": "http://downloads.asterisk.org/pub/security/AST-2017-002.html"
+        },
+        {
+            "type": "WEB",
+            "url": "http://downloads.asterisk.org/pub/security/AST-2017-003.html"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "asterisk -- Buffer Overrun in PJSIP transaction layer"
+}

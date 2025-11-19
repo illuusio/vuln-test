@@ -1,0 +1,69 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "apache24"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "2.4.38"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "cite": [
+            "http://httpd.apache.org/security/vulnerabilities_24.html"
+        ],
+        "discovery": "2019-01-22T00:00:00Z",
+        "references": {
+            "cvename": [
+                "CVE-2018-17199",
+                "CVE-2018-17189",
+                "CVE-2019-0190"
+            ]
+        },
+        "vid": "eb888ce5-1f19-11e9-be05-4c72b94353b5"
+    },
+    "details": "The Apache httpd Project reports:\n\n> SECURITY: CVE-2018-17199 mod_session: mod_session_cookie does not\n> respect expiry time allowing sessions to be reused.\n>\n> SECURITY: CVE-2019-0190 mod_ssl: Fix infinite loop triggered by a\n> client-initiated renegotiation in TLSv1.2 (or earlier) with OpenSSL\n> 1.1.1 and later. PR 63052.\n>\n> SECURITY: CVE-2018-17189 mod_http2: fixes a DoS attack vector. By\n> sending slow request bodies to resources not consuming them, httpd\n> cleanup code occupies a server thread unnecessarily. This was changed\n> to an immediate stream reset which discards all stream state and\n> incoming data.\n",
+    "id": "FreeBSD-2019-0016",
+    "modified": "2019-01-23T00:00:00Z",
+    "published": "2019-01-23T00:00:00Z",
+    "references": [
+        {
+            "type": "REPORT",
+            "url": "http://httpd.apache.org/security/vulnerabilities_24.html"
+        },
+        {
+            "type": "WEB",
+            "url": "http://www.apache.org/dist/httpd/CHANGES_2.4.38"
+        },
+        {
+            "type": "WEB",
+            "url": "http://httpd.apache.org/security/vulnerabilities_24.html"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2018-17199"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2018-17189"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2019-0190"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "Apache -- vulnerability"
+}

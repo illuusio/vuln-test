@@ -1,0 +1,95 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "FreeBSD"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "introduced": "11.0"
+                        },
+                        {
+                            "fixed": "11.0_5"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                },
+                {
+                    "events": [
+                        {
+                            "introduced": "10.3"
+                        },
+                        {
+                            "fixed": "10.3_14"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                },
+                {
+                    "events": [
+                        {
+                            "introduced": "10.2"
+                        },
+                        {
+                            "fixed": "10.2_27"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                },
+                {
+                    "events": [
+                        {
+                            "introduced": "10.1"
+                        },
+                        {
+                            "fixed": "10.1_44"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                },
+                {
+                    "events": [
+                        {
+                            "introduced": "9.3"
+                        },
+                        {
+                            "fixed": "9.3_52"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "discovery": "2016-12-06T00:00:00Z",
+        "references": {
+            "cvename": [
+                "CVE-2016-6559"
+            ],
+            "freebsdsa": [
+                "SA-16:37.libc"
+            ]
+        },
+        "vid": "0282269d-bbee-11e6-b1cf-14dae9d210b8"
+    },
+    "details": "# Problem Description:\n\nA specially crafted argument can trigger a static buffer overflow in the\nlibrary, with possibility to rewrite following static buffers that\nbelong to other library functions.\n\n# Impact:\n\nDue to very limited use of the function in the existing applications,\nand limited length of the overflow, exploitation of the vulnerability\ndoes not seem feasible. None of the utilities and daemons in the base\nsystem are known to be vulnerable. However, careful review of third\nparty software that may use the function was not performed.\n",
+    "id": "FreeBSD-2016-0467",
+    "modified": "2016-12-08T00:00:00Z",
+    "published": "2016-12-06T00:00:00Z",
+    "references": [
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2016-6559"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://www.freebsd.org/security/advisories/FreeBSD-SA-16:37.libc.asc"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "FreeBSD -- link_ntoa(3) buffer overflow"
+}

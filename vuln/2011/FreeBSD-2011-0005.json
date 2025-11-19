@@ -1,0 +1,78 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "php5-imap"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "5.3.4"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        },
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "php52-imap"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "5.2.15"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "cite": [
+            "http://securitytracker.com/alerts/2010/Nov/1024761.html"
+        ],
+        "discovery": "2010-12-13T00:00:00Z",
+        "references": {
+            "cvename": [
+                "CVE-2010-4150"
+            ]
+        },
+        "vid": "1a0704e7-0edf-11e0-becc-0022156e8794"
+    },
+    "details": "The following DoS condition in IMAP extension was fixed in PHP 5.3.4 and\nPHP 5.2.15:\n\n> A remote user can send specially crafted IMAP user name or password\n> data to trigger a double free memory error in \\'ext/imap/php_imap.c\\'\n> and cause the target service to crash.\n>\n> It may be possible to execute arbitrary code. However, code execution\n> was not confirmed.\n",
+    "id": "FreeBSD-2011-0005",
+    "modified": "2011-01-13T00:00:00Z",
+    "published": "2011-01-13T00:00:00Z",
+    "references": [
+        {
+            "type": "REPORT",
+            "url": "http://securitytracker.com/alerts/2010/Nov/1024761.html"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2010-4150"
+        },
+        {
+            "type": "WEB",
+            "url": "http://www.php.net/releases/5_3_4.php"
+        },
+        {
+            "type": "WEB",
+            "url": "http://www.php.net/releases/5_2_15.php"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "php-imap -- Denial of Service"
+}

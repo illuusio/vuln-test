@@ -1,0 +1,55 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "asterisk13"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "introduced": "13.5.0"
+                        },
+                        {
+                            "fixed": "13.18.1"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "cite": [
+            "http://www.asterisk.org/downloads/security-advisories"
+        ],
+        "discovery": "2017-10-15T00:00:00Z",
+        "references": {
+            "cvename": [
+                "CVE-2017-16672"
+            ]
+        },
+        "vid": "be261737-c535-11e7-8da5-001999f8d30b"
+    },
+    "details": "The Asterisk project reports:\n\n> A memory leak occurs when an Asterisk pjsip session object is created\n> and that call gets rejected before the session itself is fully\n> established. When this happens the session object never gets\n> destroyed. This then leads to file descriptors and RTP ports being\n> leaked as well.\n",
+    "id": "FreeBSD-2017-0273",
+    "modified": "2017-12-13T00:00:00Z",
+    "published": "2017-11-09T00:00:00Z",
+    "references": [
+        {
+            "type": "REPORT",
+            "url": "http://www.asterisk.org/downloads/security-advisories"
+        },
+        {
+            "type": "WEB",
+            "url": "https://downloads.asterisk.org/pub/security/AST-2017-011.html"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2017-16672"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "asterisk -- Memory/File Descriptor/RTP leak in pjsip session resource"
+}

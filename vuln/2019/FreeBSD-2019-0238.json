@@ -1,0 +1,78 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "FreeBSD"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "introduced": "12.0"
+                        },
+                        {
+                            "fixed": "12.0_9"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                },
+                {
+                    "events": [
+                        {
+                            "introduced": "11.3"
+                        },
+                        {
+                            "fixed": "11.3_2"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                },
+                {
+                    "events": [
+                        {
+                            "introduced": "11.2"
+                        },
+                        {
+                            "fixed": "11.2_13"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "discovery": "2019-08-06T00:00:00Z",
+        "references": {
+            "cvename": [
+                "CVE-2016-3189",
+                "CVE-2019-1290"
+            ],
+            "freebsdsa": [
+                "SA-19:18.bzip2"
+            ]
+        },
+        "vid": "3c7edc7a-f680-11e9-a87f-a4badb2f4699"
+    },
+    "details": "# Problem Description:\n\nThe decompressor used in bzip2 contains a bug which can lead to an\nout-of-bounds write when processing a specially crafted bzip2(1) file.\n\nbzip2recover contains a heap use-after-free bug which can be triggered\nwhen processing a specially crafted bzip2(1) file.\n\n# Impact:\n\nAn attacker who can cause maliciously crafted input to be processed may\ntrigger either of these bugs. The bzip2recover bug may cause a crash,\npermitting a denial-of-service. The bzip2 decompressor bug could\npotentially be exploited to execute arbitrary code.\n\nNote that some utilities, including the tar(1) archiver and the\nbspatch(1) binary patching utility (used in portsnap(8) and\nfreebsd-update(8)) decompress bzip2(1)-compressed data internally;\nsystem administrators should assume that their systems will at some\npoint decompress bzip2(1)-compressed data even if they never explicitly\ninvoke the bunzip2(1) utility.\n",
+    "id": "FreeBSD-2019-0238",
+    "modified": "2019-10-24T00:00:00Z",
+    "published": "2019-10-24T00:00:00Z",
+    "references": [
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2016-3189"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2019-1290"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://www.freebsd.org/security/advisories/FreeBSD-SA-19:18.bzip2.asc"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "FreeBSD -- Multiple vulnerabilities in bzip2"
+}

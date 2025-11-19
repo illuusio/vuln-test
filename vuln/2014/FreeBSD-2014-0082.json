@@ -1,0 +1,60 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "dbus"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "1.8.6"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "cite": [
+            "http://lists.freedesktop.org/archives/dbus/2014-July/016235.html"
+        ],
+        "discovery": "2014-07-02T00:00:00Z",
+        "references": {
+            "cvename": [
+                "CVE-2014-3532",
+                "CVE-2014-3533"
+            ]
+        },
+        "vid": "e6a7636a-02d0-11e4-88b6-080027671656"
+    },
+    "details": "Simon McVittie reports:\n\n> Alban Crequy at Collabora Ltd. discovered a bug in dbus-daemon\\'s\n> support for file descriptor passing. A malicious process could force\n> system services or user applications to be disconnected from the D-Bus\n> system bus by sending them a message containing a file descriptor,\n> then causing that file descriptor to exceed the kernel\\'s maximum\n> recursion depth (itself introduced to fix a DoS) before dbus-daemon\n> forwards the message to the victim process. Most services and\n> applications exit when disconnected from the system bus, leading to a\n> denial of service.\n>\n> Additionally, Alban discovered that bug fd.o#79694, a bug previously\n> reported by Alejandro Mart\u00ednez Su\u00e1rez which was n believed to be\n> security flaw, could be used for a similar denial of service, by\n> causing dbus-daemon to attempt to forward invalid file descriptors to\n> a victim process when file descriptors become associated with the\n> wrong message.\n",
+    "id": "FreeBSD-2014-0082",
+    "modified": "2014-07-03T00:00:00Z",
+    "published": "2014-07-03T00:00:00Z",
+    "references": [
+        {
+            "type": "REPORT",
+            "url": "http://lists.freedesktop.org/archives/dbus/2014-July/016235.html"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2014-3532"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2014-3533"
+        },
+        {
+            "type": "WEB",
+            "url": "http://lists.freedesktop.org/archives/dbus/2014-July/016235.html"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "dbus -- multiple vulnerabilities"
+}

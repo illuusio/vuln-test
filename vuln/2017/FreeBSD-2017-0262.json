@@ -1,0 +1,77 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "gitlab"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "introduced": "2.8.0"
+                        },
+                        {
+                            "last_affected": "9.4.6"
+                        },
+                        {
+                            "fixed": "9.4.6"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                },
+                {
+                    "events": [
+                        {
+                            "introduced": "9.5.0"
+                        },
+                        {
+                            "last_affected": "9.5.8"
+                        },
+                        {
+                            "fixed": "9.5.8"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                },
+                {
+                    "events": [
+                        {
+                            "introduced": "10.0.0"
+                        },
+                        {
+                            "last_affected": "10.0.3"
+                        },
+                        {
+                            "fixed": "10.0.3"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "cite": [
+            "https://about.gitlab.com/2017/10/17/gitlab-10-dot-0-dot-4-security-release/"
+        ],
+        "discovery": "2017-10-17T00:00:00Z",
+        "vid": "418c172b-b96f-11e7-b627-d43d7e971a1b"
+    },
+    "details": "GitLab reports:\n\n> # Cross-Site Scripting (XSS) vulnerability in the Markdown sanitization filter\n>\n> Yasin Soliman via HackerOne reported a Cross-Site Scripting (XSS)\n> vulnerability in the GitLab markdown sanitization filter. The\n> sanitization filter was not properly stripping invalid characters from\n> URL schemes and was therefore vulnerable to persistent XSS attacks\n> anywhere Markdown was supported.\n>\n> # Cross-Site Scripting (XSS) vulnerability in search bar\n>\n> Josh Unger reported a Cross-Site Scripting (XSS) vulnerability in the\n> issue search bar. Usernames were not being properly HTML escaped\n> inside the author filter would could allow arbitrary script execution.\n>\n> # Open redirect in repository git redirects\n>\n> Eric Rafaloff via HackerOne reported that GitLab was vulnerable to an\n> open redirect vulnerability when redirecting requests for repository\n> names that include the git extension. GitLab was not properly removing\n> dangerous parameters from the params field before redirecting which\n> could allow an attacker to redirect users to arbitrary hosts.\n>\n> # Username changes could leave repositories behind\n>\n> An internal code review discovered that a bug in the code that moves\n> repositories during a username change could potentially leave behind\n> projects, allowing an attacker who knows the previous username to\n> potentially steal the contents of repositories on instances that are\n> not configured with hashed namespaces.\n",
+    "id": "FreeBSD-2017-0262",
+    "modified": "2017-10-25T00:00:00Z",
+    "published": "2017-10-25T00:00:00Z",
+    "references": [
+        {
+            "type": "REPORT",
+            "url": "https://about.gitlab.com/2017/10/17/gitlab-10-dot-0-dot-4-security-release/"
+        },
+        {
+            "type": "WEB",
+            "url": "https://about.gitlab.com/2017/10/17/gitlab-10-dot-0-dot-4-security-release/"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "GitLab -- multiple vulnerabilities"
+}

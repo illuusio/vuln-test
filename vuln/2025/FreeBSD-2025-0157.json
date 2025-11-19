@@ -1,0 +1,55 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "ap24-mod_security"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "2.9.8"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "cite": [
+            "https://github.com/owasp-modsecurity/ModSecurity/pull/3389"
+        ],
+        "discovery": "2025-05-21T00:00:00Z",
+        "references": {
+            "cvename": [
+                "CVE-2025-47947"
+            ]
+        },
+        "vid": "a372abb0-3d3c-11f0-86e7-b42e991fc52e"
+    },
+    "details": "security-advisories@github.com reports:\n\n> ModSecurity is an open source, cross platform web application firewall\n> (WAF) engine for Apache, IIS and Nginx. Versions up to and including\n> 2.9.8 are vulnerable to denial of service in one special case (in\n> stable released versions): when the payload\\'s content type is\n> \\`application/json\\`, and there is at least one rule which does a\n> \\`sanitiseMatchedBytes\\` action. A patch is available at pull request\n> 3389 and expected to be part of version 2.9.9. No known workarounds\n> are available.\n",
+    "id": "FreeBSD-2025-0157",
+    "modified": "2025-05-30T00:00:00Z",
+    "published": "2025-05-30T00:00:00Z",
+    "references": [
+        {
+            "type": "REPORT",
+            "url": "https://github.com/owasp-modsecurity/ModSecurity/pull/3389"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2025-47947"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://nvd.nist.gov/vuln/detail/CVE-2025-47947"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "ModSecurity -- Possible DoS Vulnerability"
+}

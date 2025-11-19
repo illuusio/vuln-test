@@ -1,0 +1,55 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "xen-kernel"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "introduced": "4.0"
+                        },
+                        {
+                            "fixed": "4.5.0_3"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "cite": [
+            "http://xenbits.xen.org/xsa/advisory-132.html"
+        ],
+        "discovery": "2015-04-20T00:00:00Z",
+        "references": {
+            "cvename": [
+                "CVE-2015-3340"
+            ]
+        },
+        "vid": "ce658051-27ea-11e5-a4a5-002590263bf5"
+    },
+    "details": "The Xen Project reports:\n\n> The handler for XEN_DOMCTL_gettscinfo failed to initialize a padding\n> field subsequently copied to guest memory.\n>\n> A similar leak existed in XEN_SYSCTL_getdomaininfolist, which is being\n> addressed here regardless of that operation being declared unsafe for\n> disaggregation by XSA-77.\n>\n> Malicious or buggy stub domain kernels or tool stacks otherwise living\n> outside of Domain0 may be able to read sensitive data relating to the\n> hypervisor or other guests not under the control of that domain.\n",
+    "id": "FreeBSD-2015-0195",
+    "modified": "2015-07-11T00:00:00Z",
+    "published": "2015-07-11T00:00:00Z",
+    "references": [
+        {
+            "type": "REPORT",
+            "url": "http://xenbits.xen.org/xsa/advisory-132.html"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2015-3340"
+        },
+        {
+            "type": "WEB",
+            "url": "http://xenbits.xen.org/xsa/advisory-132.html"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "xen-kernel -- Information leak through XEN_DOMCTL_gettscinfo"
+}

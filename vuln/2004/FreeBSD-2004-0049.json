@@ -1,0 +1,48 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "racoon"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "20040407b"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "discovery": "2004-04-05T00:00:00Z",
+        "references": {
+            "cvename": [
+                "CVE-2004-0155"
+            ]
+        },
+        "vid": "d8769838-8814-11d8-90d1-0020ed76ef5a"
+    },
+    "details": "Ralf Spenneberg discovered a serious flaw in racoon. When using Phase 1\nmain or aggressive mode, racoon does not verify the client\\'s RSA\nsignature. Any installations using *X.509 authentication* are **strongly\nurged** to upgrade.\n\nInstallations using *pre-shared keys* are believed to be unaffected.\n",
+    "id": "FreeBSD-2004-0049",
+    "modified": "2004-04-07T00:00:00Z",
+    "published": "2004-04-07T00:00:00Z",
+    "references": [
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2004-0155"
+        },
+        {
+            "type": "WEB",
+            "url": "http://www.kame.net/dev/cvsweb2.cgi/kame/kame/kame/racoon/crypto_openssl.c?rev=1.84&content-type=text/x-cvsweb-markup"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "racoon fails to verify signature during Phase 1"
+}

@@ -1,0 +1,76 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "gld"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "1.5"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "cite": [
+            "http://marc.theaimsgroup.com/?l=bugtraq&m=111339935903880"
+        ],
+        "discovery": "2005-04-12T00:00:00Z",
+        "references": {
+            "bid": [
+                "13129",
+                "13133"
+            ],
+            "cvename": [
+                "CVE-2005-1099",
+                "CVE-2005-1100"
+            ]
+        },
+        "vid": "6c2d4f29-af3e-11d9-837d-000e0c2e438a"
+    },
+    "details": "Gld has been found vulnerable to multiple buffer overflows as well as\nmultiple format string vulnerabilities.\n\n> An attacker could exploit this vulnerability to execute arbitrary code\n> with the permissions of the user running Gld, the default user being\n> root.\n\nThe FreeBSD port defaults to running gld as the root user. The risk of\nexploitation can be minimized by making gld listen on the loopback\naddress only, or configure it to only accept connections from trusted\nsmtp servers.\n",
+    "id": "FreeBSD-2005-0133",
+    "modified": "2005-04-19T00:00:00Z",
+    "published": "2005-04-19T00:00:00Z",
+    "references": [
+        {
+            "type": "REPORT",
+            "url": "http://marc.theaimsgroup.com/?l=bugtraq&m=111339935903880"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://www.securityfocus.com/bid/13129/info"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://www.securityfocus.com/bid/13133/info"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2005-1099"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2005-1100"
+        },
+        {
+            "type": "DISCUSSION",
+            "url": "http://marc.theaimsgroup.com/?l=bugtraq&m=111339935903880"
+        },
+        {
+            "type": "DISCUSSION",
+            "url": "http://marc.theaimsgroup.com/?l=bugtraq&m=111342432325670"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "gld -- format string and buffer overflow vulnerabilities"
+}

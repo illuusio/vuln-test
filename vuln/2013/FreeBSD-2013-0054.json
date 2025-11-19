@@ -1,0 +1,68 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "piwigo"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "2.4.7"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "cite": [
+            "http://piwigo.org/releases/2.4.7"
+        ],
+        "discovery": "2013-02-06T00:00:00Z",
+        "references": {
+            "cvename": [
+                "CVE-2013-1468",
+                "CVE-2013-1469"
+            ]
+        },
+        "vid": "edd201a5-8fc3-11e2-b131-000c299b62e1"
+    },
+    "details": "High-Tech Bridge Security Research Lab reports:\n\n> The CSRF vulnerability exists due to insufficient verification of the\n> HTTP request origin in \\\"/admin.php\\\" script. A remote attacker can\n> trick a logged-in administrator to visit a specially crafted webpage\n> and create arbitrary PHP file on the remote server.\n>\n> The path traversal vulnerability exists due to insufficient filtration\n> of user-supplied input in \\\"dl\\\" HTTP GET parameter passed to\n> \\\"/install.php\\\" script. The script is present on the system after\n> installation by default, and can be accessed by attacker without any\n> restrictions.\n",
+    "id": "FreeBSD-2013-0054",
+    "modified": "2013-03-18T00:00:00Z",
+    "published": "2013-03-18T00:00:00Z",
+    "references": [
+        {
+            "type": "REPORT",
+            "url": "http://piwigo.org/releases/2.4.7"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2013-1468"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2013-1469"
+        },
+        {
+            "type": "WEB",
+            "url": "http://piwigo.org/bugs/view.php?id=0002843"
+        },
+        {
+            "type": "WEB",
+            "url": "http://piwigo.org/bugs/view.php?id=0002844"
+        },
+        {
+            "type": "WEB",
+            "url": "http://dl.packetstormsecurity.net/1302-exploits/piwigo246-traversalxsrf.txt"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "piwigo -- CSRF/Path Traversal"
+}

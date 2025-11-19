@@ -1,0 +1,119 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "mediawiki131"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "1.31.3"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        },
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "mediawiki132"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "1.32.3"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "cite": [
+            "https://lists.wikimedia.org/pipermail/mediawiki-announce/2019-June/000230.html"
+        ],
+        "discovery": "2019-04-23T00:00:00Z",
+        "references": {
+            "cvename": [
+                "CVE-2019-11358",
+                "CVE-2019-12466",
+                "CVE-2019-12467",
+                "CVE-2019-12468",
+                "CVE-2019-12469",
+                "CVE-2019-12470",
+                "CVE-2019-12471",
+                "CVE-2019-12472",
+                "CVE-2019-12473",
+                "CVE-2019-12474"
+            ]
+        },
+        "vid": "3c5a4fe0-9ebb-11e9-9169-fcaa147e860e"
+    },
+    "details": "Mediawiki reports:\n\n> Security fixes: T197279, CVE-2019-12468: Directly POSTing to\n> Special:ChangeEmail would allow for bypassing reauthentication,\n> allowing for potential account takeover. T204729, CVE-2019-12473:\n> Passing invalid titles to the API could cause a DoS by querying the\n> entire \\`watchlist\\` table. T207603, CVE-2019-12471: Loading user\n> JavaScript from a non-existent account allows anyone to create the\n> account, and XSS the users\\' loading that script. T208881: blacklist\n> CSS var(). T199540, CVE-2019-12472: It is possible to bypass the\n> limits on IP range blocks (\\`\\$wgBlockCIDRLimit\\`) by using the API.\n> T212118, CVE-2019-12474: Privileged API responses that include whether\n> a recent change has been patrolled may be cached publicly. T209794,\n> CVE-2019-12467: A spammer can use Special:ChangeEmail to send out spam\n> with no rate limiting or ability to block them. T25227,\n> CVE-2019-12466: An account can be logged out without using a\n> token(CRRF) T222036, CVE-2019-12469: Exposed suppressed username or\n> log in Special:EditTags. T222038, CVE-2019-12470: Exposed suppressed\n> log in RevisionDelete page. T221739, CVE-2019-11358: Fix potential XSS\n> in jQuery.\n",
+    "id": "FreeBSD-2019-0141",
+    "modified": "2019-07-05T00:00:00Z",
+    "published": "2019-07-05T00:00:00Z",
+    "references": [
+        {
+            "type": "REPORT",
+            "url": "https://lists.wikimedia.org/pipermail/mediawiki-announce/2019-June/000230.html"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2019-11358"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2019-12466"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2019-12467"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2019-12468"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2019-12469"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2019-12470"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2019-12471"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2019-12472"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2019-12473"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2019-12474"
+        },
+        {
+            "type": "WEB",
+            "url": "https://lists.wikimedia.org/pipermail/mediawiki-announce/2019-June/000230.html"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "mediawiki -- multiple vulnerabilities"
+}

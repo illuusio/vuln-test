@@ -1,0 +1,55 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "password-store"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "1.7.2"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "cite": [
+            "https://lists.zx2c4.com/pipermail/password-store/2018-June/003308.html"
+        ],
+        "discovery": "2018-06-14T00:00:00Z",
+        "references": {
+            "cvename": [
+                "CVE-2018-12356"
+            ]
+        },
+        "vid": "53eb9e1e-7014-11e8-8b1f-3065ec8fd3ec"
+    },
+    "details": "Jason A. Donenfeld reports:\n\n> Markus Brinkmann discovered that \\[the\\] parsing of gpg command line\n> output with regexes isn\\'t anchored to the beginning of the line,\n> which means an attacker can generate a malicious key that simply has\n> the verification string as part of its username.\n>\n> This has a number of nasty consequences:\n>\n> - an attacker who manages to write into your \\~/.password-store and\n>   also inject a malicious key into your keyring can replace your\n>   .gpg-id key and have your passwords encrypted under additional keys;\n> - if you have extensions enabled (disabled by default), an attacker\n>   who manages to write into your \\~/.password-store and also inject a\n>   malicious key into your keyring can replace your extensions and\n>   hence execute code.\n",
+    "id": "FreeBSD-2018-0147",
+    "modified": "2018-06-14T00:00:00Z",
+    "published": "2018-06-14T00:00:00Z",
+    "references": [
+        {
+            "type": "REPORT",
+            "url": "https://lists.zx2c4.com/pipermail/password-store/2018-June/003308.html"
+        },
+        {
+            "type": "WEB",
+            "url": "https://lists.zx2c4.com/pipermail/password-store/2018-June/003308.html"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2018-12356"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "password-store -- GPG parsing vulnerabilities"
+}

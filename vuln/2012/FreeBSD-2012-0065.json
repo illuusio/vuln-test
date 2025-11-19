@@ -1,0 +1,55 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "bugzilla"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "introduced": "4.0.0"
+                        },
+                        {
+                            "fixed": "4.0.5"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "cite": [
+            "http://www.bugzilla.org/security/4.0.4/"
+        ],
+        "discovery": "2012-02-22T00:00:00Z",
+        "references": {
+            "cvename": [
+                "CVE-2012-0453"
+            ]
+        },
+        "vid": "7f448dc1-82ca-11e1-b393-20cf30e32f6d"
+    },
+    "details": "A Bugzilla Security Advisory reports:\n\n> The following security issues have been discovered in Bugzilla:\n>\n> - Due to a lack of validation of the enctype form attribute when\n>   making POST requests to xmlrpc.cgi, a possible CSRF vulnerability\n>   was discovered. If a user visits an HTML page with some malicious\n>   HTML code in it, an attacker could make changes to a remote Bugzilla\n>   installation on behalf of the victim\\'s account by using the XML-RPC\n>   API on a site running mod_perl. Sites running under mod_cgi are not\n>   affected. Also, the user would have had to be already logged in to\n>   the target site for the vulnerability to work.\n>\n> All affected installations are encouraged to upgrade as soon as\n> possible.\n",
+    "id": "FreeBSD-2012-0065",
+    "modified": "2012-04-10T00:00:00Z",
+    "published": "2012-04-10T00:00:00Z",
+    "references": [
+        {
+            "type": "REPORT",
+            "url": "http://www.bugzilla.org/security/4.0.4/"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2012-0453"
+        },
+        {
+            "type": "REPORT",
+            "url": "https://bugzilla.mozilla.org/show_bug.cgi?id=725663"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "bugzilla Cross-Site Request Forgery"
+}

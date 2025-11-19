@@ -1,0 +1,112 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "perl5.36"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "5.36.3"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        },
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "perl5.38"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "5.38.4"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        },
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "perl5.40"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "5.40.2"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        },
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "perl5-devel"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "5.41.10"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "cite": [
+            "https://github.com/Perl/perl5/commit/87f42aa0e0096e9a346c9672aa3a0bd3bef8c1dd.patch"
+        ],
+        "discovery": "2025-04-13T00:00:00Z",
+        "references": {
+            "cvename": [
+                "CVE-2024-56406"
+            ]
+        },
+        "vid": "a380f43e-19e5-11f0-9568-b42e991fc52e"
+    },
+    "details": "9b29abf9-4ab0-4765-b253-1875cd9b441e reports:\n\n> A heap buffer overflow vulnerability was discovered in Perl. When\n> there are non-ASCII bytes in the left-hand-side of the \\`tr\\`\n> operator, \\`S_do_trans_invmap\\` can overflow the destination pointer\n> \\`d\\`. \\$ perl -e \\'\\$\\_ = \\\"\\\\x{FF}\\\" x 1000000;\n> tr/\\\\xFF/\\\\x{100}/;\\' Segmentation fault (core dumped) It is believed\n> that this vulnerability can enable Denial of Service and possibly Code\n> Execution attacks on platforms that lack sufficient defenses.\n",
+    "id": "FreeBSD-2025-0004",
+    "modified": "2025-04-15T00:00:00Z",
+    "published": "2025-04-15T00:00:00Z",
+    "references": [
+        {
+            "type": "REPORT",
+            "url": "https://github.com/Perl/perl5/commit/87f42aa0e0096e9a346c9672aa3a0bd3bef8c1dd.patch"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2024-56406"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://nvd.nist.gov/vuln/detail/CVE-2024-56406"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "Perl -- heap buffer overflow when transliterating non-ASCII bytes"
+}

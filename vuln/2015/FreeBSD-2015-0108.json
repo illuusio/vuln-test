@@ -1,0 +1,97 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "curl"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "7.42.0"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "cite": [
+            "http://curl.haxx.se/docs/adv_20150422A.html",
+            "http://curl.haxx.se/docs/adv_20150422B.html",
+            "http://curl.haxx.se/docs/adv_20150422C.html",
+            "http://curl.haxx.se/docs/adv_20150422D.html"
+        ],
+        "discovery": "2015-04-22T00:00:00Z",
+        "references": {
+            "cvename": [
+                "CVE-2014-3143",
+                "CVE-2014-3144",
+                "CVE-2014-3145",
+                "CVE-2014-3148"
+            ]
+        },
+        "vid": "6294f75f-03f2-11e5-aab1-d050996490d0"
+    },
+    "details": "cURL reports:\n\n> libcurl keeps a pool of its last few connections around after use to\n> facilitate easy, convenient, and completely transparent connection\n> re-use for applications.\n>\n> When doing HTTP requests NTLM authenticated, the entire connection\n> becomes authenticated and not just the specific HTTP request which is\n> otherwise how HTTP works. This makes NTLM special and a subject for\n> special treatment in the code. With NTLM, once the connection is\n> authenticated, no further authentication is necessary until the\n> connection gets closed.\n\n> When doing HTTP requests Negotiate authenticated, the entire\n> connection may become authenticated and not just the specific HTTP\n> request which is otherwise how HTTP works, as Negotiate can basically\n> use NTLM under the hood. curl was not adhering to this fact but would\n> assume that such requests would also be authenticated per request.\n\n> libcurl supports HTTP \\\"cookies\\\" as documented in RFC 6265. Together\n> with each individual cookie there are several different properties,\n> but for this vulnerability we focus on the associated \\\"path\\\"\n> element. It tells information about for which path on a given host the\n> cookies is valid.\n>\n> The internal libcurl function called sanitize_cookie_path() that\n> cleans up the path element as given to it from a remote site or when\n> read from a file, did not properly validate the input. If given a path\n> that consisted of a single double-quote, libcurl would index a newly\n> allocated memory area with index -1 and assign a zero to it, thus\n> destroying heap memory it wasn\\'t supposed to.\n\n> There is a private function in libcurl called fix_hostname() that\n> removes a trailing dot from the host name if there is one. The\n> function is called after the host name has been extracted from the URL\n> libcurl has been told to act on.\n>\n> If a URL is given with a zero-length host name, like in \\\"http://:80\\\"\n> or just \\\":80\\\", fix_hostname() will index the host name pointer with\n> a -1 offset (as it blindly assumes a non-zero length) and both read\n> and assign that address.\n",
+    "id": "FreeBSD-2015-0108",
+    "modified": "2015-05-26T00:00:00Z",
+    "published": "2015-05-26T00:00:00Z",
+    "references": [
+        {
+            "type": "REPORT",
+            "url": "http://curl.haxx.se/docs/adv_20150422A.html"
+        },
+        {
+            "type": "REPORT",
+            "url": "http://curl.haxx.se/docs/adv_20150422B.html"
+        },
+        {
+            "type": "REPORT",
+            "url": "http://curl.haxx.se/docs/adv_20150422C.html"
+        },
+        {
+            "type": "REPORT",
+            "url": "http://curl.haxx.se/docs/adv_20150422D.html"
+        },
+        {
+            "type": "WEB",
+            "url": "http://curl.haxx.se/docs/adv_20150422A.html"
+        },
+        {
+            "type": "WEB",
+            "url": "http://curl.haxx.se/docs/adv_20150422B.html"
+        },
+        {
+            "type": "WEB",
+            "url": "http://curl.haxx.se/docs/adv_20150422C.html"
+        },
+        {
+            "type": "WEB",
+            "url": "http://curl.haxx.se/docs/adv_20150422D.html"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2014-3143"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2014-3144"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2014-3145"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2014-3148"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "cURL -- multiple vulnerabilities"
+}

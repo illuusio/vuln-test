@@ -1,0 +1,93 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "redis"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "6.0.15"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        },
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "redis-devel"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "6.2.5"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        },
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "redis5"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "5.0.13"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "cite": [
+            "https://github.com/redis/redis/security/advisories/GHSA-8wxq-j7rp-g8wj"
+        ],
+        "discovery": "2021-07-04T00:00:00Z",
+        "references": {
+            "cvename": [
+                "CVE-2021-32761"
+            ]
+        },
+        "vid": "c561ce49-eabc-11eb-9c3f-0800270512f4"
+    },
+    "details": "Huang Zhw reports:\n\n> On 32-bit versions, Redis BITFIELD command is vulnerable to integer\n> overflow that can potentially be exploited to corrupt the heap, leak\n> arbitrary heap contents or trigger remote code execution. The\n> vulnerability involves constructing specially crafted bit commands\n> which overflow the bit offset.\n>\n> This problem only affects 32-bit versions of Redis.\n",
+    "id": "FreeBSD-2021-0188",
+    "modified": "2021-07-27T00:00:00Z",
+    "published": "2021-07-27T00:00:00Z",
+    "references": [
+        {
+            "type": "REPORT",
+            "url": "https://github.com/redis/redis/security/advisories/GHSA-8wxq-j7rp-g8wj"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2021-32761"
+        },
+        {
+            "type": "WEB",
+            "url": "https://github.com/redis/redis/security/advisories/GHSA-8wxq-j7rp-g8wj"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "redis -- Integer overflow issues with BITFIELD command on 32-bit systems"
+}

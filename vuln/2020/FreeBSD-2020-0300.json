@@ -1,0 +1,73 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:kernel",
+                "name": "FreeBSD-kernel"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "introduced": "12.2"
+                        },
+                        {
+                            "fixed": "12.2_1"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                },
+                {
+                    "events": [
+                        {
+                            "introduced": "12.1"
+                        },
+                        {
+                            "fixed": "12.1_11"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                },
+                {
+                    "events": [
+                        {
+                            "introduced": "11.4"
+                        },
+                        {
+                            "fixed": "11.4_5"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "discovery": "2020-12-01T00:00:00Z",
+        "references": {
+            "cvename": [
+                "CVE-2020-7469"
+            ],
+            "freebsdsa": [
+                "SA-20:31.icmp6"
+            ]
+        },
+        "vid": "8eed0c5c-3482-11eb-b87a-901b0ef719ab"
+    },
+    "details": "# Problem Description:\n\nWhen an ICMPv6 error message is received, the FreeBSD ICMPv6 stack may\nextract information from the message to hand to upper-layer protocols.\nAs a part of this operation, it may parse IPv6 header options from a\npacket embedded in the ICMPv6 message.\n\nThe handler for a routing option caches a pointer into the packet buffer\nholding the ICMPv6 message. However, when processing subsequent options\nthe packet buffer may be freed, rendering the cached pointer invalid.\nThe network stack may later dereference the pointer, potentially\ntriggering a use-after-free.\n\n# Impact:\n\nA remote host may be able to trigger a read of freed kernel memory. This\nmay trigger a kernel panic if the address had been unmapped.\n",
+    "id": "FreeBSD-2020-0300",
+    "modified": "2020-12-02T00:00:00Z",
+    "published": "2020-12-02T00:00:00Z",
+    "references": [
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2020-7469"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://www.freebsd.org/security/advisories/FreeBSD-SA-20:31.icmp6.asc"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "FreeBSD -- ICMPv6 use-after-free in error message handling"
+}

@@ -1,0 +1,79 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "drupal5"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "5.17"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        },
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "drupal6"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "6.11"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "cite": [
+            "http://drupal.org/node/449078"
+        ],
+        "discovery": "2009-04-30T00:00:00Z",
+        "references": {
+            "cvename": [
+                "CVE-2009-1575",
+                "CVE-2009-1576"
+            ]
+        },
+        "vid": "7a1ab8d4-35c1-11de-9672-0030843d3802"
+    },
+    "details": "Drupal Security Team reports:\n\n> When outputting user-supplied data Drupal strips potentially dangerous\n> HTML attributes and tags or escapes characters which have a special\n> meaning in HTML. This output filtering secures the site against cross\n> site scripting attacks via user input.\n>\n> Certain byte sequences that are valid in the UTF-8 specification are\n> potentially dangerous when interpreted as UTF-7. Internet Explorer 6\n> and 7 may decode these characters as UTF-7 if they appear before the\n> meta http-equiv=\\\"Content-Type\\\" tag that specifies the page content\n> as UTF-8, despite the fact that Drupal also sends a real HTTP header\n> specifying the content as UTF-8. This behaviour enables malicious\n> users to insert and execute Javascript in the context of the website\n> if site visitors are allowed to post content.\n>\n> In addition, Drupal core also has a very limited information\n> disclosure vulnerability under very specific conditions. If a user is\n> tricked into visiting the site via a specially crafted URL and then\n> submits a form (such as the search box) from that page, the\n> information in their form submission may be directed to a third-party\n> site determined by the URL and thus disclosed to the third party. The\n> third party site may then execute a CSRF attack against the submitted\n> form.\n",
+    "id": "FreeBSD-2009-0075",
+    "modified": "2010-05-02T00:00:00Z",
+    "published": "2009-04-30T00:00:00Z",
+    "references": [
+        {
+            "type": "REPORT",
+            "url": "http://drupal.org/node/449078"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2009-1575"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2009-1576"
+        },
+        {
+            "type": "WEB",
+            "url": "http://drupal.org/node/449078"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "drupal -- cross site scripting"
+}

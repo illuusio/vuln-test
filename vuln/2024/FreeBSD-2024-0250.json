@@ -1,0 +1,55 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "unbound"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "1.21.1"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "cite": [
+            "https://nlnetlabs.nl/news/2024/Oct/03/unbound-1.21.1-released/"
+        ],
+        "discovery": "2024-10-03T00:00:00Z",
+        "references": {
+            "cvename": [
+                "CVE-2024-8508"
+            ]
+        },
+        "vid": "2368755b-83f6-11ef-8d2e-a04a5edf46d9"
+    },
+    "details": "NLnet labs report:\n\n> A vulnerability has been discovered in Unbound when handling replies\n> with very large RRsets that Unbound needs to perform name compression\n> for.\n>\n> Malicious upstreams responses with very large RRsets can cause Unbound\n> to spend a considerable time applying name compression to downstream\n> replies. This can lead to degraded performance and eventually denial\n> of service in well orchestrated attacks.\n>\n> Unbound version 1.21.1 introduces a hard limit on the number of name\n> compression calculations it is willing to do per packet. Packets that\n> need more compression will result in semi-compressed packets or\n> truncated packets, even on TCP for huge messages, to avoid locking the\n> CPU for long.\n>\n> This change should not affect normal DNS traffic.\n",
+    "id": "FreeBSD-2024-0250",
+    "modified": "2024-10-06T00:00:00Z",
+    "published": "2024-10-06T00:00:00Z",
+    "references": [
+        {
+            "type": "REPORT",
+            "url": "https://nlnetlabs.nl/news/2024/Oct/03/unbound-1.21.1-released/"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2024-8508"
+        },
+        {
+            "type": "WEB",
+            "url": "https://nlnetlabs.nl/news/2024/Oct/03/unbound-1.21.1-released/"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "Unbound -- Denial of service attack"
+}

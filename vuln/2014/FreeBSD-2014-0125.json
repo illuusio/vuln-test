@@ -1,0 +1,77 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "bugzilla44"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "4.4.6"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "cite": [
+            "http://www.bugzilla.org/security/4.0.14/"
+        ],
+        "discovery": "2014-10-06T00:00:00Z",
+        "references": {
+            "cvename": [
+                "CVE-2014-1572",
+                "CVE-2014-1573",
+                "CVE-2014-1571"
+            ]
+        },
+        "vid": "b6587341-4d88-11e4-aef9-20cf30e32f6d"
+    },
+    "details": "Bugzilla Security Advisory\n\n> ##### Unauthorized Account Creation\n>\n> An attacker creating a new Bugzilla account can override certain\n> parameters when finalizing the account creation that can lead to the\n> user being created with a different email address than originally\n> requested. The overridden login name could be automatically added to\n> groups based on the group\\'s regular expression setting.\n>\n> ##### Cross-Site Scripting\n>\n> During an audit of the Bugzilla code base, several places were found\n> where cross-site scripting exploits could occur which could allow an\n> attacker to access sensitive information.\n>\n> ##### Information Leak\n>\n> If a new comment was marked private to the insider group, and a flag\n> was set in the same transaction, the comment would be visible to flag\n> recipients even if they were not in the insider group.\n>\n> ##### Social Engineering\n>\n> Search results can be exported as a CSV file which can then be\n> imported into external spreadsheet programs. Specially formatted field\n> values can be interpreted as formulas which can be executed and used\n> to attack a user\\'s computer.\n",
+    "id": "FreeBSD-2014-0125",
+    "modified": "2014-10-06T00:00:00Z",
+    "published": "2014-10-06T00:00:00Z",
+    "references": [
+        {
+            "type": "REPORT",
+            "url": "http://www.bugzilla.org/security/4.0.14/"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2014-1572"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2014-1573"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2014-1571"
+        },
+        {
+            "type": "REPORT",
+            "url": "https://bugzilla.mozilla.org/show_bug.cgi?id=1074812"
+        },
+        {
+            "type": "REPORT",
+            "url": "https://bugzilla.mozilla.org/show_bug.cgi?id=1075578"
+        },
+        {
+            "type": "REPORT",
+            "url": "https://bugzilla.mozilla.org/show_bug.cgi?id=1064140"
+        },
+        {
+            "type": "REPORT",
+            "url": "https://bugzilla.mozilla.org/show_bug.cgi?id=1054702"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "Bugzilla multiple security issues"
+}

@@ -1,0 +1,62 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "FreeBSD"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "introduced": "5.4"
+                        },
+                        {
+                            "fixed": "5.4_11"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                },
+                {
+                    "events": [
+                        {
+                            "introduced": "5.3"
+                        },
+                        {
+                            "fixed": "5.3_26"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "discovery": "2006-02-01T00:00:00Z",
+        "references": {
+            "cvename": [
+                "CVE-2006-0433"
+            ],
+            "freebsdsa": [
+                "SA-06:08.sack"
+            ]
+        },
+        "vid": "dfb71c00-9d44-11da-8c1d-000e0c2e438a"
+    },
+    "details": "Problem description:\n\nWhen insufficient memory is available to handle an incoming selective\nacknowledgement, the TCP/IP stack may enter an infinite loop.\n\nImpact:\n\nBy opening a TCP connection and sending a carefully crafted series of\npackets, an attacker may be able to cause a denial of service.\n\nWorkaround:\n\nOn FreeBSD 5.4, the net.inet.tcp.sack.enable sysctl can be used to\ndisable the use of SACK:\n\n\\# sysctl net.inet.tcp.sack.enable=0\n\nNo workaround is available for FreeBSD 5.3.\n",
+    "id": "FreeBSD-2006-0018",
+    "modified": "2016-08-09T00:00:00Z",
+    "published": "2006-02-14T00:00:00Z",
+    "references": [
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2006-0433"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://www.freebsd.org/security/advisories/FreeBSD-SA-06:08.sack.asc"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "FreeBSD -- Infinite loop in SACK handling"
+}

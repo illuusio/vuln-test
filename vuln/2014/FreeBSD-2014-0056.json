@@ -1,0 +1,100 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "openssl"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "introduced": "1.0.1"
+                        },
+                        {
+                            "fixed": "1.0.1_11"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        },
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "mingw32-openssl"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "introduced": "1.0.1"
+                        },
+                        {
+                            "last_affected": "1.0.1g"
+                        },
+                        {
+                            "fixed": "1.0.1g"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        },
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "FreeBSD"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "introduced": "10.0"
+                        },
+                        {
+                            "fixed": "10.0_2"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "discovery": "2010-02-09T00:00:00Z",
+        "references": {
+            "cvename": [
+                "CVE-2010-5298"
+            ],
+            "freebsdsa": [
+                "SA-14:09.openssl"
+            ]
+        },
+        "vid": "0b8d7194-ca88-11e3-9d8d-c80aa9043978"
+    },
+    "details": "Applications that use SSL_MODE_RELEASE_BUFFERS, such as nginx, are prone\nto a race condition which may allow a remote attacker to inject random\ndata into other connections.\n",
+    "id": "FreeBSD-2014-0056",
+    "modified": "2016-08-09T00:00:00Z",
+    "published": "2014-04-23T00:00:00Z",
+    "references": [
+        {
+            "type": "WEB",
+            "url": "https://rt.openssl.org/Ticket/Display.html?id=2167"
+        },
+        {
+            "type": "WEB",
+            "url": "http://www.tedunangst.com/flak/post/analysis-of-openssl-freelist-reuse"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://www.freebsd.org/security/advisories/FreeBSD-SA-14:09.openssl.asc"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2010-5298"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "OpenSSL -- Remote Data Injection / DoS"
+}

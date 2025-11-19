@@ -1,0 +1,77 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "isc-dhcp31-client"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "3.1.ESV_1,1"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        },
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "isc-dhcp41-client"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "4.1.e,2"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "cite": [
+            "http://www.isc.org/software/dhcp/advisories/cve-2011-0997"
+        ],
+        "discovery": "2011-04-05T00:00:00Z",
+        "references": {
+            "certvu": [
+                "107886"
+            ],
+            "cvename": [
+                "CVE-2011-0997"
+            ]
+        },
+        "vid": "7e69f00d-632a-11e0-9f3a-001d092480a4"
+    },
+    "details": "ISC reports:\n\n> ISC dhclient did not strip or escape certain shell meta-characters in\n> responses from the dhcp server (like hostname) before passing the\n> responses on to dhclient-script. Depending on the script and OS, this\n> can result in execution of exploit code on the client.\n",
+    "id": "FreeBSD-2011-0054",
+    "modified": "2011-04-10T00:00:00Z",
+    "published": "2011-04-10T00:00:00Z",
+    "references": [
+        {
+            "type": "REPORT",
+            "url": "http://www.isc.org/software/dhcp/advisories/cve-2011-0997"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2011-0997"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://www.kb.cert.org/vuls/id/107886"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "isc-dhcp-client -- dhclient does not strip or escape shell meta-characters"
+}

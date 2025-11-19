@@ -1,0 +1,48 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "p5-libwww"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "5.835"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "discovery": "2010-06-09T00:00:00Z",
+        "references": {
+            "cvename": [
+                "CVE-2010-2253"
+            ]
+        },
+        "vid": "3a7c5fc4-b50c-11df-977b-ecc31dd8ad06"
+    },
+    "details": "lwp-download in libwww-perl before 5.835 does not reject downloads to\nfilenames that begin with a \\`.\\' (dot) character, which allows remote\nservers to create or overwrite files via a 3xx redirect to a URL with a\ncrafted filename or a Content-Disposition header that suggests a crafted\nfilename, and possibly execute arbitrary code as a consequence of\nwriting to a dotfile in a home directory.\n",
+    "id": "FreeBSD-2010-0090",
+    "modified": "2010-08-31T00:00:00Z",
+    "published": "2010-08-31T00:00:00Z",
+    "references": [
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2010-2253"
+        },
+        {
+            "type": "WEB",
+            "url": "http://cpansearch.perl.org/src/GAAS/libwww-perl-5.836/Changes"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "p5-libwww -- possibility to remote servers to create file with a .(dot) character"
+}

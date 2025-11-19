@@ -1,0 +1,109 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "vorbis-tools"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "1.4.0_10,3"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        },
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "opus-tools"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "0.1.9_2"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "cite": [
+            "https://trac.xiph.org/ticket/2136",
+            "https://trac.xiph.org/ticket/2136",
+            "https://trac.xiph.org/ticket/2212"
+        ],
+        "discovery": "2015-08-08T00:00:00Z",
+        "references": {
+            "cvename": [
+                "CVE-2014-9639",
+                "CVE-2014-9638",
+                "CVE-2015-6749"
+            ],
+            "freebsdpr": [
+                "ports/202941"
+            ]
+        },
+        "vid": "a35f415d-572a-11e5-b0a4-f8b156b6dcc8"
+    },
+    "details": "Paris Zoumpouloglou reports:\n\n> I discovered an integer overflow issue in oggenc, related to the\n> number of channels in the input WAV file. The issue triggers an\n> out-of-bounds memory access which causes oggenc to crash.\n\nParis Zoumpouloglou reports:\n\n> A crafted WAV file with number of channels set to 0 will cause oggenc\n> to crash due to a division by zero issue.\n\npengsu reports:\n\n> I discovered an buffer overflow issue in oggenc/audio.c when it tries\n> to open invalid aiff file.\n",
+    "id": "FreeBSD-2015-0286",
+    "modified": "2015-09-09T00:00:00Z",
+    "published": "2015-09-09T00:00:00Z",
+    "references": [
+        {
+            "type": "REPORT",
+            "url": "https://trac.xiph.org/ticket/2136"
+        },
+        {
+            "type": "REPORT",
+            "url": "https://trac.xiph.org/ticket/2136"
+        },
+        {
+            "type": "REPORT",
+            "url": "https://trac.xiph.org/ticket/2212"
+        },
+        {
+            "type": "REPORT",
+            "url": "https://bugs.freebsd.org/bugzilla/show_bug.cgi?id=202941"
+        },
+        {
+            "type": "WEB",
+            "url": "https://trac.xiph.org/ticket/2136"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2014-9639"
+        },
+        {
+            "type": "WEB",
+            "url": "https://trac.xiph.org/ticket/2137"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2014-9638"
+        },
+        {
+            "type": "WEB",
+            "url": "https://trac.xiph.org/ticket/2212"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2015-6749"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "vorbis-tools, opus-tools -- multiple vulnerabilities"
+}

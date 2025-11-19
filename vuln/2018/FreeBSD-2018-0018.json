@@ -1,0 +1,55 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "curl"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "7.58.0"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "cite": [
+            "https://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2018-1000007"
+        ],
+        "discovery": "2018-01-24T00:00:00Z",
+        "references": {
+            "cvename": [
+                "CVE-2018-1000007"
+            ]
+        },
+        "vid": "0cbf0fa6-dcb7-469c-b87a-f94cffd94583"
+    },
+    "details": "The cURL project reports:\n\n> libcurl 7.1 through 7.57.0 might accidentally leak authentication data\n> to third parties. When asked to send custom headers in its HTTP\n> requests, libcurl will send that set of headers first to the host in\n> the initial URL but also, if asked to follow redirects and a 30X HTTP\n> response code is returned, to the host mentioned in URL in the\n> \\`Location:\\` response header value. Sending the same set of headers\n> to subsequest hosts is in particular a problem for applications that\n> pass on custom \\`Authorization:\\` headers, as this header often\n> contains privacy sensitive information or data that could allow others\n> to impersonate the libcurl-using client\\'s request.\n",
+    "id": "FreeBSD-2018-0018",
+    "modified": "2018-01-26T00:00:00Z",
+    "published": "2018-01-26T00:00:00Z",
+    "references": [
+        {
+            "type": "REPORT",
+            "url": "https://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2018-1000007"
+        },
+        {
+            "type": "WEB",
+            "url": "https://curl.haxx.se/docs/adv_2018-b3bf.html"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2018-1000007"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "cURL -- Multiple vulnerabilities"
+}

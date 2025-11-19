@@ -1,0 +1,74 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "redis"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "7.0.10"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        },
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "redis-devel"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "7.0.10.20230320"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "cite": [
+            "https://github.com/redis/redis/security/advisories/GHSA-mvmm-4vq6-vw8c"
+        ],
+        "discovery": "2023-03-20T00:00:00Z",
+        "references": {
+            "cvename": [
+                "CVE-2023-28425"
+            ]
+        },
+        "vid": "a60cc0e4-c7aa-11ed-8a4b-080027f5fec9"
+    },
+    "details": "Yupeng Yang reports:\n\n> Authenticated users can use the MSETNX command to trigger a runtime\n> assertion and termination of the Redis server process.\n",
+    "id": "FreeBSD-2023-0079",
+    "modified": "2023-03-21T00:00:00Z",
+    "published": "2023-03-21T00:00:00Z",
+    "references": [
+        {
+            "type": "REPORT",
+            "url": "https://github.com/redis/redis/security/advisories/GHSA-mvmm-4vq6-vw8c"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2023-28425"
+        },
+        {
+            "type": "WEB",
+            "url": "https://github.com/redis/redis/security/advisories/GHSA-mvmm-4vq6-vw8c"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "redis -- specially crafted MSETNX command can lead to denial-of-service"
+}

@@ -1,0 +1,78 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "libxml2"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "2.7.8_3"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        },
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "linux-f10-libxml2"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "2.7.8_3"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "cite": [
+            "http://googlechromereleases.blogspot.com/2012/05/stable-channel-update.html"
+        ],
+        "discovery": "2012-05-15T00:00:00Z",
+        "references": {
+            "cvename": [
+                "CVE-2011-3202"
+            ]
+        },
+        "vid": "b8ae4659-a0da-11e1-a294-bcaec565249c"
+    },
+    "details": "Google chrome team reports:\n\n> An off-by-one out-of-bounds write flaw was found in the way libxml, a\n> library for providing XML and HTML support, evaluated certain XPointer\n> parts (XPointer is used by libxml to include only the part from the\n> returned XML document, that can be accessed using the XPath expression\n> given with the XPointer). A remote attacker could provide a\n> specially-crafted XML file, which once opened in an application,\n> linked against libxml, would lead to that application crash, or,\n> potentially arbitrary code execution with the privileges of the user\n> running the application.\n>\n> Note: The flaw to be exploited requires the particular application,\n> linked against libxml, to use the XPointer evaluation functionality.\n",
+    "id": "FreeBSD-2012-0095",
+    "modified": "2014-04-30T00:00:00Z",
+    "published": "2012-05-18T00:00:00Z",
+    "references": [
+        {
+            "type": "REPORT",
+            "url": "http://googlechromereleases.blogspot.com/2012/05/stable-channel-update.html"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2011-3202"
+        },
+        {
+            "type": "WEB",
+            "url": "http://googlechromereleases.blogspot.com/2012/05/stable-channel-update.html"
+        },
+        {
+            "type": "REPORT",
+            "url": "https://bugzilla.redhat.com/show_bug.cgi?id=CVE-2011-3102"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "libxml2 -- An off-by-one out-of-bounds write by XPointer"
+}

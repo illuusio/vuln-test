@@ -1,0 +1,62 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "subversion"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "introduced": "1.7.0"
+                        },
+                        {
+                            "fixed": "1.7.10"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                },
+                {
+                    "events": [
+                        {
+                            "introduced": "1.2.0"
+                        },
+                        {
+                            "fixed": "1.6.23"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "cite": [
+            "http://subversion.apache.org/security/CVE-2013-2088-advisory.txt"
+        ],
+        "discovery": "2013-05-31T00:00:00Z",
+        "references": {
+            "cvename": [
+                "CVE-2013-2088"
+            ]
+        },
+        "vid": "6d0bf320-ca39-11e2-9673-001e8c75030d"
+    },
+    "details": "Subversion team reports:\n\n> The script contrib/hook-scripts/check-mime-type.pl does not escape\n> argv arguments to \\'svnlook\\' that start with a hyphen. This could be\n> used to cause \\'svnlook\\', and hence check-mime-type.pl, to error out.\n>\n> The script contrib/hook-scripts/svn-keyword-check.pl parses filenames\n> from the output of \\'svnlook changed\\' and passes them to a further\n> shell command (equivalent to the \\'system()\\' call of the C standard\n> library) without escaping them. This could be used to run arbitrary\n> shell commands in the context of the user whom the pre-commit script\n> runs as (the user who owns the repository).\n",
+    "id": "FreeBSD-2013-0096",
+    "modified": "2013-05-31T00:00:00Z",
+    "published": "2013-05-31T00:00:00Z",
+    "references": [
+        {
+            "type": "REPORT",
+            "url": "http://subversion.apache.org/security/CVE-2013-2088-advisory.txt"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2013-2088"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "devel/subversion -- contrib hook-scripts can allow arbitrary code execution"
+}

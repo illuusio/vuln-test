@@ -1,0 +1,55 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "go"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "1.16.4,1"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "cite": [
+            "https://github.com/golang/go/issues/45710"
+        ],
+        "discovery": "2021-04-22T00:00:00Z",
+        "references": {
+            "cvename": [
+                "CVE-2021-31525"
+            ]
+        },
+        "vid": "7f242313-aea5-11eb-8151-67f74cf7c704"
+    },
+    "details": "The Go project reports:\n\n> http.ReadRequest can stack overflow due to recursion when given a\n> request with a very large header (\\~8-10MB depending on the\n> architecture). A http.Server which overrides the default max header of\n> 1MB by setting Server.MaxHeaderBytes to a much larger value could also\n> be vulnerable in the same way.\n",
+    "id": "FreeBSD-2021-0118",
+    "modified": "2021-05-06T00:00:00Z",
+    "published": "2021-05-06T00:00:00Z",
+    "references": [
+        {
+            "type": "REPORT",
+            "url": "https://github.com/golang/go/issues/45710"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2021-31525"
+        },
+        {
+            "type": "WEB",
+            "url": "https://github.com/golang/go/issues/45710"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "go -- net/http: ReadRequest can stack overflow due to recursion with very large headers"
+}

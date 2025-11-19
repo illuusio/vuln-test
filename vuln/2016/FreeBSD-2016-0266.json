@@ -1,0 +1,55 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "xen-kernel"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "4.7.0"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "cite": [
+            "http://xenbits.xen.org/xsa/advisory-176.html"
+        ],
+        "discovery": "2016-05-17T00:00:00Z",
+        "references": {
+            "cvename": [
+                "CVE-2016-4480"
+            ]
+        },
+        "vid": "e43b210a-4212-11e6-942d-bc5ff45d0f28"
+    },
+    "details": "The Xen Project reports:\n\n> The Page Size (PS) page table entry bit exists at all page table\n> levels other than L1. Its meaning is reserved in L4, and conditionally\n> reserved in L3 and L2 (depending on hardware capabilities). The\n> software page table walker in the hypervisor, however, so far ignored\n> that bit in L4 and (on respective hardware) L3 entries, resulting in\n> pages to be treated as page tables which the guest OS may not have\n> designated as such. If the page in question is writable by an\n> unprivileged user, then that user will be able to map arbitrary guest\n> memory.\n>\n> On vulnerable OSes, guest user mode code may be able to establish\n> mappings of arbitrary memory inside the guest, allowing it to elevate\n> its privileges inside the guest.\n",
+    "id": "FreeBSD-2016-0266",
+    "modified": "2016-07-04T00:00:00Z",
+    "published": "2016-07-04T00:00:00Z",
+    "references": [
+        {
+            "type": "REPORT",
+            "url": "http://xenbits.xen.org/xsa/advisory-176.html"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2016-4480"
+        },
+        {
+            "type": "WEB",
+            "url": "http://xenbits.xen.org/xsa/advisory-176.html"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "xen-kernel -- x86 software guest page walk PS bit handling flaw"
+}

@@ -1,0 +1,229 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "jruby"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "1.6.5.1"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        },
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "ruby"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "1.8.7.357,1"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        },
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "ruby+nopthreads"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "1.8.7.357,1"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        },
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "ruby+nopthreads+oniguruma"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "1.8.7.357,1"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        },
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "ruby+oniguruma"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "1.8.7.357,1"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        },
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "rubygem-rack"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "1.3.6,3"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        },
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "v8"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "3.8.5"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        },
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "redis"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "last_affected": "2.4.6"
+                        },
+                        {
+                            "fixed": "2.4.6"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        },
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "node"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "0.6.7"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "cite": [
+            "http://www.ocert.org/advisories/ocert-2011-003.html"
+        ],
+        "discovery": "2011-12-28T00:00:00Z",
+        "references": {
+            "cvename": [
+                "CVE-2011-4838",
+                "CVE-2011-4815",
+                "CVE-2011-5036",
+                "CVE-2011-5037"
+            ]
+        },
+        "vid": "91be81e7-3fea-11e1-afc7-2c4138874f7d"
+    },
+    "details": "oCERT reports:\n\n> A variety of programming languages suffer from a denial-of-service\n> (DoS) condition against storage functions of key/value pairs in hash\n> data structures, the condition can be leveraged by exploiting\n> predictable collisions in the underlying hashing algorithms.\n>\n> The issue finds particular exposure in web server applications and/or\n> frameworks. In particular, the lack of sufficient limits for the\n> number of parameters in POST requests in conjunction with the\n> predictable collision properties in the hashing functions of the\n> underlying languages can render web applications vulnerable to the DoS\n> condition. The attacker, using specially crafted HTTP requests, can\n> lead to a 100% of CPU usage which can last up to several hours\n> depending on the targeted application and server performance, the\n> amplification effect is considerable and requires little bandwidth and\n> time on the attacker side.\n>\n> The condition for predictable collisions in the hashing functions has\n> been reported for the following language implementations: Java, JRuby,\n> PHP, Python, Rubinius, Ruby. In the case of the Ruby language, the\n> 1.9.x branch is not affected by the predictable collision condition\n> since this version includes a randomization of the hashing function.\n>\n> The vulnerability outlined in this advisory is practically identical\n> to the one reported in 2003 and described in the paper Denial of\n> Service via Algorithmic Complexity Attacks which affected the Perl\n> language.\n",
+    "id": "FreeBSD-2012-0010",
+    "modified": "2012-01-20T00:00:00Z",
+    "published": "2012-01-16T00:00:00Z",
+    "references": [
+        {
+            "type": "REPORT",
+            "url": "http://www.ocert.org/advisories/ocert-2011-003.html"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2011-4838"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2011-4815"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2011-5036"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2011-5037"
+        },
+        {
+            "type": "WEB",
+            "url": "http://www.ocert.org/advisories/ocert-2011-003.html"
+        },
+        {
+            "type": "WEB",
+            "url": "http://www.nruns.com/_downloads/advisory28122011.pdf"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "Multiple implementations -- DoS via hash algorithm collision"
+}

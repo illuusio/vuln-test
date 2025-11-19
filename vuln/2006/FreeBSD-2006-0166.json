@@ -1,0 +1,91 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "dokuwiki"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "20060309_5"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        },
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "dokuwiki-devel"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "20060609_2"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "cite": [
+            "http://secunia.com/advisories/22192/"
+        ],
+        "discovery": "2006-09-26T00:00:00Z",
+        "references": {
+            "cvename": [
+                "CVE-2006-5098",
+                "CVE-2006-5099"
+            ]
+        },
+        "vid": "450b76ee-5068-11db-a5ae-00508d6a62df"
+    },
+    "details": "Secunia reports:\n\n> Some vulnerabilities have been reported in DokuWiki, which can be\n> exploited by malicious people to cause a DoS (Denial of Service) or\n> potentially compromise a vulnerable system.\n>\n> Input passed to the \\\"w\\\" and \\\"h\\\" parameters in lib/exec/fetch.php\n> is not properly sanitised before being passed as resize parameters to\n> the \\\"convert\\\" application. This can be exploited to cause a DoS due\n> to excessive CPU and memory consumption by passing very large numbers,\n> or to inject arbitrary shell commands by passing specially crafted\n> strings to the \\\"w\\\" and \\\"h\\\" parameter.\n>\n> Successful exploitation requires that the \\\"\\$conf\\[imconvert\\]\\\"\n> option is set.\n",
+    "id": "FreeBSD-2006-0166",
+    "modified": "2006-10-02T00:00:00Z",
+    "published": "2006-09-30T00:00:00Z",
+    "references": [
+        {
+            "type": "REPORT",
+            "url": "http://secunia.com/advisories/22192/"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2006-5098"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2006-5099"
+        },
+        {
+            "type": "WEB",
+            "url": "http://secunia.com/advisories/22192/"
+        },
+        {
+            "type": "WEB",
+            "url": "http://secunia.com/advisories/22199/"
+        },
+        {
+            "type": "WEB",
+            "url": "http://bugs.splitbrain.org/?do=details&id=924"
+        },
+        {
+            "type": "WEB",
+            "url": "http://bugs.splitbrain.org/?do=details&id=926"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "dokuwiki -- multiple vulnerabilities"
+}

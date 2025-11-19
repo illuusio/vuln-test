@@ -1,0 +1,78 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "drupal5"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "5.4"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        },
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "drupal4"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "4.7.9"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "cite": [
+            "http://drupal.org/node/198162"
+        ],
+        "discovery": "2007-12-05T00:00:00Z",
+        "references": {
+            "cvename": [
+                "CVE-2007-6299"
+            ]
+        },
+        "vid": "fa708908-a8c7-11dc-b41d-000fb5066b20"
+    },
+    "details": "The Drupal Project reports:\n\n> The function taxonomy_select_nodes() directly injects variables into\n> SQL queries instead of using placeholders. While taxonomy module\n> itself validates the input passed to taxonomy_select_nodes(), this is\n> a weakness in Drupal core. Several contributed modules, such as\n> taxonomy_menu, ajaxLoader, and ubrowser, directly pass user input to\n> taxonomy_select_nodes(), enabling SQL injection attacks by anonymous\n> users.\n",
+    "id": "FreeBSD-2007-0151",
+    "modified": "2007-12-12T00:00:00Z",
+    "published": "2007-12-12T00:00:00Z",
+    "references": [
+        {
+            "type": "REPORT",
+            "url": "http://drupal.org/node/198162"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2007-6299"
+        },
+        {
+            "type": "WEB",
+            "url": "http://drupal.org/node/198162"
+        },
+        {
+            "type": "WEB",
+            "url": "http://secunia.com/advisories/27932/"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "drupal -- SQL injection vulnerability"
+}

@@ -1,0 +1,55 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "traefik"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "2.9.8"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "cite": [
+            "https://pkg.go.dev/vuln/GO-2023-1495"
+        ],
+        "discovery": "2022-10-22T00:00:00Z",
+        "references": {
+            "cvename": [
+                "CVE-2022-41721"
+            ]
+        },
+        "vid": "428922c9-b07e-11ed-8700-5404a68ad561"
+    },
+    "details": "The Go project reports:\n\n> A request smuggling attack is possible when using MaxBytesHandler.\n> When using MaxBytesHandler, the body of an HTTP request is not fully\n> consumed. When the server attempts to read HTTP2 frames from the\n> connection, it will instead be reading the body of the HTTP request,\n> which could be attacker-manipulated to represent arbitrary HTTP2\n> requests.\n",
+    "id": "FreeBSD-2023-0051",
+    "modified": "2023-02-19T00:00:00Z",
+    "published": "2023-02-19T00:00:00Z",
+    "references": [
+        {
+            "type": "REPORT",
+            "url": "https://pkg.go.dev/vuln/GO-2023-1495"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2022-41721"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2022-41721"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "traefik -- Use of vulnerable Go module x/net/http2"
+}

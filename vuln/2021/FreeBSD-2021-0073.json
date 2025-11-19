@@ -1,0 +1,86 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "openssl"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "1.1.1k,1"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        },
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "FreeBSD"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "introduced": "12.2"
+                        },
+                        {
+                            "fixed": "12.2_5"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "cite": [
+            "https://www.openssl.org/news/secadv/20210325.txt"
+        ],
+        "discovery": "2021-03-25T00:00:00Z",
+        "references": {
+            "cvename": [
+                "CVE-2021-3449",
+                "CVE-2021-3450"
+            ],
+            "freebsdsa": [
+                "SA-21:07.openssl"
+            ]
+        },
+        "vid": "5a668ab3-8d86-11eb-b8d6-d4c9ef517024"
+    },
+    "details": "The OpenSSL project reports:\n\n> High: CA certificate check bypass with X509_V_FLAG_X509_STRICT\n> (CVE-2021-3450)\\\n> The X509_V_FLAG_X509_STRICT flag enables additional security checks of\n> the certificates present in a certificate chain. It is not set by\n> default.\n>\n> High: NULL pointer deref in signature_algorithms processing\n> (CVE-2021-3449)\\\n> An OpenSSL TLS server may crash if sent a maliciously crafted\n> renegotiation ClientHello message from a client. If a TLSv1.2\n> renegotiation ClientHello omits the signature_algorithms extension\n> (where it was present in the initial ClientHello), but includes a\n> signature_algorithms_cert extension then a NULL pointer dereference\n> will result, leading to a crash and a denial of service attack.\n",
+    "id": "FreeBSD-2021-0073",
+    "modified": "2021-04-07T00:00:00Z",
+    "published": "2021-03-26T00:00:00Z",
+    "references": [
+        {
+            "type": "REPORT",
+            "url": "https://www.openssl.org/news/secadv/20210325.txt"
+        },
+        {
+            "type": "WEB",
+            "url": "https://www.openssl.org/news/secadv/20210325.txt"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2021-3449"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2021-3450"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://www.freebsd.org/security/advisories/FreeBSD-SA-21:07.openssl.asc"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "OpenSSL -- Multiple vulnerabilities"
+}

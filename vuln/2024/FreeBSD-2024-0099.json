@@ -1,0 +1,75 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "sdl2_sound"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "2.0.2_1"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "cite": [
+            "https://securitylab.github.com/advisories/GHSL-2023-145_GHSL-2023-151_stb_image_h/"
+        ],
+        "discovery": "2023-10-20T00:00:00Z",
+        "references": {
+            "cvename": [
+                "CVE-2023-45676",
+                "CVE-2023-45677",
+                "CVE-2023-45680",
+                "CVE-2023-45681",
+                "CVE-2023-45682"
+            ]
+        },
+        "vid": "304d92c3-00c5-11ef-bd52-080027bff743"
+    },
+    "details": "GitHub Security Lab reports:\n\n> stb_image.h and stb_vorbis libraries contain several memory access\n> violations of different severity\n>\n> 1.  Wild address read in stbi\\_\\_gif_load_next (GHSL-2023-145).\n> 2.  Multi-byte read heap buffer overflow in stbi\\_\\_vertical_flip\n>     (GHSL-2023-146).\n> 3.  Disclosure of uninitialized memory in stbi\\_\\_tga_load\n>     (GHSL-2023-147).\n> 4.  Double-free in stbi\\_\\_load_gif_main_outofmem (GHSL-2023-148).\n> 5.  Null pointer dereference in stbi\\_\\_convert_format\n>     (GHSL-2023-149).\n> 6.  Possible double-free or memory leak in stbi\\_\\_load_gif_main\n>     (GHSL-2023-150).\n> 7.  Null pointer dereference because of an uninitialized variable\n>     (GHSL-2023-151).\n> 8.  0 byte write heap buffer overflow in start_decoder (GHSL-2023-165)\n> 9.  Multi-byte write heap buffer overflow in start_decoder\n>     (GHSL-2023-166)\n> 10. Heap buffer out of bounds write in start_decoder (GHSL-2023-167)\n> 11. Off-by-one heap buffer write in start_decoder (GHSL-2023-168)\n> 12. Attempt to free an uninitialized memory pointer in vorbis_deinit\n>     (GHSL-2023-169)\n> 13. Null pointer dereference in vorbis_deinit (GHSL-2023-170)\n> 14. Out of bounds heap buffer write (GHSL-2023-171)\n> 15. Wild address read in vorbis_decode_packet_rest (GHSL-2023-172)\n",
+    "id": "FreeBSD-2024-0099",
+    "modified": "2024-04-22T00:00:00Z",
+    "published": "2024-04-22T00:00:00Z",
+    "references": [
+        {
+            "type": "REPORT",
+            "url": "https://securitylab.github.com/advisories/GHSL-2023-145_GHSL-2023-151_stb_image_h/"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2023-45676"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2023-45677"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2023-45680"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2023-45681"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2023-45682"
+        },
+        {
+            "type": "WEB",
+            "url": "https://securitylab.github.com/advisories/GHSL-2023-145_GHSL-2023-151_stb_image_h/"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "sdl2_sound -- multiple vulnerabilities"
+}

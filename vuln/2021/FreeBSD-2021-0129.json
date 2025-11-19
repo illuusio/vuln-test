@@ -1,0 +1,131 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "postgresql13-server"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "13.3"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        },
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "postgresql12-server"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "12.7"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        },
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "postgresql11-server"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "11.12"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        },
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "postgresql10-server"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "10.17"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        },
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "postgresql96-server"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "9.6.22"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "cite": [
+            "https://www.postgresql.org/support/security/CVE-2021-32028/",
+            "https://www.postgresql.org/support/security/CVE-2021-32027/"
+        ],
+        "discovery": "2021-05-13T00:00:00Z",
+        "vid": "62da9702-b4cc-11eb-b9c9-6cc21735f730"
+    },
+    "details": "The PostgreSQL project reports:\n\n> Memory disclosure in INSERT \\... ON CONFLICT \\... DO UPDATE\n>\n> Using an INSERT \\... ON CONFLICT \\... DO UPDATE command on a\n> purpose-crafted table, an attacker can read arbitrary bytes of server\n> memory. In the default configuration, any authenticated database user\n> can create prerequisite objects and complete this attack at will. A\n> user lacking the CREATE and TEMPORARY privileges on all databases and\n> the CREATE privilege on all schemas cannot use this attack at will..\n\n> Buffer overrun from integer overflow in array subscripting\n> calculations\n>\n> While modifying certain SQL array values, missing bounds checks let\n> authenticated database users write arbitrary bytes to a wide area of\n> server memory.\n",
+    "id": "FreeBSD-2021-0129",
+    "modified": "2021-05-14T00:00:00Z",
+    "published": "2021-05-14T00:00:00Z",
+    "references": [
+        {
+            "type": "REPORT",
+            "url": "https://www.postgresql.org/support/security/CVE-2021-32028/"
+        },
+        {
+            "type": "REPORT",
+            "url": "https://www.postgresql.org/support/security/CVE-2021-32027/"
+        },
+        {
+            "type": "WEB",
+            "url": "https://www.postgresql.org/support/security/CVE-2021-32027/"
+        },
+        {
+            "type": "WEB",
+            "url": "https://www.postgresql.org/support/security/CVE-2021-32028/"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "PostgreSQL server -- two security issues"
+}

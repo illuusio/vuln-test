@@ -1,0 +1,78 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "squid"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "2.5.7"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                },
+                {
+                    "events": [
+                        {
+                            "introduced": "3.0.0"
+                        },
+                        {
+                            "fixed": "3.0.7"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "cite": [
+            "http://www.squid-cache.org/Versions/v2/2.5/bugs/#squid-2.5.STABLE6-SNMP_core_dump"
+        ],
+        "discovery": "2004-09-29T00:00:00Z",
+        "references": {
+            "cvename": [
+                "CVE-2004-0918"
+            ]
+        },
+        "vid": "65e99f52-1c5f-11d9-bc4a-000c41e2cdad"
+    },
+    "details": "The Squid-2.5 patches page notes:\n\n> If a certain malformed SNMP request is received squid restarts with a\n> Segmentation Fault error.\n\nThis only affects squid installations where SNMP is explicitly enabled\nvia \\\"make config\\\". As a workaround, SNMP can be disabled by defining\n\\\"snmp_port 0\\\" in squid.conf.\n\nSquid security advisory SQUID-2008:1 explains that Squid-3 versions up\nto and including Squid-3.0.STABLE6 are affected by this error, too.\n",
+    "id": "FreeBSD-2004-0191",
+    "modified": "2008-06-28T00:00:00Z",
+    "published": "2004-10-12T00:00:00Z",
+    "references": [
+        {
+            "type": "REPORT",
+            "url": "http://www.squid-cache.org/Versions/v2/2.5/bugs/#squid-2.5.STABLE6-SNMP_core_dump"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2004-0918"
+        },
+        {
+            "type": "WEB",
+            "url": "http://www.idefense.com/application/poi/display?id=152&type=vulnerabilities"
+        },
+        {
+            "type": "WEB",
+            "url": "http://www.squid-cache.org/Versions/v2/2.5/bugs/#squid-2.5.STABLE6-SNMP_core_dump"
+        },
+        {
+            "type": "WEB",
+            "url": "http://www.squid-cache.org/Advisories/SQUID-2004_3.txt"
+        },
+        {
+            "type": "WEB",
+            "url": "http://www.squid-cache.org/Advisories/SQUID-2008_1.txt"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "squid -- SNMP module denial-of-service vulnerability"
+}

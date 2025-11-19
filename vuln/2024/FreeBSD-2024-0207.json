@@ -1,0 +1,46 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "forgejo"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "8.0.2"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "cite": [
+            "https://codeberg.org/forgejo/forgejo/milestone/7728"
+        ],
+        "discovery": "2024-08-26T00:00:00Z",
+        "vid": "eb437e17-66a1-11ef-ac08-75165d18d8d2"
+    },
+    "details": "The forgejo team reports:\n\n> The scope of application tokens was not verified when writing\n> containers or Conan packages. This is of no consequence when the user\n> associated with the application token does not have write access to\n> packages. If the user has write access to packages, such a token can\n> be used to write containers and Conan packages. An application token\n> that was used to write containers or Conan packages without the\n> package:write scope will now fail with an unauthorized error. It must\n> be re-created to include the package:write scope.\n",
+    "id": "FreeBSD-2024-0207",
+    "modified": "2024-08-30T00:00:00Z",
+    "published": "2024-08-30T00:00:00Z",
+    "references": [
+        {
+            "type": "REPORT",
+            "url": "https://codeberg.org/forgejo/forgejo/milestone/7728"
+        },
+        {
+            "type": "WEB",
+            "url": "https://codeberg.org/forgejo/forgejo/pulls/5149"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "forgejo -- The scope of application tokens was not verified when writing containers or Conan packages."
+}

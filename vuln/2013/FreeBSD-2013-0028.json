@@ -1,0 +1,209 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "bugzilla"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "introduced": "3.6.0"
+                        },
+                        {
+                            "fixed": "3.6.13"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                },
+                {
+                    "events": [
+                        {
+                            "introduced": "4.0.0"
+                        },
+                        {
+                            "fixed": "4.0.10"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                },
+                {
+                    "events": [
+                        {
+                            "introduced": "4.2.0"
+                        },
+                        {
+                            "fixed": "4.2.5"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        },
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "de-bugzilla"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "introduced": "3.6.0"
+                        },
+                        {
+                            "fixed": "3.6.13"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                },
+                {
+                    "events": [
+                        {
+                            "introduced": "4.0.0"
+                        },
+                        {
+                            "fixed": "4.0.10"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                },
+                {
+                    "events": [
+                        {
+                            "introduced": "4.2.0"
+                        },
+                        {
+                            "fixed": "4.2.5"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        },
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "ru-bugzilla"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "introduced": "3.6.0"
+                        },
+                        {
+                            "fixed": "3.6.13"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                },
+                {
+                    "events": [
+                        {
+                            "introduced": "4.0.0"
+                        },
+                        {
+                            "fixed": "4.0.10"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                },
+                {
+                    "events": [
+                        {
+                            "introduced": "4.2.0"
+                        },
+                        {
+                            "fixed": "4.2.5"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        },
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "ja-bugzilla"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "introduced": "3.6.0"
+                        },
+                        {
+                            "fixed": "3.6.13"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                },
+                {
+                    "events": [
+                        {
+                            "introduced": "4.0.0"
+                        },
+                        {
+                            "fixed": "4.0.10"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                },
+                {
+                    "events": [
+                        {
+                            "introduced": "4.2.0"
+                        },
+                        {
+                            "fixed": "4.2.5"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "cite": [
+            "http://www.bugzilla.org/security/3.6.12/"
+        ],
+        "discovery": "2013-02-19T00:00:00Z",
+        "references": {
+            "cvename": [
+                "CVE-2013-0785",
+                "CVE-2013-0786"
+            ]
+        },
+        "vid": "1c8a039b-7b23-11e2-b17b-20cf30e32f6d"
+    },
+    "details": "# A Bugzilla Security Advisory reports:\n\n> # Cross-Site Scripting\n>\n> When viewing a single bug report, which is the default, the bug ID is\n> validated and rejected if it is invalid. But when viewing several bug\n> reports at once, which is specified by the format=multiple parameter,\n> invalid bug IDs can go through and are sanitized in the HTML page\n> itself. But when an invalid page format is passed to the CGI script,\n> the wrong HTML page is called and data are not correctly sanitized,\n> which can lead to XSS.\n>\n> # Information Leak\n>\n> When running a query in debug mode, the generated SQL query used to\n> collect the data is displayed. The way this SQL query is built permits\n> the user to determine if some confidential field value (such as a\n> product name) exists. This problem only affects Bugzilla 4.0.9 and\n> older. Newer releases are not affected by this issue.\n",
+    "id": "FreeBSD-2013-0028",
+    "modified": "2013-03-31T00:00:00Z",
+    "published": "2013-02-20T00:00:00Z",
+    "references": [
+        {
+            "type": "REPORT",
+            "url": "http://www.bugzilla.org/security/3.6.12/"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2013-0785"
+        },
+        {
+            "type": "REPORT",
+            "url": "https://bugzilla.mozilla.org/show_bug.cgi?id=842038"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2013-0786"
+        },
+        {
+            "type": "REPORT",
+            "url": "https://bugzilla.mozilla.org/show_bug.cgi?id=824399"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "bugzilla -- multiple vulnerabilities"
+}

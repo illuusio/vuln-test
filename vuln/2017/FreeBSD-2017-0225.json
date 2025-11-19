@@ -1,0 +1,80 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "sam2p"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "0.49.3,1"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "cite": [
+            "https://github.com/pts/sam2p/issues/14"
+        ],
+        "discovery": "2017-09-21T00:00:00Z",
+        "references": {
+            "cvename": [
+                "CVE-2017-14628",
+                "CVE-2017-14629",
+                "CVE-2017-14630",
+                "CVE-2017-14631",
+                "CVE-2017-14636",
+                "CVE-2017-14637"
+            ]
+        },
+        "vid": "43a1b8f9-3451-4f3c-b4fc-730c0f5876c1"
+    },
+    "details": "sam2p developers report:\n\n> In sam2p 0.49.3, a heap-based buffer overflow exists in the\n> pcxLoadImage24 function of the file in_pcx.cpp.\n>\n> In sam2p 0.49.3, the in_xpm_reader function in in_xpm.cpp has an\n> integer signedness error, leading to a crash when writing to an\n> out-of-bounds array element.\n>\n> In sam2p 0.49.3, an integer overflow exists in the pcxLoadImage24\n> function of the file in_pcx.cpp, leading to an invalid write\n> operation.\n>\n> In sam2p 0.49.3, the pcxLoadRaster function in in_pcx.cpp has an\n> integer signedness error leading to a heap-based buffer overflow.\n>\n> Because of an integer overflow in sam2p 0.49.3, a loop executes\n> 0xffffffff times, ending with an invalid read of size 1 in the\n> Image::Indexed::sortPal function in image.cpp. However, this also\n> causes memory corruption because of an attempted write to the invalid\n> d\\[0xfffffffe\\] array element.\n>\n> In sam2p 0.49.3, there is an invalid read of size 2 in the parse_rgb\n> function in in_xpm.cpp. However, this can also cause a write to an\n> illegal address.\n",
+    "id": "FreeBSD-2017-0225",
+    "modified": "2017-09-28T00:00:00Z",
+    "published": "2017-09-28T00:00:00Z",
+    "references": [
+        {
+            "type": "REPORT",
+            "url": "https://github.com/pts/sam2p/issues/14"
+        },
+        {
+            "type": "WEB",
+            "url": "https://github.com/pts/sam2p/issues/14"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2017-14628"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2017-14629"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2017-14630"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2017-14631"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2017-14636"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2017-14637"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "sam2p -- multiple issues"
+}

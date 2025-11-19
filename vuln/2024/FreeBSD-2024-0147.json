@@ -1,0 +1,55 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "forgejo"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "7.0.4"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "cite": [
+            "https://codeberg.org/forgejo/forgejo/src/branch/forgejo/RELEASE-NOTES.md#7-0-4"
+        ],
+        "discovery": "2024-04-04T00:00:00Z",
+        "references": {
+            "cvename": [
+                "CVE-2024-24789"
+            ]
+        },
+        "vid": "f0ba7008-2bbd-11ef-b4ca-814a3d504243"
+    },
+    "details": "The forgejo team reports:\n\n> [CVE-2024-24789](https://pkg.go.dev/vuln/GO-2024-2888): The\n> archive/zip package\\'s handling of certain types of invalid zip files\n> differs from the behavior of most zip implementations. This\n> misalignment could be exploited to create an zip file with contents\n> that vary depending on the implementation reading the file.\n>\n> The OAuth2 implementation does not always require authentication for\n> public clients, a requirement of RFC 6749 Section 10.2. A malicious\n> client can impersonate another client and obtain access to protected\n> resources if the impersonated client fails to, or is unable to, keep\n> its client credentials confidential.\n",
+    "id": "FreeBSD-2024-0147",
+    "modified": "2024-04-11T00:00:00Z",
+    "published": "2024-04-11T00:00:00Z",
+    "references": [
+        {
+            "type": "REPORT",
+            "url": "https://codeberg.org/forgejo/forgejo/src/branch/forgejo/RELEASE-NOTES.md#7-0-4"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2024-24789"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://nvd.nist.gov/vuln/detail/CVE-2024-24789"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "forgejo -- multiple issues"
+}

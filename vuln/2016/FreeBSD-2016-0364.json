@@ -1,0 +1,64 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "mailman"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "2.1.15"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "cite": [
+            "https://bugs.launchpad.net/mailman/+bug/775294",
+            "https://launchpad.net/mailman/2.1/2.1.15"
+        ],
+        "discovery": "2011-05-02T00:00:00Z",
+        "references": {
+            "cvename": [
+                "CVE-2016-7123"
+            ]
+        },
+        "vid": "9e50dcc3-740b-11e6-94a2-080027ef73ec"
+    },
+    "details": "The late Tokio Kikuchi reported:\n\n> We may have to set lifetime for input forms because of recent\n> activities on cross-site request forgery (CSRF). The form lifetime is\n> successfully deployed in frameworks like web.py or plone etc. Proposed\n> branch lp:\\~tkikuchi/mailman/form-lifetime implement lifetime in\n> admin, admindb, options and edithtml interfaces. \\[\\...\\]\n\n> The web admin interface has been hardened against CSRF attacks by\n> adding a hidden, encrypted token with a time stamp to form submissions\n> and not accepting authentication by cookie if the token is missing,\n> invalid or older than the new mm_cfg.py setting FORM_LIFETIME which\n> defaults to one hour. Posthumous thanks go to Tokio Kikuchi for this\n> implementation \\[\\...\\].\n",
+    "id": "FreeBSD-2016-0364",
+    "modified": "2016-09-06T00:00:00Z",
+    "published": "2016-09-06T00:00:00Z",
+    "references": [
+        {
+            "type": "REPORT",
+            "url": "https://bugs.launchpad.net/mailman/+bug/775294"
+        },
+        {
+            "type": "REPORT",
+            "url": "https://launchpad.net/mailman/2.1/2.1.15"
+        },
+        {
+            "type": "WEB",
+            "url": "https://bugs.launchpad.net/mailman/+bug/775294"
+        },
+        {
+            "type": "WEB",
+            "url": "https://launchpad.net/mailman/2.1/2.1.15"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2016-7123"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "mailman -- CSRF hardening in parts of the web interface"
+}

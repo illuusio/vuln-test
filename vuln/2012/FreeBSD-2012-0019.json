@@ -1,0 +1,60 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "postfixadmin"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "2.3.5"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "cite": [
+            "http://sourceforge.net/projects/postfixadmin/forums/forum/676076/topic/4977778"
+        ],
+        "discovery": "2012-01-27T00:00:00Z",
+        "references": {
+            "cvename": [
+                "CVE-2012-0811",
+                "CVE-2012-0812"
+            ]
+        },
+        "vid": "93688f8f-4935-11e1-89b4-001ec9578670"
+    },
+    "details": "The Postfix Admin Team reports:\n\n> Multiple XSS vulnerabilities exist:\\\n> - XSS with \\$\\_GET\\[domain\\] in templates/menu.php and edit-vacation\\\n> - XSS in some create-domain input fields\\\n> - XSS in create-alias and edit-alias error message\\\n> - XSS (by values stored in the database) in fetchmail list view,\n> list-domain and list-virtual\n>\n> Multiple SQL injection issues exist:\\\n> - SQL injection in pacrypt() (if \\$CONF\\[encrypt\\] ==\n> \\'mysql_encrypt\\')\\\n> - SQL injection in backup.php - the dump was not mysql_escape()d,\n> therefore users could inject SQL (for example in the vacation message)\n> which will be executed when restoring the database dump. WARNING:\n> database dumps created with backup.php from 2.3.4 or older might\n> contain malicious SQL. Double-check before using them!\n",
+    "id": "FreeBSD-2012-0019",
+    "modified": "2012-01-27T00:00:00Z",
+    "published": "2012-01-27T00:00:00Z",
+    "references": [
+        {
+            "type": "REPORT",
+            "url": "http://sourceforge.net/projects/postfixadmin/forums/forum/676076/topic/4977778"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2012-0811"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2012-0812"
+        },
+        {
+            "type": "WEB",
+            "url": "http://sourceforge.net/projects/postfixadmin/forums/forum/676076/topic/4977778"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "postfixadmin -- Multiple Vulnerabilities"
+}

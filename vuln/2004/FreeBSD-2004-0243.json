@@ -1,0 +1,59 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "twiki"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "20040902"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "cite": [
+            "http://marc.theaimsgroup.com/?l=bugtraq&m=110037207516456"
+        ],
+        "discovery": "2004-11-12T00:00:00Z",
+        "references": {
+            "cvename": [
+                "CVE-2004-1037"
+            ]
+        },
+        "vid": "b4af3ede-36e9-11d9-a9e7-0001020eed82"
+    },
+    "details": "Hans Ulrich Niedermann reports:\n\n> The TWiki search function uses a user supplied search string to\n> compose a command line executed by the Perl backtick (\\`\\`) operator.\n>\n> The search string is not checked properly for shell metacharacters and\n> is thus vulnerable to search string containing quotes and shell\n> commands.\n>\n> IMPACT: An attacker is able to execute arbitrary shell commands with\n> the privileges of the TWiki process.\n",
+    "id": "FreeBSD-2004-0243",
+    "modified": "2004-11-23T00:00:00Z",
+    "published": "2004-11-15T00:00:00Z",
+    "references": [
+        {
+            "type": "REPORT",
+            "url": "http://marc.theaimsgroup.com/?l=bugtraq&m=110037207516456"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2004-1037"
+        },
+        {
+            "type": "DISCUSSION",
+            "url": "http://marc.theaimsgroup.com/?l=bugtraq&m=110037207516456"
+        },
+        {
+            "type": "WEB",
+            "url": "http://twiki.org/cgi-bin/view/Codev/SecurityAlertExecuteCommandsWithSearch"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "twiki -- arbitrary shell command execution"
+}

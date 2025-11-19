@@ -1,0 +1,55 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "phpMyAdmin"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "introduced": "4.0"
+                        },
+                        {
+                            "fixed": "4.0.3"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "cite": [
+            "http://www.phpmyadmin.net/home_page/security/PMASA-2013-6.php"
+        ],
+        "discovery": "2013-06-05T00:00:00Z",
+        "references": {
+            "cvename": [
+                "CVE-2013-3742"
+            ]
+        },
+        "vid": "6b97436c-ce1e-11e2-9cb2-6805ca0b3d42"
+    },
+    "details": "The phpMyAdmin development team reports:\n\n> When creating a view with a crafted name and an incorrect CREATE\n> statement, it is possible to trigger an XSS.\n>\n> This vulnerability can be triggered only by someone who logged in to\n> phpMyAdmin, as the usual token protection prevents non-logged-in users\n> from accessing the required form.\n",
+    "id": "FreeBSD-2013-0104",
+    "modified": "2013-06-05T00:00:00Z",
+    "published": "2013-06-05T00:00:00Z",
+    "references": [
+        {
+            "type": "REPORT",
+            "url": "http://www.phpmyadmin.net/home_page/security/PMASA-2013-6.php"
+        },
+        {
+            "type": "WEB",
+            "url": "http://www.phpmyadmin.net/home_page/security/PMASA-2013-6.php"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2013-3742"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "phpMyAdmin -- XSS due to unescaped HTML output in Create View page"
+}

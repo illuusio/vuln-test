@@ -1,0 +1,51 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "newspost"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "last_affected": "2.1.1"
+                        },
+                        {
+                            "fixed": "2.1.1"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "discovery": "2005-01-14T00:00:00Z",
+        "references": {
+            "cvename": [
+                "CVE-2005-0101"
+            ]
+        },
+        "vid": "7f13607b-6948-11d9-8937-00065be4b5b6"
+    },
+    "details": "The newspost program uses a function named socket_getline to read server\nresponses from the network socket. Unfortunately this function does not\ncheck the length of the buffer in which the read data is stored and only\nstops reading when a newline character is found.\n\nA malicious NNTP server could use this bug to cause a buffer overflow by\nsending an overly long response. Such an overflow allows arbitrary code\nto be executed, with the privileges of the newspost process, on the\naffected systems.\n",
+    "id": "FreeBSD-2005-0062",
+    "modified": "2005-02-01T00:00:00Z",
+    "published": "2005-02-01T00:00:00Z",
+    "references": [
+        {
+            "type": "WEB",
+            "url": "http://people.freebsd.org/~niels/issues/newspost-20050114.txt"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2005-0101"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "newspost -- server response buffer overflow vulnerability"
+}

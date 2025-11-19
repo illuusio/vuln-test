@@ -1,0 +1,63 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "openvpn"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "introduced": "2.0"
+                        },
+                        {
+                            "fixed": "2.0.6"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "cite": [
+            "http://www.osreviews.net/reviews/security/openvpn-print"
+        ],
+        "discovery": "2006-04-03T00:00:00Z",
+        "references": {
+            "cvename": [
+                "CVE-2006-1629"
+            ]
+        },
+        "vid": "be4ccb7b-c48b-11da-ae12-0002b3b60e4c"
+    },
+    "details": "Hendrik Weimer reports:\n\n> OpenVPN clients are a bit too generous when accepting configuration\n> options from a server. It is possible to transmit environment\n> variables to client-side shell scripts. There are some filters in\n> place to prevent obvious nonsense, however they don\\'t catch the good\n> old LD_PRELOAD trick. All we need is to put a file onto the client\n> under a known location (e.g. by returning a specially crafted document\n> upon web access) and we have a remote root exploit. But since the\n> attack may only come from authenticated servers, this threat is\n> greatly reduced.\n",
+    "id": "FreeBSD-2006-0060",
+    "modified": "2006-04-06T00:00:00Z",
+    "published": "2006-04-05T00:00:00Z",
+    "references": [
+        {
+            "type": "REPORT",
+            "url": "http://www.osreviews.net/reviews/security/openvpn-print"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2006-1629"
+        },
+        {
+            "type": "WEB",
+            "url": "http://www.osreviews.net/reviews/security/openvpn-print"
+        },
+        {
+            "type": "WEB",
+            "url": "http://openvpn.net/changelog.html"
+        },
+        {
+            "type": "DISCUSSION",
+            "url": "http://sourceforge.net/mailarchive/message.php?msg_id=15298074"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "openvpn -- LD_PRELOAD code execution on client through malicious or compromised server"
+}

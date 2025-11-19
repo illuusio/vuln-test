@@ -1,0 +1,55 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "exiv2"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "0.28.6"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "cite": [
+            "https://github.com/Exiv2/exiv2/security/advisories/GHSA-m54q-mm9w-fp6g"
+        ],
+        "discovery": "2025-08-29T00:00:00Z",
+        "references": {
+            "cvename": [
+                "CVE-2025-55304"
+            ]
+        },
+        "vid": "340dc4c1-895a-11f0-b6e5-4ccc6adda413"
+    },
+    "details": "Kevin Backhouse reports:\n\n> A denial-of-service was found in Exiv2 version v0.28.5: a quadratic\n> algorithm in the ICC profile parsing code in jpegBase::readMetadata()\n> can cause Exiv2 to run for a long time. Exiv2 is a command-line\n> utility and C++ library for reading, writing, deleting, and modifying\n> the metadata of image files. The denial-of-service is triggered when\n> Exiv2 is used to read the metadata of a crafted jpg image file.\n",
+    "id": "FreeBSD-2025-0286",
+    "modified": "2025-09-04T00:00:00Z",
+    "published": "2025-09-04T00:00:00Z",
+    "references": [
+        {
+            "type": "REPORT",
+            "url": "https://github.com/Exiv2/exiv2/security/advisories/GHSA-m54q-mm9w-fp6g"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2025-55304"
+        },
+        {
+            "type": "WEB",
+            "url": "https://github.com/Exiv2/exiv2/security/advisories/GHSA-m54q-mm9w-fp6g"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "exiv2 -- Denial-of-service"
+}

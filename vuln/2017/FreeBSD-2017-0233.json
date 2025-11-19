@@ -1,0 +1,101 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "tomcat"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "introduced": "7.0.0"
+                        },
+                        {
+                            "last_affected": "7.0.81"
+                        },
+                        {
+                            "fixed": "7.0.81"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                },
+                {
+                    "events": [
+                        {
+                            "introduced": "8.0.0"
+                        },
+                        {
+                            "last_affected": "8.0.46"
+                        },
+                        {
+                            "fixed": "8.0.46"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                },
+                {
+                    "events": [
+                        {
+                            "introduced": "8.5.0"
+                        },
+                        {
+                            "last_affected": "8.5.22"
+                        },
+                        {
+                            "fixed": "8.5.22"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                },
+                {
+                    "events": [
+                        {
+                            "introduced": "9.0.0"
+                        },
+                        {
+                            "fixed": "9.0.1"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "cite": [
+            "http://www.securityfocus.com/bid/100954"
+        ],
+        "discovery": "2017-10-04T00:00:00Z",
+        "references": {
+            "cvename": [
+                "CVE-2017-12617"
+            ]
+        },
+        "vid": "c0dae634-4820-4505-850d-b1c975d0f67d"
+    },
+    "details": "tomcat developers reports:\n\n> When running Apache Tomcat versions 9.0.0.M1 to 9.0.0, 8.5.0 to\n> 8.5.22, 8.0.0.RC1 to 8.0.46 and 7.0.0 to 7.0.81 with HTTP PUTs enabled\n> (e.g. via setting the readonly initialisation parameter of the Default\n> servlet to false) it was possible to upload a JSP file to the server\n> via a specially crafted request. This JSP could then be requested and\n> any code it contained would be executed by the server.\n",
+    "id": "FreeBSD-2017-0233",
+    "modified": "2017-10-06T00:00:00Z",
+    "published": "2017-10-06T00:00:00Z",
+    "references": [
+        {
+            "type": "REPORT",
+            "url": "http://www.securityfocus.com/bid/100954"
+        },
+        {
+            "type": "WEB",
+            "url": "http://www.securityfocus.com/bid/100954"
+        },
+        {
+            "type": "WEB",
+            "url": "https://lists.apache.org/thread.html/3fd341a604c4e9eab39e7eaabbbac39c30101a022acc11dd09d7ebcb@%3Cannounce.tomcat.apache.org%3E"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2017-12617"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "tomcat -- Remote Code Execution"
+}

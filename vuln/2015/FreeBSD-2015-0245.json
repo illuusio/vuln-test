@@ -1,0 +1,54 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "gnutls"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "3.3.15"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "cite": [
+            "http://permalink.gmane.org/gmane.comp.encryption.gpg.gnutls.devel/8132"
+        ],
+        "discovery": "2015-04-25T00:00:00Z",
+        "vid": "3de36a19-429d-11e5-9daa-14dae9d210b8"
+    },
+    "details": "Karthikeyan Bhargavan reports:\n\n> GnuTLS does not by default support MD5 signatures. Indeed the RSA-MD5\n> signature-hash algorithm needs to be explicitly enabled using the\n> priority option VERIFY_ALLOW_SIGN_RSA_MD5. In the NORMAL and SECURE\n> profiles, GnuTLS clients do not offer RSA-MD5 in the signature\n> algorithms extension. However, we find that all GnuTLS clients still\n> accept RSA-MD5 in the ServerKeyExchange and GnuTLS servers still\n> accept RSA-MD5 in the ClientCertificateVerify.\n",
+    "id": "FreeBSD-2015-0245",
+    "modified": "2015-08-14T00:00:00Z",
+    "published": "2015-08-14T00:00:00Z",
+    "references": [
+        {
+            "type": "REPORT",
+            "url": "http://permalink.gmane.org/gmane.comp.encryption.gpg.gnutls.devel/8132"
+        },
+        {
+            "type": "DISCUSSION",
+            "url": "http://permalink.gmane.org/gmane.comp.encryption.gpg.gnutls.devel/8132"
+        },
+        {
+            "type": "WEB",
+            "url": "http://www.gnutls.org/security.html#GNUTLS-SA-2015-2"
+        },
+        {
+            "type": "DISCUSSION",
+            "url": "http://seclists.org/oss-sec/2015/q2/367"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "gnutls -- MD5 downgrade in TLS signatures"
+}

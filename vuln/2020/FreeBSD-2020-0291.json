@@ -1,0 +1,83 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "go"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "1.15.5,1"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "cite": [
+            "https://github.com/golang/go/issues/42552",
+            "https://github.com/golang/go/issues/42556",
+            "https://github.com/golang/go/issues/42559"
+        ],
+        "discovery": "2020-11-09T00:00:00Z",
+        "references": {
+            "cvename": [
+                "CVE-2020-28362",
+                "CVE-2020-28367",
+                "CVE-2020-28366"
+            ]
+        },
+        "vid": "db4b2f27-252a-11eb-865c-00155d646400"
+    },
+    "details": "The Go project reports:\n\n> A number of math/big.Int methods (Div, Exp, DivMod, Quo, Rem, QuoRem,\n> Mod, ModInverse, ModSqrt, Jacobi, and GCD) can panic when provided\n> crafted large inputs. For the panic to happen, the divisor or modulo\n> argument must be larger than 3168 bits (on 32-bit architectures) or\n> 6336 bits (on 64-bit architectures). Multiple math/big.Rat methods are\n> similarly affected.\n\n> The go command may execute arbitrary code at build time when cgo is in\n> use. This may occur when running go get on a malicious package, or any\n> other command that builds untrusted code. This can be caused by a\n> malicious gcc flags specified via a #cgo directive.\n\n> The go command may execute arbitrary code at build time when cgo is in\n> use. This may occur when running go get on a malicious package, or any\n> other command that builds untrusted code. This can be caused by\n> malicious unquoted symbol names.\n",
+    "id": "FreeBSD-2020-0291",
+    "modified": "2020-11-12T00:00:00Z",
+    "published": "2020-11-12T00:00:00Z",
+    "references": [
+        {
+            "type": "REPORT",
+            "url": "https://github.com/golang/go/issues/42552"
+        },
+        {
+            "type": "REPORT",
+            "url": "https://github.com/golang/go/issues/42556"
+        },
+        {
+            "type": "REPORT",
+            "url": "https://github.com/golang/go/issues/42559"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2020-28362"
+        },
+        {
+            "type": "WEB",
+            "url": "https://github.com/golang/go/issues/42552"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2020-28367"
+        },
+        {
+            "type": "WEB",
+            "url": "https://github.com/golang/go/issues/42556"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2020-28366"
+        },
+        {
+            "type": "WEB",
+            "url": "https://github.com/golang/go/issues/42559"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "go -- math/big: panic during recursive division of very large numbers; cmd/go: arbitrary code execution at build time through cgo"
+}

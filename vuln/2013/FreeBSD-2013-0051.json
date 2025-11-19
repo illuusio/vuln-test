@@ -1,0 +1,127 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "puppet"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "introduced": "3.0"
+                        },
+                        {
+                            "fixed": "3.1.1"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        },
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "puppet27"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "introduced": "2.7"
+                        },
+                        {
+                            "fixed": "2.7.21"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "cite": [
+            "https://puppetlabs.com/blog/security-updates-new-releases-of-puppet-and-puppet-enterprise/"
+        ],
+        "discovery": "2013-03-13T00:00:00Z",
+        "references": {
+            "cvename": [
+                "CVE-2013-1640",
+                "CVE-2013-1652",
+                "CVE-2013-1653",
+                "CVE-2013-1654",
+                "CVE-2013-1655",
+                "CVE-2013-2275"
+            ]
+        },
+        "vid": "cda566a0-2df0-4eb0-b70e-ed7a6fb0ab3c"
+    },
+    "details": "Moses Mendoza reports:\n\n> A vulnerability found in Puppet could allow an authenticated client to\n> cause the master to execute arbitrary code while responding to a\n> catalog request. Specifically, in order to exploit the vulnerability,\n> the puppet master must be made to invoke the \\'template\\' or\n> \\'inline_template\\' functions during catalog compilation.\n>\n> A vulnerability found in Puppet could allow an authenticated client to\n> connect to a puppet master and perform unauthorized actions.\n> Specifically, given a valid certificate and private key, an agent\n> could retrieve catalogs from the master that it is not authorized to\n> access or it could poison the puppet master\\'s caches for any\n> puppet-generated data that supports caching such as catalogs, nodes,\n> facts, and resources. The extent and severity of this vulnerability\n> varies depending on the specific configuration of the master: for\n> example, whether it is using storeconfigs or not, which version,\n> whether it has access to the cache or not, etc.\n>\n> A vulnerability has been found in Puppet which could allow\n> authenticated clients to execute arbitrary code on agents that have\n> been configured to accept kick connections. This vulnerability is not\n> present in the default configuration of puppet agents, but if they\n> have been configured to listen for incoming connections\n> (\\'listen=true\\'), and the agent\\'s auth.conf has been configured to\n> allow access to the \\`run\\` REST endpoint, then a client could\n> construct an HTTP request which could execute arbitrary code. The\n> severity of this issue is exacerbated by the fact that puppet agents\n> typically run as root.\n>\n> A vulnerability has been found in Puppet that could allow a client\n> negotiating a connection to a master to downgrade the master\\'s SSL\n> protocol to SSLv2. This protocol has been found to contain design\n> weaknesses. This issue only affects systems running older versions\n> (pre 1.0.0) of openSSL. Newer versions explicitly disable SSLv2.\n>\n> A vulnerability found in Puppet could allow unauthenticated clients to\n> send requests to the puppet master which would cause it to load code\n> unsafely. While there are no reported exploits, this vulnerability\n> could cause issues like those described in Rails CVE-2013-0156. This\n> vulnerability only affects puppet masters running Ruby 1.9.3 and\n> higher.\n>\n> This vulnerability affects puppet masters 0.25.0 and above. By\n> default, auth.conf allows any authenticated node to submit a report\n> for any other node. This can cause issues with compliance. The\n> defaults in auth.conf have been changed.\n",
+    "id": "FreeBSD-2013-0051",
+    "modified": "2013-03-13T00:00:00Z",
+    "published": "2013-03-13T00:00:00Z",
+    "references": [
+        {
+            "type": "REPORT",
+            "url": "https://puppetlabs.com/blog/security-updates-new-releases-of-puppet-and-puppet-enterprise/"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2013-1640"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2013-1652"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2013-1653"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2013-1654"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2013-1655"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2013-2275"
+        },
+        {
+            "type": "WEB",
+            "url": "https://puppetlabs.com/security/cve/cve-2013-1640/"
+        },
+        {
+            "type": "WEB",
+            "url": "https://puppetlabs.com/security/cve/cve-2013-1652/"
+        },
+        {
+            "type": "WEB",
+            "url": "https://puppetlabs.com/security/cve/cve-2013-1653/"
+        },
+        {
+            "type": "WEB",
+            "url": "https://puppetlabs.com/security/cve/cve-2013-1654/"
+        },
+        {
+            "type": "WEB",
+            "url": "https://puppetlabs.com/security/cve/cve-2013-1655/"
+        },
+        {
+            "type": "WEB",
+            "url": "https://puppetlabs.com/security/cve/cve-2013-2275/"
+        },
+        {
+            "type": "WEB",
+            "url": "https://groups.google.com/forum/?fromgroups=#!topic/puppet-announce/f_gybceSV6E"
+        },
+        {
+            "type": "WEB",
+            "url": "https://groups.google.com/forum/?fromgroups=#!topic/puppet-announce/kgDyaPhHniw"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "puppet27 and puppet -- multiple vulnerabilities"
+}

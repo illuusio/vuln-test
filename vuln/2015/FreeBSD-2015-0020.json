@@ -1,0 +1,55 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "asterisk13"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "13.1.1"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "cite": [
+            "http://www.asterisk.org/downloads/security-advisories"
+        ],
+        "discovery": "2015-01-06T00:00:00Z",
+        "references": {
+            "cvename": [
+                "CVE-2015-1558"
+            ]
+        },
+        "vid": "2eeb6652-a7a6-11e4-96ba-001999f8d30b"
+    },
+    "details": "The Asterisk project reports:\n\n> Asterisk may be configured to only allow specific audio or video\n> codecs to be used when communicating with a particular endpoint. When\n> an endpoint sends an SDP offer that only lists codecs not allowed by\n> Asterisk, the offer is rejected. However, in this case, RTP ports that\n> are allocated in the process are not reclaimed.\n>\n> This issue only affects the PJSIP channel driver in Asterisk. Users of\n> the chan_sip channel driver are not affected.\n>\n> As the resources are allocated after authentication, this issue only\n> affects communications with authenticated endpoints.\n",
+    "id": "FreeBSD-2015-0020",
+    "modified": "2015-02-17T00:00:00Z",
+    "published": "2015-01-29T00:00:00Z",
+    "references": [
+        {
+            "type": "REPORT",
+            "url": "http://www.asterisk.org/downloads/security-advisories"
+        },
+        {
+            "type": "WEB",
+            "url": "http://downloads.asterisk.org/pub/security/AST-2015-001.html"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2015-1558"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "asterisk -- File descriptor leak when incompatible codecs are offered"
+}

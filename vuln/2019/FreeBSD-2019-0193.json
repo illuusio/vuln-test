@@ -1,0 +1,69 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "h2o-devel"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "2.3.0.b2"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "cite": [
+            "https://www.kb.cert.org/vuls/id/605641/"
+        ],
+        "discovery": "2019-08-13T00:00:00Z",
+        "references": {
+            "cvename": [
+                "CVE-2019-9512",
+                "CVE-2019-9514",
+                "CVE-2019-9515"
+            ]
+        },
+        "vid": "72a5579e-c765-11e9-8052-0028f8d09152"
+    },
+    "details": "Jonathon Loomey of Netflix reports:\n\n> HTTP/2 implementations do not robustly handle abnormal traffic and\n> resource exhaustion\n>\n> Recently, a series of DoS attack vulnerabilities have been reported on\n> a broad range of HTTP/2 stacks. Among the vulnerabilities, H2O is\n> exposed to the following:\n>\n> - CVE-2019-9512 \\\"Ping Flood\\\": The attacker sends continual pings to\n>   an HTTP/2 peer, causing the peer to build an internal queue of\n>   responses. Depending on how efficiently this data is queued, this\n>   can consume excess CPU, memory, or both, potentially leading to a\n>   denial of service.\n> - CVE-2019-9514 \\\"Reset Flood\\\": The attacker opens a number of\n>   streams and sends an invalid request over each stream that should\n>   solicit a stream of RST_STREAM frames from the peer. Depending on\n>   how the peer queues the RST_STREAM frames, this can consume excess\n>   memory, CPU, or both, potentially leading to a denial of service.\n> - CVE-2019-9515 \\\"Settings Flood\\\": The attacker sends a stream of\n>   SETTINGS frames to the peer. Since the RFC requires that the peer\n>   reply with one acknowledgement per SETTINGS frame, an empty SETTINGS\n>   frame is almost equivalent in behavior to a ping. Depending on how\n>   efficiently this data is queued, this can consume excess CPU,\n>   memory, or both, potentially leading to a denial of service.\n",
+    "id": "FreeBSD-2019-0193",
+    "modified": "2019-08-25T00:00:00Z",
+    "published": "2019-08-25T00:00:00Z",
+    "references": [
+        {
+            "type": "REPORT",
+            "url": "https://www.kb.cert.org/vuls/id/605641/"
+        },
+        {
+            "type": "WEB",
+            "url": "https://github.com/h2o/h2o/issues/2090"
+        },
+        {
+            "type": "WEB",
+            "url": "https://www.kb.cert.org/vuls/id/605641/"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2019-9512"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2019-9514"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2019-9515"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "h2o -- multiple HTTP/2 vulnerabilities"
+}

@@ -1,0 +1,139 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "python27"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "last_affected": "2.7.6_3"
+                        },
+                        {
+                            "fixed": "2.7.6_3"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        },
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "python31"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "last_affected": "3.1.5_10"
+                        },
+                        {
+                            "fixed": "3.1.5_10"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        },
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "python32"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "last_affected": "3.2.5_7"
+                        },
+                        {
+                            "fixed": "3.2.5_7"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        },
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "python33"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "last_affected": "3.3.3_2"
+                        },
+                        {
+                            "fixed": "3.3.3_2"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "cite": [
+            "https://bugzilla.redhat.com/show_bug.cgi?id=1062370"
+        ],
+        "discovery": "2014-01-14T00:00:00Z",
+        "references": {
+            "bid": [
+                "65379"
+            ],
+            "cvename": [
+                "CVE-2014-1912"
+            ]
+        },
+        "vid": "8e5e6d42-a0fa-11e3-b09a-080027f2d077"
+    },
+    "details": "Vincent Danen via Red Hat Issue Tracker reports:\n\n> A vulnerability was reported in Python\\'s socket module, due to a\n> boundary error within the sock_recvfrom_into() function, which could\n> be exploited to cause a buffer overflow. This could be used to crash a\n> Python application that uses the socket.recvfrom_info() function or,\n> possibly, execute arbitrary code with the permissions of the user\n> running vulnerable Python code.\n>\n> This vulnerable function, socket.recvfrom_into(), was introduced in\n> Python 2.5. Earlier versions are not affected by this flaw.\n",
+    "id": "FreeBSD-2014-0025",
+    "modified": "2014-03-01T00:00:00Z",
+    "published": "2014-03-01T00:00:00Z",
+    "references": [
+        {
+            "type": "REPORT",
+            "url": "https://bugzilla.redhat.com/show_bug.cgi?id=1062370"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://www.securityfocus.com/bid/65379/info"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2014-1912"
+        },
+        {
+            "type": "DISCUSSION",
+            "url": "https://mail.python.org/pipermail/python-dev/2014-February/132758.html"
+        },
+        {
+            "type": "WEB",
+            "url": "http://bugs.python.org/issue20246"
+        },
+        {
+            "type": "REPORT",
+            "url": "https://bugzilla.redhat.com/show_bug.cgi?id=1062370"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "Python -- buffer overflow in socket.recvfrom_into()"
+}

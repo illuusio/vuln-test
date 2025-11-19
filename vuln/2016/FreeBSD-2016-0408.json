@@ -1,0 +1,44 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:kernel",
+                "name": "FreeBSD-kernel"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "introduced": "11.0"
+                        },
+                        {
+                            "fixed": "11.0_2"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "discovery": "2016-10-25T00:00:00Z",
+        "references": {
+            "freebsdsa": [
+                "SA-16:32.bhyve"
+            ]
+        },
+        "vid": "a479a725-9adb-11e6-a298-14dae9d210b8"
+    },
+    "details": "# Problem Description:\n\nAn unchecked array reference in the VGA device emulation code could\npotentially allow guests access to the heap of the bhyve process. Since\nthe bhyve process is running as root, this may allow guests to obtain\nfull control of the hosts they are running on.\n\n# Impact:\n\nFor bhyve virtual machines with the \\\"fbuf\\\" framebuffer device\nconfigured, if exploited, a malicious guest could obtain full access to\nnot just the host system, but to other virtual machines running on the\nsystem.\n",
+    "id": "FreeBSD-2016-0408",
+    "modified": "2016-10-25T00:00:00Z",
+    "published": "2016-10-25T00:00:00Z",
+    "references": [
+        {
+            "type": "ADVISORY",
+            "url": "https://www.freebsd.org/security/advisories/FreeBSD-SA-16:32.bhyve.asc"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "FreeBSD -- bhyve - privilege escalation vulnerability"
+}

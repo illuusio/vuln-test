@@ -1,0 +1,73 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "FreeBSD"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "introduced": "9.1"
+                        },
+                        {
+                            "fixed": "9.1_7"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                },
+                {
+                    "events": [
+                        {
+                            "introduced": "8.4"
+                        },
+                        {
+                            "fixed": "8.4_4"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                },
+                {
+                    "events": [
+                        {
+                            "introduced": "8.3"
+                        },
+                        {
+                            "fixed": "8.3_11"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "discovery": "2013-09-10T00:00:00Z",
+        "references": {
+            "cvename": [
+                "CVE-2013-5691"
+            ],
+            "freebsdsa": [
+                "SA-13:12.ifioctl"
+            ]
+        },
+        "vid": "4d87d357-202c-11e3-be06-000c29ee3065"
+    },
+    "details": "Problem Description:\n\nAs is commonly the case, the IPv6 and ATM network layer ioctl request\nhandlers are written in such a way that an unrecognized request is\npassed on unmodified to the link layer, which will either handle it or\nreturn an error code.\n\nNetwork interface drivers, however, assume that the SIOCSIFADDR,\nSIOCSIFBRDADDR, SIOCSIFDSTADDR and SIOCSIFNETMASK requests have been\nhandled at the network layer, and therefore do not perform input\nvalidation or verify the caller\\'s credentials. Typical link-layer\nactions for these requests may include marking the interface as \\\"up\\\"\nand resetting the underlying hardware.\n\nImpact:\n\nAn unprivileged user with the ability to run arbitrary code can cause\nany network interface in the system to perform the link layer actions\nassociated with a SIOCSIFADDR, SIOCSIFBRDADDR, SIOCSIFDSTADDR or\nSIOCSIFNETMASK ioctl request; or trigger a kernel panic by passing a\nspecially crafted address structure which causes a network interface\ndriver to dereference an invalid pointer.\n\nAlthough this has not been confirmed, the possibility that an attacker\nmay be able to execute arbitrary code in kernel context cannot be ruled\nout.\n",
+    "id": "FreeBSD-2013-0152",
+    "modified": "2016-08-09T00:00:00Z",
+    "published": "2013-09-19T00:00:00Z",
+    "references": [
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2013-5691"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://www.freebsd.org/security/advisories/FreeBSD-SA-13:12.ifioctl.asc"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "FreeBSD -- Insufficient credential checks in network ioctl(2)"
+}

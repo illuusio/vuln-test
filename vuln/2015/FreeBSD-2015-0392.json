@@ -1,0 +1,71 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "jenkins"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "last_affected": "1.641"
+                        },
+                        {
+                            "fixed": "1.641"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        },
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "jenkins-lts"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "last_affected": "1.625.3"
+                        },
+                        {
+                            "fixed": "1.625.3"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "cite": [
+            "https://wiki.jenkins-ci.org/display/SECURITY/Jenkins+Security+Advisory+2015-12-09"
+        ],
+        "discovery": "2015-12-09T00:00:00Z",
+        "vid": "23af0425-9eac-11e5-b937-00e0814cab4e"
+    },
+    "details": "Jenkins Security Advisory:\n\n> # Description\n>\n> ##### SECURITY-95 / CVE-2015-7536 (Stored XSS vulnerability through workspace files and archived artifacts)\n>\n> In certain configurations, low privilege users were able to create\n> e.g. HTML files in workspaces and archived artifacts that could result\n> in XSS when accessed by other users. Jenkins now sends\n> Content-Security-Policy headers that enables sandboxing and prohibits\n> script execution by default.\n>\n> ##### SECURITY-225 / CVE-2015-7537 (CSRF vulnerability in some administrative actions)\n>\n> Several administration/configuration related URLs could be accessed\n> using GET, which allowed attackers to circumvent CSRF protection.\n>\n> ##### SECURITY-233 / CVE-2015-7538 (CSRF protection ineffective)\n>\n> Malicious users were able to circumvent CSRF protection on any URL by\n> sending specially crafted POST requests.\n>\n> ##### SECURITY-234 / CVE-2015-7539 (Jenkins plugin manager vulnerable to MITM attacks)\n>\n> While the Jenkins update site data is digitally signed, and the\n> signature verified by Jenkins, Jenkins did not verify the provided\n> SHA-1 checksums for the plugin files referenced in the update site\n> data. This enabled MITM attacks on the plugin manager, resulting in\n> installation of attacker-provided plugins.\n",
+    "id": "FreeBSD-2015-0392",
+    "modified": "2015-12-09T00:00:00Z",
+    "published": "2015-12-09T00:00:00Z",
+    "references": [
+        {
+            "type": "REPORT",
+            "url": "https://wiki.jenkins-ci.org/display/SECURITY/Jenkins+Security+Advisory+2015-12-09"
+        },
+        {
+            "type": "WEB",
+            "url": "https://wiki.jenkins-ci.org/display/SECURITY/Jenkins+Security+Advisory+2015-12-09"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "jenkins -- multiple vulnerabilities"
+}

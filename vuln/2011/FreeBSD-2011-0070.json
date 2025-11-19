@@ -1,0 +1,69 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "exim"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "introduced": "4.70"
+                        },
+                        {
+                            "fixed": "4.76"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "cite": [
+            "ftp://ftp.exim.org/pub/exim/ChangeLogs/ChangeLog-4.76",
+            "https://lists.exim.org/lurker/message/20110512.102909.8136175a.en.html"
+        ],
+        "discovery": "2011-05-10T00:00:00Z",
+        "references": {
+            "cvename": [
+                "CVE-2011-1764",
+                "CVE-2011-1407"
+            ]
+        },
+        "vid": "36594c54-7be7-11e0-9838-0022156e8794"
+    },
+    "details": "Release notes for Exim 4.76 says:\n\n> Bugzilla 1106: CVE-2011-1764 - DKIM log line was subject to a\n> format-string attack \\-- SECURITY: remote arbitrary code execution.\n>\n> DKIM signature header parsing was double-expanded, second time\n> unintentionally subject to list matching rules, letting the header\n> cause arbitrary Exim lookups (of items which can occur in lists,\n> \\*not\\* arbitrary string expansion). This allowed for information\n> disclosure.\n\nAlso, impact assessment was redone shortly after the original\nannouncement:\n\n> Further analysis revealed that the second security was more severe\n> than I realised at the time that I wrote the announcement. The second\n> security issue has been assigned CVE-2011-1407 and is also a remote\n> code execution flaw. For clarity: both issues were introduced with\n> 4.70.\n",
+    "id": "FreeBSD-2011-0070",
+    "modified": "2011-05-14T00:00:00Z",
+    "published": "2011-05-14T00:00:00Z",
+    "references": [
+        {
+            "type": "REPORT",
+            "url": "ftp://ftp.exim.org/pub/exim/ChangeLogs/ChangeLog-4.76"
+        },
+        {
+            "type": "REPORT",
+            "url": "https://lists.exim.org/lurker/message/20110512.102909.8136175a.en.html"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2011-1764"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2011-1407"
+        },
+        {
+            "type": "DISCUSSION",
+            "url": "https://lists.exim.org/lurker/message/20110512.102909.8136175a.en.html"
+        },
+        {
+            "type": "WEB",
+            "url": "http://bugs.exim.org/show_bug.cgi?id=1106"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "Exim -- remote code execution and information disclosure"
+}

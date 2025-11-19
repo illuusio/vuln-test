@@ -1,0 +1,62 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:kernel",
+                "name": "FreeBSD-kernel"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "introduced": "12.1"
+                        },
+                        {
+                            "fixed": "12.1_3"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                },
+                {
+                    "events": [
+                        {
+                            "introduced": "11.3"
+                        },
+                        {
+                            "fixed": "11.3_7"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "discovery": "2020-03-19T00:00:00Z",
+        "references": {
+            "cvename": [
+                "CVE-2020-7452"
+            ],
+            "freebsdsa": [
+                "SA-20:07.epair"
+            ]
+        },
+        "vid": "0cc7e547-6a0a-11ea-92ab-00163e433440"
+    },
+    "details": "# Problem Description:\n\nIncorrect use of a potentially user-controlled pointer in the kernel\nallowed vnet jailed users to panic the system and potentially execute\naribitrary code in the kernel.\n\n# Impact:\n\nUsers with root level access (or the PRIV_NET_IFCREATE privilege) can\npanic the system, or potentially escape the jail or execute arbitrary\ncode with kernel priviliges.\n",
+    "id": "FreeBSD-2020-0055",
+    "modified": "2020-03-19T00:00:00Z",
+    "published": "2020-03-19T00:00:00Z",
+    "references": [
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2020-7452"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://www.freebsd.org/security/advisories/FreeBSD-SA-20:07.epair.asc"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "FreeBSD -- Incorrect user-controlled pointer use in epair"
+}

@@ -1,0 +1,59 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "phpMyAdmin"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "2.6.1.r1"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "cite": [
+            "http://www.phpmyadmin.net/home_page/security.php?issue=PMASA-2004-4"
+        ],
+        "discovery": "2004-12-13T00:00:00Z",
+        "references": {
+            "cvename": [
+                "CVE-2004-1148"
+            ]
+        },
+        "vid": "9f0a405e-4edd-11d9-a9e7-0001020eed82"
+    },
+    "details": "A phpMyAdmin security announcement reports:\n\n> File disclosure: on systems where the UploadDir mecanism is active,\n> read_dump.php can be called with a crafted form; using the fact that\n> the sql_localfile variable is not sanitized can lead to a file\n> disclosure.\n\nEnabling \"PHP safe mode\" on the server can be used as a workaround for\nthis vulnerability.\n",
+    "id": "FreeBSD-2004-0268",
+    "modified": "2004-12-19T00:00:00Z",
+    "published": "2004-12-15T00:00:00Z",
+    "references": [
+        {
+            "type": "REPORT",
+            "url": "http://www.phpmyadmin.net/home_page/security.php?issue=PMASA-2004-4"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2004-1148"
+        },
+        {
+            "type": "WEB",
+            "url": "http://www.phpmyadmin.net/home_page/security.php?issue=PMASA-2004-4"
+        },
+        {
+            "type": "WEB",
+            "url": "http://www.exaprobe.com/labs/advisories/esa-2004-1213.html"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "phpmyadmin -- file disclosure vulnerability"
+}

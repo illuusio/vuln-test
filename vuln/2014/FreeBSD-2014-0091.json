@@ -1,0 +1,142 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "apache22"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "introduced": "2.2.0,1"
+                        },
+                        {
+                            "fixed": "2.2.29"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        },
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "apache22-event-mpm"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "introduced": "2.2.0,1"
+                        },
+                        {
+                            "fixed": "2.2.29"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        },
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "apache22-itk-mpm"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "introduced": "2.2.0,1"
+                        },
+                        {
+                            "fixed": "2.2.29"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        },
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "apache22-peruser-mpm"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "introduced": "2.2.0,1"
+                        },
+                        {
+                            "fixed": "2.2.29"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        },
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "apache22-worker-mpm"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "introduced": "2.2.0,1"
+                        },
+                        {
+                            "fixed": "2.2.29"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "cite": [
+            "http://www.apache.org/dist/httpd/CHANGES_2.2.29"
+        ],
+        "discovery": "2014-07-19T00:00:00Z",
+        "references": {
+            "cvename": [
+                "CVE-2014-0118",
+                "CVE-2014-0231",
+                "CVE-2014-0226",
+                "CVE-2013-5704"
+            ]
+        },
+        "vid": "f927e06c-1109-11e4-b090-20cf30e32f6d"
+    },
+    "details": "Apache HTTP SERVER PROJECT reports:\n\n> mod_deflate: The DEFLATE input filter (inflates request bodies) now\n> limits the length and compression ratio of inflated request bodies to\n> avoid denial of service via highly compressed bodies. See directives\n> DeflateInflateLimitRequestBody, DeflateInflateRatioLimit, and\n> DeflateInflateRatioBurst.\n>\n> mod_cgid: Fix a denial of service against CGI scripts that do not\n> consume stdin that could lead to lingering HTTPD child processes\n> filling up the scoreboard and eventually hanging the server. By\n> default, the client I/O timeout (Timeout directive) now applies to\n> communication with scripts. The CGIDScriptTimeout directive can be\n> used to set a different timeout for communication with scripts.\n>\n> Fix a race condition in scoreboard handling, which could lead to a\n> heap buffer overflow.\n>\n> core: HTTP trailers could be used to replace HTTP headers late during\n> request processing, potentially undoing or otherwise confusing modules\n> that examined or modified request headers earlier. Adds\n> \\\"MergeTrailers\\\" directive to restore legacy behavior.\n",
+    "id": "FreeBSD-2014-0091",
+    "modified": "2014-09-03T00:00:00Z",
+    "published": "2014-07-24T00:00:00Z",
+    "references": [
+        {
+            "type": "REPORT",
+            "url": "http://www.apache.org/dist/httpd/CHANGES_2.2.29"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2014-0118"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2014-0231"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2014-0226"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2013-5704"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "apache22 -- several vulnerabilities"
+}

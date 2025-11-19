@@ -1,0 +1,63 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "glpi"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "introduced": "9.1,1"
+                        },
+                        {
+                            "fixed": "9.4.6,1"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "cite": [
+            "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2020-11033"
+        ],
+        "discovery": "2020-03-30T00:00:00Z",
+        "references": {
+            "cvename": [
+                "CVE-2020-11033"
+            ]
+        },
+        "vid": "aec9cbe0-3b0f-11eb-af2a-080027dbe4b7"
+    },
+    "details": "MITRE Corporation reports:\n\n> In GLPI from version 9.1 and before version 9.4.6, any API user with\n> READ right on User itemtype will have access to full list of users\n> when querying apirest.php/User. The response contains: - All\n> api_tokens which can be used to do privileges escalations or\n> read/update/delete data normally non accessible to the current user. -\n> All personal_tokens can display another users planning. Exploiting\n> this vulnerability requires the api to be enabled, a technician\n> account. It can be mitigated by adding an application token. This is\n> fixed in version 9.4.6.\n",
+    "id": "FreeBSD-2020-0310",
+    "modified": "2024-04-25T00:00:00Z",
+    "published": "2020-03-30T00:00:00Z",
+    "references": [
+        {
+            "type": "REPORT",
+            "url": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2020-11033"
+        },
+        {
+            "type": "WEB",
+            "url": "https://github.com/glpi-project/glpi/security/advisories/GHSA-rf54-3r4w-4h55"
+        },
+        {
+            "type": "WEB",
+            "url": "https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/5WQMONZRWLWOXMHMYWR7A5Q5JJERPMVC/"
+        },
+        {
+            "type": "WEB",
+            "url": "https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/Q4BG2UTINBVV7MTJRXKBQ26GV2UINA6L/"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2020-11033"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "glpi -- able to read any token through API user endpoint"
+}

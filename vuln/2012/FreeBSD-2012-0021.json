@@ -1,0 +1,91 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "FreeBSD"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "introduced": "7.3"
+                        },
+                        {
+                            "fixed": "7.3_7"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                },
+                {
+                    "events": [
+                        {
+                            "introduced": "7.4"
+                        },
+                        {
+                            "fixed": "7.4_3"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                },
+                {
+                    "events": [
+                        {
+                            "introduced": "8.1"
+                        },
+                        {
+                            "fixed": "8.1_5"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                },
+                {
+                    "events": [
+                        {
+                            "introduced": "8.2"
+                        },
+                        {
+                            "fixed": "8.2_3"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "cite": [
+            "http://security.freebsd.org/advisories/FreeBSD-SA-11:04.compress.asc"
+        ],
+        "discovery": "2011-09-28T00:00:00Z",
+        "references": {
+            "cvename": [
+                "CVE-2011-2895"
+            ],
+            "freebsdsa": [
+                "SA-11:04.compress"
+            ]
+        },
+        "vid": "fee94342-4638-11e1-9f47-00e0815b8da8"
+    },
+    "details": "> # Problem Description:\n>\n> The code used to decompress a file created by compress(1) does not do\n> sufficient boundary checks on compressed code words, allowing\n> reference beyond the decompression table, which may result in a stack\n> overflow or an infinite loop when the decompressor encounters a\n> corrupted file.\n",
+    "id": "FreeBSD-2012-0021",
+    "modified": "2012-01-29T00:00:00Z",
+    "published": "2012-01-29T00:00:00Z",
+    "references": [
+        {
+            "type": "REPORT",
+            "url": "http://security.freebsd.org/advisories/FreeBSD-SA-11:04.compress.asc"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://www.freebsd.org/security/advisories/FreeBSD-SA-11:04.compress.asc"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2011-2895"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "FreeBSD -- errors handling corrupt compress file in compress(1) and gzip(1)"
+}

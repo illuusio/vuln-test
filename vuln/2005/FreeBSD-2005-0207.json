@@ -1,0 +1,81 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "zsync"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "0.4.1"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        },
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "FreeBSD"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "introduced": "5.4"
+                        },
+                        {
+                            "fixed": "5.4_4"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                },
+                {
+                    "events": [
+                        {
+                            "introduced": "5.3"
+                        },
+                        {
+                            "fixed": "5.3_18"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "discovery": "2005-07-06T00:00:00Z",
+        "references": {
+            "cvename": [
+                "CVE-2005-2096"
+            ],
+            "freebsdsa": [
+                "SA-05:16.zlib"
+            ]
+        },
+        "vid": "8efe93e2-ee62-11d9-8310-0001020eed82"
+    },
+    "details": "# Problem Description\n\nAn error in the handling of corrupt compressed data streams can result\nin a buffer being overflowed.\n\n# Impact\n\nBy carefully crafting a corrupt compressed data stream, an attacker can\noverwrite data structures in a zlib-using application. This may cause\nthe application to halt, causing a denial of service; or it may result\nin the attacker gaining elevated privileges.\n",
+    "id": "FreeBSD-2005-0207",
+    "modified": "2005-10-01T00:00:00Z",
+    "published": "2005-07-06T00:00:00Z",
+    "references": [
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2005-2096"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://www.freebsd.org/security/advisories/FreeBSD-SA-05:16.zlib.asc"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "zlib -- buffer overflow vulnerability"
+}

@@ -1,0 +1,61 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "strongswan"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "introduced": "5.6.1"
+                        },
+                        {
+                            "last_affected": "5.6.1"
+                        },
+                        {
+                            "fixed": "5.6.1"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ],
+            "versions": [
+                "5.6.1"
+            ]
+        }
+    ],
+    "database_specific": {
+        "cite": [
+            "https://github.com/strongswan/strongswan/blob/master/NEWS"
+        ],
+        "discovery": "2018-01-31T00:00:00Z",
+        "references": {
+            "cvename": [
+                "CVE-2018-6459"
+            ]
+        },
+        "vid": "6a449a37-1570-11e8-8e00-000c294a5758"
+    },
+    "details": "Strongswan Release Notes reports:\n\n> Fixed a DoS vulnerability in the parser for PKCS#1 RSASSA-PSS\n> signatures that was caused by insufficient input validation. One of\n> the configurable parameters in algorithm identifier structures for\n> RSASSA-PSS signatures is the mask generation function (MGF). Only MGF1\n> is currently specified for this purpose. However, this in turn takes\n> itself a parameter that specifies the underlying hash function.\n> strongSwan\\'s parser did not correctly handle the case of this\n> parameter being absent, causing an undefined data read. his\n> vulnerability has been registered as CVE-2018-6459.\n",
+    "id": "FreeBSD-2018-0067",
+    "modified": "2018-02-19T00:00:00Z",
+    "published": "2018-02-19T00:00:00Z",
+    "references": [
+        {
+            "type": "REPORT",
+            "url": "https://github.com/strongswan/strongswan/blob/master/NEWS"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2018-6459"
+        },
+        {
+            "type": "WEB",
+            "url": "https://github.com/strongswan/strongswan/commit/40da179f28b768ffcf6ff7e2f68675eb44806668"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "strongswan - Insufficient input validation in RSASSA-PSS signature parser"
+}

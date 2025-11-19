@@ -1,0 +1,103 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "named"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "introduced": "9.4"
+                        },
+                        {
+                            "fixed": "9.4.1.1"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                },
+                {
+                    "events": [
+                        {
+                            "introduced": "9.3"
+                        },
+                        {
+                            "fixed": "9.3.4.1"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        },
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "FreeBSD"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "introduced": "6.2"
+                        },
+                        {
+                            "fixed": "6.2_7"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                },
+                {
+                    "events": [
+                        {
+                            "introduced": "6.1"
+                        },
+                        {
+                            "fixed": "6.1_19"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                },
+                {
+                    "events": [
+                        {
+                            "introduced": "5.5"
+                        },
+                        {
+                            "fixed": "5.5_15"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "discovery": "2007-07-24T00:00:00Z",
+        "references": {
+            "cvename": [
+                "CVE-2007-2926"
+            ],
+            "freebsdsa": [
+                "SA-07:07.bind"
+            ]
+        },
+        "vid": "3de342fb-40be-11dc-aeac-02e0185f8d72"
+    },
+    "details": "# Problem Description:\n\nWhen named(8) is operating as a recursive DNS server or sending NOTIFY\nrequests to slave DNS servers, named(8) uses a predictable query id.\n\n# Impact:\n\nAn attacker who can see the query id for some request(s) sent by\nnamed(8) is likely to be able to perform DNS cache poisoning by\npredicting the query id for other request(s).\n\n# Workaround:\n\nNo workaround is available.\n",
+    "id": "FreeBSD-2007-0081",
+    "modified": "2016-08-09T00:00:00Z",
+    "published": "2007-08-02T00:00:00Z",
+    "references": [
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2007-2926"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://www.freebsd.org/security/advisories/FreeBSD-SA-07:07.bind.asc"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "FreeBSD -- Predictable query ids in named(8)"
+}

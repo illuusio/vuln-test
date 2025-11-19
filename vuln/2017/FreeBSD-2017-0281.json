@@ -1,0 +1,46 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "shibboleth2-sp"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "2.6.1"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "cite": [
+            "http://shibboleth.internet2.edu/secadv/secadv_20171115.txt"
+        ],
+        "discovery": "2017-11-15T00:00:00Z",
+        "vid": "b4b7ec7d-ca27-11e7-a12d-6cc21735f730"
+    },
+    "details": "The Internet2 community reports:\n\n> The Shibboleth Service Provider software includes a MetadataProvider\n> plugin with the plugin type \\\"Dynamic\\\" to obtain metadata on demand\n> from a query server, in place of the more typical mode of downloading\n> aggregates separately containing all of the metadata to load.\n>\n> All the plugin types rely on MetadataFilter plugins to perform\n> critical security checks such as signature verification, enforcement\n> of validity periods, and other checks specific to deployments.\n>\n> Due to a coding error, the \\\"Dynamic\\\" plugin fails to configure\n> itself with the filters provided to it and thus omits whatever checks\n> they are intended to perform, which will typically leave deployments\n> vulnerable to active attacks involving the substitution of metadata if\n> the network path to the query service is compromised.\n",
+    "id": "FreeBSD-2017-0281",
+    "modified": "2017-11-15T00:00:00Z",
+    "published": "2017-11-15T00:00:00Z",
+    "references": [
+        {
+            "type": "REPORT",
+            "url": "http://shibboleth.internet2.edu/secadv/secadv_20171115.txt"
+        },
+        {
+            "type": "WEB",
+            "url": "http://shibboleth.internet2.edu/secadv/secadv_20171115.txt"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "shibboleth2-sp -- \"Dynamic\" metadata provider plugin issue"
+}

@@ -1,0 +1,114 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "samba412"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "4.12.16"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        },
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "samba413"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "4.13.17_2"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "cite": [
+            "https://lists.samba.org/archive/samba-announce/2022/000609.html"
+        ],
+        "discovery": "2022-07-27T00:00:00Z",
+        "references": {
+            "cvename": [
+                "CVE-2022-2031",
+                "CVE-2022-32744",
+                "CVE-2022-32745",
+                "CVE-2022-32746",
+                "CVE-2022-32742"
+            ]
+        },
+        "vid": "f9140ad4-4920-11ed-a07e-080027f5fec9"
+    },
+    "details": "The Samba Team reports:\n\n> \n>\n> CVE-2022-2031\n> :   The KDC and the kpasswd service share a single account and set of\n>     keys, allowing them to decrypt each other\\'s tickets. A user who\n>     has been requested to change their password can exploit this to\n>     obtain and use tickets to other services.\n>\n> CVE-2022-32744\n> :   The KDC accepts kpasswd requests encrypted with any key known to\n>     it. By encrypting forged kpasswd requests with its own key, a user\n>     can change the passwords of other users, enabling full domain\n>     takeover.\n>\n> CVE-2022-32745\n> :   Samba AD users can cause the server to access uninitialised data\n>     with an LDAP add or modify request, usually resulting in a\n>     segmentation fault.\n>\n> CVE-2022-32746\n> :   The AD DC database audit logging module can be made to access LDAP\n>     message values that have been freed by a preceding database\n>     module, resulting in a use-after-free. This is only possible when\n>     modifying certain privileged attributes, such as\n>     userAccountControl.\n>\n> CVE-2022-32742\n> :   SMB1 Client with write access to a share can cause server memory\n>     contents to be written into a file or printer.\n",
+    "id": "FreeBSD-2022-0194",
+    "modified": "2022-10-11T00:00:00Z",
+    "published": "2022-10-11T00:00:00Z",
+    "references": [
+        {
+            "type": "REPORT",
+            "url": "https://lists.samba.org/archive/samba-announce/2022/000609.html"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2022-2031"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2022-32744"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2022-32745"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2022-32746"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2022-32742"
+        },
+        {
+            "type": "WEB",
+            "url": "https://lists.samba.org/archive/samba-announce/2022/000609.html"
+        },
+        {
+            "type": "WEB",
+            "url": "https://www.samba.org/samba/security/CVE-2022-2031.html"
+        },
+        {
+            "type": "WEB",
+            "url": "https://www.samba.org/samba/security/CVE-2022-32744.html"
+        },
+        {
+            "type": "WEB",
+            "url": "https://www.samba.org/samba/security/CVE-2022-32745.html"
+        },
+        {
+            "type": "WEB",
+            "url": "https://www.samba.org/samba/security/CVE-2022-32746.html"
+        },
+        {
+            "type": "WEB",
+            "url": "https://www.samba.org/samba/security/CVE-2022-32742.html"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "samba -- Multiple vulnerabilities"
+}

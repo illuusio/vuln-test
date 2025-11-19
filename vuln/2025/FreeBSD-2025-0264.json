@@ -1,0 +1,55 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "varnish7"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "7.7.2"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "cite": [
+            "https://varnish-cache.org/security/VSV00017.html#vsv00017"
+        ],
+        "discovery": "2025-08-13T00:00:00Z",
+        "references": {
+            "cvename": [
+                "CVE-2025-8671"
+            ]
+        },
+        "vid": "e2d49973-785a-11f0-a1c0-0050569f0b83"
+    },
+    "details": "Varnish Development Team reports:\n\n> A denial of service attack can be performed on Varnish Cache servers\n> that have the HTTP/2 protocol turned on. An attacker can create a\n> large number of streams and immediately reset them without ever\n> reaching the maximum number of concurrent streams allowed for the\n> session, causing the Varnish server to consume unnecessary resources\n> processing requests for which the response will not be delivered.\n>\n> This attack is a variant of the HTTP/2 Rapid Reset Attack, which was\n> partially handled as VSV00013.\n",
+    "id": "FreeBSD-2025-0264",
+    "modified": "2025-08-13T00:00:00Z",
+    "published": "2025-08-13T00:00:00Z",
+    "references": [
+        {
+            "type": "REPORT",
+            "url": "https://varnish-cache.org/security/VSV00017.html#vsv00017"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2025-8671"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://nvd.nist.gov/vuln/detail/CVE-2025-8671"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "www/varnish7 -- Denial of Service in HTTP/2"
+}

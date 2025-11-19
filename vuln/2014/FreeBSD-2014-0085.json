@@ -1,0 +1,97 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "phpMyAdmin"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "introduced": "4.2.0"
+                        },
+                        {
+                            "fixed": "4.2.6"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "cite": [
+            "http://www.phpmyadmin.net/home_page/security/PMASA-2014-4.php",
+            "http://www.phpmyadmin.net/home_page/security/PMASA-2014-5.php",
+            "http://www.phpmyadmin.net/home_page/security/PMASA-2014-6.php",
+            "http://www.phpmyadmin.net/home_page/security/PMASA-2014-7.php"
+        ],
+        "discovery": "2014-07-18T00:00:00Z",
+        "references": {
+            "cvename": [
+                "CVE-2014-4954",
+                "CVE-2014-4955",
+                "CVE-2014-4986",
+                "CVE-2014-4987"
+            ]
+        },
+        "vid": "3f09ca29-0e48-11e4-b17a-6805ca0b3d42"
+    },
+    "details": "The phpMyAdmin development team reports:\n\n> Self-XSS due to unescaped HTML output in database structure page.\n>\n> With a crafted table comment, it is possible to trigger an XSS in\n> database structure page.\n\n> Self-XSS due to unescaped HTML output in database triggers page.\n>\n> When navigating into the database triggers page, it is possible to\n> trigger an XSS with a crafted trigger name.\n\n> Multiple XSS in AJAX confirmation messages.\n>\n> With a crafted column name it is possible to trigger an XSS when\n> dropping the column in table structure page. With a crafted table name\n> it is possible to trigger an XSS when dropping or truncating the table\n> in table operations page.\n\n> Access for an unprivileged user to MySQL user list.\n>\n> An unpriviledged user could view the MySQL user list and manipulate\n> the tabs displayed in phpMyAdmin for them.\n",
+    "id": "FreeBSD-2014-0085",
+    "modified": "2014-07-20T00:00:00Z",
+    "published": "2014-07-18T00:00:00Z",
+    "references": [
+        {
+            "type": "REPORT",
+            "url": "http://www.phpmyadmin.net/home_page/security/PMASA-2014-4.php"
+        },
+        {
+            "type": "REPORT",
+            "url": "http://www.phpmyadmin.net/home_page/security/PMASA-2014-5.php"
+        },
+        {
+            "type": "REPORT",
+            "url": "http://www.phpmyadmin.net/home_page/security/PMASA-2014-6.php"
+        },
+        {
+            "type": "REPORT",
+            "url": "http://www.phpmyadmin.net/home_page/security/PMASA-2014-7.php"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2014-4954"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2014-4955"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2014-4986"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2014-4987"
+        },
+        {
+            "type": "WEB",
+            "url": "http://www.phpmyadmin.net/home_page/security/PMASA-2014-4.php"
+        },
+        {
+            "type": "WEB",
+            "url": "http://www.phpmyadmin.net/home_page/security/PMASA-2014-5.php"
+        },
+        {
+            "type": "WEB",
+            "url": "http://www.phpmyadmin.net/home_page/security/PMASA-2014-6.php"
+        },
+        {
+            "type": "WEB",
+            "url": "http://www.phpmyadmin.net/home_page/security/PMASA-2014-7.php"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "phpMyAdmin -- multiple XSS vulnerabilities, missing validation"
+}

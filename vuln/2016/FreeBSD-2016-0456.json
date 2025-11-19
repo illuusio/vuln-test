@@ -1,0 +1,62 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "xen-kernel"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "4.7.1"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "cite": [
+            "https://xenbits.xen.org/xsa/advisory-195.html"
+        ],
+        "discovery": "2016-11-22T00:00:00Z",
+        "references": {
+            "cvename": [
+                "CVE-2016-9383"
+            ],
+            "freebsdpr": [
+                "ports/214936"
+            ]
+        },
+        "vid": "56f0f11e-ba4d-11e6-ae1b-002590263bf5"
+    },
+    "details": "The Xen Project reports:\n\n> The x86 instructions BT, BTC, BTR, and BTS, when used with a\n> destination memory operand and a source register rather than an\n> immediate operand, access a memory location offset from that specified\n> by the memory operand as specified by the high bits of the register\n> source.\n>\n> A malicious guest can modify arbitrary memory, allowing for arbitrary\n> code execution (and therefore privilege escalation affecting the whole\n> host), a crash of the host (leading to a DoS), or information leaks.\n> The vulnerability is sometimes exploitable by unprivileged guest user\n> processes.\n",
+    "id": "FreeBSD-2016-0456",
+    "modified": "2016-12-04T00:00:00Z",
+    "published": "2016-12-04T00:00:00Z",
+    "references": [
+        {
+            "type": "REPORT",
+            "url": "https://xenbits.xen.org/xsa/advisory-195.html"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2016-9383"
+        },
+        {
+            "type": "REPORT",
+            "url": "https://bugs.freebsd.org/bugzilla/show_bug.cgi?id=214936"
+        },
+        {
+            "type": "WEB",
+            "url": "https://xenbits.xen.org/xsa/advisory-195.html"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "xen-kernel -- x86 64-bit bit test instruction emulation broken"
+}

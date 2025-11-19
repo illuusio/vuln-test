@@ -1,0 +1,80 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "krb5"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "introduced": "1.7.0"
+                        },
+                        {
+                            "fixed": "1.7.2"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                },
+                {
+                    "events": [
+                        {
+                            "introduced": "1.8.0"
+                        },
+                        {
+                            "last_affected": "1.8.3"
+                        },
+                        {
+                            "fixed": "1.8.3"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "cite": [
+            "http://web.mit.edu/kerberos/advisories/MITKRB5-SA-2010-007.txt"
+        ],
+        "discovery": "2010-11-30T00:00:00Z",
+        "references": {
+            "bid": [
+                "45116"
+            ],
+            "cvename": [
+                "CVE-2010-1324"
+            ]
+        },
+        "vid": "0d57c1d9-03f4-11e0-bf50-001a926c7637"
+    },
+    "details": "The MIT Kerberos team reports:\n\n> MIT krb incorrectly accepts an unkeyed checksum with DES session keys\n> for version 2 (RFC 4121) of the GSS-API krb5 mechanism.\n>\n> An unauthenticated remote attacker can forge GSS tokens that are\n> intended to be integrity-protected but unencrypted, if the targeted\n> pre-existing application session uses a DES session key.\n>\n> MIT krb5 KDC incorrectly accepts RFC 3961 key-derivation checksums\n> using RC4 keys when verifying the req-checksum in a KrbFastArmoredReq.\n>\n> An unauthenticated remote attacker has a 1/256 chance of swapping a\n> client-issued KrbFastReq into a different KDC-REQ, if the armor key is\n> RC4. The consequences are believed to be minor.\n",
+    "id": "FreeBSD-2010-0135",
+    "modified": "2010-12-09T00:00:00Z",
+    "published": "2010-12-09T00:00:00Z",
+    "references": [
+        {
+            "type": "REPORT",
+            "url": "http://web.mit.edu/kerberos/advisories/MITKRB5-SA-2010-007.txt"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://www.securityfocus.com/bid/45116/info"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2010-1324"
+        },
+        {
+            "type": "WEB",
+            "url": "http://web.mit.edu/kerberos/advisories/MITKRB5-SA-2010-007.txt"
+        },
+        {
+            "type": "WEB",
+            "url": "http://osvdb.org/69609"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "krb5 -- multiple checksum handling vulnerabilities"
+}

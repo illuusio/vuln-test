@@ -1,0 +1,78 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "libmspack"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "0.5"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        },
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "cabextract"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "1.5"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "cite": [
+            "http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2014-9556"
+        ],
+        "discovery": "2014-12-11T00:00:00Z",
+        "references": {
+            "cvename": [
+                "CVE-2014-9556"
+            ]
+        },
+        "vid": "cc7548ef-06e1-11e5-8fda-002590263bf5"
+    },
+    "details": "There is a denial of service vulnerability in libmspack. The libmspack\ncode is built into cabextract, so it is also vulnerable.\n\nMITRE reports:\n\n> Integer overflow in the qtmd_decompress function in libmspack 0.4\n> allows remote attackers to cause a denial of service (hang) via a\n> crafted CAB file, which triggers an infinite loop.\n",
+    "id": "FreeBSD-2015-0114",
+    "modified": "2015-05-31T00:00:00Z",
+    "published": "2015-05-31T00:00:00Z",
+    "references": [
+        {
+            "type": "REPORT",
+            "url": "http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2014-9556"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2014-9556"
+        },
+        {
+            "type": "WEB",
+            "url": "https://bugs.debian.org/773041"
+        },
+        {
+            "type": "DISCUSSION",
+            "url": "http://www.openwall.com/lists/oss-security/2015/01/07/2"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "libmspack -- frame_end overflow which could cause infinite loop"
+}

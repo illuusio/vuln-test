@@ -1,0 +1,51 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "FreeBSD"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "introduced": "10.1"
+                        },
+                        {
+                            "fixed": "10.1_16"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "discovery": "2015-07-28T00:00:00Z",
+        "references": {
+            "cvename": [
+                "CVE-2015-1416"
+            ],
+            "freebsdsa": [
+                "SA-15:14.bsdpatch"
+            ]
+        },
+        "vid": "0c6759dd-600a-11e6-a6c3-14dae9d210b8"
+    },
+    "details": "# Problem Description:\n\nDue to insufficient sanitization of the input patch stream, it is\npossible for a patch file to cause patch(1) to run commands in addition\nto the desired SCCS or RCS commands.\n\n# Impact:\n\nThis issue could be exploited to execute arbitrary commands as the user\ninvoking patch(1) against a specially crafted patch file, which could be\nleveraged to obtain elevated privileges.\n",
+    "id": "FreeBSD-2016-0332",
+    "modified": "2016-08-11T00:00:00Z",
+    "published": "2016-08-11T00:00:00Z",
+    "references": [
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2015-1416"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://www.freebsd.org/security/advisories/FreeBSD-SA-15:14.bsdpatch.asc"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "FreeBSD -- shell injection vulnerability in patch(1)"
+}

@@ -1,0 +1,62 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "xen-kernel"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "4.7.1"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "cite": [
+            "https://xenbits.xen.org/xsa/advisory-185.html"
+        ],
+        "discovery": "2016-09-08T00:00:00Z",
+        "references": {
+            "cvename": [
+                "CVE-2016-7092"
+            ],
+            "freebsdpr": [
+                "ports/214936"
+            ]
+        },
+        "vid": "45ca25b5-ba4d-11e6-ae1b-002590263bf5"
+    },
+    "details": "The Xen Project reports:\n\n> On real hardware, a 32-bit PAE guest must leave the USER and RW bit\n> clear in L3 pagetable entries, but the pagetable walk behaves as if\n> they were set. (The L3 entries are cached in processor registers, and\n> don\\'t actually form part of the pagewalk.)\n>\n> When running a 32-bit PV guest on a 64-bit Xen, Xen must always OR in\n> the USER and RW bits for L3 updates for the guest to observe\n> architectural behaviour. This is unsafe in combination with recursive\n> pagetables.\n>\n> As there is no way to construct an L3 recursive pagetable in native\n> 32-bit PAE mode, disallow this option in 32-bit PV guests.\n>\n> A malicious 32-bit PV guest administrator can escalate their privilege\n> to that of the host.\n",
+    "id": "FreeBSD-2016-0447",
+    "modified": "2016-12-04T00:00:00Z",
+    "published": "2016-12-04T00:00:00Z",
+    "references": [
+        {
+            "type": "REPORT",
+            "url": "https://xenbits.xen.org/xsa/advisory-185.html"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2016-7092"
+        },
+        {
+            "type": "REPORT",
+            "url": "https://bugs.freebsd.org/bugzilla/show_bug.cgi?id=214936"
+        },
+        {
+            "type": "WEB",
+            "url": "https://xenbits.xen.org/xsa/advisory-185.html"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "xen-kernel -- x86: Disallow L3 recursive pagetable for 32-bit PV guests"
+}

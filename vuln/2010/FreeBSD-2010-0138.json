@@ -1,0 +1,66 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "krb5"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "introduced": "1.7.0"
+                        },
+                        {
+                            "fixed": "1.7.2"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "cite": [
+            "http://web.mit.edu/kerberos/advisories/MITKRB5-SA-2010-007.txt"
+        ],
+        "discovery": "2010-11-30T00:00:00Z",
+        "references": {
+            "bid": [
+                "45122"
+            ],
+            "cvename": [
+                "CVE-2010-4021"
+            ]
+        },
+        "vid": "4ccbd40d-03f7-11e0-bf50-001a926c7637"
+    },
+    "details": "The MIT Kerberos team reports:\n\n> MIT krb5 KDC may issue tickets not requested by a client, based on an\n> attacker-chosen KrbFastArmoredReq.\n>\n> An authenticated remote attacker that controls a legitimate service\n> principal could obtain a valid service ticket to itself containing\n> valid KDC-generated authorization data for a client whose TGS-REQ it\n> has intercepted. The attacker could then use this ticket for S4U2Proxy\n> to impersonate the targeted client even if the client never\n> authenticated to the subverted service. The vulnerable configuration\n> is believed to be rare.\n",
+    "id": "FreeBSD-2010-0138",
+    "modified": "2010-12-09T00:00:00Z",
+    "published": "2010-12-09T00:00:00Z",
+    "references": [
+        {
+            "type": "REPORT",
+            "url": "http://web.mit.edu/kerberos/advisories/MITKRB5-SA-2010-007.txt"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://www.securityfocus.com/bid/45122/info"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2010-4021"
+        },
+        {
+            "type": "WEB",
+            "url": "http://web.mit.edu/kerberos/advisories/MITKRB5-SA-2010-007.txt"
+        },
+        {
+            "type": "WEB",
+            "url": "http://osvdb.org/69607"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "krb5 -- client impersonation vulnerability"
+}

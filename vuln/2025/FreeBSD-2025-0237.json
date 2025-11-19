@@ -1,0 +1,55 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "powerdns-recursor"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "5.2.4"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "cite": [
+            "https://blog.powerdns.com/powerdns-security-advisory-2025-04"
+        ],
+        "discovery": "2025-07-21T00:00:00Z",
+        "references": {
+            "cvename": [
+                "CVE-2025-30192"
+            ]
+        },
+        "vid": "b3948bf3-685e-11f0-bff5-6805ca2fa271"
+    },
+    "details": "PowerDNS Team reports:\n\n> An attacker spoofing answers to ECS enabled requests sent out by the\n> Recursor has a chance of success higher than non-ECS enabled queries.\n> The updated version include various mitigations against spoofing\n> attempts of ECS enabled queries by chaining ECS enabled requests and\n> enforcing stricter validation of the received answers. The most strict\n> mitigation done when the new setting outgoing.edns_subnet_harden (old\n> style name edns-subnet-harden) is enabled.\n",
+    "id": "FreeBSD-2025-0237",
+    "modified": "2025-07-24T00:00:00Z",
+    "published": "2025-07-24T00:00:00Z",
+    "references": [
+        {
+            "type": "REPORT",
+            "url": "https://blog.powerdns.com/powerdns-security-advisory-2025-04"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2025-30192"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://nvd.nist.gov/vuln/detail/CVE-2025-30192"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "powerdns-recursor -- cache pollution"
+}

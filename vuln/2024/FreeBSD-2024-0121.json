@@ -1,0 +1,75 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "cpu-microcode-intel"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "20240514"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "cite": [
+            "https://www.intel.com/content/www/us/en/security-center/advisory/intel-sa-01036.html",
+            "https://www.intel.com/content/www/us/en/security-center/advisory/intel-sa-01051.html",
+            "https://www.intel.com/content/www/us/en/security-center/advisory/intel-sa-01052.html"
+        ],
+        "discovery": "2024-05-14T00:00:00Z",
+        "references": {
+            "cvename": [
+                "CVE-2023-45745",
+                "CVE-2023-45733",
+                "CVE-2023-46103"
+            ]
+        },
+        "vid": "5afd64ae-122a-11ef-8eed-1c697a616631"
+    },
+    "details": "Intel reports:\n\n> Potential security vulnerabilities in some Intel Trust Domain\n> Extensions (TDX) module software may allow escalation of privilege.\n> Improper input validation in some Intel TDX module software before\n> version 1.5.05.46.698 may allow a privileged user to potentially\n> enable escalation of privilege via local access. Intel is releasing\n> firmware updates to mitigate these potential vulnerabilities.\n\n> A potential security vulnerability in some Intel Processors may allow\n> information disclosure. Hardware logic contains race conditions in\n> some Intel Processors that may allow an authenticated user to\n> potentially enable partial information disclosure via local access.\n> Intel is releasing microcode updates to mitigate this potential\n> vulnerability.\n\n> A potential security vulnerability in Intel Core Ultra Processors may\n> allow denial of service. Sequence of processor instructions leads to\n> unexpected behavior in Intel Core Ultra Processors may allow an\n> authenticated user to potentially enable denial of service via local\n> access. Intel is releasing microcode updates to mitigate this\n> potential vulnerability.\n",
+    "id": "FreeBSD-2024-0121",
+    "modified": "2024-05-14T00:00:00Z",
+    "published": "2024-05-14T00:00:00Z",
+    "references": [
+        {
+            "type": "REPORT",
+            "url": "https://www.intel.com/content/www/us/en/security-center/advisory/intel-sa-01036.html"
+        },
+        {
+            "type": "REPORT",
+            "url": "https://www.intel.com/content/www/us/en/security-center/advisory/intel-sa-01051.html"
+        },
+        {
+            "type": "REPORT",
+            "url": "https://www.intel.com/content/www/us/en/security-center/advisory/intel-sa-01052.html"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2023-45745"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2023-45733"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2023-46103"
+        },
+        {
+            "type": "WEB",
+            "url": "https://github.com/intel/Intel-Linux-Processor-Microcode-Data-Files/releases/tag/microcode-20240514"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "Intel CPUs -- multiple vulnerabilities"
+}

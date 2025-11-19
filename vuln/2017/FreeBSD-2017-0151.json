@@ -1,0 +1,67 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "irssi"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "1.0.4,1"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "cite": [
+            "https://irssi.org/security/irssi_sa_2017_07.txt"
+        ],
+        "discovery": "2017-07-05T00:00:00Z",
+        "references": {
+            "cvename": [
+                "CVE-2017-10965",
+                "CVE-2017-10966"
+            ],
+            "freebsdpr": [
+                "ports/220544"
+            ]
+        },
+        "vid": "31001c6b-63e7-11e7-85aa-a4badb2f4699"
+    },
+    "details": "irssi reports:\n\n> When receiving messages with invalid time stamps, Irssi would try to\n> dereference a NULL pointer.\n>\n> While updating the internal nick list, Irssi may incorrectly use the\n> GHashTable interface and free the nick while updating it. This will\n> then result in use-after-free conditions on each access of the hash\n> table.\n",
+    "id": "FreeBSD-2017-0151",
+    "modified": "2017-07-08T00:00:00Z",
+    "published": "2017-07-08T00:00:00Z",
+    "references": [
+        {
+            "type": "REPORT",
+            "url": "https://irssi.org/security/irssi_sa_2017_07.txt"
+        },
+        {
+            "type": "WEB",
+            "url": "https://irssi.org/security/irssi_sa_2017_07.txt"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2017-10965"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2017-10966"
+        },
+        {
+            "type": "REPORT",
+            "url": "https://bugs.freebsd.org/bugzilla/show_bug.cgi?id=220544"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "irssi -- multiple vulnerabilities"
+}

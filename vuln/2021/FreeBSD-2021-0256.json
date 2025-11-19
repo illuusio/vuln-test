@@ -1,0 +1,93 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "openssh-portable"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "introduced": "6.2.p1,1"
+                        },
+                        {
+                            "fixed": "8.7.p1_2,1"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        },
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "openssh-portable-hpn"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "introduced": "6.2.p1,1"
+                        },
+                        {
+                            "fixed": "8.7.p1_2,1"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        },
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "openssh-portable-gssapi"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "introduced": "6.2.p1,1"
+                        },
+                        {
+                            "fixed": "8.7.p1_2,1"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "cite": [
+            "https://www.openssh.com/txt/release-8.8"
+        ],
+        "discovery": "2021-09-26T00:00:00Z",
+        "references": {
+            "cvename": [
+                "CVE-2021-41617"
+            ]
+        },
+        "vid": "2a1b931f-2b86-11ec-8acd-c80aa9043978"
+    },
+    "details": "OpenBSD Project reports:\n\n> sshd(8) from OpenSSH 6.2 through 8.7 failed to correctly initialise\n> supplemental groups when executing an AuthorizedKeysCommand or\n> AuthorizedPrincipalsCommand, where a AuthorizedKeysCommandUser or\n> AuthorizedPrincipalsCommandUser directive has been set to run the\n> command as a different user. Instead these commands would inherit the\n> groups that sshd(8) was started with.\n>\n> Depending on system configuration, inherited groups may allow\n> AuthorizedKeysCommand/AuthorizedPrincipalsCommand helper programs to\n> gain unintended privilege.\n>\n> Neither AuthorizedKeysCommand nor AuthorizedPrincipalsCommand are\n> enabled by default in sshd_config(5).\n",
+    "id": "FreeBSD-2021-0256",
+    "modified": "2021-10-12T00:00:00Z",
+    "published": "2021-10-12T00:00:00Z",
+    "references": [
+        {
+            "type": "REPORT",
+            "url": "https://www.openssh.com/txt/release-8.8"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2021-41617"
+        },
+        {
+            "type": "WEB",
+            "url": "https://www.openssh.com/txt/release-8.8"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "OpenSSH -- OpenSSH 6.2 through 8.7 failed to correctly initialise supplemental groups when executing an AuthorizedKeysCommand or AuthorizedPrincipalsCommand"
+}

@@ -1,0 +1,94 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "nvidia-driver"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "introduced": "173.14.35_2,1"
+                        },
+                        {
+                            "fixed": "295.71"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                },
+                {
+                    "events": [
+                        {
+                            "introduced": "96.43.20_3,1"
+                        },
+                        {
+                            "fixed": "173.14.35"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                },
+                {
+                    "events": [
+                        {
+                            "introduced": "71.86.15_3,1"
+                        },
+                        {
+                            "fixed": "96.43.20_2"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                },
+                {
+                    "events": [
+                        {
+                            "fixed": "71.86.15_2"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "cite": [
+            "http://nvidia.custhelp.com/app/answers/detail/a_id/3109",
+            "http://nvidia.custhelp.com/app/answers/detail/a_id/3140"
+        ],
+        "discovery": "2012-03-20T00:00:00Z",
+        "references": {
+            "cvename": [
+                "CVE-2012-0946",
+                "CVE-2012-4225"
+            ]
+        },
+        "vid": "b91234e7-9a8b-11e1-b666-001636d274f3"
+    },
+    "details": "NVIDIA Unix security team reports:\n\n> Security vulnerability CVE-2012-0946 in the NVIDIA UNIX driver was\n> disclosed to NVIDIA on March 20th, 2012. The vulnerability makes it\n> possible for an attacker who has read and write access to the GPU\n> device nodes to reconfigure GPUs to gain access to arbitrary system\n> memory. NVIDIA is not aware of any reports of this vulnerability,\n> outside of the disclosure which was made privately to NVIDIA.\n>\n> NVIDIA has identified the root cause of the vulnerability and has\n> released updated drivers which close it. \\[NVIDIA encourages\\] all\n> users with Geforce 8 or newer, G80 Quadro or newer, and all Tesla GPUs\n> to update their drivers to 295.40 or later.\n\nLater, it was additionally discovered that similar exploit could be\nachieved through remapping of VGA window:\n\n> NVIDIA received notification of a security exploit that uses NVIDIA\n> UNIX device files to map and program registers to redirect the VGA\n> window. Through the VGA window, the exploit can access any region of\n> physical system memory. This arbitrary memory access can be further\n> exploited, for example, to escalate user privileges.\n",
+    "id": "FreeBSD-2012-0086",
+    "modified": "2012-09-12T00:00:00Z",
+    "published": "2012-05-10T00:00:00Z",
+    "references": [
+        {
+            "type": "REPORT",
+            "url": "http://nvidia.custhelp.com/app/answers/detail/a_id/3109"
+        },
+        {
+            "type": "REPORT",
+            "url": "http://nvidia.custhelp.com/app/answers/detail/a_id/3140"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2012-0946"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2012-4225"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "NVIDIA UNIX driver -- access to arbitrary system memory"
+}

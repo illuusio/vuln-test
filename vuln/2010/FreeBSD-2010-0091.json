@@ -1,0 +1,73 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "wget"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "last_affected": "1.12_1"
+                        },
+                        {
+                            "fixed": "1.12_1"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        },
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "wget-devel"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "last_affected": "1.12_1"
+                        },
+                        {
+                            "fixed": "1.12_1"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "discovery": "2010-06-09T00:00:00Z",
+        "references": {
+            "cvename": [
+                "CVE-2010-2252"
+            ]
+        },
+        "vid": "d754b7d2-b6a7-11df-826c-e464a695cb21"
+    },
+    "details": "GNU Wget version 1.12 and earlier uses a server-provided filename\ninstead of the original URL to determine the destination filename of a\ndownload, which allows remote servers to create or overwrite arbitrary\nfiles via a 3xx redirect to a URL with a .wgetrc filename followed by a\n3xx redirect to a URL with a crafted filename, and possibly execute\narbitrary code as a consequence of writing to a dotfile in a home\ndirectory.\n",
+    "id": "FreeBSD-2010-0091",
+    "modified": "2010-09-03T00:00:00Z",
+    "published": "2010-09-03T00:00:00Z",
+    "references": [
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2010-2252"
+        },
+        {
+            "type": "REPORT",
+            "url": "https://bugzilla.redhat.com/show_bug.cgi?id=602797"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "wget -- multiple HTTP client download filename vulnerability"
+}

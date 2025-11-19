@@ -1,0 +1,102 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "git"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "2.40.1"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        },
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "git-lite"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "2.40.1"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        },
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "git-tiny"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "2.40.1"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "cite": [
+            "INSERT URL HERE"
+        ],
+        "discovery": "2023-04-25T00:00:00Z",
+        "references": {
+            "cvename": [
+                "CVE-2023-25652",
+                "CVE-2023-29007"
+            ]
+        },
+        "vid": "d2c6173f-e43b-11ed-a1d7-002590f2a714"
+    },
+    "details": "git developers reports:\n\n> This update includes 2 security fixes:\n>\n> - CVE-2023-25652: By feeding specially crafted input to \\`git apply\n>   \\--reject\\`, a path outside the working tree can be overwritten with\n>   partially controlled contents (corresponding to the rejected hunk(s)\n>   from the given patch)\n> - CVE-2023-29007: A specially crafted \\`.gitmodules\\` file with\n>   submodule URLs that are longer than 1024 characters can used to\n>   exploit a bug that can be used to inject arbitrary configuration\n>   into user\\'s git config. This can result in arbitrary execution of\n>   code, by inserting values for core.pager, core.editor and so on\n",
+    "id": "FreeBSD-2023-0151",
+    "modified": "2023-04-26T00:00:00Z",
+    "published": "2023-04-26T00:00:00Z",
+    "references": [
+        {
+            "type": "REPORT",
+            "url": "INSERT URL HERE"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2023-25652"
+        },
+        {
+            "type": "WEB",
+            "url": "https://github.com/git/git/security/advisories/GHSA-2hvf-7c8p-28fx"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2023-29007"
+        },
+        {
+            "type": "WEB",
+            "url": "https://github.com/git/git/security/advisories/GHSA-v48j-4xgg-4844"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "git -- Multiple vulnerabilities"
+}

@@ -1,0 +1,92 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "file"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "4.21"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        },
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "FreeBSD"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "introduced": "6.2"
+                        },
+                        {
+                            "fixed": "6.2_5"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                },
+                {
+                    "events": [
+                        {
+                            "introduced": "6.1"
+                        },
+                        {
+                            "fixed": "6.1_17"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                },
+                {
+                    "events": [
+                        {
+                            "introduced": "5.5"
+                        },
+                        {
+                            "fixed": "5.5_13"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "discovery": "2007-05-23T00:00:00Z",
+        "references": {
+            "cvename": [
+                "CVE-2007-1536"
+            ],
+            "freebsdsa": [
+                "SA-07:04.file"
+            ]
+        },
+        "vid": "8e01ab5b-0949-11dc-8163-000e0c2e438a"
+    },
+    "details": "# Problem Description:\n\nWhen writing data into a buffer in the file_printf function, the length\nof the unused portion of the buffer is not correctly tracked, resulting\nin a buffer overflow when processing certain files.\n\n# Impact:\n\nAn attacker who can cause file(1) to be run on a maliciously constructed\ninput can cause file(1) to crash. It may be possible for such an\nattacker to execute arbitrary code with the privileges of the user\nrunning file(1).\n\nThe above also applies to any other applications using the libmagic(3)\nlibrary.\n\n# Workaround:\n\nNo workaround is available, but systems where file(1) and other\nlibmagic(3)-using applications are never run on untrusted input are not\nvulnerable.\n",
+    "id": "FreeBSD-2007-0045",
+    "modified": "2016-08-09T00:00:00Z",
+    "published": "2007-05-23T00:00:00Z",
+    "references": [
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2007-1536"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://www.freebsd.org/security/advisories/FreeBSD-SA-07:04.file.asc"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "FreeBSD -- heap overflow in file(1)"
+}

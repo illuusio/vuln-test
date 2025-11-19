@@ -1,0 +1,55 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "xen-kernel"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "introduced": "3.4"
+                        },
+                        {
+                            "fixed": "4.7.0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "cite": [
+            "http://xenbits.xen.org/xsa/advisory-173.html"
+        ],
+        "discovery": "2016-04-18T00:00:00Z",
+        "references": {
+            "cvename": [
+                "CVE-2016-3960"
+            ]
+        },
+        "vid": "d51ced72-4212-11e6-942d-bc5ff45d0f28"
+    },
+    "details": "The Xen Project reports:\n\n> In the x86 shadow pagetable code, the guest frame number of a\n> superpage mapping is stored in a 32-bit field. If a shadowed guest can\n> cause a superpage mapping of a guest-physical address at or above\n> 2\\^44 to be shadowed, the top bits of the address will be lost,\n> causing an assertion failure or NULL dereference later on, in code\n> that removes the shadow.\n>\n> A HVM guest using shadow pagetables can cause the host to crash.\n>\n> A PV guest using shadow pagetables (i.e. being migrated) with PV\n> superpages enabled (which is not the default) can crash the host, or\n> corrupt hypervisor memory, and so a privilege escalation cannot be\n> ruled out.\n",
+    "id": "FreeBSD-2016-0264",
+    "modified": "2016-07-04T00:00:00Z",
+    "published": "2016-07-04T00:00:00Z",
+    "references": [
+        {
+            "type": "REPORT",
+            "url": "http://xenbits.xen.org/xsa/advisory-173.html"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2016-3960"
+        },
+        {
+            "type": "WEB",
+            "url": "http://xenbits.xen.org/xsa/advisory-173.html"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "xen-kernel -- x86 shadow pagetables: address width overflow"
+}

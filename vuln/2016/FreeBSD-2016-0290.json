@@ -1,0 +1,62 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "xen-kernel"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "4.7.0_3"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "cite": [
+            "http://xenbits.xen.org/xsa/advisory-182.html"
+        ],
+        "discovery": "2016-07-26T00:00:00Z",
+        "references": {
+            "cvename": [
+                "CVE-2016-6258"
+            ],
+            "freebsdpr": [
+                "ports/211482"
+            ]
+        },
+        "vid": "032aa524-5854-11e6-b334-002590263bf5"
+    },
+    "details": "The Xen Project reports:\n\n> The PV pagetable code has fast-paths for making updates to\n> pre-existing pagetable entries, to skip expensive re-validation in\n> safe cases (e.g. clearing only Access/Dirty bits). The bits considered\n> safe were too broad, and not actually safe.\n>\n> A malicious PV guest administrator can escalate their privilege to\n> that of the host.\n",
+    "id": "FreeBSD-2016-0290",
+    "modified": "2016-08-02T00:00:00Z",
+    "published": "2016-08-02T00:00:00Z",
+    "references": [
+        {
+            "type": "REPORT",
+            "url": "http://xenbits.xen.org/xsa/advisory-182.html"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2016-6258"
+        },
+        {
+            "type": "REPORT",
+            "url": "https://bugs.freebsd.org/bugzilla/show_bug.cgi?id=211482"
+        },
+        {
+            "type": "WEB",
+            "url": "http://xenbits.xen.org/xsa/advisory-182.html"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "xen-kernel -- x86: Privilege escalation in PV guests"
+}

@@ -1,0 +1,54 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "png"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "introduced": "1.2.6"
+                        },
+                        {
+                            "fixed": "1.5.21"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                },
+                {
+                    "events": [
+                        {
+                            "introduced": "1.6"
+                        },
+                        {
+                            "fixed": "1.6.16"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "discovery": "2014-12-23T00:00:00Z",
+        "vid": "c564f9bd-8ba7-11e4-801f-0022156e8794"
+    },
+    "details": "32-bit builds of PNG library are vulnerable to an unsigned integer\noverflow that is triggered by a crafted wide interlaced images. Overflow\nresults in a heap corruption that will crash the application and may\nlead to the controlled overwrite of a selected portions of process\naddress space.\n",
+    "id": "FreeBSD-2015-0002",
+    "modified": "2015-01-05T00:00:00Z",
+    "published": "2015-01-05T00:00:00Z",
+    "references": [
+        {
+            "type": "WEB",
+            "url": "http://tfpwn.com/files/libpng_heap_overflow_1.6.15.txt"
+        },
+        {
+            "type": "WEB",
+            "url": "http://codelabs.ru/security/vulns/analysis/libpng/2014-dec-libpng-1.6.15/"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "png -- heap overflow for 32-bit builds"
+}

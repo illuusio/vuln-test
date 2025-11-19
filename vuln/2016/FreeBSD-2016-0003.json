@@ -1,0 +1,120 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "qemu"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "2.4.0"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        },
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "qemu-devel"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "2.4.0"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        },
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "qemu-sbruno"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "2.4.50.g20150814"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        },
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "qemu-user-static"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "2.4.50.g20150814"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "cite": [
+            "http://www.openwall.com/lists/oss-security/2015/08/06/3"
+        ],
+        "discovery": "2015-08-06T00:00:00Z",
+        "references": {
+            "cvename": [
+                "CVE-2015-5745"
+            ]
+        },
+        "vid": "21e5abe3-b0c6-11e5-8d13-bc5ff45d0f28"
+    },
+    "details": "Prasad J Pandit, Red Hat Product Security Team, reports:\n\n> Qemu emulator built with the virtio-serial vmchannel support is\n> vulnerable to a buffer overflow issue. It could occur while exchanging\n> virtio control messages between guest and the host.\n>\n> A malicious guest could use this flaw to corrupt few bytes of Qemu\n> memory area, potentially crashing the Qemu process.\n",
+    "id": "FreeBSD-2016-0003",
+    "modified": "2016-01-01T00:00:00Z",
+    "published": "2016-01-01T00:00:00Z",
+    "references": [
+        {
+            "type": "REPORT",
+            "url": "http://www.openwall.com/lists/oss-security/2015/08/06/3"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2015-5745"
+        },
+        {
+            "type": "WEB",
+            "url": "http://www.openwall.com/lists/oss-security/2015/08/06/5"
+        },
+        {
+            "type": "WEB",
+            "url": "http://git.qemu.org/?p=qemu.git;a=commit;h=7882080388be5088e72c425b02223c02e6cb4295"
+        },
+        {
+            "type": "WEB",
+            "url": "https://github.com/seanbruno/qemu-bsd-user/commit/7882080388be5088e72c425b02223c02e6cb4295"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "qemu -- buffer overflow vulnerability in virtio-serial message exchanges"
+}

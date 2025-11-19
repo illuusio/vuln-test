@@ -1,0 +1,55 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "git"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "2.39.2"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "cite": [
+            "https://github.com/git/git/security/advisories/GHSA-gw92-x3fm-3g3q"
+        ],
+        "discovery": "2023-02-14T00:00:00Z",
+        "references": {
+            "cvename": [
+                "CVE-2023-22490"
+            ]
+        },
+        "vid": "9548d6ed-b1da-11ed-b0f4-002590f2a714"
+    },
+    "details": "git team reports:\n\n> Using a specially-crafted repository, Git can be tricked into using\n> its local clone optimization even when using a non-local transport.\n> Though Git will abort local clones whose source \\$GIT_DIR/objects\n> directory contains symbolic links (c.f., CVE-2022-39253), the objects\n> directory itself may still be a symbolic link.\n>\n> These two may be combined to include arbitrary files based on known\n> paths on the victim\\'s filesystem within the malicious repository\\'s\n> working copy, allowing for data exfiltration in a similar manner as\n> CVE-2022-39253.\n",
+    "id": "FreeBSD-2023-0055",
+    "modified": "2023-02-21T00:00:00Z",
+    "published": "2023-02-21T00:00:00Z",
+    "references": [
+        {
+            "type": "REPORT",
+            "url": "https://github.com/git/git/security/advisories/GHSA-gw92-x3fm-3g3q"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2023-22490"
+        },
+        {
+            "type": "WEB",
+            "url": "https://github.blog/2023-02-14-git-security-vulnerabilities-announced-3/#cve-2023-22490"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "git -- Local clone-based data exfiltration with non-local transports"
+}

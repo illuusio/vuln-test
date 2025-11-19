@@ -1,0 +1,59 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "xrdp"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "0.9.23.1"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "cite": [
+            "https://www.cve.org/CVERecord?id=CVE-2023-42822"
+        ],
+        "discovery": "2023-09-27T00:00:00Z",
+        "references": {
+            "cvename": [
+                "CVE-2023-42822"
+            ]
+        },
+        "vid": "af065e47-5d62-11ee-bbae-1c61b4739ac9"
+    },
+    "details": "xrdp team reports:\n\n> Access to the font glyphs in xrdp_painter.c is not bounds-checked.\n> Since some of this data is controllable by the user, this can result\n> in an out-of-bounds read within the xrdp executable. The vulnerability\n> allows an out-of-bounds read within a potentially privileged process.\n> On non-Debian platforms, xrdp tends to run as root. Potentially an\n> out-of-bounds write can follow the out-of-bounds read. There is no\n> denial-of-service impact, providing xrdp is running in forking mode.\n> This issue has been addressed in release 0.9.23.1. Users are advised\n> to upgrade. There are no known workarounds for this vulnerability.\n",
+    "id": "FreeBSD-2023-0294",
+    "modified": "2023-09-27T00:00:00Z",
+    "published": "2023-09-27T00:00:00Z",
+    "references": [
+        {
+            "type": "REPORT",
+            "url": "https://www.cve.org/CVERecord?id=CVE-2023-42822"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2023-42822"
+        },
+        {
+            "type": "WEB",
+            "url": "https://www.cve.org/CVERecord?id=CVE-2023-42822"
+        },
+        {
+            "type": "WEB",
+            "url": "https://github.com/neutrinolabs/xrdp/security/advisories/GHSA-2hjx-rm4f-r9hw"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "xrdp -- unchecked access to font glyph info"
+}

@@ -1,0 +1,55 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "xen-kernel"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "4.7.1_2"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "cite": [
+            "http://xenbits.xen.org/xsa/advisory-204.html"
+        ],
+        "discovery": "2016-12-19T00:00:00Z",
+        "references": {
+            "cvename": [
+                "CVE-2016-10013"
+            ]
+        },
+        "vid": "942433db-c661-11e6-ae1b-002590263bf5"
+    },
+    "details": "The Xen Project reports:\n\n> The typical behaviour of singlestepping exceptions is determined at\n> the start of the instruction, with a #DB trap being raised at the end\n> of the instruction. SYSCALL (and SYSRET, although we don\\'t implement\n> it) behave differently because the typical behaviour allows userspace\n> to escalate its privilege. (This difference in behaviour seems to be\n> undocumented.) Xen wrongly raised the exception based on the flags at\n> the start of the instruction.\n>\n> Guest userspace which can invoke the instruction emulator can use this\n> flaw to escalate its privilege to that of the guest kernel.\n",
+    "id": "FreeBSD-2016-0477",
+    "modified": "2016-12-20T00:00:00Z",
+    "published": "2016-12-20T00:00:00Z",
+    "references": [
+        {
+            "type": "REPORT",
+            "url": "http://xenbits.xen.org/xsa/advisory-204.html"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2016-10013"
+        },
+        {
+            "type": "WEB",
+            "url": "http://xenbits.xen.org/xsa/advisory-204.html"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "xen-kernel -- x86: Mishandling of SYSCALL singlestep during emulation"
+}

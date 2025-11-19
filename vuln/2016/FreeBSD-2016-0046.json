@@ -1,0 +1,165 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "libarchive"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "3.1.2_5,1"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        },
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "FreeBSD"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "introduced": "10.3"
+                        },
+                        {
+                            "fixed": "10.3_4"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                },
+                {
+                    "events": [
+                        {
+                            "introduced": "10.2"
+                        },
+                        {
+                            "fixed": "10.2_18"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                },
+                {
+                    "events": [
+                        {
+                            "introduced": "10.1"
+                        },
+                        {
+                            "fixed": "10.1_35"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                },
+                {
+                    "events": [
+                        {
+                            "introduced": "9.3"
+                        },
+                        {
+                            "fixed": "9.3_43"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "cite": [
+            "http://www.cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2013-0211",
+            "http://www.cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2015-2304",
+            "https://github.com/libarchive/libarchive/issues/502"
+        ],
+        "discovery": "2012-12-06T00:00:00Z",
+        "references": {
+            "cvename": [
+                "CVE-2013-0211",
+                "CVE-2015-2304"
+            ],
+            "freebsdpr": [
+                "ports/200176"
+            ],
+            "freebsdsa": [
+                "SA-16:22.libarchive",
+                "SA-16:23.libarchive"
+            ]
+        },
+        "vid": "7c63775e-be31-11e5-b5fe-002590263bf5"
+    },
+    "details": "MITRE reports:\n\n> Integer signedness error in the archive_write_zip_data function in\n> archive_write_set_format_zip.c in libarchive 3.1.2 and earlier, when\n> running on 64-bit machines, allows context-dependent attackers to\n> cause a denial of service (crash) via unspecified vectors, which\n> triggers an improper conversion between unsigned and signed types,\n> leading to a buffer overflow.\n\n> Absolute path traversal vulnerability in bsdcpio in libarchive 3.1.2\n> and earlier allows remote attackers to write to arbitrary files via a\n> full pathname in an archive.\n\nLibarchive issue tracker reports:\n\n> Using a crafted tar file bsdtar can perform an out-of-bounds memory\n> read which will lead to a SEGFAULT. The issue exists when the\n> executable skips data in the archive. The amount of data to skip is\n> defined in byte offset \\[16-19\\] If ASLR is disabled, the issue can\n> lead to an infinite loop.\n",
+    "id": "FreeBSD-2016-0046",
+    "modified": "2016-08-09T00:00:00Z",
+    "published": "2016-01-18T00:00:00Z",
+    "references": [
+        {
+            "type": "REPORT",
+            "url": "http://www.cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2013-0211"
+        },
+        {
+            "type": "REPORT",
+            "url": "http://www.cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2015-2304"
+        },
+        {
+            "type": "REPORT",
+            "url": "https://github.com/libarchive/libarchive/issues/502"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2013-0211"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2015-2304"
+        },
+        {
+            "type": "REPORT",
+            "url": "https://bugs.freebsd.org/bugzilla/show_bug.cgi?id=200176"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://www.freebsd.org/security/advisories/FreeBSD-SA-16:22.libarchive.asc"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://www.freebsd.org/security/advisories/FreeBSD-SA-16:23.libarchive.asc"
+        },
+        {
+            "type": "WEB",
+            "url": "https://github.com/libarchive/libarchive/pull/110"
+        },
+        {
+            "type": "WEB",
+            "url": "https://github.com/libarchive/libarchive/commit/5935715"
+        },
+        {
+            "type": "WEB",
+            "url": "https://github.com/libarchive/libarchive/commit/2253154"
+        },
+        {
+            "type": "WEB",
+            "url": "https://github.com/libarchive/libarchive/issues/502"
+        },
+        {
+            "type": "WEB",
+            "url": "https://github.com/libarchive/libarchive/commit/3865cf2"
+        },
+        {
+            "type": "WEB",
+            "url": "https://github.com/libarchive/libarchive/commit/e6c9668"
+        },
+        {
+            "type": "WEB",
+            "url": "https://github.com/libarchive/libarchive/commit/24f5de6"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "libarchive -- multiple vulnerabilities"
+}

@@ -1,0 +1,77 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "powerdns-recursor"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "introduced": "4.3.0"
+                        },
+                        {
+                            "fixed": "4.3.5"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                },
+                {
+                    "events": [
+                        {
+                            "introduced": "4.2.0"
+                        },
+                        {
+                            "fixed": "4.2.5"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                },
+                {
+                    "events": [
+                        {
+                            "introduced": "4.1.0"
+                        },
+                        {
+                            "fixed": "4.1.18"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "cite": [
+            "https://doc.powerdns.com/recursor/changelog/4.3.html#change-4.3.5"
+        ],
+        "discovery": "2020-10-13T00:00:00Z",
+        "references": {
+            "cvename": [
+                "CVE-2020-25829"
+            ]
+        },
+        "vid": "a6860b11-0dee-11eb-94ff-6805ca2fa271"
+    },
+    "details": "PowerDNS Team reports:\n\n> CVE-2020-25829: An issue has been found in PowerDNS Recursor where a\n> remote attacker can cause the cached records for a given name to be\n> updated to the 'Bogus' DNSSEC validation state, instead of their\n> actual DNSSEC 'Secure' state, via a DNS ANY query. This results in a\n> denial of service for installations that always validate\n> (dnssec=validate) and for clients requesting validation when on-demand\n> validation is enabled (dnssec=process).\n",
+    "id": "FreeBSD-2020-0275",
+    "modified": "2020-10-14T00:00:00Z",
+    "published": "2020-10-14T00:00:00Z",
+    "references": [
+        {
+            "type": "REPORT",
+            "url": "https://doc.powerdns.com/recursor/changelog/4.3.html#change-4.3.5"
+        },
+        {
+            "type": "WEB",
+            "url": "https://doc.powerdns.com/recursor/security-advisories/powerdns-advisory-2020-07.html"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2020-25829"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "powerdns-recursor -- cache pollution"
+}

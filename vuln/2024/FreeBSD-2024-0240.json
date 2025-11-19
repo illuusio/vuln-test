@@ -1,0 +1,65 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "expat"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "2.6.3"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "cite": [
+            "https://github.com/libexpat/libexpat/blob/master/expat/Changes"
+        ],
+        "discovery": "2024-09-24T00:00:00Z",
+        "references": {
+            "cvename": [
+                "CVE-2024-45490",
+                "CVE-2024-45491",
+                "CVE-2024-45492"
+            ]
+        },
+        "vid": "ca5f3bbc-7a62-11ef-9533-f875a43e1796"
+    },
+    "details": "libexpat reports:\n\n> - CVE-2024-45490: Calling function XML_ParseBuffer with len \\< 0\n>   without noticing and then calling XML_GetBuffer will have\n>   XML_ParseBuffer fail to recognize the problem and XML_GetBuffer\n>   corrupt memory. With the fix, XML_ParseBuffer now complains with\n>   error XML_ERROR_INVALID_ARGUMENT just like sibling XML_Parse has\n>   been doing since Expat 2.2.1, and now documented. Impact is denial\n>   of service to potentially artitrary code execution.\n> - CVE-2024-45491: Internal function dtdCopy can have an integer\n>   overflow for nDefaultAtts on 32-bit platforms (where UINT_MAX equals\n>   SIZE_MAX). Impact is denial of service to potentially artitrary code\n>   execution.\n> - CVE-2024-45492: Internal function nextScaffoldPart can have an\n>   integer overflow for m_groupSize on 32-bit platforms (where UINT_MAX\n>   equals SIZE_MAX). Impact is denial of service to potentially\n>   artitrary code execution.\n",
+    "id": "FreeBSD-2024-0240",
+    "modified": "2024-09-24T00:00:00Z",
+    "published": "2024-09-24T00:00:00Z",
+    "references": [
+        {
+            "type": "REPORT",
+            "url": "https://github.com/libexpat/libexpat/blob/master/expat/Changes"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2024-45490"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2024-45491"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2024-45492"
+        },
+        {
+            "type": "WEB",
+            "url": "https://github.com/libexpat/libexpat/blob/master/expat/Changes"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "expat -- multiple vulnerabilities"
+}

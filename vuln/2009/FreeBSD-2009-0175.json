@@ -1,0 +1,63 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "piwik"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "0.5.1"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "cite": [
+            "http://secunia.com/advisories/37649"
+        ],
+        "discovery": "2009-12-10T00:00:00Z",
+        "references": {
+            "cvename": [
+                "CVE-2009-4137"
+            ]
+        },
+        "vid": "fcbf56dd-e667-11de-920a-00248c9b4be7"
+    },
+    "details": "secunia reports:\n\n> Stefan Esser has reported a vulnerability in Piwik, which can be\n> exploited by malicious people to compromise a vulnerable system.\n>\n> The vulnerability is caused due to the core/Cookie.php script using\n> \\\"unserialize()\\\" with user controlled input. This can be exploited to\n> e.g. execute arbitrary PHP code via the \\\"\\_\\_wakeup()\\\" or\n> \\\"\\_\\_destruct()\\\" methods of a serialized object passed via an HTTP\n> cookie.\n",
+    "id": "FreeBSD-2009-0175",
+    "modified": "2010-05-02T00:00:00Z",
+    "published": "2009-12-11T00:00:00Z",
+    "references": [
+        {
+            "type": "REPORT",
+            "url": "http://secunia.com/advisories/37649"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2009-4137"
+        },
+        {
+            "type": "WEB",
+            "url": "http://secunia.com/advisories/37649/"
+        },
+        {
+            "type": "WEB",
+            "url": "http://www.sektioneins.de/de/advisories/advisory-032009-piwik-cookie-unserialize-vulnerability/index.html"
+        },
+        {
+            "type": "WEB",
+            "url": "http://piwik.org/blog/2009/12/piwik-response-to-shocking-news-in-php-exploitation/"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "piwik -- php code execution"
+}

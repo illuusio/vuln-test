@@ -1,0 +1,52 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "postfix-policyd-weight"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "0.1.14.17"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "discovery": "2008-03-24T00:00:00Z",
+        "references": {
+            "bid": [
+                "28480"
+            ]
+        },
+        "vid": "072a53e0-0397-11dd-bd06-0017319806e7"
+    },
+    "details": "postfix-policyd-weight does not check for symlink for its working\ndirectory. If the working directory is not already setup by the super\nroot, an unprivileged user can link it to another directories in the\nsystem. This results in ownership/permission changes on the target\ndirectory.\n",
+    "id": "FreeBSD-2008-0037",
+    "modified": "2008-04-06T00:00:00Z",
+    "published": "2008-04-06T00:00:00Z",
+    "references": [
+        {
+            "type": "ADVISORY",
+            "url": "https://www.securityfocus.com/bid/28480/info"
+        },
+        {
+            "type": "DISCUSSION",
+            "url": "http://article.gmane.org/gmane.mail.postfix.policyd-weight/815"
+        },
+        {
+            "type": "DISCUSSION",
+            "url": "http://article.gmane.org/gmane.mail.postfix.policyd-weight/823"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "postfix-policyd-weight -- working directory symlink vulnerability"
+}

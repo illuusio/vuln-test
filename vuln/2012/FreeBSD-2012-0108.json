@@ -1,0 +1,64 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "mantis"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "1.2.11"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "cite": [
+            "http://www.openwall.com/lists/oss-security/2012/06/09/1"
+        ],
+        "discovery": "2012-06-09T00:00:00Z",
+        "references": {
+            "cvename": [
+                "CVE-2012-2691",
+                "CVE-2012-2692"
+            ]
+        },
+        "vid": "55587adb-b49d-11e1-8df1-0004aca374af"
+    },
+    "details": "Mantis reports:\n\n> Roland Becker and Damien Regad (MantisBT developers) found that any\n> user able to report issues via the SOAP interface could also modify\n> any bugnotes (comments) created by other users. In a default/typical\n> MantisBT installation, SOAP API is enabled and any user can sign up to\n> report new issues. This vulnerability therefore impacts upon many\n> public facing MantisBT installations.\n>\n> Roland Becker (MantisBT developer) found that the\n> delete_attachments_threshold permission was not being checked when a\n> user attempted to delete an attachment from an issue. The more generic\n> update_bug_threshold permission was being checked instead. MantisBT\n> administrators may have been under the false impression that their\n> configuration of the delete_attachments_threshold was successfully\n> preventing unwanted users from deleting attachments.\n",
+    "id": "FreeBSD-2012-0108",
+    "modified": "2012-06-13T00:00:00Z",
+    "published": "2012-06-12T00:00:00Z",
+    "references": [
+        {
+            "type": "REPORT",
+            "url": "http://www.openwall.com/lists/oss-security/2012/06/09/1"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2012-2691"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2012-2692"
+        },
+        {
+            "type": "DISCUSSION",
+            "url": "http://www.openwall.com/lists/oss-security/2012/06/09/1"
+        },
+        {
+            "type": "DISCUSSION",
+            "url": "http://sourceforge.net/mailarchive/forum.php?thread_name=1339229952.28538.22%40d.hx.id.au&forum_name=mantisbt-dev"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "mantis -- multiple vulnerabilities"
+}

@@ -1,0 +1,89 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "FreeBSD"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "introduced": "11.1"
+                        },
+                        {
+                            "fixed": "11.1_2"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                },
+                {
+                    "events": [
+                        {
+                            "introduced": "11.0"
+                        },
+                        {
+                            "fixed": "11.0_13"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                },
+                {
+                    "events": [
+                        {
+                            "introduced": "10.4"
+                        },
+                        {
+                            "fixed": "10.4_1"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                },
+                {
+                    "events": [
+                        {
+                            "introduced": "10.3"
+                        },
+                        {
+                            "fixed": "10.3_22"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "discovery": "2017-10-16T00:00:00Z",
+        "references": {
+            "cvename": [
+                "CVE-2017-1307",
+                "CVE-2017-1308"
+            ],
+            "freebsdsa": [
+                "SA-17:07.wpa"
+            ]
+        },
+        "vid": "1f8de723-dab3-11e7-b5af-a4badb2f4699"
+    },
+    "details": "# Problem Description:\n\nA vulnerability was found in how a number of implementations can be\ntriggered to reconfigure WPA/WPA2/RSN keys (TK, GTK, or IGTK) by\nreplaying a specific frame that is used to manage the keys.\n\n# Impact:\n\nSuch reinstallation of the encryption key can result in two different\ntypes of vulnerabilities: disabling replay protection and significantly\nreducing the security of encryption to the point of allowing frames to\nbe decrypted or some parts of the keys to be determined by an attacker\ndepending on which cipher is used.\n",
+    "id": "FreeBSD-2017-0301",
+    "modified": "2017-12-06T00:00:00Z",
+    "published": "2017-12-06T00:00:00Z",
+    "references": [
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2017-1307"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2017-1308"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://www.freebsd.org/security/advisories/FreeBSD-SA-17:07.wpa.asc"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "FreeBSD -- WPA2 protocol vulnerability"
+}

@@ -1,0 +1,55 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "curl"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "introduced": "7.1.1"
+                        },
+                        {
+                            "fixed": "7.76.0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "cite": [
+            "https://curl.se/docs/CVE-2021-22876.html"
+        ],
+        "discovery": "2021-03-31T00:00:00Z",
+        "references": {
+            "cvename": [
+                "CVE-2021-22876"
+            ]
+        },
+        "vid": "b1194286-958e-11eb-9c34-080027f515ea"
+    },
+    "details": "Daniel Stenberg reports:\n\n> libcurl does not strip off user credentials from the URL when\n> automatically populating the Referer: HTTP request header field in\n> outgoing HTTP requests, and therefore risks leaking sensitive data to\n> the server that is the target of the second HTTP request.\n>\n> libcurl automatically sets the Referer: HTTP request header field in\n> outgoing HTTP requests if the CURLOPT_AUTOREFERER option is set. With\n> the curl tool, it is enabled with \\--referer \\\";auto\\\".\n",
+    "id": "FreeBSD-2021-0087",
+    "modified": "2021-04-10T00:00:00Z",
+    "published": "2021-04-10T00:00:00Z",
+    "references": [
+        {
+            "type": "REPORT",
+            "url": "https://curl.se/docs/CVE-2021-22876.html"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2021-22876"
+        },
+        {
+            "type": "WEB",
+            "url": "https://curl.se/docs/CVE-2021-22876.html"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "curl -- Automatic referer leaks credentials"
+}

@@ -1,0 +1,60 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "openssh-portable"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "7.3.p1,1"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "cite": [
+            "http://www.openssh.com/txt/release-7.3"
+        ],
+        "discovery": "2016-08-01T00:00:00Z",
+        "references": {
+            "cvename": [
+                "CVE-2016-6210",
+                "CVE-2015-8325"
+            ]
+        },
+        "vid": "adccefd1-7080-11e6-a2cb-c80aa9043978"
+    },
+    "details": "The OpenSSH project reports:\n\n> \\* sshd(8): Mitigate timing differences in password authentication\n> that could be used to discern valid from invalid account names when\n> long passwords were sent and particular password hashing algorithms\n> are in use on the server. CVE-2016-6210, reported by EddieEzra.Harari\n> at verint.com\n>\n> \\* sshd(8): (portable only) Ignore PAM environment vars when\n> UseLogin=yes. If PAM is configured to read user-specified environment\n> variables and UseLogin=yes in sshd_config, then a hostile local user\n> may attack /bin/login via LD_PRELOAD or similar environment variables\n> set via PAM. CVE-2015-8325, found by Shayan Sadigh.\n",
+    "id": "FreeBSD-2016-0363",
+    "modified": "2016-09-01T00:00:00Z",
+    "published": "2016-09-01T00:00:00Z",
+    "references": [
+        {
+            "type": "REPORT",
+            "url": "http://www.openssh.com/txt/release-7.3"
+        },
+        {
+            "type": "WEB",
+            "url": "http://www.openssh.com/txt/release-7.3"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2016-6210"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2015-8325"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "openssh -- sshd -- remote valid user discovery and PAM /bin/login attack"
+}

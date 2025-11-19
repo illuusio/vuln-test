@@ -1,0 +1,141 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "sqlite3"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "3.32.2,1"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        },
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "FreeBSD"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "introduced": "12.1"
+                        },
+                        {
+                            "fixed": "12.1_8"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                },
+                {
+                    "events": [
+                        {
+                            "introduced": "11.4"
+                        },
+                        {
+                            "fixed": "11.4_2"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                },
+                {
+                    "events": [
+                        {
+                            "introduced": "11.3"
+                        },
+                        {
+                            "fixed": "11.3_12"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "discovery": "2020-05-25T00:00:00Z",
+        "references": {
+            "cvename": [
+                "CVE-2020-11655",
+                "CVE-2020-13434",
+                "CVE-2020-13435",
+                "CVE-2020-13630",
+                "CVE-2020-13631",
+                "CVE-2020-13632"
+            ],
+            "freebsdsa": [
+                "SA-20:22.sqlite"
+            ]
+        },
+        "vid": "c4ac9c79-ab37-11ea-8b5e-b42e99a1b9c3"
+    },
+    "details": "sqlite3 update:\n\nVarious security issues could be used by an attacker to cause SQLite to\ncrash, resulting in a denial of service, or possibly execute arbitrary\ncode.\n\n- CVE-2020-11655: SQLite through 3.31.1 allows attackers to cause a\n  denial of service (segmentation fault) via a malformed window-function\n  query because the AggInfo object\\'s initialization is mishandled.\n- CVE-2020-13434: SQLite through 3.32.0 has an integer overflow in\n  sqlite3_str_vappendf in printf.c.\n- CVE-2020-13435: SQLite through 3.32.0 has a segmentation fault in\n  sqlite3ExprCodeTarget in expr.c.\n- CVE-2020-13630: ext/fts3/fts3.c in SQLite before 3.32.0 has a\n  use-after-free in fts3EvalNextRow, related to the snippet feature.\n- CVE-2020-13631: SQLite before 3.32.0 allows a virtual table to be\n  renamed to the name of one of its shadow tables, related to alter.c\n  and build.c.\n- CVE-2020-13632: ext/fts3/fts3_snippet.c in SQLite before 3.32.0 has a\n  NULL pointer dereference via a crafted matchinfo() query.\n",
+    "id": "FreeBSD-2020-0149",
+    "modified": "2020-08-06T00:00:00Z",
+    "published": "2020-06-10T00:00:00Z",
+    "references": [
+        {
+            "type": "ADVISORY",
+            "url": "https://nvd.nist.gov/vuln/detail/CVE-2020-11655"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2020-11655"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://nvd.nist.gov/vuln/detail/CVE-2020-13434"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2020-13434"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://nvd.nist.gov/vuln/detail/CVE-2020-13435"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2020-13435"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://nvd.nist.gov/vuln/detail/CVE-2020-13630"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2020-13630"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://nvd.nist.gov/vuln/detail/CVE-2020-13631"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2020-13631"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://nvd.nist.gov/vuln/detail/CVE-2020-13632"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2020-13632"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://www.freebsd.org/security/advisories/FreeBSD-SA-20:22.sqlite.asc"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "several security issues in sqlite3"
+}

@@ -1,0 +1,50 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "drupal"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "4.6.10"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "cite": [
+            "http://drupal.org/files/sa-2006-024/advisory.txt"
+        ],
+        "discovery": "2006-10-18T00:00:00Z",
+        "vid": "b2383758-5f15-11db-ae08-0008743bf21a"
+    },
+    "details": "The Drupal Team reports:\n\n> A bug in input validation and lack of output validation allows HTML\n> and script insertion on several pages.\n>\n> Drupal\\'s XML parser passes unescaped data to watchdog under certain\n> circumstances. A malicious user may execute an XSS attack via a\n> specially crafted RSS feed. This vulnerability exists on systems that\n> do not use PHP\\'s mb_string extension (to check if mb_string is being\n> used, navigate to admin/settings and look under \\\"String handling\\\").\n> Disabling the aggregator module provides an immediate workaround.\n>\n> The aggregator module, profile module, and forum module do not\n> properly escape output of certain fields.\n>\n> Note: XSS attacks may lead to administrator access if certain\n> conditions are met.\n",
+    "id": "FreeBSD-2006-0190",
+    "modified": "2006-10-18T00:00:00Z",
+    "published": "2006-10-18T00:00:00Z",
+    "references": [
+        {
+            "type": "REPORT",
+            "url": "http://drupal.org/files/sa-2006-024/advisory.txt"
+        },
+        {
+            "type": "WEB",
+            "url": "http://drupal.org/files/sa-2006-024/advisory.txt"
+        },
+        {
+            "type": "WEB",
+            "url": "http://drupal.org/drupal-4.7.4"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "drupal -- multiple XSS vulnerabilities"
+}

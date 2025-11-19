@@ -1,0 +1,183 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "tomcat"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "introduced": "8.5.0"
+                        },
+                        {
+                            "fixed": "8.5.83"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                },
+                {
+                    "events": [
+                        {
+                            "introduced": "9.0.0-M1"
+                        },
+                        {
+                            "fixed": "9.0.68"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                },
+                {
+                    "events": [
+                        {
+                            "introduced": "10.0.0-M1"
+                        },
+                        {
+                            "fixed": "10.0.27"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                },
+                {
+                    "events": [
+                        {
+                            "introduced": "10.1.0-M1"
+                        },
+                        {
+                            "fixed": "10.1.1"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        },
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "tomcat85"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "introduced": "8.5.0"
+                        },
+                        {
+                            "fixed": "8.5.83"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        },
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "tomcat9"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "introduced": "9.0.0-M1"
+                        },
+                        {
+                            "fixed": "9.0.68"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        },
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "tomcat10"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "introduced": "10.0.0-M1"
+                        },
+                        {
+                            "fixed": "10.0.27"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        },
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "tomcat101"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "introduced": "10.1.0-M1"
+                        },
+                        {
+                            "fixed": "10.1.1"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        },
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "tomcat-devel"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "introduced": "10.1.0-M1"
+                        },
+                        {
+                            "fixed": "10.1.1"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "cite": [
+            "https://lists.apache.org/thread/zzcxzvqfdqn515zfs3dxb7n8gty589sq"
+        ],
+        "discovery": "2022-10-31T00:00:00Z",
+        "references": {
+            "cvename": [
+                "CVE-2022-42252"
+            ]
+        },
+        "vid": "556fdf03-6785-11ed-953b-002b67dfc673"
+    },
+    "details": "Apache Tomcat reports:\n\n> If Tomcat was configured to ignore invalid HTTP headers via setting\n> rejectIllegalHeader to false (the default for 8.5.x only), Tomcat did\n> not reject a request containing an invalid Content-Length header\n> making a request smuggling attack possible if Tomcat was located\n> behind a reverse proxy that also failed to reject the request with the\n> invalid header.\n>\n> The CVSS score for this vulnerability is 7.5 High\n",
+    "id": "FreeBSD-2022-0228",
+    "modified": "2022-11-18T00:00:00Z",
+    "published": "2022-11-18T00:00:00Z",
+    "references": [
+        {
+            "type": "REPORT",
+            "url": "https://lists.apache.org/thread/zzcxzvqfdqn515zfs3dxb7n8gty589sq"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2022-42252"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://nvd.nist.gov/vuln/detail/CVE-2022-42252"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "Tomcat -- Request Smuggling"
+}

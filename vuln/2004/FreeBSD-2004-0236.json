@@ -1,0 +1,59 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "hafiye"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "1.0_1"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "cite": [
+            "http://deicide.siyahsapka.org/hafiye_esc.txt"
+        ],
+        "discovery": "2004-08-23T00:00:00Z",
+        "references": {
+            "freebsdpr": [
+                "ports/70978"
+            ]
+        },
+        "vid": "027380b7-3404-11d9-ac1b-000d614f7fad"
+    },
+    "details": "A siyahsapka.org advisory reads:\n\n> Hafiye-1.0 doesnt filter the payload when printing it to the terminal.\n> A malicious attacker can send packets with escape sequence payloads to\n> exploit this vulnerability.\n>\n> If Hafiye has been started with -n packet count option , the\n> vulnerability could allow remote code execution. For remote code\n> execution the victim must press Enter after program exit.\n\nNote that it appears that this bug can only be exploited in conjunction\nwith a terminal emulator that honors the appropriate escape sequences.\n",
+    "id": "FreeBSD-2004-0236",
+    "modified": "2004-11-11T00:00:00Z",
+    "published": "2004-11-11T00:00:00Z",
+    "references": [
+        {
+            "type": "REPORT",
+            "url": "http://deicide.siyahsapka.org/hafiye_esc.txt"
+        },
+        {
+            "type": "REPORT",
+            "url": "https://bugs.freebsd.org/bugzilla/show_bug.cgi?id=70978"
+        },
+        {
+            "type": "WEB",
+            "url": "http://deicide.siyahsapka.org/hafiye_esc.txt"
+        },
+        {
+            "type": "WEB",
+            "url": "http://www.enderunix.org/hafiye/"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "hafiye -- lack of terminal escape sequence filtering"
+}

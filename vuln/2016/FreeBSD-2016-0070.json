@@ -1,0 +1,55 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "phpmyadmin"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "introduced": "4.5.0"
+                        },
+                        {
+                            "fixed": "4.5.4"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "cite": [
+            "https://www.phpmyadmin.net/security/PMASA-2016-8/"
+        ],
+        "discovery": "2016-01-28T00:00:00Z",
+        "references": {
+            "cvename": [
+                "CVE-2016-2044"
+            ]
+        },
+        "vid": "78b4ebfb-c60b-11e5-bf36-6805ca0b3d42"
+    },
+    "details": "The phpMyAdmin development team reports:\n\n> By calling a particular script that is part of phpMyAdmin in an\n> unexpected way, it is possible to trigger phpMyAdmin to display a PHP\n> error message which contains the full path of the directory where\n> phpMyAdmin is installed.\n>\n> We consider this vulnerability to be non-critical.\n>\n> This path disclosure is possible on servers where the recommended\n> setting of the PHP configuration directive display_errors is set to\n> on, which is against the recommendations given in the PHP manual for a\n> production server.\n",
+    "id": "FreeBSD-2016-0070",
+    "modified": "2016-01-28T00:00:00Z",
+    "published": "2016-01-28T00:00:00Z",
+    "references": [
+        {
+            "type": "REPORT",
+            "url": "https://www.phpmyadmin.net/security/PMASA-2016-8/"
+        },
+        {
+            "type": "WEB",
+            "url": "https://www.phpmyadmin.net/security/PMASA-2016-8/"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2016-2044"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "phpmyadmin -- Full path disclosure vulnerability in SQL parser"
+}

@@ -1,0 +1,110 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "FreeBSD"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "introduced": "12.0"
+                        },
+                        {
+                            "fixed": "12.0_3"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                },
+                {
+                    "events": [
+                        {
+                            "introduced": "11.2"
+                        },
+                        {
+                            "fixed": "11.2_9"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        },
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "wpa_supplicant"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "2.8"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        },
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "hostapd"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "2.8"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "discovery": "2019-04-10T00:00:00Z",
+        "references": {
+            "cvename": [
+                "CVE-2019-9497",
+                "CVE-2019-9498",
+                "CVE-2019-9499"
+            ],
+            "freebsdsa": [
+                "SA-19:03.wpa"
+            ]
+        },
+        "vid": "2da3cb25-6571-11e9-8e67-206a8a720317"
+    },
+    "details": "# Problem Description:\n\nEAP-pwd implementation in hostapd (EAP server) and wpa_supplicant (EAP\npeer) does not to validate the received scalar and element values in\nEAP-pwd-Commit messages properly. This could result in attacks that\nwould be able to complete EAP-pwd authentication exchange without the\nattacker having to know the used password.\n\nSee https://w1.fi/security/2019-4/eap-pwd-missing-commit-validation.txt\nfor a detailed description of the bug.\n\n# Impact:\n\nAll wpa_supplicant and hostapd versions with EAP-pwd support.\n",
+    "id": "FreeBSD-2019-0088",
+    "modified": "2019-07-30T00:00:00Z",
+    "published": "2019-04-23T00:00:00Z",
+    "references": [
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2019-9497"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2019-9498"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2019-9499"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://www.freebsd.org/security/advisories/FreeBSD-SA-19:03.wpa.asc"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "FreeBSD -- EAP-pwd missing commit validation"
+}

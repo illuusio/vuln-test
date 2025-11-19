@@ -1,0 +1,55 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "varnish"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "3.0.5"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "cite": [
+            "https://www.varnish-cache.org/lists/pipermail/varnish-announce/2013-October/000686.html"
+        ],
+        "discovery": "2013-10-30T00:00:00Z",
+        "references": {
+            "cvename": [
+                "CVE-2013-4484"
+            ]
+        },
+        "vid": "d9dbe6e8-84da-11e3-98bd-080027f2d077"
+    },
+    "details": "Varnish Cache Project reports:\n\n> If Varnish receives a certain illegal request, and the subroutine\n> \\'vcl_error{}\\' restarts the request, the varnishd worker process will\n> crash with an assert.\n>\n> The varnishd management process will restart the worker process, but\n> there will be a brief interruption of service and the cache will be\n> emptied, causing more traffic to go to the backend.\n>\n> We are releasing this advisory because restarting from vcl_error{} is\n> both fairly common and documented.\n>\n> This is purely a denial of service vulnerability, there is no risk of\n> privilege escalation.\n>\n> Workaround\n>\n> Insert this at the top of your VCL file:\n>\n>\n>             sub vcl_error {\n>                 if (obj.status == 400 || obj.status == 413) {\n>                     return(deliver);\n>                 }\n>             }\n>\n>             Or add this test at the top of your existing vcl_error{}.\n>           \n",
+    "id": "FreeBSD-2014-0010",
+    "modified": "2014-01-25T00:00:00Z",
+    "published": "2014-01-25T00:00:00Z",
+    "references": [
+        {
+            "type": "REPORT",
+            "url": "https://www.varnish-cache.org/lists/pipermail/varnish-announce/2013-October/000686.html"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2013-4484"
+        },
+        {
+            "type": "DISCUSSION",
+            "url": "https://www.varnish-cache.org/lists/pipermail/varnish-announce/2013-October/000686.html"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "varnish -- DoS vulnerability in Varnish HTTP cache"
+}

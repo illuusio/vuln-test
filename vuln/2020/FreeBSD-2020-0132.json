@@ -1,0 +1,74 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "nghttp2"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "1.41.0"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        },
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "libnghttp2"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "1.41.0"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "cite": [
+            "https://github.com/nghttp2/nghttp2/security/advisories/GHSA-q5wr-xfw9-q7xr"
+        ],
+        "discovery": "2020-06-02T00:00:00Z",
+        "references": {
+            "cvename": [
+                "CVE-2020-11080"
+            ]
+        },
+        "vid": "4bb56d2f-a5b0-11ea-a860-08002728f74c"
+    },
+    "details": "nghttp2 security advisories:\n\n> The overly large HTTP/2 SETTINGS frame payload causes denial of\n> service.\n>\n> The proof of concept attack involves a malicious client constructing a\n> SETTINGS frame with a length of 14,400 bytes (2400 individual settings\n> entries) over and over again. The attack causes the CPU to spike at\n> 100%.\n",
+    "id": "FreeBSD-2020-0132",
+    "modified": "2020-06-03T00:00:00Z",
+    "published": "2020-06-03T00:00:00Z",
+    "references": [
+        {
+            "type": "REPORT",
+            "url": "https://github.com/nghttp2/nghttp2/security/advisories/GHSA-q5wr-xfw9-q7xr"
+        },
+        {
+            "type": "WEB",
+            "url": "https://github.com/nghttp2/nghttp2/security/advisories/GHSA-q5wr-xfw9-q7xr"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2020-11080"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "nghttp2 -- DoS vulnerability"
+}

@@ -1,0 +1,118 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "samba"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "introduced": "3.*,1"
+                        },
+                        {
+                            "fixed": "3.0.5"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                },
+                {
+                    "events": [
+                        {
+                            "introduced": "3.*,1,1"
+                        },
+                        {
+                            "fixed": "3.0.5,1"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                },
+                {
+                    "events": [
+                        {
+                            "fixed": "2.2.10"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        },
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "ja-samba"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "2.2.10.j1.0"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "discovery": "2004-07-14T00:00:00Z",
+        "references": {
+            "cvename": [
+                "CVE-2004-0600",
+                "CVE-2004-0686"
+            ]
+        },
+        "vid": "2de14f7a-dad9-11d8-b59a-00061bc2ad93"
+    },
+    "details": "Evgeny Demidov discovered that the Samba server has a buffer overflow in\nthe Samba Web Administration Tool (SWAT) on decoding Base64 data during\nHTTP Basic Authentication. Versions 3.0.2 through 3.0.4 are affected.\n\nAnother buffer overflow bug has been found in the code used to support\nthe \\\"mangling method = hash\\\" smb.conf option. The default setting for\nthis parameter is \\\"mangling method = hash2\\\" and therefore not\nvulnerable. Versions between 2.2.0 through 2.2.9 and 3.0.0 through 3.0.4\nare affected.\n",
+    "id": "FreeBSD-2004-0122",
+    "modified": "2008-09-26T00:00:00Z",
+    "published": "2004-07-21T00:00:00Z",
+    "references": [
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2004-0600"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2004-0686"
+        },
+        {
+            "type": "DISCUSSION",
+            "url": "http://www.securityfocus.com/archive/1/369698"
+        },
+        {
+            "type": "DISCUSSION",
+            "url": "http://www.securityfocus.com/archive/1/369706"
+        },
+        {
+            "type": "WEB",
+            "url": "http://www.samba.org/samba/whatsnew/samba-3.0.5.html"
+        },
+        {
+            "type": "WEB",
+            "url": "http://www.samba.org/samba/whatsnew/samba-2.2.10.html"
+        },
+        {
+            "type": "WEB",
+            "url": "http://www.osvdb.org/8190"
+        },
+        {
+            "type": "WEB",
+            "url": "http://www.osvdb.org/8191"
+        },
+        {
+            "type": "WEB",
+            "url": "http://secunia.com/advisories/12130"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "Multiple Potential Buffer Overruns in Samba"
+}

@@ -1,0 +1,65 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "drupal5"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "5.22"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        },
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "drupal6"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "6.16"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "cite": [
+            "http://drupal.org/node/731710"
+        ],
+        "discovery": "2010-03-03T00:00:00Z",
+        "vid": "b3531fe1-2b03-11df-b6db-00248c9b4be7"
+    },
+    "details": "Drupal Team reports:\n\n> A user-supplied value is directly output during installation allowing\n> a malicious user to craft a URL and perform a cross-site scripting\n> attack. The exploit can only be conducted on sites not yet installed.\n>\n> The API function drupal_goto() is susceptible to a phishing attack. An\n> attacker could formulate a redirect in a way that gets the Drupal site\n> to send the user to an arbitrarily provided URL. No user submitted\n> data will be sent to that URL.\n>\n> Locale module and dependent contributed modules do not sanitize the\n> display of language codes, native and English language names properly.\n> While these usually come from a preselected list, arbitrary\n> administrator input is allowed. This vulnerability is mitigated by the\n> fact that the attacker must have a role with the \\'administer\n> languages\\' permission.\n>\n> Under certain circumstances, a user with an open session that is\n> blocked can maintain his/her session on the Drupal site, despite being\n> blocked.\n",
+    "id": "FreeBSD-2010-0019",
+    "modified": "2010-03-08T00:00:00Z",
+    "published": "2010-03-08T00:00:00Z",
+    "references": [
+        {
+            "type": "REPORT",
+            "url": "http://drupal.org/node/731710"
+        },
+        {
+            "type": "WEB",
+            "url": "http://drupal.org/node/731710"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "drupal -- multiple vulnerabilities"
+}

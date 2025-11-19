@@ -1,0 +1,55 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "rubygem-json"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "2.3.0"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "cite": [
+            "https://www.ruby-lang.org/en/news/2020/03/19/json-dos-cve-2020-10663/"
+        ],
+        "discovery": "2020-03-19T00:00:00Z",
+        "references": {
+            "cvename": [
+                "CVE-2020-10663"
+            ]
+        },
+        "vid": "40194e1c-6d89-11ea-8082-80ee73419af3"
+    },
+    "details": "> When parsing certain JSON documents, the json gem (including the one\n> bundled with Ruby) can be coerced into creating arbitrary objects in\n> the target system.\n>\n> This is the same issue as CVE-2013-0269. The previous fix was\n> incomplete, which addressed JSON.parse(user_input), but didn't address\n> some other styles of JSON parsing including JSON(user_input) and\n> JSON.parse(user_input, nil).\n>\n> See CVE-2013-0269 in detail. Note that the issue was exploitable to\n> cause a Denial of Service by creating many garbage-uncollectable\n> Symbol objects, but this kind of attack is no longer valid because\n> Symbol objects are now garbage-collectable. However, creating\n> arbitrary bjects may cause severe security consequences depending upon\n> the application code.\n>\n> Please update the json gem to version 2.3.0 or later. You can use gem\n> update json to update it. If you are using bundler, please add gem\n> \\\"json\\\", \\\"\\>= 2.3.0\\\" to your Gemfile.\n",
+    "id": "FreeBSD-2020-0061",
+    "modified": "2020-04-02T00:00:00Z",
+    "published": "2020-03-26T00:00:00Z",
+    "references": [
+        {
+            "type": "REPORT",
+            "url": "https://www.ruby-lang.org/en/news/2020/03/19/json-dos-cve-2020-10663/"
+        },
+        {
+            "type": "WEB",
+            "url": "https://www.ruby-lang.org/en/news/2020/03/19/json-dos-cve-2020-10663/"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2020-10663"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "rubygem-json -- Unsafe Objection Creation Vulnerability in JSON (Additional fix)"
+}

@@ -1,0 +1,55 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "xen-tools"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "introduced": "3.3"
+                        },
+                        {
+                            "fixed": "4.5.0_6"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "cite": [
+            "http://xenbits.xen.org/xsa/advisory-126.html"
+        ],
+        "discovery": "2015-03-31T00:00:00Z",
+        "references": {
+            "cvename": [
+                "CVE-2015-2756"
+            ]
+        },
+        "vid": "79f401cd-27e6-11e5-a4a5-002590263bf5"
+    },
+    "details": "The Xen Project reports:\n\n> HVM guests are currently permitted to modify the memory and I/O decode\n> bits in the PCI command register of devices passed through to them.\n> Unless the device is an SR-IOV virtual function, after disabling one\n> or both of these bits subsequent accesses to the MMIO or I/O port\n> ranges would - on PCI Express devices - lead to Unsupported Request\n> responses. The treatment of such errors is platform specific.\n>\n> Furthermore (at least) devices under control of the Linux pciback\n> driver in the host are handed to guests with the aforementioned bits\n> turned off. This means that such accesses can similarly lead to\n> Unsupported Request responses until these flags are set as needed by\n> the guest.\n>\n> In the event that the platform surfaces aforementioned UR responses as\n> Non-Maskable Interrupts, and either the OS is configured to treat NMIs\n> as fatal or (e.g. via ACPI\\'s APEI) the platform tells the OS to treat\n> these errors as fatal, the host would crash, leading to a Denial of\n> Service.\n",
+    "id": "FreeBSD-2015-0189",
+    "modified": "2015-07-11T00:00:00Z",
+    "published": "2015-07-11T00:00:00Z",
+    "references": [
+        {
+            "type": "REPORT",
+            "url": "http://xenbits.xen.org/xsa/advisory-126.html"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2015-2756"
+        },
+        {
+            "type": "WEB",
+            "url": "http://xenbits.xen.org/xsa/advisory-126.html"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "xen-tools -- Unmediated PCI command register access in qemu"
+}

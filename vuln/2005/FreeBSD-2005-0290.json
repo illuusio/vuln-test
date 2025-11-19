@@ -1,0 +1,59 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "snort"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "introduced": "2.4.0"
+                        },
+                        {
+                            "fixed": "2.4.3"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "cite": [
+            "http://www.snort.org/pub-bin/snortnews.cgi#99"
+        ],
+        "discovery": "2005-10-18T00:00:00Z",
+        "references": {
+            "certvu": [
+                "175500"
+            ]
+        },
+        "vid": "97d45e95-3ffc-11da-a263-0001020eed82"
+    },
+    "details": "Jennifer Steffens reports:\n\n> The Back Orifice preprocessor contains a stack-based buffer overflow.\n> This vulnerability could be leveraged by an attacker to execute code\n> remotely on a Snort sensor where the Back Orifice preprocessor is\n> enabled. However, there are a number of factors that make remote code\n> execution difficult to achieve across different builds of Snort on\n> different platforms, even on the same platform with different compiler\n> versions, and it is more likely that an attacker could use the\n> vulnerability as a denial of service attack.\n>\n> The Back Orifice preprocessor can be disabled by commenting out the\n> line \\\"preprocessor bo\\\" in snort.conf. This can be done in any text\n> editor using the following procedure:\n>\n> 1.  Locate the line \\\"preprocessor bo\\\"\n> 2.  Comment out this line by preceding it with a hash (#). The new\n>     line will look like \\\"#preprocessor bo\\\"\n> 3.  Save the file\n> 4.  Restart snort\n",
+    "id": "FreeBSD-2005-0290",
+    "modified": "2005-10-18T00:00:00Z",
+    "published": "2005-10-18T00:00:00Z",
+    "references": [
+        {
+            "type": "REPORT",
+            "url": "http://www.snort.org/pub-bin/snortnews.cgi#99"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://www.kb.cert.org/vuls/id/175500"
+        },
+        {
+            "type": "WEB",
+            "url": "http://www.snort.org/pub-bin/snortnews.cgi#99"
+        },
+        {
+            "type": "WEB",
+            "url": "http://xforce.iss.net/xforce/alerts/id/207"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "snort -- Back Orifice preprocessor buffer overflow vulnerability"
+}

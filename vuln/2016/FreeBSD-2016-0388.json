@@ -1,0 +1,88 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "FreeBSD"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "introduced": "11.0"
+                        },
+                        {
+                            "fixed": "11.0_1"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                },
+                {
+                    "events": [
+                        {
+                            "introduced": "10.3"
+                        },
+                        {
+                            "fixed": "10.3_10"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                },
+                {
+                    "events": [
+                        {
+                            "introduced": "10.2"
+                        },
+                        {
+                            "fixed": "10.2_23"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                },
+                {
+                    "events": [
+                        {
+                            "introduced": "10.1"
+                        },
+                        {
+                            "fixed": "10.1_40"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                },
+                {
+                    "events": [
+                        {
+                            "introduced": "9.3"
+                        },
+                        {
+                            "fixed": "9.3_48"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "discovery": "2016-10-10T00:00:00Z",
+        "references": {
+            "freebsdsa": [
+                "SA-16:29.bspatch"
+            ]
+        },
+        "vid": "ce808022-8ee6-11e6-a590-14dae9d210b8"
+    },
+    "details": "# Problem Description:\n\nThe implementation of bspatch is susceptible to integer overflows with\ncarefully crafted input, potentially allowing an attacker who can\ncontrol the patch file to write at arbitrary locations in the heap. This\nissue was partially addressed in FreeBSD-SA-16:25.bspatch, but some\npossible integer overflows remained.\n\n# Impact:\n\nAn attacker who can control the patch file can cause a crash or run\narbitrary code under the credentials of the user who runs bspatch, in\nmany cases, root.\n",
+    "id": "FreeBSD-2016-0388",
+    "modified": "2016-10-10T00:00:00Z",
+    "published": "2016-10-10T00:00:00Z",
+    "references": [
+        {
+            "type": "ADVISORY",
+            "url": "https://www.freebsd.org/security/advisories/FreeBSD-SA-16:29.bspatch.asc"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "FreeBSD -- Heap overflow vulnerability in bspatch"
+}

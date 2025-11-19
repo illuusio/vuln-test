@@ -1,0 +1,102 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "FreeBSD"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "introduced": "7.4"
+                        },
+                        {
+                            "fixed": "7.4_8"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                },
+                {
+                    "events": [
+                        {
+                            "introduced": "8.1"
+                        },
+                        {
+                            "fixed": "8.1_10"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                },
+                {
+                    "events": [
+                        {
+                            "introduced": "8.2"
+                        },
+                        {
+                            "fixed": "8.2_8"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                },
+                {
+                    "events": [
+                        {
+                            "introduced": "8.3"
+                        },
+                        {
+                            "fixed": "8.3_2"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                },
+                {
+                    "events": [
+                        {
+                            "introduced": "9.0"
+                        },
+                        {
+                            "fixed": "9.0_2"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "cite": [
+            "http://security.freebsd.org/advisories/FreeBSD-SA-12:02.crypt.asc"
+        ],
+        "discovery": "2012-05-30T00:00:00Z",
+        "references": {
+            "cvename": [
+                "CVE-2012-2143"
+            ],
+            "freebsdsa": [
+                "SA-12:02.crypt"
+            ]
+        },
+        "vid": "185ff22e-c066-11e1-b5e0-000c299b62e1"
+    },
+    "details": "Problem description:\n\n> There is a programming error in the DES implementation used in crypt()\n> when handling input which contains characters that cannot be\n> represented with 7-bit ASCII.\n>\n> When the input contains characters with only the most significant bit\n> set (0x80), that character and all characters after it will be\n> ignored.\n",
+    "id": "FreeBSD-2012-0115",
+    "modified": "2012-06-27T00:00:00Z",
+    "published": "2012-06-27T00:00:00Z",
+    "references": [
+        {
+            "type": "REPORT",
+            "url": "http://security.freebsd.org/advisories/FreeBSD-SA-12:02.crypt.asc"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://www.freebsd.org/security/advisories/FreeBSD-SA-12:02.crypt.asc"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2012-2143"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "FreeBSD -- Incorrect crypt() hashing"
+}

@@ -1,0 +1,87 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "powerdns-recursor"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "introduced": "4.3.0"
+                        },
+                        {
+                            "fixed": "4.3.1"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                },
+                {
+                    "events": [
+                        {
+                            "introduced": "4.2.0"
+                        },
+                        {
+                            "fixed": "4.2.2"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                },
+                {
+                    "events": [
+                        {
+                            "introduced": "4.1.0"
+                        },
+                        {
+                            "fixed": "4.1.16"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "cite": [
+            "https://doc.powerdns.com/recursor/changelog/4.3.html#change-4.3.1"
+        ],
+        "discovery": "2020-05-19T00:00:00Z",
+        "references": {
+            "cvename": [
+                "CVE-2020-10995",
+                "CVE-2020-12244",
+                "CVE-2020-10030"
+            ]
+        },
+        "vid": "f9c5a410-9b4e-11ea-ac3f-6805ca2fa271"
+    },
+    "details": "PowerDNS Team reports:\n\n> CVE-2020-10995: An issue in the DNS protocol has been found that allow\n> malicious parties to use recursive DNS services to attack third party\n> authoritative name servers. The attack uses a crafted reply by an\n> authoritative name server to amplify the resulting traffic between the\n> recursive and other authoritative name servers. Both types of service\n> can suffer degraded performance as an effect.\n>\n> CVE-2020-12244: An issue has been found in PowerDNS Recursor 4.1.0\n> through 4.3.0 where records in the answer section of a NXDOMAIN\n> response lacking an SOA were not properly validated in\n> SyncRes::processAnswer. This would allow an attacker in position of\n> man-in-the-middle to send a NXDOMAIN answer for a name that does\n> exist, bypassing DNSSEC validation.\n>\n> CVE-2020-10030: An issue has been found in PowerDNS Authoritative\n> Server allowing an attacker with enough privileges to change the\n> system\\'s hostname to cause disclosure of uninitialized memory content\n> via a stack-based out-of-bounds read. It only occurs on systems where\n> gethostname() does not null-terminate the returned string if the\n> hostname is larger than the supplied buffer. Linux systems are not\n> affected because the buffer is always large enough. OpenBSD systems\n> are not affected because the returned hostname is always\n> null-terminated. Under some conditions this issue can lead to the\n> writing of one null-byte out-of-bounds on the stack, causing a denial\n> of service or possibly arbitrary code execution.\n",
+    "id": "FreeBSD-2020-0125",
+    "modified": "2020-05-29T00:00:00Z",
+    "published": "2020-05-26T00:00:00Z",
+    "references": [
+        {
+            "type": "REPORT",
+            "url": "https://doc.powerdns.com/recursor/changelog/4.3.html#change-4.3.1"
+        },
+        {
+            "type": "WEB",
+            "url": "https://doc.powerdns.com/recursor/security-advisories/index.html"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2020-10995"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2020-12244"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2020-10030"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "powerdns-recursor -- multiple vulnerabilities"
+}

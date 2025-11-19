@@ -1,0 +1,62 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:kernel",
+                "name": "FreeBSD-kernel"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "introduced": "12.1"
+                        },
+                        {
+                            "fixed": "12.1_3"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                },
+                {
+                    "events": [
+                        {
+                            "introduced": "11.3"
+                        },
+                        {
+                            "fixed": "11.3_7"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "discovery": "2020-03-19T00:00:00Z",
+        "references": {
+            "cvename": [
+                "CVE-2020-7453"
+            ],
+            "freebsdsa": [
+                "SA-20:08.jail"
+            ]
+        },
+        "vid": "6b90acba-6a0a-11ea-92ab-00163e433440"
+    },
+    "details": "# Problem Description:\n\nA missing NUL-termination check for the jail_set(2) configration option\n\\\"osrelease\\\" may return more bytes when reading the jail configuration\nback with jail_get(2) than were originally set.\n\n# Impact:\n\nFor jails with a non-default setting of children.max \\> 0 (\\\"nested\njails\\\") a superuser inside a jail can create a jail and may be able to\nread and take advantage of exposed kernel memory.\n",
+    "id": "FreeBSD-2020-0056",
+    "modified": "2020-03-19T00:00:00Z",
+    "published": "2020-03-19T00:00:00Z",
+    "references": [
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2020-7453"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://www.freebsd.org/security/advisories/FreeBSD-SA-20:08.jail.asc"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "FreeBSD -- Kernel memory disclosure with nested jails"
+}

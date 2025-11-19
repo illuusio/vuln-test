@@ -1,0 +1,112 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "mongodb44"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "4.4.29"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        },
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "mongodb50"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "5.0.25"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        },
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "mongodb60"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "6.0.14"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        },
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "mongodb70"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "7.0.6"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "cite": [
+            "https://jira.mongodb.org/browse/SERVER-72839"
+        ],
+        "discovery": "2024-03-07T00:00:00Z",
+        "references": {
+            "cvename": [
+                "CVE-2024-1351"
+            ]
+        },
+        "vid": "a8448963-e6f5-11ee-a784-dca632daf43b"
+    },
+    "details": "MongoDB, Inc. reports:\n\n> A security vulnerability was found where a server process running\n> MongoDB 3.2.6 or later will allow incoming connections to skip peer\n> certificate validation if the server process was started with TLS\n> enabled (net.tls.mode set to allowTLS, preferTLS, or requireTLS) and\n> without a net.tls.CAFile configured (CVE-2024-1351).\n",
+    "id": "FreeBSD-2024-0070",
+    "modified": "2024-03-20T00:00:00Z",
+    "published": "2024-03-20T00:00:00Z",
+    "references": [
+        {
+            "type": "REPORT",
+            "url": "https://jira.mongodb.org/browse/SERVER-72839"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2024-1351"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://nvd.nist.gov/vuln/detail/CVE-2024-1351"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "databases/mongodb* -- Improper Certificate Validation"
+}

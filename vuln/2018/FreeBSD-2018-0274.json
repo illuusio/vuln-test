@@ -1,0 +1,84 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "powerdns-recursor"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "4.1.7"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        },
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "powerdns-recursor40"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "4.0.9"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "cite": [
+            "https://doc.powerdns.com/recursor/changelog/4.1.html"
+        ],
+        "discovery": "2018-11-06T00:00:00Z",
+        "references": {
+            "cvename": [
+                "CVE-2018-10851",
+                "CVE-2018-14626",
+                "CVE-2018-14644"
+            ]
+        },
+        "vid": "e9aa0e4c-ea8b-11e8-a5b7-00e04c1ea73d"
+    },
+    "details": "powerdns Team reports:\n\n> CVE-2018-10851: An issue has been found in PowerDNS Recursor allowing\n> a malicious authoritative server to cause a memory leak by sending\n> specially crafted records. The issue is due to the fact that some\n> memory is allocated before the parsing and is not always properly\n> released if the record is malformed. When the PowerDNS Recursor is run\n> inside a supervisor like supervisord or systemd, an out-of-memory\n> crash will lead to an automatic restart, limiting the impact to a\n> somewhat degraded service.\n>\n> CVE-2018-14626: An issue has been found in PowerDNS Recursor allowing\n> a remote user to craft a DNS query that will cause an answer without\n> DNSSEC records to be inserted into the packet cache and be returned to\n> clients asking for DNSSEC records, thus hiding the presence of DNSSEC\n> signatures for a specific qname and qtype. For a DNSSEC-signed domain,\n> this means that clients performing DNSSEC validation by themselves\n> might consider the answer to be bogus until it expires from the packet\n> cache, leading to a denial of service.\n>\n> CVE-2018-14644: An issue has been found in PowerDNS Recursor where a\n> remote attacker sending a DNS query for a meta-type like OPT can lead\n> to a zone being wrongly cached as failing DNSSEC validation. It only\n> arises if the parent zone is signed, and all the authoritative servers\n> for that parent zone answer with FORMERR to a query for at least one\n> of the meta-types. As a result, subsequent queries from clients\n> requesting DNSSEC validation will be answered with a ServFail.\n",
+    "id": "FreeBSD-2018-0274",
+    "modified": "2018-11-19T00:00:00Z",
+    "published": "2018-11-17T00:00:00Z",
+    "references": [
+        {
+            "type": "REPORT",
+            "url": "https://doc.powerdns.com/recursor/changelog/4.1.html"
+        },
+        {
+            "type": "WEB",
+            "url": "https://doc.powerdns.com/recursor/changelog/4.1.html"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2018-10851"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2018-14626"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2018-14644"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "powerdns-recursor -- Multiple vulnerabilities"
+}

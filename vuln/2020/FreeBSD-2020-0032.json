@@ -1,0 +1,73 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:kernel",
+                "name": "FreeBSD-kernel"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "introduced": "12.1"
+                        },
+                        {
+                            "fixed": "12.1_2"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                },
+                {
+                    "events": [
+                        {
+                            "introduced": "12.0"
+                        },
+                        {
+                            "fixed": "12.0_13"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                },
+                {
+                    "events": [
+                        {
+                            "introduced": "11.3"
+                        },
+                        {
+                            "fixed": "11.3_6"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "discovery": "2020-01-28T00:00:00Z",
+        "references": {
+            "cvename": [
+                "CVE-2019-15875"
+            ],
+            "freebsdsa": [
+                "SA-20:03.thrmisc"
+            ]
+        },
+        "vid": "6025d173-4279-11ea-b184-f8b156ac3ff9"
+    },
+    "details": "# Problem Description:\n\nDue to incorrect initialization of a stack data structure, up to 20\nbytes of kernel data stored previously stored on the stack will be\nexposed to a crashing user process.\n\n# Impact:\n\nSensitive kernel data may be disclosed.\n",
+    "id": "FreeBSD-2020-0032",
+    "modified": "2020-01-29T00:00:00Z",
+    "published": "2020-01-29T00:00:00Z",
+    "references": [
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2019-15875"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://www.freebsd.org/security/advisories/FreeBSD-SA-20:03.thrmisc.asc"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "FreeBSD -- kernel stack data disclosure"
+}

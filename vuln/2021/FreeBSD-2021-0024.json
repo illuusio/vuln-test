@@ -1,0 +1,55 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "sudo"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "1.9.5p2"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "cite": [
+            "https://www.sudo.ws/stable.html#1.9.5p2"
+        ],
+        "discovery": "2021-01-26T00:00:00Z",
+        "references": {
+            "cvename": [
+                "CVE-2021-3156"
+            ]
+        },
+        "vid": "f3cf4b33-6013-11eb-9a0e-206a8a720317"
+    },
+    "details": "Todd C. Miller reports:\n\n> When invoked as sudoedit, the same set of command line options are now\n> accepted as for sudo -e. The -H and -P options are now rejected for\n> sudoedit and sudo -e which matches the sudo 1.7 behavior. This is part\n> of the fix for CVE-2021-3156.\n>\n> Fixed a potential buffer overflow when unescaping backslashes in the\n> command\\'s arguments. Normally, sudo escapes special characters when\n> running a command via a shell (sudo -s or sudo -i). However, it was\n> also possible to run sudoedit with the -s or -i flags in which case no\n> escaping had actually been done, making a buffer overflow possible.\n> This fixes CVE-2021-3156.\n",
+    "id": "FreeBSD-2021-0024",
+    "modified": "2021-01-26T00:00:00Z",
+    "published": "2021-01-26T00:00:00Z",
+    "references": [
+        {
+            "type": "REPORT",
+            "url": "https://www.sudo.ws/stable.html#1.9.5p2"
+        },
+        {
+            "type": "WEB",
+            "url": "https://www.sudo.ws/stable.html#1.9.5p2"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2021-3156"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "sudo -- Multiple vulnerabilities"
+}

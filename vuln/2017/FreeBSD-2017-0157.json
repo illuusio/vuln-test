@@ -1,0 +1,60 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "apache24"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "2.4.27"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "cite": [
+            "https://httpd.apache.org/security/vulnerabilities_24.html"
+        ],
+        "discovery": "2017-07-11T00:00:00Z",
+        "references": {
+            "cvename": [
+                "CVE-2017-9789",
+                "CVE-2017-9788"
+            ]
+        },
+        "vid": "457ce015-67fa-11e7-867f-b499baebfeaf"
+    },
+    "details": "The Apache httpd project reports:\n\n> important: Read after free in mod_http2 (CVE-2017-9789)\\\n> When under stress, closing many connections, the HTTP/2 handling code\n> would sometimes access memory after it has been freed, resulting in\n> potentially erratic behaviour.\n>\n> important: Uninitialized memory reflection in mod_auth_digest\n> (CVE-2017-9788)\\\n> The value placeholder in \\[Proxy-\\]Authorization headers of type\n> \\'Digest\\' was not initialized or reset before or between successive\n> key=value assignments. by mod_auth_digest.\\\n> Providing an initial key with no \\'=\\' assignment could reflect the\n> stale value of uninitialized pool memory used by the prior request,\n> leading to leakage of potentially confidential information, and a\n> segfault.\n",
+    "id": "FreeBSD-2017-0157",
+    "modified": "2017-07-13T00:00:00Z",
+    "published": "2017-07-13T00:00:00Z",
+    "references": [
+        {
+            "type": "REPORT",
+            "url": "https://httpd.apache.org/security/vulnerabilities_24.html"
+        },
+        {
+            "type": "WEB",
+            "url": "https://httpd.apache.org/security/vulnerabilities_24.html"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2017-9789"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2017-9788"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "Apache httpd -- multiple vulnerabilities"
+}

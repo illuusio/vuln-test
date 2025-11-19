@@ -1,0 +1,55 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "dnsdist"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "1.9.4"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "cite": [
+            "https://dnsdist.org/security-advisories/index.html"
+        ],
+        "discovery": "2024-05-13T00:00:00Z",
+        "references": {
+            "cvename": [
+                "CVE-2024-25581"
+            ]
+        },
+        "vid": "f2d8342f-1134-11ef-8791-6805ca2fa271"
+    },
+    "details": "PowerDNS Security Advisory reports:\n\n> When incoming DNS over HTTPS support is enabled using the nghttp2\n> provider, and queries are routed to a tcp-only or DNS over TLS\n> backend, an attacker can trigger an assertion failure in DNSdist by\n> sending a request for a zone transfer (AXFR or IXFR) over DNS over\n> HTTPS, causing the process to stop and thus leading to a Denial of\n> Service. DNS over HTTPS is not enabled by default, and backends are\n> using plain DNS (Do53) by default.\n",
+    "id": "FreeBSD-2024-0122",
+    "modified": "2024-05-13T00:00:00Z",
+    "published": "2024-05-13T00:00:00Z",
+    "references": [
+        {
+            "type": "REPORT",
+            "url": "https://dnsdist.org/security-advisories/index.html"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2024-25581"
+        },
+        {
+            "type": "WEB",
+            "url": "https://dnsdist.org/security-advisories/powerdns-advisory-for-dnsdist-2024-03.html"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "dnsdist -- Transfer requests received over DoH can lead to a denial of service"
+}

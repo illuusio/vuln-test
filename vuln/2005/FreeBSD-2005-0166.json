@@ -1,0 +1,57 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "yamt"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "0.5_2"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "discovery": "2005-01-20T00:00:00Z",
+        "references": {
+            "cvename": [
+                "CVE-2005-1846",
+                "CVE-2005-1847"
+            ]
+        },
+        "vid": "99b5cfa5-d3d2-11d9-8ffb-00061bc2ad93"
+    },
+    "details": "Stanislav Brabec discovered errors in yamt\\'s path name handling that\nlead to buffer overflows and directory traversal issues. When processing\na file with a maliciously crafted ID3 tag, yamt might overwrite\narbitrary files or possibly execute arbitrary code.\n\nThe SuSE package ChangeLog contains:\n\n> - Several security fixes (#49337):\n> - directory traversal in rename\n> - directory traversal in sort\n> - buffer overflow in sort\n> - buffer overflow in rename\n",
+    "id": "FreeBSD-2005-0166",
+    "modified": "2005-06-03T00:00:00Z",
+    "published": "2005-06-03T00:00:00Z",
+    "references": [
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2005-1846"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2005-1847"
+        },
+        {
+            "type": "WEB",
+            "url": "http://rpmfind.net/linux/RPM/suse/updates/8.2/i386/rpm/i586/yamt-0.5-1277.i586.html"
+        },
+        {
+            "type": "WEB",
+            "url": "ftp://ftp.suse.com/pub/suse/i386/update/8.2/rpm/src/yamt-0.5-1277.src.rpm"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "yamt -- buffer overflow and directory traversal issues"
+}

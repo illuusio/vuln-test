@@ -1,0 +1,170 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "grafana"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "9.5.16"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                },
+                {
+                    "events": [
+                        {
+                            "introduced": "10.0.0"
+                        },
+                        {
+                            "fixed": "10.0.11"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                },
+                {
+                    "events": [
+                        {
+                            "introduced": "10.1.0"
+                        },
+                        {
+                            "fixed": "10.1.7"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                },
+                {
+                    "events": [
+                        {
+                            "introduced": "10.2.0"
+                        },
+                        {
+                            "fixed": "10.2.4"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                },
+                {
+                    "events": [
+                        {
+                            "introduced": "10.3.0"
+                        },
+                        {
+                            "fixed": "10.3.3"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        },
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "grafana9"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "9.5.16"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        },
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "grafana10"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "10.0.11"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                },
+                {
+                    "events": [
+                        {
+                            "introduced": "10.1.0"
+                        },
+                        {
+                            "fixed": "10.1.7"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                },
+                {
+                    "events": [
+                        {
+                            "introduced": "10.2.0"
+                        },
+                        {
+                            "fixed": "10.2.4"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                },
+                {
+                    "events": [
+                        {
+                            "introduced": "10.3.0"
+                        },
+                        {
+                            "fixed": "10.3.3"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "cite": [
+            "https://grafana.com/blog/2024/02/14/grafana-security-release-medium-severity-security-fix-for-cve-2023-6152/"
+        ],
+        "discovery": "2023-11-10T00:00:00Z",
+        "references": {
+            "cvename": [
+                "CVE-2023-6152"
+            ]
+        },
+        "vid": "6a851dc0-cfd2-11ee-ac09-6c3be5272acd"
+    },
+    "details": "Grafana Labs reports:\n\n> The vulnerability impacts instances where [Grafana basic\n> authentication](https://grafana.com/docs/grafana/latest/setup-grafana/configure-security/configure-authentication/grafana/)\n> is enabled.\n>\n> Grafana has a\n> [verify_email_enabled](https://grafana.com/docs/grafana/latest/setup-grafana/configure-grafana/#verify_email_enabled)\n> configuration option. When this option is enabled, users are required\n> to confirm their email addresses before the sign-up process is\n> complete. However, the email is only checked at the time of the\n> sign-up. No further verification is carried out if a user's email\n> address is updated after the initial sign-up. Moreover, Grafana allows\n> using an email address as the user's login name, and no verification\n> is ever carried out for this email address.\n>\n> This means that even if the\n> [verify_email_enabled](https://grafana.com/docs/grafana/latest/setup-grafana/configure-grafana/#verify_email_enabled)\n> configuration option is enabled, users can use unverified email\n> addresses to log into Grafana if the email address has been changed\n> after the sign up, or if an email address is set as the login name.\n>\n> The CVSS score for this vulnerability is \\[5.4 Medium\\] (CVSS).\n",
+    "id": "FreeBSD-2024-0050",
+    "modified": "2024-02-20T00:00:00Z",
+    "published": "2024-02-20T00:00:00Z",
+    "references": [
+        {
+            "type": "REPORT",
+            "url": "https://grafana.com/blog/2024/02/14/grafana-security-release-medium-severity-security-fix-for-cve-2023-6152/"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2023-6152"
+        },
+        {
+            "type": "WEB",
+            "url": "https://grafana.com/security/security-advisories/cve-2023-6152/"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "Grafana -- Email verification is not required after email change"
+}

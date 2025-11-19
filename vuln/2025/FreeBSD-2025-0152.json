@@ -1,0 +1,153 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "grafana"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "introduced": "8.0.0"
+                        },
+                        {
+                            "fixed": "10.4.18+security-01"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                },
+                {
+                    "events": [
+                        {
+                            "introduced": "11.0.0"
+                        },
+                        {
+                            "fixed": "11.2.9+security-01"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                },
+                {
+                    "events": [
+                        {
+                            "introduced": "11.3.0"
+                        },
+                        {
+                            "fixed": "11.3.6+security-01"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                },
+                {
+                    "events": [
+                        {
+                            "introduced": "11.4.0"
+                        },
+                        {
+                            "fixed": "11.4.4+security-01"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                },
+                {
+                    "events": [
+                        {
+                            "introduced": "11.5.0"
+                        },
+                        {
+                            "fixed": "11.5.4+security-01"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                },
+                {
+                    "events": [
+                        {
+                            "introduced": "11.6.0"
+                        },
+                        {
+                            "fixed": "11.6.1+security-01"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                },
+                {
+                    "events": [
+                        {
+                            "introduced": "12.0.0"
+                        },
+                        {
+                            "fixed": "12.0.0+security-01"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        },
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "grafana8"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "introduced": "8.0.0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        },
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "grafana9"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "introduced": "9.0.0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "cite": [
+            "https://grafana.com/security/security-advisories/cve-2025-4123/"
+        ],
+        "discovery": "2025-04-26T00:00:00Z",
+        "references": {
+            "cvename": [
+                "CVE-2025-4123"
+            ]
+        },
+        "vid": "45eb98d6-3b13-11f0-97f7-b42e991fc52e"
+    },
+    "details": "security@grafana.com reports:\n\n> A cross-site scripting (XSS) vulnerability exists in Grafana caused by\n> combining a client path traversal and open redirect. This allows\n> attackers to redirect users to a website that hosts a frontend plugin\n> that will execute arbitrary JavaScript. This vulnerability does not\n> require editor permissions and if anonymous access is enabled, the XSS\n> will work. If the Grafana Image Renderer plugin is installed, it is\n> possible to exploit the open redirect to achieve a full read SSRF. The\n> default Content-Security-Policy (CSP) in Grafana will block the XSS\n> though the \\`connect-src\\` directive.\n",
+    "id": "FreeBSD-2025-0152",
+    "modified": "2025-05-27T00:00:00Z",
+    "published": "2025-05-27T00:00:00Z",
+    "references": [
+        {
+            "type": "REPORT",
+            "url": "https://grafana.com/security/security-advisories/cve-2025-4123/"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2025-4123"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://nvd.nist.gov/vuln/detail/CVE-2025-4123"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "grafana -- XSS vulnerability"
+}

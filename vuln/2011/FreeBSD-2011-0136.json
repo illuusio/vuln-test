@@ -1,0 +1,83 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "kdelibs"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "introduced": "4.0.*"
+                        },
+                        {
+                            "fixed": "4.7.2"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        },
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "rekonq"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "0.8.0"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "cite": [
+            "http://www.kde.org/info/security/advisory-20111003-1.txt"
+        ],
+        "discovery": "2011-10-03T00:00:00Z",
+        "references": {
+            "cvename": [
+                "CVE-2011-3365",
+                "CVE-2011-3366"
+            ]
+        },
+        "vid": "6d21a287-fce0-11e0-a828-00235a5f2c9a"
+    },
+    "details": "KDE Security Advisory reports:\n\n> The default rendering type for a QLabel is QLabel::AutoText, which\n> uses heuristics to determine whether to render the given content as\n> plain text or rich text. KSSL and Rekonq did not properly force its\n> QLabels to use QLabel::PlainText. As a result, if given a certificate\n> containing rich text in its fields, they would render the rich text.\n> Specifically, a certificate containing a common name (CN) that has a\n> table element will cause the second line of the table to be displayed.\n> This can allow spoofing of the certificate\\'s common name.\n",
+    "id": "FreeBSD-2011-0136",
+    "modified": "2011-10-23T00:00:00Z",
+    "published": "2011-10-23T00:00:00Z",
+    "references": [
+        {
+            "type": "REPORT",
+            "url": "http://www.kde.org/info/security/advisory-20111003-1.txt"
+        },
+        {
+            "type": "WEB",
+            "url": "http://www.kde.org/info/security/advisory-20111003-1.txt"
+        },
+        {
+            "type": "WEB",
+            "url": "http://www.nth-dimension.org.uk/pub/NDSA20111003.txt.asc"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2011-3365"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2011-3366"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "kdelibs4, rekonq -- input validation failure"
+}

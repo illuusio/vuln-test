@@ -1,0 +1,65 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "libXpm"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "3.5.15"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "cite": [
+            "https://lists.x.org/archives/xorg-announce/2023-January/003312.html"
+        ],
+        "discovery": "2023-01-17T00:00:00Z",
+        "references": {
+            "cvename": [
+                "CVE-2022-46285",
+                "CVE-2022-44617",
+                "CVE-2022-4883"
+            ]
+        },
+        "vid": "38f213b6-8f3d-4067-91ef-bf14de7ba518"
+    },
+    "details": "The X.Org project reports:\n\n> 1.  CVE-2022-46285: Infinite loop on unclosed comments\n>\n>     When reading XPM images from a file with libXpm 3.5.14 or older,\n>     if a comment in the file is not closed (i.e. a C-style comment\n>     starts with \\\"/\\*\\\" and is missing the closing \\\"\\*/\\\"), the\n>     ParseComment() function will loop forever calling getc() to try to\n>     read the rest of the comment, failing to notice that it has\n>     returned EOF, which may cause a denial of service to the calling\n>     program.\n>\n>     This issue was found by Marco Ivaldi of the Humanativa Group\\'s HN\n>     Security team.\n>\n>     The fix is provided in\n>     https://gitlab.freedesktop.org/xorg/lib/libxpm/-/commit/a3a7c6dcc3b629d7650148\n>\n> 2.  CVE-2022-44617: Runaway loop on width of 0 and enormous height\n>\n>     When reading XPM images from a file with libXpm 3.5.14 or older,\n>     if a image has a width of 0 and a very large height, the\n>     ParsePixels() function will loop over the entire height calling\n>     getc() and ungetc() repeatedly, or in some circumstances, may loop\n>     seemingly forever, which may cause a denial of service to the\n>     calling program when given a small crafted XPM file to parse.\n>\n>     This issue was found by Martin Ettl.\n>\n>     The fix is provided in\n>     https://gitlab.freedesktop.org/xorg/lib/libxpm/-/commit/f80fa6ae47ad4a5beacb28\n>     and\n>     https://gitlab.freedesktop.org/xorg/lib/libxpm/-/commit/c5ab17bcc34914c0b0707d\n>\n> 3.  CVE-2022-4883: compression commands depend on \\$PATH\n>\n>     By default, on all platforms except MinGW, libXpm will detect if a\n>     filename ends in .Z or .gz, and will when reading such a file fork\n>     off an uncompress or gunzip command to read from via a pipe, and\n>     when writing such a file will fork off a compress or gzip command\n>     to write to via a pipe.\n>\n>     In libXpm 3.5.14 or older these are run via execlp(), relying on\n>     \\$PATH to find the commands. If libXpm is called from a program\n>     running with raised privileges, such as via setuid, then a\n>     malicious user could set \\$PATH to include programs of their\n>     choosing to be run with those privileges.\n>\n>     This issue was found by Alan Coopersmith of the Oracle Solaris\n>     team.\n",
+    "id": "FreeBSD-2023-0082",
+    "modified": "2023-03-23T00:00:00Z",
+    "published": "2023-03-23T00:00:00Z",
+    "references": [
+        {
+            "type": "REPORT",
+            "url": "https://lists.x.org/archives/xorg-announce/2023-January/003312.html"
+        },
+        {
+            "type": "WEB",
+            "url": "https://lists.x.org/archives/xorg-announce/2023-January/003312.html"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2022-46285"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2022-44617"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2022-4883"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "libXpm -- Issues handling XPM files"
+}

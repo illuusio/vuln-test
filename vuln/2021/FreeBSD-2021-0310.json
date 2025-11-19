@@ -1,0 +1,55 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "minio"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "2021.12.27.07.23.18"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "cite": [
+            "https://github.com/minio/minio/security/advisories/GHSA-j6jc-jqqc-p6cx"
+        ],
+        "discovery": "2021-12-27T00:00:00Z",
+        "references": {
+            "cvename": [
+                "CVE-2021-43858"
+            ]
+        },
+        "vid": "a4ff3673-d742-4b83-8c2b-3ddafe732034"
+    },
+    "details": "minio developers report:\n\n> AddUser() API endpoint was exposed to a legacy behavior. i.e it\n> accepts a \\\"policy\\\" field\n>\n> This API is mainly used to create a user or update a user\\'s password.\n>\n> However, a malicious client can hand-craft an HTTP API call that\n> allows for updating Policy for a user and gaining higher privileges.\n",
+    "id": "FreeBSD-2021-0310",
+    "modified": "2021-12-29T00:00:00Z",
+    "published": "2021-12-29T00:00:00Z",
+    "references": [
+        {
+            "type": "REPORT",
+            "url": "https://github.com/minio/minio/security/advisories/GHSA-j6jc-jqqc-p6cx"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2021-43858"
+        },
+        {
+            "type": "WEB",
+            "url": "https://github.com/minio/minio/security/advisories/GHSA-j6jc-jqqc-p6cx"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "minio -- User privilege escalation"
+}

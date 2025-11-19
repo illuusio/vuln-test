@@ -1,0 +1,130 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "postgresql-server"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "8.4.20"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                },
+                {
+                    "events": [
+                        {
+                            "introduced": "9.0.0"
+                        },
+                        {
+                            "fixed": "9.0.16"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                },
+                {
+                    "events": [
+                        {
+                            "introduced": "9.1.0"
+                        },
+                        {
+                            "fixed": "9.1.12"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                },
+                {
+                    "events": [
+                        {
+                            "introduced": "9.2.0"
+                        },
+                        {
+                            "fixed": "9.2.7"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                },
+                {
+                    "events": [
+                        {
+                            "introduced": "9.3.0"
+                        },
+                        {
+                            "fixed": "9.3.3"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "cite": [
+            "http://www.postgresql.org/about/news/1506/"
+        ],
+        "discovery": "2014-02-20T00:00:00Z",
+        "references": {
+            "cvename": [
+                "CVE-2014-0060",
+                "CVE-2014-0061",
+                "CVE-2014-0062",
+                "CVE-2014-0063",
+                "CVE-2014-0064",
+                "CVE-2014-0065",
+                "CVE-2014-0066",
+                "CVE-2014-0067"
+            ]
+        },
+        "vid": "42d42090-9a4d-11e3-b029-08002798f6ff"
+    },
+    "details": "PostgreSQL Project reports:\n\n> This update fixes CVE-2014-0060, in which PostgreSQL did not properly\n> enforce the WITH ADMIN OPTION permission for ROLE management. Before\n> this fix, any member of a ROLE was able to grant others access to the\n> same ROLE regardless if the member was given the WITH ADMIN OPTION\n> permission. It also fixes multiple privilege escalation issues,\n> including: CVE-2014-0061, CVE-2014-0062, CVE-2014-0063, CVE-2014-0064,\n> CVE-2014-0065, and CVE-2014-0066. More information on these issues can\n> be found on our security page and the security issue detail wiki page.\n>\n> With this release, we are also alerting users to a known security hole\n> that allows other users on the same machine to gain access to an\n> operating system account while it is doing \\\"make check\\\":\n> CVE-2014-0067. \\\"Make check\\\" is normally part of building PostgreSQL\n> from source code. As it is not possible to fix this issue without\n> causing significant issues to our testing infrastructure, a patch will\n> be released separately and publicly. Until then, users are strongly\n> advised not to run \\\"make check\\\" on machines where untrusted users\n> have accounts.\n",
+    "id": "FreeBSD-2014-0022",
+    "modified": "2014-02-20T00:00:00Z",
+    "published": "2014-02-20T00:00:00Z",
+    "references": [
+        {
+            "type": "REPORT",
+            "url": "http://www.postgresql.org/about/news/1506/"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2014-0060"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2014-0061"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2014-0062"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2014-0063"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2014-0064"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2014-0065"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2014-0066"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2014-0067"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "PostgreSQL -- multiple privilege issues"
+}

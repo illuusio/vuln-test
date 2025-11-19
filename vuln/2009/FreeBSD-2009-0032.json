@@ -1,0 +1,59 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "perl"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "introduced": "5.8.0"
+                        },
+                        {
+                            "fixed": "5.8.9"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "cite": [
+            "http://secunia.com/advisories/14531/"
+        ],
+        "discovery": "2005-03-09T00:00:00Z",
+        "references": {
+            "cvename": [
+                "CVE-2005-0448"
+            ]
+        },
+        "vid": "4a99d61c-f23a-11dd-9f55-0030843d3802"
+    },
+    "details": "Secunia reports:\n\n> Paul Szabo has reported a vulnerability in Perl File::Path::rmtree,\n> which potentially can be exploited by malicious, local users to gain\n> escalated privileges.\n>\n> The vulnerability is caused due to a race condition in the way\n> File::Path::rmtree handles directory permissions when cleaning up\n> directories. This can be exploited by replacing an existing sub\n> directory in the directory tree with a symbolic link to an arbitrary\n> file.\n>\n> Successful exploitation may allow changing permissions of arbitrary\n> files, if root uses an application using the vulnerable code to delete\n> files in a directory having a world-writable sub directory.\n",
+    "id": "FreeBSD-2009-0032",
+    "modified": "2009-02-03T00:00:00Z",
+    "published": "2009-02-03T00:00:00Z",
+    "references": [
+        {
+            "type": "REPORT",
+            "url": "http://secunia.com/advisories/14531/"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2005-0448"
+        },
+        {
+            "type": "WEB",
+            "url": "http://www.ubuntulinux.org/usn/usn-94-1"
+        },
+        {
+            "type": "WEB",
+            "url": "http://secunia.com/advisories/14531/"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "perl -- Directory Permissions Race Condition"
+}

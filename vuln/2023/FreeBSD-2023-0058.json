@@ -1,0 +1,46 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "zeek"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "5.0.7"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "cite": [
+            "https://github.com/zeek/zeek/releases/tag/v5.0.6"
+        ],
+        "discovery": "2023-02-21T00:00:00Z",
+        "vid": "7a425536-74f7-4ce4-9768-0079a9d44d11"
+    },
+    "details": "Tim Wojtulewicz of Corelight reports:\n\n> Receiving DNS responses from async DNS requests (via the lookup_addr,\n> etc BIF methods) with the TTL set to zero could cause the DNS manager\n> to eventually stop being able to make new requests.\n>\n> Specially-crafted FTP packets with excessively long usernames,\n> passwords, or other fields could cause log writes to use large amounts\n> of disk space.\n>\n> The find_all and find_all_ordered BIF methods could take extremely\n> large amounts of time to process incoming data depending on the size\n> of the input.\n",
+    "id": "FreeBSD-2023-0058",
+    "modified": "2023-02-21T00:00:00Z",
+    "published": "2023-02-21T00:00:00Z",
+    "references": [
+        {
+            "type": "REPORT",
+            "url": "https://github.com/zeek/zeek/releases/tag/v5.0.6"
+        },
+        {
+            "type": "WEB",
+            "url": "https://github.com/zeek/zeek/releases/tag/v5.0.7"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "zeek -- potential DoS vulnerabilities"
+}

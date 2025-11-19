@@ -1,0 +1,86 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "bugzilla"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "introduced": "3.6.0"
+                        },
+                        {
+                            "fixed": "3.6.10"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                },
+                {
+                    "events": [
+                        {
+                            "introduced": "4.0.0"
+                        },
+                        {
+                            "fixed": "4.0.7"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                },
+                {
+                    "events": [
+                        {
+                            "introduced": "4.2.0"
+                        },
+                        {
+                            "fixed": "4.2.2"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "cite": [
+            "http://www.bugzilla.org/security/3.6.9/"
+        ],
+        "discovery": "2012-07-26T00:00:00Z",
+        "references": {
+            "cvename": [
+                "CVE-2012-1968",
+                "CVE-2012-1969"
+            ]
+        },
+        "vid": "58253655-d82c-11e1-907c-20cf30e32f6d"
+    },
+    "details": "# A Bugzilla Security Advisory reports:\n\n> The following security issues have been discovered in Bugzilla:\n>\n> # Information Leak\n>\n> Versions: 4.1.1 to 4.2.1, 4.3.1\n>\n> In HTML bugmails, all bug IDs and attachment IDs are linkified, and\n> hovering these links displays a tooltip with the bug summary or the\n> attachment description if the user is allowed to see the bug or\n> attachment. But when validating user permissions when generating the\n> email, the permissions of the user who edited the bug were taken into\n> account instead of the permissions of the addressee. This means that\n> confidential information could be disclosed to the addressee if the\n> other user has more privileges than the addressee. Plain text bugmails\n> are not affected as bug and attachment IDs are not linkified.\n>\n> # Information Leak\n>\n> Versions: 2.17.5 to 3.6.9, 3.7.1 to 4.0.6, 4.1.1 to 4.2.1, 4.3.1\n>\n> The description of a private attachment could be visible to a user who\n> hasn\\'t permissions to access this attachment if the attachment ID is\n> mentioned in a public comment in a bug that the user can see.\n",
+    "id": "FreeBSD-2012-0132",
+    "modified": "2012-07-27T00:00:00Z",
+    "published": "2012-07-27T00:00:00Z",
+    "references": [
+        {
+            "type": "REPORT",
+            "url": "http://www.bugzilla.org/security/3.6.9/"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2012-1968"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2012-1969"
+        },
+        {
+            "type": "REPORT",
+            "url": "https://bugzilla.mozilla.org/show_bug.cgi?id=777398"
+        },
+        {
+            "type": "REPORT",
+            "url": "https://bugzilla.mozilla.org/show_bug.cgi?id=777586"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "bugzilla -- multiple vulnerabilities"
+}

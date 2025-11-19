@@ -1,0 +1,115 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "asterisk14"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "introduced": "1.4.*,1"
+                        },
+                        {
+                            "fixed": "1.4.41.2"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        },
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "asterisk16"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "introduced": "1.6.*,1"
+                        },
+                        {
+                            "fixed": "1.6.2.18.2"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        },
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "asterisk18"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "introduced": "1.8.*,1"
+                        },
+                        {
+                            "fixed": "1.8.4.4"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "cite": [
+            "http://www.asterisk.org/node/51650"
+        ],
+        "discovery": "2011-06-24T00:00:00Z",
+        "references": {
+            "cvename": [
+                "CVE-2011-2529",
+                "CVE-2011-2535",
+                "CVE-2011-2536"
+            ]
+        },
+        "vid": "40544e8c-9f7b-11e0-9bec-6c626dd55a41"
+    },
+    "details": "The Asterisk Development Team reports:\n\n> AST-2011-008: If a remote user sends a SIP packet containing a NULL,\n> Asterisk assumes available data extends past the null to the end of\n> the packet when the buffer is actually truncated when copied. This\n> causes SIP header parsing to modify data past the end of the buffer\n> altering unrelated memory structures. This vulnerability does not\n> affect TCP/TLS connections.\n>\n> AST-2011-009: A remote user sending a SIP packet containing a Contact\n> header with a missing left angle bracket causes Asterisk to access a\n> null pointer.\n>\n> AST-2011-010: A memory address was inadvertently transmitted over the\n> network via IAX2 via an option control frame and the remote party\n> would try to access it.\n>\n> Possible enumeration of SIP users due to differing authentication\n> responses.\n",
+    "id": "FreeBSD-2011-0093",
+    "modified": "2011-06-29T00:00:00Z",
+    "published": "2011-06-25T00:00:00Z",
+    "references": [
+        {
+            "type": "REPORT",
+            "url": "http://www.asterisk.org/node/51650"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2011-2529"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2011-2535"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2011-2536"
+        },
+        {
+            "type": "WEB",
+            "url": "http://downloads.asterisk.org/pub/security/AST-2011-008.html"
+        },
+        {
+            "type": "WEB",
+            "url": "http://downloads.asterisk.org/pub/security/AST-2011-009.html"
+        },
+        {
+            "type": "WEB",
+            "url": "http://downloads.asterisk.org/pub/security/AST-2011-010.html"
+        },
+        {
+            "type": "WEB",
+            "url": "http://downloads.asterisk.org/pub/security/AST-2011-011.html"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "Asterisk -- multiple vulnerabilities"
+}

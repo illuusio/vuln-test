@@ -1,0 +1,55 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "gnu-radius"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "1.2.94"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "cite": [
+            "http://www.idefense.com/application/poi/display?id=141&type=vulnerabilities"
+        ],
+        "discovery": "2004-09-15T00:00:00Z",
+        "references": {
+            "cvename": [
+                "CVE-2004-0849"
+            ]
+        },
+        "vid": "e6f0edd8-0b40-11d9-8a8a-000c41e2cdad"
+    },
+    "details": "An iDEFENSE security advisory reports:\n\n> Remote exploitation of an input validation error in version 1.2 of GNU\n> radiusd could allow a denial of service.\n>\n> The vulnerability specifically exists within the asn_decode_string()\n> function defined in snmplib/asn1.c. When a very large unsigned number\n> is supplied, it is possible that an integer overflow will occur in the\n> bounds-checking code. The daemon will then attempt to reference\n> unallocated memory, resulting in an access violation that causes the\n> process to terminate.\n",
+    "id": "FreeBSD-2004-0161",
+    "modified": "2005-05-03T00:00:00Z",
+    "published": "2004-09-20T00:00:00Z",
+    "references": [
+        {
+            "type": "REPORT",
+            "url": "http://www.idefense.com/application/poi/display?id=141&type=vulnerabilities"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2004-0849"
+        },
+        {
+            "type": "WEB",
+            "url": "http://www.idefense.com/application/poi/display?id=141&type=vulnerabilities"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "gnu-radius -- SNMP-related denial-of-service"
+}

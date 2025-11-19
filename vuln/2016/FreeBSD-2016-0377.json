@@ -1,0 +1,70 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "dropbear"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "2016.74"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "cite": [
+            "http://www.openwall.com/lists/oss-security/2016/09/15/2"
+        ],
+        "discovery": "2016-07-12T00:00:00Z",
+        "references": {
+            "cvename": [
+                "CVE-2016-7406",
+                "CVE-2016-7407",
+                "CVE-2016-7408",
+                "CVE-2016-7409"
+            ]
+        },
+        "vid": "bc19dcca-7b13-11e6-b99e-589cfc0654e1"
+    },
+    "details": "Matt Johnston reports:\n\n> If specific usernames including \\\"%\\\" symbols can be created on a\n> system (validated by getpwnam()) then an attacker could run arbitrary\n> code as root when connecting to Dropbear server. A dbclient user who\n> can control username or host arguments could potentially run arbitrary\n> code as the dbclient user. This could be a problem if scripts or\n> webpages pass untrusted input to the dbclient program.\n>\n> dropbearconvert import of OpenSSH keys could run arbitrary code as the\n> local dropbearconvert user when parsing malicious key files.\n>\n> dbclient could run arbitrary code as the local dbclient user if\n> particular -m or -c arguments are provided. This could be an issue\n> where dbclient is used in scripts.\n>\n> dbclient or dropbear server could expose process memory to the running\n> user if compiled with DEBUG_TRACE and running with -v\n",
+    "id": "FreeBSD-2016-0377",
+    "modified": "2016-09-15T00:00:00Z",
+    "published": "2016-09-15T00:00:00Z",
+    "references": [
+        {
+            "type": "REPORT",
+            "url": "http://www.openwall.com/lists/oss-security/2016/09/15/2"
+        },
+        {
+            "type": "WEB",
+            "url": "\"http://www.openwall.com/lists/oss-security/2016/09/15/2\""
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2016-7406"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2016-7407"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2016-7408"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2016-7409"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "dropbear -- multiple vulnerabilities"
+}

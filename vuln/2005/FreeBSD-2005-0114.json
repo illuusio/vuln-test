@@ -1,0 +1,75 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "wine"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "20050310"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "cite": [
+            "http://marc.theaimsgroup.com/?l=bugtraq&m=111082537009842"
+        ],
+        "discovery": "2005-03-13T00:00:00Z",
+        "references": {
+            "cvename": [
+                "CVE-2005-0787"
+            ]
+        },
+        "vid": "48a59c96-9c6e-11d9-a040-000a95bc6fae"
+    },
+    "details": "Due to insecure temporary file creation in the Wine Windows emulator, it\nis possible for any user to read potentially sensitive information from\ntemporary registry files.\n\n> When a Win32 application is launched by wine, wine makes a dump of the\n> Windows registry in /tmp with name regxxxxyyyy.tmp , where xxxxxx is\n> the pid in hexadecimal value of the current wine process and yyyy is\n> an integer value usually equal to zero.\n>\n> regxxxxyyyy.tmp is created with 0644 (-rw-r\\--r\\--) permissions. This\n> could represent a security problem in a multi-user environment.\n> Indeed, any local user could access to windows regstry\\'s dump and get\n> sensitive information, like passwords and other private data.\n",
+    "id": "FreeBSD-2005-0114",
+    "modified": "2005-03-24T00:00:00Z",
+    "published": "2005-03-24T00:00:00Z",
+    "references": [
+        {
+            "type": "REPORT",
+            "url": "http://marc.theaimsgroup.com/?l=bugtraq&m=111082537009842"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2005-0787"
+        },
+        {
+            "type": "DISCUSSION",
+            "url": "http://marc.theaimsgroup.com/?l=bugtraq&m=111082537009842"
+        },
+        {
+            "type": "WEB",
+            "url": "http://bugs.winehq.org/show_bug.cgi?id=2715"
+        },
+        {
+            "type": "WEB",
+            "url": "http://www.securitytracker.com/alerts/2005/Mar/1013428.html"
+        },
+        {
+            "type": "WEB",
+            "url": "http://www.zone-h.org/advisories/read/id=7300"
+        },
+        {
+            "type": "WEB",
+            "url": "http://www.securityfocus.com/bid/12791"
+        },
+        {
+            "type": "WEB",
+            "url": "http://xforce.iss.net/xforce/xfdb/19697"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "wine -- information disclosure due to insecure temporary file handling"
+}

@@ -1,0 +1,94 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "opera"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "9.63"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        },
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "linux-opera"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "9.63"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "cite": [
+            "http://www.opera.com/docs/changelogs/freebsd/963/"
+        ],
+        "discovery": "2008-11-18T00:00:00Z",
+        "references": {
+            "cvename": [
+                "CVE-2008-5178"
+            ]
+        },
+        "vid": "225bc349-ce10-11dd-a721-0030843d3802"
+    },
+    "details": "The Opera Team reports:\n\n> Manipulating certain text-area contents can cause a buffer overflow,\n> which may be exploited to execute arbitrary code.\n>\n> Certain HTML constructs can cause the resulting DOM to change\n> unexpectedly, which triggers a crash. To inject code, additional\n> techniques will have to be employed.\n>\n> Exceptionally long host names in file: URLs can cause a buffer\n> overflow, which may be exploited to execute arbitrary code. Remote Web\n> pages cannot refer to file: URLs, so successful exploitation involves\n> tricking users into manually opening the exploit URL, or a local file\n> that refers to it.\n>\n> When Opera is previewing a news feed, some scripted URLs are not\n> correctly blocked. These can execute scripts which are able to\n> subscribe the user to any feed URL that the attacker chooses, and can\n> also view the contents of any feeds that the user is subscribed to.\n> These may contain sensitive information.\n>\n> Built-in XSLT templates incorrectly handle escaped content and can\n> cause it to be treated as markup. If a site accepts content from\n> untrusted users, which it then displays using XSLT as escaped strings,\n> this can allow scripted markup to be injected. The scripts will then\n> be executed in the security context of that site.\n",
+    "id": "FreeBSD-2008-0165",
+    "modified": "2008-12-19T00:00:00Z",
+    "published": "2008-12-19T00:00:00Z",
+    "references": [
+        {
+            "type": "REPORT",
+            "url": "http://www.opera.com/docs/changelogs/freebsd/963/"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2008-5178"
+        },
+        {
+            "type": "WEB",
+            "url": "http://www.opera.com/support/kb/view/920/"
+        },
+        {
+            "type": "WEB",
+            "url": "http://www.opera.com/support/kb/view/921/"
+        },
+        {
+            "type": "WEB",
+            "url": "http://www.opera.com/support/kb/view/922/"
+        },
+        {
+            "type": "WEB",
+            "url": "http://www.opera.com/support/kb/view/923/"
+        },
+        {
+            "type": "WEB",
+            "url": "http://www.opera.com/support/kb/view/924/"
+        },
+        {
+            "type": "WEB",
+            "url": "http://secunia.com/advisories/32752/"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "opera -- multiple vulnerabilities"
+}

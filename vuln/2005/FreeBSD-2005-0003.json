@@ -1,0 +1,39 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "jabberd"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "2.0.9"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "discovery": "2005-07-25T00:00:00Z",
+        "vid": "55041d37-ff62-11d9-a9a5-000ae4641456"
+    },
+    "details": "There are 3 buffer overflows in jid.c that are triggered during parsing\nof JID strings when components (user, host or resource) are too long.\n\n1.  jid.c, line 103: overflow in \\`str\\' buffer through `strcpy()` when\n    \\\"user\\\" part is too long.\n2.  jid.c, line 115: overflow in \\`str\\' buffer through `strcpy()` when\n    \\\"host\\\" part is too long.\n3.  jid.c, line 127: overflow in \\`str\\' buffer through `strcpy()` when\n    \\\"resource\\\" part is too long.\n\nThese overflows can be used to perform a DoS attack on the server (sm\nprocess segfaults) and can possible be used for arbitrary code\nexecution.\n",
+    "id": "FreeBSD-2005-0003",
+    "modified": "2005-07-30T00:00:00Z",
+    "published": "2005-07-30T00:00:00Z",
+    "references": [
+        {
+            "type": "WEB",
+            "url": "http://j2.openaether.org/bugzilla/show_bug.cgi?id=99"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "jabberd -- 3 buffer overflows"
+}

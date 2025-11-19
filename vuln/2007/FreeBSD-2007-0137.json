@@ -1,0 +1,51 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "mt-daapd"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "0.2.4.1"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "cite": [
+            "http://www.us-cert.gov/cas/bulletins/SB07-316.html"
+        ],
+        "discovery": "2007-11-05T00:00:00Z",
+        "references": {
+            "cvename": [
+                "CVE-2007-5824"
+            ]
+        },
+        "vid": "a7080c30-91a2-11dc-b2eb-00b0d07e6c7e"
+    },
+    "details": "US-CERT reports:\n\n> webserver.c in mt-dappd in Firefly Media Server 0.2.4 and earlier\n> allows remote attackers to cause a denial of service (NULL dereference\n> and daemon crash) via a stats method action to /xml-rpc with (1) an\n> empty Authorization header line, which triggers a crash in the\n> ws_decodepassword function; or (2) a header line without a \\':\\'\n> character, which triggers a crash in the ws_getheaders function.\n",
+    "id": "FreeBSD-2007-0137",
+    "modified": "2007-11-12T00:00:00Z",
+    "published": "2007-11-12T00:00:00Z",
+    "references": [
+        {
+            "type": "REPORT",
+            "url": "http://www.us-cert.gov/cas/bulletins/SB07-316.html"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2007-5824"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "mt-daapd -- denial of service vulnerability"
+}

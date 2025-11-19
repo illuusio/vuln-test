@@ -1,0 +1,73 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:kernel",
+                "name": "FreeBSD-kernel"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "introduced": "13.2"
+                        },
+                        {
+                            "fixed": "13.2_2"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                },
+                {
+                    "events": [
+                        {
+                            "introduced": "13.1"
+                        },
+                        {
+                            "fixed": "13.1_9"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                },
+                {
+                    "events": [
+                        {
+                            "introduced": "12.4"
+                        },
+                        {
+                            "fixed": "12.4_4"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "discovery": "2023-08-01T00:00:00Z",
+        "references": {
+            "cvename": [
+                "CVE-2023-3107"
+            ],
+            "freebsdsa": [
+                "SA-23:06.ipv6"
+            ]
+        },
+        "vid": "3dabf5b8-47c0-11ee-8e38-002590c1f29c"
+    },
+    "details": "# Problem Description:\n\nEach fragment of an IPv6 packet contains a fragment header which\nspecifies the offset of the fragment relative to the original packet,\nand each fragment specifies its length in the IPv6 header. When\nreassembling the packet, the kernel calculates the complete IPv6 payload\nlength. The payload length must fit into a 16-bit field in the IPv6\nheader.\n\nDue to a bug in the kernel, a set of carefully crafted packets can\ntrigger an integer overflow in the calculation of the reassembled\npacket\\'s payload length field.\n\n# Impact:\n\nOnce an IPv6 packet has been reassembled, the kernel continues\nprocessing its contents. It does so assuming that the fragmentation\nlayer has validated all fields of the constructed IPv6 header. This bug\nviolates such assumptions and can be exploited to trigger a remote\nkernel panic, resulting in a denial of service.\n",
+    "id": "FreeBSD-2023-0244",
+    "modified": "2023-08-31T00:00:00Z",
+    "published": "2023-08-31T00:00:00Z",
+    "references": [
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2023-3107"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://www.freebsd.org/security/advisories/FreeBSD-SA-23:06.ipv6.asc"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "FreeBSD -- Remote denial of service in IPv6 fragment reassembly"
+}

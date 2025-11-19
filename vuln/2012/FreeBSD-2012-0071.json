@@ -1,0 +1,75 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "bugzilla"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "introduced": "3.6.0"
+                        },
+                        {
+                            "fixed": "3.6.9"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                },
+                {
+                    "events": [
+                        {
+                            "introduced": "4.0.0"
+                        },
+                        {
+                            "fixed": "4.0.6"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "cite": [
+            "http://www.bugzilla.org/security/3.6.8/"
+        ],
+        "discovery": "2012-04-18T00:00:00Z",
+        "references": {
+            "cvename": [
+                "CVE-2012-0465",
+                "CVE-2012-0466"
+            ]
+        },
+        "vid": "09c87973-8b9d-11e1-b393-20cf30e32f6d"
+    },
+    "details": "# A Bugzilla Security Advisory reports:\n\n> The following security issues have been discovered in Bugzilla:\n>\n> # Unauthorized Access\n>\n> Due to a lack of proper validation of the X-FORWARDED-FOR header of an\n> authentication request, an attacker could bypass the current lockout\n> policy used for protection against brute- force password discovery.\n> This vulnerability can only be exploited if the \\'inbound_proxies\\'\n> parameter is set.\n>\n> # Cross Site Scripting\n>\n> A JavaScript template used by buglist.cgi could be used by a malicious\n> script to permit an attacker to gain access to some information about\n> bugs he would not normally be allowed to see, using the victim\\'s\n> credentials. To be exploitable, the victim must be logged in when\n> visiting the attacker\\'s malicious page.\n>\n> All affected installations are encouraged to upgrade as soon as\n> possible.\n",
+    "id": "FreeBSD-2012-0071",
+    "modified": "2012-04-21T00:00:00Z",
+    "published": "2012-04-21T00:00:00Z",
+    "references": [
+        {
+            "type": "REPORT",
+            "url": "http://www.bugzilla.org/security/3.6.8/"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2012-0465"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2012-0466"
+        },
+        {
+            "type": "REPORT",
+            "url": "https://bugzilla.mozilla.org/show_bug.cgi?id=728639"
+        },
+        {
+            "type": "REPORT",
+            "url": "https://bugzilla.mozilla.org/show_bug.cgi?id=745397"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "bugzilla -- multiple vulnerabilities"
+}

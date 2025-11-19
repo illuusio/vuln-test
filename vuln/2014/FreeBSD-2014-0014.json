@@ -1,0 +1,55 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "socat"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "1.7.2.3"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "cite": [
+            "http://www.dest-unreach.org/socat/contrib/socat-secadv5.txt"
+        ],
+        "discovery": "2014-01-24T00:00:00Z",
+        "references": {
+            "cvename": [
+                "CVE-2014-0019"
+            ]
+        },
+        "vid": "a4c9e12d-88b7-11e3-8ada-10bf48e1088e"
+    },
+    "details": "Florian Weimer of the Red Hat Product Security Team reports:\n\n> Due to a missing check during assembly of the HTTP request line a long\n> target server name in the PROXY-CONNECT address can cause a stack\n> buffer overrun. Exploitation requires that the attacker is able to\n> provide the target server name to the PROXY-CONNECT address in the\n> command line. This can happen for example in scripts that receive data\n> from untrusted sources.\n",
+    "id": "FreeBSD-2014-0014",
+    "modified": "2014-01-29T00:00:00Z",
+    "published": "2014-01-29T00:00:00Z",
+    "references": [
+        {
+            "type": "REPORT",
+            "url": "http://www.dest-unreach.org/socat/contrib/socat-secadv5.txt"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2014-0019"
+        },
+        {
+            "type": "WEB",
+            "url": "http://www.dest-unreach.org/socat/contrib/socat-secadv5.txt"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "socat -- buffer overflow with data from command line"
+}

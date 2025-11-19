@@ -1,0 +1,60 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "openvpn"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "2.6.11"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "cite": [
+            "https://github.com/OpenVPN/openvpn/blob/v2.6.11/Changes.rst#security-fixes"
+        ],
+        "discovery": "2024-05-16T00:00:00Z",
+        "references": {
+            "cvename": [
+                "CVE-2024-5594",
+                "CVE-2024-28882"
+            ]
+        },
+        "vid": "142c538e-b18f-40a1-afac-c479effadd5c"
+    },
+    "details": "Gert Doering reports that OpenVPN 2.6.11 fixes two security bugs (three\non Windows):\n\n> CVE-2024-5594: control channel: refuse control channel messages with\n> nonprintable characters in them. Security scope: a malicious openvpn\n> peer can send garbage to openvpn log, or cause high CPU load. (Reynir\n> Bj\u00f6rnsson)\n>\n> CVE-2024-28882: only call schedule_exit() once (on a given peer).\n> Security scope: an authenticated client can make the server \\\"keep the\n> session\\\" even when the server has been told to disconnect this\n> client. (Reynir Bj\u00f6rnsson)\n",
+    "id": "FreeBSD-2024-0150",
+    "modified": "2024-06-20T00:00:00Z",
+    "published": "2024-06-20T00:00:00Z",
+    "references": [
+        {
+            "type": "REPORT",
+            "url": "https://github.com/OpenVPN/openvpn/blob/v2.6.11/Changes.rst#security-fixes"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2024-5594"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2024-28882"
+        },
+        {
+            "type": "WEB",
+            "url": "https://github.com/OpenVPN/openvpn/blob/v2.6.11/Changes.rst#security-fixes"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "openvpn -- two security fixes"
+}

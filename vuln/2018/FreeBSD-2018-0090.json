@@ -1,0 +1,104 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "apache24"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "2.4.30"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        },
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "apache22"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "2.2.34_5"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "cite": [
+            "https://www.apache.org/dist/httpd/CHANGES_2.4.33"
+        ],
+        "discovery": "2018-03-23T00:00:00Z",
+        "references": {
+            "cvename": [
+                "CVE-2017-15710",
+                "CVE-2018-1283",
+                "CVE-2018-1303",
+                "CVE-2018-1301",
+                "CVE-2017-15715",
+                "CVE-2018-1312",
+                "CVE-2018-1302"
+            ]
+        },
+        "vid": "f38187e7-2f6e-11e8-8f07-b499baebfeaf"
+    },
+    "details": "The Apache httpd reports:\n\n> Out of bound write in mod_authnz_ldap with AuthLDAPCharsetConfig\n> enabled (CVE-2017-15710)\n>\n> mod_session: CGI-like applications that intend to read from\n> mod_session\\'s \\'SessionEnv ON\\' could be fooled into reading\n> user-supplied data instead. (CVE-2018-1283)\n>\n> mod_cache_socache: Fix request headers parsing to avoid a possible\n> crash with specially crafted input data. (CVE-2018-1303)\n>\n> core: Possible crash with excessively long HTTP request headers.\n> Impractical to exploit with a production build and production\n> LogLevel. (CVE-2018-1301)\n>\n> core: Configure the regular expression engine to match \\'\\$\\' to the\n> end of the input string only, excluding matching the end of any\n> embedded newline characters. Behavior can be changed with new\n> directive \\'RegexDefaultOptions\\'. (CVE-2017-15715)\n>\n> mod_auth_digest: Fix generation of nonce values to prevent replay\n> attacks across servers using a common Digest domain. This change may\n> cause problems if used with round robin load balancers.\n> (CVE-2018-1312)\n>\n> mod_http2: Potential crash w/ mod_http2. (CVE-2018-1302)\n",
+    "id": "FreeBSD-2018-0090",
+    "modified": "2018-03-27T00:00:00Z",
+    "published": "2018-03-24T00:00:00Z",
+    "references": [
+        {
+            "type": "REPORT",
+            "url": "https://www.apache.org/dist/httpd/CHANGES_2.4.33"
+        },
+        {
+            "type": "WEB",
+            "url": "https://www.apache.org/dist/httpd/CHANGES_2.4.33"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2017-15710"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2018-1283"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2018-1303"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2018-1301"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2017-15715"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2018-1312"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2018-1302"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "apache -- multiple vulnerabilities"
+}

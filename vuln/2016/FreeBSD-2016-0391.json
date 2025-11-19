@@ -1,0 +1,78 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "redis"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "3.2.3"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        },
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "redis-devel"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "3.2.3"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "cite": [
+            "https://github.com/antirez/redis/pull/1418"
+        ],
+        "discovery": "2013-11-30T00:00:00Z",
+        "references": {
+            "cvename": [
+                "CVE-2013-7458"
+            ]
+        },
+        "vid": "fa175f30-8c75-11e6-924a-60a44ce6887b"
+    },
+    "details": "Redis team reports:\n\n> The redis-cli history file (in linenoise) is created with the default\n> OS umask value which makes it world readable in most systems and could\n> potentially expose authentication credentials to other users.\n",
+    "id": "FreeBSD-2016-0391",
+    "modified": "2016-10-11T00:00:00Z",
+    "published": "2016-10-11T00:00:00Z",
+    "references": [
+        {
+            "type": "REPORT",
+            "url": "https://github.com/antirez/redis/pull/1418"
+        },
+        {
+            "type": "WEB",
+            "url": "https://github.com/antirez/redis/pull/1418"
+        },
+        {
+            "type": "WEB",
+            "url": "https://github.com/antirez/redis/issues/3284"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2013-7458"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "redis -- sensitive information leak through command history file"
+}

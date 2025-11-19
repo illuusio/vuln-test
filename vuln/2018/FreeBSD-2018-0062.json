@@ -1,0 +1,118 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "tomcat"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "introduced": "7.0.0"
+                        },
+                        {
+                            "last_affected": "7.0.84"
+                        },
+                        {
+                            "fixed": "7.0.84"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                },
+                {
+                    "events": [
+                        {
+                            "introduced": "8.0.0"
+                        },
+                        {
+                            "last_affected": "8.0.49"
+                        },
+                        {
+                            "fixed": "8.0.49"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                },
+                {
+                    "events": [
+                        {
+                            "introduced": "8.5.0"
+                        },
+                        {
+                            "last_affected": "8.5.27"
+                        },
+                        {
+                            "fixed": "8.5.27"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                },
+                {
+                    "events": [
+                        {
+                            "introduced": "9.0.0"
+                        },
+                        {
+                            "last_affected": "9.0.4"
+                        },
+                        {
+                            "fixed": "9.0.4"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "cite": [
+            "https://lists.apache.org/thread.html/d3354bb0a4eda4acc0a66f3eb24a213fdb75d12c7d16060b23e65781@%3Cannounce.tomcat.apache.org%3E",
+            "https://lists.apache.org/thread.html/b1d7e2425d6fd2cebed40d318f9365b44546077e10949b01b1f8a0fb@%3Cannounce.tomcat.apache.org%3E"
+        ],
+        "discovery": "2018-02-23T00:00:00Z",
+        "references": {
+            "cvename": [
+                "CVE-2018-1304",
+                "CVE-2018-1305"
+            ]
+        },
+        "vid": "55c4233e-1844-11e8-a712-0025908740c2"
+    },
+    "details": "The Apache Software Foundation reports:\n\n> Security constraints defined by annotations of Servlets were only\n> applied once a Servlet had been loaded. Because security constraints\n> defined in this way apply to the URL pattern and any URLs below that\n> point, it was possible - depending on the order Servlets were loaded -\n> for some security constraints not to be applied. This could have\n> exposed resources to users who were not authorised to access them.\n\n> The URL pattern of \\\"\\\" (the empty string) which exactly maps to the\n> context root was not correctly handled when used as part of a security\n> constraint definition. This caused the constraint to be ignored. It\n> was, therefore, possible for unauthorised users to gain access to web\n> application resources that should have been protected. Only security\n> constraints with a URL pattern of the empty string were affected.\n",
+    "id": "FreeBSD-2018-0062",
+    "modified": "2018-02-23T00:00:00Z",
+    "published": "2018-02-23T00:00:00Z",
+    "references": [
+        {
+            "type": "REPORT",
+            "url": "https://lists.apache.org/thread.html/d3354bb0a4eda4acc0a66f3eb24a213fdb75d12c7d16060b23e65781@%3Cannounce.tomcat.apache.org%3E"
+        },
+        {
+            "type": "REPORT",
+            "url": "https://lists.apache.org/thread.html/b1d7e2425d6fd2cebed40d318f9365b44546077e10949b01b1f8a0fb@%3Cannounce.tomcat.apache.org%3E"
+        },
+        {
+            "type": "WEB",
+            "url": "http://tomcat.apache.org/security-9.html"
+        },
+        {
+            "type": "WEB",
+            "url": "http://tomcat.apache.org/security-8.html"
+        },
+        {
+            "type": "WEB",
+            "url": "http://tomcat.apache.org/security-7.html"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2018-1304"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2018-1305"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "tomcat -- Security constraints ignored or applied too late"
+}

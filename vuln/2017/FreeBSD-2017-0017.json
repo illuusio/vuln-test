@@ -1,0 +1,93 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "openssl"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "1.0.2"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        },
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "libressl"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "2.4.4_1"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        },
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "libressl-devel"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "2.5.0_1"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "cite": [
+            "http://seclists.org/oss-sec/2017/q1/52"
+        ],
+        "discovery": "2017-01-10T00:00:00Z",
+        "references": {
+            "cvename": [
+                "CVE-2016-7056"
+            ]
+        },
+        "vid": "7caebe30-d7f1-11e6-a9a5-b499baebfeaf"
+    },
+    "details": "Cesar Pereida Garcia reports:\n\n> The signing function in crypto/ecdsa/ecdsa_ossl.c in certain OpenSSL\n> versions and forks is vulnerable to timing attacks when signing with\n> the standardized elliptic curve P-256 despite featuring constant-time\n> curve operations and modular inversion. A software defect omits\n> setting the BN_FLG_CONSTTIME flag for nonces, failing to take a secure\n> code path in the BN_mod_inverse method and therefore resulting in a\n> cache-timing attack vulnerability.\\\n> A malicious user with local access can recover ECDSA P-256 private\n> keys.\n",
+    "id": "FreeBSD-2017-0017",
+    "modified": "2017-01-11T00:00:00Z",
+    "published": "2017-01-11T00:00:00Z",
+    "references": [
+        {
+            "type": "REPORT",
+            "url": "http://seclists.org/oss-sec/2017/q1/52"
+        },
+        {
+            "type": "WEB",
+            "url": "http://seclists.org/oss-sec/2017/q1/52"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2016-7056"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "openssl -- timing attack vulnerability"
+}

@@ -1,0 +1,66 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "mysql-server"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "introduced": "4.1,1"
+                        },
+                        {
+                            "fixed": "4.1.12"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                },
+                {
+                    "events": [
+                        {
+                            "introduced": "5.0,1"
+                        },
+                        {
+                            "fixed": "5.0.6"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "discovery": "2005-05-07T00:00:00Z",
+        "references": {
+            "bid": [
+                "13660"
+            ],
+            "cvename": [
+                "CVE-2005-1636"
+            ]
+        },
+        "vid": "eeae6cce-d05c-11d9-9aed-000e0c2e438a"
+    },
+    "details": "A Zataz advisory reports that MySQL contains a security flaw which could\nallow a malicious local user to inject arbitrary SQL commands during the\ninitial database creation process.\n\nThe problem lies in the mysql_install_db script which creates temporary\nfiles based on the PID used by the script.\n",
+    "id": "FreeBSD-2005-0219",
+    "modified": "2005-07-09T00:00:00Z",
+    "published": "2005-07-09T00:00:00Z",
+    "references": [
+        {
+            "type": "ADVISORY",
+            "url": "https://www.securityfocus.com/bid/13660/info"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2005-1636"
+        },
+        {
+            "type": "WEB",
+            "url": "http://www.zataz.net/adviso/mysql-05172005.txt"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "mysql-server -- insecure temporary file creation"
+}

@@ -1,0 +1,87 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "sudo"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "1.9.17p1"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        },
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "sudo-sssd"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "1.9.17p1"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "cite": [
+            "https://www.sudo.ws/releases/stable/"
+        ],
+        "discovery": "2025-04-01T00:00:00Z",
+        "references": {
+            "cvename": [
+                "CVE-2025-32462",
+                "CVE-2025-32463"
+            ]
+        },
+        "vid": "24f4b495-56a1-11f0-9621-93abbef07693"
+    },
+    "details": "Todd C. Miller reports, crediting Rich Mirch from Stratascale Cyber\nResearch Unit (CRU):\n\n> Sudo 1.9.17p1:\n>\n> - Fixed CVE-2025-32462. Sudo\\'s -h (\\--host) option could be specified\n>   when running a command or editing a file. This could enable a local\n>   privilege escalation attack if the sudoers file allows the user to\n>   run commands on a different host. For more information, see Local\n>   Privilege Escalation via host option.\n> - Fixed CVE-2025-32463. An attacker can leverage sudo\\'s -R\n>   (\\--chroot) option to run arbitrary commands as root, even if they\n>   are not listed in the sudoers file. The chroot support has been\n>   deprecated an will be removed entirely in a future release. For more\n>   information, see Local Privilege Escalation via chroot option.\n",
+    "id": "FreeBSD-2025-0205",
+    "modified": "2025-07-01T00:00:00Z",
+    "published": "2025-07-01T00:00:00Z",
+    "references": [
+        {
+            "type": "REPORT",
+            "url": "https://www.sudo.ws/releases/stable/"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2025-32462"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2025-32463"
+        },
+        {
+            "type": "WEB",
+            "url": "https://www.sudo.ws/releases/stable/"
+        },
+        {
+            "type": "WEB",
+            "url": "https://www.stratascale.com/vulnerability-alert-CVE-2025-32462-sudo-host"
+        },
+        {
+            "type": "WEB",
+            "url": "https://www.stratascale.com/vulnerability-alert-CVE-2025-32463-sudo-chroot"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "sudo -- privilege escalation vulnerability through host and chroot options"
+}

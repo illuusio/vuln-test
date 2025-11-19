@@ -1,0 +1,69 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "phpmyadmin"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "introduced": "4.6.0"
+                        },
+                        {
+                            "fixed": "4.6.2"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "cite": [
+            "https://www.phpmyadmin.net/security/PMASA-2016-14/",
+            "https://www.phpmyadmin.net/security/PMASA-2016-16/"
+        ],
+        "discovery": "2016-05-25T00:00:00Z",
+        "references": {
+            "cvename": [
+                "CVE-2016-5097",
+                "CVE-2016-5099"
+            ]
+        },
+        "vid": "00ec1be1-22bb-11e6-9ead-6805ca0b3d42"
+    },
+    "details": "The phpmyadmin development team reports:\n\n> ## Description\n>\n> Because user SQL queries are part of the URL, sensitive information\n> made as part of a user query can be exposed by clicking on external\n> links to attackers monitoring user GET query parameters or included in\n> the webserver logs.\n>\n> ## Severity\n>\n> We consider this to be non-critical.\n\n> ## Description\n>\n> A specially crafted attack could allow for special HTML characters to\n> be passed as URL encoded values and displayed back as special\n> characters in the page.\n>\n> ## Severity\n>\n> We consider this to be non-critical.\n",
+    "id": "FreeBSD-2016-0215",
+    "modified": "2016-05-26T00:00:00Z",
+    "published": "2016-05-25T00:00:00Z",
+    "references": [
+        {
+            "type": "REPORT",
+            "url": "https://www.phpmyadmin.net/security/PMASA-2016-14/"
+        },
+        {
+            "type": "REPORT",
+            "url": "https://www.phpmyadmin.net/security/PMASA-2016-16/"
+        },
+        {
+            "type": "WEB",
+            "url": "https://www.phpmyadmin.net/security/PMASA-2016-14/"
+        },
+        {
+            "type": "WEB",
+            "url": "https://www.phpmyadmin.net/security/PMASA-2016-16/"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2016-5097"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2016-5099"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "phpmyadmin -- XSS and sensitive data leakage"
+}

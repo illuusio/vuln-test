@@ -1,0 +1,55 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "coturn"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "4.5.1.3"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "cite": [
+            "https://github.com/coturn/coturn/security/advisories/GHSA-c8r8-8vp5-6gcm"
+        ],
+        "discovery": "2020-06-30T00:00:00Z",
+        "references": {
+            "cvename": [
+                "CVE-2020-4067"
+            ]
+        },
+        "vid": "fce7a6e7-bc5d-11ea-b38d-f0def1d0c3ea"
+    },
+    "details": "Felix D\u00f6rre reports:\n\n> The issue is that STUN/TURN response buffer is not initialized\n> properly. (CWE 665) This is a leak of information between different\n> client connections. One client (an attacker) could use their\n> connection to intelligently query coturn to get interesting bytes in\n> the padding bytes from the connection of another client.\n",
+    "id": "FreeBSD-2020-0167",
+    "modified": "2020-07-02T00:00:00Z",
+    "published": "2020-07-02T00:00:00Z",
+    "references": [
+        {
+            "type": "REPORT",
+            "url": "https://github.com/coturn/coturn/security/advisories/GHSA-c8r8-8vp5-6gcm"
+        },
+        {
+            "type": "WEB",
+            "url": "https://github.com/coturn/coturn/commit/fdf7065d0f8e676feaf6734e86370f6dadfb8eec"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2020-4067"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "coturn -- information leakage"
+}

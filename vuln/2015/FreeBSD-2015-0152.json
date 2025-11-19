@@ -1,0 +1,74 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "elasticsearch"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "1.4.0"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "cite": [
+            "https://www.elastic.co/community/security"
+        ],
+        "discovery": "2014-10-01T00:00:00Z",
+        "references": {
+            "bid": [
+                "70233"
+            ],
+            "cvename": [
+                "CVE-2014-6439"
+            ]
+        },
+        "vid": "5951fb49-1ba2-11e5-b43d-002590263bf5"
+    },
+    "details": "Elastic reports:\n\n> Vulnerability Summary: Elasticsearch versions 1.3.x and prior have a\n> default configuration for CORS that allows an attacker to craft links\n> that could cause a user\\'s browser to send requests to Elasticsearch\n> instances on their local network. These requests could cause data loss\n> or compromise.\n>\n> Remediation Summary: Users should either set \\\"http.cors.enabled\\\" to\n> false, or set \\\"http.cors.allow-origin\\\" to the value of the server\n> that should be allowed access, such as localhost or a server hosting\n> Kibana. Disabling CORS entirely with the former setting is more\n> secure, but may not be suitable for all use cases.\n",
+    "id": "FreeBSD-2015-0152",
+    "modified": "2015-06-26T00:00:00Z",
+    "published": "2015-06-26T00:00:00Z",
+    "references": [
+        {
+            "type": "REPORT",
+            "url": "https://www.elastic.co/community/security"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2014-6439"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://www.securityfocus.com/bid/70233/info"
+        },
+        {
+            "type": "WEB",
+            "url": "https://www.elastic.co/community/security"
+        },
+        {
+            "type": "WEB",
+            "url": "https://www.elastic.co/blog/elasticsearch-1-4-0-beta-released"
+        },
+        {
+            "type": "WEB",
+            "url": "https://packetstormsecurity.com/files/128556/Elasticsearch-1.3.x-CORS-Issue.html"
+        },
+        {
+            "type": "WEB",
+            "url": "http://www.securityfocus.com/archive/1/archive/1/533602/100/0/threaded"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "elasticsearch -- cross site scripting vulnerability in the CORS functionality"
+}

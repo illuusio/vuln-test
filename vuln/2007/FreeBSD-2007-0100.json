@@ -1,0 +1,52 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "openoffice"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "introduced": "0,1"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "cite": [
+            "http://labs.idefense.com/intelligence/vulnerabilities/display.php?id=593"
+        ],
+        "discovery": "2007-09-19T00:00:00Z",
+        "references": {
+            "cvename": [
+                "CVE-2007-2834"
+            ]
+        },
+        "vid": "e595e170-6771-11dc-8be8-02e0185f8d72"
+    },
+    "details": "iDefense reports:\n\n> Remote exploitation of multiple integer overflow vulnerabilities\n> within OpenOffice, as included in various vendors\\' operating system\n> distributions, allows attackers to execute arbitrary code.\n>\n> These vulnerabilities exist within the TIFF parsing code of the\n> OpenOffice suite. When parsing the TIFF directory entries for certain\n> tags, the parser uses untrusted values from the file to calculate the\n> amount of memory to allocate. By providing specially crafted values,\n> an integer overflow occurs in this calculation. This results in the\n> allocation of a buffer of insufficient size, which in turn leads to a\n> heap overflow.\n",
+    "id": "FreeBSD-2007-0100",
+    "modified": "2007-09-20T00:00:00Z",
+    "published": "2007-09-20T00:00:00Z",
+    "references": [
+        {
+            "type": "REPORT",
+            "url": "http://labs.idefense.com/intelligence/vulnerabilities/display.php?id=593"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2007-2834"
+        },
+        {
+            "type": "WEB",
+            "url": "http://labs.idefense.com/intelligence/vulnerabilities/display.php?id=593"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "openoffice -- arbitrary command execution vulnerability"
+}

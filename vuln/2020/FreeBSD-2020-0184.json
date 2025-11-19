@@ -1,0 +1,65 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "clamav"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "0.102.4,1"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "cite": [
+            "https://blog.clamav.net/2020/07/clamav-01024-security-patch-released.html"
+        ],
+        "discovery": "2020-07-16T00:00:00Z",
+        "references": {
+            "cvename": [
+                "CVE-2020-3350",
+                "CVE-2020-3327",
+                "CVE-2020-3481"
+            ]
+        },
+        "vid": "f7a02651-c798-11ea-81d6-6805cabe6ebb"
+    },
+    "details": "Micah Snyder reports:\n\n> \n>\n> CVE-2020-3350\n> :   Fixed a vulnerability a malicious user could exploit to replace a\n>     scan target\\'s directory with a symlink to another path to trick\n>     clamscan, clamdscan, or clamonacc into removing or moving a\n>     different file (such as a critical system file). The issue would\n>     affect users that use the \\--move or \\--remove options for\n>     clamscan, clamdscan and clamonacc.\n>\n> CVE-2020-3327\n> :   Fixed a vulnerability in the ARJ archive-parsing module in ClamAV\n>     0.102.3 that could cause a denial-of-service (DoS) condition.\n>     Improper bounds checking resulted in an out-of-bounds read that\n>     could cause a crash. The previous fix for this CVE in version\n>     0.102.3 was incomplete. This fix correctly resolves the issue.\n>\n> CVE-2020-3481\n> :   Fixed a vulnerability in the EGG archive module in ClamAV\n>     0.102.0 - 0.102.3 that could cause a denial-of-service (DoS)\n>     condition. Improper error handling could cause a crash due to a\n>     NULL pointer dereference. This vulnerability is mitigated for\n>     those using the official ClamAV signature databases because the\n>     file type signatures in daily.cvd will not enable the EGG archive\n>     parser in affected versions.\n",
+    "id": "FreeBSD-2020-0184",
+    "modified": "2020-07-16T00:00:00Z",
+    "published": "2020-07-16T00:00:00Z",
+    "references": [
+        {
+            "type": "REPORT",
+            "url": "https://blog.clamav.net/2020/07/clamav-01024-security-patch-released.html"
+        },
+        {
+            "type": "WEB",
+            "url": "https://blog.clamav.net/2020/07/clamav-01024-security-patch-released.html"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2020-3350"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2020-3327"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2020-3481"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "clamav -- multiple vulnerabilities"
+}

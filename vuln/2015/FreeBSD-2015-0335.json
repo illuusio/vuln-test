@@ -1,0 +1,157 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "mediawiki123"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "1.23.11"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        },
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "mediawiki124"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "1.24.4"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        },
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "mediawiki125"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "1.25.3"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "cite": [
+            "https://lists.wikimedia.org/pipermail/mediawiki-announce/2015-October/000181.html"
+        ],
+        "discovery": "2015-10-16T00:00:00Z",
+        "references": {
+            "cvename": [
+                "CVE-2015-8001",
+                "CVE-2015-8002",
+                "CVE-2015-8003",
+                "CVE-2015-8004",
+                "CVE-2015-8005",
+                "CVE-2015-8006",
+                "CVE-2015-8007",
+                "CVE-2015-8008",
+                "CVE-2015-8009"
+            ]
+        },
+        "vid": "b973a763-7936-11e5-a2a1-002590263bf5"
+    },
+    "details": "MediaWiki reports:\n\n> Wikipedia user RobinHood70 reported two issues in the chunked upload\n> API. The API failed to correctly stop adding new chunks to the upload\n> when the reported size was exceeded (T91203), allowing a malicious\n> users to upload add an infinite number of chunks for a single file\n> upload. Additionally, a malicious user could upload chunks of 1 byte\n> for very large files, potentially creating a very large number of\n> files on the server\\'s filesystem (T91205).\n>\n> Internal review discovered that it is not possible to throttle file\n> uploads.\n>\n> Internal review discovered a missing authorization check when removing\n> suppression from a revision. This allowed users with the\n> \\'viewsuppressed\\' user right but not the appropriate\n> \\'suppressrevision\\' user right to unsuppress revisions.\n>\n> Richard Stanway from teamliquid.net reported that thumbnails of PNG\n> files generated with ImageMagick contained the local file path in the\n> image metadata.\n",
+    "id": "FreeBSD-2015-0335",
+    "modified": "2015-12-24T00:00:00Z",
+    "published": "2015-10-23T00:00:00Z",
+    "references": [
+        {
+            "type": "REPORT",
+            "url": "https://lists.wikimedia.org/pipermail/mediawiki-announce/2015-October/000181.html"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2015-8001"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2015-8002"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2015-8003"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2015-8004"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2015-8005"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2015-8006"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2015-8007"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2015-8008"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2015-8009"
+        },
+        {
+            "type": "WEB",
+            "url": "https://lists.wikimedia.org/pipermail/mediawiki-announce/2015-October/000181.html"
+        },
+        {
+            "type": "WEB",
+            "url": "https://phabricator.wikimedia.org/T91203"
+        },
+        {
+            "type": "WEB",
+            "url": "https://phabricator.wikimedia.org/T91205"
+        },
+        {
+            "type": "WEB",
+            "url": "https://phabricator.wikimedia.org/T91850"
+        },
+        {
+            "type": "WEB",
+            "url": "https://phabricator.wikimedia.org/T95589"
+        },
+        {
+            "type": "WEB",
+            "url": "https://phabricator.wikimedia.org/T108616"
+        },
+        {
+            "type": "WEB",
+            "url": "http://www.openwall.com/lists/oss-security/2015/10/29/14"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "mediawiki -- multiple vulnerabilities"
+}

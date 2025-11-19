@@ -1,0 +1,83 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "powerdns"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "3.4.5"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        },
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "powerdns-recursor"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "3.7.3"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "cite": [
+            "https://doc.powerdns.com/md/security/powerdns-advisory-2015-01/"
+        ],
+        "discovery": "2015-04-23T00:00:00Z",
+        "references": {
+            "cvename": [
+                "CVE-2015-1868",
+                "CVE-2015-5470"
+            ]
+        },
+        "vid": "64e6006e-f009-11e4-98c6-000c292ee6b8"
+    },
+    "details": "The PowerDNS project reports:\n\n> A bug was discovered in our label decompression code, making it\n> possible for names to refer to themselves, thus causing a loop during\n> decompression. On some platforms, this bug can be abused to cause\n> crashes. On all platforms, this bug can be abused to cause\n> service-affecting CPU spikes.\n",
+    "id": "FreeBSD-2015-0082",
+    "modified": "2015-07-12T00:00:00Z",
+    "published": "2015-05-01T00:00:00Z",
+    "references": [
+        {
+            "type": "REPORT",
+            "url": "https://doc.powerdns.com/md/security/powerdns-advisory-2015-01/"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2015-1868"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2015-5470"
+        },
+        {
+            "type": "WEB",
+            "url": "https://doc.powerdns.com/md/security/powerdns-advisory-2015-01/"
+        },
+        {
+            "type": "DISCUSSION",
+            "url": "http://www.openwall.com/lists/oss-security/2015/07/10/8"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "powerdns -- Label decompression bug can cause crashes or CPU spikes"
+}

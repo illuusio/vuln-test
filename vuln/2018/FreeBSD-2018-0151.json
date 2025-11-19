@@ -1,0 +1,51 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:kernel",
+                "name": "FreeBSD-kernel"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "introduced": "11.1"
+                        },
+                        {
+                            "fixed": "11.1_11"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "discovery": "2018-06-21T00:00:00Z",
+        "references": {
+            "cvename": [
+                "CVE-2018-3665"
+            ],
+            "freebsdsa": [
+                "SA-18:07.lazyfpu"
+            ]
+        },
+        "vid": "4e07d94f-75a5-11e8-85d1-a4badb2f4699"
+    },
+    "details": "# Problem Description:\n\nA subset of Intel processors can allow a local thread to infer data from\nanother thread through a speculative execution side channel when Lazy\nFPU state restore is used.\n\n# Impact:\n\nAny local thread can potentially read FPU state information from other\nthreads running on the host. This could include cryptographic keys when\nthe AES-NI CPU feature is present.\n",
+    "id": "FreeBSD-2018-0151",
+    "modified": "2018-06-21T00:00:00Z",
+    "published": "2018-06-21T00:00:00Z",
+    "references": [
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2018-3665"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://www.freebsd.org/security/advisories/FreeBSD-SA-18:07.lazyfpu.asc"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "FreeBSD -- Lazy FPU State Restore Information Disclosure"
+}

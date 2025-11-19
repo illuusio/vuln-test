@@ -1,0 +1,59 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "alsaplayer"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "introduced": "0,1"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "cite": [
+            "http://aluigi.altervista.org/adv/alsapbof-adv.txt"
+        ],
+        "discovery": "2006-08-09T00:00:00Z",
+        "references": {
+            "bid": [
+                "19450"
+            ],
+            "cvename": [
+                "CVE-2006-4089"
+            ]
+        },
+        "vid": "9855ac8e-2aec-11db-a6e2-000e0c2e438a"
+    },
+    "details": "Luigi Auriemma reports three vulnerabilities within alsaplayer:\n\n> - The function which handles the HTTP connections is vulnerable to a\n>   buffer-overflow that happens when it uses sscanf for copying the URL\n>   in the Location\\'s field received from the server into the redirect\n>   buffer of only 1024 bytes declared in http_open.\n> - A buffer-overflow exists in the functions which add items to the\n>   playlist when the GTK interface is used (so the other interfaces are\n>   not affected by this problem): new_list_item and CbUpdated in\n>   interface/gtk/PlaylistWindow.cpp.\n> - AlsaPlayer automatically queries the CDDB server specified in its\n>   configuration (by default freedb.freedb.org) when the user choices\n>   the CDDA function for playing audio CDs. The function which queries\n>   the server uses a buffer of 20 bytes and one of 9 for storing the\n>   category and ID strings received from the server while the buffer\n>   which contains this server\\'s response is 32768 bytes long.\n>   Naturally for exploiting this bug the attacker must have control of\n>   the freedb server specified in the AlsaPlayer\\'s configuration.\n\nThese vulnerabilities could allow a remote attacker to execute arbitrary\ncode, possibly gaining access to the system.\n",
+    "id": "FreeBSD-2006-0143",
+    "modified": "2010-05-12T00:00:00Z",
+    "published": "2006-08-13T00:00:00Z",
+    "references": [
+        {
+            "type": "REPORT",
+            "url": "http://aluigi.altervista.org/adv/alsapbof-adv.txt"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2006-4089"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://www.securityfocus.com/bid/19450/info"
+        },
+        {
+            "type": "WEB",
+            "url": "http://aluigi.altervista.org/adv/alsapbof-adv.txt"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "alsaplayer -- multiple vulnerabilities"
+}

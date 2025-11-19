@@ -1,0 +1,301 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "py27-salt"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "2019.2.4"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                },
+                {
+                    "events": [
+                        {
+                            "introduced": "3000"
+                        },
+                        {
+                            "fixed": "3000.2"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        },
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "py32-salt"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "2019.2.4"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                },
+                {
+                    "events": [
+                        {
+                            "introduced": "3000"
+                        },
+                        {
+                            "fixed": "3000.2"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        },
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "py33-salt"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "2019.2.4"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                },
+                {
+                    "events": [
+                        {
+                            "introduced": "3000"
+                        },
+                        {
+                            "fixed": "3000.2"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        },
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "py34-salt"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "2019.2.4"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                },
+                {
+                    "events": [
+                        {
+                            "introduced": "3000"
+                        },
+                        {
+                            "fixed": "3000.2"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        },
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "py35-salt"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "2019.2.4"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                },
+                {
+                    "events": [
+                        {
+                            "introduced": "3000"
+                        },
+                        {
+                            "fixed": "3000.2"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        },
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "py36-salt"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "2019.2.4"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                },
+                {
+                    "events": [
+                        {
+                            "introduced": "3000"
+                        },
+                        {
+                            "fixed": "3000.2"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        },
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "py37-salt"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "2019.2.4"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                },
+                {
+                    "events": [
+                        {
+                            "introduced": "3000"
+                        },
+                        {
+                            "fixed": "3000.2"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        },
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "py38-salt"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "2019.2.4"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                },
+                {
+                    "events": [
+                        {
+                            "introduced": "3000"
+                        },
+                        {
+                            "fixed": "3000.2"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "cite": [
+            "https://labs.f-secure.com/advisories/saltstack-authorization-bypass"
+        ],
+        "discovery": "2020-04-30T00:00:00Z",
+        "references": {
+            "cvename": [
+                "CVE-2020-11651",
+                "CVE-2020-11652"
+            ]
+        },
+        "vid": "6bf55af9-973b-11ea-9f2c-38d547003487"
+    },
+    "details": "F-Secure reports:\n\n> ### CVE-2020-11651 - Authentication bypass vulnerabilities\n>\n> The ClearFuncs class processes unauthenticated requests and\n> unintentionally exposes the \\_send_pub() method, which can be used to\n> queue messages directly on the master publish server. Such messages\n> can be used to trigger minions to run arbitrary commands as root.\n>\n> The ClearFuncs class also exposes the method \\_prep_auth_info(), which\n> returns the \\\"root key\\\" used to authenticate commands from the local\n> root user on the master server. This \\\"root key\\\" can then be used to\n> remotely call administrative commands on the master server. This\n> unintentional exposure provides a remote un-authenticated attacker\n> with root-equivalent access to the salt master.\n>\n> ### CVE-2020-11652 - Directory traversal vulnerabilities\n>\n> The wheel module contains commands used to read and write files under\n> specific directory paths. The inputs to these functions are\n> concatenated with the target directory and the resulting path is not\n> canonicalized, leading to an escape of the intended path restriction.\n>\n> The get_token() method of the salt.tokens.localfs class (which is\n> exposed to unauthenticated requests by the ClearFuncs class) fails to\n> sanitize the token input parameter which is then used as a filename,\n> allowing insertion of \\\"..\\\" path elements and thus reading of files\n> outside of the intended directory. The only restriction is that the\n> file has to be deserializable by salt.payload.Serial.loads().\n",
+    "id": "FreeBSD-2020-0114",
+    "modified": "2020-05-16T00:00:00Z",
+    "published": "2020-05-16T00:00:00Z",
+    "references": [
+        {
+            "type": "REPORT",
+            "url": "https://labs.f-secure.com/advisories/saltstack-authorization-bypass"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2020-11651"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2020-11652"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://nvd.nist.gov/vuln/detail/CVE-2020-11651"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://nvd.nist.gov/vuln/detail/CVE-2020-11652"
+        },
+        {
+            "type": "WEB",
+            "url": "https://docs.saltstack.com/en/latest/topics/releases/2019.2.4.html"
+        },
+        {
+            "type": "WEB",
+            "url": "https://labs.f-secure.com/advisories/saltstack-authorization-bypass"
+        },
+        {
+            "type": "WEB",
+            "url": "https://blog.f-secure.com/new-vulnerabilities-make-exposed-salt-hosts-easy-targets/"
+        },
+        {
+            "type": "WEB",
+            "url": "https://www.tenable.com/blog/cve-2020-11651-cve-2020-11652-critical-salt-framework-vulnerabilities-exploited-in-the-wild"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "salt -- multiple vulnerabilities in salt-master process"
+}

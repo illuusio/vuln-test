@@ -1,0 +1,60 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "apache24"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "2.4.52"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "cite": [
+            "https://httpd.apache.org/security/vulnerabilities_24.html"
+        ],
+        "discovery": "2021-12-20T00:00:00Z",
+        "references": {
+            "cvename": [
+                "CVE-2021-44224",
+                "CVE-2021-44790"
+            ]
+        },
+        "vid": "ca982e2d-61a9-11ec-8be6-d4c9ef517024"
+    },
+    "details": "The Apache httpd project reports:\n\n> moderate: Possible NULL dereference or SSRF in forward proxy\n> configurations in Apache HTTP Server 2.4.51 and earlier\n> (CVE-2021-44224)\\\n> A crafted URI sent to httpd configured as a forward proxy\n> (ProxyRequests on) can cause a crash (NULL pointer dereference) or,\n> for configurations mixing forward and reverse proxy declarations, can\n> allow for requests to be directed to a declared Unix Domain Socket\n> endpoint (Server Side Request Forgery).\n>\n> high: Possible buffer overflow when parsing multipart content in\n> mod_lua of Apache HTTP Server 2.4.51 and earlier (CVE-2021-44790)\\\n> A carefully crafted request body can cause a buffer overflow in the\n> mod_lua multipart parser (r:parsebody() called from Lua scripts).\n",
+    "id": "FreeBSD-2021-0303",
+    "modified": "2021-12-20T00:00:00Z",
+    "published": "2021-12-20T00:00:00Z",
+    "references": [
+        {
+            "type": "REPORT",
+            "url": "https://httpd.apache.org/security/vulnerabilities_24.html"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2021-44224"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2021-44790"
+        },
+        {
+            "type": "WEB",
+            "url": "https://httpd.apache.org/security/vulnerabilities_24.html"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "Apache httpd -- Multiple vulnerabilities"
+}

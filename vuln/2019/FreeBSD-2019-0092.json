@@ -1,0 +1,116 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "py27-buildbot"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "1.8.0"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        },
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "py35-buildbot"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "1.8.0"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        },
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "py36-buildbot"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "1.8.0"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        },
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "py37-buildbot"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "1.8.0"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "cite": [
+            "https://github.com/buildbot/buildbot/wiki/CRLF-injection-in-Buildbot-login-and-logout-redirect-code"
+        ],
+        "discovery": "2019-01-29T00:00:00Z",
+        "references": {
+            "cvename": [
+                "CVE-2019-7313"
+            ]
+        },
+        "vid": "5536ea5f-6814-11e9-a8f7-0050562a4d7b"
+    },
+    "details": "> A CRLF can be injected in Location header of /auth/login and\n> /auth/logout This is due to lack of input validation in the buildbot\n> redirection code.\n>\n> It was not found a way to impact Buildbot product own security through\n> this vulnerability, but it could be used to compromise other sites\n> hosted on the same domain as Buildbot. - cookie injection a master\n> domain (ie if your buildbot is on buildbot.buildbot.net, one can\n> inject a cookie on \\*.buildbot.net, which could impact another website\n> hosted in your domain) - HTTP response splitting and cache poisoning\n> (browser or proxy) are also typical impact of this vulnerability\n> class, but might be impractical to exploit.\n",
+    "id": "FreeBSD-2019-0092",
+    "modified": "2019-04-26T00:00:00Z",
+    "published": "2019-04-26T00:00:00Z",
+    "references": [
+        {
+            "type": "REPORT",
+            "url": "https://github.com/buildbot/buildbot/wiki/CRLF-injection-in-Buildbot-login-and-logout-redirect-code"
+        },
+        {
+            "type": "WEB",
+            "url": "https://github.com/buildbot/buildbot/wiki/CRLF-injection-in-Buildbot-login-and-logout-redirect-code"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2019-7313"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2019-7313"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "buildbot -- CRLF injection in Buildbot login and logout redirect code"
+}

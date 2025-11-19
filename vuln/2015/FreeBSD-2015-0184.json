@@ -1,0 +1,55 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "xen-tools"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "4.5.0_6"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "cite": [
+            "http://xenbits.xen.org/xsa/advisory-119.html"
+        ],
+        "discovery": "2015-03-13T00:00:00Z",
+        "references": {
+            "cvename": [
+                "CVE-2015-2152"
+            ]
+        },
+        "vid": "0d732fd1-27e0-11e5-a4a5-002590263bf5"
+    },
+    "details": "The Xen Project reports:\n\n> When instantiating an emulated VGA device for an x86 HVM guest qemu\n> will by default enable a backend to expose that device, either SDL or\n> VNC depending on the version of qemu and the build time configuration.\n>\n> The libxl toolstack library does not explicitly disable these default\n> backends when they are not enabled, leading to an unexpected backend\n> running.\n>\n> If either SDL or VNC is explicitly enabled in the guest configuration\n> then only the expected backends will be enabled.\n>\n> This affects qemu-xen and qemu-xen-traditional differently.\n>\n> If qemu-xen was compiled with SDL support then this would result in an\n> SDL window being opened if \\$DISPLAY is valid, or a failure to start\n> the guest if not.\n>\n> If qemu-xen was compiled without SDL support then qemu would instead\n> start a VNC server listening on ::1 (IPv6 localhost) or 127.0.0.1\n> (IPv4 localhost) with IPv6 preferred if available. A VNC password will\n> not be configured even if one is present in the guest configuration.\n>\n> qemu-xen-traditional will never start a vnc backend unless explicitly\n> configured. However by default it will start an SDL backend if it was\n> built with SDL support and \\$DISPLAY is valid.\n",
+    "id": "FreeBSD-2015-0184",
+    "modified": "2015-07-11T00:00:00Z",
+    "published": "2015-07-11T00:00:00Z",
+    "references": [
+        {
+            "type": "REPORT",
+            "url": "http://xenbits.xen.org/xsa/advisory-119.html"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2015-2152"
+        },
+        {
+            "type": "WEB",
+            "url": "http://xenbits.xen.org/xsa/advisory-119.html"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "xen-tools -- HVM qemu unexpectedly enabling emulated VGA graphics backends"
+}

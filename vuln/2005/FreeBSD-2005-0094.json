@@ -1,0 +1,70 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "lighttpd"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "1.3.8"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "cite": [
+            "http://article.gmane.org/gmane.comp.web.lighttpd/1171"
+        ],
+        "discovery": "2005-02-12T00:00:00Z",
+        "references": {
+            "bid": [
+                "12567"
+            ],
+            "cvename": [
+                "CVE-2005-0453"
+            ]
+        },
+        "vid": "bdad9ada-8a52-11d9-9e53-000a95bc6fae"
+    },
+    "details": "The lighttpd website reports:\n\n> In lighttpd 1.3.7 and below it is possible to fetch the source files\n> which should be handled by CGI or FastCGI applications.\n\nThe vulnerability is in the handling of urlencoded trailing NUL bytes.\nInstallations that do not use CGI or FastCGI are not affected.\n",
+    "id": "FreeBSD-2005-0094",
+    "modified": "2005-03-01T00:00:00Z",
+    "published": "2005-03-01T00:00:00Z",
+    "references": [
+        {
+            "type": "REPORT",
+            "url": "http://article.gmane.org/gmane.comp.web.lighttpd/1171"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2005-0453"
+        },
+        {
+            "type": "DISCUSSION",
+            "url": "http://article.gmane.org/gmane.comp.web.lighttpd/1171"
+        },
+        {
+            "type": "WEB",
+            "url": "http://www.lighttpd.net/news/"
+        },
+        {
+            "type": "WEB",
+            "url": "http://xforce.iss.net/xforce/xfdb/19350"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://www.securityfocus.com/bid/12567/info"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "lighttpd -- script source disclosure vulnerability"
+}

@@ -1,0 +1,81 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "apache24"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "introduced": "2.4.17"
+                        },
+                        {
+                            "last_affected": "2.4.23_1"
+                        },
+                        {
+                            "fixed": "2.4.23_1"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        },
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "mod_http2-devel"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "1.8.3"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "cite": [
+            "http://mail-archives.apache.org/mod_mbox/httpd-announce/201612.mbox/%3C1A097A43-7CCB-4BA1-861F-E0C7EEE83A4B%40apache.org%3E"
+        ],
+        "discovery": "2016-12-06T00:00:00Z",
+        "references": {
+            "cvename": [
+                "CVE-2016-8740"
+            ]
+        },
+        "vid": "cb0bf1ec-bb92-11e6-a9a5-b499baebfeaf"
+    },
+    "details": "mod_http2 reports:\n\n> The Apache HTTPD web server (from 2.4.17-2.4.23) did not apply\n> limitations on request headers correctly when experimental module for\n> the HTTP/2 protocol is used to access a resource.\n>\n> The net result is that a the server allocates too much memory instead\n> of denying the request. This can lead to memory exhaustion of the\n> server by a properly crafted request.\n",
+    "id": "FreeBSD-2016-0465",
+    "modified": "2016-12-06T00:00:00Z",
+    "published": "2016-12-06T00:00:00Z",
+    "references": [
+        {
+            "type": "REPORT",
+            "url": "http://mail-archives.apache.org/mod_mbox/httpd-announce/201612.mbox/%3C1A097A43-7CCB-4BA1-861F-E0C7EEE83A4B%40apache.org%3E"
+        },
+        {
+            "type": "WEB",
+            "url": "http://mail-archives.apache.org/mod_mbox/httpd-announce/201612.mbox/%3C1A097A43-7CCB-4BA1-861F-E0C7EEE83A4B%40apache.org%3E"
+        },
+        {
+            "type": "WEB",
+            "url": "https://github.com/icing/mod_h2/releases/tag/v1.8.3"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2016-8740"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "Apache httpd -- denial of service in HTTP/2"
+}

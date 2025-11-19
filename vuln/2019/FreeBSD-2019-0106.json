@@ -1,0 +1,68 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "curl"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "introduced": "7.19.4"
+                        },
+                        {
+                            "fixed": "7.65.0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "cite": [
+            "https://curl.haxx.se/docs/security.html"
+        ],
+        "discovery": "2019-05-22T00:00:00Z",
+        "references": {
+            "cvename": [
+                "CVE-2019-5435",
+                "CVE-2019-5436"
+            ]
+        },
+        "vid": "dd343a2b-7ee7-11e9-a290-8ddc52868fa9"
+    },
+    "details": "curl security problems:\n\n> CVE-2019-5435: Integer overflows in curl_url_set()\n>\n> libcurl contains two integer overflows in the curl_url_set() function\n> that if triggered, can lead to a too small buffer allocation and a\n> subsequent heap buffer overflow.\n>\n> The flaws only exist on 32 bit architectures and require excessive\n> string input lengths.\n>\n> CVE-2019-5436: TFTP receive buffer overflow\n>\n> libcurl contains a heap buffer overflow in the function\n> (tftp_receive_packet()) that recevives data from a TFTP server. It\n> calls recvfrom() with the default size for the buffer rather than with\n> the size that was used to allocate it. Thus, the content that might\n> overwrite the heap memory is entirely controlled by the server.\n>\n> The flaw exists if the user selects to use a \\\"blksize\\\" of 504 or\n> smaller (default is 512). The smaller size that is used, the larger\n> the possible overflow becomes.\n>\n> Users chosing a smaller size than default should be rare as the\n> primary use case for changing the size is to make it larger.\n>\n> It is rare for users to use TFTP across the Internet. It is most\n> commonly used within local networks.\n",
+    "id": "FreeBSD-2019-0106",
+    "modified": "2019-05-26T00:00:00Z",
+    "published": "2019-05-25T00:00:00Z",
+    "references": [
+        {
+            "type": "REPORT",
+            "url": "https://curl.haxx.se/docs/security.html"
+        },
+        {
+            "type": "WEB",
+            "url": "https://curl.haxx.se/docs/security.html"
+        },
+        {
+            "type": "WEB",
+            "url": "https://curl.haxx.se/docs/CVE-2019-5435.html"
+        },
+        {
+            "type": "WEB",
+            "url": "https://curl.haxx.se/docs/CVE-2019-5436.html"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2019-5435"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2019-5436"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "curl -- multiple vulnerabilities"
+}

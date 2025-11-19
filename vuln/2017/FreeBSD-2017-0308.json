@@ -1,0 +1,83 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "FreeBSD"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "introduced": "11.1"
+                        },
+                        {
+                            "fixed": "11.1_6"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                },
+                {
+                    "events": [
+                        {
+                            "introduced": "10.4"
+                        },
+                        {
+                            "fixed": "10.4_5"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                },
+                {
+                    "events": [
+                        {
+                            "introduced": "10.3"
+                        },
+                        {
+                            "fixed": "10.3_26"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "discovery": "2017-12-09T00:00:00Z",
+        "references": {
+            "cvename": [
+                "CVE-2016-0701",
+                "CVE-2017-3737",
+                "CVE-2017-3738"
+            ],
+            "freebsdsa": [
+                "SA-17:12.openssl"
+            ]
+        },
+        "vid": "9f7a0f39-ddc0-11e7-b5af-a4badb2f4699"
+    },
+    "details": "# Problem Description:\n\nInvoking SSL_read()/SSL_write() while in an error state causes data to\nbe passed without being decrypted/encrypted directly from the SSL/TLS\nrecord layer.\n\nIn order to exploit this issue an application bug would have to be\npresent that resulted in a call to SSL_read()/SSL_write() being issued\nafter having already received a fatal error. \\[CVE-2017-3737\\]\n\nThere is an overflow bug in the x86_64 Montgomery multiplication\nprocedure used in exponentiation with 1024-bit moduli. This only affects\nprocessors that support the AVX2 but not ADX extensions like Intel\nHaswell (4th generation). \\[CVE-2017-3738\\] This bug only affects\nFreeBSD 11.x.\n\n# Impact:\n\nApplications with incorrect error handling may inappropriately pass\nunencrypted data. \\[CVE-2017-3737\\]\n\nMishandling of carry propagation will produce incorrect output, and make\nit easier for a remote attacker to obtain sensitive private-key\ninformation. No EC algorithms are affected and analysis suggests that\nattacks against RSA and DSA as a result of this defect would be very\ndifficult to perform and are not believed likely.\n\nAttacks against DH1024 are considered just feasible (although very\ndifficult) because most of the work necessary to deduce information\nabout a private key may be performed offline. The amount of resources\nrequired for such an attack would be very significant and likely only\naccessible to a limited number of attackers. However, for an attack on\nTLS to be meaningful, the server would have to share the DH1024 private\nkey among multiple clients, which is no longer an option since\nCVE-2016-0701. \\[CVE-2017-3738\\]\n",
+    "id": "FreeBSD-2017-0308",
+    "modified": "2017-12-10T00:00:00Z",
+    "published": "2017-12-10T00:00:00Z",
+    "references": [
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2016-0701"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2017-3737"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2017-3738"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://www.freebsd.org/security/advisories/FreeBSD-SA-17:12.openssl.asc"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "FreeBSD -- OpenSSL multiple vulnerabilities"
+}

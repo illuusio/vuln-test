@@ -1,0 +1,74 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "firefox"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "62.0.2,1"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        },
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "firefox-esr"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "60.2.1,1"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "cite": [
+            "https://www.mozilla.org/en-US/security/advisories/mfsa2018-22/"
+        ],
+        "discovery": "2018-09-21T00:00:00Z",
+        "references": {
+            "cvename": [
+                "CVE-2018-12385"
+            ]
+        },
+        "vid": "3284d948-140c-4a3e-aa76-3b440e2006a8"
+    },
+    "details": "The Mozilla Foundation reports:\n\n> A potentially exploitable crash in TransportSecurityInfo used for SSL\n> can be triggered by data stored in the local cache in the user profile\n> directory. This issue is only exploitable in combination with another\n> vulnerability allowing an attacker to write data into the local cache\n> or from locally installed malware. This issue also triggers a\n> non-exploitable startup crash for users switching between the Nightly\n> and Release versions of Firefox if the same profile is used.\n",
+    "id": "FreeBSD-2018-0231",
+    "modified": "2018-09-21T00:00:00Z",
+    "published": "2018-09-21T00:00:00Z",
+    "references": [
+        {
+            "type": "REPORT",
+            "url": "https://www.mozilla.org/en-US/security/advisories/mfsa2018-22/"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2018-12385"
+        },
+        {
+            "type": "WEB",
+            "url": "https://www.mozilla.org/security/advisories/mfsa2018-22/"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "firefox -- Crash in TransportSecurityInfo due to cached data"
+}

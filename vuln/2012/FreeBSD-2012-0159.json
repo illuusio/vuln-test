@@ -1,0 +1,108 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "openjdk"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "introduced": "7.0"
+                        },
+                        {
+                            "fixed": "7.6.24_1"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        },
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "linux-sun-jdk"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "introduced": "7.0"
+                        },
+                        {
+                            "fixed": "7.7"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        },
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "linux-sun-jre"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "introduced": "7.0"
+                        },
+                        {
+                            "fixed": "7.7"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "cite": [
+            "http://www.kb.cert.org/vuls/id/636312"
+        ],
+        "discovery": "2012-08-27T00:00:00Z",
+        "references": {
+            "certvu": [
+                "636312"
+            ],
+            "cvename": [
+                "CVE-2012-4681"
+            ]
+        },
+        "vid": "16846d1e-f1de-11e1-8bd8-0022156e8794"
+    },
+    "details": "US-CERT reports:\n\n> Oracle Java Runtime Environment (JRE) 1.7 contains a vulnerability\n> that may allow an applet to call setSecurityManager in a way that\n> allows setting of arbitrary permissions.\n>\n> By leveraging the public, privileged getField() function, an untrusted\n> Java applet can escalate its privileges by calling the\n> setSecurityManager() function to allow full privileges, without\n> requiring code signing.\n>\n> This vulnerability is being actively exploited in the wild, and\n> exploit code is publicly available.\n\nThis exploit does not only affect Java applets, but every piece of\nsoftware that relies on the Java Security Manager for sandboxing\nexecutable code is affected: malicious code can totally disable Security\nManager.\n",
+    "id": "FreeBSD-2012-0159",
+    "modified": "2012-08-31T00:00:00Z",
+    "published": "2012-08-30T00:00:00Z",
+    "references": [
+        {
+            "type": "REPORT",
+            "url": "http://www.kb.cert.org/vuls/id/636312"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2012-4681"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://www.kb.cert.org/vuls/id/636312"
+        },
+        {
+            "type": "WEB",
+            "url": "http://www.deependresearch.org/2012/08/java-7-vulnerability-analysis.html"
+        },
+        {
+            "type": "WEB",
+            "url": "http://mail.openjdk.java.net/pipermail/distro-pkg-dev/2012-August/020065.html"
+        },
+        {
+            "type": "WEB",
+            "url": "http://www.oracle.com/technetwork/topics/security/alert-cve-2012-4681-1835715.html"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "Java 1.7 -- security manager bypass"
+}

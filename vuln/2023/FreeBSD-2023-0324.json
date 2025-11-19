@@ -1,0 +1,155 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "xorg-server"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "21.1.9,1"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        },
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "xephyr"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "21.1.9,1"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        },
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "xorg-vfbserver"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "21.1.9,1"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        },
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "xorg-nestserver"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "21.1.9,2"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        },
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "xwayland"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "23.2.2,1"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        },
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "xwayland-devel"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "21.0.99.1.542"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "cite": [
+            "https://lists.x.org/archives/xorg-announce/2023-October/003430.html"
+        ],
+        "discovery": "2023-10-25T00:00:00Z",
+        "references": {
+            "cvename": [
+                "CVE-2023-5367",
+                "CVE-2023-5380"
+            ]
+        },
+        "vid": "9e2fdfc7-e237-4393-9fa5-2d50908c66b3"
+    },
+    "details": "The X.Org project reports:\n\n> - ZDI-CAN-22153/CVE-2023-5367: X.Org server: OOB write in\n>   XIChangeDeviceProperty/RRChangeOutputProperty\n>\n>   When prepending values to an existing property an invalid offset\n>   calculation causes the existing values to be appended at the wrong\n>   offset. The resulting memcpy() would write into memory outside the\n>   heap-allocated array.\n>\n> - ZDI-CAN-21608/CVE-2023-5380: Use-after-free bug in DestroyWindow\n>\n>   This vulnerability requires a legacy multi-screen setup with\n>   multiple protocol screens (\\\"Zaphod\\\"). If the pointer is warped\n>   from one screen to the root window of the other screen, the\n>   enter/leave code may retain a reference to the previous pointer\n>   window. Destroying this window leaves that reference in place, other\n>   windows may then trigger a use-after-free bug when they are\n>   destroyed.\n",
+    "id": "FreeBSD-2023-0324",
+    "modified": "2023-10-25T00:00:00Z",
+    "published": "2023-10-25T00:00:00Z",
+    "references": [
+        {
+            "type": "REPORT",
+            "url": "https://lists.x.org/archives/xorg-announce/2023-October/003430.html"
+        },
+        {
+            "type": "WEB",
+            "url": "https://lists.x.org/archives/xorg-announce/2023-October/003430.html"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2023-5367"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2023-5380"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "xorg-server -- Multiple vulnerabilities"
+}

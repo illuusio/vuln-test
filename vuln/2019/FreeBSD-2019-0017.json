@@ -1,0 +1,67 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "libzmq4"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "introduced": "4.2.0"
+                        },
+                        {
+                            "fixed": "4.3.1"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "cite": [
+            "https://github.com/zeromq/libzmq/releases/tag/v4.3.1"
+        ],
+        "discovery": "2019-01-08T00:00:00Z",
+        "references": {
+            "cvename": [
+                "CVE-2019-6250"
+            ]
+        },
+        "vid": "8e48365a-214d-11e9-9f8a-0050562a4d7b"
+    },
+    "details": "> A vulnerability has been found that would allow attackers to direct a\n> peer to jump to and execute from an address indicated by the attacker.\n> This issue has been present since v4.2.0. Older releases are not\n> affected. NOTE: The attacker needs to know in advance valid addresses\n> in the peer\\'s memory to jump to, so measures like ASLR are effective\n> mitigations. NOTE: this attack can only take place after\n> authentication, so peers behind CURVE/GSSAPI are not vulnerable to\n> unauthenticated attackers.\n",
+    "id": "FreeBSD-2019-0017",
+    "modified": "2019-01-26T00:00:00Z",
+    "published": "2019-01-26T00:00:00Z",
+    "references": [
+        {
+            "type": "REPORT",
+            "url": "https://github.com/zeromq/libzmq/releases/tag/v4.3.1"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2019-6250"
+        },
+        {
+            "type": "WEB",
+            "url": "https://github.com/zeromq/libzmq/issues/3351"
+        },
+        {
+            "type": "WEB",
+            "url": "https://github.com/zeromq/libzmq/pull/3353"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://nvd.nist.gov/vuln/detail/CVE-2019-6250"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2019-6250"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "libzmq4 -- Remote Code Execution Vulnerability"
+}

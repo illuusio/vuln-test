@@ -1,0 +1,73 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "FreeBSD"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "introduced": "10.2"
+                        },
+                        {
+                            "fixed": "10.2_9"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                },
+                {
+                    "events": [
+                        {
+                            "introduced": "10.1"
+                        },
+                        {
+                            "fixed": "10.1_26"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                },
+                {
+                    "events": [
+                        {
+                            "introduced": "9.3"
+                        },
+                        {
+                            "fixed": "9.3_33"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "discovery": "2016-01-14T00:00:00Z",
+        "references": {
+            "cvename": [
+                "CVE-2015-5677"
+            ],
+            "freebsdsa": [
+                "SA-16:06.bsnmpd"
+            ]
+        },
+        "vid": "7a31dfba-600a-11e6-a6c3-14dae9d210b8"
+    },
+    "details": "# Problem Description:\n\nThe SNMP protocol supports an authentication model called USM, which\nrelies on a shared secret. The default permission of the snmpd\nconfiguration file, /etc/snmpd.config, is weak and does not provide\nadequate protection against local unprivileged users.\n\n# Impact:\n\nA local user may be able to read the shared secret, if configured and\nused by the system administrator.\n",
+    "id": "FreeBSD-2016-0343",
+    "modified": "2016-08-11T00:00:00Z",
+    "published": "2016-08-11T00:00:00Z",
+    "references": [
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2015-5677"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://www.freebsd.org/security/advisories/FreeBSD-SA-16:06.bsnmpd.asc"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "FreeBSD -- Insecure default snmpd.config permissions"
+}

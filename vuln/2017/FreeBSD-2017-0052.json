@@ -1,0 +1,74 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "wavpack"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "5.1.0"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "cite": [
+            "http://www.openwall.com/lists/oss-security/2017/01/23/4"
+        ],
+        "discovery": "2017-01-21T00:00:00Z",
+        "references": {
+            "cvename": [
+                "CVE-2016-10169",
+                "CVE-2016-10170",
+                "CVE-2016-10171",
+                "CVE-2016-10172"
+            ]
+        },
+        "vid": "f1075415-f5e9-11e6-a4e2-5404a68ad561"
+    },
+    "details": "David Bryant reports:\n\n> global buffer overread in read_code / read_words.c\n>\n> heap out of bounds read in WriteCaffHeader / caff.c\n>\n> heap out of bounds read in unreorder_channels / wvunpack.c\n>\n> heap oob read in read_new_config_info / open_utils.c\n",
+    "id": "FreeBSD-2017-0052",
+    "modified": "2017-02-18T00:00:00Z",
+    "published": "2017-02-18T00:00:00Z",
+    "references": [
+        {
+            "type": "REPORT",
+            "url": "http://www.openwall.com/lists/oss-security/2017/01/23/4"
+        },
+        {
+            "type": "WEB",
+            "url": "http://www.openwall.com/lists/oss-security/2017/01/23/4"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2016-10169"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2016-10170"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2016-10171"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2016-10172"
+        },
+        {
+            "type": "WEB",
+            "url": "https://github.com/dbry/WavPack/commit/4bc05fc490b66ef2d45b1de26abf1455b486b0dc"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "wavpack -- multiple invalid memory reads"
+}

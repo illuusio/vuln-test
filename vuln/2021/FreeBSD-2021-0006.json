@@ -1,0 +1,55 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "sudo"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "1.9.5"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "cite": [
+            "https://www.sudo.ws/stable.html#1.9.5"
+        ],
+        "discovery": "2021-01-11T00:00:00Z",
+        "references": {
+            "cvename": [
+                "CVE-2021-23239"
+            ]
+        },
+        "vid": "6193b3f6-548c-11eb-ba01-206a8a720317"
+    },
+    "details": "Todd C. Miller reports:\n\n> A potential information leak in sudoedit that could be used to test\n> for the existence of directories not normally accessible to the user\n> in certain circumstances. When creating a new file, sudoedit checks to\n> make sure the parent directory of the new file exists before running\n> the editor. However, a race condition exists if the invoking user can\n> replace (or create) the parent directory. If a symbolic link is\n> created in place of the parent directory, sudoedit will run the editor\n> as long as the target of the link exists.If the target of the link\n> does not exist, an error message will be displayed. The race condition\n> can be used to test for the existence of an arbitrary directory.\n> However, it \\_cannot\\_ be used to write to an arbitrary location.\n",
+    "id": "FreeBSD-2021-0006",
+    "modified": "2021-01-11T00:00:00Z",
+    "published": "2021-01-11T00:00:00Z",
+    "references": [
+        {
+            "type": "REPORT",
+            "url": "https://www.sudo.ws/stable.html#1.9.5"
+        },
+        {
+            "type": "WEB",
+            "url": "https://www.sudo.ws/stable.html#1.9.5"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2021-23239"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "sudo -- Potential information leak in sudoedit"
+}

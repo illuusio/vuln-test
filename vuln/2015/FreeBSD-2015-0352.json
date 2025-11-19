@@ -1,0 +1,55 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "putty"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "introduced": "0.54"
+                        },
+                        {
+                            "fixed": "0.66"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "cite": [
+            "http://www.chiark.greenend.org.uk/~sgtatham/putty/wishlist/vuln-ech-overflow.html"
+        ],
+        "discovery": "2015-11-06T00:00:00Z",
+        "references": {
+            "cvename": [
+                "CVE-2015-5309"
+            ]
+        },
+        "vid": "0cb0afd9-86b8-11e5-bf60-080027ef73ec"
+    },
+    "details": "Ben Harris reports:\n\n> Versions of PuTTY and pterm between 0.54 and 0.65 inclusive have a\n> potentially memory-corrupting integer overflow in the handling of the\n> ECH (erase characters) control sequence in the terminal emulator.\n>\n> To exploit a vulnerability in the terminal emulator, an attacker must\n> be able to insert a carefully crafted escape sequence into the\n> terminal stream. For a PuTTY SSH session, this must be before\n> encryption, so the attacker likely needs access to the server you\\'re\n> connecting to. For instance, an attacker on a multi-user machine that\n> you connect to could trick you into running cat on a file they control\n> containing a malicious escape sequence. (Unix write(1) is not a vector\n> for this, if implemented correctly.)\n>\n> Only PuTTY, PuTTYtel, and pterm are affected; other PuTTY tools do not\n> include the terminal emulator, so cannot be exploited this way.\n",
+    "id": "FreeBSD-2015-0352",
+    "modified": "2015-11-09T00:00:00Z",
+    "published": "2015-11-09T00:00:00Z",
+    "references": [
+        {
+            "type": "REPORT",
+            "url": "http://www.chiark.greenend.org.uk/~sgtatham/putty/wishlist/vuln-ech-overflow.html"
+        },
+        {
+            "type": "WEB",
+            "url": "http://www.chiark.greenend.org.uk/~sgtatham/putty/wishlist/vuln-ech-overflow.html"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2015-5309"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "PuTTY -- memory corruption in terminal emulator's erase character handling"
+}

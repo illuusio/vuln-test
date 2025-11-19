@@ -1,0 +1,59 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "squid"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "introduced": "3.5.0.1"
+                        },
+                        {
+                            "fixed": "3.5.9"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "cite": [
+            "http://www.openwall.com/lists/oss-security/2015/09/18/1"
+        ],
+        "discovery": "2015-09-18T00:00:00Z",
+        "references": {
+            "freebsdpr": [
+                "ports/203186"
+            ]
+        },
+        "vid": "d3a98c2d-5da1-11e5-9909-002590263bf5"
+    },
+    "details": "Amos Jeffries, release manager of the Squid-3 series, reports:\n\n> Vulnerable versions are 3.5.0.1 to 3.5.8 (inclusive), which are built\n> with OpenSSL and configured for \\\"SSL-Bump\\\" decryption.\n>\n> Integer overflows can lead to invalid pointer math reading from random\n> memory on some CPU architectures. In the best case this leads to wrong\n> TLS extensions being used for the client, worst-case a crash of the\n> proxy terminating all active transactions.\n>\n> Incorrect message size checks and assumptions about the existence of\n> TLS extensions in the SSL/TLS handshake message can lead to very high\n> CPU consumption (up to and including \\'infinite loop\\' behaviour).\n>\n> The above can be triggered remotely. Though there is one layer of\n> authorization applied before this processing to check that the client\n> is allowed to use the proxy, that check is generally weak. MS Skype on\n> Windows XP is known to trigger some of these.\n\nThe FreeBSD port does not use SSL by default and is not vulnerable in\nthe default configuration.\n",
+    "id": "FreeBSD-2015-0297",
+    "modified": "2016-02-18T00:00:00Z",
+    "published": "2015-09-18T00:00:00Z",
+    "references": [
+        {
+            "type": "REPORT",
+            "url": "http://www.openwall.com/lists/oss-security/2015/09/18/1"
+        },
+        {
+            "type": "REPORT",
+            "url": "https://bugs.freebsd.org/bugzilla/show_bug.cgi?id=203186"
+        },
+        {
+            "type": "WEB",
+            "url": "http://www.squid-cache.org/Advisories/SQUID-2015_3.txt"
+        },
+        {
+            "type": "WEB",
+            "url": "http://www.openwall.com/lists/oss-security/2015/09/18/1"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "squid -- TLS/SSL parser denial of service vulnerability"
+}

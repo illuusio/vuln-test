@@ -1,0 +1,70 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "squid"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "2.5.7_10"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "cite": [
+            "http://www.squid-cache.org/Advisories/SQUID-2005_3.txt"
+        ],
+        "discovery": "2005-01-28T00:00:00Z",
+        "references": {
+            "certvu": [
+                "886006"
+            ],
+            "cvename": [
+                "CVE-2005-0211"
+            ]
+        },
+        "vid": "23fb5a04-722b-11d9-9e1e-c296ac722cb3"
+    },
+    "details": "According to the Squid Proxy Cache Security Update Advisory\nSQUID-2005:3,\n\n> The WCCP recvfrom() call accepts more data than will fit in the\n> allocated buffer. An attacker may send a larger-than-normal WCCP\n> message to Squid and overflow this buffer.\n>\n> Severity:\n>\n> The bug is important because it allows remote attackers to crash\n> Squid, causing a disription in service. However, the bug is\n> exploitable only if you have configured Squid to send WCCP messages\n> to, and expect WCCP replies from, a router.\n>\n> Sites that do not use WCCP are not vulnerable.\n\nNote that while the default configuration of the FreeBSD squid port\nenables WCCP support in general, the default configuration supplied does\nnot actually configure squid to send and receive WCCP messages.\n",
+    "id": "FreeBSD-2005-0060",
+    "modified": "2005-02-13T00:00:00Z",
+    "published": "2005-01-28T00:00:00Z",
+    "references": [
+        {
+            "type": "REPORT",
+            "url": "http://www.squid-cache.org/Advisories/SQUID-2005_3.txt"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2005-0211"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://www.kb.cert.org/vuls/id/886006"
+        },
+        {
+            "type": "WEB",
+            "url": "http://www.squid-cache.org/Advisories/SQUID-2005_3.txt"
+        },
+        {
+            "type": "WEB",
+            "url": "http://www.squid-cache.org/Versions/v2/2.5/bugs/#squid-2.5.STABLE7-wccp_buffer_overflow"
+        },
+        {
+            "type": "WEB",
+            "url": "http://www.squid-cache.org/bugs/show_bug.cgi?id=1217"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "squid -- buffer overflow in WCCP recvfrom() call"
+}

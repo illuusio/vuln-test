@@ -1,0 +1,51 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "FreeBSD"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "introduced": "6.0"
+                        },
+                        {
+                            "fixed": "6.0_3"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "discovery": "2006-01-18T00:00:00Z",
+        "references": {
+            "cvename": [
+                "CVE-2006-0226"
+            ],
+            "freebsdsa": [
+                "SA-06:05.80211"
+            ]
+        },
+        "vid": "dade3316-9d31-11da-8c1d-000e0c2e438a"
+    },
+    "details": "Problem description:\n\nAn integer overflow in the handling of corrupt IEEE 802.11 beacon or\nprobe response frames when scanning for existing wireless networks can\nresult in the frame overflowing a buffer.\n\nImpact:\n\nAn attacker able broadcast a carefully crafted beacon or probe response\nframe may be able to execute arbitrary code within the context of the\nFreeBSD kernel on any system scanning for wireless networks.\n\nWorkaround:\n\nNo workaround is available, but systems without IEEE 802.11 hardware or\ndrivers loaded are not vulnerable.\n",
+    "id": "FreeBSD-2006-0015",
+    "modified": "2016-08-09T00:00:00Z",
+    "published": "2006-02-14T00:00:00Z",
+    "references": [
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2006-0226"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://www.freebsd.org/security/advisories/FreeBSD-SA-06:05.80211.asc"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "IEEE 802.11 -- buffer overflow"
+}

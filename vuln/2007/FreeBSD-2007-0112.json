@@ -1,0 +1,104 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "ImageMagick"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "6.3.5.9"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        },
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "ImageMagick-nox11"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "6.3.5.9"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "cite": [
+            "http://nvd.nist.gov/nvd.cfm?cvename=CVE-2007-4985",
+            "http://nvd.nist.gov/nvd.cfm?cvename=CVE-2007-4986",
+            "http://nvd.nist.gov/nvd.cfm?cvename=CVE-2007-4987",
+            "http://nvd.nist.gov/nvd.cfm?cvename=CVE-2007-4988"
+        ],
+        "discovery": "2007-09-19T00:00:00Z",
+        "references": {
+            "cvename": [
+                "CVE-2007-4985",
+                "CVE-2007-4986",
+                "CVE-2007-4987",
+                "CVE-2007-4988"
+            ]
+        },
+        "vid": "f5b29ec0-71f9-11dc-8c6a-00304881ac9a"
+    },
+    "details": "Multiple vulnerabilities have been discovered in ImageMagick.\n\n> ImageMagick before 6.3.5-9 allows context-dependent attackers to cause\n> a denial of service via a crafted image file that triggers (1) an\n> infinite loop in the ReadDCMImage function, related to ReadBlobByte\n> function calls; or (2) an infinite loop in the ReadXCFImage function,\n> related to ReadBlobMSBLong function calls.\n\n> Multiple integer overflows in ImageMagick before 6.3.5-9 allow\n> context-dependent attackers to execute arbitrary code via a crafted\n> (1) .dcm, (2) .dib, (3) .xbm, (4) .xcf, or (5) .xwd image file, which\n> triggers a heap-based buffer overflow.\n\n> Off-by-one error in the ReadBlobString function in blob.c in\n> ImageMagick before 6.3.5-9 allows context-dependent attackers to\n> execute arbitrary code via a crafted image file, which triggers the\n> writing of a \\'\\\\0\\' character to an out-of-bounds address.\n\n> Sign extension error in the ReadDIBImage function in ImageMagick\n> before 6.3.5-9 allows context-dependent attackers to execute arbitrary\n> code via a crafted width value in an image file, which triggers an\n> integer overflow and a heap-based buffer overflow.\n",
+    "id": "FreeBSD-2007-0112",
+    "modified": "2007-10-10T00:00:00Z",
+    "published": "2007-10-10T00:00:00Z",
+    "references": [
+        {
+            "type": "REPORT",
+            "url": "http://nvd.nist.gov/nvd.cfm?cvename=CVE-2007-4985"
+        },
+        {
+            "type": "REPORT",
+            "url": "http://nvd.nist.gov/nvd.cfm?cvename=CVE-2007-4986"
+        },
+        {
+            "type": "REPORT",
+            "url": "http://nvd.nist.gov/nvd.cfm?cvename=CVE-2007-4987"
+        },
+        {
+            "type": "REPORT",
+            "url": "http://nvd.nist.gov/nvd.cfm?cvename=CVE-2007-4988"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2007-4985"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2007-4986"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2007-4987"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2007-4988"
+        },
+        {
+            "type": "WEB",
+            "url": "http://studio.imagemagick.org/pipermail/magick-announce/2007-September/000037.html"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "ImageMagick -- multiple vulnerabilities"
+}

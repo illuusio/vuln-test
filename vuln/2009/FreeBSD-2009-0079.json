@@ -1,0 +1,92 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "cups-base"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "1.3.10"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "cite": [
+            "http://www.gentoo.org/security/en/glsa/glsa-200904-20.xml"
+        ],
+        "discovery": "2009-05-05T00:00:00Z",
+        "references": {
+            "bid": [
+                "34571",
+                "34665",
+                "34568"
+            ],
+            "cvename": [
+                "CVE-2009-0163",
+                "CVE-2009-0164",
+                "CVE-2009-0146",
+                "CVE-2009-0147",
+                "CVE-2009-0166"
+            ]
+        },
+        "vid": "736e55bc-39bb-11de-a493-001b77d09812"
+    },
+    "details": "Gentoo security team summarizes:\n\n> The following issues were reported in CUPS:\n>\n> - iDefense reported an integer overflow in the \\_cupsImageReadTIFF()\n>   function in the \\\"imagetops\\\" filter, leading to a heap-based buffer\n>   overflow (CVE-2009-0163).\n> - Aaron Siegel of Apple Product Security reported that the CUPS web\n>   interface does not verify the content of the \\\"Host\\\" HTTP header\n>   properly (CVE-2009-0164).\n> - Braden Thomas and Drew Yao of Apple Product Security reported that\n>   CUPS is vulnerable to CVE-2009-0146, CVE-2009-0147 and\n>   CVE-2009-0166, found earlier in xpdf and poppler.\n>\n> A remote attacker might send or entice a user to send a specially\n> crafted print job to CUPS, possibly resulting in the execution of\n> arbitrary code with the privileges of the configured CUPS user \\-- by\n> default this is \\\"lp\\\", or a Denial of Service. Furthermore, the web\n> interface could be used to conduct DNS rebinding attacks.\n",
+    "id": "FreeBSD-2009-0079",
+    "modified": "2009-05-13T00:00:00Z",
+    "published": "2009-05-07T00:00:00Z",
+    "references": [
+        {
+            "type": "REPORT",
+            "url": "http://www.gentoo.org/security/en/glsa/glsa-200904-20.xml"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://www.securityfocus.com/bid/34571/info"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://www.securityfocus.com/bid/34665/info"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://www.securityfocus.com/bid/34568/info"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2009-0163"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2009-0164"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2009-0146"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2009-0147"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2009-0166"
+        },
+        {
+            "type": "WEB",
+            "url": "http://www.cups.org/articles.php?L582"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "cups -- remote code execution and DNS rebinding"
+}

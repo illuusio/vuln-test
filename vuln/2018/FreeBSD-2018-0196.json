@@ -1,0 +1,136 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "postgresql10-server"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "10.5"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        },
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "postgresql96-server"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "9.6.10"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        },
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "postgresql95-server"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "9.5.14"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        },
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "postgresql94-server"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "9.4.19"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        },
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "postgresql93-server"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "9.3.24"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "cite": [
+            "https://www.postgresql.org/about/news/1878/"
+        ],
+        "discovery": "2018-08-09T00:00:00Z",
+        "references": {
+            "cvename": [
+                "CVE-2018-10915",
+                "CVE-2018-10925"
+            ]
+        },
+        "vid": "96eab874-9c79-11e8-b34b-6cc21735f730"
+    },
+    "details": "The PostgreSQL project reports:\n\n> CVE-2018-10915: Certain host connection parameters defeat client-side\n> security defenses\n>\n> libpq, the client connection API for PostgreSQL that is also used by\n> other connection libraries, had an internal issue where it did not\n> reset all of its connection state variables when attempting to\n> reconnect. In particular, the state variable that determined whether\n> or not a password is needed for a connection would not be reset, which\n> could allow users of features requiring libpq, such as the \\\"dblink\\\"\n> or \\\"postgres_fdw\\\" extensions, to login to servers they should not be\n> able to access.\n>\n> CVE-2018-10925: Memory disclosure and missing authorization in\n> \\`INSERT \\... ON CONFLICT DO UPDATE\\`\n>\n> An attacker able to issue CREATE TABLE can read arbitrary bytes of\n> server memory using an upsert (\\`INSERT \\... ON CONFLICT DO UPDATE\\`)\n> query. By default, any user can exploit that. A user that has specific\n> INSERT privileges and an UPDATE privilege on at least one column in a\n> given table can also update other columns using a view and an upsert\n> query.\n",
+    "id": "FreeBSD-2018-0196",
+    "modified": "2018-08-10T00:00:00Z",
+    "published": "2018-08-10T00:00:00Z",
+    "references": [
+        {
+            "type": "REPORT",
+            "url": "https://www.postgresql.org/about/news/1878/"
+        },
+        {
+            "type": "WEB",
+            "url": "https://www.postgresql.org/about/news/1878/"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2018-10915"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2018-10925"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "PostgreSQL -- two vulnerabilities"
+}

@@ -1,0 +1,185 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "samba46"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "last_affected": "4.6.16"
+                        },
+                        {
+                            "fixed": "4.6.16"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        },
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "samba47"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "4.7.12"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        },
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "samba48"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "4.8.7"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        },
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "samba49"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "4.9.3"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "cite": [
+            "https://www.samba.org/samba/security/CVE-2018-14629.html",
+            "https://www.samba.org/samba/security/CVE-2018-16841.html",
+            "https://www.samba.org/samba/security/CVE-2018-16851.html",
+            "https://www.samba.org/samba/security/CVE-2018-16852.html",
+            "https://www.samba.org/samba/security/CVE-2018-16853.html",
+            "https://www.samba.org/samba/security/CVE-2018-16857.html"
+        ],
+        "discovery": "2018-08-14T00:00:00Z",
+        "references": {
+            "cvename": [
+                "CVE-2018-14629",
+                "CVE-2018-16841",
+                "CVE-2018-16851",
+                "CVE-2018-16852",
+                "CVE-2018-16853",
+                "CVE-2018-16857"
+            ]
+        },
+        "vid": "54976998-f248-11e8-81e2-005056a311d1"
+    },
+    "details": "The samba project reports:\n\n> All versions of Samba from 4.0.0 onwards are vulnerable to infinite\n> query recursion caused by CNAME loops. Any dns record can be added via\n> ldap by an unprivileged user using the ldbadd tool, so this is a\n> security issue.\n\n> When configured to accept smart-card authentication, Samba\\'s KDC will\n> call talloc_free() twice on the same memory if the principal in a\n> validly signed certificate does not match the principal in the AS-REQ.\n\n> During the processing of an LDAP search before Samba\\'s AD DC returns\n> the LDAP entries to the client, the entries are cached in a single\n> memory object with a maximum size of 256MB. When this size is reached,\n> the Samba process providing the LDAP service will follow the NULL\n> pointer, terminating the process.\n\n> During the processing of an DNS zone in the DNS management DCE/RPC\n> server, the internal DNS server or the Samba DLZ plugin for BIND9, if\n> the DSPROPERTY_ZONE_MASTER_SERVERS property or\n> DSPROPERTY_ZONE_SCAVENGING_SERVERS property is set, the server will\n> follow a NULL pointer and terminate\n\n> A user in a Samba AD domain can crash the KDC when Samba is built in\n> the non-default MIT Kerberos configuration.\n\n> AD DC Configurations watching for bad passwords (to restrict brute\n> forcing of passwords) in a window of more than 3 minutes may not watch\n> for bad passwords at all.\n",
+    "id": "FreeBSD-2018-0280",
+    "modified": "2018-08-14T00:00:00Z",
+    "published": "2018-08-14T00:00:00Z",
+    "references": [
+        {
+            "type": "REPORT",
+            "url": "https://www.samba.org/samba/security/CVE-2018-14629.html"
+        },
+        {
+            "type": "REPORT",
+            "url": "https://www.samba.org/samba/security/CVE-2018-16841.html"
+        },
+        {
+            "type": "REPORT",
+            "url": "https://www.samba.org/samba/security/CVE-2018-16851.html"
+        },
+        {
+            "type": "REPORT",
+            "url": "https://www.samba.org/samba/security/CVE-2018-16852.html"
+        },
+        {
+            "type": "REPORT",
+            "url": "https://www.samba.org/samba/security/CVE-2018-16853.html"
+        },
+        {
+            "type": "REPORT",
+            "url": "https://www.samba.org/samba/security/CVE-2018-16857.html"
+        },
+        {
+            "type": "WEB",
+            "url": "https://www.samba.org/samba/security/CVE-2018-14629.html"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2018-14629"
+        },
+        {
+            "type": "WEB",
+            "url": "https://www.samba.org/samba/security/CVE-2018-16841.html"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2018-16841"
+        },
+        {
+            "type": "WEB",
+            "url": "https://www.samba.org/samba/security/CVE-2018-16851.html"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2018-16851"
+        },
+        {
+            "type": "WEB",
+            "url": "https://www.samba.org/samba/security/CVE-2018-16852.html"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2018-16852"
+        },
+        {
+            "type": "WEB",
+            "url": "https://www.samba.org/samba/security/CVE-2018-16853.html"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2018-16853"
+        },
+        {
+            "type": "WEB",
+            "url": "https://www.samba.org/samba/security/CVE-2018-16857.html"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2018-16857"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "samba -- multiple vulnerabilities"
+}

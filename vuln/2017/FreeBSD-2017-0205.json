@@ -1,0 +1,108 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "ruby"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "introduced": "2.2.0"
+                        },
+                        {
+                            "fixed": "2.2.8"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                },
+                {
+                    "events": [
+                        {
+                            "introduced": "2.3.0"
+                        },
+                        {
+                            "fixed": "2.3.5"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                },
+                {
+                    "events": [
+                        {
+                            "introduced": "2.4.0"
+                        },
+                        {
+                            "fixed": "2.4.2"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "cite": [
+            "https://www.ruby-lang.org/en/security/"
+        ],
+        "discovery": "2017-09-14T00:00:00Z",
+        "references": {
+            "cvename": [
+                "CVE-2017-0898",
+                "CVE-2017-10784",
+                "CVE-2017-14033",
+                "CVE-2017-14064"
+            ]
+        },
+        "vid": "95b01379-9d52-11e7-a25c-471bafc3262f"
+    },
+    "details": "Ruby blog:\n\n> CVE-2017-0898: Buffer underrun vulnerability in Kernel.sprintf\n>\n> If a malicious format string which contains a precious specifier (\\*)\n> is passed and a huge minus value is also passed to the specifier,\n> buffer underrun may be caused. In such situation, the result may\n> contains heap, or the Ruby interpreter may crash.\n>\n> CVE-2017-10784: Escape sequence injection vulnerability in the Basic\n> authentication of WEBrick\n>\n> When using the Basic authentication of WEBrick, clients can pass an\n> arbitrary string as the user name. WEBrick outputs the passed user\n> name intact to its log, then an attacker can inject malicious escape\n> sequences to the log and dangerous control characters may be executed\n> on a victim's terminal emulator.\n>\n> This vulnerability is similar to a vulnerability already fixed, but it\n> had not been fixed in the Basic authentication.\n>\n> CVE-2017-14033: Buffer underrun vulnerability in OpenSSL ASN1 decode\n>\n> If a malicious string is passed to the decode method of OpenSSL::ASN1,\n> buffer underrun may be caused and the Ruby interpreter may crash.\n>\n> CVE-2017-14064: Heap exposure vulnerability in generating JSON\n>\n> The generate method of JSON module optionally accepts an instance of\n> JSON::Ext::Generator::State class. If a malicious instance is passed,\n> the result may include contents of heap.\n",
+    "id": "FreeBSD-2017-0205",
+    "modified": "2017-09-19T00:00:00Z",
+    "published": "2017-09-19T00:00:00Z",
+    "references": [
+        {
+            "type": "REPORT",
+            "url": "https://www.ruby-lang.org/en/security/"
+        },
+        {
+            "type": "WEB",
+            "url": "https://www.ruby-lang.org/en/security/"
+        },
+        {
+            "type": "WEB",
+            "url": "https://www.ruby-lang.org/en/news/2017/09/14/sprintf-buffer-underrun-cve-2017-0898/"
+        },
+        {
+            "type": "WEB",
+            "url": "https://www.ruby-lang.org/en/news/2017/09/14/webrick-basic-auth-escape-sequence-injection-cve-2017-10784/"
+        },
+        {
+            "type": "WEB",
+            "url": "https://www.ruby-lang.org/en/news/2017/09/14/openssl-asn1-buffer-underrun-cve-2017-14033/"
+        },
+        {
+            "type": "WEB",
+            "url": "https://www.ruby-lang.org/en/news/2017/09/14/json-heap-exposure-cve-2017-14064/"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2017-0898"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2017-10784"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2017-14033"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2017-14064"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "ruby -- multiple vulnerabilities"
+}

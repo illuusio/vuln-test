@@ -1,0 +1,48 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "sympa"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "6.2.54"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "discovery": "2020-02-24T00:00:00Z",
+        "references": {
+            "cvename": [
+                "CVE-2020-9369"
+            ]
+        },
+        "vid": "9908a1cc-35ad-424d-be0b-7e56abd5931a"
+    },
+    "details": "Javier Moreno discovered a vulnerability in Sympa web interface that can\ncause denial of service (DoS) attack.\n\nBy submitting requests with malformed parameters, this flaw allows to\ncreate junk files in Sympa\\'s directory for temporary files. And\nparticularly by tampering token to prevent CSRF, it allows to originate\nexessive notification messages to listmasters.\n",
+    "id": "FreeBSD-2020-0127",
+    "modified": "2020-05-22T00:00:00Z",
+    "published": "2020-05-22T00:00:00Z",
+    "references": [
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2020-9369"
+        },
+        {
+            "type": "WEB",
+            "url": "https://sympa-community.github.io/security/2020-001.html"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "sympa -- Denial of service caused by malformed CSRF token"
+}

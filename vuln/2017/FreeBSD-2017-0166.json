@@ -1,0 +1,55 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "proftpd"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "1.3.5e"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "cite": [
+            "https://nvd.nist.gov/vuln/detail/CVE-2017-7418"
+        ],
+        "discovery": "2017-03-06T00:00:00Z",
+        "references": {
+            "cvename": [
+                "CVE-2017-7418"
+            ]
+        },
+        "vid": "770d7e91-72af-11e7-998a-08606e47f965"
+    },
+    "details": "NVD reports:\n\n> ProFTPD \\... controls whether the home directory of a user could\n> contain a symbolic link through the AllowChrootSymlinks configuration\n> option, but checks only the last path component when enforcing\n> AllowChrootSymlinks. Attackers with local access could bypass the\n> AllowChrootSymlinks control by replacing a path component (other than\n> the last one) with a symbolic link.\n",
+    "id": "FreeBSD-2017-0166",
+    "modified": "2017-07-27T00:00:00Z",
+    "published": "2017-07-27T00:00:00Z",
+    "references": [
+        {
+            "type": "REPORT",
+            "url": "https://nvd.nist.gov/vuln/detail/CVE-2017-7418"
+        },
+        {
+            "type": "WEB",
+            "url": "http://bugs.proftpd.org/show_bug.cgi?id=4295"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2017-7418"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "proftpd -- user chroot escape vulnerability"
+}

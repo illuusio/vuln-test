@@ -1,0 +1,62 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "FreeBSD"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "introduced": "12.2"
+                        },
+                        {
+                            "fixed": "12.2_4"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                },
+                {
+                    "events": [
+                        {
+                            "introduced": "11.4"
+                        },
+                        {
+                            "fixed": "11.4_8"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "discovery": "2021-02-24T00:00:00Z",
+        "references": {
+            "cvename": [
+                "CVE-2020-25580"
+            ],
+            "freebsdsa": [
+                "SA-21:03.pam_login_access"
+            ]
+        },
+        "vid": "a8654f1d-770d-11eb-b87a-901b0ef719ab"
+    },
+    "details": "# Problem Description:\n\nA regression in the login.access(5) rule processor has the effect of\ncausing rules to fail to match even when they should not. This means\nthat rules denying access may be ignored.\n\n# Impact:\n\nThe configuration in login.access(5) may not be applied, permitting\nlogin access to users even when the system is configured to deny it.\n",
+    "id": "FreeBSD-2021-0049",
+    "modified": "2021-02-25T00:00:00Z",
+    "published": "2021-02-25T00:00:00Z",
+    "references": [
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2020-25580"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://www.freebsd.org/security/advisories/FreeBSD-SA-21:03.pam_login_access.asc"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "FreeBSD -- login.access fails to apply rules"
+}

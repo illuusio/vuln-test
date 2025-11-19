@@ -1,0 +1,51 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "FreeBSD"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "introduced": "12.4"
+                        },
+                        {
+                            "fixed": "12.4_2"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "discovery": "2023-02-16T00:00:00Z",
+        "references": {
+            "cvename": [
+                "CVE-2023-25136"
+            ],
+            "freebsdsa": [
+                "SA-23:02.openssh"
+            ]
+        },
+        "vid": "09b7cd39-47bd-11ee-8e38-002590c1f29c"
+    },
+    "details": "# Problem Description:\n\nA flaw in the backwards-compatibility key exchange route allows a\npointer to be freed twice.\n\n# Impact:\n\nA remote, unauthenticated attacker may be able to cause a denial of\nservice, or possibly remote code execution.\n\nNote that FreeBSD 12.3 and FreeBSD 13.1 include older versions of\nOpenSSH, and are not affected. FreeBSD 13.2-BETA1 and later include the\nfix.\n",
+    "id": "FreeBSD-2023-0240",
+    "modified": "2023-08-31T00:00:00Z",
+    "published": "2023-08-31T00:00:00Z",
+    "references": [
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2023-25136"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://www.freebsd.org/security/advisories/FreeBSD-SA-23:02.openssh.asc"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "FreeBSD -- OpenSSH pre-authentication double free"
+}

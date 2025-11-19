@@ -1,0 +1,59 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "cscope"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "15.5_2"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "cite": [
+            "http://sourceforge.net/tracker/index.php?func=detail&aid=1064875&group_id=4664&atid=104664"
+        ],
+        "discovery": "2004-11-11T00:00:00Z",
+        "references": {
+            "cvename": [
+                "CVE-2004-2541"
+            ]
+        },
+        "vid": "72d8df84-ea6d-11da-8a53-00123ffe8333"
+    },
+    "details": "Jason Duell reports:\n\n> Cscope contains an alarming number of buffer overflow vulnerabilities.\n> By a rough count, there are at least 48 places where we blindly\n> sprintf() a file name into a fixed-length buffer of size PATHLEN\n> without checking to see if the file\\'s name is \\<= PATHLEN. We do\n> similar things with environment variable values.\n",
+    "id": "FreeBSD-2006-0102",
+    "modified": "2006-05-23T00:00:00Z",
+    "published": "2006-05-23T00:00:00Z",
+    "references": [
+        {
+            "type": "REPORT",
+            "url": "http://sourceforge.net/tracker/index.php?func=detail&aid=1064875&group_id=4664&atid=104664"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2004-2541"
+        },
+        {
+            "type": "WEB",
+            "url": "http://sourceforge.net/tracker/index.php?func=detail&aid=1064875&group_id=4664&atid=104664"
+        },
+        {
+            "type": "WEB",
+            "url": "http://secunia.com/advisories/13237"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "cscope -- buffer overflow vulnerabilities"
+}

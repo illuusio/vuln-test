@@ -1,0 +1,70 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "spamassassin"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "3.4.2"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "cite": [
+            "https://seclists.org/oss-sec/2018/q3/242"
+        ],
+        "discovery": "2018-09-16T00:00:00Z",
+        "references": {
+            "cvename": [
+                "CVE-2017-15705",
+                "CVE-2016-1238",
+                "CVE-2018-11780",
+                "CVE-2018-11781"
+            ]
+        },
+        "vid": "613193a0-c1b4-11e8-ae2d-54e1ad3d6335"
+    },
+    "details": "the Apache Spamassassin project reports:\n\n> In Apache SpamAssassin, using HTML::Parser, we setup an object and\n> hook into the begin and end tag event handlers In both cases, the\n> \\\"open\\\" event is immediately followed by a \\\"close\\\" event - even if\n> the tag \\*does not\\* close in the HTML being parsed.\n>\n> Because of this, we are missing the \\\"text\\\" event to deal with the\n> object normally. This can cause carefully crafted emails that might\n> take more scan time than expected leading to a Denial of Service.\n>\n> Fix a reliance on \\\".\\\" in \\@INC in one configuration script. Whether\n> this can be exploited in any way is uncertain.\n>\n> Fix a potential Remote Code Execution bug with the PDFInfo plugin.\n> Thanks to cPanel Security Team for their report of this issue.\n>\n> Fourth, this release fixes a local user code injection in the meta\n> rule syntax. Thanks again to cPanel Security Team for their report of\n> this issue.\n",
+    "id": "FreeBSD-2018-0237",
+    "modified": "2018-09-26T00:00:00Z",
+    "published": "2018-09-26T00:00:00Z",
+    "references": [
+        {
+            "type": "REPORT",
+            "url": "https://seclists.org/oss-sec/2018/q3/242"
+        },
+        {
+            "type": "WEB",
+            "url": "https://seclists.org/oss-sec/2018/q3/242"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2017-15705"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2016-1238"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2018-11780"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2018-11781"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "spamassassin -- multiple vulnerabilities"
+}

@@ -1,0 +1,108 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "node"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "14.4.0"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        },
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "node12"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "12.18.0"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        },
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "node10"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "10.21.0"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "cite": [
+            "https://nodejs.org/en/blog/vulnerability/june-2020-security-releases/"
+        ],
+        "discovery": "2020-06-02T00:00:00Z",
+        "references": {
+            "cvename": [
+                "CVE-2020-8174",
+                "CVE-2020-8172",
+                "CVE-2020-10531",
+                "CVE-2020-11080"
+            ]
+        },
+        "vid": "11fcfa8f-ac64-11ea-9dab-000d3ab229d6"
+    },
+    "details": "Node.js reports:\n\n> Updates are now available for all supported Node.js release lines for\n> the following issues.\n>\n> # TLS session reuse can lead to host certificate verification bypass (High) (CVE-2020-8172)\n>\n> The \\'session\\' event could be emitted before the \\'secureConnect\\'\n> event. It should not be, because the connection may fail to be\n> authorized. If it was saved an authorized connection could be\n> established later with the session ticket. Note that the https agent\n> caches sessions, so is vulnerable to this.\n>\n> The \\'session\\' event will now only be emitted after the\n> \\'secureConnect\\' event, and only for authorized connections.\n>\n> # HTTP/2 Large Settings Frame DoS (Low) (CVE-2020-11080)\n>\n> Receiving unreasonably large HTTP/2 SETTINGS frames can consume 100%\n> CPU to process all the settings, blocking all other activities until\n> complete.\n>\n> The HTTP/2 session frame is limited to 32 settings by default. This\n> can be configured if necessary using the maxSettings option.\n>\n> # napi_get_value_string\\_\\*() allows various kinds of memory corruption (High) (CVE-2020-8174)\n>\n> Calling napi_get_value_string_latin1(), napi_get_value_string_utf8(),\n> or napi_get_value_string_utf16() with a non-NULL buf, and a bufsize of\n> 0 will cause the entire string value to be written to buf, probably\n> overrunning the length of the buffer.\n>\n> A exploit has not been reported and it may be difficult but the\n> following is suggested:\n>\n> - All users of LTS Node.js versions should update to the versions\n>   announced in this security post. This will address the issue for any\n>   non pre-built add-on.\n> - Maintainers who support EOL Node.js versions and/or build against a\n>   version of Node.js that did not support N-API internally should\n>   update to use the new versions of node-addon-api 1.x and 2.x that\n>   will be released soon after this announcement.\n>\n> # ICU-20958 Prevent SEGV_MAPERR in append (High) (CVE-2020-10531)\n>\n> An issue was discovered in International Components for Unicode (ICU)\n> for C/C++ through 66.1. An integer overflow, leading to a heap-based\n> buffer overflow, exists in the UnicodeString::doAppend() function in\n> common/unistr.cpp.\n>\n> Fix was applied to 10.x in an abundance of caution, even though there\n> is no known way to trigger the overflow in 10.x.\n",
+    "id": "FreeBSD-2020-0148",
+    "modified": "2020-06-12T00:00:00Z",
+    "published": "2020-06-12T00:00:00Z",
+    "references": [
+        {
+            "type": "REPORT",
+            "url": "https://nodejs.org/en/blog/vulnerability/june-2020-security-releases/"
+        },
+        {
+            "type": "WEB",
+            "url": "https://nodejs.org/en/blog/vulnerability/june-2020-security-releases/"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2020-8174"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2020-8172"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2020-10531"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2020-11080"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "Node.js -- June 2020 Security Releases"
+}

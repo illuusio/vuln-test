@@ -1,0 +1,70 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "mantis"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "1.1.2"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "cite": [
+            "http://secunia.com/advisories/30270/"
+        ],
+        "discovery": "2008-05-15T00:00:00Z",
+        "references": {
+            "cvename": [
+                "CVE-2008-2276",
+                "CVE-2008-3331",
+                "CVE-2008-3332",
+                "CVE-2008-3333"
+            ]
+        },
+        "vid": "29255141-c3df-11dd-a721-0030843d3802"
+    },
+    "details": "Secunia reports:\n\n> Some vulnerabilities have been reported in Mantis, which can be\n> exploited by malicious users to compromise a vulnerable system and\n> malicious people to conduct cross-site scripting and request forgery\n> attacks.\n>\n> Input passed to the \\\"filter_target\\\" parameter in\n> return_dynamic_filters.php is not properly sanitised before being\n> returned to a user. This can be exploited to execute arbitrary HTML\n> and script code in a user\\'s browser session in context of an affected\n> site.\n>\n> A vulnerability is caused due to the application allowing users to\n> perform certain actions via HTTP requests without performing any\n> validity checks to verify the request. This can be exploited to e.g.\n> add a new user with administrative privileges by enticing a logged-in\n> administrator to visit a malicious site.\n>\n> Input passed to the \\\"value\\\" parameter in adm_config_set.php is not\n> properly sanitised before being used in an \\\"eval()\\\" statement. This\n> can be exploited to e.g. execute arbitrary PHP commands via a\n> specially crafted request.\n>\n> Input passed to the \\\"language\\\" parameter in account_prefs_update.php\n> is not properly verified before being used to include files. This can\n> be exploited to include arbitrary files from local resources.\n",
+    "id": "FreeBSD-2008-0152",
+    "modified": "2008-12-06T00:00:00Z",
+    "published": "2008-12-06T00:00:00Z",
+    "references": [
+        {
+            "type": "REPORT",
+            "url": "http://secunia.com/advisories/30270/"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2008-2276"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2008-3331"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2008-3332"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2008-3333"
+        },
+        {
+            "type": "WEB",
+            "url": "http://secunia.com/advisories/30270/"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "mantis -- multiple vulnerabilities"
+}

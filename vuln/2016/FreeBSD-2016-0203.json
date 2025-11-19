@@ -1,0 +1,136 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "ImageMagick"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "6.9.3.9_1,1"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        },
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "ImageMagick-nox11"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "6.9.3.9_1,1"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        },
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "ImageMagick7"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "introduced": "7.0.0.0.b20150715"
+                        },
+                        {
+                            "fixed": "7.0.1.0_1"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        },
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "ImageMagick7-nox11"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "introduced": "7.0.0.0.b20150715"
+                        },
+                        {
+                            "fixed": "7.0.1.0_1"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "cite": [
+            "http://www.openwall.com/lists/oss-security/2016/05/03/18"
+        ],
+        "discovery": "2016-05-03T00:00:00Z",
+        "references": {
+            "cvename": [
+                "CVE-2016-3714",
+                "CVE-2016-3715",
+                "CVE-2016-3716",
+                "CVE-2016-3717",
+                "CVE-2016-3718"
+            ]
+        },
+        "vid": "0d724b05-687f-4527-9c03-af34d3b094ec"
+    },
+    "details": "Openwall reports:\n\n> Insufficient filtering for filename passed to delegate\\'s command\n> allows remote code execution during conversion of several file\n> formats. Any service which uses ImageMagick to process user supplied\n> images and uses default delegates.xml / policy.xml, may be vulnerable\n> to this issue.\n>\n> It is possible to make ImageMagick perform a HTTP GET or FTP request\n>\n> It is possible to delete files by using ImageMagick\\'s \\'ephemeral\\'\n> pseudo protocol which deletes files after reading.\n>\n> It is possible to move image files to file with any extension in any\n> folder by using ImageMagick\\'s \\'msl\\' pseudo protocol. msl.txt and\n> image.gif should exist in known location - /tmp/ for PoC (in real life\n> it may be web service written in PHP, which allows to upload raw txt\n> files and process images with ImageMagick).\n>\n> It is possible to get content of the files from the server by using\n> ImageMagick\\'s \\'label\\' pseudo protocol.\n",
+    "id": "FreeBSD-2016-0203",
+    "modified": "2016-05-07T00:00:00Z",
+    "published": "2016-05-06T00:00:00Z",
+    "references": [
+        {
+            "type": "REPORT",
+            "url": "http://www.openwall.com/lists/oss-security/2016/05/03/18"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2016-3714"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2016-3715"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2016-3716"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2016-3717"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2016-3718"
+        },
+        {
+            "type": "WEB",
+            "url": "http://www.openwall.com/lists/oss-security/2016/05/03/18"
+        },
+        {
+            "type": "WEB",
+            "url": "https://imagetragick.com/"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "ImageMagick -- multiple vulnerabilities"
+}

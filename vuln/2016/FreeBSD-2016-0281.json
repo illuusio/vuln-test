@@ -1,0 +1,82 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "typo3"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "7.6.8"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        },
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "typo3-lts"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "6.2.24"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "cite": [
+            "https://typo3.org/teams/security/security-bulletins/typo3-core/typo3-core-sa-2016-013/"
+        ],
+        "discovery": "2016-05-24T00:00:00Z",
+        "references": {
+            "cvename": [
+                "CVE-2016-5091"
+            ]
+        },
+        "vid": "3caf4e6c-4cef-11e6-a15f-00248c0c745d"
+    },
+    "details": "TYPO3 reports:\n\n> Extbase request handling fails to implement a proper access check for\n> requested controller/ action combinations, which makes it possible for\n> an attacker to execute arbitrary Extbase actions by crafting a special\n> request. To successfully exploit this vulnerability, an attacker must\n> have access to at least one Extbase plugin or module action in a TYPO3\n> installation. The missing access check inevitably leads to information\n> disclosure or remote code execution, depending on the action that an\n> attacker is able to execute.\n",
+    "id": "FreeBSD-2016-0281",
+    "modified": "2016-07-18T00:00:00Z",
+    "published": "2016-07-18T00:00:00Z",
+    "references": [
+        {
+            "type": "REPORT",
+            "url": "https://typo3.org/teams/security/security-bulletins/typo3-core/typo3-core-sa-2016-013/"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2016-5091"
+        },
+        {
+            "type": "WEB",
+            "url": "https://typo3.org/teams/security/security-bulletins/typo3-core/typo3-core-sa-2016-013/"
+        },
+        {
+            "type": "WEB",
+            "url": "https://wiki.typo3.org/TYPO3_CMS_7.6.8"
+        },
+        {
+            "type": "WEB",
+            "url": "https://wiki.typo3.org/TYPO3_CMS_6.2.24"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "typo3 -- Missing access check in Extbase"
+}

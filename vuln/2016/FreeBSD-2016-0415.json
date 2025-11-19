@@ -1,0 +1,85 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "openssh-portable"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "7.3p1_1"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        },
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "FreeBSD"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "introduced": "11.0"
+                        },
+                        {
+                            "fixed": "11.0_3"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                },
+                {
+                    "events": [
+                        {
+                            "introduced": "10.3"
+                        },
+                        {
+                            "fixed": "10.3_12"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "discovery": "2016-10-19T00:00:00Z",
+        "references": {
+            "cvename": [
+                "CVE-2016-8858"
+            ],
+            "freebsdsa": [
+                "SA-16:33.openssh"
+            ]
+        },
+        "vid": "6a2cfcdc-9dea-11e6-a298-14dae9d210b8"
+    },
+    "details": "# Problem Description:\n\nWhen processing the SSH_MSG_KEXINIT message, the server could allocate\nup to a few hundreds of megabytes of memory per each connection, before\nany authentication take place.\n\n# Impact:\n\nA remote attacker may be able to cause a SSH server to allocate an\nexcessive amount of memory. Note that the default MaxStartups setting on\nFreeBSD will limit the effectiveness of this attack.\n",
+    "id": "FreeBSD-2016-0415",
+    "modified": "2016-11-02T00:00:00Z",
+    "published": "2016-10-29T00:00:00Z",
+    "references": [
+        {
+            "type": "WEB",
+            "url": "http://seclists.org/oss-sec/2016/q4/191"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2016-8858"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://www.freebsd.org/security/advisories/FreeBSD-SA-16:33.openssh.asc"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "FreeBSD -- OpenSSH Remote Denial of Service vulnerability"
+}

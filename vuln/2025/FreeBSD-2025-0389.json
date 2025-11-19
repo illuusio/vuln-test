@@ -1,0 +1,74 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "openvpn"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "2.6.16"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        },
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "openvpn-devel"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "g20251117,1"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "cite": [
+            "https://github.com/OpenVPN/openvpn/commit/fa6a1824b0f37bff137204156a74ca28cf5b6f83"
+        ],
+        "discovery": "2025-10-27T00:00:00Z",
+        "references": {
+            "cvename": [
+                "CVE-2025-13086"
+            ]
+        },
+        "vid": "17a40d76-c3fd-11f0-b513-0da7be77c170"
+    },
+    "details": "Arne Schwabe reports:\n\n> Fix memcmp check for the hmac verification in the 3way handshake being\n> inverted This is a stupid mistake but causes all hmac cookies to be\n> accepted, thus breaking source IP address validation. As a\n> consequence, TLS sessions can be openend and state can be consumed in\n> the server from IP addresses that did not initiate an initial\n> connection.\n>\n> While at it, fix check to only allow \\[t-2;t\\] timeslots, disallowing\n> HMACs coming in from a future timeslot.\n",
+    "id": "FreeBSD-2025-0389",
+    "modified": "2025-11-17T00:00:00Z",
+    "published": "2025-11-17T00:00:00Z",
+    "references": [
+        {
+            "type": "REPORT",
+            "url": "https://github.com/OpenVPN/openvpn/commit/fa6a1824b0f37bff137204156a74ca28cf5b6f83"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2025-13086"
+        },
+        {
+            "type": "WEB",
+            "url": "https://github.com/OpenVPN/openvpn/commit/fa6a1824b0f37bff137204156a74ca28cf5b6f83"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "OpenVPN -- HMAC verification on source IP address ineffective"
+}

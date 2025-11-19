@@ -1,0 +1,88 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "go122"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "1.22.11"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        },
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "go123"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "1.23.5"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "cite": [
+            "https://go.dev/issue/71156",
+            "https://go.dev/issue/70530"
+        ],
+        "discovery": "2025-01-07T00:00:00Z",
+        "references": {
+            "cvename": [
+                "CVE-2024-45341",
+                "CVE-2024-45336"
+            ]
+        },
+        "vid": "704aa72a-d840-11ef-a205-901b0e9408dc"
+    },
+    "details": "The Go project reports:\n\n> crypto/x509: usage of IPv6 zone IDs can bypass URI name constraints\n>\n> A certificate with a URI which has a IPv6 address with a zone ID may\n> incorrectly satisfy a URI name constraint that applies to the\n> certificate chain.\n\n> net/http: sensitive headers incorrectly sent after cross-domain\n> redirect\n>\n> The HTTP client drops sensitive headers after following a cross-domain\n> redirect. For example, a request to a.com/ containing an Authorization\n> header which is redirected to b.com/ will not send that header to\n> b.com.\n",
+    "id": "FreeBSD-2025-0015",
+    "modified": "2025-01-21T00:00:00Z",
+    "published": "2025-01-21T00:00:00Z",
+    "references": [
+        {
+            "type": "REPORT",
+            "url": "https://go.dev/issue/71156"
+        },
+        {
+            "type": "REPORT",
+            "url": "https://go.dev/issue/70530"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2024-45341"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2024-45336"
+        },
+        {
+            "type": "WEB",
+            "url": "https://go.dev/issue/71156"
+        },
+        {
+            "type": "WEB",
+            "url": "https://go.dev/issue/70530"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "go -- multiple vulnerabilities"
+}

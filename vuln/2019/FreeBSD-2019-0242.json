@@ -1,0 +1,73 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:kernel",
+                "name": "FreeBSD-kernel"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "introduced": "12.0"
+                        },
+                        {
+                            "fixed": "12.0_10"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                },
+                {
+                    "events": [
+                        {
+                            "introduced": "11.3"
+                        },
+                        {
+                            "fixed": "11.3_3"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                },
+                {
+                    "events": [
+                        {
+                            "introduced": "11.2"
+                        },
+                        {
+                            "fixed": "11.2_14"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "discovery": "2019-08-20T00:00:00Z",
+        "references": {
+            "cvename": [
+                "CVE-2019-5611"
+            ],
+            "freebsdsa": [
+                "SA-19:22.mbuf"
+            ]
+        },
+        "vid": "4d3d4f64-f680-11e9-a87f-a4badb2f4699"
+    },
+    "details": "# Problem Description:\n\nDue do a missing check in the code of m_pulldown(9) data returned may\nnot be contiguous as requested by the caller.\n\n# Impact:\n\nExtra checks in the IPv6 code catch the error condition and trigger a\nkernel panic leading to a remote DoS (denial-of-service) attack with\ncertain Ethernet interfaces. At this point it is unknown if any other\nthan the IPv6 code paths can trigger a similar condition.\n",
+    "id": "FreeBSD-2019-0242",
+    "modified": "2019-10-24T00:00:00Z",
+    "published": "2019-10-24T00:00:00Z",
+    "references": [
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2019-5611"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://www.freebsd.org/security/advisories/FreeBSD-SA-19:22.mbuf.asc"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "FreeBSD -- IPv6 remote Denial-of-Service"
+}

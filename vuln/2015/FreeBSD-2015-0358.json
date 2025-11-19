@@ -1,0 +1,55 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "xen-kernel"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "4.5.1_1"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "cite": [
+            "http://xenbits.xen.org/xsa/advisory-149.html"
+        ],
+        "discovery": "2015-10-29T00:00:00Z",
+        "references": {
+            "cvename": [
+                "CVE-2015-7969"
+            ]
+        },
+        "vid": "fc1f8795-881d-11e5-ab94-002590263bf5"
+    },
+    "details": "The Xen Project reports:\n\n> A domain\\'s primary array of vcpu pointers can be allocated by a\n> toolstack exactly once in the lifetime of a domain via the\n> XEN_DOMCTL_max_vcpus hypercall. This array is leaked on domain\n> teardown. This memory leak could \\-- over time \\-- exhaust the host\\'s\n> memory.\n>\n> A domain given partial management control via XEN_DOMCTL_max_vcpus can\n> mount a denial of service attack affecting the whole system. The\n> ability to also restart or create suitable domains is also required to\n> fully exploit the issue. Without this the leak is limited to a small\n> multiple of the maximum number of vcpus for the domain. The maximum\n> leak is 64kbytes per domain (re)boot (less on ARM).\n",
+    "id": "FreeBSD-2015-0358",
+    "modified": "2015-11-11T00:00:00Z",
+    "published": "2015-11-11T00:00:00Z",
+    "references": [
+        {
+            "type": "REPORT",
+            "url": "http://xenbits.xen.org/xsa/advisory-149.html"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2015-7969"
+        },
+        {
+            "type": "WEB",
+            "url": "http://xenbits.xen.org/xsa/advisory-149.html"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "xen-kernel -- leak of main per-domain vcpu pointer array"
+}

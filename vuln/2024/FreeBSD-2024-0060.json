@@ -1,0 +1,114 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "go122"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "1.22.1"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        },
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "go121"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "1.21.8"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "cite": [
+            "https://go.dev/issue/65390",
+            "https://go.dev/issue/65383",
+            "https://go.dev/issue/65065",
+            "https://go.dev/issue/65697",
+            "https://go.dev/issue/65083"
+        ],
+        "discovery": "2024-03-05T00:00:00Z",
+        "references": {
+            "cvename": [
+                "CVE-2023-45289",
+                "CVE-2023-45290",
+                "CVE-2024-24783",
+                "CVE-2024-24784",
+                "CVE-2024-24785"
+            ]
+        },
+        "vid": "b1b039ec-dbfc-11ee-9165-901b0e9408dc"
+    },
+    "details": "The Go project reports reports:\n\n> crypto/x509: Verify panics on certificates with an unknown public key\n> algorithm\n>\n> Verifying a certificate chain which contains a certificate with an\n> unknown public key algorithm will cause Certificate.Verify to panic.\n\n> net/http: memory exhaustion in Request.ParseMultipartForm\n>\n> When parsing a multipart form (either explicitly with\n> Request.ParseMultipartForm or implicitly with Request.FormValue,\n> Request.PostFormValue, or Request.FormFile), limits on the total size\n> of the parsed form were not applied to the memory consumed while\n> reading a single form line. This permitted a maliciously crafted input\n> containing very long lines to cause allocation of arbitrarily large\n> amounts of memory, potentially leading to memory exhaustion.\n\n> net/http, net/http/cookiejar: incorrect forwarding of sensitive\n> headers and cookies on HTTP redirect\n>\n> When following an HTTP redirect to a domain which is not a subdomain\n> match or exact match of the initial domain, an http.Client does not\n> forward sensitive headers such as \\\"Authorization\\\" or \\\"Cookie\\\". For\n> example, a redirect from foo.com to www.foo.com will forward the\n> Authorization header, but a redirect to bar.com will not.\n\n> html/template: errors returned from MarshalJSON methods may break\n> template escaping\n>\n> If errors returned from MarshalJSON methods contain user controlled\n> data, they may be used to break the contextual auto-escaping behavior\n> of the html/template package, allowing for subsequent actions to\n> inject unexpected content into templates.\n\n> net/mail: comments in display names are incorrectly handled\n>\n> The ParseAddressList function incorrectly handles comments (text\n> within parentheses) within display names. Since this is a misalignment\n> with conforming address parsers, it can result in different trust\n> decisions being made by programs using different parsers.\n",
+    "id": "FreeBSD-2024-0060",
+    "modified": "2024-03-06T00:00:00Z",
+    "published": "2024-03-06T00:00:00Z",
+    "references": [
+        {
+            "type": "REPORT",
+            "url": "https://go.dev/issue/65390"
+        },
+        {
+            "type": "REPORT",
+            "url": "https://go.dev/issue/65383"
+        },
+        {
+            "type": "REPORT",
+            "url": "https://go.dev/issue/65065"
+        },
+        {
+            "type": "REPORT",
+            "url": "https://go.dev/issue/65697"
+        },
+        {
+            "type": "REPORT",
+            "url": "https://go.dev/issue/65083"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2023-45289"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2023-45290"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2024-24783"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2024-24784"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2024-24785"
+        },
+        {
+            "type": "WEB",
+            "url": "https://groups.google.com/g/golang-announce/c/5pwGVUPoMbg/m/46oA5yPABQAJ"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "go -- multiple vulnerabilities"
+}

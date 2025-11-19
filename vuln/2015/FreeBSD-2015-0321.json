@@ -1,0 +1,70 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "p5-UI-Dialog"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "1.09_2"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "cite": [
+            "https://rt.cpan.org/Public/Bug/Display.html?id=107364"
+        ],
+        "discovery": "2008-08-24T00:00:00Z",
+        "references": {
+            "cvename": [
+                "CVE-2008-7315"
+            ],
+            "freebsdpr": [
+                "ports/203667"
+            ]
+        },
+        "vid": "00dadbf0-6f61-11e5-a2a1-002590263bf5"
+    },
+    "details": "Matthijs Kooijman reports:\n\n> It seems that the whiptail, cdialog and kdialog backends apply some\n> improper escaping in their shell commands, causing special characters\n> present in menu item titles to be interpreted by the shell. This\n> includes the backtick evaluation operator, so this constitutes a\n> security issue, allowing execution of arbitrary commands if an\n> attacker has control over the text displayed in a menu.\n",
+    "id": "FreeBSD-2015-0321",
+    "modified": "2015-10-10T00:00:00Z",
+    "published": "2015-10-10T00:00:00Z",
+    "references": [
+        {
+            "type": "REPORT",
+            "url": "https://rt.cpan.org/Public/Bug/Display.html?id=107364"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2008-7315"
+        },
+        {
+            "type": "REPORT",
+            "url": "https://bugs.freebsd.org/bugzilla/show_bug.cgi?id=203667"
+        },
+        {
+            "type": "WEB",
+            "url": "https://rt.cpan.org/Public/Bug/Display.html?id=107364"
+        },
+        {
+            "type": "WEB",
+            "url": "https://bugs.debian.org/496448"
+        },
+        {
+            "type": "WEB",
+            "url": "https://github.com/kckrinke/UI-Dialog/commit/6adc44cc636c615d76297d86835e1a997681eb61"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "p5-UI-Dialog -- shell command execution vulnerability"
+}

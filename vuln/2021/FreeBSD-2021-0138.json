@@ -1,0 +1,73 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "FreeBSD"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "introduced": "13.0"
+                        },
+                        {
+                            "fixed": "13.0_1"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                },
+                {
+                    "events": [
+                        {
+                            "introduced": "12.2"
+                        },
+                        {
+                            "fixed": "12.2_7"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                },
+                {
+                    "events": [
+                        {
+                            "introduced": "11.4"
+                        },
+                        {
+                            "fixed": "11.4_10"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "discovery": "2021-05-27T00:00:00Z",
+        "references": {
+            "cvename": [
+                "CVE-2021-29629"
+            ],
+            "freebsdsa": [
+                "SA-21:12.libradius"
+            ]
+        },
+        "vid": "107c7a76-beaa-11eb-b87a-901b0ef719ab"
+    },
+    "details": "# Problem Description:\n\nlibradius did not perform sufficient validation of received messages.\n\nrad_get_attr(3) did not verify that the attribute length is valid before\nsubtracting the length of the Type and Length fields. As a result, it\ncould return success while also providing a bogus length of SIZE_T_MAX -\n2 for the Value field.\n\nWhen processing attributes to find an optional authenticator,\nis_valid_response() failed to verify that each attribute length is\nnon-zero and could thus enter an infinite loop.\n\n# Impact:\n\nA server may use libradius(3) to process messages from RADIUS clients.\nIn this case, a malicious client could trigger a denial-of-service in\nthe server. A client using libradius(3) to process messages from a\nserver is susceptible to the same problem.\n\nThe impact of the rad_get_attr(3) bug depends on how the returned length\nis validated and used by the consumer. It is possible that libradius(3)\napplications will crash or enter an infinite loop when calling\nrad_get_attr(3) on untrusted RADIUS messages.\n",
+    "id": "FreeBSD-2021-0138",
+    "modified": "2021-05-27T00:00:00Z",
+    "published": "2021-05-27T00:00:00Z",
+    "references": [
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2021-29629"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://www.freebsd.org/security/advisories/FreeBSD-SA-21:12.libradius.asc"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "FreeBSD -- Missing message validation in libradius(3)"
+}

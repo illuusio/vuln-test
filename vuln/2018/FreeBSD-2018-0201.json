@@ -1,0 +1,149 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "samba46"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "4.6.16"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        },
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "samba47"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "4.7.9"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        },
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "samba48"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "4.8.4"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "cite": [
+            "https://www.samba.org/samba/security/CVE-2018-1139.html",
+            "https://www.samba.org/samba/security/CVE-2018-1140.html",
+            "https://www.samba.org/samba/security/CVE-2018-10858.html",
+            "https://www.samba.org/samba/security/CVE-2018-10918.html",
+            "https://www.samba.org/samba/security/CVE-2018-10919.html"
+        ],
+        "discovery": "2018-08-14T00:00:00Z",
+        "references": {
+            "cvename": [
+                "CVE-2018-1139",
+                "CVE-2018-1140",
+                "CVE-2018-10858",
+                "CVE-2018-10918",
+                "CVE-2018-10919"
+            ]
+        },
+        "vid": "c4e9a427-9fc2-11e8-802a-000c29a1e3ec"
+    },
+    "details": "The samba project reports:\n\n> Samba releases 4.7.0 to 4.8.3 (inclusive) contain an error which\n> allows authentication using NTLMv1 over an SMB1 transport (either\n> directory or via NETLOGON SamLogon calls from a member server), even\n> when NTLMv1 is explicitly disabled on the server.\n\n> Missing input sanitization checks on some of the input parameters to\n> LDB database layer cause the LDAP server and DNS server to crash when\n> following a NULL pointer.\n\n> Samba releases 3.2.0 to 4.8.3 (inclusive) contain an error in\n> libsmbclient that could allow a malicious server to overwrite client\n> heap memory by returning an extra long filename in a directory\n> listing.\n\n> Missing database output checks on the returned directory attributes\n> from the LDB database layer cause the DsCrackNames call in the DRSUAPI\n> server to crash when following a NULL pointer.\n\n> All versions of the Samba Active Directory LDAP server from 4.0.0\n> onwards are vulnerable to the disclosure of confidential attribute\n> values, both of attributes where the schema SEARCH_FLAG_CONFIDENTIAL\n> (0x80) searchFlags bit and where an explicit Access Control Entry has\n> been specified on the ntSecurityDescriptor.\n",
+    "id": "FreeBSD-2018-0201",
+    "modified": "2018-08-14T00:00:00Z",
+    "published": "2018-08-14T00:00:00Z",
+    "references": [
+        {
+            "type": "REPORT",
+            "url": "https://www.samba.org/samba/security/CVE-2018-1139.html"
+        },
+        {
+            "type": "REPORT",
+            "url": "https://www.samba.org/samba/security/CVE-2018-1140.html"
+        },
+        {
+            "type": "REPORT",
+            "url": "https://www.samba.org/samba/security/CVE-2018-10858.html"
+        },
+        {
+            "type": "REPORT",
+            "url": "https://www.samba.org/samba/security/CVE-2018-10918.html"
+        },
+        {
+            "type": "REPORT",
+            "url": "https://www.samba.org/samba/security/CVE-2018-10919.html"
+        },
+        {
+            "type": "WEB",
+            "url": "https://www.samba.org/samba/security/CVE-2018-1139.html"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2018-1139"
+        },
+        {
+            "type": "WEB",
+            "url": "https://www.samba.org/samba/security/CVE-2018-1140.html"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2018-1140"
+        },
+        {
+            "type": "WEB",
+            "url": "https://www.samba.org/samba/security/CVE-2018-10858.html"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2018-10858"
+        },
+        {
+            "type": "WEB",
+            "url": "https://www.samba.org/samba/security/CVE-2018-10918.html"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2018-10918"
+        },
+        {
+            "type": "WEB",
+            "url": "https://www.samba.org/samba/security/CVE-2018-10919.html"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2018-10919"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "samba -- multiple vulnerabilities"
+}

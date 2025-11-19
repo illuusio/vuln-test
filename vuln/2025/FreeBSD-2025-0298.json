@@ -1,0 +1,64 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "openvpn-devel"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "introduced": "g20250629,1"
+                        },
+                        {
+                            "fixed": "g20250925,1"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "cite": [
+            "https://github.com/OpenVPN/openvpn/commit/0fb5a00549be6b065f9a4d61940ee06786d9fa61",
+            "https://github.com/OpenVPN/openvpn/commit/3a66045b407321c9d1c096227db164df3955ab40"
+        ],
+        "discovery": "2025-09-24T00:00:00Z",
+        "references": {
+            "cvename": [
+                "CVE-2025-10680"
+            ]
+        },
+        "vid": "e5cf9f44-9a64-11f0-8241-93c889bb8de1"
+    },
+    "details": "Gert Doering reports:\n\n> Notable changes beta1 -\\> beta2 are: \\[\\...\\] add proper input\n> sanitation to DNS strings to prevent an attack coming from a\n> trusted-but-malicous OpenVPN server (CVE: 2025-10680, affects unixoid\n> systems with \\--dns-updown scripts and windows using the built-in\n> powershell call)\n\nLev Stipakov writes:\n\n> On Linux (and similar platforms), those options are written to a tmp\n> file, which is later sourced by a script running as root. Since\n> options are controlled by the server, it is possible for a malicious\n> server to execute script injection attack \\[\\...\\].\n\nThe original report is credited to Stanislav Fort\n\\<disclosure@aisle.com\\>.\n",
+    "id": "FreeBSD-2025-0298",
+    "modified": "2025-09-25T00:00:00Z",
+    "published": "2025-09-25T00:00:00Z",
+    "references": [
+        {
+            "type": "REPORT",
+            "url": "https://github.com/OpenVPN/openvpn/commit/0fb5a00549be6b065f9a4d61940ee06786d9fa61"
+        },
+        {
+            "type": "REPORT",
+            "url": "https://github.com/OpenVPN/openvpn/commit/3a66045b407321c9d1c096227db164df3955ab40"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2025-10680"
+        },
+        {
+            "type": "WEB",
+            "url": "https://github.com/OpenVPN/openvpn/commit/0fb5a00549be6b065f9a4d61940ee06786d9fa61"
+        },
+        {
+            "type": "WEB",
+            "url": "https://github.com/OpenVPN/openvpn/commit/3a66045b407321c9d1c096227db164df3955ab40"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "openvpn-devel -- script injection vulnerability from trusted but malicious server"
+}

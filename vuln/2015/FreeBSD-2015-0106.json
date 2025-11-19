@@ -1,0 +1,46 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "py27-salt"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "2015.5.0"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "cite": [
+            "http://docs.saltstack.com/en/latest/topics/releases/2015.5.0.html"
+        ],
+        "discovery": "2015-05-11T00:00:00Z",
+        "vid": "865863af-fb5e-11e4-8fda-002590263bf5"
+    },
+    "details": "Colton Myers reports:\n\n> In order to fix potential shell injection vulnerabilities in salt\n> modules, a change has been made to the various cmd module functions.\n> These functions now default to python_shell=False, which means that\n> the commands will not be sent to an actual shell.\n>\n> The largest side effect of this change is that \\\"shellisms\\\", such as\n> pipes, will not work by default. The modules shipped with salt have\n> been audited to fix any issues that might have arisen from this\n> change. Additionally, the cmd state module has been unaffected, and\n> use of cmd.run in jinja is also unaffected. cmd.run calls on the CLI\n> will also allow shellisms.\n>\n> However, custom execution modules which use shellisms in cmd calls\n> will break, unless you pass python_shell=True to these calls.\n>\n> As a temporary workaround, you can set cmd_safe: False in your minion\n> and master configs. This will revert the default, but is also less\n> secure, as it will allow shell injection vulnerabilities to be written\n> in custom code. We recommend you only set this setting for as long as\n> it takes to resolve these issues in your custom code, then remove the\n> override.\n",
+    "id": "FreeBSD-2015-0106",
+    "modified": "2015-05-24T00:00:00Z",
+    "published": "2015-05-24T00:00:00Z",
+    "references": [
+        {
+            "type": "REPORT",
+            "url": "http://docs.saltstack.com/en/latest/topics/releases/2015.5.0.html"
+        },
+        {
+            "type": "WEB",
+            "url": "http://docs.saltstack.com/en/latest/topics/releases/2015.5.0.html"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "py-salt -- potential shell injection vulnerabilities"
+}

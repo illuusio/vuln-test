@@ -1,0 +1,93 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "bugzilla"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "introduced": "2.4.*"
+                        },
+                        {
+                            "fixed": "3.6.7"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                },
+                {
+                    "events": [
+                        {
+                            "introduced": "4.0.*"
+                        },
+                        {
+                            "fixed": "4.0.3"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "cite": [
+            "http://www.bugzilla.org/security/3.4.12/"
+        ],
+        "discovery": "2011-11-28T00:00:00Z",
+        "references": {
+            "cvename": [
+                "CVE-2011-3657",
+                "CVE-2011-3667",
+                "CVE-2011-3668",
+                "CVE-2011-3669"
+            ]
+        },
+        "vid": "0c7a3ee2-3654-11e1-b404-20cf30e32f6d"
+    },
+    "details": "A Bugzilla Security Advisory reports:\n\n> The following security issues have been discovered in Bugzilla:\n>\n> - Tabular and graphical reports, as well as new charts have a debug\n>   mode which displays raw data as plain text. This text is not\n>   correctly escaped and a crafted URL could use this vulnerability to\n>   inject code leading to XSS.\n> - The User.offer_account_by_email WebService method ignores the\n>   user_can_create_account setting of the authentication method and\n>   generates an email with a token in it which the user can use to\n>   create an account. Depending on the authentication method being\n>   active, this could allow the user to log in using this account.\n>   Installations where the createemailregexp parameter is empty are not\n>   vulnerable to this issue.\n> - The creation of bug reports and of attachments is not protected by a\n>   token and so they can be created without the consent of a user if\n>   the relevant code is embedded in an HTML page and the user visits\n>   this page. This behavior was intentional to let third-party\n>   applications submit new bug reports and attachments easily. But as\n>   this behavior can be abused by a malicious user, it has been decided\n>   to block submissions with no valid token starting from version\n>   4.2rc1. Older branches are not patched to not break these\n>   third-party applications after the upgrade.\n>\n> All affected installations are encouraged to upgrade as soon as\n> possible.\n",
+    "id": "FreeBSD-2012-0002",
+    "modified": "2012-01-05T00:00:00Z",
+    "published": "2012-01-05T00:00:00Z",
+    "references": [
+        {
+            "type": "REPORT",
+            "url": "http://www.bugzilla.org/security/3.4.12/"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2011-3657"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2011-3667"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2011-3668"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2011-3669"
+        },
+        {
+            "type": "REPORT",
+            "url": "https://bugzilla.mozilla.org/show_bug.cgi?id=697699"
+        },
+        {
+            "type": "REPORT",
+            "url": "https://bugzilla.mozilla.org/show_bug.cgi?id=711714"
+        },
+        {
+            "type": "REPORT",
+            "url": "https://bugzilla.mozilla.org/show_bug.cgi?id=703975"
+        },
+        {
+            "type": "REPORT",
+            "url": "https://bugzilla.mozilla.org/show_bug.cgi?id=703983"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "bugzilla -- multiple vulnerabilities"
+}

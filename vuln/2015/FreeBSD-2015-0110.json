@@ -1,0 +1,74 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "krb5"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "1.13.2"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        },
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "krb5-112"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "1.12.3_2"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "cite": [
+            "http://krbdev.mit.edu/rt/Ticket/Display.html?id=8160"
+        ],
+        "discovery": "2015-05-25T00:00:00Z",
+        "references": {
+            "cvename": [
+                "CVE-2015-2694"
+            ]
+        },
+        "vid": "406636fe-055d-11e5-aab1-d050996490d0"
+    },
+    "details": "MIT reports:\n\n> In MIT krb5 1.12 and later, when the KDC is configured with PKINIT\n> support, an unauthenticated remote attacker can bypass the\n> requires_preauth flag on a client principal and obtain a ciphertext\n> encrypted in the principal\\'s long-term key. This ciphertext could be\n> used to conduct an off-line dictionary attack against the user\\'s\n> password.\n",
+    "id": "FreeBSD-2015-0110",
+    "modified": "2015-05-28T00:00:00Z",
+    "published": "2015-05-28T00:00:00Z",
+    "references": [
+        {
+            "type": "REPORT",
+            "url": "http://krbdev.mit.edu/rt/Ticket/Display.html?id=8160"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2015-2694"
+        },
+        {
+            "type": "WEB",
+            "url": "http://krbdev.mit.edu/rt/Ticket/Display.html?id=8160"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "krb5 -- requires_preauth bypass in PKINIT-enabled KDC"
+}

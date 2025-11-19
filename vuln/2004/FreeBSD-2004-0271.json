@@ -1,0 +1,121 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "mysql-server"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "last_affected": "3.23.58_3"
+                        },
+                        {
+                            "fixed": "3.23.58_3"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                },
+                {
+                    "events": [
+                        {
+                            "introduced": "4.*"
+                        },
+                        {
+                            "fixed": "4.0.21"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        },
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "mysql-client"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "last_affected": "3.23.58_3"
+                        },
+                        {
+                            "fixed": "3.23.58_3"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                },
+                {
+                    "events": [
+                        {
+                            "introduced": "4.*"
+                        },
+                        {
+                            "fixed": "4.0.21"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "cite": [
+            "http://bugs.mysql.com/bug.php?id=4017"
+        ],
+        "discovery": "2004-06-04T00:00:00Z",
+        "references": {
+            "bid": [
+                "10981"
+            ],
+            "cvename": [
+                "CVE-2004-0836"
+            ]
+        },
+        "vid": "835256b8-46ed-11d9-8ce0-00065be4b5b6"
+    },
+    "details": "The mysql_real_connect function doesn\\'t properly handle DNS replies by\ncopying the IP address into a buffer without any length checking. A\nspecially crafted DNS reply may therefore be used to cause a buffer\noverflow on affected systems.\n\nNote that whether this issue can be exploitable depends on the system\nlibrary responsible for the gethostbyname function. The bug finder,\nLukasz Wojtow, explaines this with the following words:\n\n> In glibc there is a limitation for an IP address to have only 4 bytes\n> (obviously), but generally speaking the length of the address comes\n> with a response for dns query (i know it sounds funny but read rfc1035\n> if you don\\'t believe). This bug can occur on libraries where\n> gethostbyname function takes length from dns\\'s response\n",
+    "id": "FreeBSD-2004-0271",
+    "modified": "2005-03-15T00:00:00Z",
+    "published": "2004-12-16T00:00:00Z",
+    "references": [
+        {
+            "type": "REPORT",
+            "url": "http://bugs.mysql.com/bug.php?id=4017"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2004-0836"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://www.securityfocus.com/bid/10981/info"
+        },
+        {
+            "type": "WEB",
+            "url": "http://bugs.mysql.com/bug.php?id=4017"
+        },
+        {
+            "type": "WEB",
+            "url": "http://lists.mysql.com/internals/14726"
+        },
+        {
+            "type": "WEB",
+            "url": "http://rhn.redhat.com/errata/RHSA-2004-611.html"
+        },
+        {
+            "type": "WEB",
+            "url": "http://www.osvdb.org/displayvuln.php?osvdb_id=10658"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "mysql -- mysql_real_connect buffer overflow vulnerability"
+}

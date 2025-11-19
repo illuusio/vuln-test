@@ -1,0 +1,46 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "zeek"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "4.0.4"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "cite": [
+            "https://github.com/zeek/zeek/releases/tag/v4.0.4"
+        ],
+        "discovery": "2021-08-26T00:00:00Z",
+        "vid": "d4d21998-bdc4-4a09-9849-2898d9b41459"
+    },
+    "details": "Tim Wojtulewicz of Corelight reports:\n\n> Paths from log stream make it into system() unchecked, potentially\n> leading to commands being run on the system unintentionally. This\n> requires either bad scripting or a malicious package to be installed,\n> and is considered low severity.\n>\n> Fix potential unbounded state growth in the PIA analyzer when\n> receiving a connection with either a large number of zero-length\n> packets, or one which continues ack-ing unseen segments. It is\n> possible to run Zeek out of memory in these instances and cause it to\n> crash. Due to the possibility of this happening with packets received\n> from the network, this is a potential DoS vulnerability.\n",
+    "id": "FreeBSD-2021-0237",
+    "modified": "2021-09-22T00:00:00Z",
+    "published": "2021-09-22T00:00:00Z",
+    "references": [
+        {
+            "type": "REPORT",
+            "url": "https://github.com/zeek/zeek/releases/tag/v4.0.4"
+        },
+        {
+            "type": "WEB",
+            "url": "https://github.com/zeek/zeek/releases/tag/v4.0.4"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "zeek -- several vulnerabilities"
+}

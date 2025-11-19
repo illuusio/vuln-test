@@ -1,0 +1,73 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "FreeBSD"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "introduced": "13.0"
+                        },
+                        {
+                            "fixed": "13.0_4"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                },
+                {
+                    "events": [
+                        {
+                            "introduced": "12.2"
+                        },
+                        {
+                            "fixed": "12.2_10"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                },
+                {
+                    "events": [
+                        {
+                            "introduced": "11.4"
+                        },
+                        {
+                            "fixed": "11.4_13"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "discovery": "2021-08-24T00:00:00Z",
+        "references": {
+            "cvename": [
+                "CVE-2021-36159"
+            ],
+            "freebsdsa": [
+                "SA-21:15.libfetch"
+            ]
+        },
+        "vid": "d22b336d-0567-11ec-b69d-4062311215d5"
+    },
+    "details": "# Problem Description:\n\nThe passive mode in FTP communication allows an out of boundary read\nwhile libfetch uses strtol to parse the relevant numbers into address\nbytes. It does not check if the line ends prematurely. If it does, the\nfor-loop condition checks for \\*p == \\'\\\\0\\' one byte too late because\np++ was already performed.\n\n# Impact:\n\nThe connection buffer size can be controlled by a malicious FTP server\nbecause the size is increased until a newline is encountered (or no more\ncharacters are read). This also allows to move the buffer into more\ninteresting areas within the address space, potentially parsing relevant\nnumbers for the attacker. Since these bytes become available to the\nserver in form of a new TCP connection to a constructed port number or\neven part of the IPv6 address this is a potential information leak.\n",
+    "id": "FreeBSD-2021-0211",
+    "modified": "2021-08-25T00:00:00Z",
+    "published": "2021-08-25T00:00:00Z",
+    "references": [
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2021-36159"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://www.freebsd.org/security/advisories/FreeBSD-SA-21:15.libfetch.asc"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "FreeBSD -- libfetch out of bounds read"
+}

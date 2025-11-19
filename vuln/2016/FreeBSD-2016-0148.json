@@ -1,0 +1,103 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "openssh-portable"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "7.2.p2,1"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        },
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "FreeBSD"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "introduced": "10.2"
+                        },
+                        {
+                            "fixed": "10.2_14"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                },
+                {
+                    "events": [
+                        {
+                            "introduced": "10.1"
+                        },
+                        {
+                            "fixed": "10.1_31"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                },
+                {
+                    "events": [
+                        {
+                            "introduced": "9.3"
+                        },
+                        {
+                            "fixed": "9.3_39"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "cite": [
+            "http://www.openssh.com/txt/x11fwd.adv"
+        ],
+        "discovery": "2016-03-11T00:00:00Z",
+        "references": {
+            "cvename": [
+                "CVE-2016-3115"
+            ],
+            "freebsdsa": [
+                "SA-16:14.openssh"
+            ]
+        },
+        "vid": "e4644df8-e7da-11e5-829d-c80aa9043978"
+    },
+    "details": "The OpenSSH project reports:\n\n> Missing sanitisation of untrusted input allows an authenticated user\n> who is able to request X11 forwarding to inject commands to xauth(1).\n>\n> Injection of xauth commands grants the ability to read arbitrary files\n> under the authenticated user\\'s privilege, Other xauth commands allow\n> limited information leakage, file overwrite, port probing and\n> generally expose xauth(1), which was not written with a hostile user\n> in mind, as an attack surface.\n>\n> Mitigation:\n>\n> Set X11Forwarding=no in sshd_config. This is the default.\n>\n> For authorized_keys that specify a \\\"command\\\" restriction, also set\n> the \\\"restrict\\\" (available in OpenSSH \\>=7.2) or\n> \\\"no-x11-forwarding\\\" restrictions.\n",
+    "id": "FreeBSD-2016-0148",
+    "modified": "2016-08-09T00:00:00Z",
+    "published": "2016-03-11T00:00:00Z",
+    "references": [
+        {
+            "type": "REPORT",
+            "url": "http://www.openssh.com/txt/x11fwd.adv"
+        },
+        {
+            "type": "WEB",
+            "url": "http://www.openssh.com/txt/x11fwd.adv"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2016-3115"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://www.freebsd.org/security/advisories/FreeBSD-SA-16:14.openssh.asc"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "openssh -- command injection when X11Forwarding is enabled"
+}

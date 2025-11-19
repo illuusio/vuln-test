@@ -1,0 +1,135 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "libsndfile"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "1.0.28_2"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        },
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "linux-c6-libsndfile"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "1.0.28_2"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        },
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "linux-c7-libsndfile"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "1.0.28_2"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "cite": [
+            "https://nvd.nist.gov/vuln/detail/CVE-2017-7585",
+            "https://nvd.nist.gov/vuln/detail/CVE-2017-7586",
+            "https://nvd.nist.gov/vuln/detail/CVE-2017-7741",
+            "https://nvd.nist.gov/vuln/detail/CVE-2017-7742"
+        ],
+        "discovery": "2017-04-07T00:00:00Z",
+        "references": {
+            "cvename": [
+                "CVE-2017-7585",
+                "CVE-2017-7586",
+                "CVE-2017-7741",
+                "CVE-2017-7742"
+            ]
+        },
+        "vid": "5a97805e-93ef-4dcb-8d5e-dbcac263bfc2"
+    },
+    "details": "NVD reports:\n\n> In libsndfile before 1.0.28, an error in the \\\"flac_buffer_copy()\\\"\n> function (flac.c) can be exploited to cause a stack-based buffer\n> overflow via a specially crafted FLAC file.\n\n> In libsndfile before 1.0.28, an error in the \\\"header_read()\\\"\n> function (common.c) when handling ID3 tags can be exploited to cause a\n> stack-based buffer overflow via a specially crafted FLAC file.\n\n> In libsndfile before 1.0.28, an error in the \\\"flac_buffer_copy()\\\"\n> function (flac.c) can be exploited to cause a segmentation violation\n> (with write memory access) via a specially crafted FLAC file during a\n> resample attempt, a similar issue to CVE-2017-7585.\n\n> In libsndfile before 1.0.28, an error in the \\\"flac_buffer_copy()\\\"\n> function (flac.c) can be exploited to cause a segmentation violation\n> (with read memory access) via a specially crafted FLAC file during a\n> resample attempt, a similar issue to CVE-2017-7585.\n",
+    "id": "FreeBSD-2017-0095",
+    "modified": "2017-04-20T00:00:00Z",
+    "published": "2017-04-20T00:00:00Z",
+    "references": [
+        {
+            "type": "REPORT",
+            "url": "https://nvd.nist.gov/vuln/detail/CVE-2017-7585"
+        },
+        {
+            "type": "REPORT",
+            "url": "https://nvd.nist.gov/vuln/detail/CVE-2017-7586"
+        },
+        {
+            "type": "REPORT",
+            "url": "https://nvd.nist.gov/vuln/detail/CVE-2017-7741"
+        },
+        {
+            "type": "REPORT",
+            "url": "https://nvd.nist.gov/vuln/detail/CVE-2017-7742"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2017-7585"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2017-7586"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2017-7741"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2017-7742"
+        },
+        {
+            "type": "WEB",
+            "url": "https://github.com/erikd/libsndfile/commit/60b234301adf"
+        },
+        {
+            "type": "WEB",
+            "url": "https://github.com/erikd/libsndfile/commit/708e996c87c5"
+        },
+        {
+            "type": "WEB",
+            "url": "https://github.com/erikd/libsndfile/commit/f457b7b5ecfe"
+        },
+        {
+            "type": "WEB",
+            "url": "https://github.com/erikd/libsndfile/commit/60b234301adf"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "libsndfile -- multiple vulnerabilities"
+}

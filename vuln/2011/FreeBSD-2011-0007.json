@@ -1,0 +1,75 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "php5-zip"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "5.3.4"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        },
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "php52-zip"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "5.2.15"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "discovery": "2010-12-13T00:00:00Z",
+        "references": {
+            "cvename": [
+                "CVE-2010-3709"
+            ]
+        },
+        "vid": "2a41233d-10e7-11e0-becc-0022156e8794"
+    },
+    "details": "The following DoS conditions in Zip extension were fixed in PHP 5.3.4\nand PHP 5.2.15:\n\n- > Fixed crash in zip extract method (possible CWE-170).\n\n- > The ZipArchive::getArchiveComment function in PHP 5.2.x through\n  > 5.2.14 and 5.3.x through 5.3.3 allows context-dependent attackers to\n  > cause a denial of service (NULL pointer dereference and application\n  > crash) via a crafted ZIP archive.\n",
+    "id": "FreeBSD-2011-0007",
+    "modified": "2011-01-13T00:00:00Z",
+    "published": "2011-01-13T00:00:00Z",
+    "references": [
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2010-3709"
+        },
+        {
+            "type": "WEB",
+            "url": "http://www.php.net/releases/5_3_4.php"
+        },
+        {
+            "type": "WEB",
+            "url": "http://www.php.net/releases/5_2_15.php"
+        },
+        {
+            "type": "WEB",
+            "url": "http://securityreason.com/achievement_securityalert/90"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "php-zip -- multiple Denial of Service vulnerabilities"
+}

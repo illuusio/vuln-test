@@ -1,0 +1,73 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "cyrus-imapd"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "2.1.18"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                },
+                {
+                    "events": [
+                        {
+                            "introduced": "2.2.*,1"
+                        },
+                        {
+                            "fixed": "2.2.11"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "cite": [
+            "http://asg.web.cmu.edu/cyrus/download/imapd/changes.html"
+        ],
+        "discovery": "2005-02-14T00:00:00Z",
+        "references": {
+            "bid": [
+                "12636"
+            ],
+            "cvename": [
+                "CVE-2005-0546"
+            ]
+        },
+        "vid": "b2d248ad-88f6-11d9-aa18-0001020eed82"
+    },
+    "details": "The Cyrus IMAP Server ChangeLog states:\n\n> - Fix possible single byte overflow in mailbox handling code.\n> - Fix possible single byte overflows in the imapd annotate extension.\n> - Fix stack buffer overflows in fetchnews (exploitable by peer news\n>   server), backend (exploitable by admin), and in imapd (exploitable\n>   by users though only on platforms where a filename may be larger\n>   than a mailbox name).\n\nThe 2.1.X series are reportedly only affected by the second issue.\n\nThese issues may lead to execution of arbitrary code with the\npermissions of the user running the Cyrus IMAP Server.\n",
+    "id": "FreeBSD-2005-0091",
+    "modified": "2005-04-05T00:00:00Z",
+    "published": "2005-02-27T00:00:00Z",
+    "references": [
+        {
+            "type": "REPORT",
+            "url": "http://asg.web.cmu.edu/cyrus/download/imapd/changes.html"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://www.securityfocus.com/bid/12636/info"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2005-0546"
+        },
+        {
+            "type": "WEB",
+            "url": "http://asg.web.cmu.edu/cyrus/download/imapd/changes.html"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "cyrus-imapd -- multiple buffer overflow vulnerabilities"
+}

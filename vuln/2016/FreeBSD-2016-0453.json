@@ -1,0 +1,62 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "xen-kernel"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "4.7.1"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "cite": [
+            "https://xenbits.xen.org/xsa/advisory-192.html"
+        ],
+        "discovery": "2016-11-22T00:00:00Z",
+        "references": {
+            "cvename": [
+                "CVE-2016-9382"
+            ],
+            "freebsdpr": [
+                "ports/214936"
+            ]
+        },
+        "vid": "523bb0b7-ba4d-11e6-ae1b-002590263bf5"
+    },
+    "details": "The Xen Project reports:\n\n> LDTR, just like TR, is purely a protected mode facility. Hence even\n> when switching to a VM86 mode task, LDTR loading needs to follow\n> protected mode semantics. This was violated by the code.\n>\n> On SVM (AMD hardware): a malicious unprivileged guest process can\n> escalate its privilege to that of the guest operating system.\n>\n> On both SVM and VMX (Intel hardware): a malicious unprivileged guest\n> process can crash the guest.\n",
+    "id": "FreeBSD-2016-0453",
+    "modified": "2016-12-04T00:00:00Z",
+    "published": "2016-12-04T00:00:00Z",
+    "references": [
+        {
+            "type": "REPORT",
+            "url": "https://xenbits.xen.org/xsa/advisory-192.html"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2016-9382"
+        },
+        {
+            "type": "REPORT",
+            "url": "https://bugs.freebsd.org/bugzilla/show_bug.cgi?id=214936"
+        },
+        {
+            "type": "WEB",
+            "url": "https://xenbits.xen.org/xsa/advisory-192.html"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "xen-kernel -- x86 task switch to VM86 mode mis-handled"
+}

@@ -1,0 +1,84 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:kernel",
+                "name": "FreeBSD-kernel"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "introduced": "10.0"
+                        },
+                        {
+                            "fixed": "10.0_10"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                },
+                {
+                    "events": [
+                        {
+                            "introduced": "9.3"
+                        },
+                        {
+                            "fixed": "9.3_3"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                },
+                {
+                    "events": [
+                        {
+                            "introduced": "9.2"
+                        },
+                        {
+                            "fixed": "9.2_13"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                },
+                {
+                    "events": [
+                        {
+                            "introduced": "9.1"
+                        },
+                        {
+                            "fixed": "9.1_20"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "discovery": "2014-10-21T00:00:00Z",
+        "references": {
+            "cvename": [
+                "CVE-2014-3711"
+            ],
+            "freebsdsa": [
+                "SA-14:22.namei"
+            ]
+        },
+        "vid": "73964eac-6007-11e6-a6c3-14dae9d210b8"
+    },
+    "details": "# Problem Description:\n\nThe namei facility will leak a small amount of kernel memory every time\na sandboxed process looks up a nonexistent path name.\n\n# Impact:\n\nA remote attacker that can cause a sandboxed process (for instance, a\nweb server) to look up a large number of nonexistent path names can\ncause memory exhaustion.\n",
+    "id": "FreeBSD-2016-0321",
+    "modified": "2016-08-11T00:00:00Z",
+    "published": "2016-08-11T00:00:00Z",
+    "references": [
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2014-3711"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://www.freebsd.org/security/advisories/FreeBSD-SA-14:22.namei.asc"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "FreeBSD -- memory leak in sandboxed namei lookup"
+}

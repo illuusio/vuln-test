@@ -1,0 +1,69 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "weechat"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "introduced": "0.3.0"
+                        },
+                        {
+                            "fixed": "0.3.9.2"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        },
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "weechat-devel"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "20121118"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "cite": [
+            "http://weechat.org/security/"
+        ],
+        "discovery": "2012-11-15T00:00:00Z",
+        "vid": "81826d12-317a-11e2-9186-406186f3d89d"
+    },
+    "details": "Sebastien Helleu reports:\n\n> Untrusted command for function hook_process could lead to execution of\n> commands, because of shell expansions.\n>\n> Workaround with a non-patched version: remove/unload all scripts\n> calling function hook_process (for maximum safety).\n",
+    "id": "FreeBSD-2012-0211",
+    "modified": "2012-11-18T00:00:00Z",
+    "published": "2012-11-18T00:00:00Z",
+    "references": [
+        {
+            "type": "REPORT",
+            "url": "http://weechat.org/security/"
+        },
+        {
+            "type": "WEB",
+            "url": "http://weechat.org/security/"
+        },
+        {
+            "type": "WEB",
+            "url": "https://savannah.nongnu.org/bugs/?37764"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "weechat -- Arbitrary shell command execution via scripts"
+}

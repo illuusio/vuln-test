@@ -1,0 +1,79 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "mysql-server"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "introduced": "4.0.0"
+                        },
+                        {
+                            "fixed": "4.0.24"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                },
+                {
+                    "events": [
+                        {
+                            "introduced": "4.1.0"
+                        },
+                        {
+                            "fixed": "4.1.10a"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "cite": [
+            "http://www.securityfocus.com/bid/12781/discussion/"
+        ],
+        "discovery": "2005-03-11T00:00:00Z",
+        "references": {
+            "bid": [
+                "12781"
+            ],
+            "cvename": [
+                "CVE-2005-0709",
+                "CVE-2005-0710",
+                "CVE-2005-0711"
+            ]
+        },
+        "vid": "619ef337-949a-11d9-b813-00d05964249f"
+    },
+    "details": "SecurityFocus reports:\n\n> MySQL is reported prone to an insecure temporary file creation\n> vulnerability.\n>\n> Reports indicate that an attacker that has \\'CREATE TEMPORARY TABLE\\'\n> privileges on an affected installation may leverage this vulnerability\n> to corrupt files with the privileges of the MySQL process.\n>\n> MySQL is reported prone to an input validation vulnerability that can\n> be exploited by remote users that have INSERT and DELETE privileges on\n> the \\'mysql\\' administrative database.\n>\n> Reports indicate that this issue may be leveraged to load an execute a\n> malicious library in the context of the MySQL process.\n>\n> Finally, MySQL is reported prone to a remote arbitrary code execution\n> vulnerability. It is reported that the vulnerability may be triggered\n> by employing the \\'CREATE FUNCTION\\' statement to manipulate functions\n> in order to control sensitive data structures.\n>\n> This issue may be exploited to execute arbitrary code in the context\n> of the database process.\n",
+    "id": "FreeBSD-2005-0105",
+    "modified": "2005-03-14T00:00:00Z",
+    "published": "2005-03-14T00:00:00Z",
+    "references": [
+        {
+            "type": "REPORT",
+            "url": "http://www.securityfocus.com/bid/12781/discussion/"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://www.securityfocus.com/bid/12781/info"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2005-0709"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2005-0710"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2005-0711"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "mysql-server -- multiple remote vulnerabilities"
+}

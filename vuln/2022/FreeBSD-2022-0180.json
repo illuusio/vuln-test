@@ -1,0 +1,55 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "squid"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "5.7"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "cite": [
+            "https://github.com/squid-cache/squid/security/advisories/GHSA-rcg9-7fqm-83mq"
+        ],
+        "discovery": "2022-04-17T00:00:00Z",
+        "references": {
+            "cvename": [
+                "CVE-2022-41317"
+            ]
+        },
+        "vid": "f9ada0b5-3d80-11ed-9330-080027f5fec9"
+    },
+    "details": "Mikhail Evdokimov (aka konata) reports:\n\n> Due to inconsistent handling of internal URIs Squid is vulnerable to\n> Exposure of Sensitive Information about clients using the proxy. This\n> problem allows a trusted client to directly access cache manager\n> information bypassing the manager ACL protection. The available cache\n> manager information contains records of internal network structure,\n> client credentials, client identity and client traffic behaviour.\n",
+    "id": "FreeBSD-2022-0180",
+    "modified": "2022-09-26T00:00:00Z",
+    "published": "2022-09-26T00:00:00Z",
+    "references": [
+        {
+            "type": "REPORT",
+            "url": "https://github.com/squid-cache/squid/security/advisories/GHSA-rcg9-7fqm-83mq"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2022-41317"
+        },
+        {
+            "type": "WEB",
+            "url": "https://github.com/squid-cache/squid/security/advisories/GHSA-rcg9-7fqm-83mq"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "squid -- Exposure of sensitive information in cache manager"
+}

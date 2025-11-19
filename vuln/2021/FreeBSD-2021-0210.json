@@ -1,0 +1,73 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "FreeBSD"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "introduced": "13.0"
+                        },
+                        {
+                            "fixed": "13.0_4"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                },
+                {
+                    "events": [
+                        {
+                            "introduced": "12.2"
+                        },
+                        {
+                            "fixed": "12.2_10"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                },
+                {
+                    "events": [
+                        {
+                            "introduced": "11.4"
+                        },
+                        {
+                            "fixed": "11.4_13"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "discovery": "2021-08-24T00:00:00Z",
+        "references": {
+            "cvename": [
+                "CVE-2021-29630"
+            ],
+            "freebsdsa": [
+                "SA-21:14.ggatec"
+            ]
+        },
+        "vid": "3e9d2fde-0567-11ec-b69d-4062311215d5"
+    },
+    "details": "# Problem Description:\n\nThe ggatec(8) daemon does not validate the size of a response before\nwriting it to a fixed-sized buffer. This allows to overwrite the stack\nof ggatec(8).\n\n# Impact:\n\nA malicious ggated(8) or an attacker in a priviledged network position\ncan overwrite the stack with crafted content and potentially execute\narbitrary code.\n",
+    "id": "FreeBSD-2021-0210",
+    "modified": "2021-08-25T00:00:00Z",
+    "published": "2021-08-25T00:00:00Z",
+    "references": [
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2021-29630"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://www.freebsd.org/security/advisories/FreeBSD-SA-21:14.ggatec.asc"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "FreeBSD -- Remote code execution in ggatec(8)"
+}

@@ -1,0 +1,74 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "go"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "1.13.1,1"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        },
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "go-devel"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "g20190925"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "cite": [
+            "https://github.com/golang/go/issues/34540"
+        ],
+        "discovery": "2019-09-25T00:00:00Z",
+        "references": {
+            "cvename": [
+                "CVE-2019-16276"
+            ]
+        },
+        "vid": "a92dcc5c-e05c-11e9-b589-10c37b4ac2ea"
+    },
+    "details": "The Go project reports:\n\n> net/http (through net/textproto) used to accept and normalize invalid\n> HTTP/1.1 headers with a space before the colon, in violation of RFC\n> 7230. If a Go server is used behind a reverse proxy that accepts and\n> forwards but doesn\\'t normalize such invalid headers, the reverse\n> proxy and the server can interpret the headers differently. This can\n> lead to filter bypasses or request smuggling, the latter if requests\n> from separate clients are multiplexed onto the same connection by the\n> proxy. Such invalid headers are now rejected by Go servers, and passed\n> without normalization to Go client applications.\n",
+    "id": "FreeBSD-2019-0221",
+    "modified": "2019-09-26T00:00:00Z",
+    "published": "2019-09-26T00:00:00Z",
+    "references": [
+        {
+            "type": "REPORT",
+            "url": "https://github.com/golang/go/issues/34540"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2019-16276"
+        },
+        {
+            "type": "WEB",
+            "url": "https://github.com/golang/go/issues/34540"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "go -- invalid headers are normalized, allowing request smuggling"
+}

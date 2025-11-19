@@ -1,0 +1,112 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "py27-pillow"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "2.9.0_1"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        },
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "py33-pillow"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "2.9.0_1"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        },
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "py34-pillow"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "2.9.0_1"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        },
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "py35-pillow"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "2.9.0_1"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "cite": [
+            "https://pillow.readthedocs.org/en/3.1.x/releasenotes/3.1.1.html"
+        ],
+        "discovery": "2016-02-04T00:00:00Z",
+        "references": {
+            "cvename": [
+                "CVE-2016-0740"
+            ]
+        },
+        "vid": "53252879-cf11-11e5-805c-5453ed2e2b49"
+    },
+    "details": "The Pillow maintainers report:\n\n> Pillow 3.1.0 and earlier when linked against libtiff \\>= 4.0.0 on x64\n> may overflow a buffer when reading a specially crafted tiff file.\n>\n> Specifically, libtiff \\>= 4.0.0 changed the return type of\n> TIFFScanlineSize from int32 to machine dependent int32\\|64. If the\n> scanline is sized so that it overflows an int32, it may be interpreted\n> as a negative number, which will then pass the size check in\n> TiffDecode.c line 236. To do this, the logical scanline size has to be\n> \\> 2gb, and for the test file, the allocated buffer size is 64k\n> against a roughly 4gb scan line size. Any image data over 64k is\n> written over the heap, causing a segfault.\n>\n> This issue was found by security researcher FourOne.\n",
+    "id": "FreeBSD-2016-0087",
+    "modified": "2016-02-09T00:00:00Z",
+    "published": "2016-02-09T00:00:00Z",
+    "references": [
+        {
+            "type": "REPORT",
+            "url": "https://pillow.readthedocs.org/en/3.1.x/releasenotes/3.1.1.html"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2016-0740"
+        },
+        {
+            "type": "WEB",
+            "url": "https://github.com/python-pillow/Pillow/commit/6dcbf5bd96b717c58d7b642949da8d323099928e"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "py-pillow -- Buffer overflow in TIFF decoding code"
+}

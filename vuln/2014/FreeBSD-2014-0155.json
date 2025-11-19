@@ -1,0 +1,202 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "bind99"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "9.9.6"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        },
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "bind99-base"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "9.9.6"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        },
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "bind98"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "introduced": "0,1"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        },
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "bind98-base"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "introduced": "0,1"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        },
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "bind96"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "introduced": "0,1"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        },
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "bind96-base"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "introduced": "0,1"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        },
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "FreeBSD"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "introduced": "9.3"
+                        },
+                        {
+                            "fixed": "9.3_6"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                },
+                {
+                    "events": [
+                        {
+                            "introduced": "9.2"
+                        },
+                        {
+                            "fixed": "9.2_16"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                },
+                {
+                    "events": [
+                        {
+                            "introduced": "9.1"
+                        },
+                        {
+                            "fixed": "9.1_23"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                },
+                {
+                    "events": [
+                        {
+                            "introduced": "8.4"
+                        },
+                        {
+                            "fixed": "8.4_20"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "cite": [
+            "https://www.isc.org/blogs/important-security-advisory-posted/"
+        ],
+        "discovery": "2014-12-08T00:00:00Z",
+        "references": {
+            "cvename": [
+                "CVE-2014-8500",
+                "CVE-2014-8680"
+            ],
+            "freebsdsa": [
+                "SA-14:29.bind"
+            ]
+        },
+        "vid": "ab3e98d9-8175-11e4-907d-d050992ecde8"
+    },
+    "details": "ISC reports:\n\n> We have today posted updated versions of 9.9.6 and 9.10.1 to address a\n> significant security vulnerability in DNS resolution. The flaw was\n> discovered by Florian Maury of ANSSI, and applies to any recursive\n> resolver that does not support a limit on the number of recursions.\n> \\[[CERTFR-2014-AVI-512](http://cert.ssi.gouv.fr/site/CERTFR-2014-AVI-512/index.html)\\],\n> \\[USCERT [VU#264212](www.kb.cert.org/vuls/id/264212)\\]\n>\n> A flaw in delegation handling could be exploited to put named into an\n> infinite loop, in which each lookup of a name server triggered\n> additional lookups of more name servers. This has been addressed by\n> placing limits on the number of levels of recursion named will allow\n> (default 7), and on the number of queries that it will send before\n> terminating a recursive query (default 50). The recursion depth limit\n> is configured via the max-recursion-depth option, and the query limit\n> via the max-recursion-queries option. For more information, see the\n> security advisory at <https://kb.isc.org/article/AA-01216/>.\n> [\\[CVE-2014-8500\\]](https://kb.isc.org/article/AA-01216/) \\[RT\n> #37580\\]\n>\n> In addition, we have also corrected a potential security vulnerability\n> in the GeoIP feature in the 9.10.1 release only. For more information\n> on this issue, see the security advisory at\n> <https://kb.isc.org/article/AA-01217>.\n> [\\[CVE-2014-8680\\]](https://kb.isc.org/article/AA-01217)\n",
+    "id": "FreeBSD-2014-0155",
+    "modified": "2016-08-09T00:00:00Z",
+    "published": "2014-12-11T00:00:00Z",
+    "references": [
+        {
+            "type": "REPORT",
+            "url": "https://www.isc.org/blogs/important-security-advisory-posted/"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://www.freebsd.org/security/advisories/FreeBSD-SA-14:29.bind.asc"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2014-8500"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2014-8680"
+        },
+        {
+            "type": "WEB",
+            "url": "https://www.isc.org/blogs/important-security-advisory-posted/"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "bind -- denial of service vulnerability"
+}

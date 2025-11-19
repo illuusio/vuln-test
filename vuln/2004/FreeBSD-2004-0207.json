@@ -1,0 +1,50 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "imwheel"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "1.0.0.p12"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "cite": [
+            "http://www.caughq.org/advisories/CAU-2004-0002.txt"
+        ],
+        "discovery": "2004-08-20T00:00:00Z",
+        "vid": "e31d44a2-21e3-11d9-9289-000c41e2cdad"
+    },
+    "details": "A Computer Academic Underground advisory describes the consequences of\nimwheel\\'s handling of the process ID file (PID file):\n\n> imwheel exclusively uses a predictably named PID file for management\n> of multiple imwheel processes. A race condition exists when the -k\n> command-line option is used to kill existing imwheel processes. This\n> race condition may be used by a local user to Denial of Service\n> another user using imwheel, lead to resource exhaustion of the host\n> system, or append data to arbitrary files.\n",
+    "id": "FreeBSD-2004-0207",
+    "modified": "2004-10-19T00:00:00Z",
+    "published": "2004-10-19T00:00:00Z",
+    "references": [
+        {
+            "type": "REPORT",
+            "url": "http://www.caughq.org/advisories/CAU-2004-0002.txt"
+        },
+        {
+            "type": "WEB",
+            "url": "http://www.caughq.org/advisories/CAU-2004-0002.txt"
+        },
+        {
+            "type": "WEB",
+            "url": "http://imwheel.sourceforge.net/files/DEVELOPMENT.txt"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "imwheel -- insecure handling of PID file"
+}

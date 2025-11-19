@@ -1,0 +1,82 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "suricata"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "7.0.9"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "cite": [
+            "https://forum.suricata.io/t/suricata-7-0-9-released/5495"
+        ],
+        "discovery": "2025-03-12T00:00:00Z",
+        "references": {
+            "cvename": [
+                "CVE-2025-29915",
+                "CVE-2025-29916",
+                "CVE-2025-29917",
+                "CVE-2025-29918"
+            ]
+        },
+        "vid": "1d53db32-0d60-11f0-8542-b42e991fc52e"
+    },
+    "details": "Suricate team reports:\n\n> Multiple vulnerabilities\n\n- CVE-2025-29915: Severity HIGH. The AF_PACKET defrag option is enabled\n  by default and allows AF_PACKET to re-assemble fragmented packets\n  before reaching Suricata. However the default packet size in Suricata\n  is based on the network interface MTU which leads to Suricata seeing\n  truncated packets.\n- CVE-2025-29916: Severity Moderate. Datasets declared in rules have an\n  option to specify the \\`hashsize\\` to use. This size setting isn\\'t\n  properly limited, so the hash table allocation can be large. Untrusted\n  rules can lead to large memory allocations, potentially leading to\n  denial of service due to resource starvation\n- CVE-2025-29917: Severity HIGH. The bytes setting in the decode_base64\n  keyword is not properly limited. Due to this, signatures using the\n  keyword and setting can cause large memory allocations of up to 4 GiB\n  per thread.\n- CVE-2025-29918: Severity HIGH. A PCRE rule can be written that leads\n  to an infinite loop when negated PCRE is used. Packet processing\n  thread becomes stuck in infinite loop limiting visibility and\n  availability in inline mode.\n",
+    "id": "FreeBSD-2025-0081",
+    "modified": "2025-03-30T00:00:00Z",
+    "published": "2025-03-30T00:00:00Z",
+    "references": [
+        {
+            "type": "REPORT",
+            "url": "https://forum.suricata.io/t/suricata-7-0-9-released/5495"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2025-29915"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2025-29915"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2025-29916"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2025-29916"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2025-29917"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2025-29917"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2025-29918"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2025-29918"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "suricata -- Multiple vulnerabilities"
+}

@@ -1,0 +1,86 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "puppet"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "introduced": "2.7.*,1"
+                        },
+                        {
+                            "fixed": "2.7.18"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "cite": [
+            "http://projects.puppetlabs.com/projects/puppet/wiki/Release_Notes#2.7.18"
+        ],
+        "discovery": "2012-07-05T00:00:00Z",
+        "references": {
+            "cvename": [
+                "CVE-2012-3864",
+                "CVE-2012-3865",
+                "CVE-2012-3866",
+                "CVE-2012-3867"
+            ]
+        },
+        "vid": "3a6960ef-c8a8-11e1-9924-001fd0af1a4c"
+    },
+    "details": "puppet \\-- multiple vulnerabilities\n\n> Arbitrary file read on the puppet master from authenticated clients\n> (high). It is possible to construct an HTTP get request from an\n> authenticated client with a valid certificate that will return the\n> contents of an arbitrary file on the Puppet master that the master has\n> read-access to.\n>\n> Arbitrary file delete/D.O.S on Puppet Master from authenticated\n> clients (high). Given a Puppet master with the \\\"Delete\\\" directive\n> allowed in auth.conf for an authenticated host, an attacker on that\n> host can send a specially crafted Delete request that can cause an\n> arbitrary file deletion on the Puppet master, potentially causing a\n> denial of service attack. Note that this vulnerability does \\*not\\*\n> exist in Puppet as configured by default.\n>\n> The last_run_report.yaml is world readable (medium). The most recent\n> Puppet run report is stored on the Puppet master with world-readable\n> permissions. The report file contains the context diffs of any changes\n> to configuration on an agent, which may contain sensitive information\n> that an attacker can then access. The last run report is overwritten\n> with every Puppet run.\n>\n> Arbitrary file read on the Puppet master by an agent (medium). This\n> vulnerability is dependent upon vulnerability \\\"last_run_report.yml is\n> world readable\\\" above. By creating a hard link of a Puppet-managed\n> file to an arbitrary file that the Puppet master can read, an attacker\n> forces the contents to be written to the puppet run summary. The\n> context diff is stored in last_run_report.yaml, which can then be\n> accessed by the attacker.\n>\n> Insufficient input validation for agent hostnames (low). An attacker\n> could trick the administrator into signing an attacker\\'s certificate\n> rather than the intended one by constructing specially crafted\n> certificate requests containing specific ANSI control sequences. It is\n> possible to use the sequences to rewrite the order of text displayed\n> to an administrator such that display of an invalid certificate and\n> valid certificate are transposed. If the administrator signs the\n> attacker\\'s certificate, the attacker can then man-in-the-middle the\n> agent.\n>\n> Agents with certnames of IP addresses can be impersonated (low). If an\n> authenticated host with a certname of an IP address changes IP\n> addresses, and a second host assumes the first host\\'s former IP\n> address, the second host will be treated by the puppet master as the\n> first one, giving the second host access to the first host\\'s catalog.\n> Note: This will not be fixed in Puppet versions prior to the\n> forthcoming 3.x. Instead, with this announcement IP-based\n> authentication in Puppet \\< 3.x is deprecated.\n",
+    "id": "FreeBSD-2012-0121",
+    "modified": "2012-07-10T00:00:00Z",
+    "published": "2012-07-10T00:00:00Z",
+    "references": [
+        {
+            "type": "REPORT",
+            "url": "http://projects.puppetlabs.com/projects/puppet/wiki/Release_Notes#2.7.18"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2012-3864"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2012-3865"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2012-3866"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2012-3867"
+        },
+        {
+            "type": "WEB",
+            "url": "http://projects.puppetlabs.com/projects/puppet/wiki/Release_Notes#2.7.18"
+        },
+        {
+            "type": "WEB",
+            "url": "http://puppetlabs.com/security/cve/cve-2012-3864/"
+        },
+        {
+            "type": "WEB",
+            "url": "http://puppetlabs.com/security/cve/cve-2012-3865/"
+        },
+        {
+            "type": "WEB",
+            "url": "http://puppetlabs.com/security/cve/cve-2012-3866/"
+        },
+        {
+            "type": "WEB",
+            "url": "http://puppetlabs.com/security/cve/cve-2012-3867/"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "puppet -- multiple vulnerabilities"
+}

@@ -1,0 +1,62 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:kernel",
+                "name": "FreeBSD-kernel"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "introduced": "12.2"
+                        },
+                        {
+                            "fixed": "12.2_4"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                },
+                {
+                    "events": [
+                        {
+                            "introduced": "11.4"
+                        },
+                        {
+                            "fixed": "11.4_8"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "discovery": "2021-02-24T00:00:00Z",
+        "references": {
+            "cvename": [
+                "CVE-2020-25581"
+            ],
+            "freebsdsa": [
+                "SA-21:04.jail_remove"
+            ]
+        },
+        "vid": "31ad2f10-7711-11eb-b87a-901b0ef719ab"
+    },
+    "details": "# Problem Description:\n\nDue to a race condition in the jail_remove(2) implementation, it may\nfail to kill some of the processes.\n\n# Impact:\n\nA process running inside a jail can avoid being killed during jail\ntermination. If a jail is subsequently started with the same root path,\na lingering jailed process may be able to exploit the window during\nwhich a devfs filesystem is mounted but the jail\\'s devfs ruleset has\nnot been applied, to access device nodes which are ordinarily\ninaccessible. If the process is privileged, it may be able to escape the\njail and gain full access to the system.\n",
+    "id": "FreeBSD-2021-0052",
+    "modified": "2021-02-25T00:00:00Z",
+    "published": "2021-02-25T00:00:00Z",
+    "references": [
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2020-25581"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://www.freebsd.org/security/advisories/FreeBSD-SA-21:04.jail_remove.asc"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "FreeBSD -- jail_remove(2) fails to kill all jailed processes"
+}

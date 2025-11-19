@@ -1,0 +1,82 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "irssi"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "1.1.1,1"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "cite": [
+            "https://irssi.org/security/irssi_sa_2018_02.txt"
+        ],
+        "discovery": "2018-02-15T00:00:00Z",
+        "references": {
+            "cvename": [
+                "CVE-2018-7054",
+                "CVE-2018-7053",
+                "CVE-2018-7052",
+                "CVE-2018-7051",
+                "CVE-2018-7050"
+            ],
+            "freebsdpr": [
+                "ports/226001"
+            ]
+        },
+        "vid": "7afc5e56-156d-11e8-95f2-005056925db4"
+    },
+    "details": "Irssi reports:\n\n> Use after free when server is disconnected during netsplits. Found by\n> Joseph Bisch.\n>\n> Use after free when SASL messages are received in unexpected order.\n> Found by Joseph Bisch.\n>\n> Null pointer dereference when an \"empty\" nick has been observed by\n> Irssi. Found by Joseph Bisch.\n>\n> When the number of windows exceed the available space, Irssi would\n> crash due to Null pointer dereference. Found by Joseph Bisch.\n>\n> Certain nick names could result in out of bounds access when printing\n> theme strings. Found by Oss-Fuzz.\n",
+    "id": "FreeBSD-2018-0052",
+    "modified": "2018-02-22T00:00:00Z",
+    "published": "2018-02-19T00:00:00Z",
+    "references": [
+        {
+            "type": "REPORT",
+            "url": "https://irssi.org/security/irssi_sa_2018_02.txt"
+        },
+        {
+            "type": "WEB",
+            "url": "https://irssi.org/security/irssi_sa_2018_02.txt"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2018-7054"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2018-7053"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2018-7052"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2018-7051"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2018-7050"
+        },
+        {
+            "type": "REPORT",
+            "url": "https://bugs.freebsd.org/bugzilla/show_bug.cgi?id=226001"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "irssi -- multiple vulnerabilities"
+}

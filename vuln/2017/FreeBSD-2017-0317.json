@@ -1,0 +1,88 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "libXfont"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "1.5.3"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        },
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "libXfont2"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "2.0.2"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "cite": [
+            "https://cgit.freedesktop.org/xorg/lib/libXfont/commit/?id=d1e670a4a8704b8708e493ab6155589bcd570608",
+            "https://cgit.freedesktop.org/xorg/lib/libXfont/commit/?id=672bb944311392e2415b39c0d63b1e1902906bcd"
+        ],
+        "discovery": "2017-10-04T00:00:00Z",
+        "references": {
+            "cvename": [
+                "CVE-2017-13720",
+                "CVE-2017-13722"
+            ]
+        },
+        "vid": "3b9590a1-e358-11e7-a293-54e1ad3d6335"
+    },
+    "details": "The freedesktop.org project reports:\n\n> If a pattern contains \\'?\\' character, any character in the string is\n> skipped, even if it is \\'\\\\0\\'. The rest of the matching then reads\n> invalid memory.\n\n> Without the checks a malformed PCF file can cause the library to make\n> atom from random heap memory that was behind the \\`strings\\` buffer.\n> This may crash the process or leak information.\n",
+    "id": "FreeBSD-2017-0317",
+    "modified": "2017-12-17T00:00:00Z",
+    "published": "2017-12-17T00:00:00Z",
+    "references": [
+        {
+            "type": "REPORT",
+            "url": "https://cgit.freedesktop.org/xorg/lib/libXfont/commit/?id=d1e670a4a8704b8708e493ab6155589bcd570608"
+        },
+        {
+            "type": "REPORT",
+            "url": "https://cgit.freedesktop.org/xorg/lib/libXfont/commit/?id=672bb944311392e2415b39c0d63b1e1902906bcd"
+        },
+        {
+            "type": "WEB",
+            "url": "https://cgit.freedesktop.org/xorg/lib/libXfont/commit/?id=d1e670a4a8704b8708e493ab6155589bcd570608"
+        },
+        {
+            "type": "WEB",
+            "url": "https://cgit.freedesktop.org/xorg/lib/libXfont/commit/?id=672bb944311392e2415b39c0d63b1e1902905bcd"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2017-13720"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2017-13722"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "libXfont -- multiple memory leaks"
+}

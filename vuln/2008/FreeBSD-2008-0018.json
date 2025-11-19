@@ -1,0 +1,59 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "clamav"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "introduced": "0.92"
+                        },
+                        {
+                            "fixed": "0.92.1"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "cite": [
+            "http://labs.idefense.com/intelligence/vulnerabilities/display.php?id=658"
+        ],
+        "discovery": "2008-01-07T00:00:00Z",
+        "references": {
+            "cvename": [
+                "CVE-2008-0318"
+            ]
+        },
+        "vid": "be4b0529-dbaf-11dc-9791-000ea6702141"
+    },
+    "details": "iDefense Security Advisory 02.12.08:\n\n> Remote exploitation of an integer overflow vulnerability in Clam\n> AntiVirus\\' ClamAV, as included in various vendors\\' operating system\n> distributions, allows attackers to execute arbitrary code with the\n> privileges of the affected process.\n>\n> The vulnerability exists within the code responsible for parsing and\n> scanning PE files. While iterating through all sections contained in\n> the PE file, several attacker controlled values are extracted from the\n> file. On each iteration, arithmetic operations are performed without\n> taking into consideration 32-bit integer wrap.\n>\n> Since insufficient integer overflow checks are present, an attacker\n> can cause a heap overflow by causing a specially crafted Petite packed\n> PE binary to be scanned. This results in an exploitable memory\n> corruption condition.\n>\n> Exploitation of this vulnerability results in the execution of\n> arbitrary code with the privileges of the process using libclamav. In\n> the case of the clamd program, this will result in code execution with\n> the privileges of the clamav user. Unsuccessful exploitation results\n> in the clamd process crashing.\n\n# Workaround\n\nDisabling the scanning of PE files will prevent exploitation.\n\nIf using clamscan, this can be done by running clamscan with the\n\\'\\--no-pe\\' option.\n\nIf using clamdscan, set the \\'ScanPE\\' option in the clamd.conf file to\n\\'no\\'.\n",
+    "id": "FreeBSD-2008-0018",
+    "modified": "2008-02-15T00:00:00Z",
+    "published": "2008-02-15T00:00:00Z",
+    "references": [
+        {
+            "type": "REPORT",
+            "url": "http://labs.idefense.com/intelligence/vulnerabilities/display.php?id=658"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2008-0318"
+        },
+        {
+            "type": "WEB",
+            "url": "http://labs.idefense.com/intelligence/vulnerabilities/display.php?id=658"
+        },
+        {
+            "type": "WEB",
+            "url": "http://svn.clamav.net/svn/clamav-devel/trunk/ChangeLog"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "clamav -- ClamAV libclamav PE File Integer Overflow Vulnerability"
+}

@@ -1,0 +1,55 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "sddm"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "0.17.0_1"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "cite": [
+            "https://nvd.nist.gov/vuln/detail/CVE-2018-14345"
+        ],
+        "discovery": "2018-08-13T00:00:00Z",
+        "references": {
+            "cvename": [
+                "CVE-2018-14345"
+            ]
+        },
+        "vid": "f00acdec-b59f-11e8-805d-001e2a3f778d"
+    },
+    "details": "MITRE reports:\n\n> An issue was discovered in SDDM through 0.17.0. If configured with\n> ReuseSession=true, the password is not checked for users with an\n> already existing session. Any user with access to the system D-Bus can\n> therefore unlock any graphical session.\n\nThe default configuration of SDDM on FreeBSD is not affected, since it\nhas ReuseSession=false.\n",
+    "id": "FreeBSD-2018-0222",
+    "modified": "2018-09-11T00:00:00Z",
+    "published": "2018-09-11T00:00:00Z",
+    "references": [
+        {
+            "type": "REPORT",
+            "url": "https://nvd.nist.gov/vuln/detail/CVE-2018-14345"
+        },
+        {
+            "type": "WEB",
+            "url": "https://www.suse.com/security/cve/CVE-2018-14345/"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2018-14345"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "X11 Session -- SDDM allows unauthorised unlocking"
+}

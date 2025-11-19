@@ -1,0 +1,151 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "go119"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "1.19.12"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        },
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "go120"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "1.20.7"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "cite": [
+            "https://groups.google.com/u/1/g/golang-announce/c/X0b6CsSAaYI",
+            "https://go.dev/issue/60374",
+            "https://go.dev/issue/60167",
+            "https://go.dev/issue/60272",
+            "https://go.dev/issue/60305",
+            "https://go.dev/issue/59720",
+            "https://go.dev/issue/59721",
+            "https://go.dev/issue/59722"
+        ],
+        "discovery": "2023-04-27T00:00:00Z",
+        "references": {
+            "cvename": [
+                "CVE-2023-29406",
+                "CVE-2023-29402",
+                "CVE-2023-29403",
+                "CVE-2023-29404",
+                "CVE-2023-24539",
+                "CVE-2023-24540",
+                "CVE-2023-29400"
+            ]
+        },
+        "vid": "78f2e491-312d-11ee-85f2-bd89b893fcb4"
+    },
+    "details": "The Go project reports:\n\n> crypto/tls: restrict RSA keys in certificates to \\<= 8192 bits\n>\n> Extremely large RSA keys in certificate chains can cause a\n> client/server to expend significant CPU time verifying signatures.\n> Limit this by restricting the size of RSA keys transmitted during\n> handshakes to \\<= 8192 bits.\n\n> net/http: insufficient sanitization of Host header\n>\n> The HTTP/1 client did not fully validate the contents of the Host\n> header. A maliciously crafted Host header could inject additional\n> headers or entire requests. The HTTP/1 client now refuses to send\n> requests containing an invalid Request.Host or Request.URL.Host value.\n\n> cmd/go: cgo code injection\n>\n> The go command may generate unexpected code at build time when using\n> cgo. This may result in unexpected behavior when running a go program\n> which uses cgo.\n\n> runtime: unexpected behavior of setuid/setgid binaries\n>\n> The Go runtime didn\\'t act any differently when a binary had the\n> setuid/setgid bit set. On Unix platforms, if a setuid/setgid binary\n> was executed with standard I/O file descriptors closed, opening any\n> files could result in unexpected content being read/written with\n> elevated prilieges. Similarly if a setuid/setgid program was\n> terminated, either via panic or signal, it could leak the contents of\n> its registers.\n\n> cmd/go: improper sanitization of LDFLAGS\n>\n> The go command may execute arbitrary code at build time when using\n> cgo. This may occur when running \\\"go get\\\" on a malicious module, or\n> when running any other command which builds untrusted code. This is\n> can by triggered by linker flags, specified via a \\\"#cgo LDFLAGS\\\"\n> directive.\n\n> html/template: improper sanitization of CSS values\n>\n> Angle brackets (\\<\\>) were not considered dangerous characters when\n> inserted into CSS contexts. Templates containing multiple actions\n> separated by a \\'/\\' character could result in unexpectedly closing\n> the CSS context and allowing for injection of unexpected HMTL, if\n> executed with untrusted input.\n\n> html/template: improper handling of JavaScript whitespace\n>\n> Not all valid JavaScript whitespace characters were considered to be\n> whitespace. Templates containing whitespace characters outside of the\n> character set \\\"\\\\t\\\\n\\\\f\\\\r\\\\u0020\\\\u2028\\\\u2029\\\" in JavaScript\n> contexts that also contain actions may not be properly sanitized\n> during execution.\n\n> html/template: improper handling of empty HTML attributes\n>\n> Templates containing actions in unquoted HTML attributes (e.g.\n> \\\"attr={{.}}\\\") executed with empty input could result in output that\n> would have unexpected results when parsed due to HTML normalization\n> rules. This may allow injection of arbitrary attributes into tags.\n",
+    "id": "FreeBSD-2023-0219",
+    "modified": "2023-08-02T00:00:00Z",
+    "published": "2023-08-02T00:00:00Z",
+    "references": [
+        {
+            "type": "REPORT",
+            "url": "https://groups.google.com/u/1/g/golang-announce/c/X0b6CsSAaYI"
+        },
+        {
+            "type": "REPORT",
+            "url": "https://go.dev/issue/60374"
+        },
+        {
+            "type": "REPORT",
+            "url": "https://go.dev/issue/60167"
+        },
+        {
+            "type": "REPORT",
+            "url": "https://go.dev/issue/60272"
+        },
+        {
+            "type": "REPORT",
+            "url": "https://go.dev/issue/60305"
+        },
+        {
+            "type": "REPORT",
+            "url": "https://go.dev/issue/59720"
+        },
+        {
+            "type": "REPORT",
+            "url": "https://go.dev/issue/59721"
+        },
+        {
+            "type": "REPORT",
+            "url": "https://go.dev/issue/59722"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2023-29406"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2023-29402"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2023-29403"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2023-29404"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2023-24539"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2023-24540"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2023-29400"
+        },
+        {
+            "type": "WEB",
+            "url": "https://groups.google.com/u/1/g/golang-announce/c/X0b6CsSAaYI"
+        },
+        {
+            "type": "WEB",
+            "url": "https://groups.google.com/u/1/g/golang-announce/c/2q13H6LEEx0"
+        },
+        {
+            "type": "WEB",
+            "url": "https://groups.google.com/u/1/g/golang-announce/c/q5135a9d924"
+        },
+        {
+            "type": "WEB",
+            "url": "https://groups.google.com/u/1/g/golang-announce/c/MEb0UyuSMsU"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "go -- multiple vulnerabilities"
+}

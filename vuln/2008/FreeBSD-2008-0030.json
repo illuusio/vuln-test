@@ -1,0 +1,82 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "qemu"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "0.9.1_2"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        },
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "qemu-devel"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "0.9.1_2"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "cite": [
+            "http://lists.debian.org/debian-security/2008/02/msg00064.html"
+        ],
+        "discovery": "2008-02-19T00:00:00Z",
+        "references": {
+            "cvename": [
+                "CVE-2008-0928"
+            ]
+        },
+        "vid": "9cfbca7f-efb7-11dc-be01-0211060005df"
+    },
+    "details": "Ian Jackson reports on the debian-security mailinglist:\n\n> When a block device read or write request is made by the guest,\n> nothing checks that the request is within the range supported by the\n> backend, but the code in the backend typically assumes that the\n> request is sensible.\n>\n> Depending on the backend, this can allow the guest to read and write\n> arbitrary memory locations in qemu, and possibly gain control over the\n> qemu process, escaping from the emulation/virtualisation.\n",
+    "id": "FreeBSD-2008-0030",
+    "modified": "2008-03-11T00:00:00Z",
+    "published": "2008-03-11T00:00:00Z",
+    "references": [
+        {
+            "type": "REPORT",
+            "url": "http://lists.debian.org/debian-security/2008/02/msg00064.html"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2008-0928"
+        },
+        {
+            "type": "WEB",
+            "url": "http://secunia.com/advisories/29172"
+        },
+        {
+            "type": "WEB",
+            "url": "http://secunia.com/advisories/29081"
+        },
+        {
+            "type": "DISCUSSION",
+            "url": "http://lists.debian.org/debian-security/2008/02/msg00064.html"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "qemu -- unchecked block read/write vulnerability"
+}

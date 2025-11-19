@@ -1,0 +1,73 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "ko-helvis"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "last_affected": "1.8h2_1"
+                        },
+                        {
+                            "fixed": "1.8h2_1"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        },
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "helvis"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "last_affected": "1.8h2_1"
+                        },
+                        {
+                            "fixed": "1.8h2_1"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "discovery": "2004-11-24T00:00:00Z",
+        "references": {
+            "cvename": [
+                "CVE-2005-0120"
+            ]
+        },
+        "vid": "0cf3480d-5fdf-11d9-b721-00065be4b5b6"
+    },
+    "details": "The setuid root elvprsv utility, used to preserve recovery helvis files,\ncan be abused by local users to delete with root privileges.\n\nThe problem is that elvprsv deletes files when it thinks they have\nbecome corrupt. When elvprsv is pointed to a normal file then it will\nalmost always think the file is corrupt and deletes it. This behavior\nmay be exploited by local attackers to delete critical files.\n",
+    "id": "FreeBSD-2005-0019",
+    "modified": "2005-01-19T00:00:00Z",
+    "published": "2005-01-10T00:00:00Z",
+    "references": [
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2005-0120"
+        },
+        {
+            "type": "WEB",
+            "url": "http://people.freebsd.org/~niels/ports/korean/helvis/issues.txt"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "helvis -- arbitrary file deletion problem"
+}

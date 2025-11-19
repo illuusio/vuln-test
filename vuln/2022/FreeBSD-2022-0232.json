@@ -1,0 +1,183 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "rubygem-cgi"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "0.3.4"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        },
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "ruby"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "introduced": "2.7.0,1"
+                        },
+                        {
+                            "fixed": "2.7.7,1"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                },
+                {
+                    "events": [
+                        {
+                            "introduced": "3.0.0,1"
+                        },
+                        {
+                            "fixed": "3.0.5,1"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                },
+                {
+                    "events": [
+                        {
+                            "introduced": "3.1.0,1"
+                        },
+                        {
+                            "fixed": "3.1.3,1"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                },
+                {
+                    "events": [
+                        {
+                            "introduced": "3.2.0.p1,1"
+                        },
+                        {
+                            "fixed": "3.2.0.r1,1"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        },
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "ruby27"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "introduced": "2.7.0,1"
+                        },
+                        {
+                            "fixed": "2.7.7,1"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        },
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "ruby30"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "introduced": "3.0.0,1"
+                        },
+                        {
+                            "fixed": "3.0.5,1"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        },
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "ruby31"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "introduced": "3.1.0,1"
+                        },
+                        {
+                            "fixed": "3.1.3,1"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        },
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "ruby32"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "introduced": "3.2.0.p1,1"
+                        },
+                        {
+                            "fixed": "3.2.0.r1,1"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "cite": [
+            "https://www.ruby-lang.org/en/news/2022/11/22/http-response-splitting-in-cgi-cve-2021-33621/"
+        ],
+        "discovery": "2022-11-22T00:00:00Z",
+        "references": {
+            "cvename": [
+                "CVE-2021-33621"
+            ]
+        },
+        "vid": "84ab03b6-6c20-11ed-b519-080027f5fec9"
+    },
+    "details": "Hiroshi Tokumaru reports:\n\n> If an application that generates HTTP responses using the cgi gem with\n> untrusted user input, an attacker can exploit it to inject a malicious\n> HTTP response header and/or body.\n>\n> Also, the contents for a `CGI::Cookie` object were not checked\n> properly. If an application creates a `CGI::Cookie` object based on\n> user input, an attacker may exploit it to inject invalid attributes in\n> `Set-Cookie` header. We think such applications are unlikely, but we\n> have included a change to check arguments for `CGI::Cookie#initialize`\n> preventatively.\n",
+    "id": "FreeBSD-2022-0232",
+    "modified": "2022-11-24T00:00:00Z",
+    "published": "2022-11-24T00:00:00Z",
+    "references": [
+        {
+            "type": "REPORT",
+            "url": "https://www.ruby-lang.org/en/news/2022/11/22/http-response-splitting-in-cgi-cve-2021-33621/"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2021-33621"
+        },
+        {
+            "type": "WEB",
+            "url": "https://www.ruby-lang.org/en/news/2022/11/22/http-response-splitting-in-cgi-cve-2021-33621/"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "rubygem-cgi -- HTTP response splitting vulnerability"
+}

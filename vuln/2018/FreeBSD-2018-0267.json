@@ -1,0 +1,131 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "postgresql10-server"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "10.6"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        },
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "postgresql96-server"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "9.6.11"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        },
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "postgresql95-server"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "9.5.15"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        },
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "postgresql94-server"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "9.4.20"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        },
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "postgresql93-server"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "9.3.25"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "cite": [
+            "https://www.postgresql.org/about/news/1878/"
+        ],
+        "discovery": "2018-11-08T00:00:00Z",
+        "references": {
+            "cvename": [
+                "CVE-2018-16850"
+            ]
+        },
+        "vid": "1c27a706-e3aa-11e8-b77a-6cc21735f730"
+    },
+    "details": "The PostgreSQL project reports:\n\n> CVE-2018-16850: SQL injection in pg_upgrade and pg_dump, via CREATE\n> TRIGGER \\... REFERENCING.\n>\n> Using a purpose-crafted trigger definition, an attacker can run\n> arbitrary SQL statements with superuser privileges when a superuser\n> runs pg_upgrade on the database or during a pg_dump dump/restore\n> cycle. This attack requires a CREATE privilege on some non-temporary\n> schema or a TRIGGER privilege on a table. This is exploitable in the\n> default PostgreSQL configuration, where all users have CREATE\n> privilege on public schema.\n",
+    "id": "FreeBSD-2018-0267",
+    "modified": "2018-11-08T00:00:00Z",
+    "published": "2018-11-08T00:00:00Z",
+    "references": [
+        {
+            "type": "REPORT",
+            "url": "https://www.postgresql.org/about/news/1878/"
+        },
+        {
+            "type": "WEB",
+            "url": "https://www.postgresql.org/about/news/1905/"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2018-16850"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "PostgreSQL -- SQL injection in pg_upgrade and pg_dump"
+}

@@ -1,0 +1,46 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "mbedtls"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "2.16.5"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "cite": [
+            "https://tls.mbed.org/tech-updates/security-advisories/mbedtls-security-advisory-2020-02"
+        ],
+        "discovery": "2020-02-18T00:00:00Z",
+        "vid": "056ea107-5729-11ea-a2f3-001cc0382b2f"
+    },
+    "details": "Janos Follath reports:\n\n> If Mbed TLS is running in an SGX enclave and the adversary has control\n> of the main operating system, they can launch a side channel attack to\n> recover the RSA private key when it is being imported.\n>\n> The attack only requires access to fine grained measurements to cache\n> usage. Therefore the attack might be applicable to a scenario where\n> Mbed TLS is running in TrustZone secure world and the attacker\n> controls the normal world or possibly when Mbed TLS is part of a\n> hypervisor and the adversary has full control of a guest OS.\n",
+    "id": "FreeBSD-2020-0036",
+    "modified": "2020-02-24T00:00:00Z",
+    "published": "2020-02-24T00:00:00Z",
+    "references": [
+        {
+            "type": "REPORT",
+            "url": "https://tls.mbed.org/tech-updates/security-advisories/mbedtls-security-advisory-2020-02"
+        },
+        {
+            "type": "WEB",
+            "url": "https://tls.mbed.org/tech-updates/security-advisories/mbedtls-security-advisory-2020-02"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "Mbed TLS -- Cache attack against RSA key import in SGX"
+}

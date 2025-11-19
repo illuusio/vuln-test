@@ -1,0 +1,154 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "go118"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "1.18.4"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        },
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "go117"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "1.17.12"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "cite": [
+            "https://go.dev/issue/53188",
+            "https://go.dev/issue/53423",
+            "https://go.dev/issue/53168",
+            "https://go.dev/issue/53611",
+            "https://go.dev/issue/53614",
+            "https://go.dev/issue/53615",
+            "https://go.dev/issue/53416",
+            "https://go.dev/issue/53415",
+            "https://go.dev/issue/53616"
+        ],
+        "discovery": "2022-07-12T00:00:00Z",
+        "references": {
+            "cvename": [
+                "CVE-2022-1705",
+                "CVE-2022-32148",
+                "CVE-2022-30631",
+                "CVE-2022-30633",
+                "CVE-2022-28131",
+                "CVE-2022-30635",
+                "CVE-2022-30632",
+                "CVE-2022-30630",
+                "CVE-2022-1962"
+            ]
+        },
+        "vid": "a4f2416c-02a0-11ed-b817-10c37b4ac2ea"
+    },
+    "details": "The Go project reports:\n\n> net/http: improper sanitization of Transfer-Encoding header\n>\n> The HTTP/1 client accepted some invalid Transfer-Encoding headers as\n> indicating a \\\"chunked\\\" encoding. This could potentially allow for\n> request smuggling, but only if combined with an intermediate server\n> that also improperly failed to reject the header as invalid.\n\n> When httputil.ReverseProxy.ServeHTTP was called with a Request.Header\n> map containing a nil value for the X-Forwarded-For header,\n> ReverseProxy would set the client IP as the value of the\n> X-Forwarded-For header, contrary to its documentation. In the more\n> usual case where a Director function set the X-Forwarded-For header\n> value to nil, ReverseProxy would leave the header unmodified as\n> expected.\n\n> compress/gzip: stack exhaustion in Reader.Read\n>\n> Calling Reader.Read on an archive containing a large number of\n> concatenated 0-length compressed files can cause a panic due to stack\n> exhaustion.\n\n> encoding/xml: stack exhaustion in Unmarshal\n>\n> Calling Unmarshal on a XML document into a Go struct which has a\n> nested field that uses the any field tag can cause a panic due to\n> stack exhaustion.\n\n> encoding/xml: stack exhaustion in Decoder.Skip\n>\n> Calling Decoder.Skip when parsing a deeply nested XML document can\n> cause a panic due to stack exhaustion.\n\n> encoding/gob: stack exhaustion in Decoder.Decode\n>\n> Calling Decoder.Decode on a message which contains deeply nested\n> structures can cause a panic due to stack exhaustion.\n\n> path/filepath: stack exhaustion in Glob\n>\n> Calling Glob on a path which contains a large number of path\n> separators can cause a panic due to stack exhaustion.\n\n> io/fs: stack exhaustion in Glob\n>\n> Calling Glob on a path which contains a large number of path\n> separators can cause a panic due to stack exhaustion.\n\n> go/parser: stack exhaustion in all Parse\\* functions\n>\n> Calling any of the Parse functions on Go source code which contains\n> deeply nested types or declarations can cause a panic due to stack\n> exhaustion.\n",
+    "id": "FreeBSD-2022-0134",
+    "modified": "2022-07-13T00:00:00Z",
+    "published": "2022-07-13T00:00:00Z",
+    "references": [
+        {
+            "type": "REPORT",
+            "url": "https://go.dev/issue/53188"
+        },
+        {
+            "type": "REPORT",
+            "url": "https://go.dev/issue/53423"
+        },
+        {
+            "type": "REPORT",
+            "url": "https://go.dev/issue/53168"
+        },
+        {
+            "type": "REPORT",
+            "url": "https://go.dev/issue/53611"
+        },
+        {
+            "type": "REPORT",
+            "url": "https://go.dev/issue/53614"
+        },
+        {
+            "type": "REPORT",
+            "url": "https://go.dev/issue/53615"
+        },
+        {
+            "type": "REPORT",
+            "url": "https://go.dev/issue/53416"
+        },
+        {
+            "type": "REPORT",
+            "url": "https://go.dev/issue/53415"
+        },
+        {
+            "type": "REPORT",
+            "url": "https://go.dev/issue/53616"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2022-1705"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2022-32148"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2022-30631"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2022-30633"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2022-28131"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2022-30635"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2022-30632"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2022-30630"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2022-1962"
+        },
+        {
+            "type": "WEB",
+            "url": "https://groups.google.com/g/golang-dev/c/frczlF8OFQ0"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "go -- multiple vulnerabilities"
+}

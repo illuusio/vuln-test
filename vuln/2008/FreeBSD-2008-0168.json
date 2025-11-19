@@ -1,0 +1,118 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "mysql-server"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "introduced": "4.1"
+                        },
+                        {
+                            "fixed": "4.1.25"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                },
+                {
+                    "events": [
+                        {
+                            "introduced": "5.0"
+                        },
+                        {
+                            "fixed": "5.0.75"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                },
+                {
+                    "events": [
+                        {
+                            "introduced": "5.1"
+                        },
+                        {
+                            "fixed": "5.1.28"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                },
+                {
+                    "events": [
+                        {
+                            "introduced": "6.0"
+                        },
+                        {
+                            "fixed": "6.0.6"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "cite": [
+            "http://bugs.mysql.com/bug.php?id=32167"
+        ],
+        "discovery": "2008-07-03T00:00:00Z",
+        "references": {
+            "cvename": [
+                "CVE-2008-2079",
+                "CVE-2008-4097",
+                "CVE-2008-4098"
+            ]
+        },
+        "vid": "738f8f9e-d661-11dd-a765-0030843d3802"
+    },
+    "details": "MySQL Team reports:\n\n> Additional corrections were made for the symlink-related privilege\n> problem originally addressed. The original fix did not correctly\n> handle the data directory pathname if it contained symlinked\n> directories in its path, and the check was made only at table-creation\n> time, not at table-opening time later.\n",
+    "id": "FreeBSD-2008-0168",
+    "modified": "2008-12-30T00:00:00Z",
+    "published": "2008-12-30T00:00:00Z",
+    "references": [
+        {
+            "type": "REPORT",
+            "url": "http://bugs.mysql.com/bug.php?id=32167"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2008-2079"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2008-4097"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2008-4098"
+        },
+        {
+            "type": "WEB",
+            "url": "http://bugs.mysql.com/bug.php?id=32167"
+        },
+        {
+            "type": "WEB",
+            "url": "http://dev.mysql.com/doc/refman/4.1/en/news-4-1-25.html"
+        },
+        {
+            "type": "WEB",
+            "url": "http://dev.mysql.com/doc/refman/5.0/en/releasenotes-cs-5-0-75.html"
+        },
+        {
+            "type": "WEB",
+            "url": "http://dev.mysql.com/doc/refman/5.1/en/news-5-1-28.html"
+        },
+        {
+            "type": "WEB",
+            "url": "http://dev.mysql.com/doc/refman/6.0/en/news-6-0-6.html"
+        },
+        {
+            "type": "WEB",
+            "url": "http://bugs.debian.org/cgi-bin/bugreport.cgi?bug=480292#25"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "mysql -- MyISAM table privileges security bypass vulnerability for symlinked paths"
+}

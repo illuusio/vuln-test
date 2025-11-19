@@ -1,0 +1,55 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "kanboard"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "1.2.37"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "cite": [
+            "https://github.com/kanboard/kanboard/commit/b6703688aac8187f5ea4d4d704fc7afeeffeafa7"
+        ],
+        "discovery": "2024-06-06T00:00:00Z",
+        "references": {
+            "cvename": [
+                "CVE-2024-36399"
+            ]
+        },
+        "vid": "91929399-249e-11ef-9296-b42e991fc52e"
+    },
+    "details": "security-advisories@github.com reports:\n\n> Kanboard is project management software that focuses on the Kanban\n> methodology. The vuln is in\n> app/Controller/ProjectPermissionController.php function addUser(). The\n> users permission to add users to a project only get checked on the URL\n> parameter project_id. If the user is authorized to add users to this\n> project the request gets processed. The users permission for the POST\n> BODY parameter project_id does not get checked again while processing.\n> An attacker with the \\'Project Manager\\' on a single project may take\n> over any other project. The vulnerability is fixed in 1.2.37.\n",
+    "id": "FreeBSD-2024-0141",
+    "modified": "2024-06-07T00:00:00Z",
+    "published": "2024-06-07T00:00:00Z",
+    "references": [
+        {
+            "type": "REPORT",
+            "url": "https://github.com/kanboard/kanboard/commit/b6703688aac8187f5ea4d4d704fc7afeeffeafa7"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2024-36399"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://nvd.nist.gov/vuln/detail/CVE-2024-36399"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "kanboard -- Project Takeover via IDOR in ProjectPermissionController"
+}

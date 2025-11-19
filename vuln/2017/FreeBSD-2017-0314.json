@@ -1,0 +1,65 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "jenkins"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "2.95"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        },
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "jenkins-lts"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "2.89.2"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "cite": [
+            "https://jenkins.io/security/advisory/2017-12-14/"
+        ],
+        "discovery": "2017-12-14T00:00:00Z",
+        "vid": "7136e6b7-e1b3-11e7-a4d3-000c292ee6b8"
+    },
+    "details": "The Jenkins project reports:\n\n> A race condition during Jenkins startup could result in the wrong\n> order of execution of commands during initialization.\n>\n> On Jenkins 2.81 and newer, including LTS 2.89.1, this could in rare\n> cases (we estimate less than 20% of new instances) result in failure\n> to initialize the setup wizard on the first startup.\n>\n> There is a very short window of time after startup during which\n> Jenkins may no longer show the \\\"Please wait while Jenkins is getting\n> ready to work\\\" message, but Cross-Site Request Forgery (CSRF)\n> protection may not yet be effective.\n",
+    "id": "FreeBSD-2017-0314",
+    "modified": "2017-12-15T00:00:00Z",
+    "published": "2017-12-15T00:00:00Z",
+    "references": [
+        {
+            "type": "REPORT",
+            "url": "https://jenkins.io/security/advisory/2017-12-14/"
+        },
+        {
+            "type": "WEB",
+            "url": "https://jenkins.io/security/advisory/2017-12-14/"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "jenkins -- Two startup race conditions"
+}

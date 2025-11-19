@@ -1,0 +1,56 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "qpopper"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "introduced": "4.0"
+                        },
+                        {
+                            "last_affected": "4.0.5"
+                        },
+                        {
+                            "fixed": "4.0.5"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "discovery": "2005-05-26T00:00:00Z",
+        "references": {
+            "cvename": [
+                "CVE-2005-1151",
+                "CVE-2005-1152"
+            ]
+        },
+        "vid": "eb29a575-3381-11da-8340-000e0c2e438a"
+    },
+    "details": "Jens Steube reports that qpopper is vulnerable to a privilege escalation\nvulnerability. qpopper does not properly drop root privileges so that\nuser supplied configuration and trace files can be processed with root\nprivileges. This could allow a local attacker to create or modify\narbitrary files.\n\nqpopper is also affected by improper umask settings which could allow\nusers to create group or world-writeable files, possibly allowing an\nattacker to overwrite arbitrary files.\n",
+    "id": "FreeBSD-2005-0302",
+    "modified": "2005-11-26T00:00:00Z",
+    "published": "2005-11-07T00:00:00Z",
+    "references": [
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2005-1151"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2005-1152"
+        },
+        {
+            "type": "WEB",
+            "url": "http://secunia.com/advisories/15475/"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "qpopper -- multiple privilege escalation vulnerabilities"
+}

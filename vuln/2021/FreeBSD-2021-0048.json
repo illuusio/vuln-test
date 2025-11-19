@@ -1,0 +1,89 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "redis-devel"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "6.2.0"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        },
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "redis"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "6.0.11"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        },
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "redis5"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "5.0.11"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "cite": [
+            "https://github.com/redis/redis/releases/tag/6.2.0"
+        ],
+        "discovery": "2021-02-22T00:00:00Z",
+        "references": {
+            "cvename": [
+                "CVE-2021-21309"
+            ]
+        },
+        "vid": "0e38b8f8-75dd-11eb-83f2-8c164567ca3c"
+    },
+    "details": "Redis Development team reports:\n\n> Redis 4.0 or newer uses a configurable limit for the maximum supported\n> bulk input size. By default, it is 512MB which is a safe value for all\n> platforms. If the limit is significantly increased, receiving a large\n> request from a client may trigger several integer overflow scenarios,\n> which would result with buffer overflow and heap corruption.\n",
+    "id": "FreeBSD-2021-0048",
+    "modified": "2021-02-23T00:00:00Z",
+    "published": "2021-02-23T00:00:00Z",
+    "references": [
+        {
+            "type": "REPORT",
+            "url": "https://github.com/redis/redis/releases/tag/6.2.0"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2021-21309"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "redis -- Integer overflow on 32-bit systems"
+}

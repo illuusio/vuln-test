@@ -1,0 +1,134 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "ruby"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "introduced": "3.0.0,1"
+                        },
+                        {
+                            "fixed": "3.0.4,1"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                },
+                {
+                    "events": [
+                        {
+                            "introduced": "3.1.0,1"
+                        },
+                        {
+                            "fixed": "3.1.2,1"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                },
+                {
+                    "events": [
+                        {
+                            "introduced": "3.2.0.p1,1"
+                        },
+                        {
+                            "fixed": "3.2.0.p1_1,1"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        },
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "ruby30"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "introduced": "3.0.0,1"
+                        },
+                        {
+                            "fixed": "3.0.4,1"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        },
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "ruby31"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "introduced": "3.1.0,1"
+                        },
+                        {
+                            "fixed": "3.1.2,1"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        },
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "ruby32"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "introduced": "3.2.0.p1,1"
+                        },
+                        {
+                            "fixed": "3.2.0.p1_1,1"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "cite": [
+            "https://www.ruby-lang.org/en/news/2022/04/12/double-free-in-regexp-compilation-cve-2022-28738/"
+        ],
+        "discovery": "2022-04-12T00:00:00Z",
+        "references": {
+            "cvename": [
+                "CVE-2022-28738"
+            ]
+        },
+        "vid": "f22144d7-bad1-11ec-9cfe-0800270512f4"
+    },
+    "details": "piao reports:\n\n> Due to a bug in the Regexp compilation process, creating a Regexp\n> object with a crafted source string could cause the same memory to be\n> freed twice. This is known as a \\\"double free\\\" vulnerability. Note\n> that, in general, it is considered unsafe to create and use a Regexp\n> object generated from untrusted input. In this case, however,\n> following a comprehensive assessment, we treat this issue as a\n> vulnerability.\n",
+    "id": "FreeBSD-2022-0079",
+    "modified": "2022-04-13T00:00:00Z",
+    "published": "2022-04-13T00:00:00Z",
+    "references": [
+        {
+            "type": "REPORT",
+            "url": "https://www.ruby-lang.org/en/news/2022/04/12/double-free-in-regexp-compilation-cve-2022-28738/"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2022-28738"
+        },
+        {
+            "type": "WEB",
+            "url": "https://www.ruby-lang.org/en/news/2022/04/12/double-free-in-regexp-compilation-cve-2022-28738/"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "Ruby -- Double free in Regexp compilation"
+}

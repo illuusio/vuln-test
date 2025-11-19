@@ -1,0 +1,120 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "postgresql14-server"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "14.3"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        },
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "postgresql13-server"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "13.7"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        },
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "postgresql12-server"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "12.11"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        },
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "postgresql11-server"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "11.16"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        },
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "postgresql10-server"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "10.21"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "discovery": "2022-05-11T00:00:00Z",
+        "references": {
+            "cvename": [
+                "CVE-2022-1552"
+            ]
+        },
+        "vid": "157ce083-d145-11ec-ab9b-6cc21735f730"
+    },
+    "details": "The PostgreSQL project reports:\n\n> Confine additional operations within \\\"security restricted operation\\\"\n> sandboxes.\n>\n> Autovacuum, CLUSTER, CREATE INDEX, REINDEX, REFRESH MATERIALIZED VIEW,\n> and pg_amcheck activated the \\\"security restricted operation\\\"\n> protection mechanism too late, or even not at all in some code paths.\n> A user having permission to create non-temporary objects within a\n> database could define an object that would execute arbitrary SQL code\n> with superuser permissions the next time that autovacuum processed the\n> object, or that some superuser ran one of the affected commands\n> against it.\n",
+    "id": "FreeBSD-2022-0103",
+    "modified": "2022-05-11T00:00:00Z",
+    "published": "2022-05-11T00:00:00Z",
+    "references": [
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2022-1552"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "PostgreSQL Server -- execute arbitrary SQL code as DBA user"
+}

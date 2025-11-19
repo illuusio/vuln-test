@@ -1,0 +1,55 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "mpv"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "0.27.1"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "cite": [
+            "https://nvd.nist.gov/vuln/detail/CVE-2018-6360"
+        ],
+        "discovery": "2018-01-28T00:00:00Z",
+        "references": {
+            "cvename": [
+                "CVE-2018-6360"
+            ]
+        },
+        "vid": "3ee6e521-0d32-11e8-99b0-d017c2987f9a"
+    },
+    "details": "mpv developers report:\n\n> mpv through 0.28.0 allows remote attackers to execute arbitrary code\n> via a crafted web site, because it reads HTML documents containing\n> VIDEO elements, and accepts arbitrary URLs in a src attribute without\n> a protocol whitelist in player/lua/ytdl_hook.lua. For example, an\n> av://lavfi:ladspa=file= URL signifies that the product should call\n> dlopen on a shared object file located at an arbitrary local pathname.\n> The issue exists because the product does not consider that youtube-dl\n> can provide a potentially unsafe URL.\n",
+    "id": "FreeBSD-2018-0031",
+    "modified": "2018-02-11T00:00:00Z",
+    "published": "2018-02-09T00:00:00Z",
+    "references": [
+        {
+            "type": "REPORT",
+            "url": "https://nvd.nist.gov/vuln/detail/CVE-2018-6360"
+        },
+        {
+            "type": "WEB",
+            "url": "https://github.com/mpv-player/mpv/issues/5456"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2018-6360"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "mpv -- arbitrary code execution via crafted website"
+}

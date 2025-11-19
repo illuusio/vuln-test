@@ -1,0 +1,64 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "libjpeg-turbo"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "1.2.1"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "cite": [
+            "http://sourceforge.net/projects/libjpeg-turbo/files/1.2.1/README.txt",
+            "https://bugzilla.redhat.com/show_bug.cgi?id=826849"
+        ],
+        "discovery": "2012-05-31T00:00:00Z",
+        "references": {
+            "cvename": [
+                "CVE-2012-2806"
+            ]
+        },
+        "vid": "a460035e-d111-11e1-aff7-001fd056c417"
+    },
+    "details": "> The Changelog for version 1.2.1 says: Fixed a regression caused by\n> 1.2.0\\[6\\] in which decompressing corrupt JPEG images (specifically,\n> images in which the component count was erroneously set to a large\n> value) would cause libjpeg-turbo to segfault.\n\n> A Heap-based buffer overflow was found in the way libjpeg-turbo\n> decompressed certain corrupt JPEG images in which the component count\n> was erroneously set to a large value. An attacker could create a\n> specially-crafted JPEG image that, when opened, could cause an\n> application using libpng to crash or, possibly, execute arbitrary code\n> with the privileges of the user running the application.\n",
+    "id": "FreeBSD-2012-0123",
+    "modified": "2012-07-19T00:00:00Z",
+    "published": "2012-07-18T00:00:00Z",
+    "references": [
+        {
+            "type": "REPORT",
+            "url": "http://sourceforge.net/projects/libjpeg-turbo/files/1.2.1/README.txt"
+        },
+        {
+            "type": "REPORT",
+            "url": "https://bugzilla.redhat.com/show_bug.cgi?id=826849"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2012-2806"
+        },
+        {
+            "type": "WEB",
+            "url": "http://sourceforge.net/projects/libjpeg-turbo/files/1.2.1/README.txt"
+        },
+        {
+            "type": "REPORT",
+            "url": "https://bugzilla.redhat.com/show_bug.cgi?id=826849"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "libjpeg-turbo -- heap-based buffer overflow"
+}

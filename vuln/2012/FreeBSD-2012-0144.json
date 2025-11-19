@@ -1,0 +1,68 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "typo3"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "introduced": "4.5.0"
+                        },
+                        {
+                            "fixed": "4.5.19"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                },
+                {
+                    "events": [
+                        {
+                            "introduced": "4.6.0"
+                        },
+                        {
+                            "fixed": "4.6.12"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                },
+                {
+                    "events": [
+                        {
+                            "introduced": "4.7.0"
+                        },
+                        {
+                            "fixed": "4.7.4"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "cite": [
+            "https://typo3.org/teams/security/security-bulletins/typo3-core/typo3-core-sa-2012-004/"
+        ],
+        "discovery": "2012-08-15T00:00:00Z",
+        "vid": "48bcb4b2-e708-11e1-a59d-000d601460a4"
+    },
+    "details": "Typo Security Team reports:\n\n> It has been discovered that TYPO3 Core is vulnerable to Cross-Site\n> Scripting, Information Disclosure, Insecure Unserialize leading to\n> Arbitrary Code Execution.\n>\n> TYPO3 Backend Help System - Due to a missing signature (HMAC) for a\n> parameter in the view_help.php file, an attacker could unserialize\n> arbitrary objects within TYPO3. We are aware of a working exploit,\n> which can lead to arbitrary code execution. A valid backend user login\n> or multiple successful cross site request forgery attacks are required\n> to exploit this vulnerability.\n>\n> TYPO3 Backend - Failing to properly HTML-encode user input in several\n> places, the TYPO3 backend is susceptible to Cross-Site Scripting. A\n> valid backend user is required to exploit these vulnerabilities.\n>\n> TYPO3 Backend - Accessing the configuration module discloses the\n> Encryption Key. A valid backend user with access to the configuration\n> module is required to exploit this vulnerability.\n>\n> TYPO3 HTML Sanitizing API - By not removing several HTML5 JavaScript\n> events, the API method t3lib_div::RemoveXSS() fails to filter\n> specially crafted HTML injections, thus is susceptible to Cross-Site\n> Scripting. Failing to properly encode for JavaScript the API method\n> t3lib_div::quoteJSvalue(), it is susceptible to Cross-Site Scripting.\n>\n> TYPO3 Install Tool - Failing to properly sanitize user input, the\n> Install Tool is susceptible to Cross-Site Scripting.\n",
+    "id": "FreeBSD-2012-0144",
+    "modified": "2012-08-15T00:00:00Z",
+    "published": "2012-08-15T00:00:00Z",
+    "references": [
+        {
+            "type": "REPORT",
+            "url": "https://typo3.org/teams/security/security-bulletins/typo3-core/typo3-core-sa-2012-004/"
+        },
+        {
+            "type": "WEB",
+            "url": "https://typo3.org/teams/security/security-bulletins/typo3-core/typo3-core-sa-2012-004/"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "typo3 -- Multiple vulernabilities in TYPO3 Core"
+}

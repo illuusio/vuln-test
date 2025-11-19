@@ -1,0 +1,67 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:kernel",
+                "name": "FreeBSD-kernel"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "introduced": "12.1"
+                        },
+                        {
+                            "fixed": "12.1_4"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                },
+                {
+                    "events": [
+                        {
+                            "introduced": "11.3"
+                        },
+                        {
+                            "fixed": "11.3_8"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "discovery": "2020-04-21T00:00:00Z",
+        "references": {
+            "cvename": [
+                "CVE-2019-5614",
+                "CVE-2019-15874"
+            ],
+            "freebsdsa": [
+                "SA-20:10.ipfw"
+            ]
+        },
+        "vid": "33edcc56-83f2-11ea-92ab-00163e433440"
+    },
+    "details": "# Problem Description:\n\nIncomplete packet data validation may result in accessing out-of-bounds\nmemory (CVE-2019-5614) or may access memory after it has been freed\n(CVE-2019-15874).\n\n# Impact:\n\nAccess to out of bounds or freed mbuf data can lead to a kernel panic or\nother unpredictable results.\n",
+    "id": "FreeBSD-2020-0083",
+    "modified": "2020-04-21T00:00:00Z",
+    "published": "2020-04-21T00:00:00Z",
+    "references": [
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2019-5614"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2019-15874"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://www.freebsd.org/security/advisories/FreeBSD-SA-20:10.ipfw.asc"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "FreeBSD -- ipfw invalid mbuf handling"
+}

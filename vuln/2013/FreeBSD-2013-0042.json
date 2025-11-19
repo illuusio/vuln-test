@@ -1,0 +1,55 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "sudo"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "1.8.6.p7"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "cite": [
+            "http://www.sudo.ws/sudo/alerts/tty_tickets.html"
+        ],
+        "discovery": "2013-02-27T00:00:00Z",
+        "references": {
+            "cvename": [
+                "CVE-2013-1776"
+            ]
+        },
+        "vid": "82cfd919-8213-11e2-9273-902b343deec9"
+    },
+    "details": "Todd Miller reports:\n\n> A (potentially malicious) program run by a user with sudo access may\n> be able to bypass the \\\"tty_ticket\\\" constraints. In order for this to\n> succeed there must exist on the machine a terminal device that the\n> user has previously authenticated themselves on via sudo within the\n> last time stamp timeout (5 minutes by default).\n",
+    "id": "FreeBSD-2013-0042",
+    "modified": "2013-03-01T00:00:00Z",
+    "published": "2013-03-01T00:00:00Z",
+    "references": [
+        {
+            "type": "REPORT",
+            "url": "http://www.sudo.ws/sudo/alerts/tty_tickets.html"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2013-1776"
+        },
+        {
+            "type": "WEB",
+            "url": "http://www.sudo.ws/sudo/alerts/tty_tickets.html"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "sudo -- Potential bypass of tty_tickets constraints"
+}

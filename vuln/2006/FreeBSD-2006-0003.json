@@ -1,0 +1,55 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "bogofilter"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "introduced": "0.93.5"
+                        },
+                        {
+                            "fixed": "0.96.3"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "cite": [
+            "http://bogofilter.sourceforge.net/security/bogofilter-SA-2005-01"
+        ],
+        "discovery": "2005-10-22T00:00:00Z",
+        "references": {
+            "cvename": [
+                "CVE-2005-4591"
+            ]
+        },
+        "vid": "92140bc9-7bde-11da-8ec4-0002b3b60e4c"
+    },
+    "details": "Matthias Andree reports:\n\n> When using Unicode databases (default in more recent bogofilter\n> installations), upon encountering invalid input sequences, bogofilter\n> or bogolexer could overrun a malloc()\\'d buffer, corrupting the heap,\n> while converting character sets. Bogofilter would usually be\n> processing untrusted data received from the network at that time.\n>\n> This problem was aggravated by an unrelated bug that made bogofilter\n> process binary attachments as though they were text, and attempt\n> charset conversion on them. Given the MIME default character set,\n> US-ASCII, all input octets in the range 0x80\\...0xff were considered\n> invalid input sequences and could trigger the heap corruption.\n",
+    "id": "FreeBSD-2006-0003",
+    "modified": "2006-01-07T00:00:00Z",
+    "published": "2006-01-07T00:00:00Z",
+    "references": [
+        {
+            "type": "REPORT",
+            "url": "http://bogofilter.sourceforge.net/security/bogofilter-SA-2005-01"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2005-4591"
+        },
+        {
+            "type": "WEB",
+            "url": "http://bogofilter.sourceforge.net/security/bogofilter-SA-2005-01"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "bogofilter -- heap corruption through malformed input"
+}

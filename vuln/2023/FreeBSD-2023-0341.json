@@ -1,0 +1,110 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "postgresql-server"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "16.1"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                },
+                {
+                    "events": [
+                        {
+                            "fixed": "15.5"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                },
+                {
+                    "events": [
+                        {
+                            "fixed": "14.10"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                },
+                {
+                    "events": [
+                        {
+                            "fixed": "13.13"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                },
+                {
+                    "events": [
+                        {
+                            "fixed": "12.17"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                },
+                {
+                    "events": [
+                        {
+                            "fixed": "11.22"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "cite": [
+            "https://www.postgresql.org/support/security/CVE-2023-5868/"
+        ],
+        "discovery": "2023-11-09T00:00:00Z",
+        "references": {
+            "cvename": [
+                "CVE-2023-5868"
+            ]
+        },
+        "vid": "31f45d06-7f0e-11ee-94b4-6cc21735f730"
+    },
+    "details": "PostgreSQL Project reports:\n\n> Certain aggregate function calls receiving \\\"unknown\\\"-type arguments\n> could disclose bytes of server memory from the end of the\n> \\\"unknown\\\"-type value to the next zero byte. One typically gets an\n> \\\"unknown\\\"-type value via a string literal having no type\n> designation. We have not confirmed or ruled out viability of attacks\n> that arrange for presence of notable, confidential information in\n> disclosed bytes.\n",
+    "id": "FreeBSD-2023-0341",
+    "modified": "2023-11-09T00:00:00Z",
+    "published": "2023-11-09T00:00:00Z",
+    "references": [
+        {
+            "type": "REPORT",
+            "url": "https://www.postgresql.org/support/security/CVE-2023-5868/"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2023-5868"
+        },
+        {
+            "type": "WEB",
+            "url": "https://www.postgresql.org/support/security/CVE-2023-5868/"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "postgresql-server -- Memory disclosure in aggregate function calls"
+}

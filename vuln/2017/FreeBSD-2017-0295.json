@@ -1,0 +1,55 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "exim"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "introduced": "4.88"
+                        },
+                        {
+                            "fixed": "4.89.1"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "cite": [
+            "https://bugs.exim.org/show_bug.cgi?id=2199"
+        ],
+        "discovery": "2017-11-23T00:00:00Z",
+        "references": {
+            "cvename": [
+                "CVE-2017-16944"
+            ]
+        },
+        "vid": "75dd622c-d5fd-11e7-b9fe-c13eb7bcbf4f"
+    },
+    "details": "Exim developers team reports:\n\n> The receive_msg function in receive.c in the SMTP daemon in Exim 4.88\n> and 4.89 allows remote attackers to cause a denial of service\n> (infinite loop and stack exhaustion) via vectors involving BDAT\n> commands and an improper check for a \\'.\\' character signifying the\n> end of the content, related to the bdat_getc function.\n",
+    "id": "FreeBSD-2017-0295",
+    "modified": "2017-11-30T00:00:00Z",
+    "published": "2017-11-30T00:00:00Z",
+    "references": [
+        {
+            "type": "REPORT",
+            "url": "https://bugs.exim.org/show_bug.cgi?id=2199"
+        },
+        {
+            "type": "WEB",
+            "url": "https://bugs.exim.org/show_bug.cgi?id=2199"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2017-16944"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "exim -- remote DoS attack in BDAT processing"
+}

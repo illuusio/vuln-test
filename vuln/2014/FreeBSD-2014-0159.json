@@ -1,0 +1,59 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "git"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "2.2.1"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "cite": [
+            "http://article.gmane.org/gmane.linux.kernel/1853266"
+        ],
+        "discovery": "2014-12-19T00:00:00Z",
+        "references": {
+            "cvename": [
+                "CVE-2014-9390"
+            ]
+        },
+        "vid": "1d567278-87a5-11e4-879c-000c292ee6b8"
+    },
+    "details": "The Git Project reports:\n\n> When using a case-insensitive filesystem an attacker can craft a\n> malicious Git tree that will cause Git to overwrite its own\n> .git/config file when cloning or checking out a repository, leading to\n> arbitrary command execution in the client machine. If you are a\n> hosting service whose users may fetch from your service to Windows or\n> Mac OS X machines, you are strongly encouraged to update to protect\n> such users who use existing versions of Git.\n",
+    "id": "FreeBSD-2014-0159",
+    "modified": "2014-12-19T00:00:00Z",
+    "published": "2014-12-19T00:00:00Z",
+    "references": [
+        {
+            "type": "REPORT",
+            "url": "http://article.gmane.org/gmane.linux.kernel/1853266"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2014-9390"
+        },
+        {
+            "type": "WEB",
+            "url": "https://github.com/blog/1938-git-client-vulnerability-announced"
+        },
+        {
+            "type": "WEB",
+            "url": "http://article.gmane.org/gmane.linux.kernel/1853266"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "git -- Arbitrary command execution on case-insensitive filesystems"
+}

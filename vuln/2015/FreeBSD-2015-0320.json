@@ -1,0 +1,84 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "ipython"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "3.2.2"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "cite": [
+            "http://www.openwall.com/lists/oss-security/2015/09/02/3",
+            "http://www.openwall.com/lists/oss-security/2015/09/16/3"
+        ],
+        "discovery": "2015-09-01T00:00:00Z",
+        "references": {
+            "cvename": [
+                "CVE-2015-6938",
+                "CVE-2015-7337"
+            ],
+            "freebsdpr": [
+                "ports/203668"
+            ]
+        },
+        "vid": "290351c9-6f5c-11e5-a2a1-002590263bf5"
+    },
+    "details": "Matthias Bussonnier reports:\n\n> Summary: Local folder name was used in HTML templates without\n> escaping, allowing XSS in said pages by carefully crafting folder name\n> and URL to access it.\n>\n> URI with issues:\n>\n> - GET /tree/\\*\\*\n\nBenjamin RK reports:\n\n> Vulnerability: A maliciously forged file opened for editing can\n> execute javascript, specifically by being redirected to /files/ due to\n> a failure to treat the file as plain text.\n>\n> URI with issues:\n>\n> - GET /edit/\\*\\*\n",
+    "id": "FreeBSD-2015-0320",
+    "modified": "2015-10-10T00:00:00Z",
+    "published": "2015-10-10T00:00:00Z",
+    "references": [
+        {
+            "type": "REPORT",
+            "url": "http://www.openwall.com/lists/oss-security/2015/09/02/3"
+        },
+        {
+            "type": "REPORT",
+            "url": "http://www.openwall.com/lists/oss-security/2015/09/16/3"
+        },
+        {
+            "type": "REPORT",
+            "url": "https://bugs.freebsd.org/bugzilla/show_bug.cgi?id=203668"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2015-6938"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2015-7337"
+        },
+        {
+            "type": "WEB",
+            "url": "http://www.openwall.com/lists/oss-security/2015/09/02/3"
+        },
+        {
+            "type": "WEB",
+            "url": "https://github.com/ipython/ipython/commit/3ab41641cf6fce3860c73d5cf4645aa12e1e5892"
+        },
+        {
+            "type": "WEB",
+            "url": "http://www.openwall.com/lists/oss-security/2015/09/16/3"
+        },
+        {
+            "type": "WEB",
+            "url": "https://github.com/ipython/ipython/commit/0a8096adf165e2465550bd5893d7e352544e5967"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "devel/ipython -- multiple vulnerabilities"
+}

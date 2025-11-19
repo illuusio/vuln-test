@@ -1,0 +1,71 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "libtiff"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "last_affected": "4.0.8"
+                        },
+                        {
+                            "fixed": "4.0.8"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "cite": [
+            "http://www.securityfocus.com/bid/100524"
+        ],
+        "discovery": "2017-08-29T00:00:00Z",
+        "references": {
+            "cvename": [
+                "CVE-2017-13726",
+                "CVE-2017-13727"
+            ]
+        },
+        "vid": "9b5a905f-e556-452f-a00c-8f070a086181"
+    },
+    "details": "libtiff developers report:\n\n> There is a reachable assertion abort in the function\n> TIFFWriteDirectoryTagSubifd() in LibTIFF 4.0.8, related to\n> tif_dirwrite.c and a SubIFD tag. A crafted input will lead to a remote\n> denial of service attack.\n>\n> There is a reachable assertion abort in the function\n> TIFFWriteDirectorySec() in LibTIFF 4.0.8, related to tif_dirwrite.c\n> and a SubIFD tag. A crafted input will lead to a remote denial of\n> service attack.\n",
+    "id": "FreeBSD-2017-0236",
+    "modified": "2017-10-10T00:00:00Z",
+    "published": "2017-10-10T00:00:00Z",
+    "references": [
+        {
+            "type": "REPORT",
+            "url": "http://www.securityfocus.com/bid/100524"
+        },
+        {
+            "type": "WEB",
+            "url": "http://bugzilla.maptools.org/show_bug.cgi?id=2727"
+        },
+        {
+            "type": "WEB",
+            "url": "http://bugzilla.maptools.org/show_bug.cgi?id=2728"
+        },
+        {
+            "type": "WEB",
+            "url": "http://www.securityfocus.com/bid/100524"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2017-13726"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2017-13727"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "libtiff -- Improper Input Validation"
+}

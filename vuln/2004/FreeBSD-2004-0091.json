@@ -1,0 +1,81 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "neon"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "0.24.5_1"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        },
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "sitecopy"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "last_affected": "0.13.4_1"
+                        },
+                        {
+                            "fixed": "0.13.4_1"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "cite": [
+            "http://security.e-matters.de/advisories/062004.html"
+        ],
+        "discovery": "2004-05-19T00:00:00Z",
+        "references": {
+            "cvename": [
+                "CVE-2004-0398"
+            ]
+        },
+        "vid": "8d075001-a9ce-11d8-9c6d-0020ed76ef5a"
+    },
+    "details": "Stefan Esser reports:\n\n> A vulnerability within a libneon date parsing function could cause a\n> heap overflow which could lead to remote code execution, depending on\n> the application using libneon.\n\nThe vulnerability is in the function ne_rfc1036_parse, which is in turn\nused by the function ne_httpdate_parse. Applications using either of\nthese neon functions may be vulnerable.\n",
+    "id": "FreeBSD-2004-0091",
+    "modified": "2004-06-25T00:00:00Z",
+    "published": "2004-05-19T00:00:00Z",
+    "references": [
+        {
+            "type": "REPORT",
+            "url": "http://security.e-matters.de/advisories/062004.html"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2004-0398"
+        },
+        {
+            "type": "WEB",
+            "url": "http://security.e-matters.de/advisories/062004.html"
+        },
+        {
+            "type": "WEB",
+            "url": "http://secunia.com/advisories/11785"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "neon date parsing vulnerability"
+}

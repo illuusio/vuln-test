@@ -1,0 +1,73 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:kernel",
+                "name": "FreeBSD-kernel"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "introduced": "12.0"
+                        },
+                        {
+                            "fixed": "12.0_10"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                },
+                {
+                    "events": [
+                        {
+                            "introduced": "11.3"
+                        },
+                        {
+                            "fixed": "11.3_3"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                },
+                {
+                    "events": [
+                        {
+                            "introduced": "11.2"
+                        },
+                        {
+                            "fixed": "11.2_14"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "discovery": "2019-08-20T00:00:00Z",
+        "references": {
+            "cvename": [
+                "CVE-2019-5612"
+            ],
+            "freebsdsa": [
+                "SA-19:23.midi"
+            ]
+        },
+        "vid": "5027b62e-f680-11e9-a87f-a4badb2f4699"
+    },
+    "details": "# Problem Description:\n\nThe kernel driver for /dev/midistat implements a handler for read(2).\nThis handler is not thread-safe, and a multi-threaded program can\nexploit races in the handler to cause it to copy out kernel memory\noutside the boundaries of midistat\\'s data buffer.\n\n# Impact:\n\nThe races allow a program to read kernel memory within a 4GB window\ncentered at midistat\\'s data buffer. The buffer is allocated each time\nthe device is opened, so an attacker is not limited to a static 4GB\nregion of memory.\n\nOn 32-bit platforms, an attempt to trigger the race may cause a page\nfault in kernel mode, leading to a panic.\n",
+    "id": "FreeBSD-2019-0243",
+    "modified": "2019-10-24T00:00:00Z",
+    "published": "2019-10-24T00:00:00Z",
+    "references": [
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2019-5612"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://www.freebsd.org/security/advisories/FreeBSD-SA-19:23.midi.asc"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "FreeBSD -- kernel memory disclosure from /dev/midistat"
+}

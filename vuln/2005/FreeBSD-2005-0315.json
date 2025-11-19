@@ -1,0 +1,69 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "ffmpeg"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "0.4.9.p1_4"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        },
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "ffmpeg-devel"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "0.4.9.c.2005120600"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "cite": [
+            "http://secunia.com/advisories/17892/"
+        ],
+        "discovery": "2005-11-30T00:00:00Z",
+        "vid": "964161cd-6715-11da-99f6-00123ffe8333"
+    },
+    "details": "Secunia reports:\n\n> Simon Kilvington has reported a vulnerability in FFmpeg libavcodec,\n> which can be exploited by malicious people to cause a DoS (Denial of\n> Service) and potentially to compromise a user\\'s system.\n>\n> The vulnerability is caused due to a boundary error in the\n> \\\"avcodec_default_get_buffer()\\\" function of \\\"utils.c\\\" in\n> libavcodec. This can be exploited to cause a heap-based buffer\n> overflow when a specially-crafted 1x1 \\\".png\\\" file containing a\n> palette is read.\n",
+    "id": "FreeBSD-2005-0315",
+    "modified": "2005-12-07T00:00:00Z",
+    "published": "2005-12-07T00:00:00Z",
+    "references": [
+        {
+            "type": "REPORT",
+            "url": "http://secunia.com/advisories/17892/"
+        },
+        {
+            "type": "WEB",
+            "url": "http://article.gmane.org/gmane.comp.video.ffmpeg.devel/26558"
+        },
+        {
+            "type": "WEB",
+            "url": "http://secunia.com/advisories/17892/"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "ffmpeg -- libavcodec buffer overflow vulnerability"
+}

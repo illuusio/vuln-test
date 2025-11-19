@@ -1,0 +1,126 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "grafana"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "introduced": "8.0.0"
+                        },
+                        {
+                            "fixed": "8.5.16"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                },
+                {
+                    "events": [
+                        {
+                            "introduced": "9.0.0"
+                        },
+                        {
+                            "fixed": "9.2.10"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                },
+                {
+                    "events": [
+                        {
+                            "introduced": "9.3.0"
+                        },
+                        {
+                            "fixed": "9.3.4"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        },
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "grafana8"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "introduced": "8.0.0"
+                        },
+                        {
+                            "fixed": "8.5.16"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        },
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "grafana9"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "introduced": "9.0.0"
+                        },
+                        {
+                            "fixed": "9.2.10"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                },
+                {
+                    "events": [
+                        {
+                            "introduced": "9.3.0"
+                        },
+                        {
+                            "fixed": "9.3.4"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "cite": [
+            "https://grafana.com/blog/2023/01/25/grafana-security-releases-new-versions-with-fixes-for-cve-2022-23552-cve-2022-41912-and-cve-2022-39324/"
+        ],
+        "discovery": "2023-01-25T00:00:00Z",
+        "references": {
+            "cvename": [
+                "CVE-2022-39324"
+            ]
+        },
+        "vid": "e6281d88-a7a7-11ed-8d6a-6c3be5272acd"
+    },
+    "details": "Grafana Labs reports:\n\n> A third-party penetration test of Grafana found a vulnerability in the\n> snapshot functionality. The value of the originalUrl parameter is\n> automatically generated. The purpose of the presented originalUrl\n> parameter is to provide a user who views the snapshot with the\n> possibility to click on the **Local Snapshot** button in the Grafana\n> web UI and be presented with the dashboard that the snapshot captured.\n> The value of the originalUrl parameter can be arbitrarily chosen by a\n> malicious user that creates the snapshot. (Note: This can be done by\n> editing the query thanks to a web proxy like Burp.)\n>\n> We have assessed this vulnerability as having a CVSS score of 6.7\n> MEDIUM (CVSS:6.7/AV:N/AC:H/PR:L/UI:R/S:U/C:H/I:H/A:L).\n",
+    "id": "FreeBSD-2023-0040",
+    "modified": "2023-02-09T00:00:00Z",
+    "published": "2023-02-09T00:00:00Z",
+    "references": [
+        {
+            "type": "REPORT",
+            "url": "https://grafana.com/blog/2023/01/25/grafana-security-releases-new-versions-with-fixes-for-cve-2022-23552-cve-2022-41912-and-cve-2022-39324/"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2022-39324"
+        },
+        {
+            "type": "WEB",
+            "url": "https://github.com/grafana/grafana/security/advisories/GHSA-4724-7jwc-3fpw"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "Grafana -- Spoofing originalUrl of snapshots"
+}

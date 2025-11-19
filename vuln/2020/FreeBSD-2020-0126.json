@@ -1,0 +1,39 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "sympa"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "6.2.56"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "discovery": "2020-05-24T00:00:00Z",
+        "vid": "61bc44ce-9f5a-11ea-aff3-f8b156c2bfe9"
+    },
+    "details": "A vulnerability has been discovered in Sympa web interface by which\nattacker can execute arbitrary code with root privileges. Sympa uses two\nsorts of setuid wrappers:\n\n- FastCGI wrappers\n- newaliases wrapper\n\nThe FastCGI wrappers wwsympa-wrapper.fcgi and\nsympa_soap_server-wrapper.fcgi were used to make the web interface\nrunning under privileges of a dedicated user.\n\nThe newaliases wrapper (sympa_newaliases-wrapper) allows Sympa to update\nthe alias database with root privileges.\n\nSince these setuid wrappers did not clear environment variables, if\nenvironment variables like PERL5LIB were injected, forged code might be\nloaded and executed under privileges of setuid-ed users.\n",
+    "id": "FreeBSD-2020-0126",
+    "modified": "2020-05-26T00:00:00Z",
+    "published": "2020-05-26T00:00:00Z",
+    "references": [
+        {
+            "type": "WEB",
+            "url": "https://sympa-community.github.io/security/2020-002.html"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "sympa - Security flaws in setuid wrappers"
+}

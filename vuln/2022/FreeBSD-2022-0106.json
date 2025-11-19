@@ -1,0 +1,99 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "clamav"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "0.104.3,1"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        },
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "clamav-lts"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "0.103.6,1"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "cite": [
+            "https://blog.clamav.net/2022/05/clamav-01050-01043-01036-released.html"
+        ],
+        "discovery": "2022-05-04T00:00:00Z",
+        "references": {
+            "cvename": [
+                "CVE-2022-20803",
+                "CVE-2022-20770",
+                "CVE-2022-20796",
+                "CVE-2022-20771",
+                "CVE-2022-20785",
+                "CVE-2022-20792"
+            ]
+        },
+        "vid": "b2407db1-d79f-11ec-a15f-589cfc0f81b0"
+    },
+    "details": "The ClamAV project reports:\n\n> Fixed a possible double-free vulnerability in the OLE2 file parser.\n> Issue affects versions 0.104.0 through 0.104.2. Issue identified by\n> OSS-Fuzz.\n>\n> Fixed a possible infinite loop vulnerability in the CHM file parser.\n> Issue affects versions 0.104.0 through 0.104.2 and LTS version 0.103.5\n> and prior versions. Thank you to Micha\u0142 Dardas for reporting this\n> issue.\n>\n> Fixed a possible NULL-pointer dereference crash in the scan verdict\n> cache check. Issue affects versions 0.103.4, 0.103.5, 0.104.1, and\n> 0.104.2. Thank you to Alexander Patrakov and Antoine Gatineau for\n> reporting this issue.\n>\n> Fixed a possible infinite loop vulnerability in the TIFF file parser.\n> Issue affects versions 0.104.0 through 0.104.2 and LTS version 0.103.5\n> and prior versions. The issue only occurs if the\n> \\\"\\--alert-broken-media\\\" ClamScan option is enabled. For ClamD, the\n> affected option is \\\"AlertBrokenMedia yes\\\", and for libclamav it is\n> the \\\"CL_SCAN_HEURISTIC_BROKEN_MEDIA\\\" scan option. Thank you to\n> Micha\u0142 Dardas for reporting this issue.\n>\n> Fixed a possible memory leak in the HTML file parser / Javascript\n> normalizer. Issue affects versions 0.104.0 through 0.104.2 and LTS\n> version 0.103.5 and prior versions. Thank you to Micha\u0142 Dardas for\n> reporting this issue.\n>\n> Fixed a possible multi-byte heap buffer overflow write vulnerability\n> in the signature database load module. The fix was to update the\n> vendored regex library to the latest version. Issue affects versions\n> 0.104.0 through 0.104.2 and LTS version 0.103.5 and prior versions.\n> Thank you to Micha\u0142 Dardas for reporting this issue.\n",
+    "id": "FreeBSD-2022-0106",
+    "modified": "2022-05-19T00:00:00Z",
+    "published": "2022-05-19T00:00:00Z",
+    "references": [
+        {
+            "type": "REPORT",
+            "url": "https://blog.clamav.net/2022/05/clamav-01050-01043-01036-released.html"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2022-20803"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2022-20770"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2022-20796"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2022-20771"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2022-20785"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2022-20792"
+        },
+        {
+            "type": "WEB",
+            "url": "https://blog.clamav.net/2022/05/clamav-01050-01043-01036-released.html#more"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "clamav -- Multiple vulnerabilities"
+}

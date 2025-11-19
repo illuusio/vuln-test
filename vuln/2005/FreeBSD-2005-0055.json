@@ -1,0 +1,62 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "squid"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "2.5.7_9"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "cite": [
+            "http://www.squid-cache.org/Versions/v2/2.5/bugs/#squid-2.5.STABLE7-header_parsing"
+        ],
+        "discovery": "2005-01-24T00:00:00Z",
+        "references": {
+            "certvu": [
+                "768702"
+            ],
+            "cvename": [
+                "CVE-2005-0174"
+            ]
+        },
+        "vid": "b4d94fa0-6e38-11d9-9e1e-c296ac722cb3"
+    },
+    "details": "The squid patches page notes:\n\n> This patch makes Squid considerably stricter while parsing the HTTP\n> protocol.\n>\n> 1.  A Content-length header should only appear once in a valid request\n>     or response. Multiple Content-length headers, in conjunction with\n>     specially crafted requests, may allow Squid\\'s cache to be\n>     poisoned with bad content in certain situations.\n> 2.  CR characters is only allowed as part of the CR NL line\n>     terminator, not alone. This to ensure that all involved agrees on\n>     the structure of HTTP headers.\n> 3.  Rejects requests/responses that have whitespace in an HTTP header\n>     name.\n\nTo enable these strict parsing rules, update to at least squid-2.5.7_9\nand specify `relaxed_header_parser off` in squid.conf.\n",
+    "id": "FreeBSD-2005-0055",
+    "modified": "2006-01-02T00:00:00Z",
+    "published": "2005-01-24T00:00:00Z",
+    "references": [
+        {
+            "type": "REPORT",
+            "url": "http://www.squid-cache.org/Versions/v2/2.5/bugs/#squid-2.5.STABLE7-header_parsing"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2005-0174"
+        },
+        {
+            "type": "WEB",
+            "url": "http://www.squid-cache.org/Versions/v2/2.5/bugs/#squid-2.5.STABLE7-header_parsing"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://www.kb.cert.org/vuls/id/768702"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "squid -- possible cache-poisoning via malformed HTTP responses"
+}

@@ -1,0 +1,62 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "xen-kernel"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "4.7.1"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "cite": [
+            "https://xenbits.xen.org/xsa/advisory-191.html"
+        ],
+        "discovery": "2016-11-22T00:00:00Z",
+        "references": {
+            "cvename": [
+                "CVE-2016-9386"
+            ],
+            "freebsdpr": [
+                "ports/214936"
+            ]
+        },
+        "vid": "50ac2e96-ba4d-11e6-ae1b-002590263bf5"
+    },
+    "details": "The Xen Project reports:\n\n> The Xen x86 emulator erroneously failed to consider the unusability of\n> segments when performing memory accesses.\n>\n> The intended behaviour is as follows: The user data segment (%ds, %es,\n> %fs and %gs) selectors may be NULL in 32-bit to prevent access. In\n> 64-bit, NULL has a special meaning for user segments, and there is no\n> way of preventing access. However, in both 32-bit and 64-bit, a NULL\n> LDT system segment is intended to prevent access.\n>\n> On Intel hardware, loading a NULL selector zeros the base as well as\n> most attributes, but sets the limit field to its largest possible\n> value. On AMD hardware, loading a NULL selector zeros the attributes,\n> leaving the stale base and limit intact.\n>\n> Xen may erroneously permit the access using unexpected base/limit\n> values.\n>\n> Ability to exploit this vulnerability on Intel is easy, but on AMD\n> depends in a complicated way on how the guest kernel manages LDTs.\n>\n> An unprivileged guest user program may be able to elevate its\n> privilege to that of the guest operating system.\n",
+    "id": "FreeBSD-2016-0452",
+    "modified": "2016-12-04T00:00:00Z",
+    "published": "2016-12-04T00:00:00Z",
+    "references": [
+        {
+            "type": "REPORT",
+            "url": "https://xenbits.xen.org/xsa/advisory-191.html"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2016-9386"
+        },
+        {
+            "type": "REPORT",
+            "url": "https://bugs.freebsd.org/bugzilla/show_bug.cgi?id=214936"
+        },
+        {
+            "type": "WEB",
+            "url": "https://xenbits.xen.org/xsa/advisory-191.html"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "xen-kernel -- x86 null segments not always treated as unusable"
+}

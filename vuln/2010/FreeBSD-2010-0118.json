@@ -1,0 +1,66 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "FreeBSD"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "introduced": "7.1"
+                        },
+                        {
+                            "fixed": "7.1_13"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                },
+                {
+                    "events": [
+                        {
+                            "introduced": "7.3"
+                        },
+                        {
+                            "fixed": "7.3_2"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                },
+                {
+                    "events": [
+                        {
+                            "introduced": "8.0"
+                        },
+                        {
+                            "fixed": "8.0_4"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "discovery": "2010-07-13T00:00:00Z",
+        "references": {
+            "freebsdsa": [
+                "SA-10:07.mbuf"
+            ]
+        },
+        "vid": "7a09a8df-ca41-11df-aade-0050568f000c"
+    },
+    "details": "# Problem Description:\n\nThe read-only flag is not correctly copied when a mbuf buffer reference\nis duplicated. When the sendfile(2) system call is used to transmit data\nover the loopback interface, this can result in the backing pages for\nthe transmitted file being modified, causing data corruption.\n",
+    "id": "FreeBSD-2010-0118",
+    "modified": "2016-08-09T00:00:00Z",
+    "published": "2010-10-24T00:00:00Z",
+    "references": [
+        {
+            "type": "ADVISORY",
+            "url": "https://www.freebsd.org/security/advisories/FreeBSD-SA-10:07.mbuf.asc"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "FreeBSD -- Lost mbuf flag resulting in data corruption"
+}

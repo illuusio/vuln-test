@@ -1,0 +1,134 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "nss"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "3.21"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        },
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "linux-c6-nss"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "3.21"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        },
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "linux-firefox"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "44.0,1"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        },
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "linux-seamonkey"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "2.41"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "cite": [
+            "https://www.mozilla.org/en-US/security/advisories/mfsa2016-07/",
+            "https://www.mozilla.org/en-US/security/advisories/mfsa2016-15/"
+        ],
+        "discovery": "2016-01-26T00:00:00Z",
+        "references": {
+            "cvename": [
+                "CVE-2016-1938",
+                "CVE-2016-1978"
+            ]
+        },
+        "vid": "75091516-6f4b-4059-9884-6727023dc366"
+    },
+    "details": "Mozilla Foundation reports:\n\n> Security researcher Hanno B\u00f6ck reported that calculations with mp_div\n> and mp_exptmod in Network Security Services (NSS) can produce wrong\n> results in some circumstances. These functions are used within NSS for\n> a variety of cryptographic division functions, leading to potential\n> cryptographic weaknesses.\n\n> Mozilla developer Eric Rescorla reported that a failed allocation\n> during DHE and ECDHE handshakes would lead to a use-after-free\n> vulnerability.\n",
+    "id": "FreeBSD-2016-0139",
+    "modified": "2016-03-08T00:00:00Z",
+    "published": "2016-03-08T00:00:00Z",
+    "references": [
+        {
+            "type": "REPORT",
+            "url": "https://www.mozilla.org/en-US/security/advisories/mfsa2016-07/"
+        },
+        {
+            "type": "REPORT",
+            "url": "https://www.mozilla.org/en-US/security/advisories/mfsa2016-15/"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2016-1938"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2016-1978"
+        },
+        {
+            "type": "WEB",
+            "url": "https://www.mozilla.org/security/advisories/mfsa2016-07/"
+        },
+        {
+            "type": "WEB",
+            "url": "https://www.mozilla.org/security/advisories/mfsa2016-15/"
+        },
+        {
+            "type": "WEB",
+            "url": "https://hg.mozilla.org/projects/nss/rev/a555bf0fc23a"
+        },
+        {
+            "type": "WEB",
+            "url": "https://hg.mozilla.org/projects/nss/rev/a245a4ccd354"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "NSS -- multiple vulnerabilities"
+}

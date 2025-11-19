@@ -1,0 +1,70 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "sudo"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "1.8.15"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "cite": [
+            "http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2015-5602"
+        ],
+        "discovery": "2015-11-17T00:00:00Z",
+        "references": {
+            "cvename": [
+                "CVE-2015-5602"
+            ],
+            "freebsdpr": [
+                "ports/206590"
+            ]
+        },
+        "vid": "2e8cdd36-c3cc-11e5-b5fe-002590263bf5"
+    },
+    "details": "MITRE reports:\n\n> sudoedit in Sudo before 1.8.15 allows local users to gain privileges\n> via a symlink attack on a file whose full path is defined using\n> multiple wildcards in /etc/sudoers, as demonstrated by\n> \\\"/home/\\*/\\*/file.txt.\\\"\n",
+    "id": "FreeBSD-2016-0054",
+    "modified": "2016-01-26T00:00:00Z",
+    "published": "2016-01-26T00:00:00Z",
+    "references": [
+        {
+            "type": "REPORT",
+            "url": "http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2015-5602"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2015-5602"
+        },
+        {
+            "type": "REPORT",
+            "url": "https://bugs.freebsd.org/bugzilla/show_bug.cgi?id=206590"
+        },
+        {
+            "type": "WEB",
+            "url": "https://www.exploit-db.com/exploits/37710/"
+        },
+        {
+            "type": "WEB",
+            "url": "https://bugzilla.sudo.ws/show_bug.cgi?id=707"
+        },
+        {
+            "type": "WEB",
+            "url": "http://www.sudo.ws/stable.html#1.8.15"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "sudo -- potential privilege escalation via symlink misconfiguration"
+}

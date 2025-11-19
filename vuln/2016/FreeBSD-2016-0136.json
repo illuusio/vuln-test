@@ -1,0 +1,59 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "putty"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "0.67"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "cite": [
+            "http://www.chiark.greenend.org.uk/~sgtatham/putty/wishlist/vuln-pscp-sink-sscanf.html"
+        ],
+        "discovery": "2016-02-26T00:00:00Z",
+        "references": {
+            "cvename": [
+                "CVE-2016-2563"
+            ]
+        },
+        "vid": "7f0fbb30-e462-11e5-a3f3-080027ef73ec"
+    },
+    "details": "Simon G. Tatham reports:\n\n> Many versions of PSCP prior to 0.67 have a stack corruption\n> vulnerability in their treatment of the \\'sink\\' direction (i.e.\n> downloading from server to client) of the old-style SCP protocol.\n>\n> In order for this vulnerability to be exploited, the user must connect\n> to a malicious server and attempt to download any file.\\[\\...\\] you\n> can work around it in a vulnerable PSCP by using the -sftp option to\n> force the use of the newer SFTP protocol, provided your server\n> supports that protocol.\n",
+    "id": "FreeBSD-2016-0136",
+    "modified": "2016-03-07T00:00:00Z",
+    "published": "2016-03-07T00:00:00Z",
+    "references": [
+        {
+            "type": "REPORT",
+            "url": "http://www.chiark.greenend.org.uk/~sgtatham/putty/wishlist/vuln-pscp-sink-sscanf.html"
+        },
+        {
+            "type": "WEB",
+            "url": "http://www.chiark.greenend.org.uk/~sgtatham/putty/wishlist/vuln-pscp-sink-sscanf.html"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2016-2563"
+        },
+        {
+            "type": "WEB",
+            "url": "https://github.com/tintinweb/pub/tree/master/pocs/cve-2016-2563"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "PuTTY - old-style scp downloads may allow remote code execution"
+}

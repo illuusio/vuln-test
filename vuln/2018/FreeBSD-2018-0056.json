@@ -1,0 +1,64 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "asterisk13"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "13.19.2"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "cite": [
+            "http://www.asterisk.org/downloads/security-advisories"
+        ],
+        "discovery": "2018-02-21T00:00:00Z",
+        "references": {
+            "cvename": [
+                "CVE-2018-7284",
+                "CVE-2018-7286"
+            ]
+        },
+        "vid": "933654ce-17b8-11e8-90b8-001999f8d30b"
+    },
+    "details": "The Asterisk project reports:\n\n> AST-2018-004 - When processing a SUBSCRIBE request the\n> res_pjsip_pubsub module stores the accepted formats present in the\n> Accept headers of the request. This code did not limit the number of\n> headers it processed despite having a fixed limit of 32. If more than\n> 32 Accept headers were present the code would write outside of its\n> memory and cause a crash.\n>\n> AST-2018-005 - A crash occurs when a number of authenticated INVITE\n> messages are sent over TCP or TLS and then the connection is suddenly\n> closed. This issue leads to a segmentation fault.\n",
+    "id": "FreeBSD-2018-0056",
+    "modified": "2018-06-12T00:00:00Z",
+    "published": "2018-02-22T00:00:00Z",
+    "references": [
+        {
+            "type": "REPORT",
+            "url": "http://www.asterisk.org/downloads/security-advisories"
+        },
+        {
+            "type": "WEB",
+            "url": "https://downloads.asterisk.org/pub/security/AST-2018-004.html"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2018-7284"
+        },
+        {
+            "type": "WEB",
+            "url": "https://downloads.asterisk.org/pub/security/AST-2018-005.html"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2018-7286"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "asterisk -- multiple vulnerabilities"
+}

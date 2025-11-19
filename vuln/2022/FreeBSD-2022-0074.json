@@ -1,0 +1,62 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:kernel",
+                "name": "FreeBSD-kernel"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "introduced": "13.0"
+                        },
+                        {
+                            "fixed": "13.0_11"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                },
+                {
+                    "events": [
+                        {
+                            "introduced": "12.3"
+                        },
+                        {
+                            "fixed": "12.3_5"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "discovery": "2022-04-06T00:00:00Z",
+        "references": {
+            "cvename": [
+                "CVE-2022-23088"
+            ],
+            "freebsdsa": [
+                "SA-22:07.wifi_meshid"
+            ]
+        },
+        "vid": "d4cc994f-b61d-11ec-9ebc-1c697aa5a594"
+    },
+    "details": "# Problem Description:\n\nThe 802.11 beacon handling routine failed to validate the length of an\nIEEE 802.11s Mesh ID before copying it to a heap-allocated buffer.\n\n# Impact:\n\nWhile a FreeBSD Wi-Fi client is in scanning mode (i.e., not associated\nwith a SSID) a malicious beacon frame may overwrite kernel memory,\nleading to remote code execution.\n",
+    "id": "FreeBSD-2022-0074",
+    "modified": "2022-04-07T00:00:00Z",
+    "published": "2022-04-07T00:00:00Z",
+    "references": [
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2022-23088"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://www.freebsd.org/security/advisories/FreeBSD-SA-22:07.wifi_meshid.asc"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "FreeBSD -- 802.11 heap buffer overflow"
+}

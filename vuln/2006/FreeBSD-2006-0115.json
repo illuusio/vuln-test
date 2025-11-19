@@ -1,0 +1,106 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "FreeBSD"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "introduced": "4.11"
+                        },
+                        {
+                            "fixed": "4.11_19"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                },
+                {
+                    "events": [
+                        {
+                            "introduced": "5.3"
+                        },
+                        {
+                            "fixed": "5.3_31"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                },
+                {
+                    "events": [
+                        {
+                            "introduced": "5.4"
+                        },
+                        {
+                            "fixed": "5.4_16"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                },
+                {
+                    "events": [
+                        {
+                            "introduced": "5.5"
+                        },
+                        {
+                            "fixed": "5.5_2"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                },
+                {
+                    "events": [
+                        {
+                            "introduced": "6.0"
+                        },
+                        {
+                            "fixed": "6.0_9"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                },
+                {
+                    "events": [
+                        {
+                            "introduced": "6.1"
+                        },
+                        {
+                            "fixed": "6.1_2"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "discovery": "2006-06-14T00:00:00Z",
+        "references": {
+            "cvename": [
+                "CVE-2006-1173"
+            ],
+            "freebsdsa": [
+                "SA-06:17.sendmail"
+            ]
+        },
+        "vid": "c611be81-fbc2-11da-9156-000e0c2e438a"
+    },
+    "details": "# Problem Description\n\nA suitably malformed multipart MIME message can cause sendmail to exceed\npredefined limits on its stack usage.\n\n# Impact\n\nAn attacker able to send mail to, or via, a server can cause queued\nmessages on the system to not be delivered, by causing the sendmail\nprocess which handles queued messages to crash. Note that this will not\nstop new messages from entering the queue (either from local processes,\nor incoming via SMTP).\n\n# Workaround\n\nNo workaround is available, but systems which do not receive email from\nuntrusted sources are not vulnerable.\n",
+    "id": "FreeBSD-2006-0115",
+    "modified": "2006-06-14T00:00:00Z",
+    "published": "2006-06-14T00:00:00Z",
+    "references": [
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2006-1173"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://www.freebsd.org/security/advisories/FreeBSD-SA-06:17.sendmail.asc"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "sendmail -- Incorrect multipart message handling"
+}

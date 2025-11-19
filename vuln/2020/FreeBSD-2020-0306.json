@@ -1,0 +1,103 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "openssl"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "introduced": "1.0.2,1"
+                        },
+                        {
+                            "fixed": "1.1.1i,1"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        },
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "FreeBSD"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "introduced": "12.2"
+                        },
+                        {
+                            "fixed": "12.2_2"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                },
+                {
+                    "events": [
+                        {
+                            "introduced": "12.1"
+                        },
+                        {
+                            "fixed": "12.1_12"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                },
+                {
+                    "events": [
+                        {
+                            "introduced": "11.4"
+                        },
+                        {
+                            "fixed": "11.4_6"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "cite": [
+            "https://www.openssl.org/news/secadv/20201208.txt"
+        ],
+        "discovery": "2020-12-08T00:00:00Z",
+        "references": {
+            "cvename": [
+                "CVE-2020-1971"
+            ],
+            "freebsdsa": [
+                "SA-20:33.openssl"
+            ]
+        },
+        "vid": "1d56cfc5-3970-11eb-929d-d4c9ef517024"
+    },
+    "details": "The OpenSSL project reports:\n\n> EDIPARTYNAME NULL pointer de-reference (High)\n>\n> The X.509 GeneralName type is a generic type for representing\n> different types of names. One of those name types is known as\n> EDIPartyName. OpenSSL provides a function GENERAL_NAME_cmp which\n> compares different instances of a GENERAL_NAME to see if they are\n> equal or not. This function behaves incorrectly when both\n> GENERAL_NAMEs contain an EDIPARTYNAME. A NULL pointer dereference and\n> a crash may occur leading to a possible denial of service attack.\n",
+    "id": "FreeBSD-2020-0306",
+    "modified": "2020-12-15T00:00:00Z",
+    "published": "2020-12-08T00:00:00Z",
+    "references": [
+        {
+            "type": "REPORT",
+            "url": "https://www.openssl.org/news/secadv/20201208.txt"
+        },
+        {
+            "type": "WEB",
+            "url": "https://www.openssl.org/news/secadv/20201208.txt"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2020-1971"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://www.freebsd.org/security/advisories/FreeBSD-SA-20:33.openssl.asc"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "OpenSSL -- NULL pointer de-reference"
+}

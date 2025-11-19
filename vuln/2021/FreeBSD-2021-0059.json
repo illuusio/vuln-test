@@ -1,0 +1,122 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "node10"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "10.24.0"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        },
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "node12"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "12.21.0"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        },
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "node14"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "14.16.0"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        },
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "node"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "15.10.0"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "cite": [
+            "https://nodejs.org/en/blog/vulnerability/february-2021-security-releases/"
+        ],
+        "discovery": "2021-02-23T00:00:00Z",
+        "references": {
+            "cvename": [
+                "CVE-2021-22883",
+                "CVE-2021-22884",
+                "CVE-2021-23840"
+            ]
+        },
+        "vid": "2f3cd69e-7dee-11eb-b92e-0022489ad614"
+    },
+    "details": "Node.js reports:\n\n> # HTTP2 \\'unknownProtocol\\' cause Denial of Service by resource exhaustion (Critical) (CVE-2021-22883)\n>\n> Affected Node.js versions are vulnerable to denial of service attacks\n> when too many connection attempts with an \\'unknownProtocol\\' are\n> established. This leads to a leak of file descriptors. If a file\n> descriptor limit is configured on the system, then the server is\n> unable to accept new connections and prevent the process also from\n> opening, e.g. a file. If no file descriptor limit is configured, then\n> this lead to an excessive memory usage and cause the system to run out\n> of memory.\n>\n> # DNS rebinding in \\--inspect (CVE-2021-22884)\n>\n> Affected Node.js versions are vulnerable to a DNS rebinding attack\n> when the whitelist includes \\\"localhost6\\\". When \\\"localhost6\\\" is not\n> present in /etc/hosts, it is just an ordinary domain that is resolved\n> via DNS, i.e., over network. If the attacker controls the victim\\'s\n> DNS server or can spoof its responses, the DNS rebinding protection\n> can be bypassed by using the \\\"localhost6\\\" domain. As long as the\n> attacker uses the \\\"localhost6\\\" domain, they can still apply the\n> attack described in CVE-2018-7160.\n>\n> # OpenSSL - Integer overflow in CipherUpdate (CVE-2021-23840)\n>\n> This is a vulnerability in OpenSSL which may be exploited through\n> Node.js. You can read more about it in\n> https://www.openssl.org/news/secadv/20210216.txt\n",
+    "id": "FreeBSD-2021-0059",
+    "modified": "2021-03-09T00:00:00Z",
+    "published": "2021-03-09T00:00:00Z",
+    "references": [
+        {
+            "type": "REPORT",
+            "url": "https://nodejs.org/en/blog/vulnerability/february-2021-security-releases/"
+        },
+        {
+            "type": "WEB",
+            "url": "https://nodejs.org/en/blog/vulnerability/february-2021-security-releases/"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2021-22883"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2021-22884"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2021-23840"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "Node.js -- February 2021 Security Releases"
+}

@@ -1,0 +1,78 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "rubygem-rack"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "introduced": "2.0.0"
+                        },
+                        {
+                            "fixed": "2.0.8,3"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        },
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "rubygem-rack16"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "introduced": "1.6.0"
+                        },
+                        {
+                            "fixed": "1.6.12"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "cite": [
+            "https://nvd.nist.gov/vuln/detail/CVE-2019-16782"
+        ],
+        "discovery": "2019-12-08T00:00:00Z",
+        "references": {
+            "cvename": [
+                "CVE-2019-16782"
+            ]
+        },
+        "vid": "66e4dc99-28b3-11ea-8dde-08002728f74c"
+    },
+    "details": "National Vulnerability Database:\n\n> There\\'s a possible information leak / session hijack vulnerability in\n> Rack (RubyGem rack). This vulnerability is patched in versions 1.6.12\n> and 2.0.8. Attackers may be able to find and hijack sessions by using\n> timing attacks targeting the session id. Session ids are usually\n> stored and indexed in a database that uses some kind of scheme for\n> speeding up lookups of that session id. By carefully measuring the\n> amount of time it takes to look up a session, an attacker may be able\n> to find a valid session id and hijack the session. The session id\n> itself may be generated randomly, but the way the session is indexed\n> by the backing store does not use a secure comparison.\n",
+    "id": "FreeBSD-2019-0289",
+    "modified": "2019-12-29T00:00:00Z",
+    "published": "2019-12-29T00:00:00Z",
+    "references": [
+        {
+            "type": "REPORT",
+            "url": "https://nvd.nist.gov/vuln/detail/CVE-2019-16782"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://nvd.nist.gov/vuln/detail/CVE-2019-16782"
+        },
+        {
+            "type": "WEB",
+            "url": "https://github.com/rack/rack/blob/master/CHANGELOG.md"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2019-16782"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "rack -- information leak / session hijack vulnerability"
+}

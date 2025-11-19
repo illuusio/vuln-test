@@ -1,0 +1,93 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "krb5"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "introduced": "1.20,1"
+                        },
+                        {
+                            "fixed": "1.21.1_1"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        },
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "krb5-121"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "1.21.1_1"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        },
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "krb5-devel"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "introduced": "1.20,1"
+                        },
+                        {
+                            "fixed": "1.22.2023.08.07"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "cite": [
+            "https://github.com/krb5/krb5/commit/88a1701b423c13991a8064feeb26952d3641d840"
+        ],
+        "discovery": "2023-08-07T00:00:00Z",
+        "references": {
+            "cvename": [
+                "CVE-2023-39975"
+            ]
+        },
+        "vid": "a6986f0f-3ac0-11ee-9a88-206a8a720317"
+    },
+    "details": "The MIT krb5 Team reports:\n\n> When issuing a ticket for a TGS renew or validate request, copy only\n> the server field from the outer part of the header ticket to the new\n> ticket. Copying the whole structure causes the enc_part pointer to be\n> aliased to the header ticket until krb5_encrypt_tkt_part() is called,\n> resulting in a double-free if handle_authdata() fails..\n",
+    "id": "FreeBSD-2023-0226",
+    "modified": "2023-08-14T00:00:00Z",
+    "published": "2023-08-14T00:00:00Z",
+    "references": [
+        {
+            "type": "REPORT",
+            "url": "https://github.com/krb5/krb5/commit/88a1701b423c13991a8064feeb26952d3641d840"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2023-39975"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2023-39975"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "krb5 -- Double-free in KDC TGS processing"
+}

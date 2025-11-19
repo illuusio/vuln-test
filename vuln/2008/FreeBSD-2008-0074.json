@@ -1,0 +1,60 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "php5"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "5.2.6_2"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "discovery": "2008-06-17T00:00:00Z",
+        "references": {
+            "bid": [
+                "29797"
+            ],
+            "cvename": [
+                "CVE-2008-2665",
+                "CVE-2008-2666"
+            ]
+        },
+        "vid": "ee6fa2bd-406a-11dd-936a-0015af872849"
+    },
+    "details": "According to Maksymilian Arciemowicz research, it is possible to bypass\nsecurity restrictions of `safe_mode` in various functions via directory\ntraversal vulnerability. The attacker can use this attack to gain access\nto sensitive information. Functions utilizing `expand_filepath()` may be\naffected.\n\nIt should be noted that this vulnerability is not considered to be\nserious by the FreeBSD Security Team, since `safe_mode` and\n`open_basedir` are insecure by design and should not be relied upon.\n",
+    "id": "FreeBSD-2008-0074",
+    "modified": "2008-09-04T00:00:00Z",
+    "published": "2008-06-22T00:00:00Z",
+    "references": [
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2008-2665"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2008-2666"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://www.securityfocus.com/bid/29797/info"
+        },
+        {
+            "type": "WEB",
+            "url": "http://securityreason.com/achievement_securityalert/54"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "php -- input validation error in safe_mode"
+}

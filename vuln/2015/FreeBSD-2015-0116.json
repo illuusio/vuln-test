@@ -1,0 +1,62 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "rubygem-rest-client"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "1.6.7_1"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "cite": [
+            "https://github.com/rest-client/rest-client/issues/369"
+        ],
+        "discovery": "2015-03-24T00:00:00Z",
+        "references": {
+            "cvename": [
+                "CVE-2015-1820"
+            ],
+            "freebsdpr": [
+                "ports/200504"
+            ]
+        },
+        "vid": "83a7a720-07d8-11e5-9a28-001e67150279"
+    },
+    "details": "Andy Brody reports:\n\n> When Ruby rest-client processes an HTTP redirection response, it\n> blindly passes along the values from any Set-Cookie headers to the\n> redirection target, regardless of domain, path, or expiration.\n",
+    "id": "FreeBSD-2015-0116",
+    "modified": "2015-09-28T00:00:00Z",
+    "published": "2015-05-31T00:00:00Z",
+    "references": [
+        {
+            "type": "REPORT",
+            "url": "https://github.com/rest-client/rest-client/issues/369"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2015-1820"
+        },
+        {
+            "type": "REPORT",
+            "url": "https://bugs.freebsd.org/bugzilla/show_bug.cgi?id=200504"
+        },
+        {
+            "type": "WEB",
+            "url": "https://github.com/rest-client/rest-client/issues/369"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "rest-client -- session fixation vulnerability"
+}

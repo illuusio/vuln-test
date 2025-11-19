@@ -1,0 +1,63 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "mysql-server"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "introduced": "5.0,1"
+                        },
+                        {
+                            "fixed": "5.0.21"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "cite": [
+            "http://www.wisec.it/vulns.php?page=8"
+        ],
+        "discovery": "2006-05-02T00:00:00Z",
+        "references": {
+            "cvename": [
+                "CVE-2006-1518"
+            ]
+        },
+        "vid": "a8d8713e-dc83-11da-a22b-000c6ec775d9"
+    },
+    "details": "Stefano Di Paola reports:\n\n> An authenticated user could remotely execute arbitrary commands by\n> taking advantage of a stack overflow.\n>\n> To take advantage of these flaws an attacker should have direct access\n> to MySQL server communication layer (port 3306 or unix socket). But if\n> used in conjuction with some web application flaws (i.e. php code\n> injection) an attacker could use socket programming (i.e. php sockets)\n> to gain access to that layer.\n",
+    "id": "FreeBSD-2006-0094",
+    "modified": "2006-05-06T00:00:00Z",
+    "published": "2006-05-06T00:00:00Z",
+    "references": [
+        {
+            "type": "REPORT",
+            "url": "http://www.wisec.it/vulns.php?page=8"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2006-1518"
+        },
+        {
+            "type": "WEB",
+            "url": "http://www.wisec.it/vulns.php?page=8"
+        },
+        {
+            "type": "DISCUSSION",
+            "url": "http://marc.theaimsgroup.com/?l=bugtraq&m=114659633220473"
+        },
+        {
+            "type": "WEB",
+            "url": "http://dev.mysql.com/doc/refman/5.0/en/news-5-0-21.html"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "mysql50-server -- COM_TABLE_DUMP arbitrary code execution"
+}

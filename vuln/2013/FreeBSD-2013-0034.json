@@ -1,0 +1,119 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "py26-django"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "introduced": "1.3"
+                        },
+                        {
+                            "fixed": "1.3.6"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                },
+                {
+                    "events": [
+                        {
+                            "introduced": "1.4"
+                        },
+                        {
+                            "fixed": "1.4.4"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        },
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "py27-django"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "introduced": "1.3"
+                        },
+                        {
+                            "fixed": "1.3.6"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                },
+                {
+                    "events": [
+                        {
+                            "introduced": "1.4"
+                        },
+                        {
+                            "fixed": "1.4.4"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "cite": [
+            "https://www.djangoproject.com/weblog/2013/feb/19/security/"
+        ],
+        "discovery": "2013-02-21T00:00:00Z",
+        "references": {
+            "bid": [
+                "58022",
+                "58061"
+            ],
+            "cvename": [
+                "CVE-2013-1664",
+                "CVE-2013-1665",
+                "CVE-2013-0305",
+                "CVE-2013-0306"
+            ]
+        },
+        "vid": "21c59f5e-7cc5-11e2-9c11-080027a5ec9a"
+    },
+    "details": "The Django Project reports:\n\n> These security releases fix four issues: one potential phishing\n> vector, one denial-of-service vector, an information leakage issue,\n> and a range of XML vulnerabilities.\n>\n> 1.  Host header poisoning\n>\n>     an attacker could cause Django to generate and display URLs that\n>     link to arbitrary domains. This could be used as part of a\n>     phishing attack. These releases fix this problem by introducing a\n>     new setting, ALLOWED_HOSTS, which specifies a whitelist of domains\n>     your site is known to respond to.\n>\n>     Important: by default Django 1.3.6 and 1.4.4 set ALLOWED_HOSTS to\n>     allow all hosts. This means that to actually fix the security\n>     vulnerability you should define this setting yourself immediately\n>     after upgrading.\n>\n> 2.  Formset denial-of-service\n>\n>     an attacker can abuse Django\\'s tracking of the number of forms in\n>     a formset to cause a denial-of-service attack. This has been fixed\n>     by adding a default maximum number of forms of 1,000. You can\n>     still manually specify a bigger max_num, if you wish, but 1,000\n>     should be enough for anyone.\n>\n> 3.  XML attacks\n>\n>     Django\\'s serialization framework was vulnerable to attacks via\n>     XML entity expansion and external references; this is now fixed.\n>     However, if you\\'re parsing arbitrary XML in other parts of your\n>     application, we recommend you look into the defusedxml Python\n>     packages which remedy this anywhere you parse XML, not just via\n>     Django\\'s serialization framework.\n>\n> 4.  Data leakage via admin history log\n>\n>     Django\\'s admin interface could expose supposedly-hidden\n>     information via its history log. This has been fixed.\n",
+    "id": "FreeBSD-2013-0034",
+    "modified": "2013-02-24T00:00:00Z",
+    "published": "2013-02-24T00:00:00Z",
+    "references": [
+        {
+            "type": "REPORT",
+            "url": "https://www.djangoproject.com/weblog/2013/feb/19/security/"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2013-1664"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2013-1665"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2013-0305"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2013-0306"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://www.securityfocus.com/bid/58022/info"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://www.securityfocus.com/bid/58061/info"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "django -- multiple vulnerabilities"
+}

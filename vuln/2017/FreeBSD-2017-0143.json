@@ -1,0 +1,46 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "exim"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "4.89_1"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "cite": [
+            "https://www.qualys.com/2017/06/19/stack-clash/stack-clash.txt"
+        ],
+        "discovery": "2017-06-19T00:00:00Z",
+        "vid": "8c1a271d-56cf-11e7-b9fe-c13eb7bcbf4f"
+    },
+    "details": "Qualsys reports:\n\n> Exim supports the use of multiple \\\"-p\\\" command line arguments which\n> are malloc()\\'ed and never free()\\'ed, used in conjunction with other\n> issues allows attackers to cause arbitrary code execution. This\n> affects exim version 4.89 and earlier. Please note that at this time\n> upstream has released a patch (commit\n> 65e061b76867a9ea7aeeb535341b790b90ae6c21), but it is not known if a\n> new point release is available that addresses this issue at this time.\n",
+    "id": "FreeBSD-2017-0143",
+    "modified": "2017-06-21T00:00:00Z",
+    "published": "2017-06-21T00:00:00Z",
+    "references": [
+        {
+            "type": "REPORT",
+            "url": "https://www.qualys.com/2017/06/19/stack-clash/stack-clash.txt"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2017-1000369"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "exim -- Privilege escalation via multiple memory leaks"
+}

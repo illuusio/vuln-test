@@ -1,0 +1,112 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "drm-fbsd11.2-kmod"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "4.11.g20200115"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        },
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "drm-fbsd12.0-kmod"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "4.16.g20200115"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        },
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "drm-current-kmod"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "4.16.g20200115"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        },
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "drm-devel-kmod"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "5.0.g20200115"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "cite": [
+            "https://www.intel.com/content/www/us/en/security-center/advisory/intel-sa-00314.html"
+        ],
+        "discovery": "2020-01-14T00:00:00Z",
+        "references": {
+            "cvename": [
+                "CVE-2019-14615"
+            ]
+        },
+        "vid": "d2c2c815-3793-11ea-8be3-54e1ad3d6335"
+    },
+    "details": "Intel reports:\n\n> .A potential security vulnerability in Intel(R) Processor Graphics may\n> allow information disclosure. Intel is releasing software updates to\n> mitigate this potential vulnerability.\n>\n> Description: Insufficient control flow in certain data structures for\n> some Intel(R) Processors with Intel(R) Processor Graphics may allow an\n> unauthenticated user to potentially enable information disclosure via\n> local access.\n>\n> This patch provides mitigation for Gen9 hardware only. Patches for\n> Gen7 and Gen7.5 will be provided later. Note that Gen8 is not impacted\n> due to a previously implemented workaround. The mitigation involves\n> using an existing hardware feature to forcibly clear down all EU state\n> at each context switch.\n",
+    "id": "FreeBSD-2020-0007",
+    "modified": "2020-01-15T00:00:00Z",
+    "published": "2020-01-15T00:00:00Z",
+    "references": [
+        {
+            "type": "REPORT",
+            "url": "https://www.intel.com/content/www/us/en/security-center/advisory/intel-sa-00314.html"
+        },
+        {
+            "type": "WEB",
+            "url": "https://www.intel.com/content/www/us/en/security-center/advisory/intel-sa-00314.html"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2019-14615"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "drm graphics drivers -- potential information disclusure via local access"
+}

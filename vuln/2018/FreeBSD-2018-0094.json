@@ -1,0 +1,79 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "openssl"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "1.0.2o,1"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        },
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "openssl-devel"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "1.1.0h"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "cite": [
+            "https://www.openssl.org/news/secadv/20180327.txt"
+        ],
+        "discovery": "2018-03-27T00:00:00Z",
+        "references": {
+            "cvename": [
+                "CVE-2018-0739",
+                "CVE-2017-3738"
+            ]
+        },
+        "vid": "b7cff5a9-31cc-11e8-8f07-b499baebfeaf"
+    },
+    "details": "The OpenSSL project reports:\n\n> - Constructed ASN.1 types with a recursive definition could exceed the\n>   stack (CVE-2018-0739)\\\n>   Constructed ASN.1 types with a recursive definition (such as can be\n>   found in PKCS7) could eventually exceed the stack given malicious\n>   input with excessive recursion. This could result in a Denial Of\n>   Service attack. There are no such structures used within SSL/TLS\n>   that come from untrusted sources so this is considered safe.\n> - rsaz_1024_mul_avx2 overflow bug on x86_64 (CVE-2017-3738)\\\n>   There is an overflow bug in the AVX2 Montgomery multiplication\n>   procedure used in exponentiation with 1024-bit moduli. This only\n>   affects processors that support the AVX2 but not ADX extensions like\n>   Intel Haswell (4th generation).\n",
+    "id": "FreeBSD-2018-0094",
+    "modified": "2018-03-27T00:00:00Z",
+    "published": "2018-03-27T00:00:00Z",
+    "references": [
+        {
+            "type": "REPORT",
+            "url": "https://www.openssl.org/news/secadv/20180327.txt"
+        },
+        {
+            "type": "WEB",
+            "url": "https://www.openssl.org/news/secadv/20180327.txt"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2018-0739"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2017-3738"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "OpenSSL -- multiple vulnerabilities"
+}

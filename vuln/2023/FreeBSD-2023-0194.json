@@ -1,0 +1,68 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "openexr"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "3.1.9"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "cite": [
+            "https://bugs.chromium.org/p/oss-fuzz/issues/detail?id=59382",
+            "https://github.com/AcademySoftwareFoundation/openexr/releases/tag/v3.1.9",
+            "https://github.com/AcademySoftwareFoundation/openexr/pull/1439"
+        ],
+        "discovery": "2023-05-28T00:00:00Z",
+        "vid": "06428d91-152e-11ee-8b14-dbdd62da85fb"
+    },
+    "details": "oss-fuzz reports:\n\n> heap buffer overflow in internal_huf_decompress.\n\nCary Phillips reports:\n\n> v3.1.9 - Patch release that addresses \\[\\...\\] also OSS-fuzz 59382\n> Heap-buffer-overflow in internal_huf_decompress\n\nKimball Thurston reports:\n\n> Fix scenario where malformed dwa file could read past end of buffer -\n> fixes OSS-Fuzz 59382\n",
+    "id": "FreeBSD-2023-0194",
+    "modified": "2023-06-27T00:00:00Z",
+    "published": "2023-06-27T00:00:00Z",
+    "references": [
+        {
+            "type": "REPORT",
+            "url": "https://bugs.chromium.org/p/oss-fuzz/issues/detail?id=59382"
+        },
+        {
+            "type": "REPORT",
+            "url": "https://github.com/AcademySoftwareFoundation/openexr/releases/tag/v3.1.9"
+        },
+        {
+            "type": "REPORT",
+            "url": "https://github.com/AcademySoftwareFoundation/openexr/pull/1439"
+        },
+        {
+            "type": "WEB",
+            "url": "https://bugs.chromium.org/p/oss-fuzz/issues/detail?id=59382"
+        },
+        {
+            "type": "WEB",
+            "url": "https://github.com/AcademySoftwareFoundation/openexr/releases/tag/v3.1.9"
+        },
+        {
+            "type": "WEB",
+            "url": "https://github.com/AcademySoftwareFoundation/openexr/commit/e431f7e189d0785bb84a5bfb83391e9e58590c49"
+        },
+        {
+            "type": "WEB",
+            "url": "https://github.com/AcademySoftwareFoundation/openexr/pull/1439"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "OpenEXR -- heap buffer overflow in internal_huf_decompress"
+}

@@ -1,0 +1,51 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:kernel",
+                "name": "FreeBSD-kernel"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "introduced": "12.0"
+                        },
+                        {
+                            "fixed": "12.0_6"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "discovery": "2019-06-19T00:00:00Z",
+        "references": {
+            "cvename": [
+                "CVE-2019-5599"
+            ],
+            "freebsdsa": [
+                "SA-19:08.rack"
+            ]
+        },
+        "vid": "c294c2e6-b309-11e9-a87f-a4badb2f4699"
+    },
+    "details": "# Problem Description:\n\nWhile processing acknowledgements, the RACK code uses several linked\nlists to maintain state entries. A malicious attacker can cause the\nlists to grow unbounded. This can cause an expensive list traversal on\nevery packet being processed, leading to resource exhaustion and a\ndenial of service.\n\n# Impact:\n\nAn attacker with the ability to send specially crafted TCP traffic to a\nvictim system can degrade network performance and/or consume excessive\nCPU by exploiting the inefficiency of traversing the potentially very\nlarge RACK linked lists with relatively small bandwidth cost.\n",
+    "id": "FreeBSD-2019-0160",
+    "modified": "2019-07-30T00:00:00Z",
+    "published": "2019-07-30T00:00:00Z",
+    "references": [
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2019-5599"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://www.freebsd.org/security/advisories/FreeBSD-SA-19:08.rack.asc"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "FreeBSD -- Resource exhaustion in non-default RACK TCP stack"
+}

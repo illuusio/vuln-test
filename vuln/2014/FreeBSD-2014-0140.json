@@ -1,0 +1,55 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "kde-workspace"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "4.11.13_1"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "cite": [
+            "https://www.kde.org/info/security/advisory-20141106-1.txt"
+        ],
+        "discovery": "2014-11-06T00:00:00Z",
+        "references": {
+            "cvename": [
+                "CVE-2014-8651"
+            ]
+        },
+        "vid": "dafa13a8-6e9b-11e4-8ef7-5453ed2e2b49"
+    },
+    "details": "David Edmundson reports:\n\n> KDE workspace configuration module for setting the date and time has a\n> helper program which runs as root for performing actions. This is\n> secured with polkit.\n>\n> This helper takes the name of the ntp utility to run as an argument.\n> This allows a hacker to run any arbitrary command as root under the\n> guise of updating the time.\n>\n> An application can gain root priveledges from an admin user with\n> either misleading information or no interaction.\n>\n> On some systems the user will be shown a prompt to change the time.\n> However, if the system has policykit-desktop-privileges installed, the\n> datetime helper will be invoked by an admin user without any prompts.\n",
+    "id": "FreeBSD-2014-0140",
+    "modified": "2014-11-17T00:00:00Z",
+    "published": "2014-11-17T00:00:00Z",
+    "references": [
+        {
+            "type": "REPORT",
+            "url": "https://www.kde.org/info/security/advisory-20141106-1.txt"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2014-8651"
+        },
+        {
+            "type": "DISCUSSION",
+            "url": "http://seclists.org/oss-sec/2014/q4/520"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "kde-workspace -- privilege escalation"
+}

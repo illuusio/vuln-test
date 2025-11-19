@@ -1,0 +1,74 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "xen-kernel"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "4.5.0_3"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        },
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "xen-tools"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "4.5.0_6"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "cite": [
+            "http://xenbits.xen.org/xsa/advisory-125.html"
+        ],
+        "discovery": "2015-03-31T00:00:00Z",
+        "references": {
+            "cvename": [
+                "CVE-2015-2752"
+            ]
+        },
+        "vid": "d40c66cb-27e4-11e5-a4a5-002590263bf5"
+    },
+    "details": "The Xen Project reports:\n\n> The XEN_DOMCTL_memory_mapping hypercall allows long running operations\n> without implementing preemption.\n>\n> This hypercall is used by the device model as part of the emulation\n> associated with configuration of PCI devices passed through to HVM\n> guests and is therefore indirectly exposed to those guests.\n>\n> This can cause a physical CPU to become busy for a significant period,\n> leading to a host denial of service in some cases.\n>\n> If a host denial of service is not triggered then it may instead be\n> possible to deny service to the domain running the device model, e.g.\n> domain 0.\n>\n> This hypercall is also exposed more generally to all toolstacks.\n> However the uses of it in libxl based toolstacks are not believed to\n> open up any avenue of attack from an untrusted guest. Other toolstacks\n> may be vulnerable however.\n>\n> The vulnerability is exposed via HVM guests which have a PCI device\n> assigned to them. A malicious HVM guest in such a configuration can\n> mount a denial of service attack affecting the whole system via its\n> associated device model (qemu-dm).\n>\n> A guest is able to trigger this hypercall via operations which it is\n> legitimately expected to perform, therefore running the device model\n> as a stub domain does not offer protection against the host denial of\n> service issue. However it does offer some protection against secondary\n> issues such as denial of service against dom0.\n",
+    "id": "FreeBSD-2015-0188",
+    "modified": "2015-07-11T00:00:00Z",
+    "published": "2015-07-11T00:00:00Z",
+    "references": [
+        {
+            "type": "REPORT",
+            "url": "http://xenbits.xen.org/xsa/advisory-125.html"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2015-2752"
+        },
+        {
+            "type": "WEB",
+            "url": "http://xenbits.xen.org/xsa/advisory-125.html"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "xen-kernel and xen-tools -- Long latency MMIO mapping operations are not preemptible"
+}

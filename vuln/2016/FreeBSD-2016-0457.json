@@ -1,0 +1,62 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "xen-tools"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "4.7.1"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "cite": [
+            "https://xenbits.xen.org/xsa/advisory-197.html"
+        ],
+        "discovery": "2016-11-22T00:00:00Z",
+        "references": {
+            "cvename": [
+                "CVE-2016-9381"
+            ],
+            "freebsdpr": [
+                "ports/214936"
+            ]
+        },
+        "vid": "58685e23-ba4d-11e6-ae1b-002590263bf5"
+    },
+    "details": "The Xen Project reports:\n\n> The compiler can emit optimizations in qemu which can lead to double\n> fetch vulnerabilities. Specifically data on the rings shared between\n> qemu and the hypervisor (which the guest under control can obtain\n> mappings of) can be fetched twice (during which time the guest can\n> alter the contents) possibly leading to arbitrary code execution in\n> qemu.\n>\n> Malicious administrators can exploit this vulnerability to take over\n> the qemu process, elevating its privilege to that of the qemu process.\n>\n> In a system not using a device model stub domain (or other techniques\n> for deprivileging qemu), malicious guest administrators can thus\n> elevate their privilege to that of the host.\n",
+    "id": "FreeBSD-2016-0457",
+    "modified": "2016-12-04T00:00:00Z",
+    "published": "2016-12-04T00:00:00Z",
+    "references": [
+        {
+            "type": "REPORT",
+            "url": "https://xenbits.xen.org/xsa/advisory-197.html"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2016-9381"
+        },
+        {
+            "type": "REPORT",
+            "url": "https://bugs.freebsd.org/bugzilla/show_bug.cgi?id=214936"
+        },
+        {
+            "type": "WEB",
+            "url": "https://xenbits.xen.org/xsa/advisory-197.html"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "xen-tools -- qemu incautious about shared ring processing"
+}

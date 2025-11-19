@@ -1,0 +1,55 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "qt6-base"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "6.9.2"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "cite": [
+            "https://www.qt.io/blog/security-advisory-recently-reported-denial-of-service-issue-in-qcolortransfergenericfunction-impacts-qt"
+        ],
+        "discovery": "2025-07-11T00:00:00Z",
+        "references": {
+            "cvename": [
+                "CVE-2025-5992"
+            ]
+        },
+        "vid": "2a11aa1e-83c7-11f0-b6e5-4ccc6adda413"
+    },
+    "details": "Andy Shaw reports:\n\n> When passing values outside of the expected range to\n> QColorTransferGenericFunction it can cause a denial of service, for\n> example, this can happen when passing a specifically crafted ICC\n> profile to QColorSpace::fromICCProfile.\n",
+    "id": "FreeBSD-2025-0279",
+    "modified": "2025-08-28T00:00:00Z",
+    "published": "2025-08-28T00:00:00Z",
+    "references": [
+        {
+            "type": "REPORT",
+            "url": "https://www.qt.io/blog/security-advisory-recently-reported-denial-of-service-issue-in-qcolortransfergenericfunction-impacts-qt"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2025-5992"
+        },
+        {
+            "type": "WEB",
+            "url": "https://www.qt.io/blog/security-advisory-recently-reported-denial-of-service-issue-in-qcolortransfergenericfunction-impacts-qt"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "qt6-base -- DoS in QColorTransferGenericFunction"
+}

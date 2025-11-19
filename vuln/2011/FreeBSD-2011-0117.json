@@ -1,0 +1,219 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "nss"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "3.12.11"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        },
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "ca_root_nss"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "3.12.11"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        },
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "firefox"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "introduced": "3.6.*,1,1"
+                        },
+                        {
+                            "fixed": "3.6.22,1"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                },
+                {
+                    "events": [
+                        {
+                            "introduced": "4.0.*,1,1"
+                        },
+                        {
+                            "fixed": "6.0.2,1"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        },
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "seamonkey"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "2.3.2"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        },
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "linux-firefox"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "3.6.22,1"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        },
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "thunderbird"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "introduced": "3.1.*,1"
+                        },
+                        {
+                            "fixed": "3.1.14"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                },
+                {
+                    "events": [
+                        {
+                            "introduced": "5.0.*,1"
+                        },
+                        {
+                            "fixed": "6.0.2"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        },
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "linux-thunderbird"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "3.1.14"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        },
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "linux-seamonkey"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "2.3.2"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "cite": [
+            "http://googleonlinesecurity.blogspot.com/2011/08/update-on-attempted-man-in-middle.html",
+            "http://www.vasco.com/company/press_room/news_archive/2011/news_diginotar_reports_security_incident.aspx",
+            "https://blog.mozilla.com/security/2011/09/02/diginotar-removal-follow-up/"
+        ],
+        "discovery": "2011-07-19T00:00:00Z",
+        "vid": "aa5bc971-d635-11e0-b3cf-080027ef73ec"
+    },
+    "details": "Heather Adkins, Google\\'s Information Security Manager, reported that\nGoogle received\n\n> \\[\\...\\] reports of attempted SSL man-in-the-middle (MITM) attacks\n> against Google users, whereby someone tried to get between them and\n> encrypted Google services. The people affected were primarily located\n> in Iran. The attacker used a fraudulent SSL certificate issued by\n> DigiNotar, a root certificate authority that should not issue\n> certificates for Google (and has since revoked it). \\[\\...\\]\n\nVASCO Data Security International Inc., owner of DigiNotar, issued a\npress statement confirming this incident:\n\n> On July 19th 2011, DigiNotar detected an intrusion into its\n> Certificate Authority (CA) infrastructure, which resulted in the\n> fraudulent issuance of public key certificate requests for a number of\n> domains, including Google.com. \\[\\...\\] an external security audit\n> concluded that all fraudulently issued certificates were revoked.\n> Recently, it was discovered that at least one fraudulent certificate\n> had not been revoked at the time. \\[\\...\\]\n\nMozilla, maintainer of the NSS package, from which FreeBSD derived\nca_root_nss, stated that they:\n\n> revoked our trust in the DigiNotar certificate authority from all\n> Mozilla software. This is not a temporary suspension, it is a complete\n> removal from our trusted root program. Complete revocation of trust is\n> a decision we treat with careful consideration, and employ as a last\n> resort.\n>\n> Three central issues informed our decision:\n>\n> 1.  Failure to notify. \\[\\...\\]\n> 2.  The scope of the breach remains unknown. \\[\\...\\]\n> 3.  The attack is not theoretical.\n",
+    "id": "FreeBSD-2011-0117",
+    "modified": "2011-09-06T00:00:00Z",
+    "published": "2011-09-03T00:00:00Z",
+    "references": [
+        {
+            "type": "REPORT",
+            "url": "http://googleonlinesecurity.blogspot.com/2011/08/update-on-attempted-man-in-middle.html"
+        },
+        {
+            "type": "REPORT",
+            "url": "http://www.vasco.com/company/press_room/news_archive/2011/news_diginotar_reports_security_incident.aspx"
+        },
+        {
+            "type": "REPORT",
+            "url": "https://blog.mozilla.com/security/2011/09/02/diginotar-removal-follow-up/"
+        },
+        {
+            "type": "WEB",
+            "url": "http://www.vasco.com/company/press_room/news_archive/2011/news_diginotar_reports_security_incident.aspx"
+        },
+        {
+            "type": "WEB",
+            "url": "http://www.mozilla.org/security/announce/2011/mfsa2011-34.html"
+        },
+        {
+            "type": "WEB",
+            "url": "http://googleonlinesecurity.blogspot.com/2011/08/update-on-attempted-man-in-middle.html"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "nss/ca_root_nss -- fraudulent certificates issued by DigiNotar.nl"
+}

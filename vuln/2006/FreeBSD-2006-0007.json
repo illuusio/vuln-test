@@ -1,0 +1,59 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "fetchmail"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "introduced": "6.3.0"
+                        },
+                        {
+                            "fixed": "6.3.2"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "cite": [
+            "http://www.fetchmail.info/fetchmail-SA-2006-01.txt"
+        ],
+        "discovery": "2006-01-22T00:00:00Z",
+        "references": {
+            "cvename": [
+                "CVE-2006-0321"
+            ]
+        },
+        "vid": "f11d3b22-88c6-11da-a7b2-0060084a00e5"
+    },
+    "details": "Matthias Andree reports:\n\n> Fetchmail contains a bug that causes itself to crash when bouncing a\n> message to the originator or to the local postmaster. The crash\n> happens after the bounce message has been sent, when fetchmail tries\n> to free the dynamic array of failed addresses, and calls the free()\n> function with an invalid pointer.\n",
+    "id": "FreeBSD-2006-0007",
+    "modified": "2006-01-23T00:00:00Z",
+    "published": "2006-01-23T00:00:00Z",
+    "references": [
+        {
+            "type": "REPORT",
+            "url": "http://www.fetchmail.info/fetchmail-SA-2006-01.txt"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2006-0321"
+        },
+        {
+            "type": "WEB",
+            "url": "http://www.fetchmail.info/fetchmail-SA-2006-01.txt"
+        },
+        {
+            "type": "WEB",
+            "url": "http://bugs.debian.org/348747"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "fetchmail -- crash when bouncing a message"
+}

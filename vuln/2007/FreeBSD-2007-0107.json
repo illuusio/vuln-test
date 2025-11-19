@@ -1,0 +1,58 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "id3lib"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "3.8.3_4"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "cite": [
+            "http://bugs.debian.org/cgi-bin/bugreport.cgi?bug=438540"
+        ],
+        "discovery": "2007-08-20T00:00:00Z",
+        "references": {
+            "bid": [
+                "25372"
+            ],
+            "cvename": [
+                "CVE-2007-4460"
+            ]
+        },
+        "vid": "15ec9123-7061-11dc-b372-001921ab2fa4"
+    },
+    "details": "Debian Bug report log reports:\n\n> When tagging file \\$foo, a temporary copy of the file is created, and\n> for some reason, libid3 doesn\\'t use mkstemp but just creates\n> \\$foo.XXXXXX literally, without any checking.\n>\n> This would silently truncate and overwrite an existing \\$foo.XXXXXX.\n",
+    "id": "FreeBSD-2007-0107",
+    "modified": "2007-10-01T00:00:00Z",
+    "published": "2007-10-01T00:00:00Z",
+    "references": [
+        {
+            "type": "REPORT",
+            "url": "http://bugs.debian.org/cgi-bin/bugreport.cgi?bug=438540"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://www.securityfocus.com/bid/25372/info"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2007-4460"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "id3lib -- insecure temporary file creation"
+}

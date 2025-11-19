@@ -1,0 +1,73 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "netatalk3"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "3.2.1"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "cite": [
+            "https://github.com/Netatalk/netatalk/blob/90d91a9ac9a7d6132ab7620d31c8c23400949206/etc/afpd/directory.c#L2333"
+        ],
+        "discovery": "2024-06-16T00:00:00Z",
+        "references": {
+            "cvename": [
+                "CVE-2024-38440",
+                "CVE-2024-38441",
+                "CVE-2024-38439"
+            ]
+        },
+        "vid": "c742dbe8-3704-11ef-9e6e-b42e991fc52e"
+    },
+    "details": "cve@mitre.org reports:\n\n> This entry documents the following three vulnerabilities:\n>\n> - Netatalk before 3.2.1 has an off-by-one error and resultant\n>   heap-based buffer overflow because of setting ibuf\\[len\\] to \\'\\\\0\\'\n>   in FPMapName in afp_mapname in etc/afpd/directory.c. 2.4.1 and\n>   3.1.19 are also fixed versions.\n> - Netatalk before 3.2.1 has an off-by-one error, and resultant\n>   heap-based buffer overflow and segmentation violation, because of\n>   incorrectly using FPLoginExt in BN_bin2bn in\n>   etc/uams/uams_dhx_pam.c. The original issue 1097 report stated:\n>   \\'The latest version of Netatalk (v3.2.0) contains a security\n>   vulnerability. This vulnerability arises due to a lack of validation\n>   for the length field after parsing user-provided data, leading to an\n>   out-of-bounds heap write of one byte (\\\\0). Under specific\n>   configurations, this can result in reading metadata of the next heap\n>   block, potentially causing a Denial of Service (DoS) under certain\n>   heap layouts or with ASAN enabled. \\...\n> - Netatalk before 3.2.1 has an off-by-one error and resultant\n>   heap-based buffer overflow because of setting ibuf\\[PASSWDLEN\\] to\n>   \\'\\\\0\\' in FPLoginExt in login in etc/uams/uams_pam.c. 2.4.1 and\n>   3.1.19 are also fixed versions.\n",
+    "id": "FreeBSD-2024-0159",
+    "modified": "2024-06-30T00:00:00Z",
+    "published": "2024-06-30T00:00:00Z",
+    "references": [
+        {
+            "type": "REPORT",
+            "url": "https://github.com/Netatalk/netatalk/blob/90d91a9ac9a7d6132ab7620d31c8c23400949206/etc/afpd/directory.c#L2333"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2024-38440"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://nvd.nist.gov/vuln/detail/CVE-2024-38440"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2024-38441"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://nvd.nist.gov/vuln/detail/CVE-2024-38441"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2024-38439"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://nvd.nist.gov/vuln/detail/CVE-2024-38439"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "netatalk3 -- Multiple vulnerabilities"
+}

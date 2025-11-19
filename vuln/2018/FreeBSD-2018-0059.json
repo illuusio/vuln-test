@@ -1,0 +1,66 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "cvs"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "1.20120905_5"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "cite": [
+            "http://lists.nongnu.org/archive/html/bug-cvs/2017-08/msg00000.html"
+        ],
+        "discovery": "2017-08-10T00:00:00Z",
+        "references": {
+            "cvename": [
+                "CVE-2017-12836"
+            ],
+            "freebsdpr": [
+                "ports/226088"
+            ]
+        },
+        "vid": "d9fe59ea-1940-11e8-9eb8-5404a68ad561"
+    },
+    "details": "Hank Leininger reports:\n\n> Bugs in Git, Subversion, and Mercurial were just announced and patched\n> which allowed arbitrary local command execution if a malicious name\n> was used for the remote server, such as starting with - to pass\n> options to the ssh client: git clone\n> ssh://-oProxyCommand=some-command\\... CVS has a similar problem with\n> the -d option:\n>\n> Tested vanilla CVS 1.12.13, and Gentoo CVS 1.12.12-r11.\n",
+    "id": "FreeBSD-2018-0059",
+    "modified": "2018-02-24T00:00:00Z",
+    "published": "2018-02-24T00:00:00Z",
+    "references": [
+        {
+            "type": "REPORT",
+            "url": "http://lists.nongnu.org/archive/html/bug-cvs/2017-08/msg00000.html"
+        },
+        {
+            "type": "WEB",
+            "url": "http://lists.nongnu.org/archive/html/bug-cvs/2017-08/msg00000.html"
+        },
+        {
+            "type": "WEB",
+            "url": "https://bugs.debian.org/cgi-bin/bugreport.cgi?bug=871810#10"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2017-12836"
+        },
+        {
+            "type": "REPORT",
+            "url": "https://bugs.freebsd.org/bugzilla/show_bug.cgi?id=226088"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "cvs -- Remote code execution via ssh command injection"
+}

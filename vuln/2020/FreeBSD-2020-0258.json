@@ -1,0 +1,77 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "powerdns"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "introduced": "4.3.0"
+                        },
+                        {
+                            "fixed": "4.3.1"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                },
+                {
+                    "events": [
+                        {
+                            "introduced": "4.2.0"
+                        },
+                        {
+                            "fixed": "4.2.3"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                },
+                {
+                    "events": [
+                        {
+                            "introduced": "4.1.0"
+                        },
+                        {
+                            "fixed": "4.1.14"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "cite": [
+            "https://doc.powerdns.com/authoritative/changelog/4.3.html#change-4.3.1"
+        ],
+        "discovery": "2020-09-22T00:00:00Z",
+        "references": {
+            "cvename": [
+                "CVE-2020-17482"
+            ]
+        },
+        "vid": "b371db92-fe34-11ea-b90e-6805ca2fa271"
+    },
+    "details": "PowerDNS Team reports\n\n> CVE-2020-17482: An issue has been found in PowerDNS Authoritative\n> Server before 4.3.1 where an authorized user with the ability to\n> insert crafted records into a zone might be able to leak the content\n> of uninitialized memory. Such a user could be a customer inserting\n> data via a control panel, or somebody with access to the REST API.\n> Crafted records cannot be inserted via AXFR.\n",
+    "id": "FreeBSD-2020-0258",
+    "modified": "2020-09-24T00:00:00Z",
+    "published": "2020-09-24T00:00:00Z",
+    "references": [
+        {
+            "type": "REPORT",
+            "url": "https://doc.powerdns.com/authoritative/changelog/4.3.html#change-4.3.1"
+        },
+        {
+            "type": "WEB",
+            "url": "https://doc.powerdns.com/authoritative/security-advisories/powerdns-advisory-2020-05.html"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2020-17482"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "powerdns -- Leaking uninitialised memory through crafted zone records"
+}

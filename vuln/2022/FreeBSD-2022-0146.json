@@ -1,0 +1,60 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "unbound"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "1.16.2"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "cite": [
+            "https://www.nlnetlabs.nl/projects/unbound/security-advisories/"
+        ],
+        "discovery": "2022-08-01T00:00:00Z",
+        "references": {
+            "cvename": [
+                "CVE-2022-30699",
+                "CVE-2022-30698"
+            ]
+        },
+        "vid": "bc43a578-14ec-11ed-856e-d4c9ef517024"
+    },
+    "details": "NLnet Labs reports:\n\n> novel type of the \\\"ghost domain names\\\" attack. The vulnerability\n> works by targeting an Unbound instance. Unbound is queried for a rogue\n> domain name when the cached delegation information is about to expire.\n> The rogue nameserver delays the response so that the cached delegation\n> information is expired. Upon receiving the delayed answer containing\n> the delegation information, Unbound overwrites the now expired\n> entries. This action can be repeated when the delegation information\n> is about to expire making the rogue delegation information\n> ever-updating.\n>\n> novel type of the \\\"ghost domain names\\\" attack. The vulnerability\n> works by targeting an Unbound instance. Unbound is queried for a\n> subdomain of a rogue domain name. The rogue nameserver returns\n> delegation information for the subdomain that updates Unbound\\'s\n> delegation cache. This action can be repeated before expiry of the\n> delegation information by querying Unbound for a second level\n> subdomain which the rogue nameserver provides new delegation\n> information.\n",
+    "id": "FreeBSD-2022-0146",
+    "modified": "2022-08-05T00:00:00Z",
+    "published": "2022-08-05T00:00:00Z",
+    "references": [
+        {
+            "type": "REPORT",
+            "url": "https://www.nlnetlabs.nl/projects/unbound/security-advisories/"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2022-30699"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2022-30698"
+        },
+        {
+            "type": "WEB",
+            "url": "https://www.nlnetlabs.nl/projects/unbound/security-advisories/"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "Unbound -- Multiple vulnerabilities"
+}

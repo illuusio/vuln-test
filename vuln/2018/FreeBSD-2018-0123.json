@@ -1,0 +1,62 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:kernel",
+                "name": "FreeBSD-kernel"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "introduced": "11.1"
+                        },
+                        {
+                            "fixed": "11.1_10"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                },
+                {
+                    "events": [
+                        {
+                            "introduced": "10.4"
+                        },
+                        {
+                            "fixed": "10.4_9"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "discovery": "2018-05-08T00:00:00Z",
+        "references": {
+            "cvename": [
+                "CVE-2018-8897"
+            ],
+            "freebsdsa": [
+                "SA-18:06.debugreg"
+            ]
+        },
+        "vid": "521ce804-52fd-11e8-9123-a4badb2f4699"
+    },
+    "details": "# Problem Description:\n\nThe MOV SS and POP SS instructions inhibit debug exceptions until the\ninstruction boundary following the next instruction. If that instruction\nis a system call or similar instruction that transfers control to the\noperating system, the debug exception will be handled in the kernel\ncontext instead of the user context.\n\n# Impact:\n\nAn authenticated local attacker may be able to read sensitive data in\nkernel memory, control low-level operating system functions, or may\npanic the system.\n",
+    "id": "FreeBSD-2018-0123",
+    "modified": "2018-05-08T00:00:00Z",
+    "published": "2018-05-08T00:00:00Z",
+    "references": [
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2018-8897"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://www.freebsd.org/security/advisories/FreeBSD-SA-18:06.debugreg.asc"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "FreeBSD -- Mishandling of x86 debug exceptions"
+}

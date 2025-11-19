@@ -1,0 +1,69 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "fetchmail"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "introduced": "4.6.3"
+                        },
+                        {
+                            "last_affected": "6.3.16"
+                        },
+                        {
+                            "fixed": "6.3.16"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "cite": [
+            "http://gitorious.org/fetchmail/fetchmail/commit/ec06293"
+        ],
+        "discovery": "2010-04-18T00:00:00Z",
+        "references": {
+            "cvename": [
+                "CVE-2010-1167"
+            ],
+            "freebsdpr": [
+                "ports/145857"
+            ]
+        },
+        "vid": "09910d76-4c82-11df-83fb-0015587e2cc1"
+    },
+    "details": "Fetchmail developer Matthias Andree reported a vulnerability that allows\nremote attackers to crash the application when it is runs in verbose\nmode.\n\n> Fetchmail before release 6.3.17 did not properly sanitize external\n> input (mail headers and UID). When a multi-character locale (such as\n> UTF-8) was in use, this could cause memory exhaustion and thus a\n> denial of service.\n",
+    "id": "FreeBSD-2010-0039",
+    "modified": "2010-04-20T00:00:00Z",
+    "published": "2010-04-20T00:00:00Z",
+    "references": [
+        {
+            "type": "REPORT",
+            "url": "http://gitorious.org/fetchmail/fetchmail/commit/ec06293"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2010-1167"
+        },
+        {
+            "type": "REPORT",
+            "url": "https://bugs.freebsd.org/bugzilla/show_bug.cgi?id=145857"
+        },
+        {
+            "type": "WEB",
+            "url": "http://gitorious.org/fetchmail/fetchmail/commit/ec06293"
+        },
+        {
+            "type": "WEB",
+            "url": "http://seclists.org/oss-sec/2010/q2/76"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "fetchmail -- denial of service vulnerability"
+}

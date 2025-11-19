@@ -1,0 +1,59 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "ruby"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "introduced": "1.9.3,1,1"
+                        },
+                        {
+                            "fixed": "1.9.3.286,1"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "cite": [
+            "http://www.ruby-lang.org/en/news/2012/10/12/poisoned-NUL-byte-vulnerability/"
+        ],
+        "discovery": "2012-10-12T00:00:00Z",
+        "references": {
+            "cvename": [
+                "CVE-2012-4522"
+            ]
+        },
+        "vid": "3decc87d-2498-11e2-b0c7-000d601460a4"
+    },
+    "details": "The official ruby site reports:\n\n> A vulnerability was found that file creation routines can create\n> unintended files by strategically inserting NUL(s) in file paths. This\n> vulnerability has been reported as CVE-2012-4522.\n>\n> Ruby can handle arbitrary binary patterns as Strings, including NUL\n> chars. On the other hand OSes and other libraries tend not. They\n> usually treat a NUL as an End of String mark. So to interface them\n> with Ruby, NUL chars should properly be avoided.\n>\n> However methods like IO#open did not check the filename passed to\n> them, and just passed those strings to lower layer routines. This led\n> to create unintentional files.\n",
+    "id": "FreeBSD-2012-0198",
+    "modified": "2012-11-01T00:00:00Z",
+    "published": "2012-11-01T00:00:00Z",
+    "references": [
+        {
+            "type": "REPORT",
+            "url": "http://www.ruby-lang.org/en/news/2012/10/12/poisoned-NUL-byte-vulnerability/"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2012-4522"
+        },
+        {
+            "type": "WEB",
+            "url": "http://www.ruby-lang.org/en/news/2012/10/12/poisoned-NUL-byte-vulnerability/"
+        },
+        {
+            "type": "WEB",
+            "url": "https://access.redhat.com/security/cve/CVE-2012-4522/"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "ruby -- Unintentional file creation caused by inserting an illegal NUL character"
+}

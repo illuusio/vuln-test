@@ -1,0 +1,212 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "p5-PathTools"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "introduced": "3.4000,1"
+                        },
+                        {
+                            "fixed": "3.6200"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        },
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "perl5"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "introduced": "5.19.9"
+                        },
+                        {
+                            "fixed": "5.20.2"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                },
+                {
+                    "events": [
+                        {
+                            "introduced": "5.21.0"
+                        },
+                        {
+                            "fixed": "5.22.2"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                },
+                {
+                    "events": [
+                        {
+                            "introduced": "5.23.0"
+                        },
+                        {
+                            "fixed": "5.23.7"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        },
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "perl5.20"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "introduced": "5.19.9"
+                        },
+                        {
+                            "fixed": "5.20.2"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                },
+                {
+                    "events": [
+                        {
+                            "introduced": "5.21.0"
+                        },
+                        {
+                            "fixed": "5.22.2"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                },
+                {
+                    "events": [
+                        {
+                            "introduced": "5.23.0"
+                        },
+                        {
+                            "fixed": "5.23.7"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        },
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "perl5.22"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "introduced": "5.19.9"
+                        },
+                        {
+                            "fixed": "5.20.2"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                },
+                {
+                    "events": [
+                        {
+                            "introduced": "5.21.0"
+                        },
+                        {
+                            "fixed": "5.22.2"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                },
+                {
+                    "events": [
+                        {
+                            "introduced": "5.23.0"
+                        },
+                        {
+                            "fixed": "5.23.7"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        },
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "perl5-devel"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "introduced": "5.19.9"
+                        },
+                        {
+                            "fixed": "5.20.2"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                },
+                {
+                    "events": [
+                        {
+                            "introduced": "5.21.0"
+                        },
+                        {
+                            "fixed": "5.22.2"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                },
+                {
+                    "events": [
+                        {
+                            "introduced": "5.23.0"
+                        },
+                        {
+                            "fixed": "5.23.7"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "discovery": "2016-01-11T00:00:00Z",
+        "references": {
+            "cvename": [
+                "CVE-2015-8607"
+            ]
+        },
+        "vid": "333f655a-b93a-11e5-9efa-5453ed2e2b49"
+    },
+    "details": "Ricardo Signes reports:\n\n> Beginning in PathTools 3.47 and/or perl 5.20.0, the\n> File::Spec::canonpath() routine returned untained strings even if\n> passed tainted input. This defect undermines the guarantee of taint\n> propagation, which is sometimes used to ensure that unvalidated user\n> input does not reach sensitive code.\n>\n> This defect was found and reported by David Golden of MongoDB.\n",
+    "id": "FreeBSD-2016-0037",
+    "modified": "2016-08-22T00:00:00Z",
+    "published": "2016-01-12T00:00:00Z",
+    "references": [
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2015-8607"
+        },
+        {
+            "type": "WEB",
+            "url": "https://rt.perl.org/Public/Bug/Display.html?id=126862"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "p5-PathTools -- File::Spec::canonpath loses taint"
+}

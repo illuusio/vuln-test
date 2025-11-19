@@ -1,0 +1,55 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "phpMyAdmin"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "introduced": "4.2.0"
+                        },
+                        {
+                            "fixed": "4.2.10.1"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "cite": [
+            "http://www.phpmyadmin.net/home_page/security/PMASA-2014-12.php"
+        ],
+        "discovery": "2014-10-21T00:00:00Z",
+        "references": {
+            "cvename": [
+                "CVE-2014-8326"
+            ]
+        },
+        "vid": "25b78f04-59c8-11e4-b711-6805ca0b3d42"
+    },
+    "details": "The phpMyAdmin development team reports:\n\n> With a crafted database or table name it is possible to trigger an XSS\n> in SQL debug output when enabled and in server monitor page when\n> viewing and analysing executed queries.\n>\n> This vulnerability can be triggered only by someone who is logged in\n> to phpMyAdmin, as the usual token protection prevents non-logged-in\n> users from accessing the required pages. Moreover, debugging SQL is a\n> developer option which is disabled by default and expected to be\n> disabled in production environments.\n",
+    "id": "FreeBSD-2014-0132",
+    "modified": "2014-10-22T00:00:00Z",
+    "published": "2014-10-22T00:00:00Z",
+    "references": [
+        {
+            "type": "REPORT",
+            "url": "http://www.phpmyadmin.net/home_page/security/PMASA-2014-12.php"
+        },
+        {
+            "type": "WEB",
+            "url": "http://www.phpmyadmin.net/home_page/security/PMASA-2014-12.php"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2014-8326"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "phpMyAdmin -- XSS vulnerabilities in SQL debug output and server monitor page."
+}

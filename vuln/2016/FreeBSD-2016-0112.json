@@ -1,0 +1,62 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "bsh"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "2.0.b6"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "cite": [
+            "https://github.com/beanshell/beanshell/releases/tag/2.0b6"
+        ],
+        "discovery": "2016-02-18T00:00:00Z",
+        "references": {
+            "cvename": [
+                "CVE-2016-2510"
+            ],
+            "freebsdpr": [
+                "ports/207334"
+            ]
+        },
+        "vid": "9e5bbffc-d8ac-11e5-b2bd-002590263bf5"
+    },
+    "details": "Stian Soiland-Reyes reports:\n\n> This release fixes a remote code execution vulnerability that was\n> identified in BeanShell by Alvaro Mu\u00f1oz and Christian Schneider. The\n> BeanShell team would like to thank them for their help and\n> contributions to this fix!\n>\n> An application that includes BeanShell on the classpath may be\n> vulnerable if another part of the application uses Java serialization\n> or XStream to deserialize data from an untrusted source.\n>\n> A vulnerable application could be exploited for remote code execution,\n> including executing arbitrary shell commands.\n>\n> This update fixes the vulnerability in BeanShell, but it is worth\n> noting that applications doing such deserialization might still be\n> insecure through other libraries. It is recommended that application\n> developers take further measures such as using a restricted class\n> loader when deserializing. See notes on Java serialization security\n> XStream security and How to secure deserialization from untrusted\n> input without using encryption or sealing.\n",
+    "id": "FreeBSD-2016-0112",
+    "modified": "2016-02-21T00:00:00Z",
+    "published": "2016-02-21T00:00:00Z",
+    "references": [
+        {
+            "type": "REPORT",
+            "url": "https://github.com/beanshell/beanshell/releases/tag/2.0b6"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2016-2510"
+        },
+        {
+            "type": "REPORT",
+            "url": "https://bugs.freebsd.org/bugzilla/show_bug.cgi?id=207334"
+        },
+        {
+            "type": "WEB",
+            "url": "https://github.com/beanshell/beanshell/releases/tag/2.0b6"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "bsh -- remote code execution vulnerability"
+}

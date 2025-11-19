@@ -1,0 +1,55 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "seatd"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "introduced": "0.6.0"
+                        },
+                        {
+                            "fixed": "0.6.2"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "cite": [
+            "https://lists.sr.ht/~kennylevinsen/seatd-announce/%3CGJ2IZQ.HCKS1J0LSI803%40kl.wtf%3E"
+        ],
+        "discovery": "2021-09-15T00:00:00Z",
+        "references": {
+            "cvename": [
+                "CVE-2021-41387"
+            ]
+        },
+        "vid": "49c35943-0eeb-421c-af4f-78e04582e5fb"
+    },
+    "details": "Kenny Levinsen reports:\n\n> seatd-launch used execlp, which reads the PATH environment variable to\n> search for the requested executable, to execute seatd. This meant that\n> the caller could freely control what executable was loaded by adding a\n> user-writable directory to PATH.\n>\n> If seatd-launch had the SUID bit set, this could be used by a\n> malicious user with the ability to execute seatd-launch to mount a\n> privilege escalation attack to the owner of seatd-launch, which is\n> likely root.\n",
+    "id": "FreeBSD-2021-0226",
+    "modified": "2021-09-18T00:00:00Z",
+    "published": "2021-09-16T00:00:00Z",
+    "references": [
+        {
+            "type": "REPORT",
+            "url": "https://lists.sr.ht/~kennylevinsen/seatd-announce/%3CGJ2IZQ.HCKS1J0LSI803%40kl.wtf%3E"
+        },
+        {
+            "type": "WEB",
+            "url": "https://lists.sr.ht/~kennylevinsen/seatd-announce/%3CGJ2IZQ.HCKS1J0LSI803%40kl.wtf%3E"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2021-41387"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "seatd-launch -- privilege escalation with SUID"
+}

@@ -1,0 +1,150 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "drupal4"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "4.7.8"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        },
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "drupal5"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "5.3"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "cite": [
+            "http://drupal.org/node/184315",
+            "http://drupal.org/node/184316",
+            "http://drupal.org/node/184320",
+            "http://drupal.org/node/184348",
+            "http://drupal.org/node/184354"
+        ],
+        "discovery": "2007-10-17T00:00:00Z",
+        "references": {
+            "cvename": [
+                "CVE-2007-5597",
+                "CVE-2007-5596",
+                "CVE-2007-5595",
+                "CVE-2007-5594",
+                "CVE-2007-5593"
+            ]
+        },
+        "vid": "9c00d446-8208-11dc-9283-0016179b2dd5"
+    },
+    "details": "The Drupal Project reports:\n\n> In some circumstances Drupal allows user-supplied data to become part\n> of response headers. As this user-supplied data is not always properly\n> escaped, this can be exploited by malicious users to execute HTTP\n> response splitting attacks which may lead to a variety of issues,\n> among them cache poisoning, cross-user defacement and injection of\n> arbitrary code.\n\n> The Drupal installer allows any visitor to provide credentials for a\n> database when the site\\'s own database is not reachable. This allows\n> attackers to run arbitrary code on the site\\'s server. An immediate\n> workaround is the removal of the file install.php in the Drupal root\n> directory.\n\n> The allowed extension list of the core Upload module contains the\n> extension HTML by default. Such files can be used to execute arbitrary\n> script code in the context of the affected site when a user views the\n> file. Revoking upload permissions or removing the .html extension from\n> the allowed extension list will stop uploads of malicious files. but\n> will do nothing to protect your site againstfiles that are already\n> present. Carefully inspect the file system path for any HTML files. We\n> recommend you remove any HTML file you did not update yourself. You\n> should look for , CSS includes, Javascript includes, and onerror=\\\"\\\"\n> attributes if you need to review files individually.\n\n> The Drupal Forms API protects against cross site request forgeries\n> (CSRF), where a malicious site can cause a user to unintentionally\n> submit a form to a site where he is authenticated. The user deletion\n> form does not follow the standard Forms API submission model and is\n> therefore not protected against this type of attack. A CSRF attack may\n> result in the deletion of users.\n\n> The publication status of comments is not passed during the\n> hook_comments API operation, causing various modules that rely on the\n> publication status (such as Organic groups, or Subscriptions) to mail\n> out unpublished comments.\n",
+    "id": "FreeBSD-2007-0119",
+    "modified": "2007-10-24T00:00:00Z",
+    "published": "2007-10-24T00:00:00Z",
+    "references": [
+        {
+            "type": "REPORT",
+            "url": "http://drupal.org/node/184315"
+        },
+        {
+            "type": "REPORT",
+            "url": "http://drupal.org/node/184316"
+        },
+        {
+            "type": "REPORT",
+            "url": "http://drupal.org/node/184320"
+        },
+        {
+            "type": "REPORT",
+            "url": "http://drupal.org/node/184348"
+        },
+        {
+            "type": "REPORT",
+            "url": "http://drupal.org/node/184354"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2007-5597"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2007-5596"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2007-5595"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2007-5594"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2007-5593"
+        },
+        {
+            "type": "WEB",
+            "url": "http://drupal.org/node/184315"
+        },
+        {
+            "type": "WEB",
+            "url": "http://drupal.org/node/184316"
+        },
+        {
+            "type": "WEB",
+            "url": "http://drupal.org/node/184348"
+        },
+        {
+            "type": "WEB",
+            "url": "http://drupal.org/node/184354"
+        },
+        {
+            "type": "WEB",
+            "url": "http://drupal.org/node/184320"
+        },
+        {
+            "type": "WEB",
+            "url": "http://secunia.com/advisories/27292"
+        },
+        {
+            "type": "WEB",
+            "url": "http://secunia.com/advisories/27292"
+        },
+        {
+            "type": "WEB",
+            "url": "http://secunia.com/advisories/27292"
+        },
+        {
+            "type": "WEB",
+            "url": "http://secunia.com/advisories/27290"
+        },
+        {
+            "type": "WEB",
+            "url": "http://secunia.com/advisories/27290"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "drupal --- multiple vulnerabilities"
+}

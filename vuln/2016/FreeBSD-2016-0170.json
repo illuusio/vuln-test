@@ -1,0 +1,60 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "botan110"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "1.10.11"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "cite": [
+            "http://botan.randombit.net/security.html"
+        ],
+        "discovery": "2016-02-01T00:00:00Z",
+        "references": {
+            "cvename": [
+                "CVE-2016-2194",
+                "CVE-2016-2195"
+            ]
+        },
+        "vid": "4cd9b19f-f66d-11e5-b94c-001999f8d30b"
+    },
+    "details": "The botan developers reports:\n\n> Infinite loop in modular square root algorithm - The ressol function\n> implements the Tonelli-Shanks algorithm for finding square roots could\n> be sent into a nearly infinite loop due to a misplaced conditional\n> check. This could occur if a composite modulus is provided, as this\n> algorithm is only defined for primes. This function is exposed to\n> attacker controlled input via the OS2ECP function during ECC point\n> decompression.\n>\n> Heap overflow on invalid ECC point - The PointGFp constructor did not\n> check that the affine coordinate arguments were less than the prime,\n> but then in curve multiplication assumed that both arguments if\n> multiplied would fit into an integer twice the size of the prime.\n>\n> The bigint_mul and bigint_sqr functions received the size of the\n> output buffer, but only used it to dispatch to a faster algorithm in\n> cases where there was sufficient output space to call an unrolled\n> multiplication function.\n>\n> The result is a heap overflow accessible via ECC point decoding, which\n> accepted untrusted inputs. This is likely exploitable for remote code\n> execution.\n>\n> On systems which use the mlock pool allocator, it would allow an\n> attacker to overwrite memory held in secure_vector objects. After this\n> point the write will hit the guard page at the end of the mmapped\n> region so it probably could not be used for code execution directly,\n> but would allow overwriting adjacent key material.\n",
+    "id": "FreeBSD-2016-0170",
+    "modified": "2016-03-31T00:00:00Z",
+    "published": "2016-03-31T00:00:00Z",
+    "references": [
+        {
+            "type": "REPORT",
+            "url": "http://botan.randombit.net/security.html"
+        },
+        {
+            "type": "WEB",
+            "url": "http://botan.randombit.net/security.html"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2016-2194"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2016-2195"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "Multiple vulnerabilities in Botan"
+}

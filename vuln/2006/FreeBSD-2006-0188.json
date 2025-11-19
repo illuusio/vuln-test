@@ -1,0 +1,70 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "nvidia-driver"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "introduced": "1.0.8762"
+                        },
+                        {
+                            "fixed": "1.0.8776"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "cite": [
+            "http://www.rapid7.com/advisories/R7-0025.jsp"
+        ],
+        "discovery": "2006-10-16T00:00:00Z",
+        "references": {
+            "certvu": [
+                "147252"
+            ],
+            "cvename": [
+                "CVE-2006-5379"
+            ]
+        },
+        "vid": "a6d9da4a-5d5e-11db-8faf-000c6ec775d9"
+    },
+    "details": "Rapid7 reports:\n\n> The NVIDIA Binary Graphics Driver for Linux is vulnerable to a buffer\n> overflow that allows an attacker to run arbitrary code as root. This\n> bug can be exploited both locally or remotely (via a remote X client\n> or an X client which visits a malicious web page). A working\n> proof-of-concept root exploit is included with this advisory.\n>\n> The NVIDIA drivers for Solaris and FreeBSD are also likely to be\n> vulnerable.\n\nDisabling Render acceleration in the \\\"nvidia\\\" driver, via the\n\\\"RenderAccel\\\" X configuration option, can be used as a workaround for\nthis issue.\n",
+    "id": "FreeBSD-2006-0188",
+    "modified": "2006-10-21T00:00:00Z",
+    "published": "2006-10-16T00:00:00Z",
+    "references": [
+        {
+            "type": "REPORT",
+            "url": "http://www.rapid7.com/advisories/R7-0025.jsp"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://www.kb.cert.org/vuls/id/147252"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2006-5379"
+        },
+        {
+            "type": "WEB",
+            "url": "http://nvidia.custhelp.com/cgi-bin/nvidia.cfg/php/enduser/std_adp.php?p_faqid=1971"
+        },
+        {
+            "type": "WEB",
+            "url": "http://secunia.com/advisories/22419/"
+        },
+        {
+            "type": "WEB",
+            "url": "http://www.rapid7.com/advisories/R7-0025.jsp"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "NVIDIA UNIX driver -- arbitrary root code execution vulnerability"
+}

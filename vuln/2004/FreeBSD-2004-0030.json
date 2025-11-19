@@ -1,0 +1,59 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "fetchmail"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "6.2.5"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "discovery": "2003-10-16T00:00:00Z",
+        "references": {
+            "bid": [
+                "8843"
+            ],
+            "cvename": [
+                "CVE-2003-0792"
+            ]
+        },
+        "vid": "ac4b9d18-67a9-11d8-80e3-0020ed76ef5a"
+    },
+    "details": "Dave Jones discovered a denial-of-service vulnerability in fetchmail. An\nemail message containing a very long line could cause fetchmail to\nsegfault due to missing NUL termination in transact.c.\n\nEric Raymond decided not to mention this issue in the release notes for\nfetchmail 6.2.5, but it was fixed there.\n",
+    "id": "FreeBSD-2004-0030",
+    "modified": "2012-09-04T00:00:00Z",
+    "published": "2004-02-25T00:00:00Z",
+    "references": [
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2003-0792"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://www.securityfocus.com/bid/8843/info"
+        },
+        {
+            "type": "WEB",
+            "url": "http://xforce.iss.net/xforce/xfdb/13450"
+        },
+        {
+            "type": "WEB",
+            "url": "http://www.openbsd.org/cgi-bin/cvsweb/ports/mail/fetchmail/patches/Attic/patch-rfc822_c?rev=1.1"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "fetchmail -- denial-of-service vulnerability"
+}

@@ -1,0 +1,55 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "unbound"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "introduced": "1.6.1,1"
+                        },
+                        {
+                            "fixed": "1.23.0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "cite": [
+            "https://nlnetlabs.nl/downloads/unbound/CVE-2025-5994.txt"
+        ],
+        "discovery": "2025-07-16T00:00:00Z",
+        "references": {
+            "cvename": [
+                "CVE-2025-5994"
+            ]
+        },
+        "vid": "e27ee4fc-cdc9-45a1-8242-09898cdbdc91"
+    },
+    "details": "sep@nlnetlabs.nl reports:\n\n> A multi-vendor cache poisoning vulnerability named \\'Rebirthday\n> Attack\\' has been discovered in caching resolvers that support EDNS\n> Client Subnet (ECS). Unbound is also vulnerable when compiled with ECS\n> support, i.e., \\'\\--enable-subnet\\', AND configured to send ECS\n> information along with queries to upstream name servers, i.e., at\n> least one of the \\'send-client-subnet\\', \\'client-subnet-zone\\' or\n> \\'client-subnet-always-forward\\' options is used. Resolvers supporting\n> ECS need to segregate outgoing queries to accommodate for different\n> outgoing ECS information. This re-opens up resolvers to a birthday\n> paradox attack (Rebirthday Attack) that tries to match the DNS\n> transaction ID in order to cache non-ECS poisonous replies.\n",
+    "id": "FreeBSD-2025-0232",
+    "modified": "2025-07-18T00:00:00Z",
+    "published": "2025-07-18T00:00:00Z",
+    "references": [
+        {
+            "type": "REPORT",
+            "url": "https://nlnetlabs.nl/downloads/unbound/CVE-2025-5994.txt"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2025-5994"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://nvd.nist.gov/vuln/detail/CVE-2025-5994"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "unbound -- Cache poisoning via the ECS-enabled Rebirthday Attack"
+}

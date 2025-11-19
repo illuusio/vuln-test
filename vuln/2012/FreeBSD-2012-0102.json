@@ -1,0 +1,103 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "postgresql-server"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "introduced": "8.3.*,1"
+                        },
+                        {
+                            "fixed": "8.3.18_1"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                },
+                {
+                    "events": [
+                        {
+                            "introduced": "8.4.*,1"
+                        },
+                        {
+                            "fixed": "8.4.11_1"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                },
+                {
+                    "events": [
+                        {
+                            "introduced": "9.0.*,1"
+                        },
+                        {
+                            "fixed": "9.0.7_2"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                },
+                {
+                    "events": [
+                        {
+                            "introduced": "9.1.*,1"
+                        },
+                        {
+                            "fixed": "9.1.3_1"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                },
+                {
+                    "events": [
+                        {
+                            "introduced": "9.2.*,1"
+                        },
+                        {
+                            "fixed": "9.2.b1_1"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "cite": [
+            "http://www.postgresql.org/about/news/1397/"
+        ],
+        "discovery": "2012-05-30T00:00:00Z",
+        "references": {
+            "cvename": [
+                "CVE-2012-2143"
+            ]
+        },
+        "vid": "a8864f8f-aa9e-11e1-a284-0023ae8e59f0"
+    },
+    "details": "The PostgreSQL Global Development Group reports:\n\n> Today the PHP, OpenBSD and FreeBSD communities announced updates to\n> patch a security hole involving their crypt() hashing algorithms. This\n> issue is described in CVE-2012-2143. This vulnerability also affects a\n> minority of PostgreSQL users, and will be fixed in an update release\n> on June 4, 2012.\n>\n> Affected users are those who use the crypt(text, text) function with\n> DES encryption in the optional pg_crypto module. Passwords affected\n> are those that contain characters that cannot be represented with\n> 7-bit ASCII. If a password contains a character that has the most\n> significant bit set (0x80), and DES encryption is used, that character\n> and all characters after it will be ignored.\n",
+    "id": "FreeBSD-2012-0102",
+    "modified": "2012-05-31T00:00:00Z",
+    "published": "2012-05-30T00:00:00Z",
+    "references": [
+        {
+            "type": "REPORT",
+            "url": "http://www.postgresql.org/about/news/1397/"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2012-2143"
+        },
+        {
+            "type": "WEB",
+            "url": "http://www.postgresql.org/about/news/1397/"
+        },
+        {
+            "type": "WEB",
+            "url": "http://git.postgresql.org/gitweb/?p=postgresql.git;a=patch;h=932ded2ed51e8333852e370c7a6dad75d9f236f9"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "databases/postgresql*-server -- crypt vulnerabilities"
+}

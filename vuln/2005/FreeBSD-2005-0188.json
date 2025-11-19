@@ -1,0 +1,62 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "sudo"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "1.6.8.9"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "cite": [
+            "http://marc.theaimsgroup.com/?l=bugtraq&m=111928183431376"
+        ],
+        "discovery": "2005-06-20T00:00:00Z",
+        "references": {
+            "bid": [
+                "13993"
+            ],
+            "cvename": [
+                "CVE-2005-1993"
+            ]
+        },
+        "vid": "3bf157fa-e1c6-11d9-b875-0001020eed82"
+    },
+    "details": "Todd C. Miller reports:\n\n> A race condition in Sudo\\'s command pathname handling prior to Sudo\n> version 1.6.8p9 that could allow a user with Sudo privileges to run\n> arbitrary commands.\n>\n> Exploitation of the bug requires that the user be allowed to run one\n> or more commands via Sudo and be able to create symbolic links in the\n> filesystem. Furthermore, a sudoers entry giving another user access to\n> the ALL pseudo-command must follow the user\\'s sudoers entry for the\n> race to exist.\n",
+    "id": "FreeBSD-2005-0188",
+    "modified": "2005-11-14T00:00:00Z",
+    "published": "2005-06-20T00:00:00Z",
+    "references": [
+        {
+            "type": "REPORT",
+            "url": "http://marc.theaimsgroup.com/?l=bugtraq&m=111928183431376"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://www.securityfocus.com/bid/13993/info"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2005-1993"
+        },
+        {
+            "type": "DISCUSSION",
+            "url": "http://marc.theaimsgroup.com/?l=bugtraq&m=111928183431376"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "sudo -- local race condition vulnerability"
+}

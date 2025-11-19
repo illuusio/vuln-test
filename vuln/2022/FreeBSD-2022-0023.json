@@ -1,0 +1,55 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "h2o-devel"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "2.3.0.d.20220131"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "cite": [
+            "https://github.com/h2o/h2o/security/advisories/GHSA-f9xw-j925-m4m4"
+        ],
+        "discovery": "2021-01-31T00:00:00Z",
+        "references": {
+            "cvename": [
+                "CVE-2021-43848"
+            ]
+        },
+        "vid": "1d3677a8-9143-42d8-84a3-0585644dff4b"
+    },
+    "details": "Emil Lerner reports:\n\n> When receiving QUIC frames in certain order, HTTP/3 server-side\n> implementation of h2o can be misguided to treat uninitialized memory\n> as HTTP/3 frames that have been received. When h2o is used as a\n> reverse proxy, an attacker can abuse this vulnerability to send\n> internal state of h2o to backend servers controlled by the attacker or\n> third party. Also, if there is an HTTP endpoint that reflects the\n> traffic sent from the client, an attacker can use that reflector to\n> obtain internal state of h2o.\n>\n> This internal state includes traffic of other connections in\n> unencrypted form and TLS session tickets.\n>\n> This vulnerability exists in h2o server with HTTP/3 support, between\n> commit 93af138 and d1f0f65. None of the released versions of h2o are\n> affected by this vulnerability.\n",
+    "id": "FreeBSD-2022-0023",
+    "modified": "2022-02-02T00:00:00Z",
+    "published": "2022-02-02T00:00:00Z",
+    "references": [
+        {
+            "type": "REPORT",
+            "url": "https://github.com/h2o/h2o/security/advisories/GHSA-f9xw-j925-m4m4"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2021-43848"
+        },
+        {
+            "type": "WEB",
+            "url": "https://github.com/h2o/h2o/security/advisories/GHSA-f9xw-j925-m4m4"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "h2o -- uninitialised memory access in HTTP3"
+}

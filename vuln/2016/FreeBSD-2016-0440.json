@@ -1,0 +1,55 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "firefox"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "50.0.1,1"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "cite": [
+            "https://www.mozilla.org/en-US/security/advisories/mfsa2016-91/"
+        ],
+        "discovery": "2016-11-28T00:00:00Z",
+        "references": {
+            "cvename": [
+                "CVE-2016-9078"
+            ]
+        },
+        "vid": "f90fce70-ecfa-4f4d-9ee8-c476dbf4bf0e"
+    },
+    "details": "The Mozilla Foundation reports:\n\n> Redirection from an HTTP connection to a data: URL assigns the\n> referring site\\'s origin to the data: URL in some circumstances. This\n> can result in same-origin violations against a domain if it loads\n> resources from malicious sites. Cross-origin setting of cookies has\n> been demonstrated without the ability to read them.\n",
+    "id": "FreeBSD-2016-0440",
+    "modified": "2016-11-29T00:00:00Z",
+    "published": "2016-11-29T00:00:00Z",
+    "references": [
+        {
+            "type": "REPORT",
+            "url": "https://www.mozilla.org/en-US/security/advisories/mfsa2016-91/"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2016-9078"
+        },
+        {
+            "type": "WEB",
+            "url": "https://www.mozilla.org/security/advisories/mfsa2016-91/"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "mozilla -- data: URL can inherit wrong origin after an HTTP redirect"
+}

@@ -1,0 +1,53 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "transmission-daemon"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "last_affected": "2.92_3"
+                        },
+                        {
+                            "fixed": "2.92_3"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "cite": [
+            "https://bugs.chromium.org/p/project-zero/issues/detail?id=1447"
+        ],
+        "discovery": "2017-11-30T00:00:00Z",
+        "vid": "3e5b8bd3-0c32-452f-a60e-beab7b762351"
+    },
+    "details": "Google Project Zero reports:\n\n> The transmission bittorrent client uses a client/server architecture,\n> the user interface is the client which communicates to the worker\n> daemon using JSON RPC requests.\n>\n> As with all HTTP RPC schemes like this, any website can send requests\n> to the daemon listening on localhost with XMLHttpRequest(), but the\n> theory is they will be ignored because clients must prove they can\n> read and set a specific header, X-Transmission-Session-Id.\n> Unfortunately, this design doesn\\'t work because of an attack called\n> \\\"DNS rebinding\\\". Any website can simply create a dns name that they\n> are authorized to communicate with, and then make it resolve to\n> localhost.\n>\n> Exploitation is simple, you could set script-torrent-done-enabled and\n> run any command, or set download-dir to /home/user/ and then upload a\n> torrent for .bashrc.\n",
+    "id": "FreeBSD-2018-0006",
+    "modified": "2018-01-14T00:00:00Z",
+    "published": "2018-01-14T00:00:00Z",
+    "references": [
+        {
+            "type": "REPORT",
+            "url": "https://bugs.chromium.org/p/project-zero/issues/detail?id=1447"
+        },
+        {
+            "type": "WEB",
+            "url": "https://bugs.chromium.org/p/project-zero/issues/detail?id=1447"
+        },
+        {
+            "type": "WEB",
+            "url": "https://github.com/transmission/transmission/pull/468"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "transmission-daemon -- vulnerable to dns rebinding attacks"
+}

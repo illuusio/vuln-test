@@ -1,0 +1,59 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "libidn2"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "2.2.0"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "cite": [
+            "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2019-12290"
+        ],
+        "discovery": "2019-11-14T00:00:00Z",
+        "references": {
+            "cvename": [
+                "CVE-2019-12290"
+            ]
+        },
+        "vid": "f04f840d-0840-11ea-8d66-75d3253ef913"
+    },
+    "details": "CVE list:\n\n> GNU libidn2 before 2.2.0 fails to perform the roundtrip checks\n> specified in RFC3490 Section 4.2 when converting A-labels to U-labels.\n> This makes it possible in some circumstances for one domain to\n> impersonate another. By creating a malicious domain that matches a\n> target domain except for the inclusion of certain punycoded Unicode\n> characters (that would be discarded when converted first to a Unicode\n> label and then back to an ASCII label), arbitrary domains can be\n> impersonated.\n",
+    "id": "FreeBSD-2019-0258",
+    "modified": "2020-06-24T00:00:00Z",
+    "published": "2019-11-18T00:00:00Z",
+    "references": [
+        {
+            "type": "REPORT",
+            "url": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2019-12290"
+        },
+        {
+            "type": "WEB",
+            "url": "https://gitlab.com/libidn/libidn2/blob/master/NEWS"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2019-12290"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2019-12290"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "libidn2 -- roundtrip check vulnerability"
+}

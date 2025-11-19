@@ -1,0 +1,69 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "krb5"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "introduced": "1.8.0"
+                        },
+                        {
+                            "last_affected": "1.8.3"
+                        },
+                        {
+                            "fixed": "1.8.3"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "cite": [
+            "http://web.mit.edu/kerberos/advisories/MITKRB5-SA-2010-007.txt"
+        ],
+        "discovery": "2010-11-30T00:00:00Z",
+        "references": {
+            "bid": [
+                "45117"
+            ],
+            "cvename": [
+                "CVE-2010-4020"
+            ]
+        },
+        "vid": "1d193bba-03f6-11e0-bf50-001a926c7637"
+    },
+    "details": "The MIT Kerberos team reports:\n\n> MIT krb5 (releases incorrectly accepts RFC 3961 key-derivation\n> checksums using RC4 keys when verifying AD-SIGNEDPATH and\n> AD-KDC-ISSUED authorization data.\n>\n> An authenticated remote attacker that controls a legitimate service\n> principal has a 1/256 chance of forging the AD-SIGNEDPATH signature if\n> the TGT key is RC4, allowing it to use self-generated \\\"evidence\\\"\n> tickets for S4U2Proxy, instead of tickets obtained from the user or\n> with S4U2Self. Configurations using RC4 for the TGT key are believed\n> to be rare.\n>\n> An authenticated remote attacker has a 1/256 chance of forging\n> AD-KDC-ISSUED signatures on authdata elements in tickets having an RC4\n> service key, resulting in privilege escalation against a service that\n> relies on these signatures. There are no known uses of the KDC-ISSUED\n> authdata container at this time.\n",
+    "id": "FreeBSD-2010-0137",
+    "modified": "2010-12-09T00:00:00Z",
+    "published": "2010-12-09T00:00:00Z",
+    "references": [
+        {
+            "type": "REPORT",
+            "url": "http://web.mit.edu/kerberos/advisories/MITKRB5-SA-2010-007.txt"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://www.securityfocus.com/bid/45117/info"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2010-4020"
+        },
+        {
+            "type": "WEB",
+            "url": "http://web.mit.edu/kerberos/advisories/MITKRB5-SA-2010-007.txt"
+        },
+        {
+            "type": "WEB",
+            "url": "http://osvdb.org/69608"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "krb5 -- RFC 3961 key-derivation checksum handling vulnerability"
+}

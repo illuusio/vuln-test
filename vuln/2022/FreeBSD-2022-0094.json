@@ -1,0 +1,59 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "hiredis"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "1.0.1"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "cite": [
+            "https://github.com/redis/hiredis/security/advisories/GHSA-hfm9-39pp-55p2"
+        ],
+        "discovery": "2021-10-04T00:00:00Z",
+        "references": {
+            "cvename": [
+                "CVE-2021-32765"
+            ]
+        },
+        "vid": "2220827b-c732-11ec-b272-901b0e934d69"
+    },
+    "details": "hiredis maintainers report:\n\n> Hiredis is vulnurable to integer overflow if provided maliciously\n> crafted or corrupted RESP mult-bulk protocol data. When parsing\n> multi-bulk (array-like) replies, hiredis fails to check if count \\*\n> sizeof(redisReply\\*) can be represented in SIZE_MAX. If it can not,\n> and the calloc() call doesn\\'t itself make this check, it would result\n> in a short allocation and subsequent buffer overflow.\n",
+    "id": "FreeBSD-2022-0094",
+    "modified": "2022-04-29T00:00:00Z",
+    "published": "2022-04-29T00:00:00Z",
+    "references": [
+        {
+            "type": "REPORT",
+            "url": "https://github.com/redis/hiredis/security/advisories/GHSA-hfm9-39pp-55p2"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2021-32765"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2021-32765"
+        },
+        {
+            "type": "WEB",
+            "url": "https://github.com/redis/hiredis/security/advisories/GHSA-hfm9-39pp-55p2"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "hiredis -- integer/buffer overflow"
+}

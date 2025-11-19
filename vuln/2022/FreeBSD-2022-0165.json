@@ -1,0 +1,73 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "FreeBSD"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "introduced": "13.1"
+                        },
+                        {
+                            "fixed": "13.1_2"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                },
+                {
+                    "events": [
+                        {
+                            "introduced": "13.0"
+                        },
+                        {
+                            "fixed": "13.0_13"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                },
+                {
+                    "events": [
+                        {
+                            "introduced": "12.3"
+                        },
+                        {
+                            "fixed": "12.3_7"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "discovery": "2022-08-30T00:00:00Z",
+        "references": {
+            "cvename": [
+                "CVE-2022-37434"
+            ],
+            "freebsdsa": [
+                "SA-22:13.zlib"
+            ]
+        },
+        "vid": "a1323a76-28f1-11ed-a72a-002590c1f29c"
+    },
+    "details": "# Problem Description:\n\nzlib through 1.2.12 has a heap-based buffer over-read or buffer overflow\nin inflate in inflate.c via a large gzip header extra field.\n\n# Impact:\n\nApplications that call inflateGetHeader may be vulnerable to a buffer\noverflow. Note that inflateGetHeader is not used by anything in the\nFreeBSD base system, but may be used by third party software.\n",
+    "id": "FreeBSD-2022-0165",
+    "modified": "2022-08-31T00:00:00Z",
+    "published": "2022-08-31T00:00:00Z",
+    "references": [
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2022-37434"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://www.freebsd.org/security/advisories/FreeBSD-SA-22:13.zlib.asc"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "FreeBSD -- zlib heap buffer overflow"
+}

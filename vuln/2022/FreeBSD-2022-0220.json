@@ -1,0 +1,104 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "grafana"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "introduced": "8.0.0"
+                        },
+                        {
+                            "fixed": "8.5.14"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                },
+                {
+                    "events": [
+                        {
+                            "introduced": "9.0.0"
+                        },
+                        {
+                            "fixed": "9.1.8"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        },
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "grafana8"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "introduced": "8.0.0"
+                        },
+                        {
+                            "fixed": "8.5.14"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        },
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "grafana9"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "introduced": "9.0.0"
+                        },
+                        {
+                            "fixed": "9.1.8"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "cite": [
+            "https://grafana.com/blog/2022/10/12/grafana-security-releases-new-versions-with-fixes-for-cve-2022-39229-cve-2022-39201-cve-2022-31130-cve-2022-31123/"
+        ],
+        "discovery": "2022-09-07T00:00:00Z",
+        "references": {
+            "cvename": [
+                "CVE-2022-39229"
+            ]
+        },
+        "vid": "909a80ba-6294-11ed-9ca2-6c3be5272acd"
+    },
+    "details": "Grafana Labs reports:\n\n> On September 7, as a result of an internal security audit, we\n> discovered a security vulnerability in Grafana's basic authentication\n> related to the usage of username and email address.\n>\n> n Grafana, a user's username and email address are unique fields,\n> which means no other user can have the same username or email address\n> as another user.\n>\n> In addition, a user can have an email address as a username, and the\n> Grafana login allows users to sign in with either username or email\n> address. This creates an unusual behavior, where *user_1* can register\n> with one email address and *user_2* can register their username as\n> *user_1*'s email address. As a result, *user_1* would be prevented\n> from signing in to Grafana, since *user_1* password won't match with\n> *user_2* email address.\n>\n> The CVSS score for this vulnerability is 4.3 moderate\n> (CVSS:3.1/AV:N/AC:L/PR:L/UI:N/S:U/C:N/I:N/A:L).\n",
+    "id": "FreeBSD-2022-0220",
+    "modified": "2022-11-12T00:00:00Z",
+    "published": "2022-11-12T00:00:00Z",
+    "references": [
+        {
+            "type": "REPORT",
+            "url": "https://grafana.com/blog/2022/10/12/grafana-security-releases-new-versions-with-fixes-for-cve-2022-39229-cve-2022-39201-cve-2022-31130-cve-2022-31123/"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2022-39229"
+        },
+        {
+            "type": "WEB",
+            "url": "https://github.com/grafana/grafana/security/advisories/GHSA-gj7m-853r-289r"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "Grafana -- Improper authentication"
+}

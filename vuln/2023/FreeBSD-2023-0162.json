@@ -1,0 +1,99 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "postgresql-server"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "15.3"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                },
+                {
+                    "events": [
+                        {
+                            "fixed": "14.8"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                },
+                {
+                    "events": [
+                        {
+                            "fixed": "13.11"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                },
+                {
+                    "events": [
+                        {
+                            "fixed": "12.15"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                },
+                {
+                    "events": [
+                        {
+                            "fixed": "11.20"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "cite": [
+            "https://www.postgresql.org/support/security/CVE-2023-2455/"
+        ],
+        "discovery": "2023-05-11T00:00:00Z",
+        "references": {
+            "cvename": [
+                "CVE-2023-2455"
+            ]
+        },
+        "vid": "4b636f50-f011-11ed-bbae-6cc21735f730"
+    },
+    "details": "PostgreSQL Project reports\n\n> While CVE-2016-2193 fixed most interaction between row security and\n> user ID changes, it missed a scenario involving function inlining.\n> This leads to potentially incorrect policies being applied in cases\n> where role-specific policies are used and a given query is planned\n> under one role and then executed under other roles. This scenario can\n> happen under security definer functions or when a common user and\n> query is planned initially and then re-used across multiple SET ROLEs.\n> Applying an incorrect policy may permit a user to complete\n> otherwise-forbidden reads and modifications. This affects only\n> databases that have used CREATE POLICY to define a row security\n> policy.\n",
+    "id": "FreeBSD-2023-0162",
+    "modified": "2023-05-11T00:00:00Z",
+    "published": "2023-05-11T00:00:00Z",
+    "references": [
+        {
+            "type": "REPORT",
+            "url": "https://www.postgresql.org/support/security/CVE-2023-2455/"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2023-2455"
+        },
+        {
+            "type": "WEB",
+            "url": "https://www.postgresql.org/support/security/CVE-2023-2455/"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "postgresql-server -- Row security policies disregard user ID changes after inlining"
+}

@@ -1,0 +1,118 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "grafana"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "introduced": "9.1.0"
+                        },
+                        {
+                            "fixed": "9.2.17"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                },
+                {
+                    "events": [
+                        {
+                            "introduced": "9.3.0"
+                        },
+                        {
+                            "fixed": "9.3.13"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                },
+                {
+                    "events": [
+                        {
+                            "introduced": "9.4.0"
+                        },
+                        {
+                            "fixed": "9.4.9"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        },
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "grafana9"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "introduced": "9.1.0"
+                        },
+                        {
+                            "fixed": "9.2.17"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                },
+                {
+                    "events": [
+                        {
+                            "introduced": "9.3.0"
+                        },
+                        {
+                            "fixed": "9.3.13"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                },
+                {
+                    "events": [
+                        {
+                            "introduced": "9.4.0"
+                        },
+                        {
+                            "fixed": "9.4.9"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "cite": [
+            "https://grafana.com/blog/2023/04/26/grafana-security-release-new-versions-of-grafana-with-security-fixes-for-cve-2023-28119-and-cve-2023-1387/"
+        ],
+        "discovery": "2023-04-26T00:00:00Z",
+        "references": {
+            "cvename": [
+                "CVE-2023-1387"
+            ]
+        },
+        "vid": "5e257b0d-e466-11ed-834b-6c3be5272acd"
+    },
+    "details": "Grafana Labs reports:\n\n> When setting up Grafana, there is an option to enable [JWT\n> authentication](https://grafana.com/docs/grafana/latest/setup-grafana/configure-security/configure-authentication/jwt/).\n> Enabling this will allow users to authenticate towards the Grafana\n> instance with a special header (default `X-JWT-Assertion` ).\n>\n> In Grafana, there is an additional way to authenticate using JWT\n> called [URL\n> login](https://grafana.com/docs/grafana/latest/setup-grafana/configure-security/configure-authentication/jwt/#url-login)\n> where the token is passed as a query parameter.\n>\n> When using this option, a JWT token is passed to the data source as a\n> header, which leads to exposure of sensitive information to an\n> unauthorized party.\n>\n> The CVSS score for this vulnerability is 4.2 Medium\n",
+    "id": "FreeBSD-2023-0149",
+    "modified": "2023-04-26T00:00:00Z",
+    "published": "2023-04-26T00:00:00Z",
+    "references": [
+        {
+            "type": "REPORT",
+            "url": "https://grafana.com/blog/2023/04/26/grafana-security-release-new-versions-of-grafana-with-security-fixes-for-cve-2023-28119-and-cve-2023-1387/"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2023-1387"
+        },
+        {
+            "type": "WEB",
+            "url": "https://grafana.com/security/security-advisories/cve-2023-1387/"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "Grafana -- Exposure of sensitive information to an unauthorized actor"
+}

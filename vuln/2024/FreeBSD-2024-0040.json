@@ -1,0 +1,232 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "bind916"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "9.16.48"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        },
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "bind918"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "9.18.24"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        },
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "bind9-devel"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "9.19.21"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        },
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "dnsmasq"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "2.90"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        },
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "dnsmasq-devel"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "2.90"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        },
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "powerdns-recursor"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "5.0.2"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        },
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "unbound"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "1.19.1"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        },
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "FreeBSD"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "introduced": "14.0"
+                        },
+                        {
+                            "fixed": "14.0_6"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                },
+                {
+                    "events": [
+                        {
+                            "introduced": "13.2"
+                        },
+                        {
+                            "fixed": "13.2_11"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "cite": [
+            "https://lists.thekelleys.org.uk/pipermail/dnsmasq-discuss/2024q1/017430.html",
+            "https://nlnetlabs.nl/news/2024/Feb/13/unbound-1.19.1-released/"
+        ],
+        "discovery": "2024-02-06T00:00:00Z",
+        "references": {
+            "cvename": [
+                "CVE-2023-50387",
+                "CVE-2023-50868"
+            ],
+            "freebsdsa": [
+                "SA-24:03.unbound"
+            ]
+        },
+        "vid": "21a854cc-cac1-11ee-b7a7-353f1e043d9a"
+    },
+    "details": "Simon Kelley reports:\n\n> If DNSSEC validation is enabled, then an attacker who can force a DNS\n> server to validate a specially crafted signed domain can use a lot of\n> CPU in the validator. This only affects dnsmasq installations with\n> DNSSEC enabled.\n\nStichting NLnet Labs reports:\n\n> The KeyTrap \\[CVE-2023-50387\\] vulnerability works by using a\n> combination of Keys (also colliding Keys), Signatures and number of\n> RRSETs on a malicious zone. Answers from that zone can force a DNSSEC\n> validator down a very CPU intensive and time costly validation path.\n>\n> The NSEC3 \\[CVE-2023-50868\\] vulnerability uses specially crafted\n> responses on a malicious zone with multiple NSEC3 RRSETs to force a\n> DNSSEC validator down a very CPU intensive and time costly NSEC3 hash\n> calculation path.\n",
+    "id": "FreeBSD-2024-0040",
+    "modified": "2024-04-01T00:00:00Z",
+    "published": "2024-02-13T00:00:00Z",
+    "references": [
+        {
+            "type": "REPORT",
+            "url": "https://lists.thekelleys.org.uk/pipermail/dnsmasq-discuss/2024q1/017430.html"
+        },
+        {
+            "type": "REPORT",
+            "url": "https://nlnetlabs.nl/news/2024/Feb/13/unbound-1.19.1-released/"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2023-50387"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2023-50868"
+        },
+        {
+            "type": "WEB",
+            "url": "https://kb.isc.org/docs/cve-2023-50387"
+        },
+        {
+            "type": "WEB",
+            "url": "https://kb.isc.org/docs/cve-2023-50868"
+        },
+        {
+            "type": "WEB",
+            "url": "https://lists.thekelleys.org.uk/pipermail/dnsmasq-discuss/2024q1/017430.html"
+        },
+        {
+            "type": "WEB",
+            "url": "https://blog.powerdns.com/2024/02/13/powerdns-recursor-4-8-6-4-9-3-5-0-2-released"
+        },
+        {
+            "type": "WEB",
+            "url": "https://nlnetlabs.nl/news/2024/Feb/13/unbound-1.19.1-released/"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://www.freebsd.org/security/advisories/FreeBSD-SA-24:03.unbound.asc"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "DNSSEC validators -- denial-of-service/CPU exhaustion from KeyTrap and NSEC3 vulnerabilities"
+}

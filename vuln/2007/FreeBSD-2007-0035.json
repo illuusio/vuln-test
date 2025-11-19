@@ -1,0 +1,55 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "lighttpd"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "1.4.15"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "cite": [
+            "http://www.lighttpd.net/assets/2007/4/13/lighttpd_sa2007_02.txt"
+        ],
+        "discovery": "2007-01-14T00:00:00Z",
+        "references": {
+            "cvename": [
+                "CVE-2007-1870"
+            ]
+        },
+        "vid": "5678da43-ea99-11db-a802-000fea2763ce"
+    },
+    "details": "Lighttpd SA:\n\n> Lighttpd caches the rendered string for mtime. The cache key has as a\n> default value 0. At that point the pointer to the string are still\n> NULL. If a file with an mtime of 0 is requested it tries to access the\n> pointer and crashes.\n>\n> The bug requires that a malicious user can either upload files or\n> manipulate the mtime of the files.\n>\n> The bug was reported by cubiq and fixed by Marcus Rueckert.\n",
+    "id": "FreeBSD-2007-0035",
+    "modified": "2007-04-14T00:00:00Z",
+    "published": "2007-04-14T00:00:00Z",
+    "references": [
+        {
+            "type": "REPORT",
+            "url": "http://www.lighttpd.net/assets/2007/4/13/lighttpd_sa2007_02.txt"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2007-1870"
+        },
+        {
+            "type": "WEB",
+            "url": "http://www.lighttpd.net/assets/2007/4/13/lighttpd_sa2007_02.txt"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "lighttpd -- DOS when access files with mtime 0"
+}

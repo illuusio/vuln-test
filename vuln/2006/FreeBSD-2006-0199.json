@@ -1,0 +1,59 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "mysql-server"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "introduced": "5.1"
+                        },
+                        {
+                            "fixed": "5.1.12"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                },
+                {
+                    "events": [
+                        {
+                            "introduced": "5.0"
+                        },
+                        {
+                            "fixed": "5.0.25"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "discovery": "2006-03-29T00:00:00Z",
+        "references": {
+            "cvename": [
+                "CVE-2006-4227"
+            ]
+        },
+        "vid": "a9c51caf-6603-11db-ab90-000e35fd8194"
+    },
+    "details": "Dmitri Lenev reports a privilege escalation in MySQL. MySQL evaluates\narguments of suid routines in the security context of the routine\\'s\ndefiner instead of the routine\\'s caller, which allows remote and local\nauthenticated users to gain privileges through a routine that has been\nmade available using GRANT EXECUTE.\n",
+    "id": "FreeBSD-2006-0199",
+    "modified": "2006-10-30T00:00:00Z",
+    "published": "2006-10-29T00:00:00Z",
+    "references": [
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2006-4227"
+        },
+        {
+            "type": "WEB",
+            "url": "http://bugs.mysql.com/bug.php?id=18630"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "mysql -- database suid privilege escalation"
+}

@@ -1,0 +1,93 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "openssh-portable"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "9.3.p2,1"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        },
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "openssh-portable-hpn"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "9.3.p2,1"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        },
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "openssh-portable-gssapi"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "9.3.p2,1"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "cite": [
+            "https://www.openssh.com/txt/release-9.3p2"
+        ],
+        "discovery": "2023-07-19T00:00:00Z",
+        "references": {
+            "cvename": [
+                "CVE-2023-38408"
+            ]
+        },
+        "vid": "887eb570-27d3-11ee-adba-c80aa9043978"
+    },
+    "details": "OpenSSH project reports:\n\n> Fix CVE-2023-38408 - a condition where specific libaries loaded via\n> ssh-agent(1)\\'s PKCS#11 support could be abused to achieve remote code\n> execution via a forwarded agent socket if the following conditions are\n> met: \\* Exploitation requires the presence of specific libraries on\n> the victim system. \\* Remote exploitation requires that the agent was\n> forwarded to an attacker-controlled system. Exploitation can also be\n> prevented by starting ssh-agent(1) with an empty PKCS#11/FIDO\n> allowlist (ssh-agent -P \\'\\') or by configuring an allowlist that\n> contains only specific provider libraries. This vulnerability was\n> discovered and demonstrated to be exploitable by the Qualys Security\n> Advisory team.\n",
+    "id": "FreeBSD-2023-0214",
+    "modified": "2023-07-21T00:00:00Z",
+    "published": "2023-07-21T00:00:00Z",
+    "references": [
+        {
+            "type": "REPORT",
+            "url": "https://www.openssh.com/txt/release-9.3p2"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2023-38408"
+        },
+        {
+            "type": "WEB",
+            "url": "https://www.openssh.com/txt/release-9.3p2"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "OpenSSH -- remote code execution via a forwarded agent socket"
+}

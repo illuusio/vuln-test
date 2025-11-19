@@ -1,0 +1,59 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "libXdmcp"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "1.1.3"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "cite": [
+            "https://nvd.nist.gov/vuln/detail/CVE-2017-2625"
+        ],
+        "discovery": "2017-04-04T00:00:00Z",
+        "references": {
+            "cvename": [
+                "CVE-2017-2625"
+            ]
+        },
+        "vid": "1b6a10e9-4b7b-11e9-9e89-54e1ad3d6335"
+    },
+    "details": "The freedesktop and x.org project reports:\n\n> It was discovered that libXdmcp before 1.1.3 used weak entropy to\n> generate session keys on platforms without arc4random_buf() but with\n> getentropy(). On a multi-user system using xdmcp, a local attacker\n> could potentially use information available from the process list to\n> brute force the key, allowing them to hijack other users\\' sessions.\n>\n> Please note, that since FreeBSD provides arc4random_buf(), it is\n> unknown if FreeBSD is affected by this vulnerability\n",
+    "id": "FreeBSD-2019-0062",
+    "modified": "2019-03-22T00:00:00Z",
+    "published": "2019-03-21T00:00:00Z",
+    "references": [
+        {
+            "type": "REPORT",
+            "url": "https://nvd.nist.gov/vuln/detail/CVE-2017-2625"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://nvd.nist.gov/vuln/detail/CVE-2017-2625"
+        },
+        {
+            "type": "WEB",
+            "url": "https://lists.x.org/archives/xorg-announce/2019-March/002974.html"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2017-2625"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "libXdmcp -- insufficient entropy generating session keys"
+}

@@ -1,0 +1,55 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "cryptopp"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "8.6.0"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "cite": [
+            "https://www.cryptopp.com/release860.html"
+        ],
+        "discovery": "2021-09-06T00:00:00Z",
+        "references": {
+            "cvename": [
+                "CVE-2021-40530"
+            ]
+        },
+        "vid": "7695b0af-958f-11ec-9aa3-4ccc6adda413"
+    },
+    "details": "Crypto++ 8.6 release notes reports:\n\n> The ElGamal implementation in Crypto++ through 8.5 allows plaintext\n> recovery because, during interaction between two cryptographic\n> libraries, a certain dangerous combination of the prime defined by the\n> receiver\\'s public key, the generator defined by the receiver\\'s\n> public key, and the sender\\'s ephemeral exponents can lead to a\n> cross-configuration attack against OpenPGP.\n",
+    "id": "FreeBSD-2022-0041",
+    "modified": "2022-02-24T00:00:00Z",
+    "published": "2022-02-24T00:00:00Z",
+    "references": [
+        {
+            "type": "REPORT",
+            "url": "https://www.cryptopp.com/release860.html"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2021-40530"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://nvd.nist.gov/vuln/detail/CVE-2021-40530"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "cryptopp -- ElGamal implementation allows plaintext recovery"
+}

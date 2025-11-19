@@ -1,0 +1,157 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "nss"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "introduced": "3.20"
+                        },
+                        {
+                            "fixed": "3.20.2"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                },
+                {
+                    "events": [
+                        {
+                            "fixed": "3.19.2.2"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        },
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "linux-c6-nss"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "introduced": "3.20"
+                        },
+                        {
+                            "fixed": "3.20.2"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                },
+                {
+                    "events": [
+                        {
+                            "fixed": "3.19.2.2"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        },
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "linux-firefox"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "43.0.2,1"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        },
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "linux-thunderbird"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "38.5.1"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        },
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "linux-seamonkey"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "2.40"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "cite": [
+            "https://www.mozilla.org/en-US/security/advisories/mfsa2015-150/"
+        ],
+        "discovery": "2015-12-22T00:00:00Z",
+        "references": {
+            "cvename": [
+                "CVE-2015-7575"
+            ]
+        },
+        "vid": "10f7bc76-0335-4a88-b391-0b05b3a8ce1c"
+    },
+    "details": "The Mozilla Project reports:\n\n> Security researcher Karthikeyan Bhargavan reported an issue in Network\n> Security Services (NSS) where MD5 signatures in the server signature\n> within the TLS 1.2 ServerKeyExchange message are still accepted. This\n> is an issue since NSS has officially disallowed the accepting MD5 as a\n> hash algorithm in signatures since 2011. This issues exposes NSS based\n> clients such as Firefox to theoretical collision-based forgery\n> attacks.\n",
+    "id": "FreeBSD-2015-0424",
+    "modified": "2015-12-28T00:00:00Z",
+    "published": "2015-12-28T00:00:00Z",
+    "references": [
+        {
+            "type": "REPORT",
+            "url": "https://www.mozilla.org/en-US/security/advisories/mfsa2015-150/"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2015-7575"
+        },
+        {
+            "type": "WEB",
+            "url": "https://www.mozilla.org/security/advisories/mfsa2015-150/"
+        },
+        {
+            "type": "WEB",
+            "url": "https://hg.mozilla.org/projects/nss/rev/94e1157f3fbb"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "NSS -- MD5 downgrade in TLS 1.2 signatures"
+}

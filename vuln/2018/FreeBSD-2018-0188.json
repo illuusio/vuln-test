@@ -1,0 +1,97 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "mailman"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "2.1.28"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        },
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "mailman-with-htdig"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "2.1.28"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        },
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "ja-mailman"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "2.1.14.j7_6,1"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "cite": [
+            "https://bugs.launchpad.net/mailman/+bug/1780874"
+        ],
+        "discovery": "2018-07-09T00:00:00Z",
+        "references": {
+            "cvename": [
+                "CVE-2018-13796"
+            ]
+        },
+        "vid": "b4f0ad36-94a5-11e8-9007-080027ac955c"
+    },
+    "details": "Mark Sapiro reports:\n\n> A URL with a very long text listname such as\n>\n>     http://www.example.com/mailman/listinfo/This_is_a_long_string_with_some_phishing_text\n>\n> will echo the text in the \\\"No such list\\\" error response. This can be\n> used to make a potential victim think the phishing text comes from a\n> trusted site.\n>\n> This issue was discovered by Hammad Qureshi.\n",
+    "id": "FreeBSD-2018-0188",
+    "modified": "2018-07-31T00:00:00Z",
+    "published": "2018-07-31T00:00:00Z",
+    "references": [
+        {
+            "type": "REPORT",
+            "url": "https://bugs.launchpad.net/mailman/+bug/1780874"
+        },
+        {
+            "type": "WEB",
+            "url": "https://bugs.launchpad.net/mailman/+bug/1780874"
+        },
+        {
+            "type": "WEB",
+            "url": "https://mail.python.org/pipermail/mailman-announce/2018-July/000241.html"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2018-13796"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "mailman -- content spoofing with invalid list names in web UI"
+}

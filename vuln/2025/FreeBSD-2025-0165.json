@@ -1,0 +1,77 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "libxml2"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "2.11.9_1"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                },
+                {
+                    "events": [
+                        {
+                            "introduced": "2.12.0"
+                        },
+                        {
+                            "fixed": "2.12.10"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                },
+                {
+                    "events": [
+                        {
+                            "introduced": "2.13.0"
+                        },
+                        {
+                            "fixed": "2.13.6"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "cite": [
+            "https://gitlab.gnome.org/GNOME/libxml2/-/issues/828"
+        ],
+        "discovery": "2025-02-18T00:00:00Z",
+        "references": {
+            "cvename": [
+                "CVE-2024-56171"
+            ]
+        },
+        "vid": "bd2af307-3e50-11f0-95d4-00a098b42aeb"
+    },
+    "details": "cve@mitre.org reports:\n\n> libxml2 before 2.12.10 and 2.13.x before 2.13.6 has a use-after-free\n> in xmlSchemaIDCFillNodeTables and xmlSchemaBubbleIDCNodeTables in\n> xmlschemas.c. To exploit this, a crafted XML document must be\n> validated against an XML schema with certain identity constraints, or\n> a crafted XML schema must be used.\n",
+    "id": "FreeBSD-2025-0165",
+    "modified": "2025-05-31T00:00:00Z",
+    "published": "2025-05-31T00:00:00Z",
+    "references": [
+        {
+            "type": "REPORT",
+            "url": "https://gitlab.gnome.org/GNOME/libxml2/-/issues/828"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2024-56171"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://nvd.nist.gov/vuln/detail/CVE-2024-56171"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "libxml2 -- Use After Free"
+}

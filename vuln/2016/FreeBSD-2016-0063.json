@@ -1,0 +1,55 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "phpmyadmin"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "introduced": "4.5.0"
+                        },
+                        {
+                            "fixed": "4.5.4"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "cite": [
+            "https://www.phpmyadmin.net/security/PMASA-2016-1/"
+        ],
+        "discovery": "2016-01-28T00:00:00Z",
+        "references": {
+            "cvename": [
+                "CVE-2016-2038"
+            ]
+        },
+        "vid": "5d6a204f-c60b-11e5-bf36-6805ca0b3d42"
+    },
+    "details": "The phpMyAdmin development team reports:\n\n> By calling some scripts that are part of phpMyAdmin in an unexpected\n> way, it is possible to trigger phpMyAdmin to display a PHP error\n> message which contains the full path of the directory where phpMyAdmin\n> is installed.\n>\n> We consider these vulnerabilities to be non-critical.\n>\n> This path disclosure is possible on servers where the recommended\n> setting of the PHP configuration directive display_errors is set to\n> on, which is against the recommendations given in the PHP manual for a\n> production server.\n",
+    "id": "FreeBSD-2016-0063",
+    "modified": "2016-01-28T00:00:00Z",
+    "published": "2016-01-28T00:00:00Z",
+    "references": [
+        {
+            "type": "REPORT",
+            "url": "https://www.phpmyadmin.net/security/PMASA-2016-1/"
+        },
+        {
+            "type": "WEB",
+            "url": "https://www.phpmyadmin.net/security/PMASA-2016-1/"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2016-2038"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "phpmyadmin -- Multiple full path disclosure vulnerabilities"
+}

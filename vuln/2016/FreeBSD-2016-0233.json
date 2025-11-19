@@ -1,0 +1,104 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "openssl"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "1.0.2_13"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        },
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "libressl"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "2.2.9"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                },
+                {
+                    "events": [
+                        {
+                            "introduced": "2.3.0"
+                        },
+                        {
+                            "fixed": "2.3.6"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        },
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "libressl-devel"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "2.4.1"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "cite": [
+            "https://git.openssl.org/?p=openssl.git;a=commit;h=399944622df7bd81af62e67ea967c470534090e2"
+        ],
+        "discovery": "2016-06-09T00:00:00Z",
+        "references": {
+            "cvename": [
+                "CVE-2016-2178"
+            ]
+        },
+        "vid": "6f0529e2-2e82-11e6-b2ec-b499baebfeaf"
+    },
+    "details": "The OpenSSL team reports:\n\n> Operations in the DSA signing algorithm should run in constant time in\n> order to avoid side channel attacks. A flaw in the OpenSSL DSA\n> implementation means that a non-constant time codepath is followed for\n> certain operations. This has been demonstrated through a cache-timing\n> attack to be sufficient for an attacker to recover the private DSA\n> key.\n",
+    "id": "FreeBSD-2016-0233",
+    "modified": "2016-12-20T00:00:00Z",
+    "published": "2016-06-09T00:00:00Z",
+    "references": [
+        {
+            "type": "REPORT",
+            "url": "https://git.openssl.org/?p=openssl.git;a=commit;h=399944622df7bd81af62e67ea967c470534090e2"
+        },
+        {
+            "type": "WEB",
+            "url": "https://git.openssl.org/?p=openssl.git;a=commit;h=399944622df7bd81af62e67ea967c470534090e2"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2016-2178"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "OpenSSL -- vulnerability in DSA signing"
+}

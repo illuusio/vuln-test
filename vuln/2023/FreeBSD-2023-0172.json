@@ -1,0 +1,55 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "php80-kanboard"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "1.2.29"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "cite": [
+            "https://github.com/kanboard/kanboard/commit/26b6eebb78d4306e48b836a58f7c386251aa2bc7"
+        ],
+        "discovery": "2023-05-30T00:00:00Z",
+        "references": {
+            "cvename": [
+                "CVE-2023-32685"
+            ]
+        },
+        "vid": "79514fcd-feb4-11ed-92b5-b42e991fc52e"
+    },
+    "details": "security-advisories@github.com reports:\n\n> Kanboard is project management software that focuses on the Kanban\n> methodology. Due to improper handling of elements under the\n> \\`contentEditable\\` element, maliciously crafted clipboard content can\n> inject arbitrary HTML tags into the DOM. A low-privileged attacker\n> with permission to attach a document on a vulnerable Kanboard instance\n> can trick the victim into pasting malicious screenshot data and\n> achieve cross-site scripting if CSP is improperly configured. This\n> issue has been patched in version 1.2.29.\n",
+    "id": "FreeBSD-2023-0172",
+    "modified": "2023-05-30T00:00:00Z",
+    "published": "2023-05-30T00:00:00Z",
+    "references": [
+        {
+            "type": "REPORT",
+            "url": "https://github.com/kanboard/kanboard/commit/26b6eebb78d4306e48b836a58f7c386251aa2bc7"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2023-32685"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://nvd.nist.gov/vuln/detail/CVE-2023-32685"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "Kanboard -- Clipboard based cross-site scripting (blocked with default CSP) in Kanboard"
+}

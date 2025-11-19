@@ -1,0 +1,55 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "groovy"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "introduced": "1.7.0"
+                        },
+                        {
+                            "fixed": "2.4.8"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "cite": [
+            "http://groovy-lang.org/security.html"
+        ],
+        "discovery": "2016-09-20T00:00:00Z",
+        "references": {
+            "cvename": [
+                "CVE-2016-6814"
+            ]
+        },
+        "vid": "4af92a40-db33-11e6-ae1b-002590263bf5"
+    },
+    "details": "The Apache Groovy project reports:\n\n> When an application with Groovy on classpath uses standard Java\n> serialization mechanisms, e.g. to communicate between servers or to\n> store local data, it is possible for an attacker to bake a special\n> serialized object that will execute code directly when deserialized.\n> All applications which rely on serialization and do not isolate the\n> code which deserializes objects are subject to this vulnerability.\n> This is similar to CVE-2015-3253 but this exploit involves extra\n> wrapping of objects and catching of exceptions which are now safe\n> guarded against.\n",
+    "id": "FreeBSD-2017-0026",
+    "modified": "2017-01-15T00:00:00Z",
+    "published": "2017-01-15T00:00:00Z",
+    "references": [
+        {
+            "type": "REPORT",
+            "url": "http://groovy-lang.org/security.html"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2016-6814"
+        },
+        {
+            "type": "WEB",
+            "url": "http://groovy-lang.org/security.html"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "groovy -- remote execution of untrusted code/DoS vulnerability"
+}

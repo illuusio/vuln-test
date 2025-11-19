@@ -1,0 +1,58 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "kdeconnect-kde"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "last_affected": "20.08.1"
+                        },
+                        {
+                            "fixed": "20.08.1"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "cite": [
+            "https://kde.org/info/security/advisory-20201002-1.txt"
+        ],
+        "discovery": "2020-10-02T00:00:00Z",
+        "references": {
+            "cvename": [
+                "CVE-2020-26164"
+            ]
+        },
+        "vid": "c71ed065-0600-11eb-8758-e0d55e2a8bf9"
+    },
+    "details": "Albert Astals Cid reports:\n\n> ### KDE Project Security Advisory\n>\n>   ------------- ---------------------------------------------------------------------------------\n>   Title         KDE Connect: packet manipulation can be exploited in a Denial of Service attack\n>   Risk Rating   Important\n>   CVE           CVE-2020-26164\n>   Versions      kdeconnect \\<= 20.08.1\n>   Author        Albert Vaca Cintora \\<albertvaka@gmail.com\\>\n>   Date          2 October 2020\n>   ------------- ---------------------------------------------------------------------------------\n>\n> ### Overview\n>\n> An attacker on your local network could send maliciously crafted\n> packets to other hosts running kdeconnect on the network, causing them\n> to use large amounts of CPU, memory or network connections, which\n> could be used in a Denial of Service attack within the network.\n>\n> ### Impact\n>\n> Computers that run kdeconnect are susceptible to DoS attacks from the\n> local network.\n>\n> ### Workaround\n>\n> We advise you to stop KDE Connect when on untrusted networks like\n> those on airports or conferences.\n>\n> Since kdeconnect is dbus activated it is relatively hard to make sure\n> it stays stopped so the brute force approach is to uninstall the\n> kdeconnect package from your system and then run\n>\n>\n>               kquitapp5 kdeconnectd\n>           \n>\n> Just install the package again once you\\'re back in a trusted network.\n>\n> ### Solution\n>\n> KDE Connect 20.08.2 patches several code paths that could result in a\n> DoS.\n>\n> You can apply these patches on top of 20.08.1:\n>\n> - https://invent.kde.org/network/kdeconnect-kde/-/commit/f183b5447bad47655c21af87214579f03bf3a163\n> - https://invent.kde.org/network/kdeconnect-kde/-/commit/b279c52101d3f7cc30a26086d58de0b5f1c547fa\n> - https://invent.kde.org/network/kdeconnect-kde/-/commit/d35b88c1b25fe13715f9170f18674d476ca9acdc\n> - https://invent.kde.org/network/kdeconnect-kde/-/commit/b496e66899e5bc9547b6537a7f44ab44dd0aaf38\n> - https://invent.kde.org/network/kdeconnect-kde/-/commit/5310eae85dbdf92fba30375238a2481f2e34943e\n> - https://invent.kde.org/network/kdeconnect-kde/-/commit/721ba9faafb79aac73973410ee1dd3624ded97a5\n> - https://invent.kde.org/network/kdeconnect-kde/-/commit/ae58b9dec49c809b85b5404cee17946116f8a706\n> - https://invent.kde.org/network/kdeconnect-kde/-/commit/66c768aa9e7fba30b119c8b801efd49ed1270b0a\n> - https://invent.kde.org/network/kdeconnect-kde/-/commit/85b691e40f525e22ca5cc4ebe79c361d71d7dc05\n> - https://invent.kde.org/network/kdeconnect-kde/-/commit/48180b46552d40729a36b7431e97bbe2b5379306\n>\n> ### Credits\n>\n> Thanks Matthias Gerstner and the openSUSE security team for reporting\n> the issue.\n>\n> Thanks to Aleix Pol, Nicolas Fella and Albert Vaca Cintora for the\n> patches.\n",
+    "id": "FreeBSD-2020-0263",
+    "modified": "2020-10-04T00:00:00Z",
+    "published": "2020-10-04T00:00:00Z",
+    "references": [
+        {
+            "type": "REPORT",
+            "url": "https://kde.org/info/security/advisory-20201002-1.txt"
+        },
+        {
+            "type": "WEB",
+            "url": "https://kde.org/info/security/advisory-20201002-1.txt"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2020-26164"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "kdeconnect -- packet manipulation can be exploited in a Denial of Service attack"
+}

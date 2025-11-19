@@ -1,0 +1,47 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "mDNSResponder"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "last_affected": "214"
+                        },
+                        {
+                            "fixed": "214"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "discovery": "2010-05-26T00:00:00Z",
+        "references": {
+            "freebsdpr": [
+                "ports/147007"
+            ]
+        },
+        "vid": "1cd87e2a-81e3-11df-81d8-00262d5ed8ee"
+    },
+    "details": "Juli Mallett reports:\n\n> mdnsd will crash on some systems with a corrupt stack and once that\\'s\n> fixed it will still leak a file descriptor when parsing resolv.conf.\n> The crash is because scanf is used with %10s for a buffer that is only\n> 10 chars long. The buffer size needs increased to 11 chars to hold the\n> trailing NUL. To fix the leak, an fclose needs added.\n",
+    "id": "FreeBSD-2010-0063",
+    "modified": "2010-06-27T00:00:00Z",
+    "published": "2010-06-27T00:00:00Z",
+    "references": [
+        {
+            "type": "REPORT",
+            "url": "https://bugs.freebsd.org/bugzilla/show_bug.cgi?id=147007"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "mDNSResponder -- corrupted stack crash when parsing bad resolv.conf"
+}

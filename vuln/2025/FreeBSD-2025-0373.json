@@ -1,0 +1,84 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "xorg-server"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "21.1.19,1"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        },
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "xwayland"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "24.1.9,1"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "cite": [
+            "https://access.redhat.com/errata/RHSA-2025:19432"
+        ],
+        "discovery": "2025-10-30T00:00:00Z",
+        "references": {
+            "cvename": [
+                "CVE-2025-62229",
+                "CVE-2025-62230",
+                "CVE-2025-62231"
+            ]
+        },
+        "vid": "e99a32c8-b8e2-11f0-8510-b42e991fc52e"
+    },
+    "details": "https://access.redhat.com/errata/RHSA-2025:19432 reports:\n\n> CVE-2025-62229: A flaw was found in the X.Org X server and Xwayland\n> when processing X11 Present extension notifications. Improper error\n> handling during notification creation can leave dangling pointers that\n> lead to a use-after-free condition. This can cause memory corruption\n> or a crash, potentially allowing an attacker to execute arbitrary code\n> or cause a denial of service.\n>\n> CVE-2025-62230: A flaw was discovered in the X.Org X servers X\n> Keyboard (Xkb) extension when handling client resource cleanup. The\n> software frees certain data structures without properly detaching\n> related resources, leading to a use-after-free condition. This can\n> cause memory corruption or a crash when affected clients disconnect.\n>\n> CVE-2025-62231: A flaw was identified in the X.Org X servers X\n> Keyboard (Xkb) extension where improper bounds checking in the\n> XkbSetCompatMap() function can cause an unsigned short overflow. If an\n> attacker sends specially crafted input data, the value calculation may\n> overflow, leading to memory corruption or a crash.\n",
+    "id": "FreeBSD-2025-0373",
+    "modified": "2025-11-03T00:00:00Z",
+    "published": "2025-11-03T00:00:00Z",
+    "references": [
+        {
+            "type": "REPORT",
+            "url": "https://access.redhat.com/errata/RHSA-2025:19432"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2025-62229"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2025-62230"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2025-62231"
+        },
+        {
+            "type": "WEB",
+            "url": "https://cveawg.mitre.org/api/cve/CVE-2025-62229"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "Xorg -- multiple vulnerabilities"
+}

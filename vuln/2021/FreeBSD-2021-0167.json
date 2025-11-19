@@ -1,0 +1,74 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "rabbitmq-c"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "0.10.0"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        },
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "rabbitmq-c-devel"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "0.10.0"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "cite": [
+            "https://github.com/alanxz/rabbitmq-c/commit/fc85be7123050b91b054e45b91c78d3241a5047a"
+        ],
+        "discovery": "2019-10-29T00:00:00Z",
+        "references": {
+            "cvename": [
+                "CVE-2019-18609"
+            ]
+        },
+        "vid": "7c555ce3-658d-4589-83dd-4b6a31c5d610"
+    },
+    "details": "alanxz reports:\n\n> When parsing a frame header, validate that the frame_size is less than\n> or equal to INT32_MAX. Given frame_max is limited between 0 and\n> INT32_MAX in amqp_login and friends, this does not change the API.\n> This prevents a potential buffer overflow when a malicious client\n> sends a frame_size that is close to UINT32_MAX, in which causes an\n> overflow when computing state-\\>target_size resulting in a small value\n> there. A buffer is then allocated with the small amount, then memcopy\n> copies the frame_size writing to memory beyond the end of the buffer.\n",
+    "id": "FreeBSD-2021-0167",
+    "modified": "2021-06-25T00:00:00Z",
+    "published": "2021-06-25T00:00:00Z",
+    "references": [
+        {
+            "type": "REPORT",
+            "url": "https://github.com/alanxz/rabbitmq-c/commit/fc85be7123050b91b054e45b91c78d3241a5047a"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2019-18609"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2019-18609"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "RabbitMQ-C -- integer overflow leads to heap corruption"
+}

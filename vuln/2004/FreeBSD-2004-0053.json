@@ -1,0 +1,48 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "racoon"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "20040408a"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "discovery": "2004-03-31T00:00:00Z",
+        "references": {
+            "cvename": [
+                "CVE-2004-0403"
+            ]
+        },
+        "vid": "ccd698df-8e20-11d8-90d1-0020ed76ef5a"
+    },
+    "details": "When racoon receives an ISAKMP header, it will attempt to allocate\nsufficient memory for the entire ISAKMP message according to the\nheader\\'s length field. If an attacker crafts an ISAKMP header with a\nridiculously large value in the length field, racoon may exceed\noperating system resource limits and be terminated, resulting in a\ndenial of service.\n",
+    "id": "FreeBSD-2004-0053",
+    "modified": "2004-04-14T00:00:00Z",
+    "published": "2004-04-14T00:00:00Z",
+    "references": [
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2004-0403"
+        },
+        {
+            "type": "WEB",
+            "url": "http://www.kame.net/dev/cvsweb2.cgi/kame/kame/kame/racoon/isakmp.c.diff?r1=1.180&r2=1.181"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "racoon remote denial of service vulnerability (ISAKMP header length field)"
+}

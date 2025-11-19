@@ -1,0 +1,77 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "mysql-server"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "last_affected": "3.23.58_3"
+                        },
+                        {
+                            "fixed": "3.23.58_3"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                },
+                {
+                    "events": [
+                        {
+                            "introduced": "4.*"
+                        },
+                        {
+                            "fixed": "4.0.21"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "discovery": "2004-03-29T00:00:00Z",
+        "references": {
+            "bid": [
+                "11435"
+            ],
+            "cvename": [
+                "CVE-2004-0957"
+            ]
+        },
+        "vid": "01c231cd-4393-11d9-8bb9-00065be4b5b6"
+    },
+    "details": "When a user is granted access to a database with a name containing an\nunderscore and the underscore is not escaped then that user might also\nbe able to access other, similarly named, databases on the affected\nsystem.\n\nThe problem is that the underscore is seen as a wildcard by MySQL and\ntherefore it is possible that an admin might accidently GRANT a user\naccess to multiple databases.\n",
+    "id": "FreeBSD-2004-0274",
+    "modified": "2005-03-15T00:00:00Z",
+    "published": "2004-12-16T00:00:00Z",
+    "references": [
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2004-0957"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://www.securityfocus.com/bid/11435/info"
+        },
+        {
+            "type": "WEB",
+            "url": "http://bugs.mysql.com/bug.php?id=3933"
+        },
+        {
+            "type": "WEB",
+            "url": "http://rhn.redhat.com/errata/RHSA-2004-611.html"
+        },
+        {
+            "type": "WEB",
+            "url": "http://www.openpkg.org/security/OpenPKG-SA-2004.045-mysql.html"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "mysql -- GRANT access restriction problem"
+}

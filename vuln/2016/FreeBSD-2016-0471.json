@@ -1,0 +1,65 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "asterisk11"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "11.25.1"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        },
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "asterisk13"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "13.13.1"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "cite": [
+            "http://www.asterisk.org/downloads/security-advisories"
+        ],
+        "discovery": "2016-11-28T00:00:00Z",
+        "vid": "c0b13887-be44-11e6-b04f-001999f8d30b"
+    },
+    "details": "The Asterisk project reports:\n\n> The chan_sip channel driver has a liberal definition for whitespace\n> when attempting to strip the content between a SIP header name and a\n> colon character. Rather than following RFC 3261 and stripping only\n> spaces and horizontal tabs, Asterisk treats any non-printable ASCII\n> character as if it were whitespace.\n>\n> This mostly does not pose a problem until Asterisk is placed in tandem\n> with an authenticating SIP proxy. In such a case, a crafty combination\n> of valid and invalid To headers can cause a proxy to allow an INVITE\n> request into Asterisk without authentication since it believes the\n> request is an in-dialog request. However, because of the bug described\n> above, the request will look like an out-of-dialog request to\n> Asterisk. Asterisk will then process the request as a new call. The\n> result is that Asterisk can process calls from unvetted sources\n> without any authentication.\n>\n> If you do not use a proxy for authentication, then this issue does not\n> affect you.\n>\n> If your proxy is dialog-aware (meaning that the proxy keeps track of\n> what dialogs are currently valid), then this issue does not affect\n> you.\n>\n> If you use chan_pjsip instead of chan_sip, then this issue does not\n> affect you.\n",
+    "id": "FreeBSD-2016-0471",
+    "modified": "2016-12-09T00:00:00Z",
+    "published": "2016-12-09T00:00:00Z",
+    "references": [
+        {
+            "type": "REPORT",
+            "url": "http://www.asterisk.org/downloads/security-advisories"
+        },
+        {
+            "type": "WEB",
+            "url": "http://downloads.digium.com/pub/security/ASTERISK-2016-009.html"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "asterisk -- Authentication Bypass"
+}

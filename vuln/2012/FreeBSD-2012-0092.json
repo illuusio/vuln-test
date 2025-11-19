@@ -1,0 +1,58 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "sudo"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "last_affected": "1.8.4_1"
+                        },
+                        {
+                            "fixed": "1.8.4_1"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "cite": [
+            "http://www.sudo.ws/sudo/alerts/netmask.html"
+        ],
+        "discovery": "2012-05-16T00:00:00Z",
+        "references": {
+            "cvename": [
+                "CVE-2012-2337"
+            ]
+        },
+        "vid": "b3435b68-9ee8-11e1-997c-002354ed89bc"
+    },
+    "details": "Todd Miller reports:\n\n> Sudo supports granting access to commands on a per-host basis. The\n> host specification may be in the form of a host name, a netgroup, an\n> IP address, or an IP network (an IP address with an associated\n> netmask).\n>\n> When IPv6 support was added to sudo, a bug was introduced that caused\n> the IPv6 network matching code to be called when an IPv4 network\n> address does not match. Depending on the value of the uninitialized\n> portion of the IPv6 address, it is possible for the IPv4 network\n> number to match when it should not. This bug only affects IP network\n> matching and does not affect simple IP address matching.\n>\n> The reported configuration that exhibited the bug was an LDAP-based\n> sudo installation where the sudoRole object contained multiple\n> sudoHost entries, each containing a different IPv4 network. File-based\n> sudoers should be affected as well as the same matching code is used.\n",
+    "id": "FreeBSD-2012-0092",
+    "modified": "2012-05-16T00:00:00Z",
+    "published": "2012-05-16T00:00:00Z",
+    "references": [
+        {
+            "type": "REPORT",
+            "url": "http://www.sudo.ws/sudo/alerts/netmask.html"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2012-2337"
+        },
+        {
+            "type": "WEB",
+            "url": "http://www.sudo.ws/sudo/alerts/netmask.html"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "sudo -- netmask vulnerability"
+}

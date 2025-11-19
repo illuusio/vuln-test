@@ -1,0 +1,62 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "FreeBSD"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "introduced": "13.0"
+                        },
+                        {
+                            "fixed": "13.0_11"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                },
+                {
+                    "events": [
+                        {
+                            "introduced": "12.3"
+                        },
+                        {
+                            "fixed": "12.3_5"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "discovery": "2022-04-06T00:00:00Z",
+        "references": {
+            "cvename": [
+                "CVE-2018-25032"
+            ],
+            "freebsdsa": [
+                "SA-22:08.zlib"
+            ]
+        },
+        "vid": "38f2e3a0-b61e-11ec-9ebc-1c697aa5a594"
+    },
+    "details": "# Problem Description:\n\nCertain inputs can cause zlib\\'s compression routine to overwrite an\ninternal buffer with compressed data. This issue may require the use of\nuncommon or non-default compression parameters.\n\n# Impact:\n\nThe out-of-bounds write may result in memory corruption and an\napplication crash or kernel panic.\n",
+    "id": "FreeBSD-2022-0075",
+    "modified": "2022-04-07T00:00:00Z",
+    "published": "2022-04-07T00:00:00Z",
+    "references": [
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2018-25032"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://www.freebsd.org/security/advisories/FreeBSD-SA-22:08.zlib.asc"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "FreeBSD -- zlib compression out-of-bounds write"
+}

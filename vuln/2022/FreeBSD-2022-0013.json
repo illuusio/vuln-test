@@ -1,0 +1,64 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "strongswan"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "5.9.4"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "cite": [
+            "https://github.com/strongswan/strongswan/releases/tag/5.9.4"
+        ],
+        "discovery": "2021-10-04T00:00:00Z",
+        "references": {
+            "cvename": [
+                "CVE-2021-41990",
+                "CVE-2021-41991"
+            ]
+        },
+        "vid": "58528a94-5100-4208-a04d-edc01598cf01"
+    },
+    "details": "Strongswan Release Notes reports:\n\n> Fixed a denial-of-service vulnerability in the gmp plugin that was\n> caused by an integer overflow when processing RSASSA-PSS signatures\n> with very large salt lengths. This vulnerability has been registered\n> as CVE-2021-41990.\n>\n> Fixed a denial-of-service vulnerability in the in-memory certificate\n> cache if certificates are replaced and a very large random value\n> caused an integer overflow. This vulnerability has been registered as\n> CVE-2021-41991.\n",
+    "id": "FreeBSD-2022-0013",
+    "modified": "2022-01-25T00:00:00Z",
+    "published": "2022-01-25T00:00:00Z",
+    "references": [
+        {
+            "type": "REPORT",
+            "url": "https://github.com/strongswan/strongswan/releases/tag/5.9.4"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2021-41990"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2021-41991"
+        },
+        {
+            "type": "WEB",
+            "url": "https://www.strongswan.org/blog/2021/10/18/strongswan-vulnerability-(cve-2021-41990).html"
+        },
+        {
+            "type": "WEB",
+            "url": "https://www.strongswan.org/blog/2021/10/18/strongswan-vulnerability-(cve-2021-41991).html"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "strongswan - denial-of-service vulnerability in the gmp plugin/denial-of-service vulnerability in the in-memory certificate cache"
+}

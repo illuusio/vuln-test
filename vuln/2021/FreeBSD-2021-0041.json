@@ -1,0 +1,74 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "asterisk16"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "introduced": "16.15.0"
+                        },
+                        {
+                            "fixed": "16.16.1"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        },
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "asterisk18"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "introduced": "18.1.0"
+                        },
+                        {
+                            "fixed": "18.2.1"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "cite": [
+            "https://www.asterisk.org/downloads/security-advisories"
+        ],
+        "discovery": "2021-02-05T00:00:00Z",
+        "references": {
+            "cvename": [
+                "CVE-2021-26717"
+            ]
+        },
+        "vid": "e3894955-7227-11eb-8386-001999f8d30b"
+    },
+    "details": "The Asterisk project reports:\n\n> When re-negotiating for T.38 if the initial remote response was\n> delayed just enough Asterisk would send both audio and T.38 in the\n> SDP. If this happened, and the remote responded with a declined T.38\n> stream then Asterisk would crash.\n",
+    "id": "FreeBSD-2021-0041",
+    "modified": "2021-02-18T00:00:00Z",
+    "published": "2021-02-18T00:00:00Z",
+    "references": [
+        {
+            "type": "REPORT",
+            "url": "https://www.asterisk.org/downloads/security-advisories"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2021-26717"
+        },
+        {
+            "type": "WEB",
+            "url": "https://downloads.asterisk.org/pub/security/AST-2021-002.html"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "asterisk -- Remote crash possible when negotiating T.38"
+}

@@ -1,0 +1,74 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "libnghttp2"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "introduced": "1.10.0"
+                        },
+                        {
+                            "fixed": "1.31.1"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        },
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "nghttp2"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "introduced": "1.10.0"
+                        },
+                        {
+                            "fixed": "1.31.1"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "cite": [
+            "https://nghttp2.org/blog/2018/04/12/nghttp2-v1-31-1/"
+        ],
+        "discovery": "2018-04-04T00:00:00Z",
+        "references": {
+            "cvename": [
+                "CVE-2018-1000168"
+            ]
+        },
+        "vid": "1fccb25e-8451-438c-a2b9-6a021e4d7a31"
+    },
+    "details": "nghttp2 blog:\n\n> If ALTSVC frame is received by libnghttp2 and it is larger than it can\n> accept, the pointer field which points to ALTSVC frame payload is left\n> NULL. Later libnghttp2 attempts to access another field through the\n> pointer, and gets segmentation fault.\n>\n> ALTSVC frame is defined by RFC 7838.\n>\n> The largest frame size libnghttp2 accept is by default 16384 bytes.\n>\n> Receiving ALTSVC frame is disabled by default. Application has to\n> enable it explicitly by calling\n> nghttp2_option_set_builtin_recv_extension_type(opt, NGHTTP2_ALTSVC).\n>\n> Transmission of ALTSVC is always enabled, and it does not cause this\n> vulnerability.\n>\n> ALTSVC frame is expected to be sent by server, and received by client\n> as defined in RFC 7838.\n>\n> Client and server are both affected by this vulnerability if the\n> reception of ALTSVC frame is enabled. As written earlier, it is\n> useless to enable reception of ALTSVC frame on server side. So, server\n> is generally safe unless application accidentally enabled the\n> reception of ALTSVC frame.\n",
+    "id": "FreeBSD-2018-0106",
+    "modified": "2018-04-13T00:00:00Z",
+    "published": "2018-04-13T00:00:00Z",
+    "references": [
+        {
+            "type": "REPORT",
+            "url": "https://nghttp2.org/blog/2018/04/12/nghttp2-v1-31-1/"
+        },
+        {
+            "type": "WEB",
+            "url": "https://nghttp2.org/blog/2018/04/12/nghttp2-v1-31-1/"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2018-1000168"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "nghttp2 -- Denial of service due to NULL pointer dereference"
+}

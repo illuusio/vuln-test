@@ -1,0 +1,84 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "go118"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "1.18.9"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        },
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "go119"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "1.19.4"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "cite": [
+            "https://go.dev/issue/56694",
+            "https://go.dev/issue/56350"
+        ],
+        "discovery": "2022-10-20T00:00:00Z",
+        "references": {
+            "cvename": [
+                "CVE-2022-41720",
+                "CVE-2022-41717"
+            ]
+        },
+        "vid": "6f5192f5-75a7-11ed-83c0-411d43ce7fe4"
+    },
+    "details": "The Go project reports:\n\n> os, net/http: avoid escapes from os.DirFS and http.Dir on Windows\n>\n> The os.DirFS function and http.Dir type provide access to a tree of\n> files rooted at a given directory. These functions permitted access to\n> Windows device files under that root. For example,\n> os.DirFS(\\\"C:/tmp\\\").Open(\\\"COM1\\\") would open the COM1 device. Both\n> os.DirFS and http.Dir only provide read-only filesystem access.\n>\n> In addition, on Windows, an os.DirFS for the directory \\\\(the root of\n> the current drive) can permit a maliciously crafted path to escape\n> from the drive and access any path on the system.\n>\n> The behavior of os.DirFS(\\\"\\\") has changed. Previously, an empty root\n> was treated equivalently to \\\"/\\\", so os.DirFS(\\\"\\\").Open(\\\"tmp\\\")\n> would open the path \\\"/tmp\\\". This now returns an error.\n\n> net/http: limit canonical header cache by bytes, not entries\n>\n> An attacker can cause excessive memory growth in a Go server accepting\n> HTTP/2 requests. HTTP/2 server connections contain a cache of HTTP\n> header keys sent by the client. While the total number of entries in\n> this cache is capped, an attacker sending very large keys can cause\n> the server to allocate approximately 64 MiB per open connection.\n",
+    "id": "FreeBSD-2022-0238",
+    "modified": "2022-12-06T00:00:00Z",
+    "published": "2022-12-06T00:00:00Z",
+    "references": [
+        {
+            "type": "REPORT",
+            "url": "https://go.dev/issue/56694"
+        },
+        {
+            "type": "REPORT",
+            "url": "https://go.dev/issue/56350"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2022-41720"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2022-41717"
+        },
+        {
+            "type": "WEB",
+            "url": "https://groups.google.com/g/golang-dev/c/G9Jj4cO4Gpk/m/kOkLVG6TAgAJ"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "go -- multiple vulnerabilities"
+}

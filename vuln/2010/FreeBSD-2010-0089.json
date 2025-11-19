@@ -1,0 +1,50 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "quagga"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "0.99.17"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "cite": [
+            "http://www.openwall.com/lists/oss-security/2010/08/24/3"
+        ],
+        "discovery": "2010-08-24T00:00:00Z",
+        "vid": "167953a4-b01c-11df-9a98-0015587e2cc1"
+    },
+    "details": "The Red Hat security team reported two vulnerabilities:\n\n> A stack buffer overflow flaw was found in the way Quagga\\'s bgpd\n> daemon processed Route-Refresh messages. A configured Border Gateway\n> Protocol (BGP) peer could send a Route-Refresh message with\n> specially-crafted Outbound Route Filtering (ORF) record, which would\n> cause the master BGP daemon (bgpd) to crash or, possibly, execute\n> arbitrary code with the privileges of the user running bgpd.\n>\n> A NULL pointer dereference flaw was found in the way Quagga\\'s bgpd\n> daemon parsed paths of autonomous systems (AS). A configured BGP peer\n> could send a BGP update AS path request with unknown AS type, which\n> could lead to denial of service (bgpd daemon crash).\n",
+    "id": "FreeBSD-2010-0089",
+    "modified": "2010-08-25T00:00:00Z",
+    "published": "2010-08-25T00:00:00Z",
+    "references": [
+        {
+            "type": "REPORT",
+            "url": "http://www.openwall.com/lists/oss-security/2010/08/24/3"
+        },
+        {
+            "type": "WEB",
+            "url": "http://www.openwall.com/lists/oss-security/2010/08/24/3"
+        },
+        {
+            "type": "WEB",
+            "url": "http://www.quagga.net/news2.php?y=2010&m=8&d=19#id1282241100"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "quagga -- stack overflow and DoS vulnerabilities"
+}

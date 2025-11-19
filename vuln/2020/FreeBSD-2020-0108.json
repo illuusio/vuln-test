@@ -1,0 +1,73 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:kernel",
+                "name": "FreeBSD-kernel"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "introduced": "12.1"
+                        },
+                        {
+                            "fixed": "12.1_5"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                },
+                {
+                    "events": [
+                        {
+                            "introduced": "11.4"
+                        },
+                        {
+                            "fixed": "11.4_1"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                },
+                {
+                    "events": [
+                        {
+                            "introduced": "11.3"
+                        },
+                        {
+                            "fixed": "11.3_9"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "discovery": "2020-05-12T00:00:00Z",
+        "references": {
+            "cvename": [
+                "CVE-2020-7455"
+            ],
+            "freebsdsa": [
+                "SA-20:13.libalias"
+            ]
+        },
+        "vid": "78992249-947c-11ea-92ab-00163e433440"
+    },
+    "details": "# Problem Description:\n\nThe FTP packet handler in libalias incorrectly calculates some packet\nlengths. This may result in disclosing small amounts of memory from the\nkernel (for the in-kernel NAT implementation) or from the process space\nfor natd (for the userspace implementation).\n\n# Impact:\n\nA malicious attacker could send specially constructed packets that\nexploit the erroneous calculation allowing the attacker to disclose\nsmall amount of memory either from the kernel (for the in-kernel NAT\nimplementation) or from the process space for natd (for the userspace\nimplementation).\n",
+    "id": "FreeBSD-2020-0108",
+    "modified": "2020-05-12T00:00:00Z",
+    "published": "2020-05-12T00:00:00Z",
+    "references": [
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2020-7455"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://www.freebsd.org/security/advisories/FreeBSD-SA-20:13.libalias.asc"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "FreeBSD -- Memory disclosure vulnerability in libalias"
+}

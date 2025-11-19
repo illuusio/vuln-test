@@ -1,0 +1,55 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "kanboard"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "1.2.45"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "cite": [
+            "null"
+        ],
+        "discovery": "2025-06-26T00:00:00Z",
+        "references": {
+            "cvename": [
+                "CVE-2025-52560"
+            ]
+        },
+        "vid": "e26608ff-5266-11f0-b522-b42e991fc52e"
+    },
+    "details": "GitHub Security Advisories reports:\n\n> Kanboard allows password reset emails to be sent with URLs derived\n> from the unvalidated Host header when the application_url\n> configuration is unset (default behavior). This allows an attacker to\n> craft a malicious password reset link that leaks the token to an\n> attacker-controlled domain. If a victim (including an administrator)\n> clicks the poisoned link, their account can be taken over. This\n> affects all users who initiate a password reset while application_url\n> is not set.\n",
+    "id": "FreeBSD-2025-0197",
+    "modified": "2025-06-26T00:00:00Z",
+    "published": "2025-06-26T00:00:00Z",
+    "references": [
+        {
+            "type": "REPORT",
+            "url": "null"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2025-52560"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://nvd.nist.gov/vuln/detail/CVE-2025-52560"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "kanboard -- Password Reset Poisoning via Host Header Injection"
+}

@@ -1,0 +1,98 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "krb5"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "1.13.1"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        },
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "krb5-112"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "1.12.2_2"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        },
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "krb5-111"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "1.11.5_5"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "cite": [
+            "http://web.mit.edu/kerberos/advisories/MITKRB5-SA-2015-001.txt"
+        ],
+        "discovery": "2015-02-12T00:00:00Z",
+        "references": {
+            "cvename": [
+                "CVE-2014-5353",
+                "CVE-2014-5354"
+            ]
+        },
+        "vid": "3a888a1e-b321-11e4-83b2-206a8a720317"
+    },
+    "details": "The MIT Kerberos team reports:\n\n> CVE-2014-5353: The krb5_ldap_get_password_policy_from_dn function in\n> plugins/kdb/ldap/libkdb_ldap/ldap_pwd_policy.c in MIT Kerberos 5 (aka\n> krb5) before 1.13.1, when the KDC uses LDAP, allows remote\n> authenticated users to cause a denial of service (daemon crash) via a\n> successful LDAP query with no results, as demonstrated by using an\n> incorrect object type for a password policy.\n>\n> CVE-2014-5354: plugins/kdb/ldap/libkdb_ldap/ldap_principal2.c in MIT\n> Kerberos 5 (aka krb5) 1.12.x and 1.13.x before 1.13.1, when the KDC\n> uses LDAP, allows remote authenticated users to cause a denial of\n> service (NULL pointer dereference and daemon crash) by creating a\n> database entry for a keyless principal, as demonstrated by a kadmin\n> \\\"add_principal -nokey\\\" or \\\"purgekeys -all\\\" command.\n",
+    "id": "FreeBSD-2015-0031",
+    "modified": "2015-02-13T00:00:00Z",
+    "published": "2015-02-12T00:00:00Z",
+    "references": [
+        {
+            "type": "REPORT",
+            "url": "http://web.mit.edu/kerberos/advisories/MITKRB5-SA-2015-001.txt"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2014-5353"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2014-5354"
+        },
+        {
+            "type": "WEB",
+            "url": "http://web.mit.edu/kerberos/advisories/MITKRB5-SA-2015-001.txt"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "krb5 -- Vulnerabilities in kadmind, libgssrpc, gss_process_context_token VU#540092"
+}

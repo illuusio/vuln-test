@@ -1,0 +1,74 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "clamav"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "introduced": "0.88.1"
+                        },
+                        {
+                            "fixed": "0.88.4"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        },
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "clamav-devel"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "20060808"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "cite": [
+            "http://www.clamav.net/security/0.88.4.html"
+        ],
+        "discovery": "2006-08-07T00:00:00Z",
+        "references": {
+            "cvename": [
+                "CVE-2006-4018"
+            ]
+        },
+        "vid": "342d2e48-26db-11db-9275-000475abc56f"
+    },
+    "details": "Clamav team reports:\n\n> A heap overflow vulnerability was discovered in libclamav which could\n> cause a denial of service or allow the execution of arbitrary code.\n>\n> The problem is specifically located in the PE file rebuild function\n> used by the UPX unpacker.\n>\n> Relevant code from libclamav/upx.c:\n>\n> memcpy(dst, newbuf, foffset); \\*dsize = foffset; free(newbuf);\n> cli_dbgmsg(\\\"UPX: PE structure rebuilt from compressed file\\\\n\\\");\n> return 1;\n>\n> Due to improper validation it is possible to overflow the above\n> memcpy() beyond the allocated memory block.\n",
+    "id": "FreeBSD-2006-0137",
+    "modified": "2006-08-08T00:00:00Z",
+    "published": "2006-08-08T00:00:00Z",
+    "references": [
+        {
+            "type": "REPORT",
+            "url": "http://www.clamav.net/security/0.88.4.html"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2006-4018"
+        },
+        {
+            "type": "WEB",
+            "url": "http://www.clamav.net/security/0.88.4.html"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "clamav -- heap overflow vulnerability"
+}

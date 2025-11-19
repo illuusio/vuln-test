@@ -1,0 +1,55 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "dhcpcd"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "6.9.1"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "cite": [
+            "http://www.cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2014-7912"
+        ],
+        "discovery": "2015-06-19T00:00:00Z",
+        "references": {
+            "cvename": [
+                "CVE-2014-7912"
+            ]
+        },
+        "vid": "092156c9-04d7-11e6-b1ce-002590263bf5"
+    },
+    "details": "MITRE reports:\n\n> The get_option function in dhcp.c in dhcpcd before 6.2.0, as used in\n> dhcpcd 5.x in Android before 5.1 and other products, does not validate\n> the relationship between length fields and the amount of data, which\n> allows remote DHCP servers to execute arbitrary code or cause a denial\n> of service (memory corruption) via a large length value of an option\n> in a DHCPACK message.\n",
+    "id": "FreeBSD-2016-0183",
+    "modified": "2016-04-17T00:00:00Z",
+    "published": "2016-04-17T00:00:00Z",
+    "references": [
+        {
+            "type": "REPORT",
+            "url": "http://www.cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2014-7912"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2014-7912"
+        },
+        {
+            "type": "WEB",
+            "url": "http://roy.marples.name/projects/dhcpcd/info/d71cfd8aa203bffe"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "dhcpcd -- remote code execution/denial of service"
+}

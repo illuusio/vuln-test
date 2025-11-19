@@ -1,0 +1,65 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "dovecot"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "2.3.10.1"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "cite": [
+            "https://dovecot.org/pipermail/dovecot-news/2020-May/000438.html"
+        ],
+        "discovery": "2020-04-02T00:00:00Z",
+        "references": {
+            "cvename": [
+                "CVE-2020-10957",
+                "CVE-2020-10958",
+                "CVE-2020-10967"
+            ]
+        },
+        "vid": "37d106a8-15a4-483e-8247-fcb68b16eaf8"
+    },
+    "details": "Aki Tuomi reports:\n\n> Vulnerability Details: Sending malformed NOOP command causes crash in\n> submission, submission-login or lmtp service. Risk: Remote attacker\n> can keep submission-login service down, causing denial of service\n> attack. For lmtp the risk is neglible, as lmtp is usually behind a\n> trusted MTA. Steps to reproduce: Send \\`\\`NOOP EE\\\"FY\\`\\` to\n> submission port, or similarly malformed command.\n>\n> Vulnerability Details: Sending command followed by sufficient number\n> of newlines triggers a use-after-free bug that might crash\n> submission-login, submission or lmtp service. Risk: Remote attacker\n> can keep submission-login service down, causing denial of service\n> attack. For lmtp the risk is neglible, as lmtp is usually behind a\n> trusted MTA. Steps to reproduce: This can be currently reproduced with\n> ASAN or Valgrind. Reliable way to crash has not yet been discovered.\n>\n> Vulnerability Details: Sending mail with empty quoted localpart causes\n> submission or lmtp component to crash. Risk: Malicious actor can cause\n> denial of service to mail delivery by repeatedly sending mails with\n> bad sender or recipient address. Steps to reproduce: Send mail with\n> envelope sender or recipient as \\<\\\"\\\"@example.org\\>. Workaround: For\n> submission there is no workaround, but triggering the bug requires\n> valid credentials. For lmtp, one can implement sufficient filtering on\n> MTA level to prevent mails with such addresses from ending up in LMTP\n> delivery.\n",
+    "id": "FreeBSD-2020-0117",
+    "modified": "2020-05-18T00:00:00Z",
+    "published": "2020-05-18T00:00:00Z",
+    "references": [
+        {
+            "type": "REPORT",
+            "url": "https://dovecot.org/pipermail/dovecot-news/2020-May/000438.html"
+        },
+        {
+            "type": "WEB",
+            "url": "https://dovecot.org/pipermail/dovecot-news/2020-May/000438.html"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2020-10957"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2020-10958"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2020-10967"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "Dovecot -- Multiple vulnerabilities"
+}

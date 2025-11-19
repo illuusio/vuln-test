@@ -1,0 +1,104 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "apache-openoffice"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "4.1.11"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        },
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "apache-openoffice-devel"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "4.2.1633255994,4"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "cite": [
+            "https://cve.mitre.org/cgi-bin/cvename.cgi?name=2021-33035",
+            "https://cve.mitre.org/cgi-bin/cvename.cgi?name=2021-41830",
+            "https://cve.mitre.org/cgi-bin/cvename.cgi?name=2021-41831",
+            "https://cve.mitre.org/cgi-bin/cvename.cgi?name=2021-41832"
+        ],
+        "discovery": "2021-05-04T00:00:00Z",
+        "references": {
+            "cvename": [
+                "CVE-2021-33035",
+                "CVE-2021-41830",
+                "CVE-2021-41831",
+                "CVE-2021-41832"
+            ]
+        },
+        "vid": "04d2cf7f-2942-11ec-b48c-1c1b0d9ea7e6"
+    },
+    "details": "The Apache Openoffice project reports:\n\n> Apache OpenOffice opens dBase/DBF documents and shows the contents as\n> spreadsheets. DBF are database files with data organized in fields.\n> When reading DBF data the size of certain fields is not checked: the\n> data is just copied into local variables. A carefully crafted document\n> could overflow the allocated space, leading to the execution of\n> arbitrary code by altering the contents of the program stack. This\n> issue affects Apache OpenOffice up to and including version 4.1.10\n\n> It is possible for an attacker to manipulate signed documents and\n> macros to appear to come from a trusted source. All versions of Apache\n> OpenOffice up to 4.1.10 are affected. Users are advised to update to\n> version 4.1.11. See CVE-2021-25633 for the LibreOffice advisory\n\n> It is possible for an attacker to manipulate the timestamp of signed\n> documents. All versions of Apache OpenOffice up to 4.1.10 are\n> affected. Users are advised to update to version 4.1.11. See\n> CVE-2021-25634 for the LibreOffice advisory.\n\n> It is possible for an attacker to manipulate documents to appear to be\n> signed by a trusted source. All versions of Apache OpenOffice up to\n> 4.1.10 are affected. Users are advised to update to version 4.1.11.\n> See CVE-2021-25635 for the LibreOffice advisory.\n",
+    "id": "FreeBSD-2021-0253",
+    "modified": "2021-10-09T00:00:00Z",
+    "published": "2021-10-09T00:00:00Z",
+    "references": [
+        {
+            "type": "REPORT",
+            "url": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=2021-33035"
+        },
+        {
+            "type": "REPORT",
+            "url": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=2021-41830"
+        },
+        {
+            "type": "REPORT",
+            "url": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=2021-41831"
+        },
+        {
+            "type": "REPORT",
+            "url": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=2021-41832"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2021-33035"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2021-41830"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2021-41831"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2021-41832"
+        },
+        {
+            "type": "WEB",
+            "url": "https://cwiki.apache.org/confluence/display/OOOUSERS/AOO+4.1.11+Release+Notes/#AOO4.1.11ReleaseNotes-Security"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "Apache OpenOffice -- multiple vulnerabilities."
+}

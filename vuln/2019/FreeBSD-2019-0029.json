@@ -1,0 +1,55 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "dovecot"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "2.3.4.1"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "cite": [
+            "https://www.mail-archive.com/dovecot@dovecot.org/msg76117.html"
+        ],
+        "discovery": "2019-01-16T00:00:00Z",
+        "references": {
+            "cvename": [
+                "CVE-2019-3814"
+            ]
+        },
+        "vid": "1340fcc1-2953-11e9-bc44-a4badb296695"
+    },
+    "details": "Aki Tuomi (Open-Xchange Oy) reports:\n\n> Normally Dovecot is configured to authenticate\n> imap/pop3/managesieve/submission clients using regular\n> username/password combination. Some installations have also required\n> clients to present a trusted SSL certificate on top of that. It\\'s\n> also possible to configure Dovecot to take the username from the\n> certificate instead of from the user provided authentication. It\\'s\n> also possible to avoid having a password at all, only trusting the SSL\n> certificate. If the provided trusted SSL certificate is missing the\n> username field, Dovecot should be failing the authentication. However,\n> the earlier versions will take the username from the user provided\n> authentication fields (e.g. LOGIN command). If there is no additional\n> password verification, this allows the attacker to login as anyone\n> else in the system. This affects only installations using:\n> auth_ssl_require_client_cert = yes auth_ssl_username_from_cert = yes\n> Attacker must also have access to a valid trusted certificate without\n> the ssl_cert_username_field in it. The default is commonName, which\n> almost certainly exists in all certificates. This could happen for\n> example if ssl_cert_username_field is a field that normally doesn\\'t\n> exist, and attacker has access to a web server\\'s certificate (and\n> key), which is signed with the same CA. Attack can be migitated by\n> having the certificates with proper Extended Key Usage, such as \\'TLS\n> Web Server\\' and \\'TLS Web Server Client\\'. Also,\n> ssl_cert_username_field setting was ignored with external SMTP AUTH,\n> because none of the MTAs (Postfix, Exim) currently send the\n> cert_username field. This may have allowed users with trusted\n> certificate to specify any username in the authentication. This does\n> not apply to Dovecot Submission service.\n",
+    "id": "FreeBSD-2019-0029",
+    "modified": "2019-02-05T00:00:00Z",
+    "published": "2019-02-05T00:00:00Z",
+    "references": [
+        {
+            "type": "REPORT",
+            "url": "https://www.mail-archive.com/dovecot@dovecot.org/msg76117.html"
+        },
+        {
+            "type": "WEB",
+            "url": "https://www.mail-archive.com/dovecot@dovecot.org/msg76117.html"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2019-3814"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "mail/dovecot -- Suitable client certificate can be used to login as other user"
+}

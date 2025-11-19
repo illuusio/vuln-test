@@ -1,0 +1,95 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:kernel",
+                "name": "FreeBSD-kernel"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "introduced": "11.0"
+                        },
+                        {
+                            "fixed": "11.0_2"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                },
+                {
+                    "events": [
+                        {
+                            "introduced": "10.3"
+                        },
+                        {
+                            "fixed": "10.3_11"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                },
+                {
+                    "events": [
+                        {
+                            "introduced": "10.2"
+                        },
+                        {
+                            "fixed": "10.2_24"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                },
+                {
+                    "events": [
+                        {
+                            "introduced": "10.1"
+                        },
+                        {
+                            "fixed": "10.1_41"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                },
+                {
+                    "events": [
+                        {
+                            "introduced": "9.3"
+                        },
+                        {
+                            "fixed": "9.3_49"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "discovery": "2016-03-16T00:00:00Z",
+        "references": {
+            "cvename": [
+                "CVE-2016-1885"
+            ],
+            "freebsdsa": [
+                "SA-16:15.sysarch"
+            ]
+        },
+        "vid": "7b6a11b5-600a-11e6-a6c3-14dae9d210b8"
+    },
+    "details": "# Problem Description:\n\nA special combination of sysarch(2) arguments, specify a request to\nuninstall a set of descriptors from the LDT. The start descriptor is\ncleared and the number of descriptors are provided. Due to lack of\nsufficient bounds checking during argument validity verification,\nunbound zero\\'ing of the process LDT and adjacent memory can be\ninitiated from usermode.\n\n# Impact:\n\nThis vulnerability could cause the kernel to panic. In addition it is\npossible to perform a local Denial of Service against the system by\nunprivileged processes.\n",
+    "id": "FreeBSD-2016-0346",
+    "modified": "2016-10-25T00:00:00Z",
+    "published": "2016-08-11T00:00:00Z",
+    "references": [
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2016-1885"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://www.freebsd.org/security/advisories/FreeBSD-SA-16:15.sysarch.asc"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "FreeBSD -- Incorrect argument validation in sysarch(2)"
+}

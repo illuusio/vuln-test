@@ -1,0 +1,62 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "xen-kernel"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "introduced": "4.7"
+                        },
+                        {
+                            "fixed": "4.7.1"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "cite": [
+            "https://xenbits.xen.org/xsa/advisory-194.html"
+        ],
+        "discovery": "2016-11-22T00:00:00Z",
+        "references": {
+            "cvename": [
+                "CVE-2016-9384"
+            ],
+            "freebsdpr": [
+                "ports/214936"
+            ]
+        },
+        "vid": "5555120d-ba4d-11e6-ae1b-002590263bf5"
+    },
+    "details": "The Xen Project reports:\n\n> Along with their main kernel binary, unprivileged guests may arrange\n> to have their Xen environment load (kernel) symbol tables for their\n> use. The ELF image metadata created for this purpose has a few unused\n> bytes when the symbol table binary is in 32-bit ELF format. These\n> unused bytes were not properly cleared during symbol table loading.\n>\n> A malicious unprivileged guest may be able to obtain sensitive\n> information from the host.\n>\n> The information leak is small and not under the control of the guest,\n> so effectively exploiting this vulnerability is probably difficult.\n",
+    "id": "FreeBSD-2016-0455",
+    "modified": "2016-12-04T00:00:00Z",
+    "published": "2016-12-04T00:00:00Z",
+    "references": [
+        {
+            "type": "REPORT",
+            "url": "https://xenbits.xen.org/xsa/advisory-194.html"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2016-9384"
+        },
+        {
+            "type": "REPORT",
+            "url": "https://bugs.freebsd.org/bugzilla/show_bug.cgi?id=214936"
+        },
+        {
+            "type": "WEB",
+            "url": "https://xenbits.xen.org/xsa/advisory-194.html"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "xen-kernel -- guest 32-bit ELF symbol table load leaking host data"
+}

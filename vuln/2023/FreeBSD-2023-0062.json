@@ -1,0 +1,141 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "emacs"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "28.2_3,3"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        },
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "emacs-canna"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "28.2_3,3"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        },
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "emacs-nox"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "28.2_3,3"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        },
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "emacs-devel"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "30.0.50.20230101,3"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        },
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "emacs-devel-nox"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "30.0.50.20230101,3"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "cite": [
+            "https://www.debian.org/security/2023/dsa-5360"
+        ],
+        "discovery": "2022-12-06T00:00:00Z",
+        "references": {
+            "cvename": [
+                "CVE-2022-48337",
+                "CVE-2022-48338",
+                "CVE-2022-48339"
+            ]
+        },
+        "vid": "a75929bd-b6a4-11ed-bad6-080027f5fec9"
+    },
+    "details": "Xi Lu reports:\n\n> \n>\n> CVE-2022-48337\n> :   GNU Emacs through 28.2 allows attackers to execute commands via\n>     shell metacharacters in the name of a source-code file, because\n>     lib-src/etags.c uses the system C library function in its\n>     implementation of the etags program. For example, a victim may use\n>     the \\\"etags -u \\*\\\" command (suggested in the etags documentation)\n>     in a situation where the current working directory has contents\n>     that depend on untrusted input.\n>\n> CVE-2022-48338\n> :   An issue was discovered in GNU Emacs through 28.2. In\n>     ruby-mode.el, the ruby-find-library-file function has a local\n>     command injection vulnerability. The ruby-find-library-file\n>     function is an interactive function, and bound to C-c C-f. Inside\n>     the function, the external command gem is called through\n>     shell-command-to-string, but the feature-name parameters are not\n>     escaped. Thus, malicious Ruby source files may cause commands to\n>     be executed.\n>\n> CVE-2022-48339\n> :   An issue was discovered in GNU Emacs through 28.2. htmlfontify.el\n>     has a command injection vulnerability. In the hfy-istext-command\n>     function, the parameter file and parameter srcdir come from\n>     external input, and parameters are not escaped. If a file name or\n>     directory name contains shell metacharacters, code may be\n>     executed.\n",
+    "id": "FreeBSD-2023-0062",
+    "modified": "2023-02-27T00:00:00Z",
+    "published": "2023-02-27T00:00:00Z",
+    "references": [
+        {
+            "type": "REPORT",
+            "url": "https://www.debian.org/security/2023/dsa-5360"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2022-48337"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2022-48338"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2022-48339"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://www.debian.org/security/2023/dsa-5360"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "emacs -- multiple vulnerabilities"
+}

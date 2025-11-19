@@ -1,0 +1,86 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "squid"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "3.5.17"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "cite": [
+            "http://www.squid-cache.org/Advisories/SQUID-2016_5.txt",
+            "http://www.squid-cache.org/Advisories/SQUID-2016_6.txt"
+        ],
+        "discovery": "2016-04-20T00:00:00Z",
+        "references": {
+            "cvename": [
+                "CVE-2016-4051",
+                "CVE-2016-4052",
+                "CVE-2016-4053",
+                "CVE-2016-4054"
+            ],
+            "freebsdpr": [
+                "ports/208939"
+            ]
+        },
+        "vid": "e05bfc92-0763-11e6-94fa-002590263bf5"
+    },
+    "details": "Squid security advisory 2016:5 reports:\n\n> Due to incorrect buffer management Squid cachemgr.cgi tool is\n> vulnerable to a buffer overflow when processing remotely supplied\n> inputs relayed to it from Squid.\n>\n> This problem allows any client to seed the Squid manager reports with\n> data that will cause a buffer overflow when processed by the\n> cachemgr.cgi tool. However, this does require manual administrator\n> actions to take place. Which greatly reduces the impact and possible\n> uses.\n\nSquid security advisory 2016:6 reports:\n\n> Due to buffer overflow issues Squid is vulnerable to a denial of\n> service attack when processing ESI responses. Due to incorrect input\n> validation Squid is vulnerable to public information disclosure of the\n> server stack layout when processing ESI responses. Due to incorrect\n> input validation and buffer overflow Squid is vulnerable to remote\n> code execution when processing ESI responses.\n>\n> These problems allow ESI components to be used to perform a denial of\n> service attack on the Squid service and all other services on the same\n> machine. Under certain build conditions these problems allow remote\n> clients to view large sections of the server memory. However, the bugs\n> are exploitable only if you have built and configured the ESI features\n> to be used by a reverse-proxy and if the ESI components being\n> processed by Squid can be controlled by an attacker.\n",
+    "id": "FreeBSD-2016-0188",
+    "modified": "2016-04-21T00:00:00Z",
+    "published": "2016-04-21T00:00:00Z",
+    "references": [
+        {
+            "type": "REPORT",
+            "url": "http://www.squid-cache.org/Advisories/SQUID-2016_5.txt"
+        },
+        {
+            "type": "REPORT",
+            "url": "http://www.squid-cache.org/Advisories/SQUID-2016_6.txt"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2016-4051"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2016-4052"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2016-4053"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2016-4054"
+        },
+        {
+            "type": "REPORT",
+            "url": "https://bugs.freebsd.org/bugzilla/show_bug.cgi?id=208939"
+        },
+        {
+            "type": "WEB",
+            "url": "http://www.squid-cache.org/Advisories/SQUID-2016_5.txt"
+        },
+        {
+            "type": "WEB",
+            "url": "http://www.squid-cache.org/Advisories/SQUID-2016_6.txt"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "squid -- multiple vulnerabilities"
+}

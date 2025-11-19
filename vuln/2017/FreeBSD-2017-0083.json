@@ -1,0 +1,50 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "asterisk13"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "13.14.1"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "cite": [
+            "http://www.asterisk.org/downloads/security-advisories"
+        ],
+        "discovery": "2017-03-27T00:00:00Z",
+        "vid": "356b02e9-1954-11e7-9608-001999f8d30b"
+    },
+    "details": "The Asterisk project reports:\n\n> No size checking is done when setting the user field on a CDR. Thus,\n> it is possible for someone to use an arbitrarily large string and\n> write past the end of the user field storage buffer. This allows the\n> possibility of remote code injection.\n",
+    "id": "FreeBSD-2017-0083",
+    "modified": "2017-04-04T00:00:00Z",
+    "published": "2017-04-04T00:00:00Z",
+    "references": [
+        {
+            "type": "REPORT",
+            "url": "http://www.asterisk.org/downloads/security-advisories"
+        },
+        {
+            "type": "WEB",
+            "url": "http://downloads.asterisk.org/pub/security/AST-2017-001.html"
+        },
+        {
+            "type": "WEB",
+            "url": "https://issues.asterisk.org/jira/browse/ASTERISK-26897"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "asterisk -- Buffer overflow in CDR's set user"
+}

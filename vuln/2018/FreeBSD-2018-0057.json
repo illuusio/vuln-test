@@ -1,0 +1,99 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "squid"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "3.5.27_3"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        },
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "squid-devel"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "4.0.23"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "cite": [
+            "http://www.squid-cache.org/Advisories/SQUID-2018_1.txt",
+            "http://www.squid-cache.org/Advisories/SQUID-2018_2.txt"
+        ],
+        "discovery": "2017-12-13T00:00:00Z",
+        "references": {
+            "cvename": [
+                "CVE-2018-1000024",
+                "CVE-2018-1000027"
+            ],
+            "freebsdpr": [
+                "ports/226138"
+            ]
+        },
+        "vid": "d5b6d151-1887-11e8-94f7-9c5c8e75236a"
+    },
+    "details": "Louis Dion-Marcil reports:\n\n> Due to incorrect pointer handling Squid is vulnerable to denial of\n> service attack when processing ESI responses.\n>\n> This problem allows a remote server delivering certain ESI response\n> syntax to trigger a denial of service for all clients accessing the\n> Squid service.\n>\n> Due to unrelated changes Squid-3.5 has become vulnerable to some\n> regular ESI server responses also triggering this issue.\n>\n> This problem is limited to the Squid custom ESI parser. Squid built to\n> use libxml2 or libexpat XML parsers do not have this problem.\n\n> Due to incorrect pointer handling Squid is vulnerable to denial of\n> service attack when processing ESI responses or downloading\n> intermediate CA certificates.\n>\n> This problem allows a remote client delivering certain HTTP requests\n> in conjunction with certain trusted server responses to trigger a\n> denial of service for all clients accessing the Squid service.\n",
+    "id": "FreeBSD-2018-0057",
+    "modified": "2018-02-23T00:00:00Z",
+    "published": "2018-02-23T00:00:00Z",
+    "references": [
+        {
+            "type": "REPORT",
+            "url": "http://www.squid-cache.org/Advisories/SQUID-2018_1.txt"
+        },
+        {
+            "type": "REPORT",
+            "url": "http://www.squid-cache.org/Advisories/SQUID-2018_2.txt"
+        },
+        {
+            "type": "WEB",
+            "url": "http://www.squid-cache.org/Advisories/SQUID-2018_1.txt"
+        },
+        {
+            "type": "WEB",
+            "url": "http://www.squid-cache.org/Advisories/SQUID-2018_2.txt"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2018-1000024"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2018-1000027"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://www.debian.org/security/2018/dsa-4122"
+        },
+        {
+            "type": "REPORT",
+            "url": "https://bugs.freebsd.org/bugzilla/show_bug.cgi?id=226138"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "squid -- Vulnerable to Denial of Service attack"
+}

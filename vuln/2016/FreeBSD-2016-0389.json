@@ -1,0 +1,88 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "FreeBSD"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "introduced": "11.0"
+                        },
+                        {
+                            "fixed": "11.0_1"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                },
+                {
+                    "events": [
+                        {
+                            "introduced": "10.3"
+                        },
+                        {
+                            "fixed": "10.3_10"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                },
+                {
+                    "events": [
+                        {
+                            "introduced": "10.2"
+                        },
+                        {
+                            "fixed": "10.2_23"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                },
+                {
+                    "events": [
+                        {
+                            "introduced": "10.1"
+                        },
+                        {
+                            "fixed": "10.1_40"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                },
+                {
+                    "events": [
+                        {
+                            "introduced": "9.3"
+                        },
+                        {
+                            "fixed": "9.3_48"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "discovery": "2016-10-10T00:00:00Z",
+        "references": {
+            "freebsdsa": [
+                "SA-16:30.portsnap"
+            ]
+        },
+        "vid": "e7dcd69d-8ee6-11e6-a590-14dae9d210b8"
+    },
+    "details": "# Problem Description:\n\nFlaws in portsnap\\'s verification of downloaded tar files allows\nadditional files to be included without causing the verification to\nfail. Portsnap may then use or execute these files.\n\n# Impact:\n\nAn attacker who can conduct man in the middle attack on the network at\nthe time when portsnap is run can cause portsnap to execute arbitrary\ncommands under the credentials of the user who runs portsnap, typically\nroot.\n",
+    "id": "FreeBSD-2016-0389",
+    "modified": "2016-10-10T00:00:00Z",
+    "published": "2016-10-10T00:00:00Z",
+    "references": [
+        {
+            "type": "ADVISORY",
+            "url": "https://www.freebsd.org/security/advisories/FreeBSD-SA-16:30.portsnap.asc"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "FreeBSD -- Multiple portsnap vulnerabilities"
+}

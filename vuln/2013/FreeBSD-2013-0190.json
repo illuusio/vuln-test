@@ -1,0 +1,74 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "gnupg"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "1.4.16"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        },
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "gnupg1"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "1.4.16"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "cite": [
+            "http://lists.gnupg.org/pipermail/gnupg-announce/2013q4/000337.html"
+        ],
+        "discovery": "2013-12-18T00:00:00Z",
+        "references": {
+            "cvename": [
+                "CVE-2013-4576"
+            ]
+        },
+        "vid": "2e5715f8-67f7-11e3-9811-b499baab0cbe"
+    },
+    "details": "Werner Koch reports:\n\n> CVE-2013-4576 has been assigned to this security bug.\n>\n> The paper describes two attacks. The first attack allows to\n> distinguish keys: An attacker is able to notice which key is currently\n> used for decryption. This is in general not a problem but may be used\n> to reveal the information that a message, encrypted to a commonly not\n> used key, has been received by the targeted machine. We do not have a\n> software solution to mitigate this attack.\n>\n> The second attack is more serious. It is an adaptive chosen ciphertext\n> attack to reveal the private key. A possible scenario is that the\n> attacker places a sensor (for example a standard smartphone) in the\n> vicinity of the targeted machine. That machine is assumed to do\n> unattended RSA decryption of received mails, for example by using a\n> mail client which speeds up browsing by opportunistically decrypting\n> mails expected to be read soon. While listening to the acoustic\n> emanations of the targeted machine, the smartphone will send new\n> encrypted messages to that machine and re-construct the private key\n> bit by bit. A 4096 bit RSA key used on a laptop can be revealed within\n> an hour.\n",
+    "id": "FreeBSD-2013-0190",
+    "modified": "2014-04-30T00:00:00Z",
+    "published": "2013-12-18T00:00:00Z",
+    "references": [
+        {
+            "type": "REPORT",
+            "url": "http://lists.gnupg.org/pipermail/gnupg-announce/2013q4/000337.html"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2013-4576"
+        },
+        {
+            "type": "WEB",
+            "url": "http://lists.gnupg.org/pipermail/gnupg-announce/2013q4/000337.html"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "gnupg -- RSA Key Extraction via Low-Bandwidth Acoustic Cryptanalysis attack"
+}

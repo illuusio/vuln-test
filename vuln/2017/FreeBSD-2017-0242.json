@@ -1,0 +1,112 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "nss"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "introduced": "3.32"
+                        },
+                        {
+                            "fixed": "3.32.1"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                },
+                {
+                    "events": [
+                        {
+                            "introduced": "3.28"
+                        },
+                        {
+                            "fixed": "3.28.6"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        },
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "linux-c6-nss"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "introduced": "3.28"
+                        },
+                        {
+                            "fixed": "3.28.4_2"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        },
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "linux-c7-nss"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "introduced": "3.28"
+                        },
+                        {
+                            "fixed": "3.28.4_2"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "cite": [
+            "https://www.mozilla.org/en-US/security/advisories/mfsa2017-21/#CVE-2017-7805"
+        ],
+        "discovery": "2017-08-04T00:00:00Z",
+        "references": {
+            "cvename": [
+                "CVE-2017-7805"
+            ]
+        },
+        "vid": "e71fd9d3-af47-11e7-a633-009c02a2ab30"
+    },
+    "details": "Mozilla reports:\n\n> During TLS 1.2 exchanges, handshake hashes are generated which point\n> to a message buffer. This saved data is used for later messages but in\n> some cases, the handshake transcript can exceed the space available in\n> the current buffer, causing the allocation of a new buffer. This\n> leaves a pointer pointing to the old, freed buffer, resulting in a\n> use-after-free when handshake hashes are then calculated afterwards.\n> This can result in a potentially exploitable crash.\n",
+    "id": "FreeBSD-2017-0242",
+    "modified": "2018-01-29T00:00:00Z",
+    "published": "2017-10-12T00:00:00Z",
+    "references": [
+        {
+            "type": "REPORT",
+            "url": "https://www.mozilla.org/en-US/security/advisories/mfsa2017-21/#CVE-2017-7805"
+        },
+        {
+            "type": "WEB",
+            "url": "https://www.mozilla.org/en-US/security/advisories/mfsa2017-21/#CVE-2017-7805"
+        },
+        {
+            "type": "WEB",
+            "url": "https://hg.mozilla.org/projects/nss/rev/2d7b65b72290"
+        },
+        {
+            "type": "WEB",
+            "url": "https://hg.mozilla.org/projects/nss/rev/d3865e2957d0"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2017-7805"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "nss -- Use-after-free in TLS 1.2 generating handshake hashes"
+}

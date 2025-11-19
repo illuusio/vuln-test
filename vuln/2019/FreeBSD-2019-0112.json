@@ -1,0 +1,51 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "bro"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "2.6.2"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "cite": [
+            "https://raw.githubusercontent.com/zeek/zeek/bb979702cf9a2fa67b8d1a1c7f88d0b56c6af104/NEWS"
+        ],
+        "discovery": "2019-05-29T00:00:00Z",
+        "references": {
+            "cvename": [
+                "CVE-2017-12175"
+            ]
+        },
+        "vid": "177fa455-48fc-4ded-ba1b-9975caa7f62a"
+    },
+    "details": "Jon Siwek of Corelight reports:\n\n> The following Denial of Service vulnerabilities are addressed:\n>\n> - Integer type mismatches in BinPAC-generated parser code and Bro\n>   analyzer code may allow for crafted packet data to cause\n>   unintentional code paths in the analysis logic to be taken due to\n>   unsafe integer conversions causing the parser and analysis logic to\n>   each expect different fields to have been parsed. One such example,\n>   reported by Maksim Shudrak, causes the Kerberos analyzer to\n>   dereference a null pointer. CVE-2019-12175 was assigned for this\n>   issue.\n> - The Kerberos parser allows for several fields to be left\n>   uninitialized, but they were not marked with an &optional attribute\n>   and several usages lacked existence checks. Crafted packet data\n>   could potentially cause an attempt to access such uninitialized\n>   fields, generate a runtime error/exception, and leak memory.\n>   Existence checks and &optional attributes have been added to the\n>   relevent Kerberos fields.\n> - BinPAC-generated protocol parsers commonly contain fields whose\n>   length is derived from other packet input, and for those that allow\n>   for incremental parsing, BinPAC did not impose a limit on how large\n>   such a field could grow, allowing for remotely-controlled packet\n>   data to cause growth of BinPAC\\'s flowbuffer bounded only by the\n>   numeric limit of an unsigned 64-bit integer, leading to memory\n>   exhaustion. There is now a generalized limit for how large\n>   flowbuffers are allowed to grow, tunable by setting\n>   \\\"BinPAC::flowbuffer_capacity_max\\\".\n",
+    "id": "FreeBSD-2019-0112",
+    "modified": "2019-05-31T00:00:00Z",
+    "published": "2019-05-31T00:00:00Z",
+    "references": [
+        {
+            "type": "REPORT",
+            "url": "https://raw.githubusercontent.com/zeek/zeek/bb979702cf9a2fa67b8d1a1c7f88d0b56c6af104/NEWS"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2017-12175"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "bro -- Unsafe integer conversions can cause unintentional code paths to be executed"
+}

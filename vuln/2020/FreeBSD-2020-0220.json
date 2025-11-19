@@ -1,0 +1,59 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "curl"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "introduced": "7.29.0"
+                        },
+                        {
+                            "fixed": "7.72.0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "cite": [
+            "https://curl.haxx.se/docs/security.html"
+        ],
+        "discovery": "2020-08-19T00:00:00Z",
+        "references": {
+            "cvename": [
+                "CVE-2020-8231"
+            ]
+        },
+        "vid": "b905dff4-e227-11ea-b0ea-08002728f74c"
+    },
+    "details": "curl security problems:\n\n> CVE-2020-8231: wrong connect-only connection\n>\n> An application that performs multiple requests with libcurl\\'s multi\n> API and sets the CURLOPT_CONNECT_ONLY option, might in rare\n> circumstances experience that when subsequently using the setup\n> connect-only transfer, libcurl will pick and use the wrong\n> connection - and instead pick another one the application has created\n> since then.\n>\n> CURLOPT_CONNECT_ONLY is the option to tell libcurl to not perform an\n> actual transfer, only connect. When that operation is completed,\n> libcurl remembers which connection it used for that transfer and\n> \\\"easy handle\\\". It remembers the connection using a pointer to the\n> internal connectdata struct in memory.\n>\n> If more transfers are then done with the same multi handle before the\n> connect-only connection is used, leading to the initial connect-only\n> connection to get closed (for example due to idle time-out) while also\n> new transfers (and connections) are setup, such a new connection might\n> end up getting the exact same memory address as the now closed\n> connect-only connection.\n>\n> If after those operations, the application then wants to use the\n> original transfer\\'s connect-only setup to for example use\n> curl_easy_send() to send raw data over that connection, libcurl could\n> erroneously find an existing connection still being alive at the\n> address it remembered since before even though this is now a new and\n> different connection.\n>\n> The application could then accidentally send data over that connection\n> which wasn\\'t at all intended for that recipient, entirely\n> unknowingly.\n",
+    "id": "FreeBSD-2020-0220",
+    "modified": "2020-08-19T00:00:00Z",
+    "published": "2020-08-19T00:00:00Z",
+    "references": [
+        {
+            "type": "REPORT",
+            "url": "https://curl.haxx.se/docs/security.html"
+        },
+        {
+            "type": "WEB",
+            "url": "https://curl.haxx.se/docs/security.html"
+        },
+        {
+            "type": "WEB",
+            "url": "https://curl.haxx.se/docs/CVE-2020-8231.html"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2020-8231"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "curl -- expired pointer dereference vulnerability"
+}

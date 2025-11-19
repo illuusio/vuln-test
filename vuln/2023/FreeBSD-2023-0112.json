@@ -1,0 +1,55 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "py39-sentry-sdk"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "1.14.0"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "cite": [
+            "https://osv.dev/vulnerability/GHSA-29pr-6jr8-q5jm"
+        ],
+        "discovery": "2023-03-21T00:00:00Z",
+        "references": {
+            "cvename": [
+                "CVE-2023-28117"
+            ]
+        },
+        "vid": "15dae5cc-9ee6-4577-a93e-2ab57780e707"
+    },
+    "details": "Tom Wolters reports:\n\n> When using the Django integration of the Sentry SDK in a specific\n> configuration it is possible to leak sensitive cookies values,\n> including the session cookie to Sentry.\n>\n> These sensitive cookies could then be used by someone with access to\n> your Sentry issues to impersonate or escalate their privileges within\n> your application.\n",
+    "id": "FreeBSD-2023-0112",
+    "modified": "2023-04-09T00:00:00Z",
+    "published": "2023-04-09T00:00:00Z",
+    "references": [
+        {
+            "type": "REPORT",
+            "url": "https://osv.dev/vulnerability/GHSA-29pr-6jr8-q5jm"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2023-28117"
+        },
+        {
+            "type": "WEB",
+            "url": "https://osv.dev/vulnerability/GHSA-29pr-6jr8-q5jm"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "py39-sentry-sdk -- sensitive cookies leak"
+}

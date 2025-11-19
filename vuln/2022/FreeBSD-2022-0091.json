@@ -1,0 +1,98 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "redis"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "6.2.7"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        },
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "redis-devel"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "7.0.0.20220428"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        },
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "redis62"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "6.2.7"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "cite": [
+            "https://groups.google.com/g/redis-db/c/7iWUlwtoDqU"
+        ],
+        "discovery": "2022-04-27T00:00:00Z",
+        "references": {
+            "cvename": [
+                "CVE-2022-24735",
+                "CVE-2022-24736"
+            ]
+        },
+        "vid": "cc42db1c-c65f-11ec-ad96-0800270512f4"
+    },
+    "details": "Aviv Yahav reports:\n\n> \n>\n> CVE-2022-24735\n> :   By exploiting weaknesses in the Lua script execution environment,\n>     an attacker with access to Redis can inject Lua code that will\n>     execute with the (potentially higher) privileges of another Redis\n>     user.\n>\n> CVE-2022-24736\n> :   An attacker attempting to load a specially crafted Lua script can\n>     cause NULL pointer dereference which will result with a crash of\n>     the redis-server process.\n",
+    "id": "FreeBSD-2022-0091",
+    "modified": "2022-04-27T00:00:00Z",
+    "published": "2022-04-27T00:00:00Z",
+    "references": [
+        {
+            "type": "REPORT",
+            "url": "https://groups.google.com/g/redis-db/c/7iWUlwtoDqU"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2022-24735"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2022-24736"
+        },
+        {
+            "type": "WEB",
+            "url": "https://groups.google.com/g/redis-db/c/7iWUlwtoDqU"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "redis -- Multiple vulnerabilities"
+}

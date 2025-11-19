@@ -1,0 +1,75 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "ledger"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "last_affected": "3.1.1"
+                        },
+                        {
+                            "fixed": "3.1.1"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "cite": [
+            "http://www.securityfocus.com/bid/100543"
+        ],
+        "discovery": "2017-09-05T00:00:00Z",
+        "references": {
+            "cvename": [
+                "CVE-2017-2808",
+                "CVE-2017-2807"
+            ]
+        },
+        "vid": "d843a984-7f22-484f-ba81-483ddbe30dc3"
+    },
+    "details": "Talos reports:\n\n> An exploitable buffer overflow vulnerability exists in the tag parsing\n> functionality of Ledger-CLI 3.1.1. A specially crafted journal file\n> can cause an integer underflow resulting in code execution. An\n> attacker can construct a malicious journal file to trigger this\n> vulnerability.\n>\n> An exploitable use-after-free vulnerability exists in the account\n> parsing component of the Ledger-CLI 3.1.1. A specially crafted ledger\n> file can cause a use-after-free vulnerability resulting in arbitrary\n> code execution. An attacker can convince a user to load a journal file\n> to trigger this vulnerability.\n",
+    "id": "FreeBSD-2017-0212",
+    "modified": "2017-09-26T00:00:00Z",
+    "published": "2017-09-26T00:00:00Z",
+    "references": [
+        {
+            "type": "REPORT",
+            "url": "http://www.securityfocus.com/bid/100543"
+        },
+        {
+            "type": "WEB",
+            "url": "http://www.securityfocus.com/bid/100543"
+        },
+        {
+            "type": "WEB",
+            "url": "https://www.talosintelligence.com/vulnerability_reports/TALOS-2017-0303"
+        },
+        {
+            "type": "WEB",
+            "url": "http://www.securityfocus.com/bid/100546"
+        },
+        {
+            "type": "WEB",
+            "url": "https://www.talosintelligence.com/vulnerability_reports/TALOS-2017-0304"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2017-2808"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2017-2807"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "ledger -- multiple vulnerabilities"
+}

@@ -1,0 +1,73 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "FreeBSD"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "introduced": "6.3"
+                        },
+                        {
+                            "fixed": "6.3_7"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                },
+                {
+                    "events": [
+                        {
+                            "introduced": "6.4"
+                        },
+                        {
+                            "fixed": "6.4_1"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                },
+                {
+                    "events": [
+                        {
+                            "introduced": "7.0"
+                        },
+                        {
+                            "fixed": "7.0_7"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "discovery": "2008-12-23T00:00:00Z",
+        "references": {
+            "cvename": [
+                "CVE-2008-4247"
+            ],
+            "freebsdsa": [
+                "SA-08:12.ftpd"
+            ]
+        },
+        "vid": "e9ecaceb-db0d-11dd-aa56-000bcdf0a03b"
+    },
+    "details": "# Problem Description:\n\nThe ftpd(8) server splits long commands into several requests. This may\nresult in the server executing a command which is hidden inside another\nvery long command.\n\n# Impact:\n\nThis could, with a specifically crafted command, be used in a cross-site\nrequest forgery attack.\n\nFreeBSD systems running ftpd(8) server could act as a point of privilege\nescalation in an attack against users using web browser to access\ntrusted FTP sites.\n\n# Workaround:\n\nNo workaround is available, but systems not running FTP servers are not\nvulnerable. Systems not running the FreeBSD ftp(8) server are not\naffected, but users of other ftp daemons are advised to take care since\nseveral other ftp daemons are known to have related bugs.\n",
+    "id": "FreeBSD-2009-0008",
+    "modified": "2016-08-09T00:00:00Z",
+    "published": "2009-01-05T00:00:00Z",
+    "references": [
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2008-4247"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://www.freebsd.org/security/advisories/FreeBSD-SA-08:12.ftpd.asc"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "FreeBSD -- Cross-site request forgery in ftpd(8)"
+}

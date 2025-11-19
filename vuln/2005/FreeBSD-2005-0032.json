@@ -1,0 +1,100 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "cups-lpr"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "1.1.23"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        },
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "fr-cups-lpr"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "1.1.23"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "cite": [
+            "http://tigger.uic.edu/~jlongs2/holes/cups2.txt"
+        ],
+        "discovery": "2004-12-11T00:00:00Z",
+        "references": {
+            "bid": [
+                "12007",
+                "12004"
+            ],
+            "cvename": [
+                "CVE-2004-1268",
+                "CVE-2004-1269",
+                "CVE-2004-1270"
+            ]
+        },
+        "vid": "7850a238-680a-11d9-a9e7-0001020eed82"
+    },
+    "details": "D. J. Bernstein reports that Bartlomiej Sieka has discovered several\nsecurity vulnerabilities in lppasswd, which is part of CUPS. In the\nfollowing excerpt from Bernstein\\'s email, CVE names have been added for\neach issue:\n\n> First, lppasswd blithely ignores write errors in fputs(line,outfile)\n> at lines 311 and 315 of lppasswd.c, and in fprintf(\\...) at line 346.\n> An attacker who fills up the disk at the right moment can arrange for\n> /usr/local/etc/cups/passwd to be truncated. *(CAN-2004-1268)*\n>\n> Second, if lppasswd bumps into a file-size resource limit while\n> writing passwd.new, it leaves passwd.new in place, disabling all\n> subsequent invocations of lppasswd. Any local user can thus disable\n> lppasswd\\... *(CAN-2004-1269)*\n>\n> Third, line 306 of lppasswd.c prints an error message to stderr but\n> does not exit. This is not a problem on systems that ensure that file\n> descriptors 0, 1, and 2 are open for setuid programs, but it is a\n> problem on other systems; lppasswd does not check that passwd.new is\n> different from stderr, so it ends up writing a user-controlled error\n> message to passwd if the user closes file descriptor 2.\n> *(CAN-2004-1270)*\n\n**Note:** The third issue, CVE-2004-1270, does not affect FreeBSD\n4.6-RELEASE or later systems, as these systems ensure that the file\ndescriptors 0, 1, and 2 are always open for set-user-ID and set-group-ID\nprograms.\n",
+    "id": "FreeBSD-2005-0032",
+    "modified": "2005-01-17T00:00:00Z",
+    "published": "2005-01-17T00:00:00Z",
+    "references": [
+        {
+            "type": "REPORT",
+            "url": "http://tigger.uic.edu/~jlongs2/holes/cups2.txt"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2004-1268"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2004-1269"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2004-1270"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://www.securityfocus.com/bid/12007/info"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://www.securityfocus.com/bid/12004/info"
+        },
+        {
+            "type": "WEB",
+            "url": "http://www.cups.org/str.php?L1023"
+        },
+        {
+            "type": "WEB",
+            "url": "http://tigger.uic.edu/~jlongs2/holes/cups2.txt"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "cups-lpr -- lppasswd multiple vulnerabilities"
+}

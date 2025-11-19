@@ -1,0 +1,153 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "ruby"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "introduced": "2.6.0,1"
+                        },
+                        {
+                            "fixed": "2.6.9,1"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                },
+                {
+                    "events": [
+                        {
+                            "introduced": "2.7.0,1"
+                        },
+                        {
+                            "fixed": "2.7.5,1"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                },
+                {
+                    "events": [
+                        {
+                            "introduced": "3.0.0,1"
+                        },
+                        {
+                            "fixed": "3.0.3,1"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        },
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "ruby26"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "introduced": "2.6.0,1"
+                        },
+                        {
+                            "fixed": "2.6.9,1"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        },
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "ruby27"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "introduced": "2.7.0,1"
+                        },
+                        {
+                            "fixed": "2.7.5,1"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        },
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "ruby30"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "introduced": "3.0.0,1"
+                        },
+                        {
+                            "fixed": "3.0.3,1"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        },
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "rubygem-cgi"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "0.3.1"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "cite": [
+            "https://www.ruby-lang.org/en/news/2021/11/24/cookie-prefix-spoofing-in-cgi-cookie-parse-cve-2021-41819/"
+        ],
+        "discovery": "2021-11-24T00:00:00Z",
+        "references": {
+            "cvename": [
+                "CVE-2021-41819"
+            ]
+        },
+        "vid": "4548ec97-4d38-11ec-a539-0800270512f4"
+    },
+    "details": "ooooooo_q reports:\n\n> The old versions of `CGI::Cookie.parse` applied URL decoding to cookie\n> names. An attacker could exploit this vulnerability to spoof security\n> prefixes in cookie names, which may be able to trick a vulnerable\n> application.\n>\n> By this fix, `CGI::Cookie.parse` no longer decodes cookie names. Note\n> that this is an incompatibility if cookie names that you are using\n> include non-alphanumeric characters that are URL-encoded.\n",
+    "id": "FreeBSD-2021-0281",
+    "modified": "2021-11-24T00:00:00Z",
+    "published": "2021-11-24T00:00:00Z",
+    "references": [
+        {
+            "type": "REPORT",
+            "url": "https://www.ruby-lang.org/en/news/2021/11/24/cookie-prefix-spoofing-in-cgi-cookie-parse-cve-2021-41819/"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2021-41819"
+        },
+        {
+            "type": "WEB",
+            "url": "https://www.ruby-lang.org/en/news/2021/11/24/cookie-prefix-spoofing-in-cgi-cookie-parse-cve-2021-41819/"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "rubygem-cgi -- cookie prefix spoofing in CGI::Cookie.parse"
+}

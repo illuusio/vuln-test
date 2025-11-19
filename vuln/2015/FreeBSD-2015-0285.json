@@ -1,0 +1,69 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "pgbouncer"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "introduced": "1.6.0"
+                        },
+                        {
+                            "last_affected": "1.6.0"
+                        },
+                        {
+                            "fixed": "1.6.0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ],
+            "versions": [
+                "1.6.0"
+            ]
+        }
+    ],
+    "database_specific": {
+        "cite": [
+            "http://pgbouncer.github.io/2015/09/pgbouncer-1-6-1/"
+        ],
+        "discovery": "2015-09-03T00:00:00Z",
+        "references": {
+            "cvename": [
+                "CVE-2015-6817"
+            ]
+        },
+        "vid": "d76961da-56f6-11e5-934b-002590263bf5"
+    },
+    "details": "PgBouncer reports:\n\n> New auth_user functionality introduced in 1.6 allows login as\n> auth_user when client presents unknown username. It\\'s quite likely\n> auth_user is superuser. Affects only setups that have enabled\n> auth_user in their config.\n",
+    "id": "FreeBSD-2015-0285",
+    "modified": "2015-09-09T00:00:00Z",
+    "published": "2015-09-09T00:00:00Z",
+    "references": [
+        {
+            "type": "REPORT",
+            "url": "http://pgbouncer.github.io/2015/09/pgbouncer-1-6-1/"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2015-6817"
+        },
+        {
+            "type": "WEB",
+            "url": "https://pgbouncer.github.io/2015/09/pgbouncer-1-6-1/"
+        },
+        {
+            "type": "WEB",
+            "url": "https://github.com/pgbouncer/pgbouncer/issues/69"
+        },
+        {
+            "type": "WEB",
+            "url": "http://www.openwall.com/lists/oss-security/2015/09/04/3"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "pgbouncer -- failed auth_query lookup leads to connection as auth_user"
+}

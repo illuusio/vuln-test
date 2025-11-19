@@ -1,0 +1,49 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "fetchmail"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "introduced": "6.2.5.1"
+                        },
+                        {
+                            "last_affected": "6.2.5.1"
+                        },
+                        {
+                            "fixed": "6.2.5.1"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ],
+            "versions": [
+                "6.2.5.1"
+            ]
+        }
+    ],
+    "database_specific": {
+        "discovery": "2005-07-21T00:00:00Z",
+        "vid": "3f4ac724-fa8b-11d9-afcf-0060084a00e5"
+    },
+    "details": "In fetchmail 6.2.5.1, the remote code injection via POP3 UIDL was fixed,\nbut a denial of service attack was introduced:\n\nTwo possible NULL-pointer dereferences allow a malicious POP3 server to\ncrash fetchmail by respondig with UID lines containing only the article\nnumber but no UID (in violation of RFC-1939), or a message without\nMessage-ID when no UIDL support is available.\n",
+    "id": "FreeBSD-2005-0227",
+    "modified": "2005-07-22T00:00:00Z",
+    "published": "2005-07-22T00:00:00Z",
+    "references": [
+        {
+            "type": "DISCUSSION",
+            "url": "http://lists.berlios.de/pipermail/fetchmail-devel/2005-July/000397.html"
+        },
+        {
+            "type": "WEB",
+            "url": "http://www.fetchmail.info/fetchmail-SA-2005-01.txt"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "fetchmail -- denial of service/crash from malicious POP3 server"
+}

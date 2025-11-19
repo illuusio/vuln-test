@@ -1,0 +1,90 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "ruby"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "introduced": "2.3.0,1"
+                        },
+                        {
+                            "fixed": "2.3.8,1"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                },
+                {
+                    "events": [
+                        {
+                            "introduced": "2.4.0,1"
+                        },
+                        {
+                            "fixed": "2.4.5,1"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                },
+                {
+                    "events": [
+                        {
+                            "introduced": "2.5.0,1"
+                        },
+                        {
+                            "fixed": "2.5.2,1"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "cite": [
+            "https://www.ruby-lang.org/en/news/2018/10/17/ruby-2-5-2-released/"
+        ],
+        "discovery": "2018-10-17T00:00:00Z",
+        "references": {
+            "cvename": [
+                "CVE-2018-16395",
+                "CVE-2018-16396"
+            ]
+        },
+        "vid": "afc60484-0652-440e-b01a-5ef814747f06"
+    },
+    "details": "Ruby news:\n\n> CVE-2018-16395: OpenSSL::X509::Name equality check does not work\n> correctly\n>\n> An instance of OpenSSL::X509::Name contains entities such as CN, C and\n> so on. Some two instances of OpenSSL::X509::Name are equal only when\n> all entities are exactly equal. However, there is a bug that the\n> equality check is not correct if the value of an entity of the\n> argument (right-hand side) starts with the value of the receiver\n> (left-hand side). So, if a malicious X.509 certificate is passed to\n> compare with an existing certificate, there is a possibility to be\n> judged incorrectly that they are equal.\n>\n> CVE-2018-16396: Tainted flags are not propagated in Array#pack and\n> String#unpack with some directives\n>\n> Array#pack method converts the receiver\\'s contents into a string with\n> specified format. If the receiver contains some tainted objects, the\n> returned string also should be tainted. String#unpack method which\n> converts the receiver into an array also should propagate its tainted\n> flag to the objects contained in the returned array. But, with B, b, H\n> and h directives, the tainted flags are not propagated. So, if a\n> script processes unreliable inputs by Array#pack and/or String#unpack\n> with these directives and checks the reliability with tainted flags,\n> the check might be wrong.\n",
+    "id": "FreeBSD-2018-0254",
+    "modified": "2018-10-20T00:00:00Z",
+    "published": "2018-10-20T00:00:00Z",
+    "references": [
+        {
+            "type": "REPORT",
+            "url": "https://www.ruby-lang.org/en/news/2018/10/17/ruby-2-5-2-released/"
+        },
+        {
+            "type": "WEB",
+            "url": "https://www.ruby-lang.org/en/news/2018/10/17/ruby-2-5-2-released/"
+        },
+        {
+            "type": "WEB",
+            "url": "https://www.ruby-lang.org/en/news/2018/10/17/openssl-x509-name-equality-check-does-not-work-correctly-cve-2018-16395/"
+        },
+        {
+            "type": "WEB",
+            "url": "https://www.ruby-lang.org/en/news/2018/10/17/not-propagated-taint-flag-in-some-formats-of-pack-cve-2018-16396/"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2018-16395"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2018-16396"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "ruby -- multiple vulnerabilities"
+}

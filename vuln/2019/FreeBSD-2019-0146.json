@@ -1,0 +1,60 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "python37"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "3.7.4"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "cite": [
+            "https://docs.python.org/3.7/whatsnew/changelog.html#python-3-7-4-final"
+        ],
+        "discovery": "2019-03-13T00:00:00Z",
+        "references": {
+            "cvename": [
+                "CVE-2019-9740",
+                "CVE-2019-9948"
+            ]
+        },
+        "vid": "a449c604-a43a-11e9-b422-fcaa147e860e"
+    },
+    "details": "Python changelog:\n\n> bpo-37463: ssl.match_hostname() no longer accepts IPv4 addresses with\n> additional text after the address and only quad-dotted notation\n> without trailing whitespaces. Some inet_aton() implementations ignore\n> whitespace and all data after whitespace, e.g.\\'127.0.0.1 whatever\\'.\n>\n> bpo-35907: CVE-2019-9948: Avoid file reading by disallowing\n> local-file:// and local_file:// URL schemes in URLopener().open() and\n> URLopener().retrieve() of urllib.request.\n>\n> bpo-36742: Fixes mishandling of pre-normalization characters in\n> urlsplit().\n>\n> bpo-30458: Address CVE-2019-9740 by disallowing URL paths with\n> embedded whitespace or control characters through into the underlying\n> http client request. Such potentially malicious header injection URLs\n> now cause an http.client.InvalidURL exception to be raised.\n>\n> bpo-33529: Prevent fold function used in email header encoding from\n> entering infinite loop when there are too many non-ASCII characters in\n> a header.\n>\n> bpo-35755: shutil.which() now uses os.confstr(\\\"CS_PATH\\\") if\n> available and if the PATH environment variable is not set. Remove also\n> the current directory from posixpath.defpath. On Unix, shutil.which()\n> and the subprocess module no longer search the executable in the\n> current directory if the PATH environment variable is not set.\n",
+    "id": "FreeBSD-2019-0146",
+    "modified": "2019-07-12T00:00:00Z",
+    "published": "2019-07-12T00:00:00Z",
+    "references": [
+        {
+            "type": "REPORT",
+            "url": "https://docs.python.org/3.7/whatsnew/changelog.html#python-3-7-4-final"
+        },
+        {
+            "type": "WEB",
+            "url": "https://docs.python.org/3.7/whatsnew/changelog.html#python-3-7-4-final"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2019-9740"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2019-9948"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "python 3.7 -- multiple vulnerabilities"
+}

@@ -1,0 +1,58 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "gitolite"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "introduced": "3.01"
+                        },
+                        {
+                            "last_affected": "3.04"
+                        },
+                        {
+                            "fixed": "3.04"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "cite": [
+            "https://groups.google.com/forum/#!topic/gitolite/K9SnQNhCQ-0/discussion"
+        ],
+        "discovery": "2012-10-09T00:00:00Z",
+        "references": {
+            "cvename": [
+                "CVE-2012-4506"
+            ]
+        },
+        "vid": "f94befcd-1289-11e2-a25e-525400272390"
+    },
+    "details": "Sitaram Chamarty reports:\n\n> I\\'m sorry to say there is a potential path traversal vulnerability in\n> v3. Thanks to Stephane Chazelas for finding it and alerting me.\n>\n> Can it affect you? This can only affect you if you are using wild card\n> repos, \\*and\\* at least one of your patterns allows the string \\\"../\\\"\n> to match multiple times.\n>\n> How badly can it affect you? A malicious user who \\*also\\* has the\n> ability to create arbitrary files in, say, /tmp (e.g., he has his own\n> userid on the same box), can compromise the entire \\\"git\\\" user.\n> Otherwise the worst he can do is create arbitrary repos in /tmp.\n",
+    "id": "FreeBSD-2012-0187",
+    "modified": "2012-10-15T00:00:00Z",
+    "published": "2012-10-15T00:00:00Z",
+    "references": [
+        {
+            "type": "REPORT",
+            "url": "https://groups.google.com/forum/#!topic/gitolite/K9SnQNhCQ-0/discussion"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2012-4506"
+        },
+        {
+            "type": "DISCUSSION",
+            "url": "https://groups.google.com/forum/#!topic/gitolite/K9SnQNhCQ-0/discussion"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "gitolite -- path traversal vulnerability"
+}

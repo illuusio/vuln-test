@@ -1,0 +1,66 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "py39-redis"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "introduced": "4.4.0"
+                        },
+                        {
+                            "fixed": "4.4.4"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                },
+                {
+                    "events": [
+                        {
+                            "introduced": "4.5.0"
+                        },
+                        {
+                            "fixed": "4.5.4"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "cite": [
+            "https://osv.dev/vulnerability/GHSA-8fww-64cx-x8p5"
+        ],
+        "discovery": "2023-03-26T00:00:00Z",
+        "references": {
+            "cvename": [
+                "CVE-2023-28859"
+            ]
+        },
+        "vid": "8aa6340d-e7c6-41e0-b2a3-3c9e9930312a"
+    },
+    "details": "drago-balto reports:\n\n> redis-py through 4.5.3 and 4.4.3 leaves a connection open after\n> canceling an async Redis command at an inopportune time (in the case\n> of a non-pipeline operation), and can send response data to the client\n> of an unrelated request.\n>\n> NOTE: this issue exists because of an incomplete fix for\n> CVE-2023-28858.\n",
+    "id": "FreeBSD-2023-0107",
+    "modified": "2023-04-09T00:00:00Z",
+    "published": "2023-04-09T00:00:00Z",
+    "references": [
+        {
+            "type": "REPORT",
+            "url": "https://osv.dev/vulnerability/GHSA-8fww-64cx-x8p5"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2023-28859"
+        },
+        {
+            "type": "WEB",
+            "url": "https://osv.dev/vulnerability/GHSA-8fww-64cx-x8p5"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "py39-redis -- can send response data to the client of an unrelated request"
+}

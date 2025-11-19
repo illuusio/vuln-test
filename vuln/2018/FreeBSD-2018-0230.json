@@ -1,0 +1,74 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "asterisk13"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "13.23.1"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        },
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "asterisk15"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "15.6.1"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "cite": [
+            "http://www.asterisk.org/downloads/security-advisories"
+        ],
+        "discovery": "2018-08-16T00:00:00Z",
+        "references": {
+            "cvename": [
+                "CVE-2018-17281"
+            ]
+        },
+        "vid": "77f67b46-bd75-11e8-81b6-001999f8d30b"
+    },
+    "details": "The Asterisk project reports:\n\n> There is a stack overflow vulnerability in the res_http_websocket.so\n> module of Asterisk that allows an attacker to crash Asterisk via a\n> specially crafted HTTP request to upgrade the connection to a\n> websocket. The attackers request causes Asterisk to run out of stack\n> space and crash.\n>\n> As a workaround disable HTTP websocket access by not loading the\n> res_http_websocket.so module.\n",
+    "id": "FreeBSD-2018-0230",
+    "modified": "2018-09-21T00:00:00Z",
+    "published": "2018-09-21T00:00:00Z",
+    "references": [
+        {
+            "type": "REPORT",
+            "url": "http://www.asterisk.org/downloads/security-advisories"
+        },
+        {
+            "type": "WEB",
+            "url": "https://downloads.asterisk.org/pub/security/AST-2018-009.html"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2018-17281"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "asterisk -- Remote crash vulnerability in HTTP websocket upgrade"
+}

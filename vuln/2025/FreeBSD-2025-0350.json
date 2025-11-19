@@ -1,0 +1,55 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "strongswan"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "introduced": "4.2.12"
+                        },
+                        {
+                            "fixed": "6.0.3"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "cite": [
+            "https://www.strongswan.org/blog/2025/10/27/strongswan-vulnerability-(cve-2025-62291).html"
+        ],
+        "discovery": "2025-10-27T00:00:00Z",
+        "references": {
+            "cvename": [
+                "CVE-2025-62291"
+            ]
+        },
+        "vid": "1f1cf967-b35c-11f0-bce7-bc2411002f50"
+    },
+    "details": "Xu Biang reports:\n\n> The eap-mschapv2 plugin doesn\\'t correctly check the length of an\n> EAP-MSCHAPv2 Failure Request packet on the client, which can cause an\n> integer underflow that leads to a crash and, depending on the compiler\n> options, even a heap-based buffer overflow that\\'s potentially\n> exploitable for remote code execution. Affected are all strongSwan\n> versions since 4.2.12.\n",
+    "id": "FreeBSD-2025-0350",
+    "modified": "2025-10-27T00:00:00Z",
+    "published": "2025-10-27T00:00:00Z",
+    "references": [
+        {
+            "type": "REPORT",
+            "url": "https://www.strongswan.org/blog/2025/10/27/strongswan-vulnerability-(cve-2025-62291).html"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2025-62291"
+        },
+        {
+            "type": "WEB",
+            "url": "https://www.cve.org/CVERecord?id=CVE-2025-62291"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "strongSwan -- Heap-based buffer overflow in eap-mschapv2 plugin due to improper handling of failure request packets"
+}

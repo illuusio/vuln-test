@@ -1,0 +1,74 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "libXfont"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "1.5.4"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        },
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "libXfont2"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "2.0.3"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "cite": [
+            "https://cgit.freedesktop.org/xorg/lib/libXfont/commit/?id=7b377456f95d2ec3ead40f4fb74ea620191f88c8"
+        ],
+        "discovery": "2017-11-25T00:00:00Z",
+        "references": {
+            "cvename": [
+                "CVE-2017-16611"
+            ]
+        },
+        "vid": "08a125f3-e35a-11e7-a293-54e1ad3d6335"
+    },
+    "details": "the freedesktop.org project reports:\n\n> A non-privileged X client can instruct X server running under root to\n> open any file by creating own directory with \\\"fonts.dir\\\",\n> \\\"fonts.alias\\\" or any font file being a symbolic link to any other\n> file in the system. X server will then open it. This can be issue with\n> special files such as /dev/watchdog.\n",
+    "id": "FreeBSD-2017-0318",
+    "modified": "2017-12-17T00:00:00Z",
+    "published": "2017-12-17T00:00:00Z",
+    "references": [
+        {
+            "type": "REPORT",
+            "url": "https://cgit.freedesktop.org/xorg/lib/libXfont/commit/?id=7b377456f95d2ec3ead40f4fb74ea620191f88c8"
+        },
+        {
+            "type": "WEB",
+            "url": "https://cgit.freedesktop.org/xorg/lib/libXfont/commit/?id=7b377456f95d2ec3ead40f4fb74ea620191f88c8"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2017-16611"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "libXfont -- permission bypass when opening files through symlinks"
+}

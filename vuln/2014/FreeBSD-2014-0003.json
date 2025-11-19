@@ -1,0 +1,55 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "libXfont"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "1.4.7,1"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "cite": [
+            "http://lists.x.org/archives/xorg-announce/2014-January/002389.html"
+        ],
+        "discovery": "2013-12-24T00:00:00Z",
+        "references": {
+            "cvename": [
+                "CVE-2013-6462"
+            ]
+        },
+        "vid": "28c575fa-784e-11e3-8249-001cc0380077"
+    },
+    "details": "freedesktop.org reports:\n\n> A BDF font file containing a longer than expected string can cause a\n> buffer overflow on the stack. Testing in X servers built with Stack\n> Protector restulted in an immediate crash when reading a user-proveded\n> specially crafted font.\n>\n> As libXfont is used to read user-specified font files in all X servers\n> distributed by X.Org, including the Xorg server which is often run\n> with root privileges or as setuid-root in order to access hardware,\n> this bug may lead to an unprivileged user acquiring root privileges in\n> some systems.\n",
+    "id": "FreeBSD-2014-0003",
+    "modified": "2014-01-08T00:00:00Z",
+    "published": "2014-01-08T00:00:00Z",
+    "references": [
+        {
+            "type": "REPORT",
+            "url": "http://lists.x.org/archives/xorg-announce/2014-January/002389.html"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2013-6462"
+        },
+        {
+            "type": "WEB",
+            "url": "http://lists.x.org/archives/xorg-announce/2014-January/002389.html"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "libXfont -- Stack buffer overflow in parsing of BDF font files in libXfont"
+}

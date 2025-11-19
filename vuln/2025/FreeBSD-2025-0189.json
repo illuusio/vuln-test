@@ -1,0 +1,153 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "grafana"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "introduced": "5.4.0"
+                        },
+                        {
+                            "fixed": "10.4.18+security-01"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                },
+                {
+                    "events": [
+                        {
+                            "introduced": "11.0.0"
+                        },
+                        {
+                            "fixed": "11.2.9+security-01"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                },
+                {
+                    "events": [
+                        {
+                            "introduced": "11.3.0"
+                        },
+                        {
+                            "fixed": "11.3.6+security-01"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                },
+                {
+                    "events": [
+                        {
+                            "introduced": "11.4.0"
+                        },
+                        {
+                            "fixed": "11.4.4+security-01"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                },
+                {
+                    "events": [
+                        {
+                            "introduced": "11.5.0"
+                        },
+                        {
+                            "fixed": "11.5.4+security-01"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                },
+                {
+                    "events": [
+                        {
+                            "introduced": "11.6.0"
+                        },
+                        {
+                            "fixed": "11.6.1+security-01"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                },
+                {
+                    "events": [
+                        {
+                            "introduced": "12.0.0"
+                        },
+                        {
+                            "fixed": "12.0.0+security-01"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        },
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "grafana8"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "introduced": "8.0.0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        },
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "grafana9"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "introduced": "9.0.0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "cite": [
+            "https://grafana.com/blog/2025/05/23/grafana-security-release-medium-and-high-severity-security-fixes-for-cve-2025-4123-and-cve-2025-3580/"
+        ],
+        "discovery": "2025-04-15T00:00:00Z",
+        "references": {
+            "cvename": [
+                "CVE-2025-3580"
+            ]
+        },
+        "vid": "ee046f5d-37a8-11f0-baaa-6c3be5272acd"
+    },
+    "details": "Grafana Labs reports:\n\n> On April 15, we discovered a vulnerability that stems from the user\n> deletion logic associated with organization administrators. An\n> organization admin could remove any user from the specific\n> organization they manage. Additionally, they have the power to delete\n> users entirely from the system if they have no other org membership.\n> This leads to two situations:\n>\n> 1.  They can delete a server admin if the organization the\n>     Organization Admin manages is the server admin's final\n>     organizational membership.\n> 2.  They can delete any user (regardless of whether they are a server\n>     admin or not) if that user currently belongs to no organizations.\n>\n> These two situations allow an organization manager to disrupt\n> instance-wide activity by continually deleting server administrators\n> if there is only one organization or if the server administrators are\n> not part of any organization.\n>\n> The CVSS score for this vulnerability is 5.5 Medium.\n",
+    "id": "FreeBSD-2025-0189",
+    "modified": "2025-05-23T00:00:00Z",
+    "published": "2025-05-23T00:00:00Z",
+    "references": [
+        {
+            "type": "REPORT",
+            "url": "https://grafana.com/blog/2025/05/23/grafana-security-release-medium-and-high-severity-security-fixes-for-cve-2025-4123-and-cve-2025-3580/"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2025-3580"
+        },
+        {
+            "type": "WEB",
+            "url": "https://grafana.com/blog/2025/05/23/grafana-security-release-medium-and-high-severity-security-fixes-for-cve-2025-4123-and-cve-2025-3580/"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "Grafana -- User deletion issue"
+}

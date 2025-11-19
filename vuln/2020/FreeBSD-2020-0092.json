@@ -1,0 +1,142 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "py27-yaml"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "5.3.1"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        },
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "py35-yaml"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "5.3.1"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        },
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "py36-yaml"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "5.3.1"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        },
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "py37-yaml"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "5.3.1"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        },
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "py38-yaml"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "5.3.1"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "cite": [
+            "https://bugzilla.redhat.com/show_bug.cgi?id=1807367"
+        ],
+        "discovery": "2020-03-02T00:00:00Z",
+        "references": {
+            "cvename": [
+                "CVE-2020-1747"
+            ],
+            "freebsdpr": [
+                "ports/245937"
+            ]
+        },
+        "vid": "aae8fecf-888e-11ea-9714-08002718de91"
+    },
+    "details": "Riccardo Schirone (https://github.com/ret2libc) reports:\n\n> In FullLoader python/object/new constructor, implemented by\n> construct_python_object_apply, has support for setting the state of a\n> deserialized instance through the set_python_instance_state method.\n> After setting the state, some operations are performed on the instance\n> to complete its initialization, however it is possible for an attacker\n> to set the instance\\' state in such a way that arbitrary code is\n> executed by the FullLoader.\n>\n> This patch tries to block such attacks in FullLoader by preventing\n> set_python_instance_state from setting arbitrar properties. It\n> implements a blacklist that includes extend method (called by\n> construct_python_object_apply) and all special methods (e.g.\n> \\_\\_set\\_\\_, \\_\\_setitem\\_\\_, etc.).\n>\n> Users who need special attributes being set in the state of a\n> deserialized object can still do it through the UnsafeLoader, which\n> however should not be used on untrusted input. Additionally, they can\n> subclass FullLoader and redefine state_blacklist_regexp to include the\n> additional attributes they need, passing the subclassed loader to\n> yaml.load.\n",
+    "id": "FreeBSD-2020-0092",
+    "modified": "2020-04-29T00:00:00Z",
+    "published": "2020-04-27T00:00:00Z",
+    "references": [
+        {
+            "type": "REPORT",
+            "url": "https://bugzilla.redhat.com/show_bug.cgi?id=1807367"
+        },
+        {
+            "type": "REPORT",
+            "url": "https://bugzilla.redhat.com/show_bug.cgi?id=1807367"
+        },
+        {
+            "type": "WEB",
+            "url": "https://github.com/yaml/pyyaml/pull/386"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2020-1747"
+        },
+        {
+            "type": "REPORT",
+            "url": "https://bugs.freebsd.org/bugzilla/show_bug.cgi?id=245937"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "py-yaml -- FullLoader (still) exploitable for arbitrary command execution"
+}

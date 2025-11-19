@@ -1,0 +1,84 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "rt42"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "introduced": "4.2.0"
+                        },
+                        {
+                            "fixed": "4.2.10"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        },
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "rt40"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "introduced": "4.0.0"
+                        },
+                        {
+                            "fixed": "4.0.23"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "cite": [
+            "http://blog.bestpractical.com/2015/02/security-vulnerabilities-in-rt.html"
+        ],
+        "discovery": "2015-02-26T00:00:00Z",
+        "references": {
+            "cvename": [
+                "CVE-2014-9472",
+                "CVE-2015-1165",
+                "CVE-2015-1464"
+            ]
+        },
+        "vid": "d08f6002-c588-11e4-8495-6805ca0b3d42"
+    },
+    "details": "Best Practical reports:\n\n> RT 3.0.0 and above, if running on Perl 5.14.0 or higher, are\n> vulnerable to a remote denial-of-service via the email gateway; any\n> installation which accepts mail from untrusted sources is vulnerable,\n> regardless of the permissions configuration inside RT. This\n> denial-of-service may encompass both CPU and disk usage, depending on\n> RT\\'s logging configuration. This vulnerability is assigned\n> CVE-2014-9472.\n>\n> RT 3.8.8 and above are vulnerable to an information disclosure attack\n> which may reveal RSS feeds URLs, and thus ticket data; this\n> vulnerability is assigned CVE-2015-1165. RSS feed URLs can also be\n> leveraged to perform session hijacking, allowing a user with the URL\n> to log in as the user that created the feed; this vulnerability is\n> assigned CVE-2015-1464.\n",
+    "id": "FreeBSD-2015-0047",
+    "modified": "2015-03-08T00:00:00Z",
+    "published": "2015-03-08T00:00:00Z",
+    "references": [
+        {
+            "type": "REPORT",
+            "url": "http://blog.bestpractical.com/2015/02/security-vulnerabilities-in-rt.html"
+        },
+        {
+            "type": "WEB",
+            "url": "http://blog.bestpractical.com/2015/02/security-vulnerabilities-in-rt.html"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2014-9472"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2015-1165"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2015-1464"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "rt -- Remote DoS, Information disclosure and Session Hijackingvulnerabilities"
+}

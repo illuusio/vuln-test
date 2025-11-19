@@ -1,0 +1,133 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "opera"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "9.22"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        },
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "opera-devel"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "9.22"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        },
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "linux-opera"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "9.22"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "cite": [
+            "http://www.opera.com/support/search/view/861/",
+            "http://www.opera.com/support/search/view/862/",
+            "http://www.opera.com/support/search/view/863/",
+            "http://www.opera.com/support/search/view/864/"
+        ],
+        "discovery": "2007-07-19T00:00:00Z",
+        "references": {
+            "cvename": [
+                "CVE-2007-3929",
+                "CVE-2007-4944"
+            ]
+        },
+        "vid": "12d266b6-363f-11dc-b6c9-000c6ec775d9"
+    },
+    "details": "Opera Software ASA reports of multiple security fixes in Opera,\nincluding an arbitrary code execute vulnerability:\n\n> Opera for Linux, FreeBSD, and Solaris has a flaw in the createPattern\n> function that leaves old data that was in the memory before Opera\n> allocated it in the new pattern. The pattern can be read and analyzed\n> by JavaScript, so an attacker can get random samples of the user\\'s\n> memory, which may contain data.\n\n> Removing a specially crafted torrent from the download manager can\n> crash Opera. The crash is caused by an erroneous memory access.\n>\n> An attacker needs to entice the user to accept the malicious\n> BitTorrent download, and later remove it from Opera\\'s download\n> manager. To inject code, additional means will have to be employed.\n>\n> Users clicking a BitTorrent link and rejecting the download are not\n> affected.\n\n> data: URLs embed data inside them, instead of linking to an external\n> resource. Opera can mistakenly display the end of a data URL instead\n> of the beginning. This allows an attacker to spoof the URL of a\n> trusted site.\n\n> Opera\\'s HTTP authentication dialog is displayed when the user enters\n> a Web page that requires a login name and a password. To inform the\n> user which server it was that asked for login credentials, the dialog\n> displays the server name.\n>\n> The user has to see the entire server name. A truncated name can be\n> misleading. Opera\\'s authentication dialog cuts off the long server\n> names at the right hand side, adding an ellipsis (\\...) to indicate\n> that it has been cut off.\n>\n> The dialog has a predictable size, allowing an attacker to create a\n> server name which will look almost like a trusted site, because the\n> real domain name has been cut off. The three dots at the end will not\n> be obvious to all users.\n>\n> This flaw can be exploited by phishers who can set up custom\n> sub-domains, for example by hosting their own public DNS.\n",
+    "id": "FreeBSD-2007-0068",
+    "modified": "2010-05-12T00:00:00Z",
+    "published": "2007-07-19T00:00:00Z",
+    "references": [
+        {
+            "type": "REPORT",
+            "url": "http://www.opera.com/support/search/view/861/"
+        },
+        {
+            "type": "REPORT",
+            "url": "http://www.opera.com/support/search/view/862/"
+        },
+        {
+            "type": "REPORT",
+            "url": "http://www.opera.com/support/search/view/863/"
+        },
+        {
+            "type": "REPORT",
+            "url": "http://www.opera.com/support/search/view/864/"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2007-3929"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2007-4944"
+        },
+        {
+            "type": "WEB",
+            "url": "http://labs.idefense.com/intelligence/vulnerabilities/display.php?id=564"
+        },
+        {
+            "type": "WEB",
+            "url": "http://www.opera.com/support/search/view/861/"
+        },
+        {
+            "type": "WEB",
+            "url": "http://www.opera.com/support/search/view/862/"
+        },
+        {
+            "type": "WEB",
+            "url": "http://www.opera.com/support/search/view/863/"
+        },
+        {
+            "type": "WEB",
+            "url": "http://www.opera.com/support/search/view/864/"
+        },
+        {
+            "type": "WEB",
+            "url": "http://www.opera.com/docs/changelogs/freebsd/922/"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "opera -- multiple vulnerabilities"
+}

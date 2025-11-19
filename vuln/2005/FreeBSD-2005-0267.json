@@ -1,0 +1,84 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "bind9"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "introduced": "9.3.0"
+                        },
+                        {
+                            "last_affected": "9.3.0"
+                        },
+                        {
+                            "fixed": "9.3.0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ],
+            "versions": [
+                "9.3.0"
+            ]
+        },
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "FreeBSD"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "introduced": "5.3"
+                        },
+                        {
+                            "fixed": "5.3_16"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "discovery": "2005-01-25T00:00:00Z",
+        "references": {
+            "certvu": [
+                "938617"
+            ],
+            "cvename": [
+                "CVE-2005-0034"
+            ]
+        },
+        "vid": "30e4ed7b-1ca6-11da-bc01-000e0c2e438a"
+    },
+    "details": "Problem description\n\nA DNSSEC-related validator function in BIND 9.3.0 contains an\ninappropriate internal consistency test. When this test is triggered,\nnamed(8) will exit.\n\nImpact\n\nOn systems with DNSSEC enabled, a remote attacker may be able to inject\na specially crafted packet that will cause the internal consistency test\nto trigger, and named(8) to terminate. As a result, the name server will\nno longer be available to service requests.\n\nWorkaround\n\nDNSSEC is not enabled by default, and the \\\"dnssec-enable\\\" directive is\nnot normally present. If DNSSEC has been enabled, disable it by changing\nthe \\\"dnssec-enable\\\" directive to \\\"dnssec-enable no;\\\" in the\nnamed.conf(5) configuration file.\n",
+    "id": "FreeBSD-2005-0267",
+    "modified": "2005-09-03T00:00:00Z",
+    "published": "2005-09-03T00:00:00Z",
+    "references": [
+        {
+            "type": "ADVISORY",
+            "url": "https://www.kb.cert.org/vuls/id/938617"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2005-0034"
+        },
+        {
+            "type": "WEB",
+            "url": "http://www.uniras.gov.uk/niscc/docs/al-20050125-00060.html?lang=en"
+        },
+        {
+            "type": "WEB",
+            "url": "http://www.isc.org/sw/bind/bind9.3.php#security"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "bind9 -- denial of service"
+}

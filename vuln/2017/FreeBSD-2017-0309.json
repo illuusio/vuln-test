@@ -1,0 +1,103 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "libxml2"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "last_affected": "2.9.4"
+                        },
+                        {
+                            "fixed": "2.9.4"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "discovery": "2017-05-10T00:00:00Z",
+        "references": {
+            "cvename": [
+                "CVE-2017-8872",
+                "CVE-2017-9047",
+                "CVE-2017-9048",
+                "CVE-2017-9049",
+                "CVE-2017-9050"
+            ]
+        },
+        "vid": "76e59f55-4f7a-4887-bcb0-11604004163a"
+    },
+    "details": "libxml2 developers report:\n\nThe htmlParseTryOrFinish function in HTMLparser.c in libxml2 2.9.4\nallows attackers to cause a denial of service (buffer over-read) or\ninformation disclosure.\n\nA buffer overflow was discovered in libxml2 20904-GITv2.9.4-16-g0741801.\nThe function xmlSnprintfElementContent in valid.c is supposed to\nrecursively dump the element content definition into a char buffer\n\\'buf\\' of size \\'size\\'. The variable len is assigned strlen(buf). If\nthe content-\\>type is XML_ELEMENT_CONTENT_ELEMENT, then (i) the\ncontent-\\>prefix is appended to buf (if it actually fits) whereupon (ii)\ncontent-\\>name is written to the buffer. However, the check for whether\nthe content-\\>name actually fits also uses \\'len\\' rather than the\nupdated buffer length strlen(buf). This allows us to write about\n\\\"size\\\" many bytes beyond the allocated memory. This vulnerability\ncauses programs that use libxml2, such as PHP, to crash.\n\nlibxml2 20904-GITv2.9.4-16-g0741801 is vulnerable to a stack-based\nbuffer overflow. The function xmlSnprintfElementContent in valid.c is\nsupposed to recursively dump the element content definition into a char\nbuffer \\'buf\\' of size \\'size\\'. At the end of the routine, the function\nmay strcat two more characters without checking whether the current\nstrlen(buf) + 2 \\< size. This vulnerability causes programs that use\nlibxml2, such as PHP, to crash.\n\nlibxml2 20904-GITv2.9.4-16-g0741801 is vulnerable to a heap-based buffer\nover-read in the xmlDictComputeFastKey function in dict.c. This\nvulnerability causes programs that use libxml2, such as PHP, to crash.\nThis vulnerability exists because of an incomplete fix for libxml2 Bug\n759398.\n\nlibxml2 20904-GITv2.9.4-16-g0741801 is vulnerable to a heap-based buffer\nover-read in the xmlDictAddString function in dict.c. This vulnerability\ncauses programs that use libxml2, such as PHP, to crash. This\nvulnerability exists because of an incomplete fix for CVE-2016-1839.\n",
+    "id": "FreeBSD-2017-0309",
+    "modified": "2017-12-13T00:00:00Z",
+    "published": "2017-12-13T00:00:00Z",
+    "references": [
+        {
+            "type": "WEB",
+            "url": "https://bugzilla.gnome.org/show_bug.cgi?id=775200"
+        },
+        {
+            "type": "WEB",
+            "url": "http://www.openwall.com/lists/oss-security/2017/05/15/1"
+        },
+        {
+            "type": "WEB",
+            "url": "http://www.securityfocus.com/bid/98599"
+        },
+        {
+            "type": "WEB",
+            "url": "http://www.openwall.com/lists/oss-security/2017/05/15/1"
+        },
+        {
+            "type": "WEB",
+            "url": "http://www.securityfocus.com/bid/98556"
+        },
+        {
+            "type": "WEB",
+            "url": "http://www.openwall.com/lists/oss-security/2017/05/15/1"
+        },
+        {
+            "type": "WEB",
+            "url": "http://www.securityfocus.com/bid/98601"
+        },
+        {
+            "type": "WEB",
+            "url": "http://www.openwall.com/lists/oss-security/2017/05/15/1"
+        },
+        {
+            "type": "WEB",
+            "url": "http://www.securityfocus.com/bid/98568"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2017-8872"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2017-9047"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2017-9048"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2017-9049"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2017-9050"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "libxml2 -- Multiple Issues"
+}

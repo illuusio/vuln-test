@@ -1,0 +1,80 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "krb5"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "introduced": "1.3.0"
+                        },
+                        {
+                            "fixed": "1.7.2"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                },
+                {
+                    "events": [
+                        {
+                            "introduced": "1.8.0"
+                        },
+                        {
+                            "last_affected": "1.8.3"
+                        },
+                        {
+                            "fixed": "1.8.3"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "cite": [
+            "http://web.mit.edu/kerberos/advisories/MITKRB5-SA-2010-007.txt"
+        ],
+        "discovery": "2010-11-30T00:00:00Z",
+        "references": {
+            "bid": [
+                "45118"
+            ],
+            "cvename": [
+                "CVE-2010-1323"
+            ]
+        },
+        "vid": "11bbccbc-03ee-11e0-bcdb-001fc61c2a55"
+    },
+    "details": "The MIT Kerberos team reports:\n\n> MIT krb5 clients incorrectly accept an unkeyed checksums in the SAM-2\n> preauthentication challenge.\n>\n> An unauthenticated remote attacker could alter a SAM-2 challenge,\n> affecting the prompt text seen by the user or the kind of response\n> sent to the KDC. Under some circumstances, this can negate the\n> incremental security benefit of using a single-use authentication\n> mechanism token.\n>\n> MIT krb5 incorrectly accepts RFC 3961 key-derivation checksums using\n> RC4 keys when verifying KRB-SAFE messages.\n>\n> An unauthenticated remote attacker has a 1/256 chance of forging\n> KRB-SAFE messages in an application protocol if the targeted\n> pre-existing session uses an RC4 session key. Few application\n> protocols use KRB-SAFE messages.\n",
+    "id": "FreeBSD-2010-0134",
+    "modified": "2010-12-09T00:00:00Z",
+    "published": "2010-12-09T00:00:00Z",
+    "references": [
+        {
+            "type": "REPORT",
+            "url": "http://web.mit.edu/kerberos/advisories/MITKRB5-SA-2010-007.txt"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://www.securityfocus.com/bid/45118/info"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2010-1323"
+        },
+        {
+            "type": "WEB",
+            "url": "http://web.mit.edu/kerberos/advisories/MITKRB5-SA-2010-007.txt"
+        },
+        {
+            "type": "WEB",
+            "url": "http://osvdb.org/69610"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "krb5 -- multiple checksum handling vulnerabilities"
+}

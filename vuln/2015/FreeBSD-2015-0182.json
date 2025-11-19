@@ -1,0 +1,55 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "xen-kernel"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "introduced": "4.5"
+                        },
+                        {
+                            "fixed": "4.5.0_3"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "cite": [
+            "http://xenbits.xen.org/xsa/advisory-117.html"
+        ],
+        "discovery": "2015-02-12T00:00:00Z",
+        "references": {
+            "cvename": [
+                "CVE-2015-0268"
+            ]
+        },
+        "vid": "785c86b1-27d6-11e5-a4a5-002590263bf5"
+    },
+    "details": "The Xen Project reports:\n\n> When decoding a guest write to a specific register in the virtual\n> interrupt controller Xen would treat an invalid value as a critical\n> error and crash the host.\n>\n> By writing an invalid value to the GICD.SGIR register a guest can\n> crash the host, resulting in a Denial of Service attack.\n",
+    "id": "FreeBSD-2015-0182",
+    "modified": "2015-07-11T00:00:00Z",
+    "published": "2015-07-11T00:00:00Z",
+    "references": [
+        {
+            "type": "REPORT",
+            "url": "http://xenbits.xen.org/xsa/advisory-117.html"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2015-0268"
+        },
+        {
+            "type": "WEB",
+            "url": "http://xenbits.xen.org/xsa/advisory-117.html"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "xen-kernel -- arm: vgic-v2: GICD_SGIR is not properly emulated"
+}

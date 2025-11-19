@@ -1,0 +1,204 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "gatekeeper"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "2.2.1"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        },
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "citadel"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "6.29"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        },
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "3proxy"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "0.5.b"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        },
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "jabber"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "1.4.3.1_1,1"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                },
+                {
+                    "events": [
+                        {
+                            "introduced": "1.4.4"
+                        },
+                        {
+                            "last_affected": "1.4.4"
+                        },
+                        {
+                            "fixed": "1.4.4"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ],
+            "versions": [
+                "1.4.4"
+            ]
+        },
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "bnc"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "2.9.3"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        },
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "rinetd"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "0.62_1"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        },
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "dante"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "1.1.15"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        },
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "bld"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "0.3.3"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "cite": [
+            "http://www.security.nnov.ru/advisories/sockets.asp"
+        ],
+        "discovery": "2004-12-12T00:00:00Z",
+        "vid": "4c005a5e-2541-4d95-80a0-00c76919aa66"
+    },
+    "details": "3APA3A reports:\n\n> If programmer fails to check socket number before using select() or\n> fd_set macros, it\\'s possible to overwrite memory behind fd_set\n> structure. Very few select() based application actually check\n> FD_SETSIZE value. *\\[\\...\\]*\n>\n> Depending on vulnerable application it\\'s possible to overwrite\n> portions of memory. Impact is close to off-by-one overflows, code\n> execution doesn\\'t seems exploitable.\n",
+    "id": "FreeBSD-2005-0175",
+    "modified": "2006-09-03T00:00:00Z",
+    "published": "2005-06-17T00:00:00Z",
+    "references": [
+        {
+            "type": "REPORT",
+            "url": "http://www.security.nnov.ru/advisories/sockets.asp"
+        },
+        {
+            "type": "WEB",
+            "url": "http://www.gotbnc.com/changes.html#2.9.3"
+        },
+        {
+            "type": "WEB",
+            "url": "http://www.security.nnov.ru/advisories/sockets.asp"
+        },
+        {
+            "type": "DISCUSSION",
+            "url": "http://marc.theaimsgroup.com/?l=bugtraq&m=110660879328901"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "fd_set -- bitmap index overflow in multiple applications"
+}

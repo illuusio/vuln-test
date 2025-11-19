@@ -1,0 +1,69 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "pcre"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "8.37_1"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "cite": [
+            "https://bugs.exim.org/show_bug.cgi?id=1636",
+            "https://bugs.exim.org/show_bug.cgi?id=1638"
+        ],
+        "discovery": "2015-05-29T00:00:00Z",
+        "references": {
+            "cvename": [
+                "CVE-2015-3210",
+                "CVE-2015-3217"
+            ]
+        },
+        "vid": "e69af246-0ae2-11e5-90e4-d050996490d0"
+    },
+    "details": "Venustech ADLAB reports:\n\n> PCRE library is prone to a vulnerability which leads to Heap Overflow.\n> During the compilation of a malformed regular expression, more data is\n> written on the malloced block than the expected size output by\n> compile_regex.\n\n> PCRE library is prone to a vulnerability which leads to Stack\n> Overflow. Without enough bound checking inside match(), the stack\n> memory could be overflowed via a crafted regular expression.\n",
+    "id": "FreeBSD-2015-0121",
+    "modified": "2015-06-07T00:00:00Z",
+    "published": "2015-06-04T00:00:00Z",
+    "references": [
+        {
+            "type": "REPORT",
+            "url": "https://bugs.exim.org/show_bug.cgi?id=1636"
+        },
+        {
+            "type": "REPORT",
+            "url": "https://bugs.exim.org/show_bug.cgi?id=1638"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2015-3210"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2015-3217"
+        },
+        {
+            "type": "WEB",
+            "url": "https://bugs.exim.org/show_bug.cgi?id=1636"
+        },
+        {
+            "type": "WEB",
+            "url": "https://bugs.exim.org/show_bug.cgi?id=1638"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "pcre -- multiple vulnerabilities"
+}

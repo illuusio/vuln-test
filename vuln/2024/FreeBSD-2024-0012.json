@@ -1,0 +1,165 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "xorg-server"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "21.1.11,1"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        },
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "xephyr"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "21.1.11,1"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        },
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "xorg-vfbserver"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "21.1.11,1"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        },
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "xorg-nextserver"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "21.1.11,2"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        },
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "xwayland"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "23.2.4"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        },
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "xwayland-devel"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "21.0.99.1.653"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "cite": [
+            "https://lists.x.org/archives/xorg/2024-January/061525.html"
+        ],
+        "discovery": "2024-01-16T00:00:00Z",
+        "references": {
+            "cvename": [
+                "CVE-2023-6816",
+                "CVE-2024-0229",
+                "CVE-2024-21885",
+                "CVE-2024-21886"
+            ]
+        },
+        "vid": "7467c611-b490-11ee-b903-001fc69cd6dc"
+    },
+    "details": "The X.Org project reports:\n\n> - CVE-2023-6816: Heap buffer overflow in DeviceFocusEvent and\n>   ProcXIQueryPointer\n>\n>   Both DeviceFocusEvent and the XIQueryPointer reply contain a bit for\n>   each logical button currently down. Buttons can be arbitrarily\n>   mapped to any value up to 255 but the X.Org Server was only\n>   allocating space for the device\\'s number of buttons, leading to a\n>   heap overflow if a bigger value was used.\n>\n> - CVE-2024-0229: Reattaching to different master device may lead to\n>   out-of-bounds memory access\n>\n>   If a device has both a button class and a key class and numButtons\n>   is zero, we can get an out-of-bounds write due to event\n>   under-allocation in the DeliverStateNotifyEvent function.\n>\n> - CVE-2024-21885: Heap buffer overflow in XISendDeviceHierarchyEvent\n>\n>   The XISendDeviceHierarchyEvent() function allocates space to store\n>   up to MAXDEVICES (256) xXIHierarchyInfo structures in info. If a\n>   device with a given ID was removed and a new device with the same ID\n>   added both in the same operation, the single device ID will lead to\n>   two info structures being written to info. Since this case can occur\n>   for every device ID at once, a total of two times MAXDEVICES info\n>   structures might be written to the allocation, leading to a heap\n>   buffer overflow.\n>\n> - CVE-2024-21886: Heap buffer overflow in DisableDevice\n>\n>   The DisableDevice() function is called whenever an enabled device is\n>   disabled and it moves the device from the inputInfo.devices linked\n>   list to the inputInfo.off_devices linked list. However, its\n>   link/unlink operation has an issue during the recursive call to\n>   DisableDevice() due to the prev pointer pointing to a removed\n>   device. This issue leads to a length mismatch between the total\n>   number of devices and the number of device in the list, leading to a\n>   heap overflow and, possibly, to local privilege escalation.\n",
+    "id": "FreeBSD-2024-0012",
+    "modified": "2024-01-16T00:00:00Z",
+    "published": "2024-01-16T00:00:00Z",
+    "references": [
+        {
+            "type": "REPORT",
+            "url": "https://lists.x.org/archives/xorg/2024-January/061525.html"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2023-6816"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2024-0229"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2024-21885"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2024-21886"
+        },
+        {
+            "type": "WEB",
+            "url": "https://lists.x.org/archives/xorg/2024-January/061525.html"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "xorg server -- Multiple vulnerabilities"
+}

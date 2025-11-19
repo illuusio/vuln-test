@@ -1,0 +1,62 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "pam_ldap"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "1.8.0"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "cite": [
+            "https://bugzilla.redhat.com/bugzilla/show_bug.cgi?id=166163"
+        ],
+        "discovery": "2005-08-22T00:00:00Z",
+        "references": {
+            "certvu": [
+                "778916"
+            ],
+            "cvename": [
+                "CVE-2005-2641"
+            ]
+        },
+        "vid": "38c76fcf-1744-11da-978e-0001020eed82"
+    },
+    "details": "Luke Howard reports:\n\n> If a pam_ldap client authenticates against an LDAP server that returns\n> a passwordPolicyResponse control, but omits the optional \\\"error\\\"\n> field of the PasswordPolicyResponseValue, then the LDAP authentication\n> result will be ignored and the authentication step will always\n> succeed.\n",
+    "id": "FreeBSD-2005-0262",
+    "modified": "2005-08-27T00:00:00Z",
+    "published": "2005-08-27T00:00:00Z",
+    "references": [
+        {
+            "type": "REPORT",
+            "url": "https://bugzilla.redhat.com/bugzilla/show_bug.cgi?id=166163"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2005-2641"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://www.kb.cert.org/vuls/id/778916"
+        },
+        {
+            "type": "WEB",
+            "url": "https://bugzilla.redhat.com/bugzilla/show_bug.cgi?id=166163"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "pam_ldap -- authentication bypass vulnerability"
+}

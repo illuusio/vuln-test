@@ -1,0 +1,140 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "phpMyAdmin"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "4.8.4"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        },
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "phpMyAdmin-php56"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "4.8.4"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        },
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "phpMyAdmin-php70"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "4.8.4"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        },
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "phpMyAdmin-php71"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "4.8.4"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        },
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "phpMyAdmin-php72"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "4.8.4"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "cite": [
+            "https://www.phpmyadmin.net/security/PMASA-2018-6/",
+            "https://www.phpmyadmin.net/security/PMASA-2018-7/",
+            "https://www.phpmyadmin.net/security/PMASA-2018-8/"
+        ],
+        "discovery": "2018-12-11T00:00:00Z",
+        "vid": "ed10ed3f-fddc-11e8-94cf-6805ca0b3d42"
+    },
+    "details": "The phpMyAdmin development team reports:\n\n> ### Summary\n>\n> Local file inclusion through transformation feature\n>\n> ### Description\n>\n> A flaw has been found where an attacker can exploit phpMyAdmin to leak\n> the contents of a local file. The attacker must have access to the\n> phpMyAdmin Configuration Storage tables, although these can easily be\n> created in any database to which the attacker has access. An attacker\n> must have valid credentials to log in to phpMyAdmin; this\n> vulnerability does not allow an attacker to circumvent the login\n> system.\n>\n> ### Severity\n>\n> We consider this vulnerability to be severe.\n\n> ### Summary\n>\n> XSRF/CSRF vulnerability in phpMyAdmin\n>\n> ### Description\n>\n> By deceiving a user to click on a crafted URL, it is possible to\n> perform harmful SQL operations such as renaming databases, creating\n> new tables/routines, deleting designer pages, adding/deleting users,\n> updating user passwords, killing SQL processes, etc.\n>\n> ### Severity\n>\n> We consider this vulnerability to be of moderate severity.\n\n> ### Summary\n>\n> XSS vulnerability in navigation tree\n>\n> ### Description\n>\n> A Cross-Site Scripting vulnerability was found in the navigation tree,\n> where an attacker can deliver a payload to a user through a\n> specially-crafted database/table name.\n>\n> ### Severity\n>\n> We consider this attack to be of moderate severity.\n>\n> ### Mitigation factor\n>\n> The stored XSS vulnerabilities can be triggered only by someone who\n> logged in to phpMyAdmin, as the usual token protection prevents\n> non-logged-in users from accessing the required forms.\n",
+    "id": "FreeBSD-2018-0298",
+    "modified": "2018-12-12T00:00:00Z",
+    "published": "2018-12-12T00:00:00Z",
+    "references": [
+        {
+            "type": "REPORT",
+            "url": "https://www.phpmyadmin.net/security/PMASA-2018-6/"
+        },
+        {
+            "type": "REPORT",
+            "url": "https://www.phpmyadmin.net/security/PMASA-2018-7/"
+        },
+        {
+            "type": "REPORT",
+            "url": "https://www.phpmyadmin.net/security/PMASA-2018-8/"
+        },
+        {
+            "type": "WEB",
+            "url": "https://www.phpmyadmin.net/security/PMASA-2018-6/"
+        },
+        {
+            "type": "WEB",
+            "url": "https://www.phpmyadmin.net/security/PMASA-2018-7/"
+        },
+        {
+            "type": "WEB",
+            "url": "https://www.phpmyadmin.net/security/PMASA-2018-8/"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "phpMyAdmin -- multiple vulnerabilities"
+}

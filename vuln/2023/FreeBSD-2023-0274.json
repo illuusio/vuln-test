@@ -1,0 +1,62 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:kernel",
+                "name": "FreeBSD-kernel"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "introduced": "13.2"
+                        },
+                        {
+                            "fixed": "13.2_3"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                },
+                {
+                    "events": [
+                        {
+                            "introduced": "12.4"
+                        },
+                        {
+                            "fixed": "12.4_5"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "discovery": "2023-09-06T00:00:00Z",
+        "references": {
+            "cvename": [
+                "CVE-2023-4809"
+            ],
+            "freebsdsa": [
+                "SA-23:10.pf"
+            ]
+        },
+        "vid": "d35373ae-4d34-11ee-8e38-002590c1f29c"
+    },
+    "details": "# Problem Description:\n\nWith a \\'scrub fragment reassemble\\' rule, a packet containing multiple\nIPv6 fragment headers would be reassembled, and then immediately\nprocessed. That is, a packet with multiple fragment extension headers\nwould not be recognized as the correct ultimate payload. Instead a\npacket with multiple IPv6 fragment headers would unexpectedly be\ninterpreted as a fragmented packet, rather than as whatever the real\npayload is.\n\n# Impact:\n\nIPv6 fragments may bypass firewall rules written on the assumption all\nfragments have been reassembled and, as a result, be forwarded or\nprocessed by the host.\n",
+    "id": "FreeBSD-2023-0274",
+    "modified": "2023-09-07T00:00:00Z",
+    "published": "2023-09-07T00:00:00Z",
+    "references": [
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2023-4809"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://www.freebsd.org/security/advisories/FreeBSD-SA-23:10.pf.asc"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "FreeBSD -- pf incorrectly handles multiple IPv6 fragment headers"
+}

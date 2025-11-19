@@ -1,0 +1,74 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "dnsmasq"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "2.85.r1,1"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        },
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "dnsmasq-devel"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "2.85.r1,3"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "cite": [
+            "https://lists.thekelleys.org.uk/pipermail/dnsmasq-discuss/2021q1/014835.html"
+        ],
+        "discovery": "2021-03-17T00:00:00Z",
+        "references": {
+            "cvename": [
+                "CVE-2021-3448"
+            ]
+        },
+        "vid": "5b72b1ff-877c-11eb-bd4f-2f1d57dafe46"
+    },
+    "details": "Simon Kelley reports:\n\n> \\[In configurations where the forwarding server address contains an @\n> character for specifying a sending interface or source address, the\\]\n> random source port behavior was disabled, making cache poisoning\n> attacks possible.\n\nThis only affects configurations of the form server=1.1.1.1@em0 or\nserver=1.1.1.1@192.0.2.1, i. e. those that specify an interface to send\nthrough, or an IP address to send from, or use together with\nNetworkManager.\n",
+    "id": "FreeBSD-2021-0067",
+    "modified": "2021-03-18T00:00:00Z",
+    "published": "2021-03-18T00:00:00Z",
+    "references": [
+        {
+            "type": "REPORT",
+            "url": "https://lists.thekelleys.org.uk/pipermail/dnsmasq-discuss/2021q1/014835.html"
+        },
+        {
+            "type": "WEB",
+            "url": "https://lists.thekelleys.org.uk/pipermail/dnsmasq-discuss/2021q1/014835.html"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2021-3448"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "dnsmasq -- cache poisoning vulnerability in certain configurations"
+}

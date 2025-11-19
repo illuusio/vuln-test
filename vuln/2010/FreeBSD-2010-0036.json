@@ -1,0 +1,63 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "curl"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "introduced": "7.10.5"
+                        },
+                        {
+                            "fixed": "7.20.0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "cite": [
+            "http://curl.haxx.se/docs/adv_20100209.html"
+        ],
+        "discovery": "2010-02-09T00:00:00Z",
+        "references": {
+            "cvename": [
+                "CVE-2010-0734"
+            ]
+        },
+        "vid": "c8c31c41-49ed-11df-83fb-0015587e2cc1"
+    },
+    "details": "The cURL project reports in a security advisory:\n\n> Using the affected libcurl version to download compressed content over\n> HTTP, an application can ask libcurl to automatically uncompress data.\n> When doing so, libcurl can wrongly send data up to 64K in size to the\n> callback which thus is much larger than the documented maximum size.\n>\n> An application that blindly trusts libcurl\\'s max limit for a fixed\n> buffer size or similar is then a possible target for a buffer overflow\n> vulnerability.\n",
+    "id": "FreeBSD-2010-0036",
+    "modified": "2010-04-19T00:00:00Z",
+    "published": "2010-04-19T00:00:00Z",
+    "references": [
+        {
+            "type": "REPORT",
+            "url": "http://curl.haxx.se/docs/adv_20100209.html"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2010-0734"
+        },
+        {
+            "type": "WEB",
+            "url": "http://curl.haxx.se/docs/adv_20100209.html"
+        },
+        {
+            "type": "WEB",
+            "url": "http://www.debian.org/security/2010/dsa-2023"
+        },
+        {
+            "type": "WEB",
+            "url": "http://www.openwall.com/lists/oss-security/2010/02/09/5"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "curl -- libcurl buffer overflow vulnerability"
+}

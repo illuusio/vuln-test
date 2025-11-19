@@ -1,0 +1,62 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "FreeBSD"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "introduced": "13.2"
+                        },
+                        {
+                            "fixed": "13.2_2"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                },
+                {
+                    "events": [
+                        {
+                            "introduced": "13.1"
+                        },
+                        {
+                            "fixed": "13.1_9"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "discovery": "2023-08-01T00:00:00Z",
+        "references": {
+            "cvename": [
+                "CVE-2023-3494"
+            ],
+            "freebsdsa": [
+                "SA-23:07.bhyve"
+            ]
+        },
+        "vid": "ab437561-47c0-11ee-8e38-002590c1f29c"
+    },
+    "details": "# Problem Description:\n\nThe fwctl driver implements a state machine which is executed when the\nguest accesses certain x86 I/O ports. The interface lets the guest copy\na string into a buffer resident in the bhyve process\\' memory. A bug in\nthe state machine implementation can result in a buffer overflowing when\ncopying this string.\n\n# Impact:\n\nA malicious, privileged software running in a guest VM can exploit the\nbuffer overflow to achieve code execution on the host in the bhyve\nuserspace process, which typically runs as root. Note that bhyve runs in\na Capsicum sandbox, so malicious code is constrained by the capabilities\navailable to the bhyve process.\n",
+    "id": "FreeBSD-2023-0245",
+    "modified": "2023-08-31T00:00:00Z",
+    "published": "2023-08-31T00:00:00Z",
+    "references": [
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2023-3494"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://www.freebsd.org/security/advisories/FreeBSD-SA-23:07.bhyve.asc"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "FreeBSD -- bhyve privileged guest escape via fwctl"
+}

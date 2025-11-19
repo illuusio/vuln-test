@@ -1,0 +1,82 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "firefox"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "1.0.3,1"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        },
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "linux-firefox"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "1.0.3"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "cite": [
+            "http://www.mozilla.org/security/announce/mfsa2005-34.html"
+        ],
+        "discovery": "2005-03-31T00:00:00Z",
+        "references": {
+            "cvename": [
+                "CVE-2005-0752"
+            ]
+        },
+        "vid": "ce6ac624-aec8-11d9-a788-0001020eed82"
+    },
+    "details": "A Mozilla Foundation Security Advisory reports:\n\n> When a webpage requires a plugin that is not installed the user can\n> click to launch the Plugin Finder Service (PFS) to find an appropriate\n> plugin. If the service does not have an appropriate plugin the EMBED\n> tag is checked for a PLUGINSPAGE attribute, and if one is found the\n> PFS dialog will contain a \\\"manual install\\\" button that will load the\n> PLUGINSPAGE url.\n>\n> Omar Khan reported that if the PLUGINSPAGE attribute contains a\n> javascript: url then pressing the button could launch arbitrary code\n> capable of stealing local data or installing malicious code.\n>\n> Doron Rosenberg reported a variant that injects script by appending it\n> to a malformed URL of any protocol.\n",
+    "id": "FreeBSD-2005-0131",
+    "modified": "2005-04-16T00:00:00Z",
+    "published": "2005-04-16T00:00:00Z",
+    "references": [
+        {
+            "type": "REPORT",
+            "url": "http://www.mozilla.org/security/announce/mfsa2005-34.html"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2005-0752"
+        },
+        {
+            "type": "WEB",
+            "url": "http://www.mozilla.org/security/announce/mfsa2005-34.html"
+        },
+        {
+            "type": "REPORT",
+            "url": "https://bugzilla.mozilla.org/show_bug.cgi?id=288556"
+        },
+        {
+            "type": "REPORT",
+            "url": "https://bugzilla.mozilla.org/show_bug.cgi?id=289171"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "firefox -- PLUGINSPAGE privileged javascript execution"
+}

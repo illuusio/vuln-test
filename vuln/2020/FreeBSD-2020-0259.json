@@ -1,0 +1,55 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "apache-ant"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "introduced": "1.1"
+                        },
+                        {
+                            "fixed": "1.10.8"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "cite": [
+            "https://issues.apache.org/jira/browse/RAT-269?page=com.atlassian.jira.plugin.system.issuetabpanels%3Aall-tabpanel"
+        ],
+        "discovery": "2020-05-14T00:00:00Z",
+        "references": {
+            "cvename": [
+                "CVE-2020-1945"
+            ]
+        },
+        "vid": "6d5f1b0b-b865-48d5-935b-3fb6ebb425fc"
+    },
+    "details": "Apache reports:\n\n> Apache Ant 1.1 to 1.9.14 and 1.10.0 to 1.10.7 uses the default\n> temporary directory identified by the Java system property\n> java.io.tmpdir for several tasks and may thus leak sensitive\n> information. The fixcrlf and replaceregexp tasks also copy files from\n> the temporary directory back into the build tree allowing an attacker\n> to inject modified source files into the build process.\n",
+    "id": "FreeBSD-2020-0259",
+    "modified": "2020-09-28T00:00:00Z",
+    "published": "2020-09-28T00:00:00Z",
+    "references": [
+        {
+            "type": "REPORT",
+            "url": "https://issues.apache.org/jira/browse/RAT-269?page=com.atlassian.jira.plugin.system.issuetabpanels%3Aall-tabpanel"
+        },
+        {
+            "type": "WEB",
+            "url": "https://issues.apache.org/jira/browse/RAT-269?page=com.atlassian.jira.plugin.system.issuetabpanels%3Aall-tabpanel"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2020-1945"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "Apache Ant leaks sensitive information via the java.io.tmpdir"
+}

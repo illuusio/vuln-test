@@ -1,0 +1,63 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "e2fsprogs"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "1.42.12"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "cite": [
+            "http://git.kernel.org/cgit/fs/ext2/e2fsprogs.git/commit/?id=f66e6ce4"
+        ],
+        "discovery": "2014-08-09T00:00:00Z",
+        "references": {
+            "cvename": [
+                "CVE-2015-0247"
+            ]
+        },
+        "vid": "0f488b7b-bbb9-11e4-903c-080027ef73ec"
+    },
+    "details": "Theodore Ts\\'o reports:\n\n> If s_first_meta_bg is greater than the of number block group\n> descriptor blocks, then reading or writing the block group descriptors\n> will end up overruning the memory buffer allocated for the\n> descriptors.\n>\n> The finding is credited to a vulnerability report from Jose Duart of\n> Google Security Team \\<jduart AT google.com\\> and was reported through\n> oCERT-2015-002.\n",
+    "id": "FreeBSD-2015-0036",
+    "modified": "2015-02-24T00:00:00Z",
+    "published": "2015-02-24T00:00:00Z",
+    "references": [
+        {
+            "type": "REPORT",
+            "url": "http://git.kernel.org/cgit/fs/ext2/e2fsprogs.git/commit/?id=f66e6ce4"
+        },
+        {
+            "type": "WEB",
+            "url": "http://git.kernel.org/cgit/fs/ext2/e2fsprogs.git/commit/?id=f66e6ce4"
+        },
+        {
+            "type": "WEB",
+            "url": "http://www.ocert.org/advisories/ocert-2015-002.html"
+        },
+        {
+            "type": "REPORT",
+            "url": "https://bugzilla.redhat.com/show_bug.cgi?id=1187032"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2015-0247"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "e2fsprogs -- buffer overflow if s_first_meta_bg too big"
+}

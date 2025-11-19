@@ -1,0 +1,76 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "atheme-services"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "7.2.7"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "cite": [
+            "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2014-9773",
+            "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2016-4478"
+        ],
+        "discovery": "2016-01-09T00:00:00Z",
+        "references": {
+            "cvename": [
+                "CVE-2014-9773",
+                "CVE-2016-4478"
+            ],
+            "freebsdpr": [
+                "ports/209217"
+            ]
+        },
+        "vid": "e47ab5db-c333-11e6-ae1b-002590263bf5"
+    },
+    "details": "Mitre reports:\n\n> modules/chanserv/flags.c in Atheme before 7.2.7 allows remote\n> attackers to modify the Anope FLAGS behavior by registering and\n> dropping the (1) LIST, (2) CLEAR, or (3) MODIFY keyword nicks.\n\n> Buffer overflow in the xmlrpc_char_encode function in\n> modules/transport/xmlrpc/xmlrpclib.c in Atheme before 7.2.7 allows\n> remote attackers to cause a denial of service via vectors related to\n> XMLRPC response encoding.\n",
+    "id": "FreeBSD-2016-0476",
+    "modified": "2016-12-16T00:00:00Z",
+    "published": "2016-12-16T00:00:00Z",
+    "references": [
+        {
+            "type": "REPORT",
+            "url": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2014-9773"
+        },
+        {
+            "type": "REPORT",
+            "url": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2016-4478"
+        },
+        {
+            "type": "REPORT",
+            "url": "https://bugs.freebsd.org/bugzilla/show_bug.cgi?id=209217"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2014-9773"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2016-4478"
+        },
+        {
+            "type": "WEB",
+            "url": "https://github.com/atheme/atheme/commit/87580d767868360d2fed503980129504da84b63e"
+        },
+        {
+            "type": "WEB",
+            "url": "https://github.com/atheme/atheme/commit/c597156adc60a45b5f827793cd420945f47bc03b"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "atheme-services -- multiple vulnerabilities"
+}

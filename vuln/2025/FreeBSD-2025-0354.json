@@ -1,0 +1,90 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "sqlite3"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "introduced": "3.49.1,1"
+                        },
+                        {
+                            "fixed": "3.50.3,1"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        },
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "linux_base-rl9"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        },
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "linux-c7-sqlite"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "3.50.3"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "cite": [
+            "https://github.com/google/security-research/security/advisories/GHSA-v2c8-vqqp-hv3g"
+        ],
+        "discovery": "2025-07-15T00:00:00Z",
+        "references": {
+            "cvename": [
+                "CVE-2025-7709"
+            ]
+        },
+        "vid": "c5889223-b4e1-11f0-ae9b-b42e991fc52e"
+    },
+    "details": "https://github.com/google/security-research/security/advisories/GHSA-v2c8-vqqp-hv3g\nreports:\n\n> An integer overflow exists in the FTS5 https://sqlite.org/fts5.html\n> extension. It occurs when the size of an array of tombstone pointers\n> is calculated and truncated into a 32-bit integer. A pointer to\n> partially controlled data can then be written out of bounds.\n\nThe FreeBSD build enables the FTS5 extension by default.\n",
+    "id": "FreeBSD-2025-0354",
+    "modified": "2025-11-07T00:00:00Z",
+    "published": "2025-10-29T00:00:00Z",
+    "references": [
+        {
+            "type": "REPORT",
+            "url": "https://github.com/google/security-research/security/advisories/GHSA-v2c8-vqqp-hv3g"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2025-7709"
+        },
+        {
+            "type": "WEB",
+            "url": "https://cveawg.mitre.org/api/cve/CVE-2025-7709"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "SQLite < 3.50.3 -- CWE-190 Integer Overflow or Wraparound in FTS5 module"
+}

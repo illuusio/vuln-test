@@ -1,0 +1,55 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "xinetd"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "2.3.15"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "cite": [
+            "https://bugzilla.redhat.com/show_bug.cgi?id=790940"
+        ],
+        "discovery": "2012-02-15T00:00:00Z",
+        "references": {
+            "cvename": [
+                "CVE-2012-0862"
+            ]
+        },
+        "vid": "e11955ca-187c-11e2-be36-00215af774f0"
+    },
+    "details": "Thomas Swan reports:\n\n> xinetd allows for services to be configured with the TCPMUX or\n> TCPMUXPLUS service types, which makes those services available on port\n> 1, as per RFC 1078 \\[1\\], if the tcpmux-server service is enabled.\n> When the tcpmux-server service is enabled, xinetd would expose \\_all\\_\n> enabled services via the tcpmux port, instead of just the configured\n> service(s). This could allow a remote attacker to bypass firewall\n> restrictions and access services via the tcpmux port.\n",
+    "id": "FreeBSD-2012-0189",
+    "modified": "2012-10-17T00:00:00Z",
+    "published": "2012-10-17T00:00:00Z",
+    "references": [
+        {
+            "type": "REPORT",
+            "url": "https://bugzilla.redhat.com/show_bug.cgi?id=790940"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2012-0862"
+        },
+        {
+            "type": "REPORT",
+            "url": "https://bugzilla.redhat.com/show_bug.cgi?id=790940"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "xinetd -- attackers can bypass access restrictions if tcpmux-servers service enabled"
+}

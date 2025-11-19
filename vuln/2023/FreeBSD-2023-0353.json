@@ -1,0 +1,74 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "varnish7"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "7.4.2"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        },
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "varnish6"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "6.6.3"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "cite": [
+            "https://varnish-cache.org/security/VSV00013.html"
+        ],
+        "discovery": "2023-11-13T00:00:00Z",
+        "references": {
+            "cvename": [
+                "CVE-2023-44487"
+            ]
+        },
+        "vid": "f25a34b1-910d-11ee-a1a2-641c67a117d8"
+    },
+    "details": "Varnish Cache Project reports:\n\n> A denial of service attack can be performed on Varnish Cache servers\n> that have the HTTP/2 protocol turned on. An attacker can create a\n> large volume of streams and immediately reset them without ever\n> reaching the maximum number of concurrent streams allowed for the\n> session, causing the Varnish server to consume unnecessary resources\n> processing requests for which the response will not be delivered.\n",
+    "id": "FreeBSD-2023-0353",
+    "modified": "2023-12-02T00:00:00Z",
+    "published": "2023-12-02T00:00:00Z",
+    "references": [
+        {
+            "type": "REPORT",
+            "url": "https://varnish-cache.org/security/VSV00013.html"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2023-44487"
+        },
+        {
+            "type": "WEB",
+            "url": "https://varnish-cache.org/security/VSV00013.html"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "varnish -- HTTP/2 Rapid Reset Attack"
+}

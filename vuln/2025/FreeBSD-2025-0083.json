@@ -1,0 +1,73 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "gitea"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "1.23.6"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "cite": [
+            "https://go.dev/cl/654697"
+        ],
+        "discovery": "2025-03-12T00:00:00Z",
+        "references": {
+            "cvename": [
+                "CVE-2025-22870",
+                "CVE-2025-29923",
+                "CVE-2025-30204"
+            ]
+        },
+        "vid": "300f86de-0e4d-11f0-ae40-b42e991fc52e"
+    },
+    "details": "security@golang.org reports:\n\n> Matching of hosts against proxy patterns can improperly treat an IPv6\n> zone ID as a hostname component. For example, when the NO_PROXY\n> environment variable is set to \\\"\\*.example.com\\\", a request to\n> \\\"\\[::1%25.example.com\\]:80\\` will incorrectly match and not be\n> proxied.\n>\n> go-redis is the official Redis client library for the Go programming\n> language. Prior to 9.5.5, 9.6.3, and 9.7.3, go-redis potentially\n> responds out of order when \\`CLIENT SETINFO\\` times out during\n> connection establishment. This can happen when the client is\n> configured to transmit its identity, there are network connectivity\n> issues, or the client was configured with aggressive timeouts. The\n> problem occurs for multiple use cases. For sticky connections, you\n> receive persistent out-of-order responses for the lifetime of the\n> connection. All commands in the pipeline receive incorrect responses.\n> When used with the default ConnPool once a connection is returned\n> after use with ConnPool#Put the read buffer will be checked and the\n> connection will be marked as bad due to the unread data. This means\n> that at most one out-of-order response before the connection is\n> discarded. This issue is fixed in 9.5.5, 9.6.3, and 9.7.3. You can\n> prevent the vulnerability by setting the flag DisableIndentity to true\n> when constructing the client instance.\n>\n> golang-jwt is a Go implementation of JSON Web Tokens. Prior to 5.2.2\n> and 4.5.2, the function parse.ParseUnverified splits (via a call to\n> strings.Split) its argument (which is untrusted data) on periods. As a\n> result, in the face of a malicious request whose Authorization header\n> consists of Bearer followed by many period characters, a call to that\n> function incurs allocations to the tune of O(n) bytes (where n stands\n> for the length of the function\\'s argument), with a constant factor of\n> about 16. This issue is fixed in 5.2.2 and 4.5.2.\n",
+    "id": "FreeBSD-2025-0083",
+    "modified": "2025-03-31T00:00:00Z",
+    "published": "2025-03-31T00:00:00Z",
+    "references": [
+        {
+            "type": "REPORT",
+            "url": "https://go.dev/cl/654697"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2025-22870"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://nvd.nist.gov/vuln/detail/CVE-2025-22870"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2025-29923"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://nvd.nist.gov/vuln/detail/CVE-2025-29923"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2025-30204"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://nvd.nist.gov/vuln/detail/CVE-2025-30204"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "gitea -- Multiple vulnerabilities"
+}

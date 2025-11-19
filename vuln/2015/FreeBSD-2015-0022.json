@@ -1,0 +1,66 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "apache24"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "2.4.12"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "cite": [
+            "http://www.apache.org/dist/httpd/Announcement2.4.html"
+        ],
+        "discovery": "2015-01-29T00:00:00Z",
+        "references": {
+            "cvename": [
+                "CVE-2014-3583",
+                "CVE-2014-3581",
+                "CVE-2014-8109",
+                "CVE-2013-5704"
+            ]
+        },
+        "vid": "5804b9d4-a959-11e4-9363-20cf30e32f6d"
+    },
+    "details": "# Apache HTTP SERVER PROJECT reports:\n\n> mod_proxy_fcgi: Fix a potential crash due to buffer over-read, with\n> response headers\\' size above 8K.\n>\n> mod_cache: Avoid a crash when Content-Type has an empty value. PR\n> 56924.\n>\n> mod_lua: Fix handling of the Require line when a LuaAuthzProvider is\n> used in multiple Require directives with different arguments. PR57204.\n>\n> core: HTTP trailers could be used to replace HTTP headers late during\n> request processing, potentially undoing or otherwise confusing modules\n> that examined or modified request headers earlier. Adds\n> \\\"MergeTrailers\\\" directive to restore legacy behavior.\n",
+    "id": "FreeBSD-2015-0022",
+    "modified": "2015-01-31T00:00:00Z",
+    "published": "2015-01-31T00:00:00Z",
+    "references": [
+        {
+            "type": "REPORT",
+            "url": "http://www.apache.org/dist/httpd/Announcement2.4.html"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2014-3583"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2014-3581"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2014-8109"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2013-5704"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "apache24 -- several vulnerabilities"
+}

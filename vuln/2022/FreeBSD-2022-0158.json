@@ -1,0 +1,55 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "dendrite"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "0.9.3"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "cite": [
+            "https://github.com/matrix-org/gomatrixserverlib/security/advisories/GHSA-grvv-h2f9-7v9c"
+        ],
+        "discovery": "2022-08-15T00:00:00Z",
+        "references": {
+            "cvename": [
+                "CVE-2022-36009"
+            ]
+        },
+        "vid": "d658042c-1c98-11ed-95f8-901b0e9408dc"
+    },
+    "details": "Dendrite team reports:\n\n> The power level parsing within gomatrixserverlib was failing to parse\n> the \\\"events_default\\\" key of the m.room.power_levels event,\n> defaulting the event default power level to zero in all cases.\n>\n> In rooms where the \\\"events_default\\\" power level had been changed,\n> this could result in events either being incorrectly authorised or\n> rejected by Dendrite servers.\n",
+    "id": "FreeBSD-2022-0158",
+    "modified": "2022-08-25T00:00:00Z",
+    "published": "2022-08-15T00:00:00Z",
+    "references": [
+        {
+            "type": "REPORT",
+            "url": "https://github.com/matrix-org/gomatrixserverlib/security/advisories/GHSA-grvv-h2f9-7v9c"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2022-36009"
+        },
+        {
+            "type": "WEB",
+            "url": "https://github.com/matrix-org/gomatrixserverlib/security/advisories/GHSA-grvv-h2f9-7v9c"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "dendrite -- Incorrect parsing of the event default power level in event auth"
+}

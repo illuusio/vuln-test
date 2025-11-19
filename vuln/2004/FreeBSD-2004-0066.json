@@ -1,0 +1,62 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "FreeBSD"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "introduced": "5.1"
+                        },
+                        {
+                            "fixed": "5.1_14"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                },
+                {
+                    "events": [
+                        {
+                            "introduced": "5.2"
+                        },
+                        {
+                            "fixed": "5.2.1"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "discovery": "2004-02-19T00:00:00Z",
+        "references": {
+            "cvename": [
+                "CVE-2004-0126"
+            ],
+            "freebsdsa": [
+                "SA-04:03.jail"
+            ]
+        },
+        "vid": "9082a85a-88ae-11d8-90d1-0020ed76ef5a"
+    },
+    "details": "A programming error has been found in the\n[jail_attach(2)](http://www.freebsd.org/cgi/man.cgi?query=jail_attach)\nsystem call which affects the way that system call verifies the\nprivilege level of the calling process. Instead of failing immediately\nif the calling process was already jailed, the jail_attach system call\nwould fail only after changing the calling process\\'s root directory.\n\nA process with superuser privileges inside a jail could change its root\ndirectory to that of a different jail, and thus gain full read and write\naccess to files and directories within the target jail.\n",
+    "id": "FreeBSD-2004-0066",
+    "modified": "2004-05-05T00:00:00Z",
+    "published": "2004-04-07T00:00:00Z",
+    "references": [
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2004-0126"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://www.freebsd.org/security/advisories/FreeBSD-SA-04:03.jail.asc"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "jailed processes can attach to other jails"
+}

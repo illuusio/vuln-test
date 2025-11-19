@@ -1,0 +1,55 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "xen-tools"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "introduced": "3.3"
+                        },
+                        {
+                            "fixed": "4.5.0_6"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "cite": [
+            "http://xenbits.xen.org/xsa/advisory-131.html"
+        ],
+        "discovery": "2015-06-02T00:00:00Z",
+        "references": {
+            "cvename": [
+                "CVE-2015-4106"
+            ]
+        },
+        "vid": "3d657340-27ea-11e5-a4a5-002590263bf5"
+    },
+    "details": "The Xen Project reports:\n\n> Qemu allows guests to not only read, but also write all parts of the\n> PCI config space (but not extended config space) of passed through PCI\n> devices not explicitly dealt with for (partial) emulation purposes.\n>\n> Since the effect depends on the specific purpose of the the config\n> space field, it\\'s not possible to give a general statement about the\n> exact impact on the host or other guests. Privilege escalation, host\n> crash (Denial of Service), and leaked information all cannot be\n> excluded.\n",
+    "id": "FreeBSD-2015-0194",
+    "modified": "2015-07-11T00:00:00Z",
+    "published": "2015-07-11T00:00:00Z",
+    "references": [
+        {
+            "type": "REPORT",
+            "url": "http://xenbits.xen.org/xsa/advisory-131.html"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2015-4106"
+        },
+        {
+            "type": "WEB",
+            "url": "http://xenbits.xen.org/xsa/advisory-131.html"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "xen-tools -- Unmediated PCI register access in qemu"
+}

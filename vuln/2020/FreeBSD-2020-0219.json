@@ -1,0 +1,83 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "python37"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "3.7.9"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        },
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "python36"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "3.6.12"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "cite": [
+            "https://docs.python.org/release/3.7.9/whatsnew/changelog.html#changelog"
+        ],
+        "discovery": "2020-06-17T00:00:00Z",
+        "references": {
+            "cvename": [
+                "CVE-2020-14422",
+                "CVE-2020-15523"
+            ]
+        },
+        "vid": "3fcb70a4-e22d-11ea-98b2-080027846a02"
+    },
+    "details": "Python reports:\n\n> bpo-29778: Ensure python3.dll is loaded from correct locations when\n> Python is embedded (CVE-2020-15523).\n>\n> bpo-41004: CVE-2020-14422: The \\_\\_hash\\_\\_() methods of\n> ipaddress.IPv4Interface and ipaddress.IPv6Interface incorrectly\n> generated constant hash values of 32 and 128 respectively. This\n> resulted in always causing hash collisions. The fix uses hash() to\n> generate hash values for the tuple of (address, mask length, network\n> address).\n>\n> bpo-39603: Prevent http header injection by rejecting control\n> characters in http.client.putrequest(\\...).\n",
+    "id": "FreeBSD-2020-0219",
+    "modified": "2020-08-19T00:00:00Z",
+    "published": "2020-08-19T00:00:00Z",
+    "references": [
+        {
+            "type": "REPORT",
+            "url": "https://docs.python.org/release/3.7.9/whatsnew/changelog.html#changelog"
+        },
+        {
+            "type": "WEB",
+            "url": "https://docs.python.org/release/3.7.9/whatsnew/changelog.html#changelog"
+        },
+        {
+            "type": "WEB",
+            "url": "https://docs.python.org/release/3.6.12/whatsnew/changelog.html#changelog"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2020-14422"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2020-15523"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "Python -- multiple vulnerabilities"
+}

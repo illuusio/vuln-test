@@ -1,0 +1,55 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "fetchmail"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "6.3.8"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "cite": [
+            "http://www.fetchmail.info/fetchmail-SA-2007-01.txt"
+        ],
+        "discovery": "2007-04-06T00:00:00Z",
+        "references": {
+            "cvename": [
+                "CVE-2007-1558"
+            ]
+        },
+        "vid": "f1c4d133-e6d3-11db-99ea-0060084a00e5"
+    },
+    "details": "Matthias Andree reports:\n\n> The POP3 standard, currently RFC-1939, has specified an optional,\n> MD5-based authentication scheme called \\\"APOP\\\" which no longer should\n> be considered secure.\n>\n> Additionally, fetchmail\\'s POP3 client implementation has been\n> validating the APOP challenge too lightly and accepted random garbage\n> as a POP3 server\\'s APOP challenge. This made it easier than necessary\n> for man-in-the-middle attackers to retrieve by several probing and\n> guessing the first three characters of the APOP secret, bringing brute\n> forcing the remaining characters well within reach.\n",
+    "id": "FreeBSD-2007-0032",
+    "modified": "2007-04-09T00:00:00Z",
+    "published": "2007-04-09T00:00:00Z",
+    "references": [
+        {
+            "type": "REPORT",
+            "url": "http://www.fetchmail.info/fetchmail-SA-2007-01.txt"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2007-1558"
+        },
+        {
+            "type": "WEB",
+            "url": "http://www.fetchmail.info/fetchmail-SA-2007-01.txt"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "fetchmail -- insecure APOP authentication"
+}

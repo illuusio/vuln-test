@@ -1,0 +1,73 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "FreeBSD"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "introduced": "14.1"
+                        },
+                        {
+                            "fixed": "14.1_4"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                },
+                {
+                    "events": [
+                        {
+                            "introduced": "14.0"
+                        },
+                        {
+                            "fixed": "14.0_10"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                },
+                {
+                    "events": [
+                        {
+                            "introduced": "13.3"
+                        },
+                        {
+                            "fixed": "13.3_6"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "discovery": "2024-09-04T00:00:00Z",
+        "references": {
+            "cvename": [
+                "CVE-2024-43102"
+            ],
+            "freebsdsa": [
+                "SA-24:14.umtx"
+            ]
+        },
+        "vid": "7e079ce2-6b51-11ef-9a62-002590c1f29c"
+    },
+    "details": "# Problem Description:\n\nConcurrent removals of such a mapping by using the UMTX_SHM_DESTROY\nsub-request of UMTX_OP_SHM can lead to decreasing the reference count of\nthe object representing the mapping too many times, causing it to be\nfreed too early.\n\n# Impact:\n\nA malicious code exercizing the UMTX_SHM_DESTROY sub-request in parallel\ncan panic the kernel or enable further Use-After-Free attacks,\npotentially including code execution or Capsicum sandbox escape.\n",
+    "id": "FreeBSD-2024-0214",
+    "modified": "2024-09-05T00:00:00Z",
+    "published": "2024-09-05T00:00:00Z",
+    "references": [
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2024-43102"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://www.freebsd.org/security/advisories/FreeBSD-SA-24:14.umtx.asc"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "FreeBSD -- umtx Kernel panic or Use-After-Free"
+}

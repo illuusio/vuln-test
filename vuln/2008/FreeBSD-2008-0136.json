@@ -1,0 +1,79 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "net-snmp"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "introduced": "5.4,1"
+                        },
+                        {
+                            "fixed": "5.4.2.1"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                },
+                {
+                    "events": [
+                        {
+                            "introduced": "5.3,1"
+                        },
+                        {
+                            "fixed": "5.3.2.3"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "cite": [
+            "http://sourceforge.net/forum/forum.php?forum_id=882903",
+            "http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2008-4309"
+        ],
+        "discovery": "2008-10-12T00:00:00Z",
+        "references": {
+            "cvename": [
+                "CVE-2008-4309"
+            ]
+        },
+        "vid": "daf045d7-b211-11dd-a987-000c29ca8953"
+    },
+    "details": "Wes Hardaker reports through sourceforge.net forum:\n\n> SECURITY ISSUE: A bug in the getbulk handling code could let anyone\n> with even minimal access crash the agent. If you have open access to\n> your snmp agents (bad bad bad; stop doing that!) or if you don\\'t\n> trust everyone that does have access to your agents you should updated\n> immediately to prevent potential denial of service attacks.\n\nDescription at cve.mitre.org additionally clarifies:\n\n> Integer overflow in the netsnmp_create_subtree_cache function in\n> agent/snmp_agent.c in net-snmp 5.4 before 5.4.2.1, 5.3 before 5.3.2.3,\n> and 5.2 before 5.2.5.1 allows remote attackers to cause a denial of\n> service (crash) via a crafted SNMP GETBULK request, which triggers a\n> heap-based buffer overflow, related to the number of responses or\n> repeats.\n",
+    "id": "FreeBSD-2008-0136",
+    "modified": "2009-03-23T00:00:00Z",
+    "published": "2008-11-14T00:00:00Z",
+    "references": [
+        {
+            "type": "REPORT",
+            "url": "http://sourceforge.net/forum/forum.php?forum_id=882903"
+        },
+        {
+            "type": "REPORT",
+            "url": "http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2008-4309"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2008-4309"
+        },
+        {
+            "type": "WEB",
+            "url": "http://sourceforge.net/forum/forum.php?forum_id=882903"
+        },
+        {
+            "type": "WEB",
+            "url": "http://www.openwall.com/lists/oss-security/2008/10/31/1"
+        },
+        {
+            "type": "WEB",
+            "url": "http://net-snmp.svn.sourceforge.net/viewvc/net-snmp/tags/Ext-5-2-5-1/net-snmp/agent/snmp_agent.c?r1=17271&r2=17272&pathrev=17272"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "net-snmp -- DoS for SNMP agent via crafted GETBULK request"
+}

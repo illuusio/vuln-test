@@ -1,0 +1,93 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "bogofilter"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "1.2.1_2"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        },
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "bogofilter-sqlite"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "1.2.1_1"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        },
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "bogofilter-tc"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "1.2.1_1"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "cite": [
+            "http://www.bogofilter.org/pipermail/bogofilter-dev/2010-June/003475.html"
+        ],
+        "discovery": "2010-06-28T00:00:00Z",
+        "references": {
+            "cvename": [
+                "CVE-2010-2494"
+            ]
+        },
+        "vid": "25ed4ff8-8940-11df-a339-0026189baca3"
+    },
+    "details": "Julius Plenz reports:\n\n> I found a bug in the base64_decode function which may cause memory\n> corruption when the function is executed on a malformed base64 encoded\n> string.\n>\n> If a string starting with an equal-sign is passed to the base64_decode\n> function it triggers a memory corruption that in some cases makes\n> bogofilter crash.\n",
+    "id": "FreeBSD-2010-0068",
+    "modified": "2010-07-06T00:00:00Z",
+    "published": "2010-07-06T00:00:00Z",
+    "references": [
+        {
+            "type": "REPORT",
+            "url": "http://www.bogofilter.org/pipermail/bogofilter-dev/2010-June/003475.html"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2010-2494"
+        },
+        {
+            "type": "WEB",
+            "url": "http://bogofilter.sourceforge.net/security/bogofilter-SA-2010-01"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "bogofilter -- heap underrun on malformed base64 input"
+}

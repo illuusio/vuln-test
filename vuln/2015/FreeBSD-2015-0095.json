@@ -1,0 +1,100 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "ruby20-gems"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "2.4.7"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        },
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "ruby21-gems"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "2.4.7"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        },
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "ruby22-gems"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "2.4.7"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "cite": [
+            "http://blog.rubygems.org/2015/05/14/CVE-2015-3900.html"
+        ],
+        "discovery": "2015-05-14T00:00:00Z",
+        "references": {
+            "cvename": [
+                "CVE-2015-3900"
+            ],
+            "freebsdpr": [
+                "ports/200264"
+            ]
+        },
+        "vid": "a0089e18-fc9e-11e4-bc58-001e67150279"
+    },
+    "details": "Jonathan Claudius reports:\n\n> RubyGems provides the ability of a domain to direct clients to a\n> separate host that is used to fetch gems and make API calls against.\n> This mechanism is implemented via DNS, specifically a SRV record\n> \\_rubygems.\\_tcp under the original requested domain.\n>\n> RubyGems did not validate the hostname returned in the SRV record\n> before sending requests to it. This left clients open to a DNS hijack\n> attack, whereby an attacker could return a SRV of their choosing and\n> get the client to use it.\n",
+    "id": "FreeBSD-2015-0095",
+    "modified": "2015-05-17T00:00:00Z",
+    "published": "2015-05-17T00:00:00Z",
+    "references": [
+        {
+            "type": "REPORT",
+            "url": "http://blog.rubygems.org/2015/05/14/CVE-2015-3900.html"
+        },
+        {
+            "type": "REPORT",
+            "url": "https://bugs.freebsd.org/bugzilla/show_bug.cgi?id=200264"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2015-3900"
+        },
+        {
+            "type": "WEB",
+            "url": "http://blog.rubygems.org/2015/05/14/CVE-2015-3900.html"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "rubygems -- request hijacking vulnerability"
+}

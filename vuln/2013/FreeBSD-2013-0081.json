@@ -1,0 +1,51 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "strongswan"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "5.0.4"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "cite": [
+            "http://www.strongswan.org/blog/2013/04/30/strongswan-5.0.4-released-%28cve-2013-2944%29.html"
+        ],
+        "discovery": "2013-04-30T00:00:00Z",
+        "references": {
+            "cvename": [
+                "CVE-2013-2944"
+            ]
+        },
+        "vid": "6ff570cb-b418-11e2-b279-20cf30e32f6d"
+    },
+    "details": "strongSwan security team reports:\n\n> If the openssl plugin is used for ECDSA signature verification an\n> empty, zeroed or otherwise invalid signature is handled as a\n> legitimate one. Both IKEv1 and IKEv2 are affected.\n>\n> Affected are only installations that have enabled and loaded the\n> OpenSSL crypto backend (\\--enable-openssl). Builds using the default\n> crypto backends are not affected.\n",
+    "id": "FreeBSD-2013-0081",
+    "modified": "2013-05-03T00:00:00Z",
+    "published": "2013-05-03T00:00:00Z",
+    "references": [
+        {
+            "type": "REPORT",
+            "url": "http://www.strongswan.org/blog/2013/04/30/strongswan-5.0.4-released-%28cve-2013-2944%29.html"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2013-2944"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "strongSwan -- ECDSA signature verification issue"
+}

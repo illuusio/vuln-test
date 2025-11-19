@@ -1,0 +1,51 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "FreeBSD"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "introduced": "10.1"
+                        },
+                        {
+                            "fixed": "10.1_1"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "discovery": "2014-12-10T00:00:00Z",
+        "references": {
+            "cvename": [
+                "CVE-2014-8611"
+            ],
+            "freebsdsa": [
+                "SA-14:27.stdio"
+            ]
+        },
+        "vid": "74ded00e-6007-11e6-a6c3-14dae9d210b8"
+    },
+    "details": "# Problem Description:\n\nA programming error in the standard I/O library\\'s \\_\\_sflush() function\ncould erroneously adjust the buffered stream\\'s internal state even when\nno write actually occurred in the case when write(2) system call returns\nan error.\n\n# Impact:\n\nThe accounting mismatch would accumulate, if the caller does not check\nfor stream status and will eventually lead to a heap buffer overflow.\n\nSuch overflows may lead to data corruption or the execution of arbitrary\ncode at the privilege level of the calling program.\n",
+    "id": "FreeBSD-2016-0325",
+    "modified": "2016-08-11T00:00:00Z",
+    "published": "2016-08-11T00:00:00Z",
+    "references": [
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2014-8611"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://www.freebsd.org/security/advisories/FreeBSD-SA-14:27.stdio.asc"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "FreeBSD -- Buffer overflow in stdio"
+}

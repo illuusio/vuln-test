@@ -1,0 +1,77 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:kernel",
+                "name": "FreeBSD-kernel"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "introduced": "10.3"
+                        },
+                        {
+                            "fixed": "10.3_4"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                },
+                {
+                    "events": [
+                        {
+                            "introduced": "10.2"
+                        },
+                        {
+                            "fixed": "10.2_18"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                },
+                {
+                    "events": [
+                        {
+                            "introduced": "10.1"
+                        },
+                        {
+                            "fixed": "10.1_35"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                },
+                {
+                    "events": [
+                        {
+                            "introduced": "9.3"
+                        },
+                        {
+                            "fixed": "9.3_43"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "discovery": "2016-05-31T00:00:00Z",
+        "references": {
+            "freebsdsa": [
+                "SA-16:20.linux"
+            ]
+        },
+        "vid": "7c5d64dd-600a-11e6-a6c3-14dae9d210b8"
+    },
+    "details": "# Problem Description:\n\nThe implementation of the TIOCGSERIAL ioctl(2) does not clear the output\nstruct before copying it out to userland.\n\nThe implementation of the Linux sysinfo() system call does not clear the\noutput struct before copying it out to userland.\n\n# Impact:\n\nAn unprivileged user can read a portion of uninitialised kernel stack\ndata, which may contain sensitive information, such as the stack guard,\nportions of the file cache or terminal buffers, which an attacker might\nleverage to obtain elevated privileges.\n",
+    "id": "FreeBSD-2016-0349",
+    "modified": "2016-08-11T00:00:00Z",
+    "published": "2016-08-11T00:00:00Z",
+    "references": [
+        {
+            "type": "ADVISORY",
+            "url": "https://www.freebsd.org/security/advisories/FreeBSD-SA-16:20.linux.asc"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "FreeBSD -- Kernel stack disclosure in Linux compatibility layer"
+}

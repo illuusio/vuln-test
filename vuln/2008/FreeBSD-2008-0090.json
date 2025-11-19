@@ -1,0 +1,55 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "cdf3"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "3.2.1"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "cite": [
+            "http://cdf.gsfc.nasa.gov/CDF32_buffer_overflow.html"
+        ],
+        "discovery": "2008-05-15T00:00:00Z",
+        "references": {
+            "cvename": [
+                "CVE-2008-2080"
+            ]
+        },
+        "vid": "c4f31e16-6e33-11dd-8eb7-0011098ad87f"
+    },
+    "details": "NASA Goddard Space Flight Center reports:\n\n> The libraries for the scientific data file format, Common Data Format\n> (CDF) version 3.2 and earlier, have the potential for a buffer\n> overflow vulnerability when reading specially-crafted (invalid) CDF\n> files. If successful, this could trigger execution of arbitrary code\n> within the context of the CDF-reading program that could be exploited\n> to compromise a system, or otherwise crash the program. While it\\'s\n> unlikely that you would open CDFs from untrusted sources, we recommend\n> everyone upgrade to the latest CDF libraries on their systems,\n> including the IDL and Matlab plugins. Most worrisome is any service\n> that enables the general public to submit CDF files for processing.\n>\n> The vulnerability is in the CDF library routines not properly checking\n> the length tags on a CDF file before copying data to a stack buffer.\n> Exploitation requires the user to explicitly open a specially-crafted\n> file. CDF users should not open files from untrusted third parties\n> until the patch is applied (and continue then to exercise normal\n> caution for files from untrusted third parties).\n",
+    "id": "FreeBSD-2008-0090",
+    "modified": "2010-05-12T00:00:00Z",
+    "published": "2008-08-19T00:00:00Z",
+    "references": [
+        {
+            "type": "REPORT",
+            "url": "http://cdf.gsfc.nasa.gov/CDF32_buffer_overflow.html"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2008-2080"
+        },
+        {
+            "type": "WEB",
+            "url": "http://cdf.gsfc.nasa.gov/CDF32_buffer_overflow.html"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "cdf3 -- Buffer overflow vulnerability"
+}

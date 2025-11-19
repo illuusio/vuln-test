@@ -1,0 +1,65 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "p11-kit"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "0.23.22"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "cite": [
+            "https://lists.freedesktop.org/archives/p11-glue/2020-December/000712.html"
+        ],
+        "discovery": "2020-12-12T00:00:00Z",
+        "references": {
+            "cvename": [
+                "CVE-2020-29361",
+                "CVE-2020-29362",
+                "CVE-2020-29363"
+            ]
+        },
+        "vid": "fdc49972-3ca7-11eb-929d-d4c9ef517024"
+    },
+    "details": "The p11-glue project reports:\n\n> CVE-2020-29363: Out-of-bounds write in\n> p11_rpc_buffer_get_byte_array_value function\\\n> A heap-based buffer overflow has been discovered in the RPC protocol\n> used by p11-kit server/remote commands and the client library. When\n> the remote entity supplies a serialized byte array in a CK_ATTRIBUTE,\n> the receiving entity may not allocate sufficient length for the buffer\n> to store the deserialized value.\n>\n> CVE-2020-29362: Out-of-bounds read in p11_rpc_buffer_get_byte_array\n> function\\\n> A heap-based buffer over-read has been discovered in the RPC protocol\n> used by thep11-kit server/remote commands and the client library. When\n> the remote entity supplies a byte array through a serialized PKCS#11\n> function call, the receiving entity may allow the reading of up to 4\n> bytes of memory past the heap allocation.\n>\n> CVE-2020-29361: Integer overflow when allocating memory for arrays of\n> attributes and object identifiers\\\n> Multiple integer overflows have been discovered in the array\n> allocations in the p11-kit library and the p11-kit list command, where\n> overflow checks are missing before calling realloc or calloc.\n",
+    "id": "FreeBSD-2020-0328",
+    "modified": "2020-12-12T00:00:00Z",
+    "published": "2020-12-12T00:00:00Z",
+    "references": [
+        {
+            "type": "REPORT",
+            "url": "https://lists.freedesktop.org/archives/p11-glue/2020-December/000712.html"
+        },
+        {
+            "type": "WEB",
+            "url": "https://lists.freedesktop.org/archives/p11-glue/2020-December/000712.html"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2020-29361"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2020-29362"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2020-29363"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "p11-kit -- Multiple vulnerabilities"
+}

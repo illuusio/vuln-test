@@ -1,0 +1,69 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "bind912"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "9.12.1P2"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "cite": [
+            "https://kb.isc.org/article/AA-01602",
+            "https://kb.isc.org/article/AA-01606"
+        ],
+        "discovery": "2018-05-18T00:00:00Z",
+        "references": {
+            "cvename": [
+                "CVE-2018-5736",
+                "CVE-2018-5737"
+            ]
+        },
+        "vid": "94599fe0-5ca3-11e8-8be1-d05099c0ae8c"
+    },
+    "details": "ISC reports:\n\n> An error in zone database reference counting can lead to an assertion\n> failure if a server which is running an affected version of BIND\n> attempts several transfers of a slave zone in quick succession.\n\n> A problem with the implementation of the new serve-stale feature in\n> BIND 9.12 can lead to an assertion failure in rbtdb.c, even when\n> stale-answer-enable is off. Additionally, problematic interaction\n> between the serve-stale feature and NSEC aggressive negative caching\n> can in some cases cause undesirable behavior from named, such as a\n> recursion loop or excessive logging.\n",
+    "id": "FreeBSD-2018-0132",
+    "modified": "2018-05-21T00:00:00Z",
+    "published": "2018-05-21T00:00:00Z",
+    "references": [
+        {
+            "type": "REPORT",
+            "url": "https://kb.isc.org/article/AA-01602"
+        },
+        {
+            "type": "REPORT",
+            "url": "https://kb.isc.org/article/AA-01606"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2018-5736"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2018-5737"
+        },
+        {
+            "type": "WEB",
+            "url": "https://kb.isc.org/article/AA-01602"
+        },
+        {
+            "type": "WEB",
+            "url": "https://kb.isc.org/article/AA-01606"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "BIND -- multiple vulnerabilities"
+}

@@ -1,0 +1,73 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "FreeBSD"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "introduced": "12.0"
+                        },
+                        {
+                            "fixed": "12.0_8"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                },
+                {
+                    "events": [
+                        {
+                            "introduced": "11.2"
+                        },
+                        {
+                            "fixed": "11.2_12"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                },
+                {
+                    "events": [
+                        {
+                            "introduced": "11.3"
+                        },
+                        {
+                            "fixed": "11.3_1"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "discovery": "2019-07-24T00:00:00Z",
+        "references": {
+            "cvename": [
+                "CVE-2019-0053"
+            ],
+            "freebsdsa": [
+                "SA-19:12.telnet"
+            ]
+        },
+        "vid": "39f6cbff-b30a-11e9-a87f-a4badb2f4699"
+    },
+    "details": "# Problem Description:\n\nInsufficient validation of environment variables in the telnet client\nsupplied in FreeBSD can lead to stack-based buffer overflows. A stack-\nbased overflow is present in the handling of environment variables when\nconnecting via the telnet client to remote telnet servers.\n\nThis issue only affects the telnet client. Inbound telnet sessions to\ntelnetd(8) are not affected by this issue.\n\n# Impact:\n\nThese buffer overflows may be triggered when connecting to a malicious\nserver, or by an active attacker in the network path between the client\nand server. Specially crafted TELNET command sequences may cause the\nexecution of arbitrary code with the privileges of the user invoking\ntelnet(1).\n",
+    "id": "FreeBSD-2019-0164",
+    "modified": "2019-07-30T00:00:00Z",
+    "published": "2019-07-30T00:00:00Z",
+    "references": [
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2019-0053"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://www.freebsd.org/security/advisories/FreeBSD-SA-19:12.telnet.asc"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "FreeBSD -- telnet(1) client multiple vulnerabilities"
+}

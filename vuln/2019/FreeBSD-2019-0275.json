@@ -1,0 +1,188 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "py35-django21"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "2.1.15"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        },
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "py36-django21"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "2.1.15"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        },
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "py37-django21"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "2.1.15"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        },
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "py38-django21"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "2.1.15"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        },
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "py35-django22"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "2.2.8"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        },
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "py36-django22"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "2.2.8"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        },
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "py37-django22"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "2.2.8"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        },
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "py38-django22"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "2.2.8"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "cite": [
+            "https://www.djangoproject.com/weblog/2019/dec/02/security-releases/"
+        ],
+        "discovery": "2019-11-25T00:00:00Z",
+        "references": {
+            "cvename": [
+                "CVE-2019-19118"
+            ]
+        },
+        "vid": "4e3fa78b-1577-11ea-b66e-080027bdabe8"
+    },
+    "details": "Django release reports:\n\n> CVE-2019-19118: Privilege escalation in the Django admin.\n>\n> Since Django 2.1, a Django model admin displaying a parent model with\n> related model inlines, where the user has view-only permissions to a\n> parent model but edit permissions to the inline model, would display a\n> read-only view of the parent model but editable forms for the inline.\n>\n> Submitting these forms would not allow direct edits to the parent\n> model, but would trigger the parent model\\'s save() method, and cause\n> pre and post-save signal handlers to be invoked. This is a privilege\n> escalation as a user who lacks permission to edit a model should not\n> be able to trigger its save-related signals.\n",
+    "id": "FreeBSD-2019-0275",
+    "modified": "2019-12-03T00:00:00Z",
+    "published": "2019-12-03T00:00:00Z",
+    "references": [
+        {
+            "type": "REPORT",
+            "url": "https://www.djangoproject.com/weblog/2019/dec/02/security-releases/"
+        },
+        {
+            "type": "WEB",
+            "url": "https://www.djangoproject.com/weblog/2019/dec/02/security-releases/"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2019-19118"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "Django -- multiple vulnerabilities"
+}

@@ -1,0 +1,73 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:kernel",
+                "name": "FreeBSD-kernel"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "introduced": "12.1"
+                        },
+                        {
+                            "fixed": "12.1_10"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                },
+                {
+                    "events": [
+                        {
+                            "introduced": "11.4"
+                        },
+                        {
+                            "fixed": "11.4_4"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                },
+                {
+                    "events": [
+                        {
+                            "introduced": "11.3"
+                        },
+                        {
+                            "fixed": "11.3_14"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "discovery": "2020-09-15T00:00:00Z",
+        "references": {
+            "cvename": [
+                "CVE-2020-24718"
+            ],
+            "freebsdsa": [
+                "SA-20:28.bhyve_vmcs"
+            ]
+        },
+        "vid": "2c5b9cd7-f7e6-11ea-88f8-901b0ef719ab"
+    },
+    "details": "# Problem Description:\n\nAMD and Intel CPUs support hardware virtualization using specialized\ndata structures that control various aspects of guest operation. These\nare the Virtual Machine Control Structure (VMCS) on Intel CPUs, and the\nVirtual Machine Control Block (VMCB) on AMD CPUs. Insufficient access\ncontrols allow root users, including those running in a jail, to change\nthese data structures.\n\n# Impact:\n\nAn attacker with host root access (including to a jailed bhyve instance)\ncan use this vulnerability to achieve kernel code execution.\n",
+    "id": "FreeBSD-2020-0247",
+    "modified": "2020-09-16T00:00:00Z",
+    "published": "2020-09-16T00:00:00Z",
+    "references": [
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2020-24718"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://www.freebsd.org/security/advisories/FreeBSD-SA-20:28.bhyve_vmcs.asc"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "FreeBSD -- bhyve privilege escalation via VMCS access"
+}

@@ -1,0 +1,77 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "FreeBSD"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "introduced": "10.0"
+                        },
+                        {
+                            "fixed": "10.0_4"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                },
+                {
+                    "events": [
+                        {
+                            "introduced": "9.2"
+                        },
+                        {
+                            "fixed": "9.2_7"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                },
+                {
+                    "events": [
+                        {
+                            "introduced": "9.1"
+                        },
+                        {
+                            "fixed": "9.1_14"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                },
+                {
+                    "events": [
+                        {
+                            "introduced": "8.4"
+                        },
+                        {
+                            "fixed": "8.4_11"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "discovery": "2014-06-03T00:00:00Z",
+        "references": {
+            "freebsdsa": [
+                "SA-14:11.sendmail"
+            ]
+        },
+        "vid": "6d9eadaf-6007-11e6-a6c3-14dae9d210b8"
+    },
+    "details": "# Problem Description:\n\nThere is a programming error in sendmail(8) that prevented open file\ndescriptors have close-on-exec properly set. Consequently a subprocess\nwill be able to access all open files that the parent process have open.\n\n# Impact:\n\nA local user who can execute their own program for mail delivery will be\nable to interfere with an open SMTP connection.\n",
+    "id": "FreeBSD-2016-0312",
+    "modified": "2016-08-11T00:00:00Z",
+    "published": "2016-08-11T00:00:00Z",
+    "references": [
+        {
+            "type": "ADVISORY",
+            "url": "https://www.freebsd.org/security/advisories/FreeBSD-SA-14:11.sendmail.asc"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "FreeBSD -- sendmail improper close-on-exec flag handling"
+}

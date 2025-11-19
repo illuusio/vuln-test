@@ -1,0 +1,55 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "gzip"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "1.12"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "cite": [
+            "https://access.redhat.com/security/cve/cve-2022-1271"
+        ],
+        "discovery": "2022-04-07T00:00:00Z",
+        "references": {
+            "cvename": [
+                "CVE-2022-1271"
+            ]
+        },
+        "vid": "b019585a-bfea-11ec-b46c-b42e991fc52e"
+    },
+    "details": "RedHat reports:\n\n> An arbitrary file write vulnerability was found in GNU gzip\\'s zgrep\n> utility. When zgrep is applied on the attacker\\'s chosen file name\n> (for example, a crafted file name), this can overwrite an attacker\\'s\n> content to an arbitrary attacker-selected file. This flaw occurs due\n> to insufficient validation when processing filenames with two or more\n> newlines where selected content and the target file names are embedded\n> in crafted multi-line file names. This flaw allows a remote, low\n> privileged attacker to force zgrep to write arbitrary files on the\n> system.\n",
+    "id": "FreeBSD-2022-0088",
+    "modified": "2022-04-19T00:00:00Z",
+    "published": "2022-04-19T00:00:00Z",
+    "references": [
+        {
+            "type": "REPORT",
+            "url": "https://access.redhat.com/security/cve/cve-2022-1271"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2022-1271"
+        },
+        {
+            "type": "REPORT",
+            "url": "https://bugzilla.redhat.com/show_bug.cgi?id=2073310"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "zgrep -- arbitrary file write"
+}

@@ -1,0 +1,59 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "ipython"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "introduced": "0.12"
+                        },
+                        {
+                            "fixed": "3.2.1"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "cite": [
+            "http://seclists.org/oss-sec/2015/q3/92"
+        ],
+        "discovery": "2015-07-12T00:00:00Z",
+        "references": {
+            "cvename": [
+                "CVE-2015-5607"
+            ]
+        },
+        "vid": "81326883-2905-11e5-a4a5-002590263bf5"
+    },
+    "details": "Kyle Kelley reports:\n\n> Summary: POST requests exposed via the IPython REST API are vulnerable\n> to cross-site request forgery (CSRF). Web pages on different domains\n> can make non-AJAX POST requests to known IPython URLs, and IPython\n> will honor them. The user\\'s browser will automatically send IPython\n> cookies along with the requests. The response is blocked by the\n> Same-Origin Policy, but the request isn\\'t.\n>\n> API paths with issues:\n>\n> - POST /api/contents/\\<path\\>/\\<file\\>\n> - POST /api/contents/\\<path\\>/\\<file\\>/checkpoints\n> - POST /api/contents/\\<path\\>/\\<file\\>/checkpoints/\\<checkpoint_id\\>\n> - POST /api/kernels\n> - POST /api/kernels/\\<kernel_id\\>/\\<action\\>\n> - POST /api/sessions\n> - POST /api/clusters/\\<cluster_id\\>/\\<action\\>\n",
+    "id": "FreeBSD-2015-0200",
+    "modified": "2015-07-22T00:00:00Z",
+    "published": "2015-07-13T00:00:00Z",
+    "references": [
+        {
+            "type": "REPORT",
+            "url": "http://seclists.org/oss-sec/2015/q3/92"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2015-5607"
+        },
+        {
+            "type": "WEB",
+            "url": "http://seclists.org/oss-sec/2015/q3/92"
+        },
+        {
+            "type": "WEB",
+            "url": "http://ipython.org/ipython-doc/3/whatsnew/version3.html#ipython-3-2-1"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "devel/ipython -- CSRF possible remote execution vulnerability"
+}

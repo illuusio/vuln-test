@@ -1,0 +1,55 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "dovecot-pigeonhole"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "0.5.15"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "cite": [
+            "https://dovecot.org/pipermail/dovecot-news/2021-June/000460.html"
+        ],
+        "discovery": "2020-09-23T00:00:00Z",
+        "references": {
+            "cvename": [
+                "CVE-2020-28200"
+            ]
+        },
+        "vid": "f3fc2b50-d36a-11eb-a32c-00a0989e4ec1"
+    },
+    "details": "Dovecot team reports reports:\n\n> Sieve interpreter is not protected against abusive scripts that claim\n> excessive resource usage. Fixed by limiting the user CPU time per\n> single script execution and cumulatively over several script runs\n> within a configurable timeout period. Sufficiently large CPU time\n> usage is summed in the Sieve script binary and execution is blocked\n> when the sum exceeds the limit within that time. The block is lifted\n> when the script is updated after the resource usage times out.\n",
+    "id": "FreeBSD-2021-0164",
+    "modified": "2021-06-22T00:00:00Z",
+    "published": "2021-06-22T00:00:00Z",
+    "references": [
+        {
+            "type": "REPORT",
+            "url": "https://dovecot.org/pipermail/dovecot-news/2021-June/000460.html"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2020-28200"
+        },
+        {
+            "type": "WEB",
+            "url": "https://dovecot.org/pipermail/dovecot-news/2021-June/000460.html"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "dovecot-pigeonhole -- Sieve excessive resource usage"
+}

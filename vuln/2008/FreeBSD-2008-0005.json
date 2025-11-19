@@ -1,0 +1,78 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "drupal5"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "5.6"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        },
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "drupal4"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "4.7.11"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "cite": [
+            "http://drupal.org/node/208564"
+        ],
+        "discovery": "2008-01-10T00:00:00Z",
+        "references": {
+            "cvename": [
+                "CVE-2008-0273"
+            ]
+        },
+        "vid": "6f736456-c060-11dc-982e-001372fd0af2"
+    },
+    "details": "The Drupal Project reports:\n\n> When outputting plaintext Drupal strips potentially dangerous HTML\n> tags and attributes from HTML, and escapes characters which have a\n> special meaning in HTML. This output filtering secures the site\n> against cross site scripting attacks via user input.\n>\n> Certain byte sequences that are invalid in the UTF8 specification are\n> not handled properly by Internet Explorer 6 and may lead it to see a\n> multibyte start character where none is present. Internet Explorer 6\n> then consumes a number of subsequent UTF-8 characters. This may lead\n> to unsafe attributes that were outside a tag for the filter to appear\n> inside a tag for Internet Explorer 6. This behaviour can then be used\n> to insert and execute javascript in the context of the website.\n",
+    "id": "FreeBSD-2008-0005",
+    "modified": "2010-05-12T00:00:00Z",
+    "published": "2008-01-11T00:00:00Z",
+    "references": [
+        {
+            "type": "REPORT",
+            "url": "http://drupal.org/node/208564"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2008-0273"
+        },
+        {
+            "type": "WEB",
+            "url": "http://drupal.org/node/208564"
+        },
+        {
+            "type": "WEB",
+            "url": "http://secunia.com/advisories/28422/"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "drupal -- cross site scripting (utf8)"
+}

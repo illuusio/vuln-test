@@ -1,0 +1,85 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "adns"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "1.5.2"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "cite": [
+            "https://www.chiark.greenend.org.uk/pipermail/adns-announce/2020/000004.html"
+        ],
+        "discovery": "2017-05-21T00:00:00Z",
+        "references": {
+            "cvename": [
+                "CVE-2017-9103",
+                "CVE-2017-9104",
+                "CVE-2017-9105",
+                "CVE-2017-9106",
+                "CVE-2017-9107",
+                "CVE-2017-9108",
+                "CVE-2017-9109"
+            ]
+        },
+        "vid": "08de38d2-e2d0-11ea-9538-0c9d925bbbc0"
+    },
+    "details": "Ian Jackson and the adns project reports:\n\n> Vulnerable applications: all adns callers. Exploitable by: the local\n> recursive resolver. Likely worst case: Remote code execution.\n>\n> Vulnerable applications: those that make SOA queries. Exploitable by:\n> upstream DNS data sources. Likely worst case: DoS (crash of the\n> adns-using application)\n>\n> Vulnerable applications: those that use adns_qf_quoteok_query.\n> Exploitable by: sources of query domain names. Likely worst case: DoS\n> (crash of the adns-using application)\n>\n> Vulnerable applications: adnshost. Exploitable by: code responsible\n> for framing the input. Likely worst case: DoS (adnshost crashes at\n> EOF).\n",
+    "id": "FreeBSD-2020-0222",
+    "modified": "2020-08-20T00:00:00Z",
+    "published": "2020-08-20T00:00:00Z",
+    "references": [
+        {
+            "type": "REPORT",
+            "url": "https://www.chiark.greenend.org.uk/pipermail/adns-announce/2020/000004.html"
+        },
+        {
+            "type": "WEB",
+            "url": "https://www.chiark.greenend.org.uk/pipermail/adns-announce/2020/000004.html"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2017-9103"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2017-9104"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2017-9105"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2017-9106"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2017-9107"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2017-9108"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2017-9109"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "adns -- multiple vulnerabilities"
+}

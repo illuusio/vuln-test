@@ -1,0 +1,51 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "redis"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "introduced": "8.2.0"
+                        },
+                        {
+                            "fixed": "8.2.3"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "cite": [
+            "https://github.com/redis/redis/security/advisories/GHSA-jhjx-x4cf-4vm8"
+        ],
+        "discovery": "2025-11-03T00:00:00Z",
+        "references": {
+            "cvename": [
+                "CVE-2025-62507"
+            ]
+        },
+        "vid": "5523394e-b889-11f0-9446-f02f7497ecda"
+    },
+    "details": "Google Big Sleep reports:\n\n> A user can run the XACKDEL command with multiple ID\\'s and trigger a\n> stack buffer overflow, which may potentially lead to remote code\n> execution. The problem exists in Redis 8.2 or newer. The code doesn\\'t\n> handle the case where the number of ID\\'s exceeds the\n> STREAMID_STATIC_VECTOR_LEN, and skips a reallocation, which leads to a\n> stack buffer overflow. An additional workaround to mitigate the\n> problem without patching the redis-server executable is to prevent\n> users from executing XACKDEL operation. This can be done using ACL to\n> restrict XACKDEL command.\n",
+    "id": "FreeBSD-2025-0372",
+    "modified": "2025-11-03T00:00:00Z",
+    "published": "2025-11-03T00:00:00Z",
+    "references": [
+        {
+            "type": "REPORT",
+            "url": "https://github.com/redis/redis/security/advisories/GHSA-jhjx-x4cf-4vm8"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2025-62507"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "redis -- Bug in XACKDEL may lead to stack overflow and potential RCE"
+}

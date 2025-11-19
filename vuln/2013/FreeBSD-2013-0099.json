@@ -1,0 +1,55 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "mod_security"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "2.7.3"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "cite": [
+            "http://www.securityfocus.com/archive/1/526746"
+        ],
+        "discovery": "2013-05-27T00:00:00Z",
+        "references": {
+            "cvename": [
+                "CVE-2013-2765"
+            ]
+        },
+        "vid": "9dfb63b8-8f36-11e2-b34d-000c2957946c"
+    },
+    "details": "SecurityFocus reports:\n\n> When ModSecurity receives a request body with a size bigger than the\n> value set by the \\\"SecRequestBodyInMemoryLimit\\\" and with a\n> \\\"Content-Type\\\" that has no request body processor mapped to it,\n> ModSecurity will systematically crash on every call to\n> \\\"forceRequestBodyVariable\\\".\n",
+    "id": "FreeBSD-2013-0099",
+    "modified": "2013-06-03T00:00:00Z",
+    "published": "2013-06-03T00:00:00Z",
+    "references": [
+        {
+            "type": "REPORT",
+            "url": "http://www.securityfocus.com/archive/1/526746"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2013-2765"
+        },
+        {
+            "type": "REPORT",
+            "url": "https://bugzilla.redhat.com/show_bug.cgi?id=CVE-2013-2765"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "www/mod_security -- NULL pointer dereference DoS"
+}

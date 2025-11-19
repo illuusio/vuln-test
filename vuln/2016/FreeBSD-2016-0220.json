@@ -1,0 +1,70 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "openvswitch"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "introduced": "2.2.0"
+                        },
+                        {
+                            "fixed": "2.3.3"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                },
+                {
+                    "events": [
+                        {
+                            "introduced": "2.4.0"
+                        },
+                        {
+                            "fixed": "2.4.1"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "cite": [
+            "http://openvswitch.org/pipermail/announce/2016-March/000082.html"
+        ],
+        "discovery": "2016-03-28T00:00:00Z",
+        "references": {
+            "cvename": [
+                "CVE-2016-2074"
+            ]
+        },
+        "vid": "b53bbf58-257f-11e6-9f4d-20cf30e32f6d"
+    },
+    "details": "Open vSwitch reports:\n\n> Multiple versions of Open vSwitch are vulnerable to remote buffer\n> overflow attacks, in which crafted MPLS packets could overflow the\n> buffer reserved for MPLS labels in an OVS internal data structure. The\n> MPLS packets that trigger the vulnerability and the potential for\n> exploitation vary depending on version:\n>\n> Open vSwitch 2.1.x and earlier are not vulnerable.\n>\n> In Open vSwitch 2.2.x and 2.3.x, the MPLS buffer overflow can be\n> exploited for arbitrary remote code execution.\n>\n> In Open vSwitch 2.4.x, the MPLS buffer overflow does not obviously\n> lead to a remote code execution exploit, but testing shows that it can\n> allow a remote denial of service. See the mitigation section for\n> details.\n>\n> Open vSwitch 2.5.x is not vulnerable.\n",
+    "id": "FreeBSD-2016-0220",
+    "modified": "2016-07-03T00:00:00Z",
+    "published": "2016-05-29T00:00:00Z",
+    "references": [
+        {
+            "type": "REPORT",
+            "url": "http://openvswitch.org/pipermail/announce/2016-March/000082.html"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2016-2074"
+        },
+        {
+            "type": "WEB",
+            "url": "http://openvswitch.org/pipermail/announce/2016-March/000082.html"
+        },
+        {
+            "type": "WEB",
+            "url": "http://openvswitch.org/pipermail/announce/2016-March/000083.html"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "openvswitch -- MPLS buffer overflow"
+}

@@ -1,0 +1,67 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "cacti"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "1.2.8"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "cite": [
+            "https://github.com/Cacti/cacti/releases/tag/release%2F1.2.8"
+        ],
+        "discovery": "2019-10-12T00:00:00Z",
+        "references": {
+            "cvename": [
+                "CVE-2019-17357",
+                "CVE-2019-17358"
+            ],
+            "freebsdpr": [
+                "ports/242834"
+            ]
+        },
+        "vid": "86224a04-26de-11ea-97f2-001a8c5c04b6"
+    },
+    "details": "The cacti developers reports:\n\n> When viewing graphs, some input variables are not properly checked\n> (SQL injection possible).\n>\n> Multiple instances of lib/functions.php are affected by unsafe\n> deserialization of user-controlled data to populate arrays. An\n> authenticated attacker could use this to influence object data values\n> and control actions taken by Cacti or potentially cause memory\n> corruption in the PHP module.\n",
+    "id": "FreeBSD-2020-0002",
+    "modified": "2020-01-06T00:00:00Z",
+    "published": "2020-01-06T00:00:00Z",
+    "references": [
+        {
+            "type": "REPORT",
+            "url": "https://github.com/Cacti/cacti/releases/tag/release%2F1.2.8"
+        },
+        {
+            "type": "WEB",
+            "url": "https://github.com/Cacti/cacti/releases/tag/release%2F1.2.8"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2019-17357"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2019-17358"
+        },
+        {
+            "type": "REPORT",
+            "url": "https://bugs.freebsd.org/bugzilla/show_bug.cgi?id=242834"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "cacti -- multiple vulnerabilities"
+}

@@ -1,0 +1,79 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "openssl"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "introduced": "0.9.8"
+                        },
+                        {
+                            "fixed": "0.9.8k_1"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        },
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "linux-f10-openssl"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "introduced": "0.9.8f"
+                        },
+                        {
+                            "fixed": "0.9.8m"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "cite": [
+            "http://secunia.com/advisories/35128/"
+        ],
+        "discovery": "2009-05-18T00:00:00Z",
+        "references": {
+            "cvename": [
+                "CVE-2009-1377",
+                "CVE-2009-1378"
+            ]
+        },
+        "vid": "82b55df8-4d5a-11de-8811-0030843d3802"
+    },
+    "details": "Secunia reports:\n\n> Some vulnerabilities have been reported in OpenSSL, which can be\n> exploited by malicious people to cause a DoS.\n>\n> The library does not limit the number of buffered DTLS records with a\n> future epoch. This can be exploited to exhaust all available memory\n> via specially crafted DTLS packets.\n>\n> An error when processing DTLS messages can be exploited to exhaust all\n> available memory by sending a large number of out of sequence\n> handshake messages.\n",
+    "id": "FreeBSD-2009-0100",
+    "modified": "2014-04-10T00:00:00Z",
+    "published": "2009-05-30T00:00:00Z",
+    "references": [
+        {
+            "type": "REPORT",
+            "url": "http://secunia.com/advisories/35128/"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2009-1377"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2009-1378"
+        },
+        {
+            "type": "WEB",
+            "url": "http://secunia.com/advisories/35128/"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "openssl -- denial of service in DTLS implementation"
+}

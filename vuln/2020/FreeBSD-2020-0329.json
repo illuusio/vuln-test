@@ -1,0 +1,119 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "py36-matrix-synapse"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "1.23.1"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        },
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "py37-matrix-synapse"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "1.23.1"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        },
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "py38-matrix-synapse"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "1.23.1"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        },
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "py39-matrix-synapse"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "1.23.1"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "cite": [
+            "https://github.com/matrix-org/synapse/security/advisories/GHSA-hxmp-pqch-c8mm"
+        ],
+        "discovery": "2020-12-09T00:00:00Z",
+        "references": {
+            "cvename": [
+                "CVE-2020-26257"
+            ],
+            "freebsdpr": [
+                "ports/251768"
+            ]
+        },
+        "vid": "cfa0be42-3cd7-11eb-9de7-641c67a117d8"
+    },
+    "details": "Matrix developers reports:\n\n> A malicious or poorly-implemented homeserver can inject malformed\n> events into a room by specifying a different room id in the path of a\n> /send_join, /send_leave, /invite or /exchange_third_party_invite\n> request. This can lead to a denial of service in which future events\n> will not be correctly sent to other servers over federation. This\n> affects any server which accepts federation requests from untrusted\n> servers.\n",
+    "id": "FreeBSD-2020-0329",
+    "modified": "2020-12-13T00:00:00Z",
+    "published": "2020-12-13T00:00:00Z",
+    "references": [
+        {
+            "type": "REPORT",
+            "url": "https://github.com/matrix-org/synapse/security/advisories/GHSA-hxmp-pqch-c8mm"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2020-26257"
+        },
+        {
+            "type": "WEB",
+            "url": "https://github.com/matrix-org/synapse/security/advisories/GHSA-hxmp-pqch-c8mm"
+        },
+        {
+            "type": "REPORT",
+            "url": "https://bugs.freebsd.org/bugzilla/show_bug.cgi?id=251768"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "py-matrix-synapse -- DoS on Federation API"
+}

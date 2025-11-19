@@ -1,0 +1,65 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "xv"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "3.10a_4"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        },
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "xv-m17n"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "3.10a_4"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "cite": [
+            "http://marc.theaimsgroup.com/?l=bugtraq&m=109302498125092"
+        ],
+        "discovery": "2004-08-20T00:00:00Z",
+        "vid": "fffacc93-16cb-11d9-bc4a-000c41e2cdad"
+    },
+    "details": "In a Bugtraq posting, infamous41md(at)hotpop.com reported:\n\n> there are at least 5 exploitable buffer and heap overflows in the\n> image handling code. this allows someone to craft a malicious image,\n> trick a user into viewing the file in xv, and upon viewing that image\n> execute arbitrary code under privileges of the user viewing image.\n> note the AT LEAST part of the above sentence. there is such a plethora\n> of bad code that I just stopped reading after a while. there are at\n> least 100 calls to sprintf() and strcpy() with no regards for bounds\n> of buffers. 95% of these deal with program arguments or filenames, so\n> they are of no interest to exploit. however I just got sick of reading\n> this code after not too long. so im sure there are still other\n> overflows in the image handling code for other image types.\n\nThe posting also included an exploit.\n",
+    "id": "FreeBSD-2004-0183",
+    "modified": "2004-10-12T00:00:00Z",
+    "published": "2004-10-05T00:00:00Z",
+    "references": [
+        {
+            "type": "REPORT",
+            "url": "http://marc.theaimsgroup.com/?l=bugtraq&m=109302498125092"
+        },
+        {
+            "type": "DISCUSSION",
+            "url": "http://marc.theaimsgroup.com/?l=bugtraq&m=109302498125092"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "xv -- exploitable buffer overflows"
+}

@@ -1,0 +1,84 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:kernel",
+                "name": "FreeBSD-kernel"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "introduced": "10.1"
+                        },
+                        {
+                            "fixed": "10.1_5"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                },
+                {
+                    "events": [
+                        {
+                            "introduced": "10.0"
+                        },
+                        {
+                            "fixed": "10.0_17"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                },
+                {
+                    "events": [
+                        {
+                            "introduced": "9.3"
+                        },
+                        {
+                            "fixed": "9.3_9"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                },
+                {
+                    "events": [
+                        {
+                            "introduced": "8.4"
+                        },
+                        {
+                            "fixed": "8.4_23"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "discovery": "2015-01-27T00:00:00Z",
+        "references": {
+            "cvename": [
+                "CVE-2014-8612"
+            ],
+            "freebsdsa": [
+                "SA-15:02.kmem"
+            ]
+        },
+        "vid": "0a5cf6d8-600a-11e6-a6c3-14dae9d210b8"
+    },
+    "details": "# Problem Description:\n\nDue to insufficient validation of the SCTP stream ID, which serves as an\narray index, a local unprivileged attacker can read or write 16-bits of\nkernel memory.\n\n# Impact:\n\nAn unprivileged process can read or modify 16-bits of memory which\nbelongs to the kernel. This may lead to exposure of sensitive\ninformation or allow privilege escalation.\n",
+    "id": "FreeBSD-2016-0326",
+    "modified": "2016-08-11T00:00:00Z",
+    "published": "2016-08-11T00:00:00Z",
+    "references": [
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2014-8612"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://www.freebsd.org/security/advisories/FreeBSD-SA-15:02.kmem.asc"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "FreeBSD -- SCTP SCTP_SS_VALUE kernel memory corruption and disclosure"
+}

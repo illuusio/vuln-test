@@ -1,0 +1,77 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "libzmq4"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "introduced": "4.0.0"
+                        },
+                        {
+                            "fixed": "4.0.6"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                },
+                {
+                    "events": [
+                        {
+                            "introduced": "4.1.0"
+                        },
+                        {
+                            "fixed": "4.1.1"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "cite": [
+            "https://github.com/zeromq/libzmq/issues/1273"
+        ],
+        "discovery": "2014-12-04T00:00:00Z",
+        "references": {
+            "cvename": [
+                "CVE-2014-9721"
+            ],
+            "freebsdpr": [
+                "ports/200502"
+            ]
+        },
+        "vid": "10a6d0aa-0b1c-11e5-bb90-002590263bf5"
+    },
+    "details": "Pieter Hintjens reports:\n\n> It is easy to bypass the security mechanism in 4.1.0 and 4.0.5 by\n> sending a ZMTP v2 or earlier header. The library accepts such\n> connections without applying its security mechanism.\n",
+    "id": "FreeBSD-2015-0128",
+    "modified": "2015-09-28T00:00:00Z",
+    "published": "2015-06-10T00:00:00Z",
+    "references": [
+        {
+            "type": "REPORT",
+            "url": "https://github.com/zeromq/libzmq/issues/1273"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2014-9721"
+        },
+        {
+            "type": "WEB",
+            "url": "https://github.com/zeromq/libzmq/issues/1273"
+        },
+        {
+            "type": "DISCUSSION",
+            "url": "http://www.openwall.com/lists/oss-security/2015/05/07/8"
+        },
+        {
+            "type": "REPORT",
+            "url": "https://bugs.freebsd.org/bugzilla/show_bug.cgi?id=200502"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "libzmq4 -- V3 protocol handler vulnerable to downgrade attacks"
+}

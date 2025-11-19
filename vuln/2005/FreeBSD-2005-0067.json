@@ -1,0 +1,73 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "squid"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "2.5.7_12"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "cite": [
+            "http://www.squid-cache.org/Versions/v2/2.5/bugs/squid-2.5.STABLE7-oversize_reply_headers.patch"
+        ],
+        "discovery": "2005-01-31T00:00:00Z",
+        "references": {
+            "certvu": [
+                "823350"
+            ],
+            "cvename": [
+                "CVE-2005-0241"
+            ],
+            "freebsdpr": [
+                "ports/76967"
+            ]
+        },
+        "vid": "bfda39de-7467-11d9-9e1e-c296ac722cb3"
+    },
+    "details": "The squid patches page notes:\n\n> This patch addresses a HTTP protocol mismatch related to oversized\n> reply headers. In addition it enhances the cache.log reporting on\n> reply header parsing failures to make it easier to track down which\n> sites are malfunctioning.\n\nIt is believed that this bug may lead to cache pollution or allow access\ncontrols to be bypassed.\n",
+    "id": "FreeBSD-2005-0067",
+    "modified": "2005-02-08T00:00:00Z",
+    "published": "2005-02-08T00:00:00Z",
+    "references": [
+        {
+            "type": "REPORT",
+            "url": "http://www.squid-cache.org/Versions/v2/2.5/bugs/squid-2.5.STABLE7-oversize_reply_headers.patch"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2005-0241"
+        },
+        {
+            "type": "WEB",
+            "url": "http://www.squid-cache.org/bugs/show_bug.cgi?id=1216"
+        },
+        {
+            "type": "WEB",
+            "url": "http://www.squid-cache.org/Versions/v2/2.5/bugs/squid-2.5.STABLE7-oversize_reply_headers.patch"
+        },
+        {
+            "type": "REPORT",
+            "url": "https://bugs.freebsd.org/bugzilla/show_bug.cgi?id=76967"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://www.kb.cert.org/vuls/id/823350"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "squid -- correct handling of oversized HTTP reply headers"
+}

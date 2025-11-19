@@ -1,0 +1,124 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "tomcat7"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "introduced": "7.0.0"
+                        },
+                        {
+                            "last_affected": "7.0.108"
+                        },
+                        {
+                            "fixed": "7.0.108"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        },
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "tomcat85"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "introduced": "8.5.0"
+                        },
+                        {
+                            "last_affected": "8.5.65"
+                        },
+                        {
+                            "fixed": "8.5.65"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        },
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "tomcat9"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "introduced": "9.0.0"
+                        },
+                        {
+                            "last_affected": "9.0.45"
+                        },
+                        {
+                            "fixed": "9.0.45"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        },
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "tomcat10"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "introduced": "10.0.0"
+                        },
+                        {
+                            "last_affected": "10.0.5"
+                        },
+                        {
+                            "fixed": "10.0.5"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "cite": [
+            "https://tomcat.apache.org/security.html"
+        ],
+        "discovery": "2021-04-08T00:00:00Z",
+        "references": {
+            "cvename": [
+                "CVE-2021-30640"
+            ]
+        },
+        "vid": "8b571fb2-f311-11eb-b12b-fc4dd43e2b6a"
+    },
+    "details": "ilja.farber reports:\n\n> Queries made by the JNDI Realm did not always correctly escape\n> parameters. Parameter values could be sourced from user provided data\n> (eg user names) as well as configuration data provided by an\n> administrator. In limited circumstances it was possible for users to\n> authenticate using variations of their user name and/or to bypass some\n> of the protection provided by the LockOut Realm.\n",
+    "id": "FreeBSD-2021-0191",
+    "modified": "2021-08-01T00:00:00Z",
+    "published": "2021-08-01T00:00:00Z",
+    "references": [
+        {
+            "type": "REPORT",
+            "url": "https://tomcat.apache.org/security.html"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2021-30640"
+        },
+        {
+            "type": "WEB",
+            "url": "http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2021-30640"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "tomcat -- JNDI Realm Authentication Weakness in multiple versions"
+}

@@ -1,0 +1,118 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "openssl"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "introduced": "1.0.1"
+                        },
+                        {
+                            "fixed": "1.0.1_10"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        },
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "mingw32-openssl"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "introduced": "1.0.1"
+                        },
+                        {
+                            "fixed": "1.0.1g"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        },
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "FreeBSD"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "introduced": "10.0"
+                        },
+                        {
+                            "fixed": "10.0_1"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "cite": [
+            "https://www.openssl.org/news/secadv_20140407.txt",
+            "http://www.heartbleed.com",
+            "http://www.freebsd.org/security/advisories/FreeBSD-SA-14:06.openssl.asc"
+        ],
+        "discovery": "2014-04-07T00:00:00Z",
+        "references": {
+            "cvename": [
+                "CVE-2014-0160"
+            ],
+            "freebsdsa": [
+                "SA-14:06.openssl"
+            ]
+        },
+        "vid": "5631ae98-be9e-11e3-b5e3-c80aa9043978"
+    },
+    "details": "OpenSSL Reports:\n\n> A missing bounds check in the handling of the TLS heartbeat extension\n> can be used to reveal up to 64k of memory to a connected client or\n> server.\n>\n> Affected users should upgrade to OpenSSL 1.0.1g. Users unable to\n> immediately upgrade can alternatively recompile OpenSSL with\n> -DOPENSSL_NO_HEARTBEATS.\n\n> The bug allows anyone on the Internet to read the memory of the\n> systems protected by the vulnerable versions of the OpenSSL software.\n> This compromises the secret keys used to identify the service\n> providers and to encrypt the traffic, the names and passwords of the\n> users and the actual content. This allows attackers to eavesdrop\n> communications, steal data directly from the services and users and to\n> impersonate services and users.\n\n> The code used to handle the Heartbeat Extension does not do sufficient\n> boundary checks on record length, which allows reading beyond the\n> actual payload.\n",
+    "id": "FreeBSD-2014-0045",
+    "modified": "2014-04-11T00:00:00Z",
+    "published": "2014-04-07T00:00:00Z",
+    "references": [
+        {
+            "type": "REPORT",
+            "url": "https://www.openssl.org/news/secadv_20140407.txt"
+        },
+        {
+            "type": "REPORT",
+            "url": "http://www.heartbleed.com"
+        },
+        {
+            "type": "REPORT",
+            "url": "http://www.freebsd.org/security/advisories/FreeBSD-SA-14:06.openssl.asc"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2014-0160"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://www.freebsd.org/security/advisories/FreeBSD-SA-14:06.openssl.asc"
+        },
+        {
+            "type": "WEB",
+            "url": "https://www.openssl.org/news/secadv_20140407.txt"
+        },
+        {
+            "type": "WEB",
+            "url": "https://www.openssl.org/news/vulnerabilities.html#2014-0076"
+        },
+        {
+            "type": "WEB",
+            "url": "http://www.heartbleed.com"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "OpenSSL -- Remote Information Disclosure"
+}

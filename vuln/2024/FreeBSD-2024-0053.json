@@ -1,0 +1,55 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "curl"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "8.6.0"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "cite": [
+            "https://curl.se/docs/CVE-2024-0853.html"
+        ],
+        "discovery": "2024-01-31T00:00:00Z",
+        "references": {
+            "cvename": [
+                "CVE-2024-0853"
+            ]
+        },
+        "vid": "02e33cd1-c655-11ee-8613-08002784c58d"
+    },
+    "details": "Hiroki Kurosawa reports:\n\n> curl inadvertently kept the SSL session ID for connections in its\n> cache even when the verify status (OCSP stapling) test failed. A\n> subsequent transfer to the same hostname could then succeed if the\n> session ID cache was still fresh, which then skipped the verify status\n> check.\n",
+    "id": "FreeBSD-2024-0053",
+    "modified": "2024-02-28T00:00:00Z",
+    "published": "2024-02-28T00:00:00Z",
+    "references": [
+        {
+            "type": "REPORT",
+            "url": "https://curl.se/docs/CVE-2024-0853.html"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2024-0853"
+        },
+        {
+            "type": "WEB",
+            "url": "https://curl.se/docs/CVE-2024-0853.html"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "curl -- OCSP verification bypass with TLS session reuse"
+}

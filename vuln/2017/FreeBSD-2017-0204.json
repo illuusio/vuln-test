@@ -1,0 +1,60 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "rubygem-geminabox"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "0.13.8"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "cite": [
+            "https://baraktawily.blogspot.com/2017/09/gem-in-box-xss-vulenrability-cve-2017.html"
+        ],
+        "discovery": "2017-09-18T00:00:00Z",
+        "references": {
+            "cvename": [
+                "CVE-2017-14506",
+                "CVE-2017-14683"
+            ]
+        },
+        "vid": "2bffdf2f-9d45-11e7-a25c-471bafc3262f"
+    },
+    "details": "Gem in a box XSS vulenrability - CVE-2017-14506:\n\n> Malicious attacker create GEM file with crafted homepage value\n> (gem.homepage in .gemspec file) includes XSS payload.\n>\n> The attacker access geminabox system and uploads the gem file (or uses\n> CSRF/SSRF attack to do so).\n>\n> From now on, any user access Geminabox web server, executes the\n> malicious XSS payload, that will delete any gems on the server, and\n> won\\'t let users use the geminabox anymore. (make victim\\'s browser\n> crash or redirect them to other hosts).\n",
+    "id": "FreeBSD-2017-0204",
+    "modified": "2017-09-27T00:00:00Z",
+    "published": "2017-09-19T00:00:00Z",
+    "references": [
+        {
+            "type": "REPORT",
+            "url": "https://baraktawily.blogspot.com/2017/09/gem-in-box-xss-vulenrability-cve-2017.html"
+        },
+        {
+            "type": "WEB",
+            "url": "https://baraktawily.blogspot.com/2017/09/gem-in-box-xss-vulenrability-cve-2017.html"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2017-14506"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2017-14683"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "rubygem-geminabox -- XSS & CSRF vulnerabilities"
+}

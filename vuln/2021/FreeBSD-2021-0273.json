@@ -1,0 +1,151 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "postgresql14-server"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "14.1"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        },
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "postgresql13-server"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "13.5"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        },
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "postgresql12-server"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "12.9"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        },
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "postgresql11-server"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "11.14"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        },
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "postgresql10-server"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "10.19"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        },
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "postgresql96-server"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "9.6.24"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "cite": [
+            "https://www.postgresql.org/about/news/postgresql-141-135-129-1114-1019-and-9624-released-2349/"
+        ],
+        "discovery": "2021-11-08T00:00:00Z",
+        "references": {
+            "cvename": [
+                "CVE-2021-23214",
+                "CVE-2021-23222"
+            ]
+        },
+        "vid": "2ccd71bd-426b-11ec-87db-6cc21735f730"
+    },
+    "details": "The PostgreSQL Project reports:\n\n> CVE-2021-23214: A man-in-the-middle with the ability to inject data\n> into the TCP connection could stuff some cleartext data into the start\n> of a supposedly encryption-protected database session. This could be\n> abused to send faked SQL commands to the server, although that would\n> only work if the server did not demand any authentication data.\n> (However, a server relying on SSL certificate authentication might\n> well not do so.)\n>\n> CVE-2021-23222: A man-in-the-middle with the ability to inject data\n> into the TCP connection could stuff some cleartext data into the start\n> of a supposedly encryption-protected database session. This could\n> probably be abused to inject faked responses to the client\\'s first\n> few queries, although other details of libpq\\'s behavior make that\n> harder than it sounds. A different line of attack is to exfiltrate the\n> client\\'s password, or other sensitive data that might be sent early\n> in the session. That has been shown to be possible with a server\n> vulnerable to CVE-2021-23214.\n",
+    "id": "FreeBSD-2021-0273",
+    "modified": "2021-11-10T00:00:00Z",
+    "published": "2021-11-10T00:00:00Z",
+    "references": [
+        {
+            "type": "REPORT",
+            "url": "https://www.postgresql.org/about/news/postgresql-141-135-129-1114-1019-and-9624-released-2349/"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2021-23214"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2021-23222"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "PostgreSQL -- Possible man-in-the-middle attacks"
+}

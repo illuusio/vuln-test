@@ -1,0 +1,150 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "postgresql17-client"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "17.1"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        },
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "postgresql16-client"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "16.5"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        },
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "postgresql15-client"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "15.9"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        },
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "postgresql14-client"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "14.14"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        },
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "postgresql13-client"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "13.17"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        },
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "postgresql12-client"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "12.21"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "cite": [
+            "https://www.postgresql.org/support/security/CVE-2024-10977/"
+        ],
+        "discovery": "2024-11-14T00:00:00Z",
+        "references": {
+            "cvename": [
+                "CVE-2024-10977"
+            ]
+        },
+        "vid": "a61ef21b-a29e-11ef-af48-6cc21735f730"
+    },
+    "details": "PostgreSQL project reports:\n\n> Client use of server error message in PostgreSQL allows a server not\n> trusted under current SSL or GSS settings to furnish arbitrary non-NUL\n> bytes to the libpq application. For example, a man-in-the-middle\n> attacker could send a long error message that a human or\n> screen-scraper user of psql mistakes for valid query results. This is\n> probably not a concern for clients where the user interface\n> unambiguously indicates the boundary between one error message and\n> other text.\n",
+    "id": "FreeBSD-2024-0292",
+    "modified": "2024-11-14T00:00:00Z",
+    "published": "2024-11-14T00:00:00Z",
+    "references": [
+        {
+            "type": "REPORT",
+            "url": "https://www.postgresql.org/support/security/CVE-2024-10977/"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2024-10977"
+        },
+        {
+            "type": "WEB",
+            "url": "https://www.postgresql.org/support/security/CVE-2024-10977/"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "PostgreSQL -- libpq retains an error message from man-in-the-middle"
+}

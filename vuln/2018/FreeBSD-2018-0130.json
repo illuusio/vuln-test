@@ -1,0 +1,129 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "wavpack"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "5.1.0_1"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "cite": [
+            "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2018-6767",
+            "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2018-7253",
+            "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2018-7254",
+            "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2018-10536",
+            "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2018-10537",
+            "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2018-10538",
+            "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2018-10539",
+            "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2018-10540"
+        ],
+        "discovery": "2018-05-09T00:00:00Z",
+        "references": {
+            "cvename": [
+                "CVE-2018-6767",
+                "CVE-2018-7253",
+                "CVE-2018-7254",
+                "CVE-2018-10536",
+                "CVE-2018-10537",
+                "CVE-2018-10538",
+                "CVE-2018-10539",
+                "CVE-2018-10540"
+            ]
+        },
+        "vid": "50210bc1-54ef-11e8-95d9-9c5c8e75236a"
+    },
+    "details": "Sebastian Ramacher reports:\n\n> A stack-based buffer over-read in the ParseRiffHeaderConfig function\n> of cli/riff.c file of WavPack 5.1.0 allows a remote attacker to cause\n> a denial-of-service attack or possibly have unspecified other impact\n> via a maliciously crafted RF64 file.\n\n> The ParseDsdiffHeaderConfig function of the cli/dsdiff.c file of\n> WavPack 5.1.0 allows a remote attacker to cause a denial-of-service\n> (heap-based buffer over-read) or possibly overwrite the heap via a\n> maliciously crafted DSDIFF file.\n\n> The ParseCaffHeaderConfig function of the cli/caff.c file of WavPack\n> 5.1.0 allows a remote attacker to cause a denial-of-service (global\n> buffer over-read), or possibly trigger a buffer overflow or incorrect\n> memory allocation, via a maliciously crafted CAF file.\n\nThuan Pham reports:\n\n> An issue was discovered in WavPack 5.1.0 and earlier. The WAV parser\n> component contains a vulnerability that allows writing to memory\n> because ParseRiffHeaderConfig in riff.c does not reject multiple\n> format chunks.\n\n> An issue was discovered in WavPack 5.1.0 and earlier. The W64 parser\n> component contains a vulnerability that allows writing to memory\n> because ParseWave64HeaderConfig in wave64.c does not reject multiple\n> format chunks.\n\n> An issue was discovered in WavPack 5.1.0 and earlier for WAV input.\n> Out-of-bounds writes can occur because ParseRiffHeaderConfig in riff.c\n> does not validate the sizes of unknown chunks before attempting memory\n> allocation, related to a lack of integer-overflow protection within a\n> bytes_to_copy calculation and subsequent malloc call, leading to\n> insufficient memory allocation.\n\n> An issue was discovered in WavPack 5.1.0 and earlier for DSDiff input.\n> Out-of-bounds writes can occur because ParseDsdiffHeaderConfig in\n> dsdiff.c does not validate the sizes of unknown chunks before\n> attempting memory allocation, related to a lack of integer-overflow\n> protection within a bytes_to_copy calculation and subsequent malloc\n> call, leading to insufficient memory allocation.\n\n> An issue was discovered in WavPack 5.1.0 and earlier for W64 input.\n> Out-of-bounds writes can occur because ParseWave64HeaderConfig in\n> wave64.c does not validate the sizes of unknown chunks before\n> attempting memory allocation, related to a lack of integer-overflow\n> protection within a bytes_to_copy calculation and subsequent malloc\n> call, leading to insufficient memory allocation.\n",
+    "id": "FreeBSD-2018-0130",
+    "modified": "2018-05-11T00:00:00Z",
+    "published": "2018-05-11T00:00:00Z",
+    "references": [
+        {
+            "type": "REPORT",
+            "url": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2018-6767"
+        },
+        {
+            "type": "REPORT",
+            "url": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2018-7253"
+        },
+        {
+            "type": "REPORT",
+            "url": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2018-7254"
+        },
+        {
+            "type": "REPORT",
+            "url": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2018-10536"
+        },
+        {
+            "type": "REPORT",
+            "url": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2018-10537"
+        },
+        {
+            "type": "REPORT",
+            "url": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2018-10538"
+        },
+        {
+            "type": "REPORT",
+            "url": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2018-10539"
+        },
+        {
+            "type": "REPORT",
+            "url": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2018-10540"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2018-6767"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2018-7253"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2018-7254"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2018-10536"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2018-10537"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2018-10538"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2018-10539"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2018-10540"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://www.debian.org/security/2018/dsa-4125"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://www.debian.org/security/2018/dsa-4197"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "wavpack -- multiple vulnerabilities"
+}

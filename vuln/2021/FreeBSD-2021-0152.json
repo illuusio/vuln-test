@@ -1,0 +1,63 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "polkit"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "0.119"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "cite": [
+            "https://seclists.org/oss-sec/2021/q2/180"
+        ],
+        "discovery": "2021-06-03T00:00:00Z",
+        "references": {
+            "cvename": [
+                "CVE-2021-3560"
+            ]
+        },
+        "vid": "36a35d83-c560-11eb-84ab-e0d55e2a8bf9"
+    },
+    "details": "Cedric Buissart reports:\n\n> The function `polkit_system_bus_name_get_creds_sync` is used to get\n> the uid and pid of the process requesting the action. It does this by\n> sending the unique bus name of the requesting process, which is\n> typically something like \\\":1.96\\\", to `dbus-daemon`. These unique\n> names are assigned and managed by `dbus-daemon` and cannot be forged,\n> so this is a good way to check the privileges of the requesting\n> process.\n>\n> The vulnerability happens when the requesting process disconnects from\n> `dbus-daemon` just before the call to\n> `polkit_system_bus_name_get_creds_sync` starts. In this scenario, the\n> unique bus name is no longer valid, so `dbus-daemon` sends back an\n> error reply. This error case is handled in\n> `polkit_system_bus_name_get_creds_sync` by setting the value of the\n> `error` parameter, but it still returns `TRUE`, rather than `FALSE`.\n> This behavior means that all callers of\n> `polkit_system_bus_name_get_creds_sync` need to carefully check\n> whether an error was set. If the calling function forgets to check for\n> errors then it will think that the uid of the requesting process is 0\n> (because the `AsyncGetBusNameCredsData` struct is zero initialized).\n> In other words, it will think that the action was requested by a root\n> process, and will therefore allow it.\n",
+    "id": "FreeBSD-2021-0152",
+    "modified": "2021-06-04T00:00:00Z",
+    "published": "2021-06-04T00:00:00Z",
+    "references": [
+        {
+            "type": "REPORT",
+            "url": "https://seclists.org/oss-sec/2021/q2/180"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2021-3560"
+        },
+        {
+            "type": "WEB",
+            "url": "https://seclists.org/oss-sec/2021/q2/180"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2021-3560"
+        },
+        {
+            "type": "WEB",
+            "url": "https://gitlab.freedesktop.org/polkit/polkit/-/commit/a04d13a"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "polkit -- local privilege escalation using polkit_system_bus_name_get_creds_sync"
+}

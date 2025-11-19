@@ -1,0 +1,84 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "node"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "8.1.4"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        },
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "node4"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "4.8.4"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        },
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "node6"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "6.11.1"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "cite": [
+            "https://nodejs.org/en/blog/vulnerability/july-2017-security-releases/"
+        ],
+        "discovery": "2017-06-27T00:00:00Z",
+        "vid": "3eff66c5-66c9-11e7-aa1d-3d2e663cef42"
+    },
+    "details": "Updates are now available for all active Node.js release lines as well\nas the 7.x line. These include the fix for the high severity\nvulnerability identified in the initial announcement, one additional\nlower priority Node.js vulnerability in the 4.x release line, as well as\nsome lower priority fixes for Node.js dependencies across the current\nrelease lines.\n\n> ## Constant Hashtable Seeds (CVE pending)\n>\n> Node.js was susceptible to hash flooding remote DoS attacks as the\n> HashTable seed was constant across a given released version of\n> Node.js. This was a result of building with V8 snapshots enabled by\n> default which caused the initially randomized seed to be overwritten\n> on startup. Thanks to Jann Horn of Google Project Zero for reporting\n> this vulnerability.\n>\n> This is a high severity vulnerability and applies to all active\n> release lines (4.x, 6.x, 8.x) as well as the 7.x line.\n>\n> ## http.get with numeric authorization options creates uninitialized buffers\n>\n> Application code that allows the auth field of the options object used\n> with http.get() to be set to a number can result in an uninitialized\n> buffer being created/used as the authentication string.\n>\n> This is a low severity defect and only applies to the 4.x release\n> line.\n",
+    "id": "FreeBSD-2017-0154",
+    "modified": "2017-07-12T00:00:00Z",
+    "published": "2017-07-12T00:00:00Z",
+    "references": [
+        {
+            "type": "REPORT",
+            "url": "https://nodejs.org/en/blog/vulnerability/july-2017-security-releases/"
+        },
+        {
+            "type": "WEB",
+            "url": "https://nodejs.org/en/blog/vulnerability/july-2017-security-releases/"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "node.js -- multiple vulnerabilities"
+}

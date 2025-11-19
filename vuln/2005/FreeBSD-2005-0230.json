@@ -1,0 +1,72 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "clamav"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "0.86.2"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        },
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "clamav-devel"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "last_affected": "20050704"
+                        },
+                        {
+                            "fixed": "20050704"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "cite": [
+            "http://secunia.com/advisories/16180/"
+        ],
+        "discovery": "2005-07-24T00:00:00Z",
+        "vid": "1db7ecf5-fd24-11d9-b4d6-0007e900f87b"
+    },
+    "details": "An Secunia Advisory reports:\n\n> Neel Mehta and Alex Wheeler have reported some vulnerabilities in Clam\n> AntiVirus, which can be exploited by malicious people to cause a DoS\n> (Denial of Service) or compromise a vulnerable system.\n>\n> 1.  Two integer overflow errors in \\\"libclamav/tnef.c\\\" when\n>     processing TNEF files can be exploited to cause a heap-based\n>     buffer overflow via a specially crafted TNEF file with a length\n>     value of -1 in the header.\n> 2.  An integer overflow error in \\\"libclamav/chmunpack.c\\\" can be\n>     exploited to cause a heap-based buffer overflow via a specially\n>     crafted CHM file with a chunk entry that has a filename length of\n>     -1.\n> 3.  A boundary error in \\\"libclamav/fsg.c\\\" when processing a FSG\n>     compressed file can cause a heap-based buffer overflow.\n",
+    "id": "FreeBSD-2005-0230",
+    "modified": "2005-07-25T00:00:00Z",
+    "published": "2005-07-25T00:00:00Z",
+    "references": [
+        {
+            "type": "REPORT",
+            "url": "http://secunia.com/advisories/16180/"
+        },
+        {
+            "type": "WEB",
+            "url": "http://www.rem0te.com/public/images/clamav.pdf"
+        },
+        {
+            "type": "WEB",
+            "url": "http://secunia.com/advisories/16180/"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "clamav -- multiple remote buffer overflows"
+}

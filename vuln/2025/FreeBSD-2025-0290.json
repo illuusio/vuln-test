@@ -1,0 +1,69 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "cups"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "2.4.13"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "cite": [
+            "https://github.com/OpenPrinting/cups/security/advisories/GHSA-4c68-qgrh-rmmq",
+            "https://github.com/OpenPrinting/cups/security/advisories/GHSA-7qx3-r744-6qv4"
+        ],
+        "discovery": "2025-09-11T00:00:00Z",
+        "references": {
+            "cvename": [
+                "CVE-2025-58060",
+                "CVE-2025-58364"
+            ]
+        },
+        "vid": "3aee6703-8ff6-11f0-b8da-589cfc10a551"
+    },
+    "details": "OpenPrinting reports:\n\n> When the AuthType is set to anything but Basic, if the request\n> contains an Authorization: Basic \\... header, the password is not\n> checked.\n\n> An unsafe deserialization and validation of printer attributes, causes\n> null dereference in libcups library.\n",
+    "id": "FreeBSD-2025-0290",
+    "modified": "2025-09-16T00:00:00Z",
+    "published": "2025-09-12T00:00:00Z",
+    "references": [
+        {
+            "type": "REPORT",
+            "url": "https://github.com/OpenPrinting/cups/security/advisories/GHSA-4c68-qgrh-rmmq"
+        },
+        {
+            "type": "REPORT",
+            "url": "https://github.com/OpenPrinting/cups/security/advisories/GHSA-7qx3-r744-6qv4"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2025-58060"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2025-58364"
+        },
+        {
+            "type": "WEB",
+            "url": "https://github.com/OpenPrinting/cups/security/advisories/GHSA-4c68-qgrh-rmmq"
+        },
+        {
+            "type": "WEB",
+            "url": "https://github.com/OpenPrinting/cups/security/advisories/GHSA-7qx3-r744-6qv4"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "cups -- security vulnerabilities"
+}

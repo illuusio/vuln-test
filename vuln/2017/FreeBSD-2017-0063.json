@@ -1,0 +1,65 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "kdelibs"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "4.14.29_10"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        },
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "kf5-kio"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "5.31.0_1"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "cite": [
+            "https://www.kde.org/info/security/advisory-20170228-1.txt"
+        ],
+        "discovery": "2017-02-28T00:00:00Z",
+        "vid": "f714d8ab-028e-11e7-8042-50e549ebab6c"
+    },
+    "details": "Albert Astals Cid reports:\n\n> Using a malicious PAC file, and then using exfiltration methods in the\n> PAC function FindProxyForURL() enables the attacker to expose full\n> https URLs.\n>\n> This is a security issue since https URLs may contain sensitive\n> information in the URL authentication part (user:password@host), and\n> in the path and the query (e.g. access tokens).\n>\n> This attack can be carried out remotely (over the LAN) since proxy\n> settings allow \\\"Detect Proxy Configuration Automatically\\\". This\n> setting uses WPAD to retrieve the PAC file, and an attacker who has\n> access to the victim\\'s LAN can interfere with the WPAD protocols\n> (DHCP/DNS+HTTP) and inject his/her own malicious PAC instead of the\n> legitimate one.\n",
+    "id": "FreeBSD-2017-0063",
+    "modified": "2017-03-11T00:00:00Z",
+    "published": "2017-03-11T00:00:00Z",
+    "references": [
+        {
+            "type": "REPORT",
+            "url": "https://www.kde.org/info/security/advisory-20170228-1.txt"
+        },
+        {
+            "type": "WEB",
+            "url": "https://www.kde.org/info/security/advisory-20170228-1.txt"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "kio: Information Leak when accessing https when using a malicious PAC file"
+}

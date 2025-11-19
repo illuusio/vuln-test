@@ -1,0 +1,84 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "nginx"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "1.14.1"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        },
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "nginx-devel"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "1.15.6"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "cite": [
+            "http://nginx.org/en/security_advisories.html"
+        ],
+        "discovery": "2018-11-06T00:00:00Z",
+        "references": {
+            "cvename": [
+                "CVE-2018-16843",
+                "CVE-2018-16844",
+                "CVE-2018-16845"
+            ]
+        },
+        "vid": "84ca56be-e1de-11e8-bcfd-00e04c1ea73d"
+    },
+    "details": "NGINX Team reports:\n\n> Two security issues were identified in nginx HTTP/2 implementation,\n> which might cause excessive memory consumption (CVE-2018-16843) and\n> CPU usage (CVE-2018-16844).\n>\n> The issues affect nginx compiled with the ngx_http_v2_module (not\n> compiled by default) if the \\\"http2\\\" option of the \\\"listen\\\"\n> directive is used in a configuration file.\n>\n> A security issue was identified in the ngx_http_mp4_module, which\n> might allow an attacker to cause infinite loop in a worker process,\n> cause a worker process crash, or might result in worker process memory\n> isclosure by using a specially crafted mp4 file (CVE-2018-16845).\n>\n> The issue only affects nginx if it is built with the\n> ngx_http_mp4_module (the module is not built by default) and the\n> \\\"mp4\\\" directive is used in the configuration file. Further, the\n> attack is only possible if an attacker is able to trigger processing\n> of a specially crafted mp4 file with the ngx_http_mp4_module.\n",
+    "id": "FreeBSD-2018-0266",
+    "modified": "2018-11-06T00:00:00Z",
+    "published": "2018-11-06T00:00:00Z",
+    "references": [
+        {
+            "type": "REPORT",
+            "url": "http://nginx.org/en/security_advisories.html"
+        },
+        {
+            "type": "WEB",
+            "url": "http://nginx.org/en/security_advisories.html"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2018-16843"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2018-16844"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2018-16845"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "NGINX -- Multiple vulnerabilities"
+}

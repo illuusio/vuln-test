@@ -1,0 +1,84 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "bugzilla"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "introduced": "2.*,1"
+                        },
+                        {
+                            "fixed": "2.22.1"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        },
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "ja-bugzilla"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "introduced": "2.*,1"
+                        },
+                        {
+                            "fixed": "2.22.1"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "cite": [
+            "http://www.bugzilla.org/security/2.18.5/"
+        ],
+        "discovery": "2006-10-15T00:00:00Z",
+        "references": {
+            "cvename": [
+                "CVE-2006-5453",
+                "CVE-2006-5454",
+                "CVE-2006-5455"
+            ]
+        },
+        "vid": "6d68618a-7199-11db-a2ad-000c6ec775d9"
+    },
+    "details": "A Bugzilla Security Advisory reports:\n\n> - Sometimes the information put into the \\<h1\\> and \\<h2\\> tags in\n>   Bugzilla was not properly escaped, leading to a possible XSS\n>   vulnerability.\n> - Bugzilla administrators were allowed to put raw, unfiltered HTML\n>   into many fields in Bugzilla, leading to a possible XSS\n>   vulnerability. Now, the HTML allowed in those fields is limited.\n> - attachment.cgi could leak the names of private attachments\n> - The \\\"deadline\\\" field was visible in the XML format of a bug, even\n>   to users who were not a member of the \\\"timetrackinggroup.\\\"\n> - A malicious user could pass a URL to an admin, and make the admin\n>   delete or change something that he had not intended to delete or\n>   change.\n> - It is possible to inject arbitrary HTML into the\n>   showdependencygraph.cgi page, allowing for a cross-site scripting\n>   attack.\n",
+    "id": "FreeBSD-2006-0203",
+    "modified": "2006-11-11T00:00:00Z",
+    "published": "2006-11-11T00:00:00Z",
+    "references": [
+        {
+            "type": "REPORT",
+            "url": "http://www.bugzilla.org/security/2.18.5/"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2006-5453"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2006-5454"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2006-5455"
+        },
+        {
+            "type": "WEB",
+            "url": "http://www.bugzilla.org/security/2.18.5/"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "bugzilla -- multiple vulnerabilities"
+}

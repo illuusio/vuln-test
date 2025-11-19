@@ -1,0 +1,98 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "apache22"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "2.2.33"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        },
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "apache24"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "2.4.26"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "cite": [
+            "http://httpd.apache.org/security/vulnerabilities_24.html"
+        ],
+        "discovery": "2017-06-20T00:00:00Z",
+        "references": {
+            "cvename": [
+                "CVE-2017-3167",
+                "CVE-2017-3169",
+                "CVE-2017-7659",
+                "CVE-2017-7668",
+                "CVE-2017-7679"
+            ]
+        },
+        "vid": "0c2db2aa-5584-11e7-9a7d-b499baebfeaf"
+    },
+    "details": "The Apache httpd project reports:\n\n> - ap_get_basic_auth_pw() Authentication Bypass (CVE-2017-3167):\\\n>   Use of the ap_get_basic_auth_pw() by third-party modules outside of\n>   the authentication phase may lead to authentication requirements\n>   being bypassed.\n> - mod_ssl Null Pointer Dereference (CVE-2017-3169):\\\n>   mod_ssl may dereference a NULL pointer when third-party modules call\n>   ap_hook_process_connection() during an HTTP request to an HTTPS\n>   port.\n> - mod_http2 Null Pointer Dereference (CVE-2017-7659):\\\n>   A maliciously constructed HTTP/2 request could cause mod_http2 to\n>   dereference a NULL pointer and crash the server process.\n> - ap_find_token() Buffer Overread (CVE-2017-7668):\\\n>   The HTTP strict parsing changes added in 2.2.32 and 2.4.24\n>   introduced a bug in token list parsing, which allows ap_find_token()\n>   to search past the end of its input string. By maliciously crafting\n>   a sequence of request headers, an attacker may be able to cause a\n>   segmentation fault, or to force ap_find_token() to return an\n>   incorrect value.\n> - mod_mime Buffer Overread (CVE-2017-7679):\\\n>   mod_mime can read one byte past the end of a buffer when sending a\n>   malicious Content-Type response header.\n",
+    "id": "FreeBSD-2017-0139",
+    "modified": "2017-06-20T00:00:00Z",
+    "published": "2017-06-20T00:00:00Z",
+    "references": [
+        {
+            "type": "REPORT",
+            "url": "http://httpd.apache.org/security/vulnerabilities_24.html"
+        },
+        {
+            "type": "WEB",
+            "url": "https://httpd.apache.org/security/vulnerabilities_24.html"
+        },
+        {
+            "type": "WEB",
+            "url": "https://httpd.apache.org/security/vulnerabilities_22.html"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2017-3167"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2017-3169"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2017-7659"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2017-7668"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2017-7679"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "Apache httpd -- several vulnerabilities"
+}

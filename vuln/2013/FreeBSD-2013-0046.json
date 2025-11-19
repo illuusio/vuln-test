@@ -1,0 +1,79 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "typo3"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "introduced": "4.5.0"
+                        },
+                        {
+                            "fixed": "4.5.23"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                },
+                {
+                    "events": [
+                        {
+                            "introduced": "4.6.0"
+                        },
+                        {
+                            "fixed": "4.6.16"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                },
+                {
+                    "events": [
+                        {
+                            "introduced": "4.7.0"
+                        },
+                        {
+                            "fixed": "4.7.8"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                },
+                {
+                    "events": [
+                        {
+                            "introduced": "6.0.0"
+                        },
+                        {
+                            "fixed": "6.0.2"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "cite": [
+            "http://typo3.org/teams/security/security-bulletins/typo3-core/typo3-core-sa-2013-001/"
+        ],
+        "discovery": "2013-03-06T00:00:00Z",
+        "vid": "b9a347ac-8671-11e2-b73c-0019d18c446a"
+    },
+    "details": "Typo Security Team reports:\n\n> Extbase Framework - Failing to sanitize user input, the Extbase\n> database abstraction layer is susceptible to SQL Injection. TYPO3\n> sites which have no Extbase extensions installed are not affected.\n> Extbase extensions are affected if they use the Query Object Model and\n> relation values are user generated input. Credits go to Helmut Hummel\n> and Markus Opahle who discovered and reported the issue.\n>\n> Access tracking mechanism - Failing to validate user provided input,\n> the access tracking mechanism allows redirects to arbitrary URLs. To\n> fix this vulnerability, we had to break existing behaviour of TYPO3\n> sites that use the access tracking mechanism (jumpurl feature) to\n> transform links to external sites. The link generation has been\n> changed to include a hash that is checked before redirecting to an\n> external URL. This means that old links that have been distributed\n> (e.g. by a newsletter) will not work any more.\n",
+    "id": "FreeBSD-2013-0046",
+    "modified": "2013-03-06T00:00:00Z",
+    "published": "2013-03-06T00:00:00Z",
+    "references": [
+        {
+            "type": "REPORT",
+            "url": "http://typo3.org/teams/security/security-bulletins/typo3-core/typo3-core-sa-2013-001/"
+        },
+        {
+            "type": "WEB",
+            "url": "http://typo3.org/teams/security/security-bulletins/typo3-core/typo3-core-sa-2013-001/"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "typo3 -- Multiple vulnerabilities in TYPO3 Core"
+}

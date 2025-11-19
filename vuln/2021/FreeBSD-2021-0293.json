@@ -1,0 +1,74 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "grafana"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "introduced": "8.0.0"
+                        },
+                        {
+                            "fixed": "8.3.2"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        },
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "grafana8"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "introduced": "8.0.0"
+                        },
+                        {
+                            "fixed": "8.3.2"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "cite": [
+            "https://github.com/grafana/grafana/security/advisories/GHSA-7533-c8qv-jm9m"
+        ],
+        "discovery": "2021-12-09T00:00:00Z",
+        "references": {
+            "cvename": [
+                "CVE-2021-43815"
+            ]
+        },
+        "vid": "c2a7de31-5b42-11ec-8398-6c3be5272acd"
+    },
+    "details": "GitHub Security Labs reports:\n\n> A vulnerability through which authenticated users could read out fully\n> lowercase or fully uppercase `.md` files through directory traversal.\n> Doing our own follow-up investigation we found a related vulnerability\n> through which authenticated users could read out arbitrary `.csv`\n> files through directory traversal. Thanks to our defense-in-depth\n> approach, at no time has [Grafana Cloud](https://grafana.com/cloud)\n> been vulnerable.\n>\n> **The vulnerable URL path is:** `/api/ds/query`\n",
+    "id": "FreeBSD-2021-0293",
+    "modified": "2021-12-12T00:00:00Z",
+    "published": "2021-12-12T00:00:00Z",
+    "references": [
+        {
+            "type": "REPORT",
+            "url": "https://github.com/grafana/grafana/security/advisories/GHSA-7533-c8qv-jm9m"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2021-43815"
+        },
+        {
+            "type": "WEB",
+            "url": "https://grafana.com/blog/2021/12/10/grafana-8.3.2-and-7.5.12-released-with-moderate-severity-security-fix/"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "Grafana -- Directory Traversal"
+}

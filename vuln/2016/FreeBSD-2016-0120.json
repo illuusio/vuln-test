@@ -1,0 +1,55 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "xen-kernel"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "introduced": "3.3"
+                        },
+                        {
+                            "fixed": "4.5.2_2"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "cite": [
+            "http://xenbits.xen.org/xsa/advisory-168.html"
+        ],
+        "discovery": "2016-01-20T00:00:00Z",
+        "references": {
+            "cvename": [
+                "CVE-2016-1571"
+            ]
+        },
+        "vid": "80adc394-ddaf-11e5-b2bd-002590263bf5"
+    },
+    "details": "The Xen Project reports:\n\n> While INVLPG does not cause a General Protection Fault when used on a\n> non-canonical address, INVVPID in its \\\"individual address\\\" variant,\n> which is used to back the intercepted INVLPG in certain cases, fails\n> in such cases. Failure of INVVPID results in a hypervisor bug check.\n>\n> A malicious guest can crash the host, leading to a Denial of Service.\n",
+    "id": "FreeBSD-2016-0120",
+    "modified": "2016-02-28T00:00:00Z",
+    "published": "2016-02-28T00:00:00Z",
+    "references": [
+        {
+            "type": "REPORT",
+            "url": "http://xenbits.xen.org/xsa/advisory-168.html"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2016-1571"
+        },
+        {
+            "type": "WEB",
+            "url": "http://xenbits.xen.org/xsa/advisory-168.html"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "xen-kernel -- VMX: intercept issue with INVLPG on non-canonical address"
+}

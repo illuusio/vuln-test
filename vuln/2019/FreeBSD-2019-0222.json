@@ -1,0 +1,46 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "exim"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "introduced": "4.92"
+                        },
+                        {
+                            "fixed": "4.92.3"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "cite": [
+            "https://lists.exim.org/lurker/message/20190927.032457.c1044d4c.en.html"
+        ],
+        "discovery": "2019-09-28T00:00:00Z",
+        "vid": "e917caba-e291-11e9-89f1-152fed202bb7"
+    },
+    "details": "Exim developers team report:\n\n> There is a heap overflow in string_vformat().Using a EHLO message,\n> remote code execution seems to be possible.\n",
+    "id": "FreeBSD-2019-0222",
+    "modified": "2019-09-29T00:00:00Z",
+    "published": "2019-09-29T00:00:00Z",
+    "references": [
+        {
+            "type": "REPORT",
+            "url": "https://lists.exim.org/lurker/message/20190927.032457.c1044d4c.en.html"
+        },
+        {
+            "type": "WEB",
+            "url": "https://www.openwall.com/lists/oss-security/2019/09/28/1"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "Exim -- heap-based buffer overflow in string_vformat leading to RCE"
+}

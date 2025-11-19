@@ -1,0 +1,85 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "bugzilla"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "introduced": "3.6.0"
+                        },
+                        {
+                            "fixed": "3.6.11"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                },
+                {
+                    "events": [
+                        {
+                            "introduced": "4.0.0"
+                        },
+                        {
+                            "fixed": "4.0.8"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                },
+                {
+                    "events": [
+                        {
+                            "introduced": "4.2.0"
+                        },
+                        {
+                            "fixed": "4.2.3"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "cite": [
+            "http://www.bugzilla.org/security/3.6.10/"
+        ],
+        "discovery": "2012-08-30T00:00:00Z",
+        "references": {
+            "cvename": [
+                "CVE-2012-3981"
+            ]
+        },
+        "vid": "6ad18fe5-f469-11e1-920d-20cf30e32f6d"
+    },
+    "details": "# A Bugzilla Security Advisory reports:\n\n> The following security issues have been discovered in Bugzilla:\n>\n> # LDAP Injection\n>\n> When the user logs in using LDAP, the username is not escaped when\n> building the uid=\\$username filter which is used to query the LDAP\n> directory. This could potentially lead to LDAP injection.\n>\n> # Directory Browsing\n>\n> Extensions are not protected against directory browsing and users can\n> access the source code of the templates which may contain sensitive\n> data. Directory browsing is blocked in Bugzilla 4.3.3 only, because it\n> requires a configuration change in the Apache httpd.conf file to allow\n> local .htaccess files to use Options -Indexes. To not break existing\n> installations, this fix has not been backported to stable branches.\n> The access to templates is blocked for all supported branches except\n> the old 3.6 branch, because this branch doesn\\'t have .htaccess in the\n> bzr repository and cannot be fixed easily for existing installations\n> without potentially conflicting with custom changes.\n",
+    "id": "FreeBSD-2012-0166",
+    "modified": "2012-09-01T00:00:00Z",
+    "published": "2012-09-01T00:00:00Z",
+    "references": [
+        {
+            "type": "REPORT",
+            "url": "http://www.bugzilla.org/security/3.6.10/"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2012-3981"
+        },
+        {
+            "type": "REPORT",
+            "url": "https://bugzilla.mozilla.org/show_bug.cgi?id=785470"
+        },
+        {
+            "type": "REPORT",
+            "url": "https://bugzilla.mozilla.org/show_bug.cgi?id=785522"
+        },
+        {
+            "type": "REPORT",
+            "url": "https://bugzilla.mozilla.org/show_bug.cgi?id=785511"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "bugzilla -- multiple vulnerabilities"
+}

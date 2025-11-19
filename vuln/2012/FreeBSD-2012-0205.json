@@ -1,0 +1,89 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "tomcat"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "introduced": "5.5.0,1"
+                        },
+                        {
+                            "fixed": "5.5.36"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                },
+                {
+                    "events": [
+                        {
+                            "introduced": "6.0.0,1"
+                        },
+                        {
+                            "fixed": "6.0.36"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                },
+                {
+                    "events": [
+                        {
+                            "introduced": "7.0.0,1"
+                        },
+                        {
+                            "fixed": "7.0.30"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "cite": [
+            "http://tomcat.apache.org/security.html"
+        ],
+        "discovery": "2012-11-05T00:00:00Z",
+        "references": {
+            "cvename": [
+                "CVE-2012-3439"
+            ]
+        },
+        "vid": "152e4c7e-2a2e-11e2-99c7-00a0d181e71d"
+    },
+    "details": "The Apache Software Foundation reports:\n\n> Three weaknesses in Tomcat\\'s implementation of DIGEST authentication\n> were identified and resolved:\n>\n> - Tomcat tracked client rather than server nonces and nonce count.\n> - When a session ID was present, authentication was bypassed.\n> - The user name and password were not checked before when indicating\n>   that a nonce was stale.\n>\n> These issues reduced the security of DIGEST authentication making\n> replay attacks possible in some circumstances.\n>\n> The first issue was identified by Tilmann Kuhn. The second and third\n> issues were identified by the Tomcat security team during the code\n> review resulting from the first issue.\n",
+    "id": "FreeBSD-2012-0205",
+    "modified": "2012-11-09T00:00:00Z",
+    "published": "2012-11-08T00:00:00Z",
+    "references": [
+        {
+            "type": "REPORT",
+            "url": "http://tomcat.apache.org/security.html"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2012-3439"
+        },
+        {
+            "type": "WEB",
+            "url": "http://tomcat.apache.org/security.html"
+        },
+        {
+            "type": "WEB",
+            "url": "http://tomcat.apache.org/security-5.html"
+        },
+        {
+            "type": "WEB",
+            "url": "http://tomcat.apache.org/security-6.html"
+        },
+        {
+            "type": "WEB",
+            "url": "http://tomcat.apache.org/security-7.html"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "tomcat -- authentication weaknesses"
+}

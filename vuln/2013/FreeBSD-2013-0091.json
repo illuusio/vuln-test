@@ -1,0 +1,55 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "ruby19"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "1.9.3.429,1"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "cite": [
+            "http://www.ruby-lang.org/en/news/2013/05/14/taint-bypass-dl-fiddle-cve-2013-2065/"
+        ],
+        "discovery": "2013-05-14T00:00:00Z",
+        "references": {
+            "cvename": [
+                "CVE-2013-2065"
+            ]
+        },
+        "vid": "79789daa-8af8-4e21-a47f-e8a645752bdb"
+    },
+    "details": "Ruby Developers report:\n\n> There is a vulnerability in DL and Fiddle in Ruby where tainted\n> strings can be used by system calls regardless of the \\$SAFE level set\n> in Ruby.\n>\n> Native functions exposed to Ruby with DL or Fiddle do not check the\n> taint values set on the objects passed in. This can result in tainted\n> objects being accepted as input when a SecurityError exception should\n> be raised.\n",
+    "id": "FreeBSD-2013-0091",
+    "modified": "2013-05-26T00:00:00Z",
+    "published": "2013-05-26T00:00:00Z",
+    "references": [
+        {
+            "type": "REPORT",
+            "url": "http://www.ruby-lang.org/en/news/2013/05/14/taint-bypass-dl-fiddle-cve-2013-2065/"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2013-2065"
+        },
+        {
+            "type": "WEB",
+            "url": "http://www.ruby-lang.org/en/news/2013/05/14/taint-bypass-dl-fiddle-cve-2013-2065/"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "ruby -- Object taint bypassing in DL and Fiddle in Ruby"
+}

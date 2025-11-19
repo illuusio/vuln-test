@@ -1,0 +1,55 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "collectd5"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "5.7.2"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "cite": [
+            "https://github.com/collectd/collectd/issues/2174"
+        ],
+        "discovery": "2017-02-13T00:00:00Z",
+        "references": {
+            "cvename": [
+                "CVE-2017-7401"
+            ]
+        },
+        "vid": "08a2df48-6c6a-11e7-9b01-2047478f2f70"
+    },
+    "details": "marcinguy reports:\n\n> After sending this payload, collectd seems to be entering endless\n> while() loop in packet_parse consuming high CPU resources, possibly\n> crash/gets killed after a while.\n",
+    "id": "FreeBSD-2017-0160",
+    "modified": "2017-07-19T00:00:00Z",
+    "published": "2017-07-19T00:00:00Z",
+    "references": [
+        {
+            "type": "REPORT",
+            "url": "https://github.com/collectd/collectd/issues/2174"
+        },
+        {
+            "type": "WEB",
+            "url": "https://github.com/collectd/collectd/issues/2174"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2017-7401"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "collectd5 -- Denial of service by sending a signed network packet to a server which is not set up to check signatures"
+}

@@ -1,0 +1,77 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "php4-mbstring"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "4.4.9"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        },
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "php5-mbstring"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "5.2.9"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "cite": [
+            "http://www.securityfocus.com/bid/32948"
+        ],
+        "discovery": "2008-12-21T00:00:00Z",
+        "references": {
+            "bid": [
+                "32948"
+            ],
+            "cvename": [
+                "CVE-2008-5557"
+            ]
+        },
+        "vid": "a2074ac6-124c-11de-a964-0030843d3802"
+    },
+    "details": "SecurityFocus reports:\n\n> PHP is prone to a buffer-overflow vulnerability because it fails to\n> perform boundary checks before copying user-supplied data to\n> insufficiently sized memory buffers. The issue affects the\n> \\'mbstring\\' extension included in the standard distribution.\n>\n> An attacker can exploit this issue to execute arbitrary machine code\n> in the context of the affected webserver. Failed exploit attempts will\n> likely crash the webserver, denying service to legitimate users.\n",
+    "id": "FreeBSD-2009-0055",
+    "modified": "2009-03-16T00:00:00Z",
+    "published": "2009-03-16T00:00:00Z",
+    "references": [
+        {
+            "type": "REPORT",
+            "url": "http://www.securityfocus.com/bid/32948"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://www.securityfocus.com/bid/32948/info"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2008-5557"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "php-mbstring -- php mbstring buffer overflow vulnerability"
+}

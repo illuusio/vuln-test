@@ -1,0 +1,85 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "apache24"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "2.4.60"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "cite": [
+            "https://httpd.apache.org/security/vulnerabilities_24.html"
+        ],
+        "discovery": "2024-07-01T00:00:00Z",
+        "references": {
+            "cvename": [
+                "CVE-2024-36387",
+                "CVE-2024-38473",
+                "CVE-2024-38474",
+                "CVE-2024-38475",
+                "CVE-2024-38476",
+                "CVE-2024-38477",
+                "CVE-2024-39573"
+            ]
+        },
+        "vid": "d7efc2ad-37af-11ef-b611-84a93843eb75"
+    },
+    "details": "The Apache httpd project reports:\n\n> DoS by Null pointer in websocket over HTTP/2 (CVE-2024-36387) (Low).\n> Serving WebSocket protocol upgrades over a HTTP/2 connection could\n> result in a Null Pointer dereference, leading to a crash of the server\n> process, degrading performance.\n>\n> Proxy encoding problem (CVE-2024-38473) (Moderate). Encoding problem\n> in mod_proxy in Apache HTTP Server 2.4.59 and earlier allows request\n> URLs with incorrect encoding to be sent to backend services,\n> potentially bypassing authentication via crafted requests.\n>\n> Weakness with encoded question marks in backreferences\n> (CVE-2024-38474) (Important). Substitution encoding issue in\n> mod_rewrite in Apache HTTP Server 2.4.59 and earlier allows attacker\n> to execute scripts in directories permitted by the configuration but\n> not directly reachable by any URL or source disclosure of scripts\n> meant to only to be executed as CGI.\n>\n> Weakness in mod_rewrite when first segment of substitution matches\n> filesystem path (CVE-2024-38475) (Important). Improper escaping of\n> output in mod_rewrite in Apache HTTP Server 2.4.59 and earlier allows\n> an attacker to map URLs to filesystem locations that are permitted to\n> be served by the server but are not intentionally/directly reachable\n> by any URL, resulting in code execution or source code disclosure.\n> Substitutions in server context that use a backreferences or variables\n> as the first segment of the substitution are affected. Some unsafe\n> RewiteRules will be broken by this change and the rewrite flag\n> \\\"UnsafePrefixStat\\\" can be used to opt back in once ensuring the\n> substitution is appropriately constrained.\n>\n> may use exploitable/malicious backend application output to run local\n> handlers via internal redirect (CVE-2024-38476) (Important).\n> Vulnerability in core of Apache HTTP Server 2.4.59 and earlier are\n> vulnerable to information disclosure, SSRF or local script execution\n> via backend applications whose response headers are malicious or\n> exploitable.\n>\n> Crash resulting in Denial of Service in mod_proxy via a malicious\n> request (CVE-2024-38477) (Important). Null pointer dereference in\n> mod_proxy in Apache HTTP Server 2.4.59 and earlier allows an attacker\n> to crash the server via a malicious request.\n>\n> mod_rewrite proxy handler substitution (CVE-2024-39573) (Moderate).\n> Potential SSRF in mod_rewrite in Apache HTTP Server 2.4.59 and earlier\n> allows an attacker to cause unsafe RewriteRules to unexpectedly setup\n> URL\\'s to be handled by mod_proxy.\n",
+    "id": "FreeBSD-2024-0161",
+    "modified": "2024-07-01T00:00:00Z",
+    "published": "2024-07-01T00:00:00Z",
+    "references": [
+        {
+            "type": "REPORT",
+            "url": "https://httpd.apache.org/security/vulnerabilities_24.html"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2024-36387"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2024-38473"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2024-38474"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2024-38475"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2024-38476"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2024-38477"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2024-39573"
+        },
+        {
+            "type": "WEB",
+            "url": "https://httpd.apache.org/security/vulnerabilities_24.html"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "Apache httpd -- Multiple vulnerabilities"
+}

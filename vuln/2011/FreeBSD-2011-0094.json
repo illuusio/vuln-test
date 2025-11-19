@@ -1,0 +1,97 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "phpMyAdmin"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "3.4.3.1"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "cite": [
+            "http://www.phpmyadmin.net/home_page/security/PMASA-2011-5.php",
+            "http://www.phpmyadmin.net/home_page/security/PMASA-2011-6.php",
+            "http://www.phpmyadmin.net/home_page/security/PMASA-2011-7.php",
+            "http://www.phpmyadmin.net/home_page/security/PMASA-2011-8.php"
+        ],
+        "discovery": "2011-07-02T00:00:00Z",
+        "references": {
+            "cvename": [
+                "CVE-2011-2505",
+                "CVE-2011-2506",
+                "CVE-2011-2507",
+                "CVE-2011-2508"
+            ]
+        },
+        "vid": "7e4e5c53-a56c-11e0-b180-00216aa06fc2"
+    },
+    "details": "The phpMyAdmin development team reports:\n\n> It was possible to manipulate the PHP session superglobal using some\n> of the Swekey authentication code. This could open a path for other\n> attacks.\n\n> An unsanitized key from the Servers array is written in a comment of\n> the generated config. An attacker can modify this key by modifying the\n> SESSION superglobal array. This allows the attacker to close the\n> comment and inject code.\n\n> Through a possible bug in PHP running on Windows systems a NULL byte\n> can truncate the pattern string allowing an attacker to inject the /e\n> modifier causing the preg_replace function to execute its second\n> argument as PHP code.\n\n> Fixed filtering of a file path in the MIME-type transformation code,\n> which allowed for directory traversal.\n",
+    "id": "FreeBSD-2011-0094",
+    "modified": "2011-07-28T00:00:00Z",
+    "published": "2011-07-03T00:00:00Z",
+    "references": [
+        {
+            "type": "REPORT",
+            "url": "http://www.phpmyadmin.net/home_page/security/PMASA-2011-5.php"
+        },
+        {
+            "type": "REPORT",
+            "url": "http://www.phpmyadmin.net/home_page/security/PMASA-2011-6.php"
+        },
+        {
+            "type": "REPORT",
+            "url": "http://www.phpmyadmin.net/home_page/security/PMASA-2011-7.php"
+        },
+        {
+            "type": "REPORT",
+            "url": "http://www.phpmyadmin.net/home_page/security/PMASA-2011-8.php"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2011-2505"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2011-2506"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2011-2507"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2011-2508"
+        },
+        {
+            "type": "WEB",
+            "url": "http://www.phpmyadmin.net/home_page/security/PMASA-2011-5.php"
+        },
+        {
+            "type": "WEB",
+            "url": "http://www.phpmyadmin.net/home_page/security/PMASA-2011-6.php"
+        },
+        {
+            "type": "WEB",
+            "url": "http://www.phpmyadmin.net/home_page/security/PMASA-2011-7.php"
+        },
+        {
+            "type": "WEB",
+            "url": "http://www.phpmyadmin.net/home_page/security/PMASA-2011-8.php"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "phpmyadmin -- multiple vulnerabilities"
+}

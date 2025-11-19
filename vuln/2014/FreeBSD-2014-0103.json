@@ -1,0 +1,69 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "phpMyAdmin"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "introduced": "4.2.0"
+                        },
+                        {
+                            "fixed": "4.2.7.1"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "cite": [
+            "http://www.phpmyadmin.net/home_page/security/PMASA-2014-8.php",
+            "http://www.phpmyadmin.net/home_page/security/PMASA-2014-9.php"
+        ],
+        "discovery": "2014-08-17T00:00:00Z",
+        "references": {
+            "cvename": [
+                "CVE-2014-5273",
+                "CVE-2014-5274"
+            ]
+        },
+        "vid": "fbb01289-2645-11e4-bc44-6805ca0b3d42"
+    },
+    "details": "The phpMyAdmin development team reports:\n\n> Multiple XSS vulnerabilities in browse table, ENUM editor, monitor,\n> query charts and table relations pages.\n>\n> With a crafted database, table or a primary/unique key column name it\n> is possible to trigger an XSS when dropping a row from the table. With\n> a crafted column name it is possible to trigger an XSS in the ENUM\n> editor dialog. With a crafted variable name or a crafted value for\n> unit field it is possible to trigger a self-XSS when adding a new\n> chart in the monitor page. With a crafted value for x-axis label it is\n> possible to trigger a self-XSS in the query chart page. With a crafted\n> relation name it is possible to trigger an XSS in table relations\n> page.\n\n> XSS in view operations page.\n>\n> With a crafted view name it is possible to trigger an XSS when\n> dropping the view in view operation page.\n",
+    "id": "FreeBSD-2014-0103",
+    "modified": "2014-08-17T00:00:00Z",
+    "published": "2014-08-17T00:00:00Z",
+    "references": [
+        {
+            "type": "REPORT",
+            "url": "http://www.phpmyadmin.net/home_page/security/PMASA-2014-8.php"
+        },
+        {
+            "type": "REPORT",
+            "url": "http://www.phpmyadmin.net/home_page/security/PMASA-2014-9.php"
+        },
+        {
+            "type": "WEB",
+            "url": "http://www.phpmyadmin.net/home_page/security/PMASA-2014-8.php"
+        },
+        {
+            "type": "WEB",
+            "url": "http://www.phpmyadmin.net/home_page/security/PMASA-2014-9.php"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2014-5273"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2014-5274"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "phpMyAdmin -- XSS vulnerabilities"
+}

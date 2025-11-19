@@ -1,0 +1,122 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "wget"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "1.10.a1"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        },
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "wget-devel"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "1.10.a1"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        },
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "wgetpro"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        },
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "wget+ipv6"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "cite": [
+            "http://marc.theaimsgroup.com/?l=bugtraq&m=110269474112384"
+        ],
+        "discovery": "2004-12-09T00:00:00Z",
+        "references": {
+            "bid": [
+                "11871"
+            ],
+            "cvename": [
+                "CVE-2004-1487",
+                "CVE-2004-1488"
+            ]
+        },
+        "vid": "06f142ff-4df3-11d9-a9e7-0001020eed82"
+    },
+    "details": "Jan Minar reports that there exists multiple vulnerabilities in wget:\n\n> Wget erroneously thinks that the current directory is a fair game, and\n> will happily write in any file in and below it. Malicious HTTP\n> response or malicious HTML file can redirect wget to a file that is\n> vital to the system, and wget will create/append/overwrite it.\n>\n> Wget apparently has at least two methods of \\`\\`sanitizing\\'\\' the\n> potentially malicious data it receives from the HTTP stream, therefore\n> a malicious redirects can pass the check. We haven\\'t find a way to\n> trick wget into writing above the parent directory, which doesn\\'t\n> mean it\\'s not possible.\n>\n> Malicious HTTP response can overwrite parts of the terminal so that\n> the user will not notice anything wrong, or will believe the error was\n> not fatal.\n",
+    "id": "FreeBSD-2004-0267",
+    "modified": "2005-04-15T00:00:00Z",
+    "published": "2004-12-14T00:00:00Z",
+    "references": [
+        {
+            "type": "REPORT",
+            "url": "http://marc.theaimsgroup.com/?l=bugtraq&m=110269474112384"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2004-1487"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2004-1488"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://www.securityfocus.com/bid/11871/info"
+        },
+        {
+            "type": "DISCUSSION",
+            "url": "http://marc.theaimsgroup.com/?l=bugtraq&m=110269474112384"
+        },
+        {
+            "type": "WEB",
+            "url": "http://bugs.debian.org/261755"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "wget -- multiple vulnerabilities"
+}

@@ -1,0 +1,84 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "FreeBSD"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "introduced": "7.3"
+                        },
+                        {
+                            "fixed": "7.3_9"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                },
+                {
+                    "events": [
+                        {
+                            "introduced": "7.4"
+                        },
+                        {
+                            "fixed": "7.4_5"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                },
+                {
+                    "events": [
+                        {
+                            "introduced": "8.1"
+                        },
+                        {
+                            "fixed": "8.1_7"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                },
+                {
+                    "events": [
+                        {
+                            "introduced": "8.2"
+                        },
+                        {
+                            "fixed": "8.2_5"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "cite": [
+            "http://security.freebsd.org/advisories/FreeBSD-SA-11:09.pam_ssh.asc"
+        ],
+        "discovery": "2011-12-23T00:00:00Z",
+        "references": {
+            "freebsdsa": [
+                "SA-11:09.pam_ssh"
+            ]
+        },
+        "vid": "eda151d8-4638-11e1-9f47-00e0815b8da8"
+    },
+    "details": "> # Problem Description:\n>\n> The OpenSSL library call used to decrypt private keys ignores the\n> passphrase argument if the key is not encrypted. Because the pam_ssh\n> module only checks whether the passphrase provided by the user is\n> null, users with unencrypted SSH private keys may successfully\n> authenticate themselves by providing a dummy passphrase.\n",
+    "id": "FreeBSD-2012-0023",
+    "modified": "2013-06-18T00:00:00Z",
+    "published": "2012-01-29T00:00:00Z",
+    "references": [
+        {
+            "type": "REPORT",
+            "url": "http://security.freebsd.org/advisories/FreeBSD-SA-11:09.pam_ssh.asc"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://www.freebsd.org/security/advisories/FreeBSD-SA-11:09.pam_ssh.asc"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "FreeBSD -- pam_ssh improperly grants access when user account has unencrypted SSH private keys"
+}

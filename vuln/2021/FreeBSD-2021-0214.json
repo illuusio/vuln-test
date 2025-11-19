@@ -1,0 +1,141 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "cyrus-imapd34"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "3.4.2"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        },
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "cyrus-imapd32"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "3.2.8"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        },
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "cyrus-imapd30"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "3.0.16"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        },
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "cyrus-imapd25"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "introduced": "0,1"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        },
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "cyrus-imapd24"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "introduced": "0,1"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        },
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "cyrus-imapd23"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "introduced": "0,1"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "cite": [
+            "https://www.cyrusimap.org/imap/download/release-notes/3.4/x/3.4.2.html"
+        ],
+        "discovery": "2021-05-26T00:00:00Z",
+        "references": {
+            "cvename": [
+                "CVE-2021-33582"
+            ]
+        },
+        "vid": "3d915d96-0b1f-11ec-8d9f-080027415d17"
+    },
+    "details": "Cyrus IMAP 3.4.2 Release Notes states:\n\n> Fixed CVE-2021-33582: Certain user inputs are used as hash table keys\n> during processing. A poorly chosen string hashing algorithm meant that\n> the user could control which bucket their data was stored in, allowing\n> a malicious user to direct many inputs to a single bucket. Each\n> subsequent insertion to the same bucket requires a strcmp of every\n> other entry in it. At tens of thousands of entries, each new insertion\n> could keep the CPU busy in a strcmp loop for minutes. The string\n> hashing algorithm has been replaced with a better one, and now also\n> uses a random seed per hash table, so malicious inputs cannot be\n> precomputed.\n",
+    "id": "FreeBSD-2021-0214",
+    "modified": "2021-09-01T00:00:00Z",
+    "published": "2021-09-01T00:00:00Z",
+    "references": [
+        {
+            "type": "REPORT",
+            "url": "https://www.cyrusimap.org/imap/download/release-notes/3.4/x/3.4.2.html"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2021-33582"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2021-33582"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "cyrus-imapd -- multiple-minute daemon hang via input that is mishandled during hash-table interaction"
+}

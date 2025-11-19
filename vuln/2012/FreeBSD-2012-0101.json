@@ -1,0 +1,62 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "nut"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "introduced": "2.4.0"
+                        },
+                        {
+                            "last_affected": "2.6.3"
+                        },
+                        {
+                            "fixed": "2.6.3"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "cite": [
+            "http://trac.networkupstools.org/projects/nut/changeset/3633"
+        ],
+        "discovery": "2012-05-30T00:00:00Z",
+        "references": {
+            "cvename": [
+                "CVE-2012-2944"
+            ]
+        },
+        "vid": "47f13540-c4cb-4971-8dc6-28d0dabfd9cd"
+    },
+    "details": "Networkupstools project reports:\n\n> NUT server (upsd), from versions 2.4.0 to 2.6.3, are exposed to\n> crashes when receiving random data from the network.\n>\n> This issue is related to the way NUT parses characters, especially\n> from the network. Non printable characters were missed from strings\n> operation (such as strlen), but still copied to the buffer, causing an\n> overflow.\n",
+    "id": "FreeBSD-2012-0101",
+    "modified": "2012-05-30T00:00:00Z",
+    "published": "2012-05-30T00:00:00Z",
+    "references": [
+        {
+            "type": "REPORT",
+            "url": "http://trac.networkupstools.org/projects/nut/changeset/3633"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2012-2944"
+        },
+        {
+            "type": "WEB",
+            "url": "http://www.mail-archive.com/debian-bugs-dist@lists.debian.org/msg1027934.html"
+        },
+        {
+            "type": "WEB",
+            "url": "http://trac.networkupstools.org/projects/nut/changeset/3633"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "nut -- upsd can be remotely crashed"
+}

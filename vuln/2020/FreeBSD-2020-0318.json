@@ -1,0 +1,59 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "glpi"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "9.5.2,1"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "cite": [
+            "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2020-15176"
+        ],
+        "discovery": "2020-06-25T00:00:00Z",
+        "references": {
+            "cvename": [
+                "CVE-2020-15176"
+            ]
+        },
+        "vid": "b7abdb0f-3b15-11eb-af2a-080027dbe4b7"
+    },
+    "details": "MITRE Corporation reports:\n\n> In GLPI before version 9.5.2, when supplying a back tick in input that\n> gets put into a SQL query,the application does not escape or sanitize\n> allowing for SQL Injection to occur. Leveraging this vulnerability an\n> attacker is able to exfiltrate sensitive information like passwords,\n> reset tokens, personal details, and more. The issue is patched in\n> version 9.5.2\n",
+    "id": "FreeBSD-2020-0318",
+    "modified": "2024-04-25T00:00:00Z",
+    "published": "2020-06-25T00:00:00Z",
+    "references": [
+        {
+            "type": "REPORT",
+            "url": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2020-15176"
+        },
+        {
+            "type": "WEB",
+            "url": "https://github.com/glpi-project/glpi/commit/f021f1f365b4acea5066d3e57c6d22658cf32575"
+        },
+        {
+            "type": "WEB",
+            "url": "https://github.com/glpi-project/glpi/security/advisories/GHSA-x93w-64x9-58qw"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2020-15176"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "glpi -- Multiple SQL Injections Stemming From isNameQuoted()"
+}

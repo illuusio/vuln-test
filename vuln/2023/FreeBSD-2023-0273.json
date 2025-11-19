@@ -1,0 +1,104 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "redis"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "introduced": "7.0.0"
+                        },
+                        {
+                            "fixed": "7.0.13"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                },
+                {
+                    "events": [
+                        {
+                            "introduced": "7.2.0"
+                        },
+                        {
+                            "fixed": "7.2.1"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        },
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "redis-devel"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "7.2.0.20230831"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        },
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "redis70"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "introduced": "7.0.0"
+                        },
+                        {
+                            "fixed": "7.0.13"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "cite": [
+            "https://github.com/redis/redis/security/advisories/GHSA-q4jr-5p56-4xwc"
+        ],
+        "discovery": "2023-09-06T00:00:00Z",
+        "references": {
+            "cvename": [
+                "CVE-2023-41053"
+            ]
+        },
+        "vid": "6c72b13f-4d1d-11ee-a7f1-080027f5fec9"
+    },
+    "details": "yangbodong22011 reports:\n\n> Redis does not correctly identify keys accessed by SORT_RO and, as a\n> result, may grant users executing this command access to keys that are\n> not explicitly authorized by the ACL configuration.\n",
+    "id": "FreeBSD-2023-0273",
+    "modified": "2023-09-07T00:00:00Z",
+    "published": "2023-09-07T00:00:00Z",
+    "references": [
+        {
+            "type": "REPORT",
+            "url": "https://github.com/redis/redis/security/advisories/GHSA-q4jr-5p56-4xwc"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2023-41053"
+        },
+        {
+            "type": "WEB",
+            "url": "https://github.com/redis/redis/security/advisories/GHSA-q4jr-5p56-4xwc"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "redis -- Possible bypassing ACL configuration"
+}

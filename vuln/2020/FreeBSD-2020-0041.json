@@ -1,0 +1,103 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "FreeBSD"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "introduced": "11.3"
+                        },
+                        {
+                            "fixed": "11.3_7"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                },
+                {
+                    "events": [
+                        {
+                            "introduced": "12.1"
+                        },
+                        {
+                            "fixed": "12.1_3"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        },
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "ntp"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "4.2.8p14"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        },
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "ntp-devel"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "last_affected": "4.3.99_6"
+                        },
+                        {
+                            "fixed": "4.3.99_6"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "cite": [
+            "https://support.ntp.org/bin/view/Main/SecurityNotice"
+        ],
+        "discovery": "2019-05-30T00:00:00Z",
+        "references": {
+            "freebsdsa": [
+                "SA-20:09.ntp"
+            ]
+        },
+        "vid": "591a706b-5cdc-11ea-9a0a-206a8a720317"
+    },
+    "details": "nwtime.org reports:\n\n> Three ntp vulnerabilities, Depending on configuration, may have little\n> impact up to termination of the ntpd process.\n>\n> NTP Bug 3610: Process_control() should exit earlier on short packets.\n> On systems that override the default and enable ntpdc (mode 7) fuzz\n> testing detected that a short packet will cause ntpd to read\n> uninitialized data.\n>\n> NTP Bug 3596: An unauthenticated unmonitored ntpd is vulnerable to\n> attack on IPv4 with highly predictable transmit timestamps. An\n> off-path attacker who can query time from the victim\\'s ntp which\n> receives time from an unauthenticated time source must be able to send\n> from a spoofed IPv4 address of upstream ntp server and and the victim\n> must be able to process a large number of packets with the spoofed\n> IPv4 address of the upstream server. After eight or more successful\n> attacks in a row the attacker can either modify the victim\\'s clock by\n> a small amount or cause ntpd to terminate. The attack is especially\n> effective when unusually short poll intervals have been configured.\n>\n> NTP Bug 3592: The fix for https://bugs.ntp.org/3445 introduced a bug\n> such that a ntp can be prevented from initiating a time volley to its\n> peer resulting in a DoS.\n>\n> All three NTP bugs may result in DoS or terimation of the ntp daemon.\n",
+    "id": "FreeBSD-2020-0041",
+    "modified": "2020-03-03T00:00:00Z",
+    "published": "2020-03-03T00:00:00Z",
+    "references": [
+        {
+            "type": "REPORT",
+            "url": "https://support.ntp.org/bin/view/Main/SecurityNotice"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://www.freebsd.org/security/advisories/FreeBSD-SA-20:09.ntp.asc"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "ntp -- Multiple vulnerabilities"
+}

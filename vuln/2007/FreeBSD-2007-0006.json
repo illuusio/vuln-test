@@ -1,0 +1,157 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "mplayer"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "0.99.10_1"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        },
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "mplayer-esound"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "0.99.10_1"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        },
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "mplayer-gtk"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "0.99.10_1"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        },
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "mplayer-gtk2"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "0.99.10_1"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        },
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "mplayer-gtk-esound"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "0.99.10_1"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        },
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "mplayer-gtk2-esound"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "0.99.10_1"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "cite": [
+            "http://www.mplayerhq.hu/design7/news.html"
+        ],
+        "discovery": "2006-12-31T00:00:00Z",
+        "references": {
+            "cvename": [
+                "CVE-2006-6172"
+            ],
+            "freebsdpr": [
+                "ports/107217"
+            ]
+        },
+        "vid": "b2ff68b2-9f29-11db-a4e4-0211d87675b7"
+    },
+    "details": "> A potential buffer overflow was found in the code used to handle\n> RealMedia RTSP streams. When checking for matching asm rules, the code\n> stores the results in a fixed-size array, but no boundary checks are\n> performed. This may lead to a buffer overflow if the user is tricked\n> into connecting to a malicious server. Since the attacker cannot write\n> arbitrary data into the buffer, creating an exploit is very hard; but\n> a DoS attack is easily made. A fix for this problem was committed to\n> SVN on Sun Dec 31 13:27:53 2006 UTC as r21799. The fix involves three\n> files: stream/realrtsp/asmrp.c, stream/realrtsp/asmrp.h and\n> stream/realrtsp/real.c.\n",
+    "id": "FreeBSD-2007-0006",
+    "modified": "2007-01-08T00:00:00Z",
+    "published": "2007-01-08T00:00:00Z",
+    "references": [
+        {
+            "type": "REPORT",
+            "url": "http://www.mplayerhq.hu/design7/news.html"
+        },
+        {
+            "type": "REPORT",
+            "url": "https://bugs.freebsd.org/bugzilla/show_bug.cgi?id=107217"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2006-6172"
+        },
+        {
+            "type": "WEB",
+            "url": "http://www.mplayerhq.hu/design7/news.html"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "mplayer -- buffer overflow in the code for RealMedia RTSP streams."
+}

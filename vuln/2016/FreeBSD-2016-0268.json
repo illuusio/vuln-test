@@ -1,0 +1,60 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "xen-tools"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "4.7.0_2"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "cite": [
+            "http://xenbits.xen.org/xsa/advisory-179.html"
+        ],
+        "discovery": "2016-05-09T00:00:00Z",
+        "references": {
+            "cvename": [
+                "CVE-2016-3710",
+                "CVE-2016-3712"
+            ]
+        },
+        "vid": "e6ce6f50-4212-11e6-942d-bc5ff45d0f28"
+    },
+    "details": "The Xen Project reports:\n\n> Qemu VGA module allows banked access to video memory using the window\n> at 0xa00000 and it supports different access modes with different\n> address calculations.\n>\n> Qemu VGA module allows guest to edit certain registers in \\'vbe\\' and\n> \\'vga\\' modes.\n>\n> A privileged guest user could use CVE-2016-3710 to exceed the bank\n> address window and write beyond the said memory area, potentially\n> leading to arbitrary code execution with privileges of the Qemu\n> process. If the system is not using stubdomains, this will be in\n> domain 0.\n>\n> A privileged guest user could use CVE-2016-3712 to cause potential\n> integer overflow or OOB read access issues in Qemu, resulting in a DoS\n> of the guest itself. More dangerous effect, such as data leakage or\n> code execution, are not known but cannot be ruled out.\n",
+    "id": "FreeBSD-2016-0268",
+    "modified": "2016-07-04T00:00:00Z",
+    "published": "2016-07-04T00:00:00Z",
+    "references": [
+        {
+            "type": "REPORT",
+            "url": "http://xenbits.xen.org/xsa/advisory-179.html"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2016-3710"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2016-3712"
+        },
+        {
+            "type": "WEB",
+            "url": "http://xenbits.xen.org/xsa/advisory-179.html"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "xen-tools -- QEMU: Banked access to VGA memory (VBE) uses inconsistent bounds checks"
+}

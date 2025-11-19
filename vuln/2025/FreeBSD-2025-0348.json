@@ -1,0 +1,55 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "unbound"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "1.24.1"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "cite": [
+            "https://www.nlnetlabs.nl/downloads/unbound/CVE-2025-11411.txt"
+        ],
+        "discovery": "2025-10-22T00:00:00Z",
+        "references": {
+            "cvename": [
+                "CVE-2025-11411"
+            ]
+        },
+        "vid": "ea1c485f-b025-11f0-bce7-bc2411002f50"
+    },
+    "details": "sep@nlnetlabs.nl reports:\n\n> NLnet Labs Unbound up to and including version 1.24.0 is vulnerable to\n> possible domain hijack attacks. Promiscuous NS RRSets that complement\n> positive DNS replies in the authority section can be used to trick\n> resolvers to update their delegation information for the zone. Usually\n> these RRSets are used to update the resolver\\'s knowledge of the\n> zone\\'s name servers. A malicious actor can exploit the possible\n> poisonous effect by injecting NS RRSets (and possibly their respective\n> address records) in a reply. This could be done for example by trying\n> to spoof a packet or fragmentation attacks. Unbound would then proceed\n> to update the NS RRSet data it already has since the new data has\n> enough trust for it, i.e., in-zone data for the delegation point.\n> Unbound 1.24.1 includes a fix that scrubs unsolicited NS RRSets (and\n> their respective address records) from replies mitigating the possible\n> poison effect.\n",
+    "id": "FreeBSD-2025-0348",
+    "modified": "2025-10-23T00:00:00Z",
+    "published": "2025-10-23T00:00:00Z",
+    "references": [
+        {
+            "type": "REPORT",
+            "url": "https://www.nlnetlabs.nl/downloads/unbound/CVE-2025-11411.txt"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2025-11411"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://nvd.nist.gov/vuln/detail/CVE-2025-11411"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "unbound -- Possible domain hijacking via promiscuous records in the authority section"
+}

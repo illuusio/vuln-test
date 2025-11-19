@@ -1,0 +1,94 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "go118"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "1.18.7"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        },
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "go119"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "1.19.2"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "cite": [
+            "https://go.dev/issue/54853",
+            "https://go.dev/issue/54663",
+            "https://go.dev/issue/55949"
+        ],
+        "discovery": "2022-10-04T00:00:00Z",
+        "references": {
+            "cvename": [
+                "CVE-2022-2879",
+                "CVE-2022-2880",
+                "CVE-2022-41715"
+            ]
+        },
+        "vid": "854c2afb-4424-11ed-af97-adcabf310f9b"
+    },
+    "details": "The Go project reports:\n\n> archive/tar: unbounded memory consumption when reading headers\n>\n> Reader.Read did not set a limit on the maximum size of file headers. A\n> maliciously crafted archive could cause Read to allocate unbounded\n> amounts of memory, potentially causing resource exhaustion or panics.\n> Reader.Read now limits the maximum size of header blocks to 1 MiB.\n\n> net/http/httputil: ReverseProxy should not forward unparseable query\n> parameters\n>\n> Requests forwarded by ReverseProxy included the raw query parameters\n> from the inbound request, including unparseable parameters rejected by\n> net/http. This could permit query parameter smuggling when a Go proxy\n> forwards a parameter with an unparseable value.\n>\n> ReverseProxy will now sanitize the query parameters in the forwarded\n> query when the outbound request\\'s Form field is set after the\n> ReverseProxy.Director function returns, indicating that the proxy has\n> parsed the query parameters. Proxies which do not parse query\n> parameters continue to forward the original query parameters\n> unchanged.\n\n> regexp/syntax: limit memory used by parsing regexps\n>\n> The parsed regexp representation is linear in the size of the input,\n> but in some cases the constant factor can be as high as 40,000, making\n> relatively small regexps consume much larger amounts of memory.\n>\n> Each regexp being parsed is now limited to a 256 MB memory footprint.\n> Regular expressions whose representation would use more space than\n> that are now rejected. Normal use of regular expressions is\n> unaffected.\n",
+    "id": "FreeBSD-2022-0189",
+    "modified": "2022-10-04T00:00:00Z",
+    "published": "2022-10-04T00:00:00Z",
+    "references": [
+        {
+            "type": "REPORT",
+            "url": "https://go.dev/issue/54853"
+        },
+        {
+            "type": "REPORT",
+            "url": "https://go.dev/issue/54663"
+        },
+        {
+            "type": "REPORT",
+            "url": "https://go.dev/issue/55949"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2022-2879"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2022-2880"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2022-41715"
+        },
+        {
+            "type": "WEB",
+            "url": "https://groups.google.com/g/golang-announce/c/xtuG5faxtaU/m/jEhlI_5WBgAJ"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "go -- multiple vulnerabilities"
+}

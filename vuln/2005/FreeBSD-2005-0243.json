@@ -1,0 +1,81 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "linux_base-suse"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "9.3_1"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        },
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "FreeBSD"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "introduced": "5.4"
+                        },
+                        {
+                            "fixed": "5.4_6"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                },
+                {
+                    "events": [
+                        {
+                            "introduced": "5.3"
+                        },
+                        {
+                            "fixed": "5.3_20"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "discovery": "2005-07-27T00:00:00Z",
+        "references": {
+            "cvename": [
+                "CVE-2005-1849"
+            ],
+            "freebsdsa": [
+                "SA-05:18.zlib"
+            ]
+        },
+        "vid": "837b9fb2-0595-11da-86bc-000e0c2e438a"
+    },
+    "details": "# Problem description\n\nA fixed-size buffer is used in the decompression of data streams. Due to\nerronous analysis performed when zlib was written, this buffer, which\nwas belived to be sufficiently large to handle any possible input\nstream, is in fact too small.\n\n# Impact\n\nA carefully constructed compressed data stream can result in zlib\noverwriting some data structures. This may cause applications to halt,\nresulting in a denial of service; or it may result in an attacker\ngaining elevated privileges.\n",
+    "id": "FreeBSD-2005-0243",
+    "modified": "2005-09-24T00:00:00Z",
+    "published": "2005-08-05T00:00:00Z",
+    "references": [
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2005-1849"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://www.freebsd.org/security/advisories/FreeBSD-SA-05:18.zlib.asc"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "zlib -- buffer overflow vulnerability"
+}

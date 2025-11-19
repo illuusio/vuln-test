@@ -1,0 +1,74 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "unbound"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "1.13.0"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        },
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "nsd"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "4.3.4"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "cite": [
+            "https://nlnetlabs.nl/downloads/unbound/CVE-2020-28935.txt"
+        ],
+        "discovery": "2020-12-01T00:00:00Z",
+        "references": {
+            "cvename": [
+                "CVE-2020-28935"
+            ]
+        },
+        "vid": "388ebb5b-3c95-11eb-929d-d4c9ef517024"
+    },
+    "details": "NLNetLabs reports:\n\n> Unbound and NSD when writing the PID file would not check if an\n> existing file was a symlink. This could allow for a local symlink \\\\\n> attack if an attacker has access to the user Unbound/NSD runs as.\n",
+    "id": "FreeBSD-2020-0327",
+    "modified": "2020-12-12T00:00:00Z",
+    "published": "2020-12-12T00:00:00Z",
+    "references": [
+        {
+            "type": "REPORT",
+            "url": "https://nlnetlabs.nl/downloads/unbound/CVE-2020-28935.txt"
+        },
+        {
+            "type": "WEB",
+            "url": "https://nlnetlabs.nl/downloads/unbound/CVE-2020-28935.txt"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2020-28935"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "Unbound/NSD -- Denial of service vulnerability"
+}

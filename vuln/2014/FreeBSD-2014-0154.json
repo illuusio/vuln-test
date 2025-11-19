@@ -1,0 +1,55 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "asterisk11"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "11.14.2"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "cite": [
+            "http://www.asterisk.org/downloads/security-advisories"
+        ],
+        "discovery": "2014-10-30T00:00:00Z",
+        "references": {
+            "cvename": [
+                "CVE-2014-9374"
+            ]
+        },
+        "vid": "94268da0-8118-11e4-a180-001999f8d30b"
+    },
+    "details": "The Asterisk project reports:\n\n> When handling a WebSocket frame the res_http_websocket module\n> dynamically changes the size of the memory used to allow the provided\n> payload to fit. If a payload length of zero was received the code\n> would incorrectly attempt to resize to zero. This operation would\n> succeed and end up freeing the memory but be treated as a failure.\n> When the session was subsequently torn down this memory would get\n> freed yet again causing a crash.\n>\n> Users of the WebSocket functionality also did not take into account\n> that provided text frames are not guaranteed to be NULL terminated.\n> This has been fixed in chan_sip and chan_pjsip in the applicable\n> versions.\n",
+    "id": "FreeBSD-2014-0154",
+    "modified": "2015-01-29T00:00:00Z",
+    "published": "2014-12-11T00:00:00Z",
+    "references": [
+        {
+            "type": "REPORT",
+            "url": "http://www.asterisk.org/downloads/security-advisories"
+        },
+        {
+            "type": "WEB",
+            "url": "http://downloads.asterisk.org/pub/security/AST-2014-019.html"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2014-9374"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "asterisk -- Remote Crash Vulnerability in WebSocket Server"
+}

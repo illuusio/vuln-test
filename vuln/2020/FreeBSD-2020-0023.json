@@ -1,0 +1,73 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "ksh93"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "introduced": "2020.0.0"
+                        },
+                        {
+                            "fixed": "2020.0.1_1,1"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        },
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "ksh93-devel"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "2020.02.07"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "cite": [
+            "https://access.redhat.com/security/cve/CVE-2019-14868"
+        ],
+        "discovery": "2019-10-01T00:00:00Z",
+        "vid": "8b20d716-49df-11ea-9f7b-206a8a720317"
+    },
+    "details": "Upstream ksh93 maintainer Siteshwar Vashisht reports:\n\n> A flaw was found in the way ksh evaluates certain environment\n> variables. An attacker could use this flaw to override or bypass\n> environment restrictions to execute shell commands. Services and\n> applications that allow remote unauthenticated attackers to provide\n> one of those environment variables could allow them to exploit this\n> issue remotely.\n",
+    "id": "FreeBSD-2020-0023",
+    "modified": "2020-02-07T00:00:00Z",
+    "published": "2020-02-07T00:00:00Z",
+    "references": [
+        {
+            "type": "REPORT",
+            "url": "https://access.redhat.com/security/cve/CVE-2019-14868"
+        },
+        {
+            "type": "REPORT",
+            "url": "https://bugzilla.redhat.com/show_bug.cgi?id=1757324"
+        },
+        {
+            "type": "WEB",
+            "url": "https://access.redhat.com/security/cve/CVE-2019-14868"
+        },
+        {
+            "type": "WEB",
+            "url": "https://access.redhat.com/errata/RHSA-2020:0431"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "ksh93 -- certain environment variables interpreted as arithmetic expressions on startup, leading to code injection"
+}

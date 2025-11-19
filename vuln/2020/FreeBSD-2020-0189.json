@@ -1,0 +1,126 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "py36-wagtail"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "introduced": "2.8.0"
+                        },
+                        {
+                            "fixed": "2.9.3"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                },
+                {
+                    "events": [
+                        {
+                            "fixed": "2.7.4"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        },
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "py37-wagtail"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "introduced": "2.8.0"
+                        },
+                        {
+                            "fixed": "2.9.3"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                },
+                {
+                    "events": [
+                        {
+                            "fixed": "2.7.4"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        },
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "py38-wagtail"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "introduced": "2.8.0"
+                        },
+                        {
+                            "fixed": "2.9.3"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                },
+                {
+                    "events": [
+                        {
+                            "fixed": "2.7.4"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "cite": [
+            "https://github.com/advisories/GHSA-2473-9hgq-j7xw"
+        ],
+        "discovery": "2020-07-20T00:00:00Z",
+        "references": {
+            "cvename": [
+                "CVE-2020-15118"
+            ]
+        },
+        "vid": "e1d3a580-cd8b-11ea-bad0-08002728f74c"
+    },
+    "details": "GitHub Advisory Database:\n\n> When a form page type is made available to Wagtail editors through the\n> wagtail.contrib.forms app, and the page template is built using\n> Django\\'s standard form rendering helpers such as form.as_p (as\n> directed in the documentation), any HTML tags used within a form\n> field\\'s help text will be rendered unescaped in the page. Allowing\n> HTML within help text is an intentional design decision by Django;\n> however, as a matter of policy Wagtail does not allow editors to\n> insert arbitrary HTML by default, as this could potentially be used to\n> carry out cross-site scripting attacks, including privilege\n> escalation. This functionality should therefore not have been made\n> available to editor-level users.\n>\n> The vulnerability is not exploitable by an ordinary site visitor\n> without access to the Wagtail admin.\n",
+    "id": "FreeBSD-2020-0189",
+    "modified": "2020-07-24T00:00:00Z",
+    "published": "2020-07-24T00:00:00Z",
+    "references": [
+        {
+            "type": "REPORT",
+            "url": "https://github.com/advisories/GHSA-2473-9hgq-j7xw"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://github.com/advisories/GHSA-2473-9hgq-j7xw"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2020-15118"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "Wagtail -- XSS vulnerability"
+}

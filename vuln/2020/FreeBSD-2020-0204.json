@@ -1,0 +1,88 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "apache24"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "2.4.46"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        },
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "mod_http2"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "1.15.14"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "cite": [
+            "https://downloads.apache.org/httpd/CHANGES_2.4.46"
+        ],
+        "discovery": "2020-08-07T00:00:00Z",
+        "references": {
+            "cvename": [
+                "CVE-2020-9490",
+                "CVE-2020-11984",
+                "CVE-2020-11993"
+            ]
+        },
+        "vid": "76700d2f-d959-11ea-b53c-d4c9ef517024"
+    },
+    "details": "The Apache httpd projec reports:\n\n> - mod_http2: Important: Push Diary Crash on Specifically Crafted\n>   HTTP/2 Header (CVE-2020-9490)\\\n>   A specially crafted value for the \\'Cache-Digest\\' header in a\n>   HTTP/2 request would result in a crash when the server actually\n>   tries to HTTP/2 PUSH a resource afterwards.\n> - mod_proxy_uwsgi: Moderate: mod_proxy_uwsgi buffer overflow\n>   (CVE-2020-11984)\\\n>   info disclosure and possible RCE\n> - mod_http2: Moderate: Push Diary Crash on Specifically Crafted HTTP/2\n>   Header (CVE-2020-11993)\\\n>   When trace/debug was enabled for the HTTP/2 module and on certain\n>   traffic edge patterns, logging statements were made on the wrong\n>   connection, causing concurrent use of memory pools.\n",
+    "id": "FreeBSD-2020-0204",
+    "modified": "2020-08-08T00:00:00Z",
+    "published": "2020-08-08T00:00:00Z",
+    "references": [
+        {
+            "type": "REPORT",
+            "url": "https://downloads.apache.org/httpd/CHANGES_2.4.46"
+        },
+        {
+            "type": "WEB",
+            "url": "https://downloads.apache.org/httpd/CHANGES_2.4.46"
+        },
+        {
+            "type": "WEB",
+            "url": "https://httpd.apache.org/security/vulnerabilities_24.html"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2020-9490"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2020-11984"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2020-11993"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "Apache httpd -- Multiple vulnerabilities"
+}

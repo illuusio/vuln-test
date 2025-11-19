@@ -1,0 +1,73 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:kernel",
+                "name": "FreeBSD-kernel"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "introduced": "9.1"
+                        },
+                        {
+                            "fixed": "9.1_6"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                },
+                {
+                    "events": [
+                        {
+                            "introduced": "8.4"
+                        },
+                        {
+                            "fixed": "8.4_3"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                },
+                {
+                    "events": [
+                        {
+                            "introduced": "8.3"
+                        },
+                        {
+                            "fixed": "8.3_10"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "discovery": "2013-08-22T00:00:00Z",
+        "references": {
+            "cvename": [
+                "CVE-2013-3077"
+            ],
+            "freebsdsa": [
+                "SA-13:09.ip_multicast"
+            ]
+        },
+        "vid": "0844632f-5e78-11e6-a6c3-14dae9d210b8"
+    },
+    "details": "Problem Description:\n\nAn integer overflow in computing the size of a temporary buffer can\nresult in a buffer which is too small for the requested operation.\n\nImpact:\n\nAn unprivileged process can read or write pages of memory which belong\nto the kernel. These may lead to exposure of sensitive information or\nallow privilege escalation.\n",
+    "id": "FreeBSD-2016-0303",
+    "modified": "2016-08-09T00:00:00Z",
+    "published": "2016-08-09T00:00:00Z",
+    "references": [
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2013-3077"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://www.freebsd.org/security/advisories/FreeBSD-SA-13:09.ip_multicast.asc"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "FreeBSD -- integer overflow in IP_MSFILTER"
+}

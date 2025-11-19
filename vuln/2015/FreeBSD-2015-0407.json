@@ -1,0 +1,137 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "bind99"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "9.9.8P2"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        },
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "bind910"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "9.10.3P2"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        },
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "bind9-devel"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "9.11.0.a20151215"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        },
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "FreeBSD"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "introduced": "9.3"
+                        },
+                        {
+                            "fixed": "9.3_32"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "cite": [
+            "https://kb.isc.org/article/AA-01328/0/BIND-9.10.3-P2-Release-Notes.html"
+        ],
+        "discovery": "2015-11-24T00:00:00Z",
+        "references": {
+            "cvename": [
+                "CVE-2015-3193",
+                "CVE-2015-8000",
+                "CVE-2015-8461"
+            ],
+            "freebsdsa": [
+                "SA-15:27.bind"
+            ]
+        },
+        "vid": "a8ec4db7-a398-11e5-85e9-14dae9d210b8"
+    },
+    "details": "ISC reports:\n\n> Named is potentially vulnerable to the OpenSSL vulnerability described\n> in CVE-2015-3193.\n>\n> Incorrect reference counting could result in an INSIST failure if a\n> socket error occurred while performing a lookup. This flaw is\n> disclosed in CVE-2015-8461. \\[RT#40945\\]\n>\n> Insufficient testing when parsing a message allowed records with an\n> incorrect class to be be accepted, triggering a REQUIRE failure when\n> those records were subsequently cached. This flaw is disclosed in\n> CVE-2015-8000. \\[RT #40987\\]\n",
+    "id": "FreeBSD-2015-0407",
+    "modified": "2016-08-09T00:00:00Z",
+    "published": "2015-12-16T00:00:00Z",
+    "references": [
+        {
+            "type": "REPORT",
+            "url": "https://kb.isc.org/article/AA-01328/0/BIND-9.10.3-P2-Release-Notes.html"
+        },
+        {
+            "type": "WEB",
+            "url": "https://kb.isc.org/article/AA-01328/0/BIND-9.10.3-P2-Release-Notes.html"
+        },
+        {
+            "type": "WEB",
+            "url": "https://kb.isc.org/article/AA-01317/0/CVE-2015-8000%3A-Responses-with-a-malformed-class-attribute-can-trigger-an-assertion-failure-in-db.c.html"
+        },
+        {
+            "type": "WEB",
+            "url": "https://kb.isc.org/article/AA-01319/0/CVE-2015-8461%3A-A-race-condition-when-handling-socket-errors-can-lead-to-an-assertion-failure-in-resolver.c.html"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2015-3193"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2015-8000"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2015-8461"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://www.freebsd.org/security/advisories/FreeBSD-SA-15:27.bind.asc"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "bind -- multiple vulnerabilities"
+}

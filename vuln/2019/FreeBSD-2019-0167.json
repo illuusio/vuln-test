@@ -1,0 +1,73 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:kernel",
+                "name": "FreeBSD-kernel"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "introduced": "12.0"
+                        },
+                        {
+                            "fixed": "12.0_8"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                },
+                {
+                    "events": [
+                        {
+                            "introduced": "11.2"
+                        },
+                        {
+                            "fixed": "11.2_12"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                },
+                {
+                    "events": [
+                        {
+                            "introduced": "11.3"
+                        },
+                        {
+                            "fixed": "11.3_1"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "discovery": "2019-07-24T00:00:00Z",
+        "references": {
+            "cvename": [
+                "CVE-2019-5603"
+            ],
+            "freebsdsa": [
+                "SA-19:15.mqueuefs"
+            ]
+        },
+        "vid": "deb6e164-b30b-11e9-a87f-a4badb2f4699"
+    },
+    "details": "# Problem Description:\n\nSystem calls operating on file descriptors obtain a reference to\nrelevant struct file which due to a programming error was not always put\nback, which in turn could be used to overflow the counter of affected\nstruct file.\n\n# Impact:\n\nA local user can use this flaw to obtain access to files, directories,\nsockets etc. opened by processes owned by other users. If obtained\nstruct file represents a directory from outside of user\\'s jail, it can\nbe used to access files outside of the jail. If the user in question is\na jailed root they can obtain root privileges on the host system.\n",
+    "id": "FreeBSD-2019-0167",
+    "modified": "2019-07-30T00:00:00Z",
+    "published": "2019-07-30T00:00:00Z",
+    "references": [
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2019-5603"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://www.freebsd.org/security/advisories/FreeBSD-SA-19:15.mqueuefs.asc"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "FreeBSD -- Reference count overflow in mqueue filesystem"
+}

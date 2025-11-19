@@ -1,0 +1,62 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "FreeBSD"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "introduced": "10.1"
+                        },
+                        {
+                            "fixed": "10.1_17"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                },
+                {
+                    "events": [
+                        {
+                            "introduced": "9.3"
+                        },
+                        {
+                            "fixed": "9.3_22"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "discovery": "2015-08-05T00:00:00Z",
+        "references": {
+            "cvename": [
+                "CVE-2015-5674"
+            ],
+            "freebsdsa": [
+                "SA-15:19.routed"
+            ]
+        },
+        "vid": "0d584493-600a-11e6-a6c3-14dae9d210b8"
+    },
+    "details": "# Problem Description:\n\nThe input path in routed(8) will accept queries from any source and\nattempt to answer them. However, the output path assumes that the\ndestination address for the response is on a directly connected network.\n\n# Impact:\n\nUpon receipt of a query from a source which is not on a directly\nconnected network, routed(8) will trigger an assertion and terminate.\nThe affected system\\'s routing table will no longer be updated. If the\naffected system is a router, its routes will eventually expire from\nother routers\\' routing tables, and its networks will no longer be\nreachable unless they are also connected to another router.\n",
+    "id": "FreeBSD-2016-0335",
+    "modified": "2016-08-11T00:00:00Z",
+    "published": "2016-08-11T00:00:00Z",
+    "references": [
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2015-5674"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://www.freebsd.org/security/advisories/FreeBSD-SA-15:19.routed.asc"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "FreeBSD -- routed(8) remote denial of service vulnerability"
+}

@@ -1,0 +1,93 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "mongodb60"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "6.0.21"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        },
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "mongodb70"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "7.0.17"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        },
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "mongodb80"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "8.0.4"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "cite": [
+            "https://jira.mongodb.org/browse/SERVER-106746"
+        ],
+        "discovery": "2025-06-26T00:00:00Z",
+        "references": {
+            "cvename": [
+                "CVE-2025-6706"
+            ]
+        },
+        "vid": "5e64770c-52aa-11f0-b522-b42e991fc52e"
+    },
+    "details": "cna@mongodb.com reports:\n\n> An authenticated user may trigger a use after free that may result in\n> MongoDB Server crash and other unexpected behavior, even if the user\n> does not have authorization to shut down a server. The crash is\n> triggered on affected versions by issuing an aggregation framework\n> operation using a specific combination of rarely-used aggregation\n> pipeline expressions. This issue affects MongoDB Server v6.0 version\n> prior to 6.0.21, MongoDB Server v7.0 version prior to 7.0.17 and\n> MongoDB Server v8.0 version prior to 8.0.4 when the SBE engine is\n> enabled.\n",
+    "id": "FreeBSD-2025-0201",
+    "modified": "2025-06-26T00:00:00Z",
+    "published": "2025-06-26T00:00:00Z",
+    "references": [
+        {
+            "type": "REPORT",
+            "url": "https://jira.mongodb.org/browse/SERVER-106746"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2025-6706"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://nvd.nist.gov/vuln/detail/CVE-2025-6706"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "MongoDB -- Running certain aggregation operations with the SBE engine may lead to unexpected behavior"
+}

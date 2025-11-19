@@ -1,0 +1,70 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "apache24"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "2.4.53"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "cite": [
+            "https://httpd.apache.org/security/vulnerabilities_24.html"
+        ],
+        "discovery": "2022-03-14T00:00:00Z",
+        "references": {
+            "cvename": [
+                "CVE-2022-22719",
+                "CVE-2022-22720",
+                "CVE-2022-22721",
+                "CVE-2022-23943"
+            ]
+        },
+        "vid": "6601c08d-a46c-11ec-8be6-d4c9ef517024"
+    },
+    "details": "The Apache httpd project reports:\n\n> - mod_lua: Use of uninitialized value of in r:parsebody (moderate)\n>   (CVE-2022-22719)\n>\n>   A carefully crafted request body can cause a read to a random memory\n>   area which could cause the process to crash.\n>\n> - HTTP request smuggling vulnerability (important) (CVE-2022-22720)\n>\n>   httpd fails to close inbound connection when errors are encountered\n>   discarding the request body, exposing the server to HTTP Request\n>   Smuggling\n>\n> - core: Possible buffer overflow with very large or unlimited\n>   LimitXMLRequestBody (low) (CVE-2022-22721)\n>\n>   If LimitXMLRequestBody is set to allow request bodies larger than\n>   350MB (defaults to 1M) on 32 bit systems an integer overflow happens\n>   which later causes out of bounds writes.\n>\n> - mod_sed: Read/write beyond bounds (important) (CVE-2022-23924)\n>\n>   Out-of-bounds Write vulnerability in mod_sed of Apache HTTP Server\n>   allows an attacker to overwrite heap memory with possibly attacker\n>   provided data.\n",
+    "id": "FreeBSD-2022-0051",
+    "modified": "2022-03-15T00:00:00Z",
+    "published": "2022-03-15T00:00:00Z",
+    "references": [
+        {
+            "type": "REPORT",
+            "url": "https://httpd.apache.org/security/vulnerabilities_24.html"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2022-22719"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2022-22720"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2022-22721"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2022-23943"
+        },
+        {
+            "type": "WEB",
+            "url": "https://httpd.apache.org/security/vulnerabilities_24.html"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "Apache httpd -- Multiple vulnerabilities"
+}

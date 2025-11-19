@@ -1,0 +1,63 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "fetchmail"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "introduced": "5.9.9"
+                        },
+                        {
+                            "fixed": "6.5.6"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "cite": [
+            "https://www.fetchmail.info/fetchmail-SA-2025-01.txt"
+        ],
+        "discovery": "2025-10-02T00:00:00Z",
+        "references": {
+            "cvename": [
+                "CVE-2025-61962"
+            ]
+        },
+        "vid": "21fba35e-a05f-11f0-a8b8-a1ef31191bc1"
+    },
+    "details": "Matthias Andree reports:\n\n> fetchmail\\'s SMTP client, when configured to authenticate, is\n> susceptible to a protocol violation where, when a trusted but\n> malicious or malfunctioning SMTP server responds to an authentication\n> request with a \\\"334\\\" code but without a following blank on the line,\n> it will attempt to start reading from memory address 0x1 to parse the\n> server\\'s SASL challenge. This address is constant and not under the\n> attacker\\'s control. This event will usually cause a crash of\n> fetchmail.\n",
+    "id": "FreeBSD-2025-0309",
+    "modified": "2025-10-04T00:00:00Z",
+    "published": "2025-10-03T00:00:00Z",
+    "references": [
+        {
+            "type": "REPORT",
+            "url": "https://www.fetchmail.info/fetchmail-SA-2025-01.txt"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2025-61962"
+        },
+        {
+            "type": "WEB",
+            "url": "https://www.fetchmail.info/fetchmail-SA-2025-01.txt"
+        },
+        {
+            "type": "WEB",
+            "url": "https://gitlab.com/fetchmail/fetchmail/-/raw/legacy_6x/fetchmail-SA-2025-01.txt?ref_type=heads"
+        },
+        {
+            "type": "WEB",
+            "url": "https://gitlab.com/fetchmail/fetchmail/-/commit/4c3cebfa4e659fb778ca2cae0ccb3f69201609a8"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "fetchmail -- potential crash when authenticating to SMTP server"
+}

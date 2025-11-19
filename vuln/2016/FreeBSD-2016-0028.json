@@ -1,0 +1,62 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "xen-kernel"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "4.5.2_1"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "cite": [
+            "http://xenbits.xen.org/xsa/advisory-165.html"
+        ],
+        "discovery": "2015-12-17T00:00:00Z",
+        "references": {
+            "cvename": [
+                "CVE-2015-8555"
+            ],
+            "freebsdpr": [
+                "ports/205841"
+            ]
+        },
+        "vid": "e839ca04-b40d-11e5-9728-002590263bf5"
+    },
+    "details": "The Xen Project reports:\n\n> When XSAVE/XRSTOR are not in use by Xen to manage guest extended\n> register state, the initial values in the FPU stack and XMM registers\n> seen by the guest upon first use are those left there by the previous\n> user of those registers.\n>\n> A malicious domain may be able to leverage this to obtain sensitive\n> information such as cryptographic keys from another domain.\n",
+    "id": "FreeBSD-2016-0028",
+    "modified": "2016-01-06T00:00:00Z",
+    "published": "2016-01-06T00:00:00Z",
+    "references": [
+        {
+            "type": "REPORT",
+            "url": "http://xenbits.xen.org/xsa/advisory-165.html"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2015-8555"
+        },
+        {
+            "type": "REPORT",
+            "url": "https://bugs.freebsd.org/bugzilla/show_bug.cgi?id=205841"
+        },
+        {
+            "type": "WEB",
+            "url": "http://xenbits.xen.org/xsa/advisory-165.html"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "xen-kernel -- information leak in legacy x86 FPU/XMM initialization"
+}

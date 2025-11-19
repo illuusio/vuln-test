@@ -1,0 +1,55 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "phpMyAdmin"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "3.5.2.2"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "cite": [
+            "http://www.phpmyadmin.net/home_page/security/PMASA-2012-4.php"
+        ],
+        "discovery": "2012-08-12T00:00:00Z",
+        "references": {
+            "cvename": [
+                "CVE-2012-4345"
+            ]
+        },
+        "vid": "db1d3340-e83b-11e1-999b-e0cb4e266481"
+    },
+    "details": "The phpMyAdmin development team reports:\n\n> Using a crafted table name, it was possible to produce a XSS : 1) On\n> the Database Structure page, creating a new table with a crafted name\n> 2) On the Database Structure page, using the Empty and Drop links of\n> the crafted table name 3) On the Table Operations page of a crafted\n> table, using the \\'Empty the table (TRUNCATE)\\' and \\'Delete the table\n> (DROP)\\' links 4) On the Triggers page of a database containing tables\n> with a crafted name, when opening the \\'Add Trigger\\' popup 5) When\n> creating a trigger for a table with a crafted name, with an invalid\n> definition. Having crafted data in a database table, it was possible\n> to produce a XSS : 6) When visualizing GIS data, having a crafted\n> label name.\n",
+    "id": "FreeBSD-2012-0145",
+    "modified": "2012-08-17T00:00:00Z",
+    "published": "2012-08-17T00:00:00Z",
+    "references": [
+        {
+            "type": "REPORT",
+            "url": "http://www.phpmyadmin.net/home_page/security/PMASA-2012-4.php"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2012-4345"
+        },
+        {
+            "type": "WEB",
+            "url": "http://www.phpmyadmin.net/home_page/security/PMASA-2012-4.php"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "phpMyAdmin -- Multiple XSS in Table operations, Database structure, Trigger and Visualize GIS data pages"
+}

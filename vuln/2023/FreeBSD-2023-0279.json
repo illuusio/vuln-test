@@ -1,0 +1,46 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "zeek"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "6.0.1"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "cite": [
+            "https://github.com/zeek/zeek/releases/tag/v6.0.1"
+        ],
+        "discovery": "2023-09-12T00:00:00Z",
+        "vid": "8eefa87f-31f1-496d-bf8e-2b465b6e4e8a"
+    },
+    "details": "Tim Wojtulewicz of Corelight reports:\n\n> File extraction limits were not correctly enforced for files\n> containing large amounts of missing bytes.\n>\n> Sessions are sometimes not cleaned up completely within Zeek during\n> shutdown, potentially causing a crash when using the -B dpd flag for\n> debug logging.\n>\n> A specially-crafted HTTP packet can cause Zeek\\'s filename extraction\n> code to take a long time to process the data.\n>\n> A specially-crafted series of FTP packets made up of a CWD request\n> followed by a large amount of ERPT requests may cause Zeek to spend a\n> long time logging the commands.\n>\n> A specially-crafted VLAN packet can cause Zeek to overflow memory and\n> potentially crash.\n",
+    "id": "FreeBSD-2023-0279",
+    "modified": "2023-09-12T00:00:00Z",
+    "published": "2023-09-12T00:00:00Z",
+    "references": [
+        {
+            "type": "REPORT",
+            "url": "https://github.com/zeek/zeek/releases/tag/v6.0.1"
+        },
+        {
+            "type": "WEB",
+            "url": "https://github.com/zeek/zeek/releases/tag/v6.0.1"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "zeek -- potential DoS vulnerabilities"
+}

@@ -1,0 +1,91 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "mysql-server"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "last_affected": "3.23.58_3"
+                        },
+                        {
+                            "fixed": "3.23.58_3"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                },
+                {
+                    "events": [
+                        {
+                            "introduced": "4.*"
+                        },
+                        {
+                            "fixed": "4.0.21"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                },
+                {
+                    "events": [
+                        {
+                            "introduced": "4.1.*"
+                        },
+                        {
+                            "fixed": "4.1.1"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "cite": [
+            "http://bugs.mysql.com/bug.php?id=4017"
+        ],
+        "discovery": "2004-01-15T00:00:00Z",
+        "references": {
+            "bid": [
+                "11357"
+            ],
+            "cvename": [
+                "CVE-2004-0837"
+            ]
+        },
+        "vid": "06a6b2cf-484b-11d9-813c-00065be4b5b6"
+    },
+    "details": "Dean Ellis reported a denial of service vulnerability in the MySQL\nserver:\n\n> Multiple threads ALTERing the same (or different) MERGE tables to\n> change the UNION eventually crash the server or hang the individual\n> threads.\n\nNote that a script demonstrating the problem is included in the MySQL\nbug report. Attackers that have control of a MySQL account can easily\nuse a modified version of that script during an attack.\n",
+    "id": "FreeBSD-2004-0273",
+    "modified": "2005-03-15T00:00:00Z",
+    "published": "2004-12-16T00:00:00Z",
+    "references": [
+        {
+            "type": "REPORT",
+            "url": "http://bugs.mysql.com/bug.php?id=4017"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2004-0837"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://www.securityfocus.com/bid/11357/info"
+        },
+        {
+            "type": "WEB",
+            "url": "http://bugs.mysql.com/bug.php?id=2408"
+        },
+        {
+            "type": "WEB",
+            "url": "http://rhn.redhat.com/errata/RHSA-2004-611.html"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "mysql -- ALTER MERGE denial of service vulnerability"
+}

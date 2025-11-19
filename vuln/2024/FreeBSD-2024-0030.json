@@ -1,0 +1,79 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "clamav"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "1.2.2,1"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        },
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "clamav-lts"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "1.0.5,1"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "cite": [
+            "https://blog.clamav.net/2023/11/clamav-130-122-105-released.html"
+        ],
+        "discovery": "2024-02-07T00:00:00Z",
+        "references": {
+            "cvename": [
+                "CVE-2024-20290",
+                "CVE-2024-20328"
+            ]
+        },
+        "vid": "68ae70c5-c5e5-11ee-9768-08002784c58d"
+    },
+    "details": "The ClamAV project reports:\n\n> \n>\n> CVE-2024-20290\n> :   A vulnerability in the OLE2 file format parser of ClamAV could\n>     allow an unauthenticated, remote attacker to cause a denial of\n>     service (DoS) condition on an affected device. This vulnerability\n>     is due to an incorrect check for end-of-string values during\n>     scanning, which may result in a heap buffer over-read. An attacker\n>     could exploit this vulnerability by submitting a crafted file\n>     containing OLE2 content to be scanned by ClamAV on an affected\n>     device. A successful exploit could allow the attacker to cause the\n>     ClamAV scanning process to terminate, resulting in a DoS condition\n>     on the affected software and consuming available system resources.\n>\n> CVE-2024-20328\n> :   Fixed a possible command injection vulnerability in the\n>     \\\"VirusEvent\\\" feature of ClamAV\\'s ClamD service. To fix this\n>     issue, we disabled the \\'%f\\' format string parameter. ClamD\n>     administrators may continue to use the\n>     \\`CLAM_VIRUSEVENT_FILENAME\\` environment variable, instead of\n>     \\'%f\\'. But you should do so only from within an executable, such\n>     as a Python script, and not directly in the clamd.conf\n>     \\\"VirusEvent\\\" command.\n",
+    "id": "FreeBSD-2024-0030",
+    "modified": "2024-02-07T00:00:00Z",
+    "published": "2024-02-07T00:00:00Z",
+    "references": [
+        {
+            "type": "REPORT",
+            "url": "https://blog.clamav.net/2023/11/clamav-130-122-105-released.html"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2024-20290"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2024-20328"
+        },
+        {
+            "type": "WEB",
+            "url": "https://blog.clamav.net/2023/11/clamav-130-122-105-released.html"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "clamav -- Multiple vulnerabilities"
+}

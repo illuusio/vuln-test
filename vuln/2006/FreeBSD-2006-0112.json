@@ -1,0 +1,117 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "FreeBSD"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "introduced": "4.10"
+                        },
+                        {
+                            "fixed": "4.10_24"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                },
+                {
+                    "events": [
+                        {
+                            "introduced": "4.11"
+                        },
+                        {
+                            "fixed": "4.11_18"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                },
+                {
+                    "events": [
+                        {
+                            "introduced": "5.3"
+                        },
+                        {
+                            "fixed": "5.3_30"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                },
+                {
+                    "events": [
+                        {
+                            "introduced": "5.4"
+                        },
+                        {
+                            "fixed": "5.4_15"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                },
+                {
+                    "events": [
+                        {
+                            "introduced": "5.5"
+                        },
+                        {
+                            "fixed": "5.5_1"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                },
+                {
+                    "events": [
+                        {
+                            "introduced": "6.0"
+                        },
+                        {
+                            "fixed": "6.0_8"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                },
+                {
+                    "events": [
+                        {
+                            "introduced": "6.1"
+                        },
+                        {
+                            "fixed": "6.1_1"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "discovery": "2006-05-31T00:00:00Z",
+        "references": {
+            "cvename": [
+                "CVE-2006-2654"
+            ],
+            "freebsdsa": [
+                "SA-06:16.smbfs"
+            ]
+        },
+        "vid": "cf3b9a96-f7bb-11da-9156-000e0c2e438a"
+    },
+    "details": "# Problem Description\n\nsmbfs does not properly sanitize paths containing a backslash character;\nin particular the directory name \\'..\\\\\\' is interpreted as the parent\ndirectory by the SMB/CIFS server, but smbfs handles it in the same\nmanner as any other directory.\n\n# Impact\n\nWhen inside a chroot environment which resides on a smbfs mounted\nfile-system it is possible for an attacker to escape out of this chroot\nto any other directory on the smbfs mounted file-system.\n\n# Workaround\n\nMount the smbfs file-systems which need to be used with chroot on top,\nin a way so the chroot directory is exactly on the mount point and not a\nsub directory\n",
+    "id": "FreeBSD-2006-0112",
+    "modified": "2006-06-09T00:00:00Z",
+    "published": "2006-06-09T00:00:00Z",
+    "references": [
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2006-2654"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://www.freebsd.org/security/advisories/FreeBSD-SA-06:16.smbfs.asc"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "smbfs -- chroot escape"
+}

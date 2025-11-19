@@ -1,0 +1,55 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "curl"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "introduced": "6.5"
+                        },
+                        {
+                            "fixed": "7.53.1_1"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "cite": [
+            "https://curl.haxx.se/docs/adv_20170403.html"
+        ],
+        "discovery": "2017-04-03T00:00:00Z",
+        "references": {
+            "cvename": [
+                "CVE-2017-7407"
+            ]
+        },
+        "vid": "04f29189-1a05-11e7-bc6e-b499baebfeaf"
+    },
+    "details": "The cURL project reports:\n\n> There were two bugs in curl\\'s parser for the command line option\n> \\--write-out (or -w for short) that would skip the end of string zero\n> byte if the string ended in a % (percent) or \\\\ (backslash), and it\n> would read beyond that buffer in the heap memory and it could then\n> potentially output pieces of that memory to the terminal or the target\n> file etc..\n>\n> This flaw only exists in the command line tool.\n>\n> We are not aware of any exploit of this flaw.\n",
+    "id": "FreeBSD-2017-0085",
+    "modified": "2017-04-06T00:00:00Z",
+    "published": "2017-04-05T00:00:00Z",
+    "references": [
+        {
+            "type": "REPORT",
+            "url": "https://curl.haxx.se/docs/adv_20170403.html"
+        },
+        {
+            "type": "WEB",
+            "url": "https://curl.haxx.se/docs/adv_20170403.html"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2017-7407"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "cURL -- potential memory disclosure"
+}

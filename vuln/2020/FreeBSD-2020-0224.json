@@ -1,0 +1,59 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "openzfs-kmod"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "2020081800"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "cite": [
+            "https://bugs.freebsd.org/bugzilla/show_bug.cgi?id=248787"
+        ],
+        "discovery": "2020-08-13T00:00:00Z",
+        "references": {
+            "freebsdpr": [
+                "ports/248787"
+            ]
+        },
+        "vid": "2ed7e8db-e234-11ea-9392-002590bc43be"
+    },
+    "details": "Andrew Walker reports:\n\n> ##### Issue 1:\n>\n> Users are always granted permissions to cd into a directory. The check\n> for whether execute is present on directories is a de-facto no-op.\n> This cannot be mitigated without upgrading. Even setting an explicit\n> \\\"deny - execute\\\" NFSv4 ACE will be bypassed.\n>\n> ##### Issue 2:\n>\n> All ACEs for the owner_group (group@) and regular groups\n> (group:\\<foo\\>) are granted the current user. This means that POSIX\n> mode 770 is de-facto 777, and the below ACL is also de-facto 777\n> because the groupmember check for builtin_administrators returns True.\n>\n>\n>     root@TESTBOX[~]# getfacl testfile\n>     # file: testfile\n>     # owner: root\n>     # group: wheel\n>     group:builtin_administrators:rwxpDdaARWcCos:-------:allow\n>           \n",
+    "id": "FreeBSD-2020-0224",
+    "modified": "2020-08-20T00:00:00Z",
+    "published": "2020-08-20T00:00:00Z",
+    "references": [
+        {
+            "type": "REPORT",
+            "url": "https://bugs.freebsd.org/bugzilla/show_bug.cgi?id=248787"
+        },
+        {
+            "type": "REPORT",
+            "url": "https://bugs.freebsd.org/bugzilla/show_bug.cgi?id=248787"
+        },
+        {
+            "type": "WEB",
+            "url": "https://github.com/openzfs/zfs/commit/716b53d0a14c72bda16c0872565dd1909757e73f"
+        },
+        {
+            "type": "WEB",
+            "url": "https://reviews.freebsd.org/D26107"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "sysutils/openzfs-kmod -- critical permissions issues"
+}

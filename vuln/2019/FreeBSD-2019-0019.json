@@ -1,0 +1,131 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "phpMyAdmin"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "4.8.5"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        },
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "phpMyAdmin-php56"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "4.8.5"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        },
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "phpMyAdmin-php70"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "4.8.5"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        },
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "phpMyAdmin-php71"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "4.8.5"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        },
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "phpMyAdmin-php72"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "4.8.5"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "cite": [
+            "https://www.phpmyadmin.net/security/PMASA-2019-1/",
+            "https://www.phpmyadmin.net/security/PMASA-2019-2/"
+        ],
+        "discovery": "2019-01-21T00:00:00Z",
+        "vid": "111aefca-2213-11e9-9c8d-6805ca0b3d42"
+    },
+    "details": "The phpMyAdmin development team reports:\n\n> ### Summary\n>\n> Arbitrary file read vulnerability\n>\n> ### Description\n>\n> When `AllowArbitraryServer` configuration set to `true`, with the use\n> of a rogue MySQL server, an attacker can read any file on the server\n> that the web server\\'s user can access.\n>\n> phpMyadmin attempts to block the use of `LOAD DATA INFILE`, but due to\n> a [bug in PHP](https://bugs.php.net/bug.php?id=77496), this check is\n> not honored. Additionally, when using the \\'mysql\\' extension,\n> [mysql.allow_local_infile](http://php.net/manual/en/mysql.configuration.php#ini.mysql.allow-local-infile)\n> is enabled by default. Both of these conditions allow the attack to\n> occur.\n>\n> ### Severity\n>\n> We consider this vulnerability to be critical.\n>\n> ### Mitigation factor\n>\n> This attack can be mitigated by setting the \\`AllowArbitraryServer\\`\n> configuration directive to false (which is the default value).\n>\n> ### Affected Versions\n>\n> phpMyAdmin versions from at least 4.0 through 4.8.4 are affected\n\n> ### Summary\n>\n> SQL injection in Designer feature\n>\n> ### Description\n>\n> A vulnerability was reported where a specially crafted username can be\n> used to trigger an SQL injection attack through the designer feature.\n>\n> ### Severity\n>\n> We consider this vulnerability to be serious.\n>\n> ### Affected Versions\n>\n> phpMyAdmin versions from 4.5.0 through 4.8.4 are affected\n",
+    "id": "FreeBSD-2019-0019",
+    "modified": "2019-01-27T00:00:00Z",
+    "published": "2019-01-27T00:00:00Z",
+    "references": [
+        {
+            "type": "REPORT",
+            "url": "https://www.phpmyadmin.net/security/PMASA-2019-1/"
+        },
+        {
+            "type": "REPORT",
+            "url": "https://www.phpmyadmin.net/security/PMASA-2019-2/"
+        },
+        {
+            "type": "WEB",
+            "url": "https://www.phpmyadmin.net/security/PMASA-2019-1/"
+        },
+        {
+            "type": "WEB",
+            "url": "https://www.phpmyadmin.net/security/PMASA-2019-2/"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "phpMyAdmin -- File disclosure and SQL injection"
+}

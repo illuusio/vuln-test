@@ -1,0 +1,55 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "openssl-devel"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "3.0.1"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "cite": [
+            "https://www.openssl.org/news/secadv/20211214.txt"
+        ],
+        "discovery": "2021-12-14T00:00:00Z",
+        "references": {
+            "cvename": [
+                "CVE-2021-4044"
+            ]
+        },
+        "vid": "0132ca5b-5d11-11ec-8be6-d4c9ef517024"
+    },
+    "details": "The OpenSSL project reports:\n\n> Invalid handling of X509_verify_cert() internal errors in libssl\n> (Moderate)\n>\n> Internally libssl in OpenSSL calls X509_verify_cert() on the client\n> side to verify a certificate supplied by a server. That function may\n> return a negative return value to indicate an internal error (for\n> example out of memory). Such a negative return value is mishandled by\n> OpenSSL and will cause an IO function (such as SSL_connect() or\n> SSL_do_handshake()) to not indicate success and a subsequent call to\n> SSL_get_error() to return the value SSL_ERROR_WANT_RETRY_VERIFY. This\n> return value is only supposed to be returned by OpenSSL if the\n> application has previously called SSL_CTX_set_cert_verify_callback().\n> Since most applications do not do this the SSL_ERROR_WANT_RETRY_VERIFY\n> return value from SSL_get_error() will be totally unexpected and\n> applications may not behave correctly as a result. The exact behaviour\n> will depend on the application but it could result in crashes,\n> infinite loops or other similar incorrect responses.\n",
+    "id": "FreeBSD-2021-0300",
+    "modified": "2021-12-14T00:00:00Z",
+    "published": "2021-12-14T00:00:00Z",
+    "references": [
+        {
+            "type": "REPORT",
+            "url": "https://www.openssl.org/news/secadv/20211214.txt"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2021-4044"
+        },
+        {
+            "type": "WEB",
+            "url": "https://www.openssl.org/news/secadv/20211214.txt"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "OpenSSL -- Certificate validation issue"
+}

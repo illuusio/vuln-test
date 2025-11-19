@@ -1,0 +1,109 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "opera"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "9.02"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        },
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "opera-devel"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "9.02"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        },
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "linux-opera"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "9.02"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "cite": [
+            "http://www.opera.com/support/search/supsearch.dml?index=845"
+        ],
+        "discovery": "2006-09-18T00:00:00Z",
+        "references": {
+            "cvename": [
+                "CVE-2006-4339"
+            ]
+        },
+        "vid": "1fe734bf-4a06-11db-b48d-00508d6a62df"
+    },
+    "details": "Opera reports:\n\n> A specially crafted digital certificate can bypass Opera\\'s\n> certificate signature verification. Forged certificates can contain\n> any false information the forger chooses, and Opera will still present\n> it as valid. Opera will not present any warning dialogs in this case,\n> and the security status will be the highest possible (3). This defeats\n> the protection against \\\"man in the middle\\\", the attacks that SSL was\n> designed to prevent.\n>\n> There is a flaw in OpenSSL\\'s RSA signature verification that affects\n> digital certificates using 3 as the public exponent. Some of the\n> certificate issuers that are on Opera\\'s list of trusted signers have\n> root certificates with 3 as the public exponent. The forged\n> certificate can appear to be signed by one of these.\n",
+    "id": "FreeBSD-2006-0157",
+    "modified": "2006-09-22T00:00:00Z",
+    "published": "2006-09-22T00:00:00Z",
+    "references": [
+        {
+            "type": "REPORT",
+            "url": "http://www.opera.com/support/search/supsearch.dml?index=845"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2006-4339"
+        },
+        {
+            "type": "WEB",
+            "url": "http://secunia.com/advisories/21982/"
+        },
+        {
+            "type": "WEB",
+            "url": "http://secunia.com/advisories/21709/"
+        },
+        {
+            "type": "WEB",
+            "url": "http://www.cdc.informatik.tu-darmstadt.de/securebrowser/"
+        },
+        {
+            "type": "WEB",
+            "url": "http://www.openssl.org/news/secadv_20060905.txt"
+        },
+        {
+            "type": "WEB",
+            "url": "http://www.mozilla.org/security/announce/2006/mfsa2006-60.html"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "opera -- RSA Signature Forgery"
+}

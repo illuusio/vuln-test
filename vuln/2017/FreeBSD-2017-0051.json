@@ -1,0 +1,81 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "optipng"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "0.7.6"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "cite": [
+            "https://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2015-7802",
+            "https://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2016-2191",
+            "https://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2016-3981",
+            "https://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2016-3982"
+        ],
+        "discovery": "2015-10-09T00:00:00Z",
+        "references": {
+            "cvename": [
+                "CVE-2015-7802",
+                "CVE-2016-2191",
+                "CVE-2016-3981",
+                "CVE-2016-3982"
+            ]
+        },
+        "vid": "8fedf75c-ef2f-11e6-900e-003048f78448"
+    },
+    "details": "> ifread.c in gif2png, as used in OptiPNG before 0.7.6, allows remote\n> attackers to cause a denial of service (uninitialized memory read) via\n> a crafted GIF file.\n\n> The bmp_read_rows function in pngxtern/pngxrbmp.c in OptiPNG before\n> 0.7.6 allows remote attackers to cause a denial of service (invalid\n> memory write and crash) via a series of delta escapes in a crafted BMP\n> image.\n\n> Heap-based buffer overflow in the bmp_read_rows function in pngxrbmp.c\n> in OptiPNG before 0.7.6 allows remote attackers to cause a denial of\n> service (out-of-bounds read or write access and crash) or possibly\n> execute arbitrary code via a crafted image file.\n\n> Off-by-one error in the bmp_rle4_fread function in pngxrbmp.c in\n> OptiPNG before 0.7.6 allows remote attackers to cause a denial of\n> service (out-of-bounds read or write access and crash) or possibly\n> execute arbitrary code via a crafted image file, which triggers a\n> heap-based buffer overflow.\n",
+    "id": "FreeBSD-2017-0051",
+    "modified": "2017-02-16T00:00:00Z",
+    "published": "2017-02-16T00:00:00Z",
+    "references": [
+        {
+            "type": "REPORT",
+            "url": "https://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2015-7802"
+        },
+        {
+            "type": "REPORT",
+            "url": "https://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2016-2191"
+        },
+        {
+            "type": "REPORT",
+            "url": "https://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2016-3981"
+        },
+        {
+            "type": "REPORT",
+            "url": "https://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2016-3982"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2015-7802"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2016-2191"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2016-3981"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2016-3982"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "optipng -- multiple vulnerabilities"
+}

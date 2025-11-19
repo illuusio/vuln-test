@@ -1,0 +1,74 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "asterisk11"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "11.25.3"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        },
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "asterisk13"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "13.17.2"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "cite": [
+            "http://www.asterisk.org/downloads/security-advisories"
+        ],
+        "discovery": "2017-09-01T00:00:00Z",
+        "references": {
+            "cvename": [
+                "CVE-2017-14099"
+            ]
+        },
+        "vid": "c2ea3b31-9d75-11e7-bb13-001999f8d30b"
+    },
+    "details": "The Asterisk project reports:\n\n> This is a follow up advisory to AST-2017-005.\n>\n> Insufficient RTCP packet validation could allow reading stale buffer\n> contents and when combined with the \\\"nat\\\" and \\\"symmetric_rtp\\\"\n> options allow redirecting where Asterisk sends the next RTCP report.\n>\n> The RTP stream qualification to learn the source address of media\n> always accepted the first RTP packet as the new source and allowed\n> what AST-2017-005 was mitigating. The intent was to qualify a series\n> of packets before accepting the new source address.\n>\n> The RTP/RTCP stack will now validate RTCP packets before processing\n> them.\n",
+    "id": "FreeBSD-2017-0206",
+    "modified": "2017-09-19T00:00:00Z",
+    "published": "2017-09-19T00:00:00Z",
+    "references": [
+        {
+            "type": "REPORT",
+            "url": "http://www.asterisk.org/downloads/security-advisories"
+        },
+        {
+            "type": "WEB",
+            "url": "https://downloads.asterisk.org/pub/security/AST-2017-008.html"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2017-14099"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "asterisk -- RTP/RTCP information leak"
+}

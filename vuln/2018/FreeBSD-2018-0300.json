@@ -1,0 +1,65 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "typo3-8"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "8.7.21"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        },
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "typo3-9"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "9.5.2"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "cite": [
+            "https://typo3.org/article/typo3-952-8721-and-7632-security-releases-published/"
+        ],
+        "discovery": "2018-12-11T00:00:00Z",
+        "vid": "bab29816-ff93-11e8-b05b-00e04c1ea73d"
+    },
+    "details": "Typo3 core team reports:\n\n> CKEditor 4.11 fixes an XSS vulnerability in the HTML parser reported\n> by maxarr. The vulnerability stemmed from the fact that it was\n> possible to execute XSS inside the CKEditor source area after\n> persuading the victim to: (i) switch CKEditor to source mode, then\n> (ii) paste a specially crafted HTML code, prepared by the attacker,\n> into the opened CKEditor source area, and (iii) switch back to WYSIWYG\n> mode. Although this is an unlikely scenario, we recommend to upgrade\n> to the latest editor version.\n>\n> Failing to properly encode user input, online media asset rendering\n> (\\*.youtube and \\*.vimeo files) is vulnerable to cross-site scripting.\n> A valid backend user account or write access on the server system\n> (e.g. SFTP) is needed in order to exploit this vulnerability.\n>\n> Failing to properly encode user input, notifications shown in modal\n> windows in the TYPO3 backend are vulnerable to cross-site scripting. A\n> valid backend user account is needed in order to exploit this\n> vulnerability.\n>\n> Failing to properly encode user input, login status display is\n> vulnerable to cross-site scripting in the website frontend. A valid\n> user account is needed in order to exploit this vulnerability - either\n> a backend user or a frontend user having the possibility to modify\n> their user profile.\n>\n> Template patterns that are affected are:\n>\n> - ###FEUSER\\_\\[fieldName\\]### using system extension felogin\n> - \\<!\\--###USERNAME###\\--\\> for regular frontend rendering (pattern\n>   can be defined individually using TypoScript setting\n>   config.USERNAME_substToken)\n>\n> It has been discovered that cookies created in the Install Tool are\n> not hardened to be submitted only via HTTP. In combination with other\n> vulnerabilities such as cross-site scripting it can lead to hijacking\n> an active and valid session in the Install Tool.\n>\n> The Install Tool exposes the current TYPO3 version number to\n> non-authenticated users.\n>\n> Online Media Asset Handling (\\*.youtube and \\*.vimeo files) in the\n> TYPO3 backend is vulnerable to denial of service. Putting large files\n> with according file extensions results in high consumption of system\n> resources. This can lead to exceeding limits of the current PHP\n> process which results in a dysfunctional backend component. A valid\n> backend user account or write access on the server system (e.g. SFTP)\n> is needed in order to exploit this vulnerability.\n>\n> TYPO3's built-in record registration functionality (aka \"basic\n> shopping cart\") using recs URL parameters is vulnerable to denial of\n> service. Failing to properly ensure that anonymous user sessions are\n> valid, attackers can use this vulnerability in order to create an\n> arbitrary amount of individual session-data records in the database.\n",
+    "id": "FreeBSD-2018-0300",
+    "modified": "2018-12-14T00:00:00Z",
+    "published": "2018-12-14T00:00:00Z",
+    "references": [
+        {
+            "type": "REPORT",
+            "url": "https://typo3.org/article/typo3-952-8721-and-7632-security-releases-published/"
+        },
+        {
+            "type": "WEB",
+            "url": "https://typo3.org/article/typo3-952-8721-and-7632-security-releases-published/"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "typo3 -- multiple vulnerabilities"
+}

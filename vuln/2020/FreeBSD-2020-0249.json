@@ -1,0 +1,73 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "FreeBSD"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "introduced": "12.1"
+                        },
+                        {
+                            "fixed": "12.1_10"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                },
+                {
+                    "events": [
+                        {
+                            "introduced": "11.4"
+                        },
+                        {
+                            "fixed": "11.4_4"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                },
+                {
+                    "events": [
+                        {
+                            "introduced": "11.3"
+                        },
+                        {
+                            "fixed": "11.3_14"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "discovery": "2020-09-15T00:00:00Z",
+        "references": {
+            "cvename": [
+                "CVE-2020-7468"
+            ],
+            "freebsdsa": [
+                "SA-20:30.ftpd"
+            ]
+        },
+        "vid": "6d334fdb-f7e7-11ea-88f8-901b0ef719ab"
+    },
+    "details": "# Problem Description:\n\nA ftpd(8) bug in the implementation of the file system sandbox, combined\nwith capabilities available to an authenticated FTP user, can be used to\nescape the file system restriction configured in ftpchroot(5). Moreover,\nthe bug allows a malicious client to gain root privileges.\n\n# Impact:\n\nA malicious FTP user can gain privileged access to an affected system.\n",
+    "id": "FreeBSD-2020-0249",
+    "modified": "2020-09-16T00:00:00Z",
+    "published": "2020-09-16T00:00:00Z",
+    "references": [
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2020-7468"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://www.freebsd.org/security/advisories/FreeBSD-SA-20:30.ftpd.asc"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "FreeBSD -- ftpd privilege escalation via ftpchroot feature"
+}

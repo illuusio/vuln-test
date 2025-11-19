@@ -1,0 +1,66 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "libudisks"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "2.10.2"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                },
+                {
+                    "events": [
+                        {
+                            "introduced": "2.10.90"
+                        },
+                        {
+                            "fixed": "2.10.91"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "cite": [
+            "https://access.redhat.com/errata/RHSA-2025:15017"
+        ],
+        "discovery": "2025-08-28T00:00:00Z",
+        "references": {
+            "cvename": [
+                "CVE-2025-8067"
+            ]
+        },
+        "vid": "3bf134f4-942d-11f0-95de-0800276af896"
+    },
+    "details": "secalert@redhat.com reports:\n\n> A flaw was found in the Udisks daemon, where it allows unprivileged\n> users to create loop devices using the D-BUS system. This is achieved\n> via the loop device handler, which handles requests sent through the\n> D-BUS interface. As two of the parameters of this handle, it receives\n> the file descriptor list and index specifying the file where the loop\n> device should be backed. The function itself validates the index value\n> to ensure it isn\\'t bigger than the maximum value allowed. However, it\n> fails to validate the lower bound, allowing the index parameter to be\n> a negative value. Under these circumstances, an attacker can cause the\n> UDisks daemon to crash or perform a local privilege escalation by\n> gaining access to files owned by privileged users.\n",
+    "id": "FreeBSD-2025-0302",
+    "modified": "2025-09-26T00:00:00Z",
+    "published": "2025-09-26T00:00:00Z",
+    "references": [
+        {
+            "type": "REPORT",
+            "url": "https://access.redhat.com/errata/RHSA-2025:15017"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2025-8067"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://nvd.nist.gov/vuln/detail/CVE-2025-8067"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "libudisks -- Udisks: out-of-bounds read in udisks daemon"
+}

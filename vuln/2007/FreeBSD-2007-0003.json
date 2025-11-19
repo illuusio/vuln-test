@@ -1,0 +1,115 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "opera"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "9.10"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        },
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "opera-devel"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "9.10"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        },
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "linux-opera"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "9.10"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "cite": [
+            "http://labs.idefense.com/intelligence/vulnerabilities/display.php?id=457",
+            "http://labs.idefense.com/intelligence/vulnerabilities/display.php?id=458"
+        ],
+        "discovery": "2007-01-05T00:00:00Z",
+        "references": {
+            "cvename": [
+                "CVE-2007-0126",
+                "CVE-2007-0127"
+            ]
+        },
+        "vid": "78ad2525-9d0c-11db-a5f6-000c6ec775d9"
+    },
+    "details": "iDefense reports:\n\n> The vulnerability specifically exists due to Opera improperly\n> processing a JPEG DHT marker. The DHT marker is used to define a\n> Huffman Table which is used for decoding the image data. An invalid\n> number of index bytes in the DHT marker will trigger a heap overflow\n> with partially user controlled data.\n>\n> Exploitation of this vulnerability would allow an attacker to execute\n> arbitrary code on the affected host. The attacker would first need to\n> construct a website containing the malicious image and trick the\n> vulnerable user into visiting the site. This would trigger the\n> vulnerability and allow the code to execute with the privileges of the\n> local user.\n\n> A flaw exists within Opera\\'s Javascript SVG implementation. When\n> processing a createSVGTransformFromMatrix request Opera does not\n> properly validate the type of object passed to the function. Passing\n> an incorrect object to this function can result in it using a pointer\n> that is user controlled when it attempts to make the virtual function\n> call.\n>\n> Exploitation of this vulnerability would allow an attacker to execute\n> arbitrary code on the affected host. The attacker would first need to\n> construct a website containing the malicious JavaScript and trick the\n> vulnerable user into visiting the site. This would trigger the\n> vulnerability and allow the code to execute with the privileges of the\n> local user.\n",
+    "id": "FreeBSD-2007-0003",
+    "modified": "2010-05-12T00:00:00Z",
+    "published": "2007-01-05T00:00:00Z",
+    "references": [
+        {
+            "type": "REPORT",
+            "url": "http://labs.idefense.com/intelligence/vulnerabilities/display.php?id=457"
+        },
+        {
+            "type": "REPORT",
+            "url": "http://labs.idefense.com/intelligence/vulnerabilities/display.php?id=458"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2007-0126"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2007-0127"
+        },
+        {
+            "type": "WEB",
+            "url": "http://labs.idefense.com/intelligence/vulnerabilities/display.php?id=457"
+        },
+        {
+            "type": "WEB",
+            "url": "http://labs.idefense.com/intelligence/vulnerabilities/display.php?id=458"
+        },
+        {
+            "type": "WEB",
+            "url": "http://www.opera.com/support/search/supsearch.dml?index=851"
+        },
+        {
+            "type": "WEB",
+            "url": "http://www.opera.com/support/search/supsearch.dml?index=852"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "opera -- multiple vulnerabilities"
+}

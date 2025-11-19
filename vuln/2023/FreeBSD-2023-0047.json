@@ -1,0 +1,104 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "go119"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "1.19.6"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        },
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "go120"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "1.20.1"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "cite": [
+            "https://go.dev/issue/57274",
+            "https://go.dev/issue/58006",
+            "https://go.dev/issue/58001",
+            "https://go.dev/issue/57855"
+        ],
+        "discovery": "2023-02-14T00:00:00Z",
+        "references": {
+            "cvename": [
+                "CVE-2022-41722",
+                "CVE-2022-41725",
+                "CVE-2022-41724",
+                "CVE-2022-41723"
+            ]
+        },
+        "vid": "3d73e384-ad1f-11ed-983c-83fe35862e3a"
+    },
+    "details": "The Go project reports:\n\n> path/filepath: path traversal in filepath.Clean on Windows\n>\n> On Windows, the filepath.Clean function could transform an invalid\n> path such as a/../c:/b into the valid path c:\\\\b. This transformation\n> of a relative (if invalid) path into an absolute path could enable a\n> directory traversal attack. The filepath.Clean function will now\n> transform this path into the relative (but still invalid) path\n> .\\\\c:\\\\b.\n\n> net/http, mime/multipart: denial of service from excessive resource\n> consumption\n>\n> Multipart form parsing with mime/multipart.Reader.ReadForm can consume\n> largely unlimited amounts of memory and disk files. This also affects\n> form parsing in the net/http package with the Request methods\n> FormFile, FormValue, ParseMultipartForm, and PostFormValue.\n\n> crypto/tls: large handshake records may cause panics\n>\n> Both clients and servers may send large TLS handshake records which\n> cause servers and clients, respectively, to panic when attempting to\n> construct responses.\n\n> net/http: avoid quadratic complexity in HPACK decoding\n>\n> A maliciously crafted HTTP/2 stream could cause excessive CPU\n> consumption in the HPACK decoder, sufficient to cause a denial of\n> service from a small number of small requests.\n",
+    "id": "FreeBSD-2023-0047",
+    "modified": "2023-02-15T00:00:00Z",
+    "published": "2023-02-15T00:00:00Z",
+    "references": [
+        {
+            "type": "REPORT",
+            "url": "https://go.dev/issue/57274"
+        },
+        {
+            "type": "REPORT",
+            "url": "https://go.dev/issue/58006"
+        },
+        {
+            "type": "REPORT",
+            "url": "https://go.dev/issue/58001"
+        },
+        {
+            "type": "REPORT",
+            "url": "https://go.dev/issue/57855"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2022-41722"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2022-41725"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2022-41724"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2022-41723"
+        },
+        {
+            "type": "WEB",
+            "url": "https://groups.google.com/g/golang-dev/c/G2APtTxT1HQ/m/6O6aksDaBAAJ"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "go -- multiple vulnerabilities"
+}

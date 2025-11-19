@@ -1,0 +1,55 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "exiv2"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "introduced": "0.28.0"
+                        },
+                        {
+                            "fixed": "0.28.5"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "cite": [
+            "https://github.com/Exiv2/exiv2/security/advisories/GHSA-38h4-fx85-qcx7"
+        ],
+        "discovery": "2025-02-18T00:00:00Z",
+        "references": {
+            "cvename": [
+                "CVE-2025-26623"
+            ]
+        },
+        "vid": "6ae77556-f31d-11ef-a695-4ccc6adda413"
+    },
+    "details": "Kevin Backhouse reports:\n\n> A heap buffer overflow was found in Exiv2 versions v0.28.0 to v0.28.4.\n> Versions prior to v0.28.0, such as v0.27.7, are not affected. Exiv2 is\n> a command-line utility and C++ library for reading, writing, deleting,\n> and modifying the metadata of image files. The heap overflow is\n> triggered when Exiv2 is used to write metadata into a crafted image\n> file. An attacker could potentially exploit the vulnerability to gain\n> code execution, if they can trick the victim into running Exiv2 on a\n> crafted image file.\n>\n> Note that this bug is only triggered when writing the metadata, which\n> is a less frequently used Exiv2 operation than reading the metadata.\n> For example, to trigger the bug in the Exiv2 command-line application,\n> you need to add an extra command-line argument such as fixiso.\n",
+    "id": "FreeBSD-2025-0053",
+    "modified": "2025-02-25T00:00:00Z",
+    "published": "2025-02-25T00:00:00Z",
+    "references": [
+        {
+            "type": "REPORT",
+            "url": "https://github.com/Exiv2/exiv2/security/advisories/GHSA-38h4-fx85-qcx7"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2025-26623"
+        },
+        {
+            "type": "WEB",
+            "url": "https://github.com/Exiv2/exiv2/security/advisories/GHSA-38h4-fx85-qcx7"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "exiv2 -- Use after free in TiffSubIfd"
+}

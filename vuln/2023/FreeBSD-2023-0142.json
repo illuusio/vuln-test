@@ -1,0 +1,59 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "ap24-mod_gnutls"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "0.12.1"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "cite": [
+            "https://lists.gnupg.org/pipermail/mod_gnutls-devel/2023-February/000221.html"
+        ],
+        "discovery": "2023-02-23T00:00:00Z",
+        "references": {
+            "cvename": [
+                "CVE-2023-25824"
+            ]
+        },
+        "vid": "e8b20517-dbb6-11ed-bf28-589cfc0f81b0"
+    },
+    "details": "The mod_gnutls project reports:\n\n> Mod_gnutls is a TLS module for Apache HTTPD based on GnuTLS. Versions\n> from 0.9.0 to 0.12.0 (including) did not properly fail blocking read\n> operations on TLS connections when the transport hit timeouts. Instead\n> it entered an endless loop retrying the read operation, consuming CPU\n> resources. This could be exploited for denial of service attacks. If\n> trace level logging was enabled, it would also produce an excessive\n> amount of log output during the loop, consuming disk space.\n",
+    "id": "FreeBSD-2023-0142",
+    "modified": "2023-04-15T00:00:00Z",
+    "published": "2023-04-15T00:00:00Z",
+    "references": [
+        {
+            "type": "REPORT",
+            "url": "https://lists.gnupg.org/pipermail/mod_gnutls-devel/2023-February/000221.html"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2023-25824"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://nvd.nist.gov/vuln/detail/CVE-2023-25824"
+        },
+        {
+            "type": "WEB",
+            "url": "https://mod.gnutls.org/browser/mod_gnutls/CHANGELOG?rev=17b2836dc3e27754159ffb098323a4cd4426192f"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "mod_gnutls -- Infinite Loop on request read timeout"
+}

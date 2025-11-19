@@ -1,0 +1,77 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "libreoffice"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "5.4.5"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                },
+                {
+                    "events": [
+                        {
+                            "introduced": "6.0.0"
+                        },
+                        {
+                            "fixed": "6.0.1"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "cite": [
+            "https://www.libreoffice.org/about-us/security/advisories/cve-2018-1055/"
+        ],
+        "discovery": "2018-02-09T00:00:00Z",
+        "references": {
+            "cvename": [
+                "CVE-2018-6871"
+            ],
+            "freebsdpr": [
+                "ports/225797"
+            ]
+        },
+        "vid": "289269f1-0def-11e8-99b0-d017c2987f9a"
+    },
+    "details": "LibreOffice reports:\n\n> LibreOffice Calc supports a WEBSERVICE function to obtain data by URL.\n> Vulnerable versions of LibreOffice allow WEBSERVICE to take a local\n> file URL (e.g file://) which can be used to inject local files into\n> the spreadsheet without warning the user. Subsequent formulas can\n> operate on that inserted data and construct a remote URL whose path\n> leaks the local data to a remote attacker.\n>\n> In later versions of LibreOffice without this flaw, WEBSERVICE has now\n> been limited to accessing http and https URLs along with bringing\n> WEBSERVICE URLs under LibreOffice Calc\\'s link management\n> infrastructure.\n>\n> **Note:** This vulnerability has been identified upstream as\n> CVE-2018-1055, but NVD/Mitre are advising it\\'s a reservation\n> duplicate of CVE-2018-6871 which should be used instead.\n",
+    "id": "FreeBSD-2018-0058",
+    "modified": "2018-02-23T00:00:00Z",
+    "published": "2018-02-23T00:00:00Z",
+    "references": [
+        {
+            "type": "REPORT",
+            "url": "https://www.libreoffice.org/about-us/security/advisories/cve-2018-1055/"
+        },
+        {
+            "type": "WEB",
+            "url": "https://www.libreoffice.org/about-us/security/advisories/cve-2018-1055/"
+        },
+        {
+            "type": "WEB",
+            "url": "https://github.com/jollheef/libreoffice-remote-arbitrary-file-disclosure"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2018-6871"
+        },
+        {
+            "type": "REPORT",
+            "url": "https://bugs.freebsd.org/bugzilla/show_bug.cgi?id=225797"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "LibreOffice -- Remote arbitrary file disclosure vulnerability via WEBSERVICE formula"
+}

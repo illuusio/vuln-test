@@ -1,0 +1,60 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "gnutls"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "3.6.7"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "cite": [
+            "https://www.gnutls.org/security-new.html#GNUTLS-SA-2019-03-27"
+        ],
+        "discovery": "2019-03-27T00:00:00Z",
+        "references": {
+            "cvename": [
+                "CVE-2019-3829",
+                "CVE-2019-3836"
+            ]
+        },
+        "vid": "fb30db8f-62af-11e9-b0de-001cc0382b2f"
+    },
+    "details": "The GnuTLS project reports:\n\n> - Tavis Ormandy from Google Project Zero found a memory corruption\n>   (double free) vulnerability in the certificate verification API. Any\n>   client or server application that verifies X.509 certificates with\n>   GnuTLS 3.5.8 or later is affected.\n> - It was found using the TLS fuzzer tools that decoding a malformed\n>   TLS1.3 asynchronous message can cause a server crash via an invalid\n>   pointer access. The issue affects GnuTLS server applications since\n>   3.6.4.\n",
+    "id": "FreeBSD-2019-0082",
+    "modified": "2019-04-19T00:00:00Z",
+    "published": "2019-04-19T00:00:00Z",
+    "references": [
+        {
+            "type": "REPORT",
+            "url": "https://www.gnutls.org/security-new.html#GNUTLS-SA-2019-03-27"
+        },
+        {
+            "type": "WEB",
+            "url": "https://www.gnutls.org/security-new.html#GNUTLS-SA-2019-03-27"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2019-3829"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2019-3836"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "GnuTLS -- double free, invalid pointer access"
+}

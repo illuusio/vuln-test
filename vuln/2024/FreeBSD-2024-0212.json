@@ -1,0 +1,83 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:kernel",
+                "name": "FreeBSD-kernel"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "introduced": "14.1"
+                        },
+                        {
+                            "fixed": "14.1_4"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                },
+                {
+                    "events": [
+                        {
+                            "introduced": "14.0"
+                        },
+                        {
+                            "fixed": "14.0_10"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                },
+                {
+                    "events": [
+                        {
+                            "introduced": "13.3"
+                        },
+                        {
+                            "fixed": "13.3_6"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "discovery": "2024-09-04T00:00:00Z",
+        "references": {
+            "cvename": [
+                "CVE-2024-8178",
+                "CVE-2024-42416",
+                "CVE-2024-43110"
+            ],
+            "freebsdsa": [
+                "SA-24:11.ctl"
+            ]
+        },
+        "vid": "9bd5e47b-6b50-11ef-9a62-002590c1f29c"
+    },
+    "details": "# Problem Description:\n\nSeveral vulnerabilities were found in the ctl subsystem.\n\nThe function ctl_write_buffer incorrectly set a flag which resulted in a\nkernel Use-After-Free when a command finished processing\n(CVE-2024-45063). The ctl_write_buffer and ctl_read_buffer functions\nallocated memory to be returned to userspace, without initializing it\n(CVE-2024-8178). The ctl_report_supported_opcodes function did not\nsufficiently validate a field provided by userspace, allowing an\narbitrary write to a limited amount of kernel help memory\n(CVE-2024-42416). The ctl_request_sense function could expose up to\nthree bytes of the kernel heap to userspace (CVE-2024-43110).\n\nGuest virtual machines in the bhyve hypervisor can send SCSI commands to\nthe corresponding kernel driver via the virtio_scsi interface. This\nprovides guests with direct access to the vulnerabilities covered by\nthis advisory.\n\nThe CAM Target Layer iSCSI target daemon ctld(8) accepts incoming iSCSI\nconnections, performs authentication and passes connections to the\nkernel ctl(4) target layer.\n\n# Impact:\n\nMalicious software running in a guest VM that exposes virtio_scsi can\nexploit the vulnerabilities to achieve code execution on the host in the\nbhyve userspace process, which typically runs as root. Note that bhyve\nruns in a Capsicum sandbox, so malicious code is constrained by the\ncapabilities available to the bhyve process.\n\nA malicious iSCSI initiator could achieve remote code execution on the\niSCSI target host.\n",
+    "id": "FreeBSD-2024-0212",
+    "modified": "2024-09-05T00:00:00Z",
+    "published": "2024-09-05T00:00:00Z",
+    "references": [
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2024-8178"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2024-42416"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2024-43110"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://www.freebsd.org/security/advisories/FreeBSD-SA-24:11.ctl.asc"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "FreeBSD -- Multiple issues in ctl(4) CAM Target Layer"
+}

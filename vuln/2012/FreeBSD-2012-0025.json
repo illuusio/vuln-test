@@ -1,0 +1,55 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "sudo"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "introduced": "1.8.0"
+                        },
+                        {
+                            "fixed": "1.8.3_2"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "cite": [
+            "http://www.gratisoft.us/sudo/alerts/sudo_debug.html"
+        ],
+        "discovery": "2012-01-30T00:00:00Z",
+        "references": {
+            "cvename": [
+                "CVE-2012-0809"
+            ]
+        },
+        "vid": "7c920bb7-4b5f-11e1-9f47-00e0815b8da8"
+    },
+    "details": "Todd Miller reports:\n\n> Sudo 1.8.0 introduced simple debugging support that was primarily\n> intended for use when developing policy or I/O logging plugins. The\n> sudo_debug() function contains a flaw where the program name is used\n> as part of the format string passed to the fprintf() function. The\n> program name can be controlled by the caller, either via a symbolic\n> link or, on some systems, by setting argv\\[0\\] when executing sudo.\n>\n> Using standard format string vulnerability exploitation techniques it\n> is possible to leverage this bug to achieve root privileges.\n>\n> Exploitation of the bug does not require that the attacker be listed\n> in the sudoers file. As such, we strongly suggest that affected sites\n> upgrade from affected sudo versions as soon as possible.\n",
+    "id": "FreeBSD-2012-0025",
+    "modified": "2012-01-31T00:00:00Z",
+    "published": "2012-01-30T00:00:00Z",
+    "references": [
+        {
+            "type": "REPORT",
+            "url": "http://www.gratisoft.us/sudo/alerts/sudo_debug.html"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2012-0809"
+        },
+        {
+            "type": "WEB",
+            "url": "http://www.gratisoft.us/sudo/alerts/sudo_debug.html"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "sudo -- format string vulnerability"
+}

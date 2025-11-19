@@ -1,0 +1,94 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "xen-kernel"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "introduced": "4.5.3"
+                        },
+                        {
+                            "last_affected": "4.5.3"
+                        },
+                        {
+                            "fixed": "4.5.3"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                },
+                {
+                    "events": [
+                        {
+                            "introduced": "4.6.3"
+                        },
+                        {
+                            "last_affected": "4.6.3"
+                        },
+                        {
+                            "fixed": "4.6.3"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                },
+                {
+                    "events": [
+                        {
+                            "introduced": "4.7.0"
+                        },
+                        {
+                            "fixed": "4.7.1"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ],
+            "versions": [
+                "4.5.3",
+                "4.6.3"
+            ]
+        }
+    ],
+    "database_specific": {
+        "cite": [
+            "https://xenbits.xen.org/xsa/advisory-186.html"
+        ],
+        "discovery": "2016-09-08T00:00:00Z",
+        "references": {
+            "cvename": [
+                "CVE-2016-7093"
+            ],
+            "freebsdpr": [
+                "ports/214936"
+            ]
+        },
+        "vid": "49211361-ba4d-11e6-ae1b-002590263bf5"
+    },
+    "details": "The Xen Project reports:\n\n> When emulating HVM instructions, Xen uses a small i-cache for fetches\n> from guest memory. The code that handles cache misses does not check\n> if the address from which it fetched lies within the cache before\n> blindly writing to it. As such it is possible for the guest to\n> overwrite hypervisor memory.\n>\n> It is currently believed that the only way to trigger this bug is to\n> use the way that Xen currently incorrectly wraps CS:IP in 16 bit\n> modes. The included patch prevents such wrapping.\n>\n> A malicious HVM guest administrator can escalate their privilege to\n> that of the host.\n",
+    "id": "FreeBSD-2016-0448",
+    "modified": "2016-12-04T00:00:00Z",
+    "published": "2016-12-04T00:00:00Z",
+    "references": [
+        {
+            "type": "REPORT",
+            "url": "https://xenbits.xen.org/xsa/advisory-186.html"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2016-7093"
+        },
+        {
+            "type": "REPORT",
+            "url": "https://bugs.freebsd.org/bugzilla/show_bug.cgi?id=214936"
+        },
+        {
+            "type": "WEB",
+            "url": "https://xenbits.xen.org/xsa/advisory-186.html"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "xen-kernel -- x86: Mishandling of instruction pointer truncation during emulation"
+}

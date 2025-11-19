@@ -1,0 +1,83 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "clamav"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "0.94.1"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        },
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "clamav-devel"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "20081105"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "cite": [
+            "http://www.securityfocus.com/archive/1/498169/30/0/threaded",
+            "http://svn.clamav.net/svn/clamav-devel/trunk/ChangeLog"
+        ],
+        "discovery": "2008-11-08T00:00:00Z",
+        "references": {
+            "cvename": [
+                "CVE-2008-5050"
+            ]
+        },
+        "vid": "24b64fb0-af1d-11dd-8a16-001b1116b350"
+    },
+    "details": "Advisory from Moritz Jodeit, November 8th, 2008:\n\n> ClamAV contains an off-by-one heap overflow vulnerability in the code\n> responsible for parsing VBA project files. Successful exploitation\n> could allow an attacker to execute arbitrary code with the privileges\n> of the \\`clamd\\' process by sending an email with a prepared\n> attachment.\n>\n> A VBA project file embedded inside an OLE2 office document send as an\n> attachment can trigger the off-by-one.\n\nEntry from Thu Oct 30 13:52:42 CET 2008 (acab) in ChangeLog:\n\n> libclamav/vba_extract.c: get_unicode_name off-by-one, bb#1239 reported\n> by Moritz Jodeit \\>moritz\\*jodeit.org\\<\n",
+    "id": "FreeBSD-2008-0132",
+    "modified": "2008-11-10T00:00:00Z",
+    "published": "2008-11-10T00:00:00Z",
+    "references": [
+        {
+            "type": "REPORT",
+            "url": "http://www.securityfocus.com/archive/1/498169/30/0/threaded"
+        },
+        {
+            "type": "REPORT",
+            "url": "http://svn.clamav.net/svn/clamav-devel/trunk/ChangeLog"
+        },
+        {
+            "type": "WEB",
+            "url": "http://www.securityfocus.com/archive/1/498169/30/0/threaded"
+        },
+        {
+            "type": "WEB",
+            "url": "http://svn.clamav.net/svn/clamav-devel/trunk/ChangeLog"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2008-5050"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "clamav -- off-by-one heap overflow in VBA project parser"
+}

@@ -1,0 +1,112 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "FreeBSD"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "introduced": "5.4"
+                        },
+                        {
+                            "fixed": "5.4_3"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                },
+                {
+                    "events": [
+                        {
+                            "introduced": "5.0"
+                        },
+                        {
+                            "fixed": "5.3_17"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                },
+                {
+                    "events": [
+                        {
+                            "introduced": "4.11"
+                        },
+                        {
+                            "fixed": "4.11_11"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                },
+                {
+                    "events": [
+                        {
+                            "fixed": "4.10_16"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        },
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "bzip2"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "1.0.3_1"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "discovery": "2005-03-30T00:00:00Z",
+        "references": {
+            "cvename": [
+                "CVE-2005-0953",
+                "CVE-2005-1260"
+            ],
+            "freebsdsa": [
+                "SA-05:14.bzip2"
+            ]
+        },
+        "vid": "197f444f-e8ef-11d9-b875-0001020eed82"
+    },
+    "details": "# Problem Description\n\nTwo problems have been discovered relating to the extraction of\nbzip2-compressed files. First, a carefully constructed invalid bzip2\narchive can cause bzip2 to enter an infinite loop. Second, when creating\na new file, bzip2 closes the file before setting its permissions.\n\n# Impact\n\nThe first problem can cause bzip2 to extract a bzip2 archive to an\ninfinitely large file. If bzip2 is used in automated processing of\nuntrusted files this could be exploited by an attacker to create an\ndenial-of-service situation by exhausting disk space or by consuming all\navailable cpu time.\n\nThe second problem can allow a local attacker to change the permissions\nof local files owned by the user executing bzip2 providing that they\nhave write access to the directory in which the file is being extracted.\n\n# Workaround\n\nDo not uncompress bzip2 archives from untrusted sources and do not\nuncompress files in directories where untrusted users have write access.\n",
+    "id": "FreeBSD-2005-0198",
+    "modified": "2016-08-09T00:00:00Z",
+    "published": "2005-06-29T00:00:00Z",
+    "references": [
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2005-0953"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2005-1260"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://www.freebsd.org/security/advisories/FreeBSD-SA-05:14.bzip2.asc"
+        },
+        {
+            "type": "WEB",
+            "url": "http://scary.beasts.org/security/CESA-2005-002.txt"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "bzip2 -- denial of service and permission race vulnerabilities"
+}

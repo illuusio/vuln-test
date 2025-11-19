@@ -1,0 +1,55 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "xen-kernel"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "introduced": "3.4"
+                        },
+                        {
+                            "fixed": "4.5.1_1"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "cite": [
+            "http://xenbits.xen.org/xsa/advisory-150.html"
+        ],
+        "discovery": "2015-10-29T00:00:00Z",
+        "references": {
+            "cvename": [
+                "CVE-2015-7970"
+            ]
+        },
+        "vid": "83350009-881e-11e5-ab94-002590263bf5"
+    },
+    "details": "The Xen Project reports:\n\n> When running an HVM domain in Populate-on-Demand mode, Xen would\n> sometimes search the domain for memory to reclaim, in response to\n> demands for population of other pages in the same domain. This search\n> runs without preemption. The guest can, by suitable arrangement of its\n> memory contents, create a situation where this search is a\n> time-consuming linear scan of the guest\\'s address space.\n>\n> A malicious HVM guest administrator can cause a denial of service.\n> Specifically, prevent use of a physical CPU for a significant period.\n",
+    "id": "FreeBSD-2015-0359",
+    "modified": "2015-11-11T00:00:00Z",
+    "published": "2015-11-11T00:00:00Z",
+    "references": [
+        {
+            "type": "REPORT",
+            "url": "http://xenbits.xen.org/xsa/advisory-150.html"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2015-7970"
+        },
+        {
+            "type": "WEB",
+            "url": "http://xenbits.xen.org/xsa/advisory-150.html"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "xen-kernel -- Long latency populate-on-demand operation is not preemptible"
+}

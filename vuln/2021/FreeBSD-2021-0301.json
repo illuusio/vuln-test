@@ -1,0 +1,70 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "dropbear"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "3.0.33"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "cite": [
+            "https://lists.privoxy.org/pipermail/privoxy-announce/2021-December/000009.html"
+        ],
+        "discovery": "2021-12-09T00:00:00Z",
+        "references": {
+            "cvename": [
+                "CVE-2021-44540",
+                "CVE-2021-44541",
+                "CVE-2021-44542",
+                "CVE-2021-44543"
+            ]
+        },
+        "vid": "897e1962-5d5a-11ec-a3ed-040e3c3cf7e7"
+    },
+    "details": "Privoxy reports:\n\n> cgi_error_no_template(): Encode the template name to prevent XSS\n> (cross-site scripting) when Privoxy is configured to servce the\n> user-manual itself.\n>\n> Commit 0e668e9409c. OVE-20211102-0001. CVE-2021-44543. Reported by:\n> Artem Ivanov\n>\n> get_url_spec_param(): Free memory of compiled pattern spec before\n> bailing. Reported by Joshua Rogers (Opera) who also provided the fix.\n> Commit 652b4b7cb0. OVE-20211201-0003. CVE-2021-44540.\n>\n> process_encrypted_request_headers(): Free header memory when failing\n> to get the request destination. Reported by Joshua Rogers (Opera) who\n> also provided the fix. Commit 0509c58045. OVE-20211201-0002.\n> CVE-2021-44541.\n>\n> send_http_request(): Prevent memory leaks when handling errors\n> Reported by Joshua Rogers (Opera) who also provided the fix. Commit\n> c48d1d6d08. OVE-20211201-0001. CVE-2021-44542.\n",
+    "id": "FreeBSD-2021-0301",
+    "modified": "2021-12-15T00:00:00Z",
+    "published": "2021-12-15T00:00:00Z",
+    "references": [
+        {
+            "type": "REPORT",
+            "url": "https://lists.privoxy.org/pipermail/privoxy-announce/2021-December/000009.html"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2021-44540"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2021-44541"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2021-44542"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2021-44543"
+        },
+        {
+            "type": "WEB",
+            "url": "https://lists.privoxy.org/pipermail/privoxy-announce/2021-December/000009.html"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "Privoxy -- Multiple vulnerabilities (memory leak, XSS)"
+}

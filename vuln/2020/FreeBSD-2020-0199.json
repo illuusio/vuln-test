@@ -1,0 +1,163 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "typo3-9-php72"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "9.5.20"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        },
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "typo3-9-php73"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "9.5.20"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        },
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "typo3-9-php74"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "9.5.20"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        },
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "typo3-10-php72"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "10.4.6"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        },
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "typo3-10-php73"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "10.4.6"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        },
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "typo3-10-php74"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "10.4.6"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "cite": [
+            "https://typo3.org/article/typo3-1046-and-9520-security-releases-published"
+        ],
+        "discovery": "2020-07-28T00:00:00Z",
+        "references": {
+            "cvename": [
+                "CVE-2020-15098",
+                "CVE-2020-15099"
+            ]
+        },
+        "vid": "eab964f8-d632-11ea-9172-4c72b94353b5"
+    },
+    "details": "Typo3 Team reports:\n\n> In case an attacker manages to generate a valid cryptographic message\n> authentication code (HMAC-SHA1) - either by using a different existing\n> vulnerability or in case the internal encryptionKey was exposed - it\n> is possible to retrieve arbitrary files of a TYPO3 installation. This\n> includes the possibility to fetch typo3conf/LocalConfiguration.php\n> which again contains the encryptionKey as well as credentials of the\n> database management system being used. In case a database server is\n> directly accessible either via internet or in a shared hosting\n> network, this allows to completely retrieve, manipulate or delete\n> database contents. This includes creating an administration user\n> account - which can be used to trigger remote code execution by\n> injecting custom extensions.\n>\n> It has been discovered that an internal verification mechanism can be\n> used to generate arbitrary checksums. This allows to inject arbitrary\n> data having a valid cryptographic message authentication code\n> (HMAC-SHA1) and can lead to various attack chains as described below.\n",
+    "id": "FreeBSD-2020-0199",
+    "modified": "2020-08-04T00:00:00Z",
+    "published": "2020-08-04T00:00:00Z",
+    "references": [
+        {
+            "type": "REPORT",
+            "url": "https://typo3.org/article/typo3-1046-and-9520-security-releases-published"
+        },
+        {
+            "type": "WEB",
+            "url": "https://typo3.org/article/typo3-1046-and-9520-security-releases-published"
+        },
+        {
+            "type": "WEB",
+            "url": "https://typo3.org/security/advisory/typo3-core-sa-2020-007"
+        },
+        {
+            "type": "WEB",
+            "url": "https://typo3.org/security/advisory/typo3-core-sa-2020-008"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2020-15098"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2020-15099"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "typo3 -- multiple vulnerabilities"
+}

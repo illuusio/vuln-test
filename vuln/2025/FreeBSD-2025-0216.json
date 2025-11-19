@@ -1,0 +1,131 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "redis"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "introduced": "8.0.0"
+                        },
+                        {
+                            "fixed": "8.0.3"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        },
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "redis74"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "introduced": "7.4.0"
+                        },
+                        {
+                            "fixed": "7.4.5"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        },
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "redis72"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "introduced": "7.2.0"
+                        },
+                        {
+                            "fixed": "7.2.10"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        },
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "redis62"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "introduced": "6.2.0"
+                        },
+                        {
+                            "fixed": "6.2.19"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        },
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "valkey"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "8.1.3"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "cite": [
+            "https://github.com/redis/redis/security/advisories/GHSA-rp2m-q4j6-gr43"
+        ],
+        "discovery": "2025-07-06T00:00:00Z",
+        "references": {
+            "cvename": [
+                "CVE-2025-32023"
+            ]
+        },
+        "vid": "f11d0a69-5b2d-11f0-b507-000c295725e4"
+    },
+    "details": "Seunghyun Lee reports:\n\n> An authenticated user may use a specially crafted string to trigger a\n> stack/heap out of bounds write on hyperloglog operations, potentially\n> leading to remote code execution.\n",
+    "id": "FreeBSD-2025-0216",
+    "modified": "2025-07-07T00:00:00Z",
+    "published": "2025-07-07T00:00:00Z",
+    "references": [
+        {
+            "type": "REPORT",
+            "url": "https://github.com/redis/redis/security/advisories/GHSA-rp2m-q4j6-gr43"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2025-32023"
+        },
+        {
+            "type": "WEB",
+            "url": "https://github.com/redis/redis/security/advisories/GHSA-rp2m-q4j6-gr43"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "redis,valkey -- Out of bounds write in hyperloglog commands leads to RCE"
+}

@@ -1,0 +1,46 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "shibboleth-sp"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "introduced": "3.0.0"
+                        },
+                        {
+                            "fixed": "3.0.3"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "cite": [
+            "https://shibboleth.net/community/advisories/secadv_20181219a.txt"
+        ],
+        "discovery": "2018-12-19T00:00:00Z",
+        "vid": "4f8665d0-0465-11e9-b77a-6cc21735f730"
+    },
+    "details": "The Shibboleth Consortium reports:\n\n> SAML messages, assertions, and metadata all commonly contain date/time\n> information in a standard XML format.\n>\n> Invalid formatted data in such fields cause an exception of a type\n> that was not handled properly in the V3 software and causes a crash\n> (usually to the shibd daemon process, but possibly to Apache in rare\n> cases). Note that the crash occurs prior to evaluation of a message\\'s\n> authenticity, so can be exploited by an untrusted attacker.\n>\n> The problem is believed to be specific to the V3 software and would\n> not cause a crash in the older, now unsupported, V2 software.\n",
+    "id": "FreeBSD-2018-0306",
+    "modified": "2018-12-20T00:00:00Z",
+    "published": "2018-12-20T00:00:00Z",
+    "references": [
+        {
+            "type": "REPORT",
+            "url": "https://shibboleth.net/community/advisories/secadv_20181219a.txt"
+        },
+        {
+            "type": "WEB",
+            "url": "https://shibboleth.net/community/advisories/secadv_20181219a.txt"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "shibboleth-sp -- crashes on malformed date/time content"
+}

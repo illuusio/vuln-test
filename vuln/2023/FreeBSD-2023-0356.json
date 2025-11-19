@@ -1,0 +1,77 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "zookeeper"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "3.7.2"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                },
+                {
+                    "events": [
+                        {
+                            "introduced": "3.8.0"
+                        },
+                        {
+                            "fixed": "3.8.3"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                },
+                {
+                    "events": [
+                        {
+                            "introduced": "3.9.0"
+                        },
+                        {
+                            "fixed": "3.9.1"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "cite": [
+            "http://www.openwall.com/lists/oss-security/2023/10/11/4"
+        ],
+        "discovery": "2023-10-11T00:00:00Z",
+        "references": {
+            "cvename": [
+                "CVE-2023-44981"
+            ]
+        },
+        "vid": "2bc376c0-977e-11ee-b4bc-b42e991fc52e"
+    },
+    "details": "security@apache.org reports:\n\n> Authorization Bypass Through User-Controlled Key vulnerability in\n> Apache ZooKeeper. If SASL Quorum Peer authentication is enabled in\n> ZooKeeper (quorum.auth.enableSasl=true), the authorization is done by\n> verifying that the instance part in SASL authentication ID is listed\n> in zoo.cfg server list. The instance part in SASL auth ID is optional\n> and if it\\'s missing, like \\'eve@EXAMPLE.COM\\', the authorization\n> check will be skipped.As a result an arbitrary endpoint could join the\n> cluster and begin propagating counterfeit changes to the leader,\n> essentially giving it complete read-write access to the data\n> tree.Quorum Peer authentication is not enabled by default. Users are\n> recommended to upgrade to version 3.9.1, 3.8.3, 3.7.2, which fixes the\n> issue. Alternately ensure the ensemble election/quorum communication\n> is protected by a firewall as this will mitigate the issue. See the\n> documentation for more details on correct cluster administration.\n",
+    "id": "FreeBSD-2023-0356",
+    "modified": "2023-12-10T00:00:00Z",
+    "published": "2023-12-10T00:00:00Z",
+    "references": [
+        {
+            "type": "REPORT",
+            "url": "http://www.openwall.com/lists/oss-security/2023/10/11/4"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2023-44981"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://nvd.nist.gov/vuln/detail/CVE-2023-44981"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "apache -- Apache ZooKeeper: Authorization bypass in SASL Quorum Peer Authentication"
+}

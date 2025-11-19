@@ -1,0 +1,64 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "phpbb"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "2.0.12"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "cite": [
+            "http://www.phpbb.com/phpBB/viewtopic.php?f=14&t=265423",
+            "http://www.phpbb.com/support/documents.php?mode=changelog"
+        ],
+        "discovery": "2005-02-22T00:00:00Z",
+        "references": {
+            "freebsdpr": [
+                "ports/77943"
+            ]
+        },
+        "vid": "03653079-8594-11d9-afa0-003048705d5a"
+    },
+    "details": "psoTFX reports:\n\n> phpBB Group are pleased to announce the release of phpBB 2.0.12 the\n> \\\"Horray for Furrywood\\\" release. This release addresses a number of\n> bugs and a couple of potential exploits. \\[\\...\\] one of the potential\n> exploits addressed in this release could be serious in certain\n> situations and thus we urge all users, as always, to upgrade to this\n> release as soon as possible. Mostly this release is concerned with\n> eliminating disclosures of information which while useful in debug\n> situations may allow third parties to gain information which could be\n> used to do harm via unknown or unfixed exploits in this or other\n> applications.\n\nThe ChangeLog for phpBB 2.0.12 states:\n\n> - Prevented full path display on critical messages\n> - Fixed full path disclosure in username handling caused by a PHP\n>   4.3.10 bug - **AnthraX101**\n> - Added exclude list to unsetting globals (if register_globals is\n>   on) - **SpoofedExistence**\n> - Fixed arbitrary file disclosure vulnerability in avatar handling\n>   functions - **AnthraX101**\n> - Fixed arbitrary file unlink vulnerability in avatar handling\n>   functions - **AnthraX101**\n> - Fixed path disclosure bug in search.php caused by a PHP 4.3.10 bug\n>   (related to AnthraX101\\'s discovery)\n> - Fixed path disclosure bug in viewtopic.php caused by a PHP 4.3.10\n>   bug - **matrix_killer**\n",
+    "id": "FreeBSD-2005-0086",
+    "modified": "2005-02-25T00:00:00Z",
+    "published": "2005-02-23T00:00:00Z",
+    "references": [
+        {
+            "type": "REPORT",
+            "url": "http://www.phpbb.com/phpBB/viewtopic.php?f=14&t=265423"
+        },
+        {
+            "type": "REPORT",
+            "url": "http://www.phpbb.com/support/documents.php?mode=changelog"
+        },
+        {
+            "type": "WEB",
+            "url": "http://www.phpbb.com/support/documents.php?mode=changelog"
+        },
+        {
+            "type": "WEB",
+            "url": "http://www.phpbb.com/phpBB/viewtopic.php?f=14&t=265423"
+        },
+        {
+            "type": "REPORT",
+            "url": "https://bugs.freebsd.org/bugzilla/show_bug.cgi?id=77943"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "phpbb -- multiple information disclosure vulnerabilities"
+}

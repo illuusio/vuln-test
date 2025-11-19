@@ -1,0 +1,106 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "openjdk7"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "introduced": "0,1"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        },
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "linux-sun-jdk"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "introduced": "7.0"
+                        },
+                        {
+                            "fixed": "7.11"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        },
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "linux-sun-jre"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "introduced": "7.0"
+                        },
+                        {
+                            "fixed": "7.11"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "cite": [
+            "http://www.kb.cert.org/vuls/id/625617",
+            "https://partners.immunityinc.com/idocs/Java%20MBeanInstantiator.findClass%200day%20Analysis.pdf"
+        ],
+        "discovery": "2013-01-10T00:00:00Z",
+        "references": {
+            "certvu": [
+                "625617"
+            ],
+            "cvename": [
+                "CVE-2013-0433"
+            ]
+        },
+        "vid": "d5e0317e-5e45-11e2-a113-c48508086173"
+    },
+    "details": "US CERT reports:\n\n> Java 7 Update 10 and earlier versions of Java 7 contain a\n> vulnerability that can allow a remote, unauthenticated attacker to\n> execute arbitrary code on a vulnerable system.\n>\n> The Java JRE plug-in provides its own Security Manager. Typically, a\n> web applet runs with a security manager provided by the browser or\n> Java Web Start plugin. Oracle\\'s document states, \\\"If there is a\n> security manager already installed, this method first calls the\n> security manager\\'s checkPermission method with a\n> RuntimePermission(\\\"setSecurityManager\\\") permission to ensure it\\'s\n> safe to replace the existing security manager. This may result in\n> throwing a SecurityException\\\".\n>\n> By leveraging the vulnerability in the Java Management Extensions\n> (JMX) MBean components, unprivileged Java code can access restricted\n> classes. By using that vulnerability in conjunction with a second\n> vulnerability involving the Reflection API and the invokeWithArguments\n> method of the MethodHandle class, an untrusted Java applet can\n> escalate its privileges by calling the the setSecurityManager()\n> function to allow full privileges, without requiring code signing.\n> Oracle Java 7 update 10 and earlier Java 7 versions are affected. The\n> invokeWithArguments method was introduced with Java 7, so therefore\n> Java 6 is not affected.\n>\n> This vulnerability is being attacked in the wild, and is reported to\n> be incorporated into exploit kits. Exploit code for this vulnerability\n> is also publicly available.\n\nEsteban Guillardoy from Immunity Inc. additionally clarifies on the\nrecursive reflection exploitation technique:\n\n> The real issue is in the native sun.reflect.Reflection.getCallerClass\n> method.\n>\n> We can see the following information in the Reflection source code:\n>\n> Returns the class of the method realFramesToSkip frames up the stack\n> (zero-based), ignoring frames associated with\n> java.lang.reflect.Method.invoke() and its implementation.\n>\n> So what is happening here is that they forgot to skip the frames\n> related to the new Reflection API and only the old reflection API is\n> taken into account.\n\nThis exploit does not only affect Java applets, but every piece of\nsoftware that relies on the Java Security Manager for sandboxing\nexecutable code is affected: malicious code can totally disable Security\nManager.\n\nFor users who are running native Web browsers with enabled Java plugin,\nthe workaround is to remove the java/icedtea-web port and restart all\nbrowser instances.\n\nFor users who are running Linux Web browser flavors, the workaround is\neither to disable the Java plugin in browser or to upgrade linux-sun-\\*\npackages to the non-vulnerable version.\n\nIt is not recommended to run untrusted applets using appletviewer, since\nthis may lead to the execution of the malicious code on vulnerable\nversions on JDK/JRE.\n",
+    "id": "FreeBSD-2013-0011",
+    "modified": "2013-01-14T00:00:00Z",
+    "published": "2013-01-14T00:00:00Z",
+    "references": [
+        {
+            "type": "REPORT",
+            "url": "http://www.kb.cert.org/vuls/id/625617"
+        },
+        {
+            "type": "REPORT",
+            "url": "https://partners.immunityinc.com/idocs/Java%20MBeanInstantiator.findClass%200day%20Analysis.pdf"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2013-0433"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://www.kb.cert.org/vuls/id/625617"
+        },
+        {
+            "type": "WEB",
+            "url": "http://www.oracle.com/technetwork/topics/security/alert-cve-2013-0422-1896849.html"
+        },
+        {
+            "type": "WEB",
+            "url": "https://partners.immunityinc.com/idocs/Java%20MBeanInstantiator.findClass%200day%20Analysis.pdf"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "java 7.x -- security manager bypass"
+}

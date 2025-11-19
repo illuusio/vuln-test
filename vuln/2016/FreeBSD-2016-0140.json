@@ -1,0 +1,175 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "nss"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "introduced": "3.20"
+                        },
+                        {
+                            "fixed": "3.21.1"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                },
+                {
+                    "events": [
+                        {
+                            "fixed": "3.19.2.3"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        },
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "linux-c6-nss"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "introduced": "3.20"
+                        },
+                        {
+                            "fixed": "3.21.0_1"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                },
+                {
+                    "events": [
+                        {
+                            "fixed": "3.19.2.3"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        },
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "linux-firefox"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "45.0,1"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        },
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "linux-thunderbird"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "38.7.0"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        },
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "linux-seamonkey"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "2.42"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "cite": [
+            "https://www.mozilla.org/en-US/security/advisories/mfsa2016-35/",
+            "https://www.mozilla.org/en-US/security/advisories/mfsa2016-36/"
+        ],
+        "discovery": "2016-03-08T00:00:00Z",
+        "references": {
+            "cvename": [
+                "CVE-2016-1950",
+                "CVE-2016-1979"
+            ]
+        },
+        "vid": "c4292768-5273-4f17-a267-c5fe35125ce4"
+    },
+    "details": "Mozilla Foundation reports:\n\n> Security researcher Francis Gabriel reported a heap-based buffer\n> overflow in the way the Network Security Services (NSS) libraries\n> parsed certain ASN.1 structures. An attacker could create a\n> specially-crafted certificate which, when parsed by NSS, would cause\n> it to crash or execute arbitrary code with the permissions of the\n> user.\n\n> Mozilla developer Tim Taubert used the Address Sanitizer tool and\n> software fuzzing to discover a use-after-free vulnerability while\n> processing DER encoded keys in the Network Security Services (NSS)\n> libraries. The vulnerability overwrites the freed memory with zeroes.\n",
+    "id": "FreeBSD-2016-0140",
+    "modified": "2016-09-05T00:00:00Z",
+    "published": "2016-03-08T00:00:00Z",
+    "references": [
+        {
+            "type": "REPORT",
+            "url": "https://www.mozilla.org/en-US/security/advisories/mfsa2016-35/"
+        },
+        {
+            "type": "REPORT",
+            "url": "https://www.mozilla.org/en-US/security/advisories/mfsa2016-36/"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2016-1950"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2016-1979"
+        },
+        {
+            "type": "WEB",
+            "url": "https://www.mozilla.org/security/advisories/mfsa2016-35/"
+        },
+        {
+            "type": "WEB",
+            "url": "https://www.mozilla.org/security/advisories/mfsa2016-36/"
+        },
+        {
+            "type": "WEB",
+            "url": "https://hg.mozilla.org/projects/nss/rev/b9a31471759d"
+        },
+        {
+            "type": "WEB",
+            "url": "https://hg.mozilla.org/projects/nss/rev/7033b1193c94"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "NSS -- multiple vulnerabilities"
+}

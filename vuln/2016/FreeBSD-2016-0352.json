@@ -1,0 +1,84 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "FreeBSD"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "introduced": "10.3"
+                        },
+                        {
+                            "fixed": "10.3_6"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                },
+                {
+                    "events": [
+                        {
+                            "introduced": "10.2"
+                        },
+                        {
+                            "fixed": "10.2_20"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                },
+                {
+                    "events": [
+                        {
+                            "introduced": "10.1"
+                        },
+                        {
+                            "fixed": "10.1_37"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                },
+                {
+                    "events": [
+                        {
+                            "introduced": "9.3"
+                        },
+                        {
+                            "fixed": "9.3_45"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "discovery": "2016-07-25T00:00:00Z",
+        "references": {
+            "cvename": [
+                "CVE-2014-9862"
+            ],
+            "freebsdsa": [
+                "SA-16:25.bspatch"
+            ]
+        },
+        "vid": "7d4f4955-600a-11e6-a6c3-14dae9d210b8"
+    },
+    "details": "# Problem Description:\n\nThe implementation of bspatch does not check for a negative value on\nnumbers of bytes read from the diff and extra streams, allowing an\nattacker who can control the patch file to write at arbitrary locations\nin the heap.\n\nThis issue was first discovered by The Chromium Project and reported\nindependently by Lu Tung-Pin to the FreeBSD project.\n\n# Impact:\n\nAn attacker who can control the patch file can cause a crash or run\narbitrary code under the credentials of the user who runs bspatch, in\nmany cases, root.\n",
+    "id": "FreeBSD-2016-0352",
+    "modified": "2016-08-11T00:00:00Z",
+    "published": "2016-08-11T00:00:00Z",
+    "references": [
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2014-9862"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://www.freebsd.org/security/advisories/FreeBSD-SA-16:25.bspatch.asc"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "FreeBSD -- Heap vulnerability in bspatch"
+}

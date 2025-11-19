@@ -1,0 +1,150 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "postgresql17-server"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "17.1"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        },
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "postgresql16-server"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "16.5"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        },
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "postgresql15-server"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "15.9"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        },
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "postgresql14-server"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "14.14"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        },
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "postgresql13-server"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "13.17"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        },
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "postgresql12-server"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "12.21"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "cite": [
+            "https://www.postgresql.org/support/security/CVE-2024-10976/"
+        ],
+        "discovery": "2024-11-14T00:00:00Z",
+        "references": {
+            "cvename": [
+                "CVE-2024-10976"
+            ]
+        },
+        "vid": "3831292b-a29d-11ef-af48-6cc21735f730"
+    },
+    "details": "PostgreSQL project reports:\n\n> Incomplete tracking in PostgreSQL of tables with row security allows a\n> reused query to view or change different rows from those intended.\n> CVE-2023-2455 and CVE-2016-2193 fixed most interaction between row\n> security and user ID changes. They missed cases where a subquery, WITH\n> query, security invoker view, or SQL-language function references a\n> table with a row-level security policy. This has the same consequences\n> as the two earlier CVEs. That is to say, it leads to potentially\n> incorrect policies being applied in cases where role-specific policies\n> are used and a given query is planned under one role and then executed\n> under other roles. This scenario can happen under security definer\n> functions or when a common user and query is planned initially and\n> then re-used across multiple SET ROLEs. Applying an incorrect policy\n> may permit a user to complete otherwise-forbidden reads and\n> modifications. This affects only databases that have used CREATE\n> POLICY to define a row security policy. An attacker must tailor an\n> attack to a particular application\\'s pattern of query plan reuse,\n> user ID changes, and role-specific row security policies.\n",
+    "id": "FreeBSD-2024-0291",
+    "modified": "2024-11-14T00:00:00Z",
+    "published": "2024-11-14T00:00:00Z",
+    "references": [
+        {
+            "type": "REPORT",
+            "url": "https://www.postgresql.org/support/security/CVE-2024-10976/"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2024-10976"
+        },
+        {
+            "type": "WEB",
+            "url": "https://www.postgresql.org/support/security/CVE-2024-10976/"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "PostgreSQL -- PostgreSQL row security below e.g. subqueries disregards user ID changes"
+}

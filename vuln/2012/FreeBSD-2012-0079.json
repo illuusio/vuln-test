@@ -1,0 +1,89 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "samba34"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "introduced": "3.4.*,1"
+                        },
+                        {
+                            "fixed": "3.4.17"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        },
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "samba35"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "introduced": "3.5.*,1"
+                        },
+                        {
+                            "fixed": "3.5.15"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        },
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "samba36"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "introduced": "3.6.*,1"
+                        },
+                        {
+                            "fixed": "3.6.5"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "cite": [
+            "http://www.samba.org/samba/security/CVE-2012-2111"
+        ],
+        "discovery": "2012-04-30T00:00:00Z",
+        "references": {
+            "cvename": [
+                "CVE-2012-2111"
+            ]
+        },
+        "vid": "0fa15e08-92ec-11e1-a94a-00215c6a37bb"
+    },
+    "details": "The Samba project reports:\n\n> Samba versions 3.4.x to 3.6.4 inclusive are affected by a\n> vulnerability that allows arbitrary users to modify privileges on a\n> file server.\n>\n> Security checks were incorrectly applied to the Local Security\n> Authority (LSA) remote proceedure calls (RPC) CreateAccount,\n> OpenAccount, AddAccountRights and RemoveAccountRights allowing any\n> authenticated user to modify the privileges database.\n>\n> This is a serious error, as it means that authenticated users can\n> connect to the LSA and grant themselves the \\\"take ownership\\\"\n> privilege. This privilege is used by the smbd file server to grant the\n> ability to change ownership of a file or directory which means users\n> could take ownership of files or directories they do not own.\n",
+    "id": "FreeBSD-2012-0079",
+    "modified": "2012-04-30T00:00:00Z",
+    "published": "2012-04-30T00:00:00Z",
+    "references": [
+        {
+            "type": "REPORT",
+            "url": "http://www.samba.org/samba/security/CVE-2012-2111"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2012-2111"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "samba -- incorrect permission checks vulnerability"
+}

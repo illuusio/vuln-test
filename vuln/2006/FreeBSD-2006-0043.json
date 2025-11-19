@@ -1,0 +1,95 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "FreeBSD"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "introduced": "6.0"
+                        },
+                        {
+                            "fixed": "6.0_5"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                },
+                {
+                    "events": [
+                        {
+                            "introduced": "5.4"
+                        },
+                        {
+                            "fixed": "5.4_12"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                },
+                {
+                    "events": [
+                        {
+                            "introduced": "5.3"
+                        },
+                        {
+                            "fixed": "5.3_27"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                },
+                {
+                    "events": [
+                        {
+                            "introduced": "4.11"
+                        },
+                        {
+                            "fixed": "4.11_15"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                },
+                {
+                    "events": [
+                        {
+                            "introduced": "4.10"
+                        },
+                        {
+                            "fixed": "4.10_21"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "discovery": "2006-03-01T00:00:00Z",
+        "references": {
+            "cvename": [
+                "CVE-2006-0900"
+            ],
+            "freebsdsa": [
+                "SA-06:10.nfs"
+            ]
+        },
+        "vid": "6111ecb8-b20d-11da-b2fb-000e0c2e438a"
+    },
+    "details": "# Problem description:\n\nA part of the NFS server code charged with handling incoming RPC\nmessages via TCP had an error which, when the server received a message\nwith a zero-length payload, would cause a NULL pointer dereference which\nresults in a kernel panic. The kernel will only process the RPC messages\nif a userland nfsd daemon is running.\n\n# Impact:\n\nThe NULL pointer deference allows a remote attacker capable of sending\nRPC messages to an affected FreeBSD system to crash the FreeBSD system.\n\n# Workaround:\n\n1.  Disable the NFS server: set the nfs_server_enable variable to \\\"NO\\\"\n    in /etc/rc.conf, and reboot.\n\n    Alternatively, if there are no active NFS clients (as listed by the\n    showmount(8) utility), simply killing the mountd and nfsd processes\n    should suffice.\n\n2.  Add firewall rules to block RPC traffic to the NFS server from\n    untrusted hosts.\n",
+    "id": "FreeBSD-2006-0043",
+    "modified": "2016-08-09T00:00:00Z",
+    "published": "2006-03-12T00:00:00Z",
+    "references": [
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2006-0900"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://www.freebsd.org/security/advisories/FreeBSD-SA-06:10.nfs.asc"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "nfs -- remote denial of service"
+}

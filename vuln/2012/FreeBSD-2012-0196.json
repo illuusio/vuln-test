@@ -1,0 +1,99 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "rt40"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "introduced": "4.0"
+                        },
+                        {
+                            "fixed": "4.0.8"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        },
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "rt38"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "3.8.15"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "cite": [
+            "http://blog.bestpractical.com/2012/10/security-vulnerabilities-in-rt.html"
+        ],
+        "discovery": "2012-10-26T00:00:00Z",
+        "references": {
+            "cvename": [
+                "CVE-2012-4730",
+                "CVE-2012-4731",
+                "CVE-2012-4732",
+                "CVE-2012-4734",
+                "CVE-2012-4735",
+                "CVE-2012-4884"
+            ]
+        },
+        "vid": "4b738d54-2427-11e2-9817-c8600054b392"
+    },
+    "details": "BestPractical report:\n\n> All versions of RT are vulnerable to an email header injection attack.\n> Users with ModifySelf or AdminUser can cause RT to add arbitrary\n> headers or content to outgoing mail. Depending on the scrips that are\n> configured, this may be be leveraged for information leakage or\n> phishing.\n>\n> RT 4.0.0 and above and RTFM 2.0.0 and above contain a vulnerability\n> due to lack of proper rights checking, allowing any privileged user to\n> create Articles in any class.\n>\n> All versions of RT with cross-site-request forgery (CSRF) protection\n> (RT 3.8.12 and above, RT 4.0.6 and above, and any instances running\n> the security patches released 2012-05-22) contain a vulnerability\n> which incorrectly allows though CSRF requests which toggle ticket\n> bookmarks.\n>\n> All versions of RT are vulnerable to a confused deputy attack on the\n> user. While not strictly a CSRF attack, users who are not logged in\n> who are tricked into following a malicious link may, after supplying\n> their credentials, be subject to an attack which leverages their\n> credentials to modify arbitrary state. While users who were logged in\n> would have observed the CSRF protection page, users who were not\n> logged in receive no such warning due to the intervening login\n> process. RT has been extended to notify users of pending actions\n> during the login process.\n>\n> RT 3.8.0 and above are susceptible to a number of vulnerabilities\n> concerning improper signing or encryption of messages using GnuPG; if\n> GnuPG is not enabled, none of the following affect you.\n",
+    "id": "FreeBSD-2012-0196",
+    "modified": "2012-11-01T00:00:00Z",
+    "published": "2012-11-01T00:00:00Z",
+    "references": [
+        {
+            "type": "REPORT",
+            "url": "http://blog.bestpractical.com/2012/10/security-vulnerabilities-in-rt.html"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2012-4730"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2012-4731"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2012-4732"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2012-4734"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2012-4735"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2012-4884"
+        },
+        {
+            "type": "WEB",
+            "url": "http://blog.bestpractical.com/2012/10/security-vulnerabilities-in-rt.html"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "RT -- Multiple Vulnerabilities"
+}

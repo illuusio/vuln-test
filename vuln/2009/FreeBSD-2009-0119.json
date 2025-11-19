@@ -1,0 +1,149 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "bind9"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "9.3.6.1.1"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        },
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "bind9-sdb-postgresql"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "9.4.3.3"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        },
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "bind9-sdb-ldap"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "9.4.3.3"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        },
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "FreeBSD"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "introduced": "6.3"
+                        },
+                        {
+                            "fixed": "6.3_12"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                },
+                {
+                    "events": [
+                        {
+                            "introduced": "6.4"
+                        },
+                        {
+                            "fixed": "6.4_6"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                },
+                {
+                    "events": [
+                        {
+                            "introduced": "7.1"
+                        },
+                        {
+                            "fixed": "7.1_7"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                },
+                {
+                    "events": [
+                        {
+                            "introduced": "7.2"
+                        },
+                        {
+                            "fixed": "7.2_3"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "discovery": "2009-07-28T00:00:00Z",
+        "references": {
+            "cvename": [
+                "CVE-2009-0696"
+            ],
+            "freebsdsa": [
+                "SA-09:12.bind"
+            ]
+        },
+        "vid": "83725c91-7c7e-11de-9672-00e0815b8da8"
+    },
+    "details": "# Problem Description:\n\nWhen named(8) receives a specially crafted dynamic update message an\ninternal assertion check is triggered which causes named(8) to exit.\n\nTo trigger the problem, the dynamic update message must contains a\nrecord of type \\\"ANY\\\" and at least one resource record set (RRset) for\nthis fully qualified domain name (FQDN) must exist on the server.\n\n# Impact:\n\nAn attacker which can send DNS requests to a nameserver can cause it to\nexit, thus creating a Denial of Service situation.\n\n# Workaround:\n\nNo generally applicable workaround is available, but some firewalls may\nbe able to prevent nsupdate DNS packets from reaching the nameserver.\n\nNOTE WELL: Merely configuring named(8) to ignore dynamic updates is NOT\nsufficient to protect it from this vulnerability.\n",
+    "id": "FreeBSD-2009-0119",
+    "modified": "2009-08-04T00:00:00Z",
+    "published": "2009-08-01T00:00:00Z",
+    "references": [
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2009-0696"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://www.freebsd.org/security/advisories/FreeBSD-SA-09:12.bind.asc"
+        },
+        {
+            "type": "WEB",
+            "url": "http://www.kb.cert.org/vuls/id/725188"
+        },
+        {
+            "type": "WEB",
+            "url": "https://www.isc.org/node/474"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "BIND -- Dynamic update message remote DoS"
+}

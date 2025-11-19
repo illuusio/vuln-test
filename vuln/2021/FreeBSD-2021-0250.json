@@ -1,0 +1,51 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "apache24"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "introduced": "2.4.49"
+                        },
+                        {
+                            "fixed": "2.4.51"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "cite": [
+            "https://httpd.apache.org/security/vulnerabilities_24.html"
+        ],
+        "discovery": "2021-10-07T00:00:00Z",
+        "references": {
+            "cvename": [
+                "CVE-2021-42013"
+            ]
+        },
+        "vid": "d001c189-2793-11ec-8fb1-206a8a720317"
+    },
+    "details": "The Apache http server project reports:\n\n> critical: Path Traversal and Remote Code Execution in Apache HTTP\n> Server 2.4.49 and 2.4.50 (incomplete fix of CVE-2021-41773)\n> (CVE-2021-42013).\n>\n> It was found that the fix for CVE-2021-41773 in Apache HTTP Server\n> 2.4.50 was insufficient. An attacker could use a path traversal attack\n> to map URLs to files outside the directories configured by Alias-like\n> directives.\n>\n> If files outside of these directories are not protected by the usual\n> default configuration \\\"require all denied\\\", these requests can\n> succeed. If CGI scripts are also enabled for these aliased pathes,\n> this could allow for remote code execution.\n>\n> This issue only affects Apache 2.4.49 and Apache 2.4.50 and not\n> earlier versions.\n>\n> Acknowledgements: Reported by Juan Escobar from Dreamlab Technologies,\n> Fernando Munoz from NULL Life CTF Team, and Shungo Kumasaka\n",
+    "id": "FreeBSD-2021-0250",
+    "modified": "2021-10-07T00:00:00Z",
+    "published": "2021-10-07T00:00:00Z",
+    "references": [
+        {
+            "type": "REPORT",
+            "url": "https://httpd.apache.org/security/vulnerabilities_24.html"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2021-42013"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "Apache httpd -- Path Traversal and Remote Code Execution"
+}

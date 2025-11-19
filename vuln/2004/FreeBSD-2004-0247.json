@@ -1,0 +1,51 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "cyrus-imapd"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "introduced": "2.2.4"
+                        },
+                        {
+                            "last_affected": "2.2.8"
+                        },
+                        {
+                            "fixed": "2.2.8"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "discovery": "2004-11-06T00:00:00Z",
+        "references": {
+            "cvename": [
+                "CVE-2004-1011"
+            ]
+        },
+        "vid": "816fdd8b-3d14-11d9-8818-008088034841"
+    },
+    "details": "When the option imapmagicplus is activated on a server the PROXY and\nLOGIN commands suffer a standard stack overflow, because the username is\nnot checked against a maximum length when it is copied into a temporary\nstack buffer. This bug is especially dangerous because it can be\ntriggered before any kind of authentification took place.\n",
+    "id": "FreeBSD-2004-0247",
+    "modified": "2004-11-22T00:00:00Z",
+    "published": "2004-11-22T00:00:00Z",
+    "references": [
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2004-1011"
+        },
+        {
+            "type": "WEB",
+            "url": "http://security.e-matters.de/advisories/152004.html"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "Cyrus IMAPd -- IMAPMAGICPLUS preauthentification overflow"
+}

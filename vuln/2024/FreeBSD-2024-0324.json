@@ -1,0 +1,39 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "forgejo"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "7.0.12"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "discovery": "2024-12-12T00:00:00Z",
+        "vid": "25a697de-bca1-11ef-8926-9b4f2d14eb53"
+    },
+    "details": "# Problem Description:\n\n- When Forgejo is configured to run the internal ssh server with\n  \\[server\\].START_SSH_SERVER=true, it was possible for a registered\n  user to impersonate another user. The rootless container image uses\n  the internal ssh server by default and was vulnerable. A Forgejo\n  instance running from a binary or from a root container image does not\n  use the internal ssh server by default and was not vulnerable. The\n  incorrect use of the crypto package is the root cause of the\n  vulnerability and was fixed for the internal ssh server.\n- Revert \\\"allow synchronizing user status from OAuth2 login providers\\\"\n",
+    "id": "FreeBSD-2024-0324",
+    "modified": "2024-12-17T00:00:00Z",
+    "published": "2024-12-17T00:00:00Z",
+    "references": [
+        {
+            "type": "WEB",
+            "url": "https://codeberg.org/forgejo/forgejo/pulls/6248"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "forgejo -- unauthorized user impersonation"
+}

@@ -1,0 +1,150 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "py23-django"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "0.96.2"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        },
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "py24-django"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "0.96.2"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        },
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "py25-django"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "0.96.2"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        },
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "py23-django-devel"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "20080511"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        },
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "py24-django-devel"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "20080511"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        },
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "py25-django-devel"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "20080511"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "cite": [
+            "http://www.djangoproject.com/weblog/2008/may/14/security/"
+        ],
+        "discovery": "2008-05-10T00:00:00Z",
+        "references": {
+            "cvename": [
+                "CVE-2008-2302"
+            ]
+        },
+        "vid": "f49ba347-2190-11dd-907c-001c2514716c"
+    },
+    "details": "Django project reports:\n\n> The Django administration application will, when accessed by a user\n> who is not sufficiently authenticated, display a login form and ask\n> the user to provide the necessary credentials before displaying the\n> requested page. This form will be submitted to the URL the user\n> attempted to access, by supplying the current request path as the\n> value of the form\\'s \\\"action\\\" attribute.\n>\n> The value of the request path was not being escaped, creating an\n> opportunity for a cross-site scripting (XSS) attack by leading a user\n> to a URL which contained URL-encoded HTML and/or JavaScript in the\n> request path.\n",
+    "id": "FreeBSD-2008-0060",
+    "modified": "2010-05-12T00:00:00Z",
+    "published": "2008-05-14T00:00:00Z",
+    "references": [
+        {
+            "type": "REPORT",
+            "url": "http://www.djangoproject.com/weblog/2008/may/14/security/"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2008-2302"
+        },
+        {
+            "type": "WEB",
+            "url": "http://www.djangoproject.com/weblog/2008/may/14/security/"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "django -- XSS vulnerability"
+}

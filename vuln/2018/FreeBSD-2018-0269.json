@@ -1,0 +1,83 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "patch"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "2.7.6_1"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "cite": [
+            "https://nvd.nist.gov/vuln/detail/CVE-2018-6951",
+            "https://nvd.nist.gov/vuln/detail/CVE-2018-6952",
+            "https://nvd.nist.gov/vuln/detail/CVE-2018-1000156"
+        ],
+        "discovery": "2018-04-16T00:00:00Z",
+        "references": {
+            "cvename": [
+                "CVE-2018-6951",
+                "CVE-2018-6952",
+                "CVE-2018-1000156"
+            ]
+        },
+        "vid": "791841a3-d484-4878-8909-92ef9ce424f4"
+    },
+    "details": "NVD reports:\n\n> An issue was discovered in GNU patch through 2.7.6. There is a\n> segmentation fault, associated with a NULL pointer dereference,\n> leading to a denial of service in the intuit_diff_type function in\n> pch.c, aka a \\\"mangled rename\\\" issue.\n\n> A double free exists in the another_hunk function in pch.c in GNU\n> patch through 2.7.6.\n\n> GNU Patch version 2.7.6 contains an input validation vulnerability\n> when processing patch files, specifically the EDITOR_PROGRAM\n> invocation (using ed) can result in code execution. This attack appear\n> to be exploitable via a patch file processed via the patch utility.\n> This is similar to FreeBSD\\'s CVE-2015-1418 however although they\n> share a common ancestry the code bases have diverged over time.\n",
+    "id": "FreeBSD-2018-0269",
+    "modified": "2018-11-11T00:00:00Z",
+    "published": "2018-11-11T00:00:00Z",
+    "references": [
+        {
+            "type": "REPORT",
+            "url": "https://nvd.nist.gov/vuln/detail/CVE-2018-6951"
+        },
+        {
+            "type": "REPORT",
+            "url": "https://nvd.nist.gov/vuln/detail/CVE-2018-6952"
+        },
+        {
+            "type": "REPORT",
+            "url": "https://nvd.nist.gov/vuln/detail/CVE-2018-1000156"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2018-6951"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2018-6952"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2018-1000156"
+        },
+        {
+            "type": "WEB",
+            "url": "https://savannah.gnu.org/bugs/?53132"
+        },
+        {
+            "type": "WEB",
+            "url": "https://savannah.gnu.org/bugs/?53133"
+        },
+        {
+            "type": "WEB",
+            "url": "https://savannah.gnu.org/bugs/?53566"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "patch -- multiple vulnerabilities"
+}

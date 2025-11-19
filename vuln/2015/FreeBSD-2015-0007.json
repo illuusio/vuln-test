@@ -1,0 +1,85 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "libevent"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "1.4.15"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                },
+                {
+                    "events": [
+                        {
+                            "introduced": "2.0"
+                        },
+                        {
+                            "fixed": "2.0.22"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        },
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "libevent2"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "2.0.22"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "cite": [
+            "https://www.debian.org/security/2015/dsa-3119"
+        ],
+        "discovery": "2015-01-05T00:00:00Z",
+        "references": {
+            "cvename": [
+                "CVE-2014-6272"
+            ]
+        },
+        "vid": "daa8a49b-99b9-11e4-8f66-3085a9a4510d"
+    },
+    "details": "Debian Security Team reports:\n\n> Andrew Bartlett of Catalyst reported a defect affecting certain\n> applications using the Libevent evbuffer API. This defect leaves\n> applications which pass insanely large inputs to evbuffers open to a\n> possible heap overflow or infinite loop. In order to exploit this\n> flaw, an attacker needs to be able to find a way to provoke the\n> program into trying to make a buffer chunk larger than what will fit\n> into a single size_t or off_t.\n",
+    "id": "FreeBSD-2015-0007",
+    "modified": "2017-02-20T00:00:00Z",
+    "published": "2015-01-11T00:00:00Z",
+    "references": [
+        {
+            "type": "REPORT",
+            "url": "https://www.debian.org/security/2015/dsa-3119"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2014-6272"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://www.debian.org/security/2015/dsa-3119"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "libevent -- integer overflow in evbuffers"
+}

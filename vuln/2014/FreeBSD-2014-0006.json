@@ -1,0 +1,114 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "ntp"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "4.2.7p26"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        },
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "FreeBSD"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "introduced": "8.3"
+                        },
+                        {
+                            "fixed": "8.3_14"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                },
+                {
+                    "events": [
+                        {
+                            "introduced": "8.4"
+                        },
+                        {
+                            "fixed": "8.4_7"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                },
+                {
+                    "events": [
+                        {
+                            "introduced": "9.1"
+                        },
+                        {
+                            "fixed": "9.1_10"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                },
+                {
+                    "events": [
+                        {
+                            "introduced": "9.2"
+                        },
+                        {
+                            "fixed": "9.2_3"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "cite": [
+            "http://support.ntp.org/bin/view/Main/SecurityNotice#DRDoS_Amplification_Attack_using"
+        ],
+        "discovery": "2014-01-01T00:00:00Z",
+        "references": {
+            "cvename": [
+                "CVE-2013-5211"
+            ],
+            "freebsdsa": [
+                "SA-14:02.ntpd"
+            ]
+        },
+        "vid": "3d95c9a7-7d5c-11e3-a8c1-206a8a720317"
+    },
+    "details": "ntp.org reports:\n\n> Unrestricted access to the monlist feature in ntp_request.c in ntpd in\n> NTP before 4.2.7p26 allows remote attackers to cause a denial of\n> service (traffic amplification) via forged (1) REQ_MON_GETLIST or (2)\n> REQ_MON_GETLIST_1 requests, as exploited in the wild in December 2013\n>\n> Use noquery to your default restrictions to block all status queries.\n>\n> Use disable monitor to disable the \\`\\`ntpdc -c monlist\\'\\' command\n> while still allowing other status queries.\n",
+    "id": "FreeBSD-2014-0006",
+    "modified": "2016-08-09T00:00:00Z",
+    "published": "2014-01-14T00:00:00Z",
+    "references": [
+        {
+            "type": "REPORT",
+            "url": "http://support.ntp.org/bin/view/Main/SecurityNotice#DRDoS_Amplification_Attack_using"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2013-5211"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://www.freebsd.org/security/advisories/FreeBSD-SA-14:02.ntpd.asc"
+        },
+        {
+            "type": "WEB",
+            "url": "http://support.ntp.org/bin/view/Main/SecurityNotice#DRDoS_Amplification_Attack_using"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "ntpd DRDoS / Amplification Attack using ntpdc monlist command"
+}

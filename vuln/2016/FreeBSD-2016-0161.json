@@ -1,0 +1,55 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "activemq"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "5.13.0"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "cite": [
+            "http://activemq.apache.org/security-advisories.data/CVE-2015-5254-announcement.txt"
+        ],
+        "discovery": "2016-01-08T00:00:00Z",
+        "references": {
+            "cvename": [
+                "CVE-2015-5254"
+            ]
+        },
+        "vid": "a258604d-f2aa-11e5-b4a9-ac220bdcec59"
+    },
+    "details": "Alvaro Muatoz, Matthias Kaiser and Christian Schneider reports:\n\n> JMS Object messages depends on Java Serialization for\n> marshaling/unmashaling of the message payload. There are a couple of\n> places inside the broker where deserialization can occur, like web\n> console or stomp object message transformation. As deserialization of\n> untrusted data can lead to security flaws as demonstrated in various\n> reports, this leaves the broker vulnerable to this attack vector.\n> Additionally, applications that consume ObjectMessage type of messages\n> can be vulnerable as they deserialize objects on\n> ObjectMessage.getObject() calls.\n",
+    "id": "FreeBSD-2016-0161",
+    "modified": "2016-03-25T00:00:00Z",
+    "published": "2016-03-25T00:00:00Z",
+    "references": [
+        {
+            "type": "REPORT",
+            "url": "http://activemq.apache.org/security-advisories.data/CVE-2015-5254-announcement.txt"
+        },
+        {
+            "type": "WEB",
+            "url": "http://activemq.apache.org/security-advisories.data/CVE-2015-5254-announcement.txt"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2015-5254"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "activemq -- Unsafe deserialization"
+}

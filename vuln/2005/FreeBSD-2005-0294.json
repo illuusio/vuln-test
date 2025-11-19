@@ -1,0 +1,55 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "fetchmail"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "6.2.5.2_1"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "cite": [
+            "http://www.fetchmail.info/fetchmail-SA-2005-02.txt"
+        ],
+        "discovery": "2005-10-21T00:00:00Z",
+        "references": {
+            "cvename": [
+                "CVE-2005-3088"
+            ]
+        },
+        "vid": "baf74e0b-497a-11da-a4f4-0060084a00e5"
+    },
+    "details": "The fetchmail team reports:\n\n> The fetchmailconf program before and excluding version 1.49 opened the\n> run control file, wrote the configuration to it, and only then changed\n> the mode to 0600 (rw\\-\\-\\-\\-\\-\\--). Writing the file, which usually\n> contains passwords, before making it unreadable to other users, can\n> expose sensitive password information.\n",
+    "id": "FreeBSD-2005-0294",
+    "modified": "2005-10-30T00:00:00Z",
+    "published": "2005-10-30T00:00:00Z",
+    "references": [
+        {
+            "type": "REPORT",
+            "url": "http://www.fetchmail.info/fetchmail-SA-2005-02.txt"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2005-3088"
+        },
+        {
+            "type": "WEB",
+            "url": "http://www.fetchmail.info/fetchmail-SA-2005-02.txt"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "fetchmail -- fetchmailconf local password exposure"
+}

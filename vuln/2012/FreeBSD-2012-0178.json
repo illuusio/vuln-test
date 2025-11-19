@@ -1,0 +1,99 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "bind99"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "9.9.1.3"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        },
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "bind98"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "9.8.3.3"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        },
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "bind97"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "9.7.6.3"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        },
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "bind96"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "9.6.3.1.ESV.R7.3"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "cite": [
+            "https://kb.isc.org/article/AA-00788"
+        ],
+        "discovery": "2012-09-12T00:00:00Z",
+        "vid": "53a0ddef-0208-11e2-8afa-0024e830109b"
+    },
+    "details": "ISC reports:\n\n> Prevents a crash when queried for a record whose RDATA exceeds 65535\n> bytes.\n>\n> Prevents a crash when validating caused by using \\\"Bad cache\\\" data\n> before it has been initialized.\n>\n> ISC_QUEUE handling for recursive clients was updated to address a race\n> condition that could cause a memory leak. This rarely occurred with\n> UDP clients, but could be a significant problem for a server handling\n> a steady rate of TCP queries.\n>\n> A condition has been corrected where improper handling of zero-length\n> RDATA could cause undesirable behavior, including termination of the\n> named process.\n",
+    "id": "FreeBSD-2012-0178",
+    "modified": "2012-09-18T00:00:00Z",
+    "published": "2012-09-18T00:00:00Z",
+    "references": [
+        {
+            "type": "REPORT",
+            "url": "https://kb.isc.org/article/AA-00788"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "dns/bind9* -- Several vulnerabilities"
+}

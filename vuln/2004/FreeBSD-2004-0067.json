@@ -1,0 +1,110 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "FreeBSD"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "introduced": "5.2"
+                        },
+                        {
+                            "fixed": "5.2_2"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                },
+                {
+                    "events": [
+                        {
+                            "introduced": "5.1"
+                        },
+                        {
+                            "fixed": "5.1_14"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                },
+                {
+                    "events": [
+                        {
+                            "introduced": "5.0"
+                        },
+                        {
+                            "fixed": "5.0_20"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                },
+                {
+                    "events": [
+                        {
+                            "introduced": "4.9"
+                        },
+                        {
+                            "fixed": "4.9_2"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                },
+                {
+                    "events": [
+                        {
+                            "introduced": "4.8"
+                        },
+                        {
+                            "fixed": "4.8_15"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                },
+                {
+                    "events": [
+                        {
+                            "fixed": "4.7_25"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "discovery": "2004-02-01T00:00:00Z",
+        "references": {
+            "cvename": [
+                "CVE-2004-0114"
+            ],
+            "freebsdsa": [
+                "SA-04:02.shmat"
+            ]
+        },
+        "vid": "f95a9005-88ae-11d8-90d1-0020ed76ef5a"
+    },
+    "details": "A programming error in the\n[shmat(2)](http://www.freebsd.org/cgi/man.cgi?query=shmat) system call\ncan result in a shared memory segment\\'s reference count being\nerroneously incremented.\n\nIt may be possible to cause a shared memory segment to reference\nunallocated kernel memory, but remain valid. This could allow a local\nattacker to gain read or write access to a portion of kernel memory,\nresulting in sensitive information disclosure, bypass of access control\nmechanisms, or privilege escalation.\n",
+    "id": "FreeBSD-2004-0067",
+    "modified": "2004-05-05T00:00:00Z",
+    "published": "2004-04-07T00:00:00Z",
+    "references": [
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2004-0114"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://www.freebsd.org/security/advisories/FreeBSD-SA-04:02.shmat.asc"
+        },
+        {
+            "type": "WEB",
+            "url": "http://www.pine.nl/press/pine-cert-20040201.txt"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "shmat reference counting bug"
+}

@@ -1,0 +1,73 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "FreeBSD"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "introduced": "6.1"
+                        },
+                        {
+                            "fixed": "6.1_12"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                },
+                {
+                    "events": [
+                        {
+                            "introduced": "6.0"
+                        },
+                        {
+                            "fixed": "6.0_17"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                },
+                {
+                    "events": [
+                        {
+                            "introduced": "5.5"
+                        },
+                        {
+                            "fixed": "5.5_15"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "discovery": "2007-01-11T00:00:00Z",
+        "references": {
+            "cvename": [
+                "CVE-2007-0166"
+            ],
+            "freebsdsa": [
+                "SA-07:01.jail"
+            ]
+        },
+        "vid": "46b922a8-c69c-11db-9f82-000e0c2e438a"
+    },
+    "details": "# Problem Description:\n\nIn multiple situations the host\\'s jail rc.d(8) script does not check if\na path inside the jail file system structure is a symbolic link before\nusing the path. In particular this is the case when writing the output\nfrom the jail start-up to /var/log/console.log and when mounting and\nunmounting file systems inside the jail directory structure.\n\n# Impact:\n\nDue to the lack of handling of potential symbolic links the host\\'s jail\nrc.d(8) script is vulnerable to \\\"symlink attacks\\\". By replacing\n/var/log/console.log inside the jail with a symbolic link it is possible\nfor the superuser (root) inside the jail to overwrite files on the host\nsystem outside the jail with arbitrary content. This in turn can be used\nto execute arbitrary commands with non-jailed superuser privileges.\n\nSimilarly, by changing directory mount points inside the jail file\nsystem structure into symbolic links, it may be possible for a jailed\nattacker to mount file systems which were meant to be mounted inside the\njail at arbitrary points in the host file system structure, or to\nunmount arbitrary file systems on the host system.\n\nNOTE WELL: The above vulnerabilities occur only when a jail is being\nstarted or stopped using the host\\'s jail rc.d(8) script; once started\n(and until stopped), running jails cannot exploit this.\n\n# Workaround:\n\nIf the sysctl(8) variable security.jail.chflags_allowed is set to 0 (the\ndefault), setting the \\\"sunlnk\\\" system flag on /var, /var/log,\n/var/log/console.log, and all file system mount points and their parent\ndirectories inside the jail(s) will ensure that the console log file and\nmount points are not replaced by symbolic links. If this is done while\njails are running, the administrator must check that an attacker has not\nreplaced any directories with symlinks after setting the \\\"sunlnk\\\"\nflag.\n",
+    "id": "FreeBSD-2007-0019",
+    "modified": "2016-08-09T00:00:00Z",
+    "published": "2007-02-27T00:00:00Z",
+    "references": [
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2007-0166"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://www.freebsd.org/security/advisories/FreeBSD-SA-07:01.jail.asc"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "FreeBSD -- Jail rc.d script privilege escalation"
+}

@@ -1,0 +1,55 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "openvpn"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "2.0.1"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "cite": [
+            "http://openvpn.net/changelog.html"
+        ],
+        "discovery": "2005-07-27T00:00:00Z",
+        "references": {
+            "cvename": [
+                "CVE-2005-2532"
+            ]
+        },
+        "vid": "d1c39c8e-05ab-4739-870f-765490fa2052"
+    },
+    "details": "James Yonan reports:\n\n> If the client sends a packet which fails to decrypt on the server, the\n> OpenSSL error queue is not properly flushed, which can result in\n> another unrelated client instance on the server seeing the error and\n> responding to it, resulting in disconnection of the unrelated client.\n",
+    "id": "FreeBSD-2005-0257",
+    "modified": "2005-08-19T00:00:00Z",
+    "published": "2005-08-19T00:00:00Z",
+    "references": [
+        {
+            "type": "REPORT",
+            "url": "http://openvpn.net/changelog.html"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2005-2532"
+        },
+        {
+            "type": "WEB",
+            "url": "http://openvpn.net/changelog.html"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "openvpn -- denial of service: undecryptable packet from authorized client can disconnect unrelated clients"
+}

@@ -1,0 +1,60 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "python37"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "3.7.8"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "cite": [
+            "https://docs.python.org/3.7/whatsnew/changelog.html#changelog"
+        ],
+        "discovery": "2019-10-24T00:00:00Z",
+        "references": {
+            "cvename": [
+                "CVE-2019-18348",
+                "CVE-2020-8492"
+            ]
+        },
+        "vid": "33c05d57-bf6e-11ea-ba1e-0800273f78d3"
+    },
+    "details": "Python reports:\n\n> The AbstractBasicAuthHandler class of the urllib.request module uses\n> an inefficient regular expression which can be exploited by an\n> attacker to cause a denial of service. Fix the regex to prevent the\n> catastrophic backtracking. Vulnerability reported by Ben Caller and\n> Matt Schwager.\n>\n> Disallow control characters in hostnames in http.client, addressing\n> CVE-2019-18348. Such potentially malicious header injection URLs now\n> cause a InvalidURL to be raised.\n>\n> Disallow CR or LF in email.headerregistry.Address arguments to guard\n> against header injection attacks.\n",
+    "id": "FreeBSD-2020-0173",
+    "modified": "2020-07-06T00:00:00Z",
+    "published": "2020-07-06T00:00:00Z",
+    "references": [
+        {
+            "type": "REPORT",
+            "url": "https://docs.python.org/3.7/whatsnew/changelog.html#changelog"
+        },
+        {
+            "type": "WEB",
+            "url": "https://docs.python.org/3.7/whatsnew/changelog.html#changelog"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2019-18348"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2020-8492"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "Python -- multiple vulnerabilities"
+}

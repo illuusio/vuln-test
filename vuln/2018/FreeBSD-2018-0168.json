@@ -1,0 +1,77 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "typo3-7"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "7.6.30"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        },
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "typo3-8"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "8.7.17"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "cite": [
+            "https://typo3.org/article/typo3-931-8717-and-7630-security-releases-published/"
+        ],
+        "discovery": "2018-07-12T00:00:00Z",
+        "vid": "ef013039-89cd-11e8-84e9-00e04c1ea73d"
+    },
+    "details": "Typo3 core team reports:\n\n> It has been discovered that TYPO3's Salted Password system extension\n> (which is a mandatory system component) is vulnerable to\n> Authentication Bypass when using hashing methods which are related by\n> PHP class inheritance. In standard TYPO3 core distributions stored\n> passwords using the blowfish hashing algorithm can be overridden when\n> using MD5 as the default hashing algorithm by just knowing a valid\n> username. Per default the Portable PHP hashing algorithm (PHPass) is\n> used which is not vulnerable.\n>\n> Phar files (formerly known as \\\"PHP archives\\\") can act als self\n> extracting archives which leads to the fact that source code is\n> executed when Phar files are invoked. The Phar file format is not\n> limited to be stored with a dedicated file extension - \\\"bundle.phar\\\"\n> would be valid as well as \\\"bundle.txt\\\" would be. This way, Phar\n> files can be obfuscated as image or text file which would not be\n> denied from being uploaded and persisted to a TYPO3 installation. Due\n> to a missing sanitization of user input, those Phar files can be\n> invoked by manipulated URLs in TYPO3 backend forms. A valid backend\n> user account is needed to exploit this vulnerability. In theory the\n> attack vector would be possible in the TYPO3 frontend as well, however\n> no functional exploit has been identified so far.\n>\n> Failing to properly dissociate system related configuration from user\n> generated configuration, the Form Framework (system extension\n> \\\"form\\\") is vulnerable to SQL injection and Privilege Escalation.\n> Basically instructions can be persisted to a form definition file that\n> were not configured to be modified - this applies to definitions\n> managed using the form editor module as well as direct file upload\n> using the regular file list module. A valid backend user account as\n> well as having system extension form activated are needed in order to\n> exploit this vulnerability.\n>\n> It has been discovered that the Form Framework (system extension\n> \\\"form\\\") is vulnerable to Insecure Deserialization when being used\n> with the additional PHP PECL package \"yaml\", which is capable of\n> unserializing YAML contents to PHP objects. A valid backend user\n> account as well as having PHP setting \\\"yaml.decode_php\\\" enabled is\n> needed to exploit this vulnerability.\n",
+    "id": "FreeBSD-2018-0168",
+    "modified": "2018-07-17T00:00:00Z",
+    "published": "2018-07-17T00:00:00Z",
+    "references": [
+        {
+            "type": "REPORT",
+            "url": "https://typo3.org/article/typo3-931-8717-and-7630-security-releases-published/"
+        },
+        {
+            "type": "WEB",
+            "url": "https://typo3.org/security/advisory/typo3-core-sa-2018-001/"
+        },
+        {
+            "type": "WEB",
+            "url": "https://typo3.org/security/advisory/typo3-core-sa-2018-002/"
+        },
+        {
+            "type": "WEB",
+            "url": "https://typo3.org/security/advisory/typo3-core-sa-2018-003/"
+        },
+        {
+            "type": "WEB",
+            "url": "https://typo3.org/security/advisory/typo3-core-sa-2018-004/"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "typo3 -- multiple vulnerabilities"
+}

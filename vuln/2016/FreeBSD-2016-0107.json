@@ -1,0 +1,62 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "squid"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "introduced": "3.5.13"
+                        },
+                        {
+                            "fixed": "3.5.14"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "cite": [
+            "http://www.squid-cache.org/Advisories/SQUID-2016_1.txt"
+        ],
+        "discovery": "2016-02-16T00:00:00Z",
+        "references": {
+            "cvename": [
+                "CVE-2016-2390"
+            ],
+            "freebsdpr": [
+                "ports/207294"
+            ]
+        },
+        "vid": "56562efb-d5e4-11e5-b2bd-002590263bf5"
+    },
+    "details": "Squid security advisory 2016:1 reports:\n\n> Due to incorrectly handling server errors Squid is vulnerable to a\n> denial of service attack when connecting to TLS or SSL servers.\n>\n> This problem allows any trusted client to perform a denial of service\n> attack on the Squid service regardless of whether TLS or SSL is\n> configured for use in the proxy.\n>\n> Misconfigured client or server software may trigger this issue to\n> perform a denial of service unintentionally.\n>\n> However, the bug is exploitable only if Squid is built using the\n> \\--with-openssl option.\n\nThe FreeBSD port does not use SSL by default and is not vulnerable in\nthe default configuration.\n",
+    "id": "FreeBSD-2016-0107",
+    "modified": "2016-02-18T00:00:00Z",
+    "published": "2016-02-18T00:00:00Z",
+    "references": [
+        {
+            "type": "REPORT",
+            "url": "http://www.squid-cache.org/Advisories/SQUID-2016_1.txt"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2016-2390"
+        },
+        {
+            "type": "REPORT",
+            "url": "https://bugs.freebsd.org/bugzilla/show_bug.cgi?id=207294"
+        },
+        {
+            "type": "WEB",
+            "url": "http://www.squid-cache.org/Advisories/SQUID-2016_1.txt"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "squid -- SSL/TLS processing remote DoS"
+}

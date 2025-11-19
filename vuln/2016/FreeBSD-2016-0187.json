@@ -1,0 +1,78 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "ansible"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "introduced": "2.0.0.0"
+                        },
+                        {
+                            "fixed": "2.0.2.0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        },
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "ansible1"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "1.9.6"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "cite": [
+            "https://github.com/ansible/ansible-modules-extras/pull/1941/commits/8c6fe646ee79f5e55361b885b7efed5bec72d4a4"
+        ],
+        "discovery": "2016-04-02T00:00:00Z",
+        "references": {
+            "cvename": [
+                "CVE-2016-3096"
+            ]
+        },
+        "vid": "253c6889-06f0-11e6-925f-6805ca0b3d42"
+    },
+    "details": "Ansible developers report:\n\n> CVE-2016-3096: do not use predictable paths in lxc_container\n>\n> - do not use a predictable filename for the LXC attach script\n> - don\\'t use predictable filenames for LXC attach script logging\n> - don\\'t set a predictable archive_path\n>\n> this should prevent symlink attacks which could result in\n>\n> - data corruption\n> - data leakage\n> - privilege escalation\n",
+    "id": "FreeBSD-2016-0187",
+    "modified": "2016-04-20T00:00:00Z",
+    "published": "2016-04-20T00:00:00Z",
+    "references": [
+        {
+            "type": "REPORT",
+            "url": "https://github.com/ansible/ansible-modules-extras/pull/1941/commits/8c6fe646ee79f5e55361b885b7efed5bec72d4a4"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2016-3096"
+        },
+        {
+            "type": "WEB",
+            "url": "https://github.com/ansible/ansible-modules-extras/pull/1941/commits/8c6fe646ee79f5e55361b885b7efed5bec72d4a4"
+        },
+        {
+            "type": "REPORT",
+            "url": "https://bugzilla.redhat.com/show_bug.cgi?id=1322925"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "ansible -- use of predictable paths in lxc_container"
+}

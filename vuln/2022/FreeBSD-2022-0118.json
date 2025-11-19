@@ -1,0 +1,55 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "mitmproxy"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "8.0.0"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "cite": [
+            "https://github.com/mitmproxy/mitmproxy/commit/b06fb6d157087d526bd02e7aadbe37c56865c71b"
+        ],
+        "discovery": "2022-03-21T00:00:00Z",
+        "references": {
+            "cvename": [
+                "CVE-2022-24766"
+            ]
+        },
+        "vid": "ad37a349-ebb7-11ec-b9f7-21427354249d"
+    },
+    "details": "Zeyu Zhang reports:\n\n> In mitmproxy 7.0.4 and below, a malicious client or server is able to\n> perform HTTP request smuggling attacks through mitmproxy. This means\n> that a malicious client/server could smuggle a request/response\n> through mitmproxy as part of another request/response\\'s HTTP message\n> body. While mitmproxy would only see one request, the target server\n> would see multiple requests. A smuggled request is still captured as\n> part of another request\\'s body, but it does not appear in the request\n> list and does not go through the usual mitmproxy event hooks, where\n> users may have implemented custom access control checks or input\n> sanitization.\n>\n> Unless you use mitmproxy to protect an HTTP/1 service, no action is\n> required.\n",
+    "id": "FreeBSD-2022-0118",
+    "modified": "2022-06-20T00:00:00Z",
+    "published": "2022-06-20T00:00:00Z",
+    "references": [
+        {
+            "type": "REPORT",
+            "url": "https://github.com/mitmproxy/mitmproxy/commit/b06fb6d157087d526bd02e7aadbe37c56865c71b"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2022-24766"
+        },
+        {
+            "type": "WEB",
+            "url": "https://github.com/mitmproxy/mitmproxy/commit/b06fb6d157087d526bd02e7aadbe37c56865c71b"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "mitmproxy -- Insufficient Protection against HTTP Request Smuggling"
+}

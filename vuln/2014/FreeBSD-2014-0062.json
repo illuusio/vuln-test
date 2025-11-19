@@ -1,0 +1,85 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "openssl"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "introduced": "1.0.1"
+                        },
+                        {
+                            "fixed": "1.0.1_12"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        },
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "FreeBSD"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "introduced": "10.0"
+                        },
+                        {
+                            "fixed": "10.0_3"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "cite": [
+            "http://www.openwall.com/lists/oss-security/2014/05/02/5"
+        ],
+        "discovery": "2014-05-02T00:00:00Z",
+        "references": {
+            "cvename": [
+                "CVE-2014-0198"
+            ],
+            "freebsdsa": [
+                "SA-14:10.openssl"
+            ]
+        },
+        "vid": "1959e847-d4f0-11e3-84b0-0018fe623f2b"
+    },
+    "details": "OpenBSD and David Ramos reports:\n\n> Applications that use SSL_MODE_RELEASE_BUFFERS, such as nginx/apache,\n> are prone to a race condition which may allow a remote attacker to\n> crash the current service.\n",
+    "id": "FreeBSD-2014-0062",
+    "modified": "2016-08-09T00:00:00Z",
+    "published": "2014-05-03T00:00:00Z",
+    "references": [
+        {
+            "type": "REPORT",
+            "url": "http://www.openwall.com/lists/oss-security/2014/05/02/5"
+        },
+        {
+            "type": "WEB",
+            "url": "http://www.openwall.com/lists/oss-security/2014/05/02/5"
+        },
+        {
+            "type": "WEB",
+            "url": "https://rt.openssl.org/Ticket/Display.html?user=guest&pass=guest&id=3321"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://www.freebsd.org/security/advisories/FreeBSD-SA-14:10.openssl.asc"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2014-0198"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "OpenSSL -- NULL pointer dereference / DoS"
+}

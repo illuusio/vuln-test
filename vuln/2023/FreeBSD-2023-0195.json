@@ -1,0 +1,99 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "softether"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "4.42.9798"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        },
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "softether-devel"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "4.42.9798"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "cite": [
+            "https://www.softether.org/9-about/News/904-SEVPN202301"
+        ],
+        "discovery": "2023-06-30T00:00:00Z",
+        "references": {
+            "cvename": [
+                "CVE-2023-27395",
+                "CVE-2023-22325",
+                "CVE-2023-32275",
+                "CVE-2023-27516",
+                "CVE-2023-32634",
+                "CVE-2023-31192"
+            ]
+        },
+        "vid": "d821956f-1753-11ee-ad66-1c61b4739ac9"
+    },
+    "details": "Daiyuu Nobori reports:\n\n> The SoftEther VPN project received a high level code review and\n> technical assistance from Cisco Systems, Inc. of the United States\n> from April to June 2023 to fix several vulnerabilities in the\n> SoftEther VPN code.\n>\n> The risk of exploitation of any of the fixed vulnerabilities is low\n> under normal usage and environment, and actual attacks are very\n> difficult. However, SoftEther VPN is now an open source VPN software\n> used by 7.4 million unique users worldwide, and is used daily by many\n> users to defend against the risk of blocking attacks by national\n> censorship firewalls and attempts to eavesdrop on communications.\n> Therefore, as long as the slightest attack possibility exists, there\n> is great value in preventing vulnerabilities as much as possible in\n> anticipation of the most sophisticated cyber attackers in the world,\n> such as malicious ISPs and man-in-the-middle attackers on national\n> Internet communication channels. These fixes are important and useful\n> patches for users who use SoftEther VPN and the Internet for secure\n> communications to prevent advanced attacks that can theoretically be\n> triggered by malicious ISPs and man-in-the-middle attackers on\n> national Internet communication pathways.\n>\n> The fixed vulnerabilities are CVE-2023-27395, CVE-2023-22325,\n> CVE-2023-32275, CVE-2023-27516, CVE-2023-32634, and CVE-2023-31192.\n> All of these were discovered in an outstanding code review of\n> SoftEther VPN by Cisco Systems, Inc.\n>\n> 1.  CVE-2023-27395: Heap overflow in SoftEther VPN DDNS client\n>     functionality at risk of crashing and theoretically arbitrary code\n>     execution caused by a malicious man-in-the-middle attacker such\n>     like ISP-level or on national Internet communication channels\n> 2.  CVE-2023-22325: Integer overflow in the SoftEther VPN DDNS client\n>     functionality could result in crashing caused by a malicious\n>     man-in-the-middle attacker such like ISP-level or on national\n>     Internet communication channels\n> 3.  CVE-2023-32275: Vulnerability that allows the administrator\n>     himself of a 32-bit version of VPN Client or VPN Server to see the\n>     32-bit value heap address of each of trusted CA\\'s certificates in\n>     the VPN process\n> 4.  CVE-2023-27516: If the user forget to set the administrator\n>     password of SoftEther VPN Client and enable remote administration\n>     with blank password, the administrator password of VPN Client can\n>     be changed remotely or VPN client can be used remotely by\n>     anonymouse third person\n> 5.  CVE-2023-32634: If an attacker succeeds in launching a TCP relay\n>     program on the same port as the VPN Client on a local computer\n>     running the SoftEther VPN Client before the VPN Client process is\n>     launched, the TCP relay program can conduct a man-in-the-middle\n>     attack on communication between the administrator and the VPN\n>     Client process\n> 6.  CVE-2023-31192: When SoftEther VPN Client connects to an untrusted\n>     VPN Server, an invalid redirection response for the clustering\n>     (load balancing) feature causes 20 bytes of uninitialized stack\n>     space to be read\n",
+    "id": "FreeBSD-2023-0195",
+    "modified": "2023-06-30T00:00:00Z",
+    "published": "2023-06-30T00:00:00Z",
+    "references": [
+        {
+            "type": "REPORT",
+            "url": "https://www.softether.org/9-about/News/904-SEVPN202301"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2023-27395"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2023-22325"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2023-32275"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2023-27516"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2023-32634"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2023-31192"
+        },
+        {
+            "type": "WEB",
+            "url": "https://www.softether.org/9-about/News/904-SEVPN202301"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "SoftEtherVPN -- multiple vulnerabilities"
+}

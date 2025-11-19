@@ -1,0 +1,55 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "scponly"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "4.2"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "cite": [
+            "https://lists.ccs.neu.edu/pipermail/scponly/2005-December/001027.html",
+            "https://lists.ccs.neu.edu/pipermail/scponly/2005-December/001027.html"
+        ],
+        "discovery": "2005-12-21T00:00:00Z",
+        "vid": "b5a49db7-72fc-11da-9827-021106004fd6"
+    },
+    "details": "Max Vozeler reports:\n\n> If ALL the following conditions are true, administrators using\n> scponly-4.1 or older may be at risk of a local privilege escalation\n> exploit:\n>\n> - the chrooted setuid scponlyc binary is installed\n> - regular non-scponly users have interactive shell access to the box\n> - a user executable dynamically linked setuid binary (such as ping)\n>   exists on the same file system mount as the user\\'s home directory\n> - the operating system supports an LD_PRELOAD style mechanism to\n>   overload dynamic library loading\n\nPekka Pessi also reports:\n\n> If ANY the following conditions are true, administrators using\n> scponly-4.1 or older may be at risk of a local privilege escalation\n> exploit:\n>\n> - scp compatibility is enabled\n> - rsync compatibility is enabled\n",
+    "id": "FreeBSD-2005-0327",
+    "modified": "2005-12-22T00:00:00Z",
+    "published": "2005-12-22T00:00:00Z",
+    "references": [
+        {
+            "type": "REPORT",
+            "url": "https://lists.ccs.neu.edu/pipermail/scponly/2005-December/001027.html"
+        },
+        {
+            "type": "REPORT",
+            "url": "https://lists.ccs.neu.edu/pipermail/scponly/2005-December/001027.html"
+        },
+        {
+            "type": "WEB",
+            "url": "https://lists.ccs.neu.edu/pipermail/scponly/2005-December/001027.html"
+        },
+        {
+            "type": "WEB",
+            "url": "http://sublimation.org/scponly/#relnotes"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "scponly -- local privilege escalation exploits"
+}

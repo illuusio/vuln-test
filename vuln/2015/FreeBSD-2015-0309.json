@@ -1,0 +1,82 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "otrs"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "introduced": "3.2.*,1"
+                        },
+                        {
+                            "fixed": "3.2.18"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                },
+                {
+                    "events": [
+                        {
+                            "introduced": "3.3.*,1"
+                        },
+                        {
+                            "fixed": "3.3.15"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                },
+                {
+                    "events": [
+                        {
+                            "introduced": "4.0.*,1"
+                        },
+                        {
+                            "fixed": "4.0.13"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "cite": [
+            "https://www.otrs.com/security-advisory-2015-02-scheduler-process-id-file-access/"
+        ],
+        "discovery": "2015-09-17T00:00:00Z",
+        "references": {
+            "cvename": [
+                "CVE-2015-6842",
+                "CVE-2013-7135"
+            ]
+        },
+        "vid": "1e7f0c11-673a-11e5-98c8-60a44c524f57"
+    },
+    "details": "The OTRS project reports:\n\n> An attacker with valid LOCAL credentials could access and manipulate\n> the process ID file for bin/otrs.schduler.pl from the CLI.\n>\n> The Proc::Daemon module 0.14 for Perl uses world-writable permissions\n> for a file that stores a process ID, which allows local users to have\n> an unspecified impact by modifying this file.\n",
+    "id": "FreeBSD-2015-0309",
+    "modified": "2015-09-30T00:00:00Z",
+    "published": "2015-09-30T00:00:00Z",
+    "references": [
+        {
+            "type": "REPORT",
+            "url": "https://www.otrs.com/security-advisory-2015-02-scheduler-process-id-file-access/"
+        },
+        {
+            "type": "WEB",
+            "url": "https://www.otrs.com/security-advisory-2015-02-scheduler-process-id-file-access/"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2015-6842"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2013-7135"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "otrs -- Scheduler Process ID File Access"
+}

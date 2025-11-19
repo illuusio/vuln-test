@@ -1,0 +1,62 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "png"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "1.4.3"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "cite": [
+            "http://www.libpng.org/pub/png/libpng.html"
+        ],
+        "discovery": "2010-03-30T00:00:00Z",
+        "references": {
+            "bid": [
+                "41174"
+            ],
+            "cvename": [
+                "CVE-2010-1205"
+            ]
+        },
+        "vid": "edef3f2f-82cf-11df-bcce-0018f3e2eb82"
+    },
+    "details": "The PNG project describes the problem in an advisory:\n\n> Several versions of libpng through 1.4.2 (and through 1.2.43 in the\n> older series) contain a bug whereby progressive applications such as\n> web browsers (or the rpng2 demo app included in libpng) could receive\n> an extra row of image data beyond the height reported in the header,\n> potentially leading to an out-of-bounds write to memory (depending on\n> how the application is written) and the possibility of execution of an\n> attacker\\'s code with the privileges of the libpng user (including\n> remote compromise in the case of a libpng-based browser visiting a\n> hostile web site).\n",
+    "id": "FreeBSD-2010-0065",
+    "modified": "2010-06-28T00:00:00Z",
+    "published": "2010-06-28T00:00:00Z",
+    "references": [
+        {
+            "type": "REPORT",
+            "url": "http://www.libpng.org/pub/png/libpng.html"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://www.securityfocus.com/bid/41174/info"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2010-1205"
+        },
+        {
+            "type": "WEB",
+            "url": "http://www.libpng.org/pub/png/libpng.html"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "png -- libpng decompression buffer overflow"
+}

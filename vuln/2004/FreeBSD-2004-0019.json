@@ -1,0 +1,39 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "mnogosearch"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "introduced": "3.2.*"
+                        },
+                        {
+                            "fixed": "3.2.15"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "discovery": "2004-02-15T00:00:00Z",
+        "vid": "87cc48fd-5fdd-11d8-80e3-0020ed76ef5a"
+    },
+    "details": "Jedi/Sector One \\<j@pureftpd.org\\> reported the following on the\nfull-disclosure list:\n\n> Every document is stored in multiple parts according to its sections\n> (description, body, etc) in databases. And when the content has to be\n> sent to the client, UdmDocToTextBuf() concatenates those parts\n> together and skips metadata.\n>\n> Unfortunately, that function lacks bounds checking and a buffer\n> overflow can be triggered by indexing a large enough document.\n>\n> \\'len\\' is fixed to 10K \\[in UdmDocToTextBuf\\] in searchd.c . S-\\>val\n> length depends on the length of the original document and on the\n> indexer settings (the sample configuration file has low limits that\n> work around the bug, though).\n>\n> Exploitation should be easy, moreover textbuf points to the stack.\n",
+    "id": "FreeBSD-2004-0019",
+    "modified": "2004-02-15T00:00:00Z",
+    "published": "2004-02-15T00:00:00Z",
+    "references": [
+        {
+            "type": "DISCUSSION",
+            "url": "http://lists.netsys.com/pipermail/full-disclosure/2004-February/017366.html"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "mnGoSearch buffer overflow in UdmDocToTextBuf()"
+}

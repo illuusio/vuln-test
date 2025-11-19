@@ -1,0 +1,109 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "courier"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "0.45"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        },
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "courier-imap"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "3.0,1"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        },
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "sqwebmail"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "4.0"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "discovery": "2004-02-01T00:00:00Z",
+        "references": {
+            "bid": [
+                "9845"
+            ],
+            "cvename": [
+                "CVE-2004-0224"
+            ]
+        },
+        "vid": "98bd69c3-834b-11d8-a41f-0020ed76ef5a"
+    },
+    "details": "The Courier set of mail services use a common Unicode library. This\nlibrary contains buffer overflows in the converters for two popular\nJapanese character encodings. These overflows may be remotely\nexploitable, triggered by a maliciously formatted email message that is\nlater processed by one of the Courier mail services. From the release\nnotes for the corrected versions of the Courier set of mail services:\n\n> iso2022jp.c: Converters became (upper-)compatible with ISO-2022-JP\n> (RFC1468 / JIS X 0208:1997 Annex 2) and ISO-2022-JP-1 (RFC2237).\n> Buffer overflow vulnerability (when Unicode character is out of BMP\n> range) has been closed. Convert error handling was implemented.\n>\n> shiftjis.c: Broken SHIFT_JIS converters has been fixed and became\n> (upper-)compatible with Shifted Encoding Method (JIS X 0208:1997 Annex\n> 1). Buffer overflow vulnerability (when Unicode character is out of\n> BMP range) has been closed. Convert error handling was implemented.\n",
+    "id": "FreeBSD-2004-0111",
+    "modified": "2004-07-16T00:00:00Z",
+    "published": "2004-03-31T00:00:00Z",
+    "references": [
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2004-0224"
+        },
+        {
+            "type": "WEB",
+            "url": "http://cvs.sourceforge.net/viewcvs.py/courier/libs/unicode/iso2022jp.c?rev=1.10&view=markup"
+        },
+        {
+            "type": "WEB",
+            "url": "http://cvs.sourceforge.net/viewcvs.py/courier/libs/unicode/shiftjis.c?rev=1.6&view=markup"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://www.securityfocus.com/bid/9845/info"
+        },
+        {
+            "type": "WEB",
+            "url": "http://secunia.com/advisories/11087"
+        },
+        {
+            "type": "WEB",
+            "url": "http://www.osvdb.org/4194"
+        },
+        {
+            "type": "WEB",
+            "url": "http://www.osvdb.org/6927"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "Courier mail services: remotely exploitable buffer overflows"
+}

@@ -1,0 +1,69 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "dovecot"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "2.3.9.3"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "cite": [
+            "https://dovecot.org/pipermail/dovecot-news/2020-February/000431.html",
+            "https://dovecot.org/pipermail/dovecot-news/2020-February/000430.html"
+        ],
+        "discovery": "2020-01-14T00:00:00Z",
+        "references": {
+            "cvename": [
+                "CVE-2020-7046",
+                "CVE-2020-7967"
+            ]
+        },
+        "vid": "74db0d02-b140-4c32-aac6-1f1e81e1ad30"
+    },
+    "details": "Aki Tuomi reports:\n\n> lib-smtp doesn\\'t handle truncated command parameters properly,\n> resulting in infinite loop taking 100% CPU for the process. This\n> happens for LMTP (where it doesn\\'t matter so much) and also for\n> submission-login where unauthenticated users can trigger it.\n\nAki also reports:\n\n> Snippet generation crashes if: message is large enough that\n> message-parser returns multiple body blocks The first block(s) don\\'t\n> contain the full snippet (e.g. full of whitespace) input ends with\n> \\'\\>\\'\n",
+    "id": "FreeBSD-2020-0028",
+    "modified": "2020-02-13T00:00:00Z",
+    "published": "2020-02-13T00:00:00Z",
+    "references": [
+        {
+            "type": "REPORT",
+            "url": "https://dovecot.org/pipermail/dovecot-news/2020-February/000431.html"
+        },
+        {
+            "type": "REPORT",
+            "url": "https://dovecot.org/pipermail/dovecot-news/2020-February/000430.html"
+        },
+        {
+            "type": "WEB",
+            "url": "https://dovecot.org/pipermail/dovecot-news/2020-February/000430.html"
+        },
+        {
+            "type": "WEB",
+            "url": "https://dovecot.org/pipermail/dovecot-news/2020-February/000431.html"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2020-7046"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2020-7967"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "dovecot -- multiple vulnerabilities"
+}

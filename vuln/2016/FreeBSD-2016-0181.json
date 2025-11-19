@@ -1,0 +1,71 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "pjsip"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "last_affected": "2.4.5"
+                        },
+                        {
+                            "fixed": "2.4.5"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        },
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "pjsip-extsrtp"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "last_affected": "2.4.5"
+                        },
+                        {
+                            "fixed": "2.4.5"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "cite": [
+            "http://www.asterisk.org/downloads/security-advisories"
+        ],
+        "discovery": "2016-02-15T00:00:00Z",
+        "vid": "e21474c6-031a-11e6-aa86-001999f8d30b"
+    },
+    "details": "The Asterisk project reports:\n\n> PJProject has a limit on the number of TCP connections that it can\n> accept. Furthermore, PJProject does not close TCP connections it\n> accepts. By default, this value is approximately 60.\n>\n> An attacker can deplete the number of allowed TCP connections by\n> opening TCP connections and sending no data to Asterisk.\n>\n> If PJProject has been compiled in debug mode, then once the number of\n> allowed TCP connections has been depleted, the next attempted TCP\n> connection to Asterisk will crash due to an assertion in PJProject.\n>\n> If PJProject has not been compiled in debug mode, then any further TCP\n> connection attempts will be rejected. This makes Asterisk unable to\n> process TCP SIP traffic.\n>\n> Note that this only affects TCP/TLS, since UDP is connectionless.\n",
+    "id": "FreeBSD-2016-0181",
+    "modified": "2016-04-15T00:00:00Z",
+    "published": "2016-04-15T00:00:00Z",
+    "references": [
+        {
+            "type": "REPORT",
+            "url": "http://www.asterisk.org/downloads/security-advisories"
+        },
+        {
+            "type": "WEB",
+            "url": "http://downloads.asterisk.org/pub/security/AST-2016-005.html"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "PJSIP -- TCP denial of service in PJProject"
+}

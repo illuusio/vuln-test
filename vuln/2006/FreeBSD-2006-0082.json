@@ -1,0 +1,81 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "zgv"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "5.9_1"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        },
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "xzgv"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "0.9"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "cite": [
+            "http://www.gentoo.org/security/en/glsa/glsa-200604-10.xml"
+        ],
+        "discovery": "2006-04-21T00:00:00Z",
+        "references": {
+            "bid": [
+                "17409"
+            ],
+            "cvename": [
+                "CVE-2006-1060"
+            ]
+        },
+        "vid": "a813a219-d2d4-11da-a672-000e0c2e438a"
+    },
+    "details": "Gentoo reports:\n\n> Andrea Barisani of Gentoo Linux discovered xzgv and zgv allocate\n> insufficient memory when rendering images with more than 3 output\n> components, such as images using the YCCK or CMYK colour space. When\n> xzgv or zgv attempt to render the image, data from the image overruns\n> a heap allocated buffer.\n>\n> An attacker may be able to construct a malicious image that executes\n> arbitrary code with the permissions of the xzgv or zgv user when\n> attempting to render the image.\n",
+    "id": "FreeBSD-2006-0082",
+    "modified": "2010-03-22T00:00:00Z",
+    "published": "2006-04-23T00:00:00Z",
+    "references": [
+        {
+            "type": "REPORT",
+            "url": "http://www.gentoo.org/security/en/glsa/glsa-200604-10.xml"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://www.securityfocus.com/bid/17409/info"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2006-1060"
+        },
+        {
+            "type": "WEB",
+            "url": "http://www.gentoo.org/security/en/glsa/glsa-200604-10.xml"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "zgv, xzgv -- heap overflow vulnerability"
+}

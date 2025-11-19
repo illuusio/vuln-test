@@ -1,0 +1,103 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:kernel",
+                "name": "FreeBSD-kernel"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "introduced": "12.1"
+                        },
+                        {
+                            "fixed": "12.1_1"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                },
+                {
+                    "events": [
+                        {
+                            "introduced": "12.0"
+                        },
+                        {
+                            "fixed": "12.0_12"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                },
+                {
+                    "events": [
+                        {
+                            "introduced": "11.3"
+                        },
+                        {
+                            "fixed": "11.3_5"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "discovery": "2019-11-14T00:00:00Z",
+        "references": {
+            "cvename": [
+                "CVE-2019-11135",
+                "CVE-2019-11139",
+                "CVE-2018-12126",
+                "CVE-2018-12127",
+                "CVE-2018-12130",
+                "CVE-2018-11091",
+                "CVE-2017-5715"
+            ],
+            "freebsdsa": [
+                "SA-19:26.mcu"
+            ]
+        },
+        "vid": "fbe10a8a-05a1-11ea-9dfa-f8b156ac3ff9"
+    },
+    "details": "Starting with version 1.26, the devcpu-data port/package includes\nupdates and mitigations for the following technical and security\nadvisories (depending on CPU model).\n\nIntel TSX Updates (TAA) CVE-2019-11135 Voltage Modulation Vulnerability\nCVE-2019-11139 MD_CLEAR Operations CVE-2018-12126 CVE-2018-12127\nCVE-2018-12130 CVE-2018-11091 TA Indirect Sharing CVE-2017-5715 EGETKEY\nCVE-2018-12126 CVE-2018-12127 CVE-2018-12130 CVE-2018-11091 JCC SKX102\nErratum\n\nUpdated microcode includes mitigations for CPU issues, but may also\ncause a performance regression due to the JCC erratum mitigation. Please\nvisit http://www.intel.com/benchmarks for further information.\n\nPlease visit http://www.intel.com/security for detailed information on\nthese advisories as well as a list of CPUs that are affected.\n\nOperating a CPU without the latest microcode may result in erratic or\nunpredictable behavior, including system crashes and lock ups. Certain\nissues listed in this advisory may result in the leakage of privileged\nsystem information to unprivileged users. Please refer to the security\nadvisories listed above for detailed information.\n",
+    "id": "FreeBSD-2019-0268",
+    "modified": "2019-11-25T00:00:00Z",
+    "published": "2019-11-25T00:00:00Z",
+    "references": [
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2019-11135"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2019-11139"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2018-12126"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2018-12127"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2018-12130"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2018-11091"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2017-5715"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://www.freebsd.org/security/advisories/FreeBSD-SA-19:26.mcu.asc"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "FreeBSD -- Intel CPU Microcode Update"
+}

@@ -1,0 +1,86 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "putty"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "0.80"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        },
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "putty-nogtk"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "0.80"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "cite": [
+            "https://lists.tartarus.org/pipermail/putty-announce/2023/000037.html"
+        ],
+        "discovery": "2023-10-16T00:00:00Z",
+        "references": {
+            "cvename": [
+                "CVE-2023-48795"
+            ]
+        },
+        "vid": "91955195-9ebb-11ee-bc14-a703705db3a6"
+    },
+    "details": "Simon Tatham reports:\n\n> PuTTY version 0.80 \\[contains\\] one security fix \\[\\...\\] for a newly\n> discovered security issue known as the \\'Terrapin\\' attack, also\n> numbered CVE-2023-48795. The issue affects widely-used OpenSSH\n> extensions to the SSH protocol: the ChaCha20+Poly1305 cipher system,\n> and \\'encrypt-then-MAC\\' mode.\n>\n> In order to benefit from the fix, you must be using a fixed version of\n> PuTTY \\_and\\_ a server with the fix, so that they can agree to adopt a\n> modified version of the protocol. \\[\\...\\]\n",
+    "id": "FreeBSD-2023-0364",
+    "modified": "2023-12-19T00:00:00Z",
+    "published": "2023-12-19T00:00:00Z",
+    "references": [
+        {
+            "type": "REPORT",
+            "url": "https://lists.tartarus.org/pipermail/putty-announce/2023/000037.html"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2023-48795"
+        },
+        {
+            "type": "WEB",
+            "url": "https://lists.tartarus.org/pipermail/putty-announce/2023/000037.html"
+        },
+        {
+            "type": "WEB",
+            "url": "https://www.openssh.com/txt/release-9.6"
+        },
+        {
+            "type": "WEB",
+            "url": "https://www.chiark.greenend.org.uk/~sgtatham/putty/changes.html"
+        },
+        {
+            "type": "WEB",
+            "url": "https://terrapin-attack.com/"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "putty -- add protocol extension against 'Terrapin attack'"
+}

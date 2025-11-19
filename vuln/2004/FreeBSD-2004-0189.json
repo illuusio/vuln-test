@@ -1,0 +1,65 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "cyrus-sasl"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "last_affected": "1.5.28_3"
+                        },
+                        {
+                            "fixed": "1.5.28_3"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                },
+                {
+                    "events": [
+                        {
+                            "introduced": "2.*"
+                        },
+                        {
+                            "last_affected": "2.1.19"
+                        },
+                        {
+                            "fixed": "2.1.19"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "discovery": "2004-09-22T00:00:00Z",
+        "references": {
+            "cvename": [
+                "CVE-2004-0884"
+            ]
+        },
+        "vid": "92268205-1947-11d9-bc4a-000c41e2cdad"
+    },
+    "details": "The Cyrus SASL library, libsasl, contains functions which may load\ndynamic libraries. These libraries may be loaded from the path specified\nby the environmental variable SASL_PATH, which in some situations may be\nfully controlled by a local attacker. Thus, if a set-user-ID application\n(such as chsh) utilizes libsasl, it may be possible for a local attacker\nto gain superuser privileges.\n",
+    "id": "FreeBSD-2004-0189",
+    "modified": "2004-10-08T00:00:00Z",
+    "published": "2004-10-08T00:00:00Z",
+    "references": [
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2004-0884"
+        },
+        {
+            "type": "WEB",
+            "url": "https://bugzilla.andrew.cmu.edu/cgi-bin/cvsweb.cgi/src/sasl/lib/common.c#rev1.104"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "cyrus-sasl -- dynamic library loading and set-user-ID applications"
+}

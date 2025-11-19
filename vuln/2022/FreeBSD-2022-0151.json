@@ -1,0 +1,73 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:kernel",
+                "name": "FreeBSD-kernel"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "introduced": "13.1"
+                        },
+                        {
+                            "fixed": "13.1_1"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                },
+                {
+                    "events": [
+                        {
+                            "introduced": "13.0"
+                        },
+                        {
+                            "fixed": "13.0_12"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                },
+                {
+                    "events": [
+                        {
+                            "introduced": "12.3"
+                        },
+                        {
+                            "fixed": "12.3_6"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "discovery": "2022-08-09T00:00:00Z",
+        "references": {
+            "cvename": [
+                "CVE-2022-23089"
+            ],
+            "freebsdsa": [
+                "SA-22:09.elf"
+            ]
+        },
+        "vid": "5028c1ae-1890-11ed-9b22-002590c1f29c"
+    },
+    "details": "# Problem Description:\n\nWhen dumping core and saving process information, proc_getargv() might\nreturn an sbuf which have a sbuf_len() of 0 or -1, which is not properly\nhandled.\n\n# Impact:\n\nAn out-of-bound read can happen when user constructs a specially crafted\nps_string, which in turn can cause the kernel to crash.\n",
+    "id": "FreeBSD-2022-0151",
+    "modified": "2022-08-10T00:00:00Z",
+    "published": "2022-08-10T00:00:00Z",
+    "references": [
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2022-23089"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://www.freebsd.org/security/advisories/FreeBSD-SA-22:09.elf.asc"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "FreeBSD -- Out of bound read in elf_note_prpsinfo()"
+}

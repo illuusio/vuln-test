@@ -1,0 +1,55 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "sudo"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "1.8.31"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "cite": [
+            "https://www.sudo.ws/alerts/pwfeedback.html"
+        ],
+        "discovery": "2020-01-30T00:00:00Z",
+        "references": {
+            "cvename": [
+                "CVE-2019-18634"
+            ]
+        },
+        "vid": "b4e5f782-442d-11ea-9ba9-206a8a720317"
+    },
+    "details": "Todd C. Miller reports:\n\n> Sudo\\'s pwfeedback option can be used to provide visual feedback when\n> the user is inputting their password. For each key press, an asterisk\n> is printed. This option was added in response to user confusion over\n> how the standard Password: prompt disables the echoing of key presses.\n> While pwfeedback is not enabled by default in the upstream version of\n> sudo, some systems, such as Linux Mint and Elementary OS, do enable it\n> in their default sudoers files.\n>\n> Due to a bug, when the pwfeedback option is enabled in the sudoers\n> file, a user may be able to trigger a stack-based buffer overflow.\n> This bug can be triggered even by users not listed in the sudoers\n> file. There is no impact unless pwfeedback has been enabled.\n",
+    "id": "FreeBSD-2020-0017",
+    "modified": "2020-01-30T00:00:00Z",
+    "published": "2020-01-30T00:00:00Z",
+    "references": [
+        {
+            "type": "REPORT",
+            "url": "https://www.sudo.ws/alerts/pwfeedback.html"
+        },
+        {
+            "type": "WEB",
+            "url": "https://www.sudo.ws/alerts/pwfeedback.html"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2019-18634"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "sudo -- Potential bypass of Runas user restrictions"
+}

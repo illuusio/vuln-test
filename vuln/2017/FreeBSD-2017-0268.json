@@ -1,0 +1,188 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "wireshark"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "introduced": "2.2.0"
+                        },
+                        {
+                            "last_affected": "2.2.9"
+                        },
+                        {
+                            "fixed": "2.2.9"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                },
+                {
+                    "events": [
+                        {
+                            "introduced": "2.4.0"
+                        },
+                        {
+                            "last_affected": "2.4.1"
+                        },
+                        {
+                            "fixed": "2.4.1"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "cite": [
+            "http://www.securityfocus.com/bid/101228"
+        ],
+        "discovery": "2017-10-10T00:00:00Z",
+        "references": {
+            "cvename": [
+                "CVE-2017-15189",
+                "CVE-2017-15190",
+                "CVE-2017-15191",
+                "CVE-2017-15192",
+                "CVE-2017-15193"
+            ]
+        },
+        "vid": "4684a426-774d-4390-aa19-b8dd481c4c94"
+    },
+    "details": "wireshark developers reports:\n\n> In Wireshark 2.4.0 to 2.4.1, the DOCSIS dissector could go into an\n> infinite loop. This was addressed in plugins/docsis/packet-docsis.c by\n> adding decrements.\n>\n> In Wireshark 2.4.0 to 2.4.1, the RTSP dissector could crash. This was\n> addressed in epan/dissectors/packet-rtsp.c by correcting the scope of\n> a variable.\n>\n> In Wireshark 2.4.0 to 2.4.1, 2.2.0 to 2.2.9, and 2.0.0 to 2.0.15, the\n> DMP dissector could crash. This was addressed in\n> epan/dissectors/packet-dmp.c by validating a string length.\n>\n> In Wireshark 2.4.0 to 2.4.1 and 2.2.0 to 2.2.9, the BT ATT dissector\n> could crash. This was addressed in epan/dissectors/packet-btatt.c by\n> considering a case where not all of the BTATT packets have the same\n> encapsulation level.\n>\n> In Wireshark 2.4.0 to 2.4.1 and 2.2.0 to 2.2.9, the MBIM dissector\n> could crash or exhaust system memory. This was addressed in\n> epan/dissectors/packet-mbim.c by changing the memory-allocation\n> approach.\n",
+    "id": "FreeBSD-2017-0268",
+    "modified": "2017-10-30T00:00:00Z",
+    "published": "2017-10-30T00:00:00Z",
+    "references": [
+        {
+            "type": "REPORT",
+            "url": "http://www.securityfocus.com/bid/101228"
+        },
+        {
+            "type": "WEB",
+            "url": "http://www.securityfocus.com/bid/101227"
+        },
+        {
+            "type": "WEB",
+            "url": "http://www.securityfocus.com/bid/101228"
+        },
+        {
+            "type": "WEB",
+            "url": "http://www.securityfocus.com/bid/101229"
+        },
+        {
+            "type": "WEB",
+            "url": "http://www.securityfocus.com/bid/101235"
+        },
+        {
+            "type": "WEB",
+            "url": "http://www.securityfocus.com/bid/101240"
+        },
+        {
+            "type": "WEB",
+            "url": "https://bugs.wireshark.org/bugzilla/show_bug.cgi?id=14049"
+        },
+        {
+            "type": "WEB",
+            "url": "https://bugs.wireshark.org/bugzilla/show_bug.cgi?id=14056"
+        },
+        {
+            "type": "WEB",
+            "url": "https://bugs.wireshark.org/bugzilla/show_bug.cgi?id=14068"
+        },
+        {
+            "type": "WEB",
+            "url": "https://bugs.wireshark.org/bugzilla/show_bug.cgi?id=14077"
+        },
+        {
+            "type": "WEB",
+            "url": "https://bugs.wireshark.org/bugzilla/show_bug.cgi?id=14080"
+        },
+        {
+            "type": "WEB",
+            "url": "https://code.wireshark.org/review/23470"
+        },
+        {
+            "type": "WEB",
+            "url": "https://code.wireshark.org/review/23537"
+        },
+        {
+            "type": "WEB",
+            "url": "https://code.wireshark.org/review/23591"
+        },
+        {
+            "type": "WEB",
+            "url": "https://code.wireshark.org/review/23635"
+        },
+        {
+            "type": "WEB",
+            "url": "https://code.wireshark.org/review/23663"
+        },
+        {
+            "type": "WEB",
+            "url": "https://code.wireshark.org/review/gitweb?p=wireshark.git;a=commit;h=3689dc1db36037436b1616715f9a3f888fc9a0f6"
+        },
+        {
+            "type": "WEB",
+            "url": "https://code.wireshark.org/review/gitweb?p=wireshark.git;a=commit;h=625bab309d9dd21db2d8ae2aa3511810d32842a8"
+        },
+        {
+            "type": "WEB",
+            "url": "https://code.wireshark.org/review/gitweb?p=wireshark.git;a=commit;h=8dbb21dfde14221dab09b6b9c7719b9067c1f06e"
+        },
+        {
+            "type": "WEB",
+            "url": "https://code.wireshark.org/review/gitweb?p=wireshark.git;a=commit;h=afb9ff7982971aba6e42472de0db4c1bedfc641b"
+        },
+        {
+            "type": "WEB",
+            "url": "https://code.wireshark.org/review/gitweb?p=wireshark.git;a=commit;h=e27870eaa6efa1c2dac08aa41a67fe9f0839e6e0"
+        },
+        {
+            "type": "WEB",
+            "url": "https://www.wireshark.org/security/wnpa-sec-2017-42.html"
+        },
+        {
+            "type": "WEB",
+            "url": "https://www.wireshark.org/security/wnpa-sec-2017-43.html"
+        },
+        {
+            "type": "WEB",
+            "url": "https://www.wireshark.org/security/wnpa-sec-2017-44.html"
+        },
+        {
+            "type": "WEB",
+            "url": "https://www.wireshark.org/security/wnpa-sec-2017-45.html"
+        },
+        {
+            "type": "WEB",
+            "url": "https://www.wireshark.org/security/wnpa-sec-2017-46.html"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2017-15189"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2017-15190"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2017-15191"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2017-15192"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2017-15193"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "wireshark -- multiple security issues"
+}

@@ -1,0 +1,109 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "openvpn"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "2.4.8_3"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        },
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "openvpn-mbedtls"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "2.4.8_3"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        },
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "openvpn-devel"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "202016"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "cite": [
+            "https://github.com/OpenVPN/openvpn/commit/f7b318f811bb43c0d3aa7f337ec6242ed2c33881"
+        ],
+        "discovery": "2020-04-13T00:00:00Z",
+        "references": {
+            "cvename": [
+                "CVE-2020-11810"
+            ]
+        },
+        "vid": "8604121c-7fc2-11ea-bcac-7781e90b0c8f"
+    },
+    "details": "Lev Stipakov and Gert Doering report:\n\n> There is a time frame between allocating peer-id and initializing data\n> channel key (which is performed on receiving push request or on async\n> push-reply) in which the existing peer-id float checks do not work\n> right.\n>\n> If a \\\"rogue\\\" data channel packet arrives during that time frame from\n> another address and with same peer-id, this would cause client to\n> float to that new address.\n>\n> The net effect of this behaviour is that the VPN session for the\n> \\\"victim client\\\" is broken. Since the \\\"attacker client\\\" does not\n> have suitable keys, it can not inject or steal VPN traffic from the\n> other session. The time window is small and it can not be used to\n> attack a specific client\\'s session, unless some other way is found to\n> make it disconnect and reconnect first.\n",
+    "id": "FreeBSD-2020-0074",
+    "modified": "2020-04-16T00:00:00Z",
+    "published": "2020-04-16T00:00:00Z",
+    "references": [
+        {
+            "type": "REPORT",
+            "url": "https://github.com/OpenVPN/openvpn/commit/f7b318f811bb43c0d3aa7f337ec6242ed2c33881"
+        },
+        {
+            "type": "WEB",
+            "url": "https://github.com/OpenVPN/openvpn/commit/f7b318f811bb43c0d3aa7f337ec6242ed2c33881"
+        },
+        {
+            "type": "WEB",
+            "url": "https://sourceforge.net/p/openvpn/openvpn/ci/f7b318f811bb43c0d3aa7f337ec6242ed2c33881/"
+        },
+        {
+            "type": "WEB",
+            "url": "https://www.mail-archive.com/openvpn-devel@lists.sourceforge.net/msg19720.html"
+        },
+        {
+            "type": "WEB",
+            "url": "https://community.openvpn.net/openvpn/ticket/1272"
+        },
+        {
+            "type": "WEB",
+            "url": "https://patchwork.openvpn.net/patch/1077/"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2020-11810"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "openvpn -- illegal client float can break VPN session for other users"
+}

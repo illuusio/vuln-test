@@ -1,0 +1,76 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "apache"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "introduced": "2.*,1"
+                        },
+                        {
+                            "fixed": "2.2.22"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "cite": [
+            "http://httpd.apache.org/security/vulnerabilities_22.html"
+        ],
+        "discovery": "2011-10-05T00:00:00Z",
+        "references": {
+            "cvename": [
+                "CVE-2011-3368",
+                "CVE-2011-3607",
+                "CVE-2011-4317",
+                "CVE-2012-0021",
+                "CVE-2012-0031",
+                "CVE-2012-0053"
+            ]
+        },
+        "vid": "4b7dbfab-4c6b-11e1-bc16-0023ae8e59f0"
+    },
+    "details": "CVE MITRE reports:\n\n> An exposure was found when using mod_proxy in reverse proxy mode. In\n> certain configurations using RewriteRule with proxy flag or\n> ProxyPassMatch, a remote attacker could cause the reverse proxy to\n> connect to an arbitrary server, possibly disclosing sensitive\n> information from internal web servers not directly accessible to\n> attacker.\n>\n> Integer overflow in the ap_pregsub function in server/util.c in the\n> Apache HTTP Server 2.0.x through 2.0.64 and 2.2.x through 2.2.21, when\n> the mod_setenvif module is enabled, allows local users to gain\n> privileges via a .htaccess file with a crafted SetEnvIf directive, in\n> conjunction with a crafted HTTP request header, leading to a\n> heap-based buffer overflow.\n>\n> An additional exposure was found when using mod_proxy in reverse proxy\n> mode. In certain configurations using RewriteRule with proxy flag or\n> ProxyPassMatch, a remote attacker could cause the reverse proxy to\n> connect to an arbitrary server, possibly disclosing sensitive\n> information from internal web servers not directly accessible to\n> attacker.\n>\n> A flaw was found in mod_log_config. If the \\'%{cookiename}C\\' log\n> format string is in use, a remote attacker could send a specific\n> cookie causing a crash. This crash would only be a denial of service\n> if using a threaded MPM.\n>\n> A flaw was found in the handling of the scoreboard. An unprivileged\n> child process could cause the parent process to crash at shutdown\n> rather than terminate cleanly.\n>\n> A flaw was found in the default error response for status code 400.\n> This flaw could be used by an attacker to expose \\\"httpOnly\\\" cookies\n> when no custom ErrorDocument is specified.\n",
+    "id": "FreeBSD-2012-0027",
+    "modified": "2012-01-31T00:00:00Z",
+    "published": "2012-01-31T00:00:00Z",
+    "references": [
+        {
+            "type": "REPORT",
+            "url": "http://httpd.apache.org/security/vulnerabilities_22.html"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2011-3368"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2011-3607"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2011-4317"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2012-0021"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2012-0031"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2012-0053"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "apache -- multiple vulnerabilities"
+}

@@ -1,0 +1,83 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "php5"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "5.3.4"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        },
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "php52"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "5.2.17_12"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "cite": [
+            "http://www.securityfocus.com/archive/1/archive/1/445788/100/0/threaded",
+            "http://www.php.net/releases/5_3_4.php"
+        ],
+        "discovery": "2010-12-10T00:00:00Z",
+        "references": {
+            "cvename": [
+                "CVE-2006-7243"
+            ]
+        },
+        "vid": "3761df02-0f9c-11e0-becc-0022156e8794"
+    },
+    "details": "PHP-specific version of NULL-byte poisoning was briefly described by\nShAnKaR:\n\n> Poison NULL byte vulnerability for perl CGI applications was described\n> in [\\[1\\]](http://artofhacking.com/files/phrack/phrack55/P55-07.TXT).\n> ShAnKaR noted, that same vulnerability also affects different PHP\n> applications.\n\nPHP developers report that branch 5.3 received a fix:\n\n> Paths with NULL in them (foo\\\\0bar.txt) are now considered as invalid\n> (CVE-2006-7243).\n",
+    "id": "FreeBSD-2011-0003",
+    "modified": "2012-11-25T00:00:00Z",
+    "published": "2011-01-13T00:00:00Z",
+    "references": [
+        {
+            "type": "REPORT",
+            "url": "http://www.securityfocus.com/archive/1/archive/1/445788/100/0/threaded"
+        },
+        {
+            "type": "REPORT",
+            "url": "http://www.php.net/releases/5_3_4.php"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2006-7243"
+        },
+        {
+            "type": "WEB",
+            "url": "http://www.securityfocus.com/archive/1/archive/1/445788/100/0/threaded"
+        },
+        {
+            "type": "WEB",
+            "url": "http://artofhacking.com/files/phrack/phrack55/P55-07.TXT"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "php -- NULL byte poisoning"
+}

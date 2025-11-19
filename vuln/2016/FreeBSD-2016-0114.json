@@ -1,0 +1,71 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "jenkins"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "last_affected": "1.650"
+                        },
+                        {
+                            "fixed": "1.650"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        },
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "jenkins-lts"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "last_affected": "1.642.2"
+                        },
+                        {
+                            "fixed": "1.642.2"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "cite": [
+            "https://wiki.jenkins-ci.org/display/SECURITY/Security+Advisory+2016-02-24"
+        ],
+        "discovery": "2016-02-24T00:00:00Z",
+        "vid": "7e01df39-db7e-11e5-b937-00e0814cab4e"
+    },
+    "details": "Jenkins Security Advisory:\n\n> # Description\n>\n> ##### SECURITY-232 / CVE-2016-0788(Remote code execution vulnerability in remoting module)\n>\n> A vulnerability in the Jenkins remoting module allowed unauthenticated\n> remote attackers to open a JRMP listener on the server hosting the\n> Jenkins master process, which allowed arbitrary code execution.\n>\n> ##### SECURITY-238 / CVE-2016-0789(HTTP response splitting vulnerability)\n>\n> An HTTP response splitting vulnerability in the CLI command\n> documentation allowed attackers to craft Jenkins URLs that serve\n> malicious content.\n>\n> ##### SECURITY-241 / CVE-2016-0790(Non-constant time comparison of API token)\n>\n> The verification of user-provided API tokens with the expected value\n> did not use a constant-time comparison algorithm, potentially allowing\n> attackers to use statistical methods to determine valid API tokens\n> using brute-force methods.\n>\n> ##### SECURITY-245 / CVE-2016-0791(Non-constant time comparison of CSRF crumbs)\n>\n> The verification of user-provided CSRF crumbs with the expected value\n> did not use a constant-time comparison algorithm, potentially allowing\n> attackers to use statistical methods to determine valid CSRF crumbs\n> using brute-force methods.\n>\n> ##### SECURITY-247 / CVE-2016-0792(Remote code execution through remote API)\n>\n> Jenkins has several API endpoints that allow low-privilege users to\n> POST XML files that then get deserialized by Jenkins. Maliciously\n> crafted XML files sent to these API endpoints could result in\n> arbitrary code execution.\n",
+    "id": "FreeBSD-2016-0114",
+    "modified": "2016-02-25T00:00:00Z",
+    "published": "2016-02-25T00:00:00Z",
+    "references": [
+        {
+            "type": "REPORT",
+            "url": "https://wiki.jenkins-ci.org/display/SECURITY/Security+Advisory+2016-02-24"
+        },
+        {
+            "type": "WEB",
+            "url": "https://wiki.jenkins-ci.org/display/SECURITY/Security+Advisory+2016-02-24"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "jenkins -- multiple vulnerabilities"
+}

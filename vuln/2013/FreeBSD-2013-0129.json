@@ -1,0 +1,46 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "suphp"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "0.7.2"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "cite": [
+            "https://lists.marsching.com/pipermail/suphp/2013-May/002552.html"
+        ],
+        "discovery": "2013-05-20T00:00:00Z",
+        "vid": "2fbfd455-f2d0-11e2-8a46-000d601460a4"
+    },
+    "details": "suPHP developer Sebastian Marsching reports:\n\n> When the suPHP_PHPPath was set, mod_suphp would use the specified PHP\n> executable to pretty-print PHP source files (MIME type\n> x-httpd-php-source or application/x-httpd-php-source).\n>\n> However, it would not sanitize the environment. Thus a user that was\n> allowed to use the SetEnv directive in a .htaccess file (AllowOverride\n> FileInfo) could make PHP load a malicious configuration file (e.g.\n> loading malicious extensions).\n>\n> As the PHP process for highlighting the source file was run with the\n> privileges of the user Apache HTTPd was running as, a local attacker\n> could probably execute arbitrary code with the privileges of this\n> user.\n",
+    "id": "FreeBSD-2013-0129",
+    "modified": "2013-07-22T00:00:00Z",
+    "published": "2013-07-22T00:00:00Z",
+    "references": [
+        {
+            "type": "REPORT",
+            "url": "https://lists.marsching.com/pipermail/suphp/2013-May/002552.html"
+        },
+        {
+            "type": "WEB",
+            "url": "https://lists.marsching.com/pipermail/suphp/2013-May/002552.html"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "suPHP -- Privilege escalation"
+}

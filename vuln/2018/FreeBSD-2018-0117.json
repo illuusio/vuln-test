@@ -1,0 +1,73 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "quassel"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "0.12.5"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        },
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "quassel-core"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "0.12.5"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "cite": [
+            "https://bugs.gentoo.org/653834"
+        ],
+        "discovery": "2018-04-24T00:00:00Z",
+        "vid": "499f6b41-58db-4f98-b8e7-da8c18985eda"
+    },
+    "details": "Gentoo reports:\n\n> quasselcore: corruption of heap metadata caused by qdatastream leading\n> to preauth remote code execution.\n>\n> - Severity: high, by default the server port is publicly open and the\n>   address can be requested using the /WHOIS command of IRC protocol.\n> - Description: In Qdatastream protocol each object is prepended with 4\n>   bytes for the object size, this can be used to trigger allocation\n>   errors.\n>\n> quasselcore DDOS\n>\n> - Severity: low, only impacts unconfigured quasselcore instances.\n> - Description: A login attempt causes a NULL pointer dereference when\n>   the database is not initialized.\n",
+    "id": "FreeBSD-2018-0117",
+    "modified": "2018-04-26T00:00:00Z",
+    "published": "2018-04-26T00:00:00Z",
+    "references": [
+        {
+            "type": "REPORT",
+            "url": "https://bugs.gentoo.org/653834"
+        },
+        {
+            "type": "WEB",
+            "url": "https://bugs.gentoo.org/653834"
+        },
+        {
+            "type": "WEB",
+            "url": "https://github.com/quassel/quassel/commit/08bace4e9ecf08273f094c0c6aa8b3363d38ac3e"
+        },
+        {
+            "type": "WEB",
+            "url": "https://github.com/quassel/quassel/commit/18389a713a6810f57ab237b945e8ee03df857b8b"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "quassel -- multiple vulnerabilities"
+}

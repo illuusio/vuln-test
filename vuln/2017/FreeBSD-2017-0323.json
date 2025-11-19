@@ -1,0 +1,55 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "asterisk13"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "13.18.5"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "cite": [
+            "https://www.asterisk.org/downloads/security-advisories"
+        ],
+        "discovery": "2017-12-12T00:00:00Z",
+        "references": {
+            "cvename": [
+                "CVE-2017-17850"
+            ]
+        },
+        "vid": "2a3bc6ac-e7c6-11e7-a90b-001999f8d30b"
+    },
+    "details": "The Asterisk project reports:\n\n> A select set of SIP messages create a dialog in Asterisk. Those SIP\n> messages must contain a contact header. For those messages, if the\n> header was not present and using the PJSIP channel driver, it would\n> cause Asterisk to crash. The severity of this vulnerability is\n> somewhat mitigated if authentication is enabled. If authentication is\n> enabled a user would have to first be authorized before reaching the\n> crash point.\n",
+    "id": "FreeBSD-2017-0323",
+    "modified": "2017-12-23T00:00:00Z",
+    "published": "2017-12-23T00:00:00Z",
+    "references": [
+        {
+            "type": "REPORT",
+            "url": "https://www.asterisk.org/downloads/security-advisories"
+        },
+        {
+            "type": "WEB",
+            "url": "https://downloads.asterisk.org/pub/security/AST-2017-014.html"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2017-17850"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "asterisk -- Crash in PJSIP resource when missing a contact header"
+}

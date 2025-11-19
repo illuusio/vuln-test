@@ -1,0 +1,55 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "xen-kernel"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "4.5.0_3"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "cite": [
+            "http://xenbits.xen.org/xsa/advisory-123.html"
+        ],
+        "discovery": "2015-03-10T00:00:00Z",
+        "references": {
+            "cvename": [
+                "CVE-2015-2151"
+            ]
+        },
+        "vid": "83a28417-27e3-11e5-a4a5-002590263bf5"
+    },
+    "details": "The Xen Project reports:\n\n> Instructions with register operands ignore eventual segment overrides\n> encoded for them. Due to an insufficiently conditional assignment such\n> a bogus segment override can, however, corrupt a pointer used\n> subsequently to store the result of the instruction.\n>\n> A malicious guest might be able to read sensitive data relating to\n> other guests, or to cause denial of service on the host. Arbitrary\n> code execution, and therefore privilege escalation, cannot be\n> excluded.\n",
+    "id": "FreeBSD-2015-0187",
+    "modified": "2015-07-11T00:00:00Z",
+    "published": "2015-07-11T00:00:00Z",
+    "references": [
+        {
+            "type": "REPORT",
+            "url": "http://xenbits.xen.org/xsa/advisory-123.html"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2015-2151"
+        },
+        {
+            "type": "WEB",
+            "url": "http://xenbits.xen.org/xsa/advisory-123.html"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "xen-kernel -- Hypervisor memory corruption due to x86 emulator flaw"
+}

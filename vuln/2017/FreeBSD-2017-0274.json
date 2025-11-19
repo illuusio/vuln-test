@@ -1,0 +1,65 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "jenkins"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "2.89"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        },
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "jenkins-lts"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "2.73.3"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "cite": [
+            "http://www.securityfocus.com/bid/99574"
+        ],
+        "discovery": "2017-11-08T00:00:00Z",
+        "vid": "1c2a9d76-9d98-43c3-8f5d-8c059b104d99"
+    },
+    "details": "Jenkins developers report:\n\n> Jenkins stores metadata related to people, which encompasses actual\n> user accounts, as well as users appearing in SCM, in directories\n> corresponding to the user ID on disk. These directories used the user\n> ID for their name without additional escaping. This potentially\n> resulted in a number of problems.\n>\n> Autocompletion suggestions for text fields were not escaped, resulting\n> in a persisted cross-site scripting vulnerability if the source for\n> the suggestions allowed specifying text that includes HTML\n> metacharacters like less-than and greater-than characters.\n",
+    "id": "FreeBSD-2017-0274",
+    "modified": "2017-11-09T00:00:00Z",
+    "published": "2017-11-09T00:00:00Z",
+    "references": [
+        {
+            "type": "REPORT",
+            "url": "http://www.securityfocus.com/bid/99574"
+        },
+        {
+            "type": "WEB",
+            "url": "https://jenkins.io/security/advisory/2017-11-08/"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "jenkins -- multiple issues"
+}

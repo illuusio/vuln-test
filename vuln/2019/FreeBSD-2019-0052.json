@@ -1,0 +1,104 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "ntp"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "4.2.8p13"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        },
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "FreeBSD"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "introduced": "12.0"
+                        },
+                        {
+                            "fixed": "12.0_2"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                },
+                {
+                    "events": [
+                        {
+                            "introduced": "11.2"
+                        },
+                        {
+                            "fixed": "11.2_8"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "cite": [
+            "http://support.ntp.org/bin/view/Main/SecurityNotice#March_2019_ntp_4_2_8p13_NTP_Rele"
+        ],
+        "discovery": "2019-01-15T00:00:00Z",
+        "references": {
+            "cvename": [
+                "CVE-2019-8936"
+            ],
+            "freebsdsa": [
+                "SA-19:04.ntp"
+            ]
+        },
+        "vid": "c2576e14-36e2-11e9-9eda-206a8a720317"
+    },
+    "details": "Network Time Foundation reports:\n\n> A crafted malicious authenticated mode 6 (ntpq) packet from a\n> permitted network address can trigger a NULL pointer dereference,\n> crashing ntpd.\n>\n> Note that for this attack to work, the sending system must be on an\n> address that the target\\'s ntpd accepts mode 6 packets from, and must\n> use a private key that is specifically listed as being used for mode 6\n> authorization.\n>\n> Impact: The ntpd daemon can crash due to the NULL pointer dereference,\n> causing a denial of service.\n>\n> Mitigation:\n>\n> - Use restrict noquery to limit addresses that can send mode 6\n>   queries.\n> - Limit access to the private controlkey in ntp.keys.\n> - Upgrade to 4.2.8p13, or later.\n",
+    "id": "FreeBSD-2019-0052",
+    "modified": "2019-07-30T00:00:00Z",
+    "published": "2019-03-07T00:00:00Z",
+    "references": [
+        {
+            "type": "REPORT",
+            "url": "http://support.ntp.org/bin/view/Main/SecurityNotice#March_2019_ntp_4_2_8p13_NTP_Rele"
+        },
+        {
+            "type": "WEB",
+            "url": "http://bugs.ntp.org/3565"
+        },
+        {
+            "type": "WEB",
+            "url": "http://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2019-8936"
+        },
+        {
+            "type": "WEB",
+            "url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:H/Au:M/C:N/I:N/A:C)"
+        },
+        {
+            "type": "WEB",
+            "url": "https://nvd.nist.gov/vuln-metrics/cvss/v3-calculator?vector=AV:N/AC:H/PR:H/UI:R/S:U/C:N/I:N/A:H"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2019-8936"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://www.freebsd.org/security/advisories/FreeBSD-SA-19:04.ntp.asc"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "ntp -- Crafted null dereference attack from a trusted source with an authenticated mode 6 packet"
+}

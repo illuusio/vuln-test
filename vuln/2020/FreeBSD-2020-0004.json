@@ -1,0 +1,64 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "e2fsprogs"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "1.45.5"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "cite": [
+            "https://talosintelligence.com/vulnerability_reports/TALOS-2019-0973",
+            "http://e2fsprogs.sourceforge.net/e2fsprogs-release.html#1.45.5"
+        ],
+        "discovery": "2019-12-18T00:00:00Z",
+        "references": {
+            "cvename": [
+                "CVE-2019-5188"
+            ]
+        },
+        "vid": "8b61308b-322a-11ea-b34b-1de6fb24355d"
+    },
+    "details": "Lilith of Cisco Talos reports:\n\n> A code execution vulnerability exists in the directory rehashing\n> functionality of E2fsprogs e2fsck 1.45.4. A specially crafted ext4\n> directory can cause an out-of-bounds write on the stack, resulting in\n> code execution. An attacker can corrupt a partition to trigger this\n> vulnerability.\n\nTheodore Y. Ts\\'o reports:\n\n> E2fsprogs 1.45.5 \\[\\...:\\] Fix a potential out of bounds write when\n> checking a maliciously corrupted file system. This is probably not\n> exploitable on 64-bit platforms, but may be exploitable on 32-bit\n> binaries depending on how the compiler lays out the stack variables.\n> (Addresses CVE-2019-5188)\n",
+    "id": "FreeBSD-2020-0004",
+    "modified": "2020-01-08T00:00:00Z",
+    "published": "2020-01-08T00:00:00Z",
+    "references": [
+        {
+            "type": "REPORT",
+            "url": "https://talosintelligence.com/vulnerability_reports/TALOS-2019-0973"
+        },
+        {
+            "type": "REPORT",
+            "url": "http://e2fsprogs.sourceforge.net/e2fsprogs-release.html#1.45.5"
+        },
+        {
+            "type": "WEB",
+            "url": "https://talosintelligence.com/vulnerability_reports/TALOS-2019-0973"
+        },
+        {
+            "type": "WEB",
+            "url": "http://e2fsprogs.sourceforge.net/e2fsprogs-release.html#1.45.5"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2019-5188"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "e2fsprogs -- rehash.c/pass 3a mutate_name() code execution vulnerability"
+}

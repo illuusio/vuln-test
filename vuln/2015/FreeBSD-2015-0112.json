@@ -1,0 +1,59 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "proxychains-ng"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "4.9"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "cite": [
+            "http://seclists.org/oss-sec/2015/q2/430"
+        ],
+        "discovery": "2015-05-11T00:00:00Z",
+        "references": {
+            "cvename": [
+                "CVE-2015-3887"
+            ]
+        },
+        "vid": "9471ec47-05a2-11e5-8fda-002590263bf5"
+    },
+    "details": "Mamoru TASAKA reports:\n\n> proxychains4 sets LD_PRELOAD to dlopen libproxychains4.so and execvp()\n> the arbitrary command user has specified. proxychains4 sets the\n> current directory as the first path to search libproxychains4.so\n",
+    "id": "FreeBSD-2015-0112",
+    "modified": "2015-05-29T00:00:00Z",
+    "published": "2015-05-29T00:00:00Z",
+    "references": [
+        {
+            "type": "REPORT",
+            "url": "http://seclists.org/oss-sec/2015/q2/430"
+        },
+        {
+            "type": "DISCUSSION",
+            "url": "http://openwall.com/lists/oss-security/2015/05/12/6"
+        },
+        {
+            "type": "DISCUSSION",
+            "url": "http://seclists.org/oss-sec/2015/q2/430"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2015-3887"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "proxychains-ng -- current path as the first directory for the library search path"
+}

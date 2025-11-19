@@ -1,0 +1,131 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "firefox"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "133.0.0,2"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        },
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "firefox-esr"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "128.5,1"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        },
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "thunderbird"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "128.5"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                },
+                {
+                    "events": [
+                        {
+                            "introduced": "129"
+                        },
+                        {
+                            "fixed": "133"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "cite": [
+            "https://bugzilla.mozilla.org/show_bug.cgi?id=1929600"
+        ],
+        "discovery": "2024-11-26T00:00:00Z",
+        "references": {
+            "cvename": [
+                "CVE-2024-11692",
+                "CVE-2024-11696",
+                "CVE-2024-11697",
+                "CVE-2024-11699"
+            ]
+        },
+        "vid": "0e20e42c-b728-11ef-805a-b42e991fc52e"
+    },
+    "details": "security@mozilla.org reports:\n\n> - CVE-2024-11692: An attacker could cause a select dropdown to be\n>   shown over another tab; this could have led to user confusion and\n>   possible spoofing attacks.\n> - CVE-2024-11696: The application failed to account for exceptions\n>   thrown by the \\`loadManifestFromFile\\` method during add-on\n>   signature verification. This flaw, triggered by an invalid or\n>   unsupported extension manifest, could have caused runtime errors\n>   that disrupted the signature validation process. As a result, the\n>   enforcement of signature validation for unrelated add-ons may have\n>   been bypassed. Signature validation in this context is used to\n>   ensure that third-party applications on the user\\'s computer have\n>   not tampered with the user\\'s extensions, limiting the impact of\n>   this issue.\n> - CVE-2024-11697: When handling keypress events, an attacker may have\n>   been able to trick a user into bypassing the \\\" Open Executable\n>   File?\\\" confirmation dialog. This could have led to malicious code\n>   execution.\n> - CVE-2024-11699: Memory safety bugs present in Firefox 132, Firefox\n>   ESR 128.4, and Thunderbird 128.4. Some of these bugs showed evidence\n>   of memory corruption and we presume that with enough effort some of\n>   these could have been exploited to run arbitrary code.\n",
+    "id": "FreeBSD-2024-0317",
+    "modified": "2024-12-10T00:00:00Z",
+    "published": "2024-12-10T00:00:00Z",
+    "references": [
+        {
+            "type": "REPORT",
+            "url": "https://bugzilla.mozilla.org/show_bug.cgi?id=1929600"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2024-11692"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://nvd.nist.gov/vuln/detail/CVE-2024-11692"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2024-11696"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://nvd.nist.gov/vuln/detail/CVE-2024-11696"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2024-11697"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://nvd.nist.gov/vuln/detail/CVE-2024-11697"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2024-11699"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://nvd.nist.gov/vuln/detail/CVE-2024-11699"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "firefox -- multiple vulnerabilities"
+}

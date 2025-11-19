@@ -1,0 +1,73 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "FreeBSD"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "introduced": "10.0"
+                        },
+                        {
+                            "fixed": "10.0_12"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                },
+                {
+                    "events": [
+                        {
+                            "introduced": "9.2"
+                        },
+                        {
+                            "fixed": "9.2_15"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                },
+                {
+                    "events": [
+                        {
+                            "introduced": "9.1"
+                        },
+                        {
+                            "fixed": "9.1_22"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "discovery": "2014-11-04T00:00:00Z",
+        "references": {
+            "cvename": [
+                "CVE-2014-8475"
+            ],
+            "freebsdsa": [
+                "SA-14:24.sshd"
+            ]
+        },
+        "vid": "73e9a137-6007-11e6-a6c3-14dae9d210b8"
+    },
+    "details": "# Problem Description:\n\nAlthough OpenSSH is not multithreaded, when OpenSSH is compiled with\nKerberos support, the Heimdal libraries bring in the POSIX thread\nlibrary as a dependency. Due to incorrect library ordering while linking\nsshd(8), symbols in the C library which are shadowed by the POSIX thread\nlibrary may not be resolved correctly at run time.\n\nNote that this problem is specific to the FreeBSD build system and does\nnot affect other operating systems or the version of OpenSSH available\nfrom the FreeBSD ports tree.\n\n# Impact:\n\nAn incorrectly linked sshd(8) child process may deadlock while handling\nan incoming connection. The connection may then time out or be\ninterrupted by the client, leaving the deadlocked sshd(8) child process\nbehind. Eventually, the sshd(8) parent process stops accepting new\nconnections.\n\nAn attacker may take advantage of this by repeatedly connecting and then\ndropping the connection after having begun, but not completed, the\nauthentication process.\n",
+    "id": "FreeBSD-2016-0322",
+    "modified": "2016-08-11T00:00:00Z",
+    "published": "2016-08-11T00:00:00Z",
+    "references": [
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2014-8475"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://www.freebsd.org/security/advisories/FreeBSD-SA-14:24.sshd.asc"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "FreeBSD -- Denial of service attack against sshd(8)"
+}

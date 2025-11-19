@@ -1,0 +1,98 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "libxml2"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "2.9.1"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        },
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "linux-c6-libxml2"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "2.7.6_2"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        },
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "linux-f10-libxml2"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "cite": [
+            "http://www.openwall.com/lists/oss-security/2014/05/06/4"
+        ],
+        "discovery": "2013-12-03T00:00:00Z",
+        "references": {
+            "cvename": [
+                "CVE-2014-0191"
+            ]
+        },
+        "vid": "efdd0edc-da3d-11e3-9ecb-2c4138874f7d"
+    },
+    "details": "Stefan Cornelius reports:\n\n> It was discovered that libxml2, a library providing support to read,\n> modify and write XML files, incorrectly performs entity substitution\n> in the doctype prolog, even if the application using libxml2 disabled\n> any entity substitution. A remote attacker could provide a\n> specially-crafted XML file that, when processed, would lead to the\n> exhaustion of CPU and memory resources or file descriptors.\n>\n> This issue was discovered by Daniel Berrange of Red Hat.\n",
+    "id": "FreeBSD-2014-0063",
+    "modified": "2015-07-15T00:00:00Z",
+    "published": "2014-05-06T00:00:00Z",
+    "references": [
+        {
+            "type": "REPORT",
+            "url": "http://www.openwall.com/lists/oss-security/2014/05/06/4"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2014-0191"
+        },
+        {
+            "type": "WEB",
+            "url": "http://www.openwall.com/lists/oss-security/2014/05/06/4"
+        },
+        {
+            "type": "WEB",
+            "url": "https://git.gnome.org/browse/libxml2/tag/?id=CVE-2014-0191"
+        },
+        {
+            "type": "WEB",
+            "url": "http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2014-0191"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "libxml2 -- entity substitution DoS"
+}

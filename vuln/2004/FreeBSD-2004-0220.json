@@ -1,0 +1,128 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "gaim"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "1.0.2"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        },
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "ja-gaim"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "1.0.2"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        },
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "ko-gaim"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "1.0.2"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        },
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "ru-gaim"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "1.0.2"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        },
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "gaim"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "introduced": "20030000,1"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "cite": [
+            "http://gaim.sourceforge.net/security/?id=7",
+            "http://gaim.sourceforge.net/security/?id=8"
+        ],
+        "discovery": "2004-10-19T00:00:00Z",
+        "vid": "f2d6a5e1-26b9-11d9-9289-000c41e2cdad"
+    },
+    "details": "The Gaim team discovered denial-of-service vulnerabilities in the MSN\nprotocol handler:\n\n> After accepting a file transfer request, Gaim will attempt to allocate\n> a buffer of a size equal to the entire filesize, this allocation\n> attempt will cause Gaim to crash if the size exceeds the amount of\n> available memory.\n\n> Gaim allocates a buffer for the payload of each message received based\n> on the size field in the header of the message. A malicious peer could\n> specify an invalid size that exceeds the amount of available memory.\n",
+    "id": "FreeBSD-2004-0220",
+    "modified": "2004-10-25T00:00:00Z",
+    "published": "2004-10-25T00:00:00Z",
+    "references": [
+        {
+            "type": "REPORT",
+            "url": "http://gaim.sourceforge.net/security/?id=7"
+        },
+        {
+            "type": "REPORT",
+            "url": "http://gaim.sourceforge.net/security/?id=8"
+        },
+        {
+            "type": "WEB",
+            "url": "http://gaim.sourceforge.net/security/?id=7"
+        },
+        {
+            "type": "WEB",
+            "url": "http://gaim.sourceforge.net/security/?id=8"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "gaim -- MSN denial-of-service vulnerabilities"
+}

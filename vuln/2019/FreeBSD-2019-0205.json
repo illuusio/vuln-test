@@ -1,0 +1,74 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "asterisk13"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "13.28.1"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        },
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "asterisk16"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "16.5.1"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "cite": [
+            "http://www.asterisk.org/downloads/security-advisories"
+        ],
+        "discovery": "2019-08-07T00:00:00Z",
+        "references": {
+            "cvename": [
+                "CVE-2019-15639"
+            ]
+        },
+        "vid": "7d53d8da-d07a-11e9-8f1a-001999f8d30b"
+    },
+    "details": "The Asterisk project reports:\n\n> When audio frames are given to the audio transcoding support in\n> Asterisk the number of samples are examined and as part of this a\n> message is output to indicate that no samples are present. A change\n> was done to suppress this message for a particular scenario in which\n> the message was not relevant. This change assumed that information\n> about the origin of a frame will always exist when in reality it may\n> not.\n>\n> This issue presented itself when an RTP packet containing no audio\n> (and thus no samples) was received. In a particular transcoding\n> scenario this audio frame would get turned into a frame with no origin\n> information. If this new frame was then given to the audio transcoding\n> support a crash would occur as no samples and no origin information\n> would be present. The transcoding scenario requires the genericplc\n> option to be set to enabled (the default) and a transcoding path from\n> the source format into signed linear and then from signed linear into\n> another format.\n>\n> Note that there may be other scenarios that have not been found which\n> can cause an audio frame with no origin to be given to the audio\n> transcoding support and thus cause a crash.\n",
+    "id": "FreeBSD-2019-0205",
+    "modified": "2019-09-06T00:00:00Z",
+    "published": "2019-09-06T00:00:00Z",
+    "references": [
+        {
+            "type": "REPORT",
+            "url": "http://www.asterisk.org/downloads/security-advisories"
+        },
+        {
+            "type": "WEB",
+            "url": "https://downloads.asterisk.org/pub/security/AST-2019-005.html"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2019-15639"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "asterisk -- Remote Crash Vulnerability in audio transcoding"
+}

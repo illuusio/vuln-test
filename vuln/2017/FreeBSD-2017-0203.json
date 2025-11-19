@@ -1,0 +1,74 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "apache24"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "2.4.27_1"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        },
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "apache22"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "2.2.34_1"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "cite": [
+            "https://blog.fuzzing-project.org/60-Optionsbleed-HTTP-OPTIONS-method-can-leak-Apaches-server-memory.html"
+        ],
+        "discovery": "2017-09-18T00:00:00Z",
+        "references": {
+            "cvename": [
+                "CVE-2017-9798"
+            ]
+        },
+        "vid": "76b085e2-9d33-11e7-9260-000c292ee6b8"
+    },
+    "details": "The Fuzzing Project reports:\n\n> Apache httpd allows remote attackers to read secret data from process\n> memory if the Limit directive can be set in a user\\'s .htaccess file,\n> or if httpd.conf has certain misconfigurations, aka Optionsbleed. This\n> affects the Apache HTTP Server through 2.2.34 and 2.4.x through\n> 2.4.27. The attacker sends an unauthenticated OPTIONS HTTP request\n> when attempting to read secret data. This is a use-after-free issue\n> and thus secret data is not always sent, and the specific data depends\n> on many factors including configuration. Exploitation with .htaccess\n> can be blocked with a patch to the ap_limit_section function in\n> server/core.c.\n",
+    "id": "FreeBSD-2017-0203",
+    "modified": "2017-09-19T00:00:00Z",
+    "published": "2017-09-19T00:00:00Z",
+    "references": [
+        {
+            "type": "REPORT",
+            "url": "https://blog.fuzzing-project.org/60-Optionsbleed-HTTP-OPTIONS-method-can-leak-Apaches-server-memory.html"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://nvd.nist.gov/vuln/detail/CVE-2017-9798"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2017-9798"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "Apache -- HTTP OPTIONS method can leak server memory"
+}

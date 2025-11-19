@@ -1,0 +1,67 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "lzo2"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "2.07"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        },
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "busybox"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "1.22.1_2"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "discovery": "2014-06-25T00:00:00Z",
+        "references": {
+            "cvename": [
+                "CVE-2014-4608"
+            ]
+        },
+        "vid": "d1f5e12a-fd5a-11e3-a108-080027ef73ec"
+    },
+    "details": "Markus Franz Xaver Johannes Oberhumer reports, in the package\\'s NEWS\nfile:\n\n> Fixed a potential integer overflow condition in the \\\"safe\\\"\n> decompressor variants which could result in a possible buffer overrun\n> when processing maliciously crafted compressed input data.\n>\n> As this issue only affects 32-bit systems and also can only happen if\n> you use uncommonly huge buffer sizes where you have to decompress more\n> than 16 MiB (2\\^24 bytes) compressed bytes within a single function\n> call, the practical implications are limited.\n",
+    "id": "FreeBSD-2014-0079",
+    "modified": "2015-01-06T00:00:00Z",
+    "published": "2014-06-26T00:00:00Z",
+    "references": [
+        {
+            "type": "WEB",
+            "url": "http://www.oberhumer.com/opensource/lzo/download/lzo-2.07.tar.gz"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2014-4608"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "LZO -- potential buffer overrun when processing malicious input data"
+}

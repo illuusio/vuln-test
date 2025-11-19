@@ -1,0 +1,62 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "FreeBSD"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "introduced": "14.1"
+                        },
+                        {
+                            "fixed": "14.1_4"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                },
+                {
+                    "events": [
+                        {
+                            "introduced": "14.0"
+                        },
+                        {
+                            "fixed": "14.0_10"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "discovery": "2024-09-04T00:00:00Z",
+        "references": {
+            "cvename": [
+                "CVE-2024-41928"
+            ],
+            "freebsdsa": [
+                "SA-24:10.bhyve"
+            ]
+        },
+        "vid": "56d76414-6b50-11ef-9a62-002590c1f29c"
+    },
+    "details": "# Problem Description:\n\nbhyve can be configured to provide access to the host\\'s TPM device,\nwhere it passes the communication through an emulated device provided to\nthe guest. This may be performed on the command-line by starting bhyve\nwith the \\`-l tpm,passthru,/dev/tpmX\\` parameters.\n\nThe MMIO handler for the emulated device did not validate the offset and\nsize of the memory access correctly, allowing guests to read and write\nmemory contents outside of the memory area effectively allocated.\n\n# Impact:\n\nMalicious software running in a guest VM can exploit the buffer overflow\nto achieve code execution on the host in the bhyve userspace process,\nwhich typically runs as root. Note that bhyve runs in a Capsicum\nsandbox, so malicious code is constrained by the capabilities available\nto the bhyve process.\n",
+    "id": "FreeBSD-2024-0211",
+    "modified": "2024-09-05T00:00:00Z",
+    "published": "2024-09-05T00:00:00Z",
+    "references": [
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2024-41928"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://www.freebsd.org/security/advisories/FreeBSD-SA-24:10.bhyve.asc"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "FreeBSD -- bhyve(8) privileged guest escape via TPM device passthrough"
+}

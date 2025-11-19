@@ -1,0 +1,61 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "libvorbis"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "1.3.6,3"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "cite": [
+            "https://nvd.nist.gov/vuln/detail/CVE-2017-14632",
+            "https://nvd.nist.gov/vuln/detail/CVE-2017-14633"
+        ],
+        "discovery": "2018-03-16T00:00:00Z",
+        "references": {
+            "cvename": [
+                "CVE-2017-14632",
+                "CVE-2017-14633"
+            ]
+        },
+        "vid": "64ee858e-e035-4bb4-9c77-2468963dddb8"
+    },
+    "details": "NVD reports:\n\n> Xiph.Org libvorbis 1.3.5 allows Remote Code Execution upon freeing\n> uninitialized memory in the function vorbis_analysis_headerout() in\n> info.c when vi-\\>channels\\<=0, a similar issue to Mozilla bug 550184.\n\n> In Xiph.Org libvorbis 1.3.5, an out-of-bounds array read vulnerability\n> exists in the function mapping0_forward() in mapping0.c, which may\n> lead to DoS when operating on a crafted audio file with\n> vorbis_analysis().\n",
+    "id": "FreeBSD-2018-0082",
+    "modified": "2018-03-16T00:00:00Z",
+    "published": "2018-03-16T00:00:00Z",
+    "references": [
+        {
+            "type": "REPORT",
+            "url": "https://nvd.nist.gov/vuln/detail/CVE-2017-14632"
+        },
+        {
+            "type": "REPORT",
+            "url": "https://nvd.nist.gov/vuln/detail/CVE-2017-14633"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2017-14632"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2017-14633"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "libvorbis -- multiple vulnerabilities"
+}

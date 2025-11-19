@@ -1,0 +1,60 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "inn"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "2.5.2_2"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "cite": [
+            "https://www.isc.org/software/inn/2.5.3article"
+        ],
+        "discovery": "2012-08-14T00:00:00Z",
+        "references": {
+            "cvename": [
+                "CVE-2012-3523",
+                "CVE-2011-0411"
+            ]
+        },
+        "vid": "a7975581-ee26-11e1-8bd8-0022156e8794"
+    },
+    "details": "INN developers report:\n\n> Fixed a possible plaintext command injection during the negotiation of\n> a TLS layer. The vulnerability detailed in CVE-2011-0411 affects the\n> STARTTLS and AUTHINFO SASL commands. nnrpd now resets its read buffer\n> upon a successful negotiation of a TLS layer. It prevents malicious\n> commands, sent unencrypted, from being executed in the new encrypted\n> state of the session.\n",
+    "id": "FreeBSD-2012-0153",
+    "modified": "2012-08-25T00:00:00Z",
+    "published": "2012-08-25T00:00:00Z",
+    "references": [
+        {
+            "type": "REPORT",
+            "url": "https://www.isc.org/software/inn/2.5.3article"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2012-3523"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2011-0411"
+        },
+        {
+            "type": "WEB",
+            "url": "https://www.isc.org/software/inn/2.5.3article"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "inn -- plaintext command injection into encrypted channel"
+}

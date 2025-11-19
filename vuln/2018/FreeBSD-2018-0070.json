@@ -1,0 +1,117 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "libsndfile"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "1.0.28_2"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        },
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "linux-c6-libsndfile"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "1.0.28_2"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        },
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "linux-c7-libsndfile"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "1.0.28_2"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "cite": [
+            "https://github.com/erikd/libsndfile/issues/317",
+            "https://github.com/erikd/libsndfile/issues/344"
+        ],
+        "discovery": "2017-09-11T00:00:00Z",
+        "references": {
+            "cvename": [
+                "CVE-2017-14245",
+                "CVE-2017-14246",
+                "CVE-2017-17456",
+                "CVE-2017-17457"
+            ]
+        },
+        "vid": "30704aba-1da4-11e8-b6aa-4ccc6adda413"
+    },
+    "details": "Xin-Jiang on Github reports:\n\n> CVE-2017-14245 (Medium): An out of bounds read in the function\n> d2alaw_array() in alaw.c of libsndfile 1.0.28 may lead to a remote DoS\n> attack or information disclosure, related to mishandling of the NAN\n> and INFINITY floating-point values.\n>\n> CVE-2017-14246 (Medium): An out of bounds read in the function\n> d2ulaw_array() in ulaw.c of libsndfile 1.0.28 may lead to a remote DoS\n> attack or information disclosure, related to mishandling of the NAN\n> and INFINITY floating-point values.\n\nmy123px on Github reports:\n\n> CVE-2017-17456 (Medium): The function d2alaw_array() in alaw.c of\n> libsndfile 1.0.29pre1 may lead to a remote DoS attack (SEGV on unknown\n> address 0x000000000000), a different vulnerability than\n> CVE-2017-14245.\n>\n> CVE-2017-17457 (Medium): The function d2ulaw_array() in ulaw.c of\n> libsndfile 1.0.29pre1 may lead to a remote DoS attack (SEGV on unknown\n> address 0x000000000000), a different vulnerability than\n> CVE-2017-14246.\n",
+    "id": "FreeBSD-2018-0070",
+    "modified": "2018-03-01T00:00:00Z",
+    "published": "2018-03-01T00:00:00Z",
+    "references": [
+        {
+            "type": "REPORT",
+            "url": "https://github.com/erikd/libsndfile/issues/317"
+        },
+        {
+            "type": "REPORT",
+            "url": "https://github.com/erikd/libsndfile/issues/344"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2017-14245"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2017-14246"
+        },
+        {
+            "type": "WEB",
+            "url": "https://github.com/erikd/libsndfile/issues/317"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2017-17456"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2017-17457"
+        },
+        {
+            "type": "WEB",
+            "url": "https://github.com/erikd/libsndfile/issues/344"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "libsndfile -- out-of-bounds reads"
+}

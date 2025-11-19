@@ -1,0 +1,44 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "ca_root_nss"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "3.12.11"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "discovery": "2011-09-04T00:00:00Z",
+        "references": {
+            "freebsdpr": [
+                "ports/160455"
+            ]
+        },
+        "vid": "1b27af46-d6f6-11e0-89a6-080027ef73ec"
+    },
+    "details": "Matthias Andree reports that the ca-bundle.pl used in older versions of\nthe ca_root_nss FreeBSD port before 3.12.11 did not take the\nMozilla/NSS/CKBI untrusted markers into account and would add\ncertificates to the trust bundle that were marked unsafe by Mozilla.\n",
+    "id": "FreeBSD-2011-0118",
+    "modified": "2011-09-04T00:00:00Z",
+    "published": "2011-09-04T00:00:00Z",
+    "references": [
+        {
+            "type": "REPORT",
+            "url": "https://bugs.freebsd.org/bugzilla/show_bug.cgi?id=160455"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "ca_root_nss -- extraction of explicitly-untrusted certificates into trust bundle"
+}

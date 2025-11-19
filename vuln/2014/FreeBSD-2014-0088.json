@@ -1,0 +1,55 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "mcollective"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "2.5.3"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "cite": [
+            "https://groups.google.com/forum/#!topic/puppet-announce/cPykqUXMmK4"
+        ],
+        "discovery": "2014-07-09T00:00:00Z",
+        "references": {
+            "cvename": [
+                "CVE-2014-3251"
+            ]
+        },
+        "vid": "ecea9e92-0be5-4931-88da-8772d044972a"
+    },
+    "details": "Melissa Stone reports:\n\n> The MCollective aes_security public key plugin does not correctly\n> validate certs against the CA. By exploiting this vulnerability within\n> a race/initialization window, an attacker with local access could\n> initiate an unauthorized MCollective client connection with a server,\n> and thus control the mcollective plugins running on that server. This\n> vulnerability requires a collective be configured to use the\n> aes_security plugin. Puppet Enterprise and open source MCollective are\n> not configured to use the plugin and are not vulnerable by default.\n",
+    "id": "FreeBSD-2014-0088",
+    "modified": "2014-07-21T00:00:00Z",
+    "published": "2014-07-21T00:00:00Z",
+    "references": [
+        {
+            "type": "REPORT",
+            "url": "https://groups.google.com/forum/#!topic/puppet-announce/cPykqUXMmK4"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2014-3251"
+        },
+        {
+            "type": "WEB",
+            "url": "https://groups.google.com/forum/#!topic/puppet-announce/cPykqUXMmK4"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "mcollective -- cert valication issue"
+}

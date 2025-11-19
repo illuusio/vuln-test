@@ -1,0 +1,51 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "FreeBSD"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "introduced": "13.2"
+                        },
+                        {
+                            "fixed": "13.2_5"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "discovery": "2023-11-08T00:00:00Z",
+        "references": {
+            "cvename": [
+                "CVE-2023-5978"
+            ],
+            "freebsdsa": [
+                "SA-23:16.cap_net"
+            ]
+        },
+        "vid": "f4464e49-7e04-11ee-8e38-002590c1f29c"
+    },
+    "details": "# Problem Description:\n\nCasper services allow limiting operations that a process can perform.\nEach service maintains a specific list of permitted operations. Certain\noperations can be further restricted, such as specifying which domain\nnames can be resolved. During the verification of limits, the service\nmust ensure that the new set of constraints is a subset of the previous\none. In the case of the cap_net service, the currently limited set of\ndomain names was fetched incorrectly.\n\n# Impact:\n\nIn certain scenarios, if only a list of resolvable domain names was\nspecified without setting any other limitations, the application could\nsubmit a new list of domains including include entries not previously in\nthe list.\n",
+    "id": "FreeBSD-2023-0334",
+    "modified": "2023-11-08T00:00:00Z",
+    "published": "2023-11-08T00:00:00Z",
+    "references": [
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2023-5978"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://www.freebsd.org/security/advisories/FreeBSD-SA-23:16.cap_net.asc"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "FreeBSD -- Incorrect libcap_net limitation list manipulation"
+}

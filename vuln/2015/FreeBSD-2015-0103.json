@@ -1,0 +1,78 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "dnsmasq"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "2.72_1"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        },
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "dnsmasq-devel"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "2.73rc4"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "cite": [
+            "http://www.cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2015-3294"
+        ],
+        "discovery": "2015-04-07T00:00:00Z",
+        "references": {
+            "cvename": [
+                "CVE-2015-3294"
+            ]
+        },
+        "vid": "37569eb7-0125-11e5-9d98-080027ef73ec"
+    },
+    "details": "Nick Sampanis reported a potential memory exposure and denial of service\nvulnerability against dnsmasq 2.72. The CVE entry summarizes this as:\n\n> The tcp_request function in Dnsmasq before 2.73rc4 does not properly\n> handle the return value of the setup_reply function, which allows\n> remote attackers to read process memory and cause a denial of service\n> (out-of-bounds read and crash) via a malformed DNS request.\\\"\n",
+    "id": "FreeBSD-2015-0103",
+    "modified": "2015-05-23T00:00:00Z",
+    "published": "2015-05-23T00:00:00Z",
+    "references": [
+        {
+            "type": "REPORT",
+            "url": "http://www.cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2015-3294"
+        },
+        {
+            "type": "WEB",
+            "url": "http://lists.thekelleys.org.uk/pipermail/dnsmasq-discuss/2015q2/009382.html"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2015-3294"
+        },
+        {
+            "type": "WEB",
+            "url": "http://thekelleys.org.uk/gitweb/?p=dnsmasq.git;a=commitdiff;h=ad4a8ff7d9097008d7623df8543df435bfddeac8"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "dnsmasq -- data exposure and denial of service"
+}

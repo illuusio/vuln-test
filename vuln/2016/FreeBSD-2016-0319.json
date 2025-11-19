@@ -1,0 +1,84 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "FreeBSD"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "introduced": "10.0"
+                        },
+                        {
+                            "fixed": "10.0_10"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                },
+                {
+                    "events": [
+                        {
+                            "introduced": "9.3"
+                        },
+                        {
+                            "fixed": "9.3_3"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                },
+                {
+                    "events": [
+                        {
+                            "introduced": "9.2"
+                        },
+                        {
+                            "fixed": "9.2_13"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                },
+                {
+                    "events": [
+                        {
+                            "introduced": "9.1"
+                        },
+                        {
+                            "fixed": "9.1_20"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "discovery": "2014-10-21T00:00:00Z",
+        "references": {
+            "cvename": [
+                "CVE-2014-3954"
+            ],
+            "freebsdsa": [
+                "SA-14:20.rtsold"
+            ]
+        },
+        "vid": "72ee7111-6007-11e6-a6c3-14dae9d210b8"
+    },
+    "details": "# Problem Description:\n\nDue to a missing length check in the code that handles DNS parameters, a\nmalformed router advertisement message can result in a stack buffer\noverflow in rtsold(8).\n\n# Impact:\n\nReceipt of a router advertisement message with a malformed DNSSL option,\nfor instance from a compromised host on the same network, can cause\nrtsold(8) to crash.\n\nWhile it is theoretically possible to inject code into rtsold(8) through\nmalformed router advertisement messages, it is normally compiled with\nstack protection enabled, rendering such an attack extremely difficult.\n\nWhen rtsold(8) crashes, the existing DNS configuration will remain in\nforce, and the kernel will continue to receive and process periodic\nrouter advertisements.\n",
+    "id": "FreeBSD-2016-0319",
+    "modified": "2016-08-11T00:00:00Z",
+    "published": "2016-08-11T00:00:00Z",
+    "references": [
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2014-3954"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://www.freebsd.org/security/advisories/FreeBSD-SA-14:20.rtsold.asc"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "FreeBSD -- rtsold(8) remote buffer overflow vulnerability"
+}

@@ -1,0 +1,55 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "zydis"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "3.2.1"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "cite": [
+            "https://github.com/zyantific/zydis/security/advisories/GHSA-q42v-hv86-3m4g"
+        ],
+        "discovery": "2021-11-08T00:00:00Z",
+        "references": {
+            "cvename": [
+                "CVE-2021-41253"
+            ]
+        },
+        "vid": "d487d4fc-43a8-11ed-8b01-b42e991fc52e"
+    },
+    "details": "Zyantific reports:\n\n> Zydis users of versions v3.2.0 and older that use the string functions\n> provided in zycore in order to append untrusted user data to the\n> formatter buffer within their custom formatter hooks can run into heap\n> buffer overflows. Older versions of Zydis failed to properly\n> initialize the string object within the formatter buffer, forgetting\n> to initialize a few fields, leaving their value to chance. This could\n> then in turn cause zycore functions like ZyanStringAppend to make\n> incorrect calculations for the new target size, resulting in heap\n> memory corruption.\n",
+    "id": "FreeBSD-2022-0188",
+    "modified": "2022-10-04T00:00:00Z",
+    "published": "2022-10-04T00:00:00Z",
+    "references": [
+        {
+            "type": "REPORT",
+            "url": "https://github.com/zyantific/zydis/security/advisories/GHSA-q42v-hv86-3m4g"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2021-41253"
+        },
+        {
+            "type": "WEB",
+            "url": "https://www.cvedetails.com/cve/CVE-2021-41253"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "zydis -- heap buffer overflow"
+}

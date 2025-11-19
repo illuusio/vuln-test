@@ -1,0 +1,74 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "go122"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "1.22.5"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        },
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "go121"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "1.21.12"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "cite": [
+            "https://go.dev/issue/67555"
+        ],
+        "discovery": "2024-07-02T00:00:00Z",
+        "references": {
+            "cvename": [
+                "CVE-2024-24791"
+            ]
+        },
+        "vid": "b0374722-3912-11ef-a77e-901b0e9408dc"
+    },
+    "details": "The Go project reports:\n\n> net/http: denial of service due to improper 100-continue handling\n>\n> The net/http HTTP/1.1 client mishandled the case where a server\n> responds to a request with an \\\"Expect: 100-continue\\\" header with a\n> non-informational (200 or higher) status. This mishandling could leave\n> a client connection in an invalid state, where the next request sent\n> on the connection will fail.\n>\n> An attacker sending a request to a net/http/httputil.ReverseProxy\n> proxy can exploit this mishandling to cause a denial of service by\n> sending \\\"Expect: 100-continue\\\" requests which elicit a\n> non-informational response from the backend. Each such request leaves\n> the proxy with an invalid connection, and causes one subsequent\n> request using that connection to fail.\n",
+    "id": "FreeBSD-2024-0162",
+    "modified": "2024-07-03T00:00:00Z",
+    "published": "2024-07-03T00:00:00Z",
+    "references": [
+        {
+            "type": "REPORT",
+            "url": "https://go.dev/issue/67555"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2024-24791"
+        },
+        {
+            "type": "WEB",
+            "url": "https://go.dev/issue/67555"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "go -- net/http: denial of service due to improper 100-continue handling"
+}

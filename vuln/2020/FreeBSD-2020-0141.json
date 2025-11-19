@@ -1,0 +1,62 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:kernel",
+                "name": "FreeBSD-kernel"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "introduced": "12.1"
+                        },
+                        {
+                            "fixed": "12.1_6"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                },
+                {
+                    "events": [
+                        {
+                            "introduced": "11.3"
+                        },
+                        {
+                            "fixed": "11.3_10"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "discovery": "2020-06-03T00:00:00Z",
+        "references": {
+            "cvename": [
+                "CVE-2020-7456"
+            ],
+            "freebsdsa": [
+                "SA-20:17.usb"
+            ]
+        },
+        "vid": "32c92a75-aa71-11ea-92ab-00163e433440"
+    },
+    "details": "# Problem Description:\n\nIf the push/pop level of the USB HID state is not restored within the\nprocessing of the same HID item, an invalid memory location may be used\nfor subsequent HID item processing.\n\n# Impact:\n\nAn attacker with physical access to a USB port may be able to use a\nspecially crafted USB device to gain kernel or user-space code\nexecution.\n",
+    "id": "FreeBSD-2020-0141",
+    "modified": "2020-06-09T00:00:00Z",
+    "published": "2020-06-09T00:00:00Z",
+    "references": [
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2020-7456"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://www.freebsd.org/security/advisories/FreeBSD-SA-20:17.usb.asc"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "FreeBSD -- USB HID descriptor parsing error"
+}

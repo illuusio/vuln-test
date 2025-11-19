@@ -1,0 +1,77 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "mysql-server"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "introduced": "5.1"
+                        },
+                        {
+                            "fixed": "5.1.6"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                },
+                {
+                    "events": [
+                        {
+                            "introduced": "5.0"
+                        },
+                        {
+                            "fixed": "5.0.19"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                },
+                {
+                    "events": [
+                        {
+                            "introduced": "4.1"
+                        },
+                        {
+                            "fixed": "4.1.18"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "discovery": "2006-06-27T00:00:00Z",
+        "references": {
+            "bid": [
+                "19032"
+            ],
+            "cvename": [
+                "CVE-2006-3469"
+            ]
+        },
+        "vid": "fcb90eb0-2ace-11db-a6e2-000e0c2e438a"
+    },
+    "details": "Jean-David Maillefer reports a Denial of Service vulnerability within\nMySQL. The vulnerability is caused by improper checking of the\ndata_format routine, which cause the MySQL server to crash. The crash is\ntriggered by the following code:\\\n`\"SELECT date_format('%d%s', 1);`\n",
+    "id": "FreeBSD-2006-0140",
+    "modified": "2006-08-13T00:00:00Z",
+    "published": "2006-08-13T00:00:00Z",
+    "references": [
+        {
+            "type": "ADVISORY",
+            "url": "https://www.securityfocus.com/bid/19032/info"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2006-3469"
+        },
+        {
+            "type": "WEB",
+            "url": "http://bugs.mysql.com/bug.php?id=20729"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "mysql -- format string vulnerability"
+}

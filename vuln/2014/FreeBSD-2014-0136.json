@@ -1,0 +1,55 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "twiki"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "5.1.4_1,1"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "cite": [
+            "http://twiki.org/cgi-bin/view/Codev/SecurityAlert-CVE-2014-7236"
+        ],
+        "discovery": "2014-10-09T00:00:00Z",
+        "references": {
+            "cvename": [
+                "CVE-2014-7236"
+            ]
+        },
+        "vid": "21ce1840-6107-11e4-9e84-0022156e8794"
+    },
+    "details": "TWiki developers report:\n\n> The debugenableplugins request parameter allows arbitrary Perl code\n> execution.\n>\n> Using an HTTP GET request towards a TWiki server, add a specially\n> crafted debugenableplugins request parameter to TWiki\\'s view script\n> (typically port 80/TCP). Prior authentication may or may not be\n> necessary.\n>\n> A remote attacker can execute arbitrary Perl code to view and modify\n> any file the webserver user has access to.\n>\n> Example:\n> http://www.example.com/do/view/Main/WebHome?debugenableplugins=BackupRestorePlugin%3bprint(\\\"Content-Type:text/html\\\\r\\\\n\\\\r\\\\nVulnerable!\\\")%3bexit\n>\n> The TWiki site is vulnerable if you see a page with text\n> \\\"Vulnerable!\\\".\n",
+    "id": "FreeBSD-2014-0136",
+    "modified": "2014-10-31T00:00:00Z",
+    "published": "2014-10-31T00:00:00Z",
+    "references": [
+        {
+            "type": "REPORT",
+            "url": "http://twiki.org/cgi-bin/view/Codev/SecurityAlert-CVE-2014-7236"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2014-7236"
+        },
+        {
+            "type": "WEB",
+            "url": "http://twiki.org/cgi-bin/view/Codev/SecurityAlert-CVE-2014-7236"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "twiki -- remote Perl code execution"
+}

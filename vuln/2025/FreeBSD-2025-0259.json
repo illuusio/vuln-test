@@ -1,0 +1,93 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "sqlite3"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "3.49.1,1"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        },
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "linux-c7-sqlite"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "3.49.1"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        },
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "linux_base-rl9"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "3.49.1"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "cite": [
+            "https://sqlite.org/src/info/498e3f1cf57f164f"
+        ],
+        "discovery": "2025-04-14T00:00:00Z",
+        "references": {
+            "cvename": [
+                "CVE-2025-3277"
+            ]
+        },
+        "vid": "b945ce3f-6f9b-11f0-bd96-b42e991fc52e"
+    },
+    "details": "cve-coordination@google.com reports:\n\n> An integer overflow can be triggered in SQLites \\`concat_ws()\\`\n> function. The resulting, truncated integer is then used to allocate a\n> buffer. When SQLite then writes the resulting string to the buffer, it\n> uses the original, untruncated size and thus a wild Heap Buffer\n> overflow of size \\~4GB can be triggered. This can result in arbitrary\n> code execution.\n",
+    "id": "FreeBSD-2025-0259",
+    "modified": "2025-08-02T00:00:00Z",
+    "published": "2025-08-02T00:00:00Z",
+    "references": [
+        {
+            "type": "REPORT",
+            "url": "https://sqlite.org/src/info/498e3f1cf57f164f"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2025-3277"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://nvd.nist.gov/vuln/detail/CVE-2025-3277"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "sqlite -- integer overflow"
+}

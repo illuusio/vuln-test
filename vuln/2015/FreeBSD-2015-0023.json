@@ -1,0 +1,59 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "rabbitmq"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "3.4.3"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "cite": [
+            "http://www.rabbitmq.com/news.html#2015-01-08T10:14:05+0100"
+        ],
+        "discovery": "2015-01-08T00:00:00Z",
+        "references": {
+            "cvename": [
+                "CVE-2015-0862"
+            ]
+        },
+        "vid": "8469d41c-a960-11e4-b18e-bcaec55be5e5"
+    },
+    "details": "The RabbitMQ project reports:\n\n> Some user-controllable content was not properly HTML-escaped before\n> being presented to a user in the management web UI:\n>\n> - When a user unqueued a message from the management UI, message\n>   details (header names, arguments, etc.) were displayed unescaped. An\n>   attacker could publish a specially crafted message to add content or\n>   execute arbitrary Javascript code on behalf of a user, if this user\n>   unqueued the message from the management UI.\n> - When viewing policies, their name was displayed unescaped. An\n>   attacker could create a policy with a specially crafted name to add\n>   content or execute arbitrary Javascript code on behalf of a user who\n>   is viewing policies.\n> - When listing connected AMQP network clients, client details such as\n>   its version were displayed unescaped. An attacker could use a client\n>   with a specially crafted version field to add content or execute\n>   arbitrary Javascript code on behalf of a user who is viewing\n>   connected clients.\n>\n> In all cases, the attacker needs a valid user account on the targeted\n> RabbitMQ cluster.\n>\n> Furthermore, some admin-controllable content was not properly escaped:\n>\n> - user names;\n> - the cluster name.\n>\n> Likewise, an attacker could add content or execute arbitrary\n> Javascript code on behalf of a user using the management web UI.\n> However, the attacker must be an administrator on the RabbitMQ\n> cluster, thus a trusted user.\n",
+    "id": "FreeBSD-2015-0023",
+    "modified": "2015-01-31T00:00:00Z",
+    "published": "2015-01-31T00:00:00Z",
+    "references": [
+        {
+            "type": "REPORT",
+            "url": "http://www.rabbitmq.com/news.html#2015-01-08T10:14:05+0100"
+        },
+        {
+            "type": "WEB",
+            "url": "http://www.rabbitmq.com/news.html#2015-01-08T10:14:05+0100"
+        },
+        {
+            "type": "WEB",
+            "url": "http://www.rabbitmq.com/release-notes/README-3.4.3.txt"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2015-0862"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "rabbitmq -- Security issues in management plugin"
+}

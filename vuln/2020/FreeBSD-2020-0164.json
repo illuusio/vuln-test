@@ -1,0 +1,59 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "xrdp"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "0.9.13.1,1"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "cite": [
+            "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2020-4044"
+        ],
+        "discovery": "2020-06-02T00:00:00Z",
+        "references": {
+            "cvename": [
+                "CVE-2020-4044"
+            ]
+        },
+        "vid": "2675f0db-baa5-11ea-aa12-80ee73419af3"
+    },
+    "details": "Ashley Newson reports:\n\n> The xrdp-sesman service can be crashed by connecting over port 3350\n> and supplying a malicious payload. Once the xrdp-sesman process is\n> dead, an unprivileged attacker on the server could then proceed to\n> start their own imposter sesman service listening on port 3350.\n",
+    "id": "FreeBSD-2020-0164",
+    "modified": "2020-06-30T00:00:00Z",
+    "published": "2020-06-30T00:00:00Z",
+    "references": [
+        {
+            "type": "REPORT",
+            "url": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2020-4044"
+        },
+        {
+            "type": "WEB",
+            "url": "https://github.com/neutrinolabs/xrdp/security/advisories/GHSA-j9fv-6fwf-p3g4"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2020-4044"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2020-4044"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "xrdp -- Local users can perform a buffer overflow attack against the xrdp-sesman service and then inpersonate it"
+}

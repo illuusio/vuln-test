@@ -1,0 +1,74 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "grafana8"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "introduced": "8.0.0"
+                        },
+                        {
+                            "fixed": "8.2.3"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        },
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "grafana"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "introduced": "8.0.0"
+                        },
+                        {
+                            "fixed": "8.2.3"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "cite": [
+            "https://grafana.com/blog/2021/11/03/grafana-8.2.3-released-with-medium-severity-security-fix-cve-2021-41174-grafana-xss/"
+        ],
+        "discovery": "2021-10-21T00:00:00Z",
+        "references": {
+            "cvename": [
+                "CVE-2021-41174"
+            ]
+        },
+        "vid": "4b478274-47a0-11ec-bd24-6c3be5272acd"
+    },
+    "details": "Grafana Labs reports:\n\n> If an attacker is able to convince a victim to visit a URL referencing\n> a vulnerable page, arbitrary JavaScript content may be executed within\n> the context of the victim's browser.\n>\n> The user visiting the malicious link must be unauthenticated, and the\n> link must be for a page that contains the login button in the menu\n> bar.\n>\n> There are two ways an unauthenticated user can open a page in Grafana\n> that contains the login button:\n>\n> - Anonymous authentication is enabled. This means all pages in Grafana\n>   would be open for the attack.\n> - The link is to an unauthenticated page. The following pages are\n>   vulnerable:\n>   - `/dashboard-solo/snapshot/*`\n>   - `/dashboard/snapshot/*`\n>   - `/invite/:code`\n>\n> The url has to be crafted to exploit AngularJS rendering and contain\n> the interpolation binding for AngularJS expressions. AngularJS uses\n> double curly braces for interpolation binding: `{{ }}`\n>\n> An example of an expression would be:\n> `{{constructor.constructor(\u2018alert(1)\u2019)()}}`. This can be included in\n> the link URL like this:\n>\n> <https://play.grafana.org/dashboard/snapshot/%7B%7Bconstructor.constructor('alert(1)')()%7D%7D?orgId=1>\n>\n> When the user follows the link and the page renders, the login button\n> will contain the original link with a query parameter to force a\n> redirect to the login page. The URL is not validated, and the\n> AngularJS rendering engine will execute the JavaScript expression\n> contained in the URL.\n",
+    "id": "FreeBSD-2021-0289",
+    "modified": "2021-12-11T00:00:00Z",
+    "published": "2021-12-11T00:00:00Z",
+    "references": [
+        {
+            "type": "REPORT",
+            "url": "https://grafana.com/blog/2021/11/03/grafana-8.2.3-released-with-medium-severity-security-fix-cve-2021-41174-grafana-xss/"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2021-41174"
+        },
+        {
+            "type": "WEB",
+            "url": "https://grafana.com/blog/2021/11/03/grafana-8.2.3-released-with-medium-severity-security-fix-cve-2021-41174-grafana-xss/"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "Grafana -- XSS"
+}

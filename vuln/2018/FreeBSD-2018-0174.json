@@ -1,0 +1,110 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "mutt"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "1.10.1"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "cite": [
+            "http://lists.mutt.org/pipermail/mutt-announce/Week-of-Mon-20180716/000004.html"
+        ],
+        "discovery": "2018-07-15T00:00:00Z",
+        "references": {
+            "cvename": [
+                "CVE-2018-14349",
+                "CVE-2018-14350",
+                "CVE-2018-14351",
+                "CVE-2018-14352",
+                "CVE-2018-14353",
+                "CVE-2018-14354",
+                "CVE-2018-14355",
+                "CVE-2018-14356",
+                "CVE-2018-14357",
+                "CVE-2018-14358",
+                "CVE-2018-14359",
+                "CVE-2018-14362"
+            ]
+        },
+        "vid": "a2f35081-8a02-11e8-8fa5-4437e6ad11c4"
+    },
+    "details": "Kevin J. McCarthy reports:\n\n> Fixes a remote code injection vulnerability when \\\"subscribing\\\" to an\n> IMAP mailbox, either via \\$imap_check_subscribed, or via the\n> \\<subscribe\\> function in the browser menu. Mutt was generating a\n> \\\"mailboxes\\\" command and sending that along to the muttrc parser.\n> However, it was not escaping \\\"\\`\\\", which executes code and inserts\n> the result. This would allow a malicious IMAP server to execute\n> arbitrary code (for \\$imap_check_subscribed).\n>\n> Fixes POP body caching path traversal vulnerability.\n>\n> Fixes IMAP header caching path traversal vulnerability.\n>\n> CVE-2018-14349 - NO Response Heap Overflow\n>\n> CVE-2018-14350 - INTERNALDATE Stack Overflow\n>\n> CVE-2018-14351 - STATUS Literal Length relative write\n>\n> CVE-2018-14352 - imap_quote_string off-by-one stack overflow\n>\n> CVE-2018-14353 - imap_quote_string int underflow\n>\n> CVE-2018-14354 - imap_subscribe Remote Code Execution\n>\n> CVE-2018-14355 - STATUS mailbox header cache directory traversal\n>\n> CVE-2018-14356 - POP empty UID NULL deref\n>\n> CVE-2018-14357 - LSUB Remote Code Execution\n>\n> CVE-2018-14358 - RFC822.SIZE Stack Overflow\n>\n> CVE-2018-14359 - base64 decode Stack Overflow\n>\n> CVE-2018-14362 - POP Message Cache Directory Traversal\n",
+    "id": "FreeBSD-2018-0174",
+    "modified": "2018-07-17T00:00:00Z",
+    "published": "2018-07-17T00:00:00Z",
+    "references": [
+        {
+            "type": "REPORT",
+            "url": "http://lists.mutt.org/pipermail/mutt-announce/Week-of-Mon-20180716/000004.html"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2018-14349"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2018-14350"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2018-14351"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2018-14352"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2018-14353"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2018-14354"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2018-14355"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2018-14356"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2018-14357"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2018-14358"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2018-14359"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2018-14362"
+        },
+        {
+            "type": "WEB",
+            "url": "http://lists.mutt.org/pipermail/mutt-announce/Week-of-Mon-20180716/000004.html"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "mutt -- remote code injection and path traversal vulnerability"
+}

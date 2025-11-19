@@ -1,0 +1,64 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "png"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "1.6.20"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "cite": [
+            "http://www.openwall.com/lists/oss-security/2015/11/12/2"
+        ],
+        "discovery": "2015-11-15T00:00:00Z",
+        "references": {
+            "cvename": [
+                "CVE-2015-8126",
+                "CVE-2015-8472"
+            ]
+        },
+        "vid": "1886e195-8b87-11e5-90e7-b499baebfeaf"
+    },
+    "details": "libpng reports:\n\n> CVE for a vulnerability in libpng, all versions, in the\n> png_set_PLTE/png_get_PLTE functions. These functions failed to check\n> for an out-of-range palette when reading or writing PNG files with a\n> bit_depth less than 8. Some applications might read the bit depth from\n> the IHDR chunk and allocate memory for a 2\\^N entry palette, while\n> libpng can return a palette with up to 256 entries even when the bit\n> depth is less than 8.\n",
+    "id": "FreeBSD-2015-0368",
+    "modified": "2015-12-08T00:00:00Z",
+    "published": "2015-11-15T00:00:00Z",
+    "references": [
+        {
+            "type": "REPORT",
+            "url": "http://www.openwall.com/lists/oss-security/2015/11/12/2"
+        },
+        {
+            "type": "WEB",
+            "url": "http://www.openwall.com/lists/oss-security/2015/11/12/2"
+        },
+        {
+            "type": "WEB",
+            "url": "http://www.openwall.com/lists/oss-security/2015/12/03/6"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2015-8126"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2015-8472"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "libpng buffer overflow in png_set_PLTE"
+}

@@ -1,0 +1,62 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "FreeBSD"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "introduced": "6.3"
+                        },
+                        {
+                            "fixed": "6.3_6"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                },
+                {
+                    "events": [
+                        {
+                            "introduced": "7.0"
+                        },
+                        {
+                            "fixed": "7.0_6"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "discovery": "2008-11-24T00:00:00Z",
+        "references": {
+            "cvename": [
+                "CVE-2008-5162"
+            ],
+            "freebsdsa": [
+                "SA-08.11.arc4random"
+            ]
+        },
+        "vid": "5796858d-db0b-11dd-aa56-000bcdf0a03b"
+    },
+    "details": "# Problem Description:\n\nWhen the arc4random(9) random number generator is initialized, there may\nbe inadequate entropy to meet the needs of kernel systems which rely on\narc4random(9); and it may take up to 5 minutes before arc4random(9) is\nreseeded with secure entropy from the Yarrow random number generator.\n\n# Impact:\n\nAll security-related kernel subsystems that rely on a quality random\nnumber generator are subject to a wide range of possible attacks for the\n300 seconds after boot or until 64k of random data is consumed. The list\nincludes:\n\n\\* GEOM ELI providers with onetime keys. When a provider is configured\nin a way so that it gets attached at the same time during boot (e.g. it\nuses the rc subsystem to initialize) it might be possible for an\nattacker to recover the encrypted data.\n\n\\* GEOM shsec providers. The GEOM shsec subsytem is used to split a\nshared secret between two providers so that it can be recovered when\nboth of them are present. This is done by writing the random sequence to\none of providers while appending the result of the random sequence on\nthe other host to the original data. If the provider was created within\nthe first 300 seconds after booting, it might be possible for an\nattacker to extract the original data with access to only one of the two\nproviders between which the secret data is split.\n\n\\* System processes started early after boot may receive predictable\nIDs.\n\n\\* The 802.11 network stack uses arc4random(9) to generate initial\nvectors (IV) for WEP encryption when operating in client mode and WEP\nauthentication challenges when operating in hostap mode, which may be\ninsecure.\n\n\\* The IPv4, IPv6 and TCP/UDP protocol implementations rely on a quality\nrandom number generator to produce unpredictable IP packet identifiers,\ninitial TCP sequence numbers and outgoing port numbers. During the first\n300 seconds after booting, it may be easier for an attacker to execute\nIP session hijacking, OS fingerprinting, idle scanning, or in some cases\nDNS cache poisoning and blind TCP data injection attacks.\n\n\\* The kernel RPC code uses arc4random(9) to retrieve transaction\nidentifiers, which might make RPC clients vulnerable to hijacking\nattacks.\n\n# Workaround:\n\nNo workaround is available for affected systems.\n",
+    "id": "FreeBSD-2009-0006",
+    "modified": "2016-08-09T00:00:00Z",
+    "published": "2009-01-05T00:00:00Z",
+    "references": [
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2008-5162"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://www.freebsd.org/security/advisories/FreeBSD-SA-08.11.arc4random.asc"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "FreeBSD -- arc4random(9) predictable sequence vulnerability"
+}

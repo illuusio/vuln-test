@@ -1,0 +1,84 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "up-imapproxy"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "1.2.4"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        },
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "pop3proxy"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "last_affected": "1.1"
+                        },
+                        {
+                            "fixed": "1.1"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "cite": [
+            "http://marc.theaimsgroup.com/?l=bugtraq&m=109995749510773"
+        ],
+        "discovery": "2004-11-17T00:00:00Z",
+        "references": {
+            "bid": [
+                "11630"
+            ],
+            "cvename": [
+                "CVE-2004-1035"
+            ]
+        },
+        "vid": "927743d4-5ca9-11d9-a9e7-0001020eed82"
+    },
+    "details": "Timo Sirainen reports:\n\n> There are various bugs in up-imapproxy which can crash it. Since\n> up-imapproxy runs in a single process with each connection handled in\n> a separate thread, any crash kills all the connections and stops\n> listening for new ones.\n>\n> In 64bit systems it might be possible to make it leak data (mails,\n> passwords, ..) from other connections to attacker\\'s connection.\n> However I don\\'t think up-imapproxy actually works in any 64bit system\n> so this is just a theoretical problem.\n",
+    "id": "FreeBSD-2005-0007",
+    "modified": "2008-02-27T00:00:00Z",
+    "published": "2005-01-02T00:00:00Z",
+    "references": [
+        {
+            "type": "REPORT",
+            "url": "http://marc.theaimsgroup.com/?l=bugtraq&m=109995749510773"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2004-1035"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://www.securityfocus.com/bid/11630/info"
+        },
+        {
+            "type": "DISCUSSION",
+            "url": "http://marc.theaimsgroup.com/?l=bugtraq&m=109995749510773"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "up-imapproxy -- multiple vulnerabilities"
+}

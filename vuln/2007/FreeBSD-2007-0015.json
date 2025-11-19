@@ -1,0 +1,156 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "openssl"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "0.9.7l_0"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                },
+                {
+                    "events": [
+                        {
+                            "introduced": "0.9.8"
+                        },
+                        {
+                            "fixed": "0.9.8d_0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        },
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "FreeBSD"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "introduced": "6.1"
+                        },
+                        {
+                            "fixed": "6.1_9"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                },
+                {
+                    "events": [
+                        {
+                            "introduced": "6.0"
+                        },
+                        {
+                            "fixed": "6.0_14"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                },
+                {
+                    "events": [
+                        {
+                            "introduced": "5.5"
+                        },
+                        {
+                            "fixed": "5.5_7"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                },
+                {
+                    "events": [
+                        {
+                            "introduced": "5.4"
+                        },
+                        {
+                            "fixed": "5.4_21"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                },
+                {
+                    "events": [
+                        {
+                            "introduced": "5.3"
+                        },
+                        {
+                            "fixed": "5.3_36"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                },
+                {
+                    "events": [
+                        {
+                            "introduced": "4.11"
+                        },
+                        {
+                            "fixed": "4.11_24"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "discovery": "2006-09-28T00:00:00Z",
+        "references": {
+            "cvename": [
+                "CVE-2006-2937",
+                "CVE-2006-2938",
+                "CVE-2006-2940",
+                "CVE-2006-3738",
+                "CVE-2006-4343"
+            ],
+            "freebsdsa": [
+                "SA-06:23.openssl"
+            ]
+        },
+        "vid": "0f37d765-c5d4-11db-9f82-000e0c2e438a"
+    },
+    "details": "# Problem Description:\n\nSeveral problems have been found in OpenSSL:\n\n- During the parsing of certain invalid ASN1 structures an error\n  condition is mishandled, possibly resulting in an infinite loop.\n- A buffer overflow exists in the SSL_get_shared_ciphers function.\n- A NULL pointer may be dereferenced in the SSL version 2 client code.\n\nIn addition, many applications using OpenSSL do not perform any\nvalidation of the lengths of public keys being used.\n\n# Impact:\n\nServers which parse ASN1 data from untrusted sources may be vulnerable\nto a denial of service attack.\n\nAn attacker accessing a server which uses SSL version 2 may be able to\nexecute arbitrary code with the privileges of that server.\n\nA malicious SSL server can cause clients connecting using SSL version 2\nto crash.\n\nApplications which perform public key operations using untrusted keys\nmay be vulnerable to a denial of service attack.\n\n# Workaround:\n\nNo workaround is available, but not all of the vulnerabilities mentioned\naffect all applications.\n",
+    "id": "FreeBSD-2007-0015",
+    "modified": "2016-08-09T00:00:00Z",
+    "published": "2007-02-26T00:00:00Z",
+    "references": [
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2006-2937"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2006-2938"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2006-2940"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2006-3738"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2006-4343"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://www.freebsd.org/security/advisories/FreeBSD-SA-06:23.openssl.asc"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "OpenSSL -- Multiple problems in crypto(3)"
+}

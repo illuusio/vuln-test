@@ -1,0 +1,59 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "glpi"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "introduced": "9.1,1"
+                        },
+                        {
+                            "fixed": "9.5.2,1"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "cite": [
+            "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2020-15226"
+        ],
+        "discovery": "2020-06-25T00:00:00Z",
+        "references": {
+            "cvename": [
+                "CVE-2020-15226"
+            ]
+        },
+        "vid": "0ba61fcc-3b38-11eb-af2a-080027dbe4b7"
+    },
+    "details": "MITRE Corporation reports:\n\n> In GLPI before version 9.5.2, there is a SQL Injection in the API\\'s\n> search function. Not only is it possible to break the SQL syntax, but\n> it is also possible to utilise a UNION SELECT query to reflect\n> sensitive information such as the current database version, or\n> database user. The most likely scenario for this vulnerability is with\n> someone who has an API account to the system. The issue is patched in\n> version 9.5.2. A proof-of-concept with technical details is available\n> in the linked advisory.\n",
+    "id": "FreeBSD-2020-0321",
+    "modified": "2024-04-25T00:00:00Z",
+    "published": "2020-06-25T00:00:00Z",
+    "references": [
+        {
+            "type": "REPORT",
+            "url": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2020-15226"
+        },
+        {
+            "type": "WEB",
+            "url": "https://github.com/glpi-project/glpi/commit/3dc4475c56b241ad659cc5c7cb5fb65727409cf0"
+        },
+        {
+            "type": "WEB",
+            "url": "https://github.com/glpi-project/glpi/security/advisories/GHSA-jwpv-7m4h-5gvc"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2020-15226"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "glpi -- SQL Injection in Search API"
+}

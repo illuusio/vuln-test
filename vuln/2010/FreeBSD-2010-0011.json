@@ -1,0 +1,66 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "fetchmail"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "introduced": "6.3.11"
+                        },
+                        {
+                            "fixed": "6.3.14"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "cite": [
+            "http://www.fetchmail.info/fetchmail-SA-2010-01.txt"
+        ],
+        "discovery": "2010-02-04T00:00:00Z",
+        "references": {
+            "bid": [
+                "38088"
+            ],
+            "cvename": [
+                "CVE-2010-0562"
+            ]
+        },
+        "vid": "2a6a966f-1774-11df-b5c1-0026189baca3"
+    },
+    "details": "Matthias Andree reports:\n\n> In verbose mode, fetchmail prints X.509 certificate subject and issuer\n> information to the user, and counts and allocates a malloc() buffer\n> for that purpose.\n>\n> If the material to be displayed contains characters with high bit set\n> and the platform treats the \\\"char\\\" type as signed, this can cause a\n> heap buffer overrun because non-printing characters are escaped as\n> \\\\xFF..FFnn, where nn is 80..FF in hex.\n",
+    "id": "FreeBSD-2010-0011",
+    "modified": "2010-02-12T00:00:00Z",
+    "published": "2010-02-12T00:00:00Z",
+    "references": [
+        {
+            "type": "REPORT",
+            "url": "http://www.fetchmail.info/fetchmail-SA-2010-01.txt"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://www.securityfocus.com/bid/38088/info"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2010-0562"
+        },
+        {
+            "type": "WEB",
+            "url": "http://www.fetchmail.info/fetchmail-SA-2010-01.txt"
+        },
+        {
+            "type": "DISCUSSION",
+            "url": "https://lists.berlios.de/pipermail/fetchmail-announce/2010-February/000073.html"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "fetchmail -- heap overflow on verbose X.509 display"
+}

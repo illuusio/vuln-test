@@ -1,0 +1,69 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "go"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "1.16.1,1"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "cite": [
+            "https://github.com/golang/go/issues/44913",
+            "https://github.com/golang/go/issues/44916"
+        ],
+        "discovery": "2021-03-05T00:00:00Z",
+        "references": {
+            "cvename": [
+                "CVE-2021-27918",
+                "CVE-2021-27919"
+            ]
+        },
+        "vid": "72709326-81f7-11eb-950a-00155d646401"
+    },
+    "details": "The Go project reports:\n\n> The Decode, DecodeElement, and Skip methods of an xml.Decoder provided\n> by xml.NewTokenDecoder may enter an infinite loop when operating on a\n> custom xml.TokenReader which returns an EOF in the middle of an open\n> XML element.\n\n> The Reader.Open API, new in Go 1.16, will panic when used on a ZIP\n> archive containing files that start with \\\"../\\\".\n",
+    "id": "FreeBSD-2021-0062",
+    "modified": "2021-03-10T00:00:00Z",
+    "published": "2021-03-10T00:00:00Z",
+    "references": [
+        {
+            "type": "REPORT",
+            "url": "https://github.com/golang/go/issues/44913"
+        },
+        {
+            "type": "REPORT",
+            "url": "https://github.com/golang/go/issues/44916"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2021-27918"
+        },
+        {
+            "type": "WEB",
+            "url": "http://golang.org/issue/44913"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2021-27919"
+        },
+        {
+            "type": "WEB",
+            "url": "http://golang.org/issue/44916"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "go -- encoding/xml: infinite loop when using xml.NewTokenDecoder with a custom TokenReader; archive/zip: panic when calling Reader.Open"
+}

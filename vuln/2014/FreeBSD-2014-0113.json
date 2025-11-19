@@ -1,0 +1,54 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "asterisk11"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "11.12.1"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "cite": [
+            "https://www.asterisk.org/security"
+        ],
+        "discovery": "2014-09-05T00:00:00Z",
+        "vid": "e60d9e65-3f6b-11e4-ad16-001999f8d30b"
+    },
+    "details": "The Asterisk project reports:\n\n> When an out of call message - delivered by either the SIP or PJSIP\n> channel driver or the XMPP stack - is handled in Asterisk, a crash can\n> occur if the channel servicing the message is sent into the ReceiveFax\n> dialplan application while using the res_fax_spandsp module.\n>\n> Note that this crash does not occur when using the res_fax_digium\n> module. While this crash technically occurs due to a configuration\n> issue, as attempting to receive a fax from a channel driver that only\n> contains textual information will never succeed, the likelihood of\n> having it occur is sufficiently high as to warrant this advisory.\n",
+    "id": "FreeBSD-2014-0113",
+    "modified": "2014-09-18T00:00:00Z",
+    "published": "2014-09-18T00:00:00Z",
+    "references": [
+        {
+            "type": "REPORT",
+            "url": "https://www.asterisk.org/security"
+        },
+        {
+            "type": "WEB",
+            "url": "http://downloads.asterisk.org/pub/security/AST-2014-010.pdf"
+        },
+        {
+            "type": "WEB",
+            "url": "https://issues.asterisk.org/jira/browse/ASTERISK-24301"
+        },
+        {
+            "type": "WEB",
+            "url": "https://www.asterisk.org/security"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "asterisk -- Remotely triggered crash"
+}

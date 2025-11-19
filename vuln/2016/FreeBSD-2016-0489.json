@@ -1,0 +1,55 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "curl"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "introduced": "7.52.0"
+                        },
+                        {
+                            "fixed": "7.52.1"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "cite": [
+            "https://curl.haxx.se/docs/adv_20161223.html"
+        ],
+        "discovery": "2016-12-23T00:00:00Z",
+        "references": {
+            "cvename": [
+                "CVE-2016-9594"
+            ]
+        },
+        "vid": "c40ca16c-4d9f-4d70-8b6c-4d53aeb8ead4"
+    },
+    "details": "Project curl Security Advisory:\n\n> libcurl\\'s (new) internal function that returns a good 32bit random\n> value was implemented poorly and overwrote the pointer instead of\n> writing the value into the buffer the pointer pointed to.\n>\n> This random value is used to generate nonces for Digest and NTLM\n> authentication, for generating boundary strings in HTTP formposts and\n> more. Having a weak or virtually non-existent random there makes these\n> operations vulnerable.\n>\n> This function is brand new in 7.52.0 and is the result of an overhaul\n> to make sure libcurl uses strong random as much as possible - provided\n> by the backend TLS crypto libraries when present. The faulty function\n> was introduced in this commit.\n>\n> We are not aware of any exploit of this flaw.\n",
+    "id": "FreeBSD-2016-0489",
+    "modified": "2016-12-24T00:00:00Z",
+    "published": "2016-12-24T00:00:00Z",
+    "references": [
+        {
+            "type": "REPORT",
+            "url": "https://curl.haxx.se/docs/adv_20161223.html"
+        },
+        {
+            "type": "WEB",
+            "url": "https://curl.haxx.se/docs/adv_20161223.html"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2016-9594"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "cURL -- uninitialized random vulnerability"
+}

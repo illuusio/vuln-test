@@ -1,0 +1,63 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "p7zip"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "9.38.1_2"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "cite": [
+            "https://bugs.debian.org/cgi-bin/bugreport.cgi?bug=774660"
+        ],
+        "discovery": "2015-01-05T00:00:00Z",
+        "references": {
+            "cvename": [
+                "CVE-2015-1038"
+            ]
+        },
+        "vid": "8f5c9dd6-5cac-11e5-9ad8-14dae9d210b8"
+    },
+    "details": "Alexander Cherepanov reports:\n\n> 7z (and 7zr) is susceptible to a directory traversal vulnerability.\n> While extracting an archive, it will extract symlinks and then follow\n> them if they are referenced in further entries. This can be exploited\n> by a rogue archive to write files outside the current directory.\n",
+    "id": "FreeBSD-2015-0291",
+    "modified": "2015-09-16T00:00:00Z",
+    "published": "2015-09-16T00:00:00Z",
+    "references": [
+        {
+            "type": "REPORT",
+            "url": "https://bugs.debian.org/cgi-bin/bugreport.cgi?bug=774660"
+        },
+        {
+            "type": "WEB",
+            "url": "https://bugs.debian.org/cgi-bin/bugreport.cgi?bug=774660"
+        },
+        {
+            "type": "WEB",
+            "url": "http://www.openwall.com/lists/oss-security/2015/01/11/2"
+        },
+        {
+            "type": "WEB",
+            "url": "http://sourceforge.net/p/p7zip/bugs/147/"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2015-1038"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "p7zip -- directory traversal vulnerability"
+}

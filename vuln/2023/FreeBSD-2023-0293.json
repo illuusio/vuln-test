@@ -1,0 +1,59 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "xrdp"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "0.9.23"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "cite": [
+            "https://www.cve.org/CVERecord?id=CVE-2023-40184"
+        ],
+        "discovery": "2023-08-30T00:00:00Z",
+        "references": {
+            "cvename": [
+                "CVE-2023-40184"
+            ]
+        },
+        "vid": "c9ff1150-5d63-11ee-bbae-1c61b4739ac9"
+    },
+    "details": "xrdp team reports:\n\n> In versions prior to 0.9.23 improper handling of session establishment\n> errors allows bypassing OS-level session restrictions. The\n> \\`auth_start_session\\` function can return non-zero (1) value on,\n> e.g., PAM error which may result in session restrictions such as max\n> concurrent sessions per user by PAM (ex ./etc/security/limits.conf) to\n> be bypassed. Users (administrators) don\\'t use restrictions by PAM are\n> not affected. This issue has been addressed in release version 0.9.23.\n> Users are advised to upgrade. There are no known workarounds for this\n> issue.\n",
+    "id": "FreeBSD-2023-0293",
+    "modified": "2023-09-27T00:00:00Z",
+    "published": "2023-09-27T00:00:00Z",
+    "references": [
+        {
+            "type": "REPORT",
+            "url": "https://www.cve.org/CVERecord?id=CVE-2023-40184"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2023-40184"
+        },
+        {
+            "type": "WEB",
+            "url": "https://www.cve.org/CVERecord?id=CVE-2023-40184"
+        },
+        {
+            "type": "WEB",
+            "url": "https://github.com/neutrinolabs/xrdp/security/advisories/GHSA-f489-557v-47jq"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "xrdp -- Improper handling of session establishment errors allows bypassing OS-level session restrictions"
+}

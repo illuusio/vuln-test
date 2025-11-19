@@ -1,0 +1,86 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "clamav"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "0.87"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        },
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "clamav-devel"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "20050917"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "cite": [
+            "http://www.gentoo.org/security/en/glsa/glsa-200509-13.xml"
+        ],
+        "discovery": "2005-09-16T00:00:00Z",
+        "references": {
+            "certvu": [
+                "363713"
+            ],
+            "cvename": [
+                "CVE-2005-2919",
+                "CVE-2005-2920"
+            ]
+        },
+        "vid": "271498a9-2cd4-11da-a263-0001020eed82"
+    },
+    "details": "Gentoo Linux Security Advisory reports:\n\n> Clam AntiVirus is vulnerable to a buffer overflow in\n> \\\"libclamav/upx.c\\\" when processing malformed UPX-packed executables.\n> It can also be sent into an infinite loop in \\\"libclamav/fsg.c\\\" when\n> processing specially-crafted FSG-packed executables.\n>\n> By sending a specially-crafted file an attacker could execute\n> arbitrary code with the permissions of the user running Clam\n> AntiVirus, or cause a Denial of Service.\n",
+    "id": "FreeBSD-2005-0278",
+    "modified": "2005-10-22T00:00:00Z",
+    "published": "2005-09-24T00:00:00Z",
+    "references": [
+        {
+            "type": "REPORT",
+            "url": "http://www.gentoo.org/security/en/glsa/glsa-200509-13.xml"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://www.kb.cert.org/vuls/id/363713"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2005-2919"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2005-2920"
+        },
+        {
+            "type": "WEB",
+            "url": "http://www.gentoo.org/security/en/glsa/glsa-200509-13.xml"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "clamav -- arbitrary code execution and DoS vulnerabilities"
+}

@@ -1,0 +1,108 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "FreeBSD"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "introduced": "5.4"
+                        },
+                        {
+                            "fixed": "5.4_2"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                },
+                {
+                    "events": [
+                        {
+                            "introduced": "5.3"
+                        },
+                        {
+                            "fixed": "5.3_16"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        },
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "tcpdump"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "3.8.3_2"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "discovery": "2005-06-09T00:00:00Z",
+        "references": {
+            "cvename": [
+                "CVE-2005-1267",
+                "CVE-2005-1278",
+                "CVE-2005-1279",
+                "CVE-2005-1280"
+            ],
+            "freebsdsa": [
+                "SA-05:10.tcpdump"
+            ]
+        },
+        "vid": "9fae0f1f-df82-11d9-b875-0001020eed82"
+    },
+    "details": "# Problem Description\n\nSeveral tcpdump protocol decoders contain programming errors which can\ncause them to go into infinite loops.\n\n# Impact\n\nAn attacker can inject specially crafted packets into the network which,\nwhen processed by tcpdump, could lead to a denial-of-service. After the\nattack, tcpdump would no longer capture traffic, and would potentially\nuse all available processor time.\n",
+    "id": "FreeBSD-2005-0181",
+    "modified": "2005-06-20T00:00:00Z",
+    "published": "2005-06-18T00:00:00Z",
+    "references": [
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2005-1267"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2005-1278"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2005-1279"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2005-1280"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://www.freebsd.org/security/advisories/FreeBSD-SA-05:10.tcpdump.asc"
+        },
+        {
+            "type": "DISCUSSION",
+            "url": "http://marc.theaimsgroup.com/?l=bugtraq&m=111454406222040"
+        },
+        {
+            "type": "DISCUSSION",
+            "url": "http://marc.theaimsgroup.com/?l=bugtraq&m=111454461300644"
+        },
+        {
+            "type": "DISCUSSION",
+            "url": "http://marc.theaimsgroup.com/?l=bugtraq&m=111928309502304"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "tcpdump -- infinite loops in protocol decoding"
+}

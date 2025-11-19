@@ -1,0 +1,144 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "FreeBSD"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "introduced": "11.1"
+                        },
+                        {
+                            "fixed": "11.1_7"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                },
+                {
+                    "events": [
+                        {
+                            "introduced": "10.4"
+                        },
+                        {
+                            "fixed": "10.4_6"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                },
+                {
+                    "events": [
+                        {
+                            "introduced": "10.3"
+                        },
+                        {
+                            "fixed": "10.3_27"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        },
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "ntp"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "4.2.8p11"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        },
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "ntp-devel"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "introduced": "0,1"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "cite": [
+            "http://support.ntp.org/bin/view/Main/SecurityNotice#February_2018_ntp_4_2_8p11_NTP_S"
+        ],
+        "discovery": "2018-02-27T00:00:00Z",
+        "references": {
+            "cvename": [
+                "CVE-2016-1549",
+                "CVE-2018-7182",
+                "CVE-2018-7170",
+                "CVE-2018-7184",
+                "CVE-2018-7185",
+                "CVE-2018-7183"
+            ],
+            "freebsdsa": [
+                "SA-18:02.ntp"
+            ]
+        },
+        "vid": "af485ef4-1c58-11e8-8477-d05099c0ae8c"
+    },
+    "details": "Network Time Foundation reports:\n\n> The NTP Project at Network Time Foundation is releasing ntp-4.2.8p11.\n>\n> This release addresses five security issues in ntpd:\n>\n> - LOW/MEDIUM: Sec 3012 / CVE-2016-1549 / VU#961909: Sybil\n>   vulnerability: ephemeral association attack\n> - INFO/MEDIUM: Sec 3412 / CVE-2018-7182 / VU#961909: ctl_getitem():\n>   buffer read overrun leads to undefined behavior and information leak\n> - LOW: Sec 3415 / CVE-2018-7170 / VU#961909: Multiple authenticated\n>   ephemeral associations\n> - LOW: Sec 3453 / CVE-2018-7184 / VU#961909: Interleaved symmetric\n>   mode cannot recover from bad state\n> - LOW/MEDIUM: Sec 3454 / CVE-2018-7185 / VU#961909: Unauthenticated\n>   packet can reset authenticated interleaved association\n>\n> one security issue in ntpq:\n>\n> - MEDIUM: Sec 3414 / CVE-2018-7183 / VU#961909: ntpq:decodearr() can\n>   write beyond its buffer limit\n>\n> and provides over 33 bugfixes and 32 other improvements.\n",
+    "id": "FreeBSD-2018-0065",
+    "modified": "2018-03-14T00:00:00Z",
+    "published": "2018-02-28T00:00:00Z",
+    "references": [
+        {
+            "type": "REPORT",
+            "url": "http://support.ntp.org/bin/view/Main/SecurityNotice#February_2018_ntp_4_2_8p11_NTP_S"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2016-1549"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2018-7182"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2018-7170"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2018-7184"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2018-7185"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2018-7183"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://www.freebsd.org/security/advisories/FreeBSD-SA-18:02.ntp.asc"
+        },
+        {
+            "type": "WEB",
+            "url": "http://support.ntp.org/bin/view/Main/SecurityNotice#February_2018_ntp_4_2_8p11_NTP_S"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "ntp -- multiple vulnerabilities"
+}

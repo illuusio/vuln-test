@@ -1,0 +1,46 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "zeek"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "5.0.1"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "cite": [
+            "https://github.com/zeek/zeek/releases/tag/v5.0.1"
+        ],
+        "discovery": "2022-08-23T00:00:00Z",
+        "vid": "3110b29e-c82d-4287-9f6c-db82bb883b1e"
+    },
+    "details": "Tim Wojtulewicz of Corelight reports:\n\n> Fix a possible overflow and crash in the ARP analyzer when receiving a\n> specially crafted packet. Due to the possibility of this happening\n> with packets received from the network, this is a potential DoS\n> vulnerability.\n>\n> Fix a possible overflow and crash in the Modbus analyzer when\n> receiving a specially crafted packet. Due to the possibility of this\n> happening with packets received from the network, this is a potential\n> DoS vulnerability.\n>\n> Fix two possible crashes when converting IP headers for output via the\n> raw_packet event. Due to the possibility of this happening with\n> packets received from the network, this is a potential DoS\n> vulnerability. Note that the raw_packet event is not enabled by\n> default so these are likely low-severity issues.\n>\n> Fix an abort related to an error related to the ordering of record\n> fields when processing DNS EDNS headers via events. Due to the\n> possibility of this happening with packets received from the network,\n> this is a potential DoS vulnerability. Note that the dns_EDNS events\n> are not implemented by default so this is likely a low-severity issue.\n",
+    "id": "FreeBSD-2022-0163",
+    "modified": "2022-08-26T00:00:00Z",
+    "published": "2022-08-26T00:00:00Z",
+    "references": [
+        {
+            "type": "REPORT",
+            "url": "https://github.com/zeek/zeek/releases/tag/v5.0.1"
+        },
+        {
+            "type": "WEB",
+            "url": "https://github.com/zeek/zeek/releases/tag/v5.0.1"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "zeek -- potential DoS vulnerabilities"
+}

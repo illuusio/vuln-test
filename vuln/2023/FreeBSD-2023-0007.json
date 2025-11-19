@@ -1,0 +1,175 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "xorg-server"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "21.1.5,1"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        },
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "xephyr"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "21.1.5,1"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        },
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "xorg-vfbserver"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "21.1.5,1"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        },
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "xorg-nestserver"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "21.1.5,2"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        },
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "xwayland"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "22.1.6,1"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        },
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "xwayland-devel"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "21.0.99.1.319"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "cite": [
+            "https://lists.x.org/archives/xorg-announce/2022-December/003302.html"
+        ],
+        "discovery": "2022-12-14T00:00:00Z",
+        "references": {
+            "cvename": [
+                "CVE-2022-46340",
+                "CVE-2022-46341",
+                "CVE-2022-46342",
+                "CVE-2022-46343",
+                "CVE-2022-46344",
+                "CVE-2022-4283"
+            ]
+        },
+        "vid": "9fa7b139-c1e9-409e-bed0-006aadcf5845"
+    },
+    "details": "The X.org project reports:\n\n> - CVE-2022-46340/ZDI-CAN-19265: X.Org Server XTestSwapFakeInput stack\n>   overflow\n>\n>   The swap handler for the XTestFakeInput request of the XTest\n>   extension may corrupt the stack if GenericEvents with lengths larger\n>   than 32 bytes are sent through a the XTestFakeInput request.\n>\n>   This issue does not affect systems where client and server use the\n>   same byte order.\n>\n> - CVE-2022-46341/ZDI-CAN-19381: X.Org Server XIPassiveUngrab\n>   out-of-bounds access\n>\n>   The handler for the XIPassiveUngrab request accesses out-of-bounds\n>   memory when invoked with a high keycode or button code.\n>\n> - CVE-2022-46342/ZDI-CAN-19400: X.Org Server XvdiSelectVideoNotify\n>   use-after-free\n>\n>   The handler for the XvdiSelectVideoNotify request may write to\n>   memory after it has been freed.\n>\n> - CVE-2022-46343/ZDI-CAN-19404: X.Org Server ScreenSaverSetAttributes\n>   use-after-free\n>\n>   The handler for the ScreenSaverSetAttributes request may write to\n>   memory after it has been freed.\n>\n> - CVE-2022-46344/ZDI-CAN-19405: X.Org Server XIChangeProperty\n>   out-of-bounds access\n>\n>   The handler for the XIChangeProperty request has a length-validation\n>   issues, resulting in out-of-bounds memory reads and potential\n>   information disclosure.\n>\n> - CVE-2022-4283/ZDI-CAN-19530: X.Org Server XkbGetKbdByName\n>   use-after-free\n>\n>   The XkbCopyNames function left a dangling pointer to freed memory,\n>   resulting in out-of-bounds memory access on subsequent\n>   XkbGetKbdByName requests.\n",
+    "id": "FreeBSD-2023-0007",
+    "modified": "2023-01-11T00:00:00Z",
+    "published": "2023-01-11T00:00:00Z",
+    "references": [
+        {
+            "type": "REPORT",
+            "url": "https://lists.x.org/archives/xorg-announce/2022-December/003302.html"
+        },
+        {
+            "type": "WEB",
+            "url": "https://lists.x.org/archives/xorg-announce/2022-December/003302.html"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2022-46340"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2022-46341"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2022-46342"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2022-46343"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2022-46344"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2022-4283"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "xorg-server -- Multiple security issues in X server extensions"
+}

@@ -1,0 +1,95 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "mysql-server"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "introduced": "4.1"
+                        },
+                        {
+                            "fixed": "4.1.24"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                },
+                {
+                    "events": [
+                        {
+                            "introduced": "5.0"
+                        },
+                        {
+                            "fixed": "5.0.51"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                },
+                {
+                    "events": [
+                        {
+                            "introduced": "5.1"
+                        },
+                        {
+                            "fixed": "5.1.23"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                },
+                {
+                    "events": [
+                        {
+                            "introduced": "6.0"
+                        },
+                        {
+                            "fixed": "6.0.4"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "cite": [
+            "http://dev.mysql.com/doc/refman/4.1/en/news-4-1-24.html"
+        ],
+        "discovery": "2007-11-14T00:00:00Z",
+        "references": {
+            "bid": [
+                "26765"
+            ],
+            "cvename": [
+                "CVE-2007-5969"
+            ]
+        },
+        "vid": "8c451386-dff3-11dd-a765-0030843d3802"
+    },
+    "details": "MySQL reports:\n\n> Using RENAME TABLE against a table with explicit DATA DIRECTORY and\n> INDEX DIRECTORY options can be used to overwrite system table\n> information by replacing the symbolic link points. the file to which\n> the symlink points.\n",
+    "id": "FreeBSD-2009-0015",
+    "modified": "2009-01-11T00:00:00Z",
+    "published": "2009-01-11T00:00:00Z",
+    "references": [
+        {
+            "type": "REPORT",
+            "url": "http://dev.mysql.com/doc/refman/4.1/en/news-4-1-24.html"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2007-5969"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://www.securityfocus.com/bid/26765/info"
+        },
+        {
+            "type": "WEB",
+            "url": "http://bugs.mysql.com/bug.php?id=32111"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "mysql -- privilege escalation and overwrite of the system table information"
+}

@@ -1,0 +1,55 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "postgresql-jdbc"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "42.7.7"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "cite": [
+            "https://jdbc.postgresql.org/changelogs/2025-06-11-42"
+        ],
+        "discovery": "2025-06-12T00:00:00Z",
+        "references": {
+            "cvename": [
+                "CVE-2025-49146"
+            ]
+        },
+        "vid": "2a220a73-4759-11f0-a44a-6cc21735f730"
+    },
+    "details": "PostgreSQL JDBC Driver project reports:\n\n> Client Allows Fallback to Insecure Authentication Despite\n> channelBinding=require configuration. Fix channel binding required\n> handling to reject non-SASL authentication Previously, when channel\n> binding was set to \\\"require\\\", the driver would silently ignore this\n> requirement for non-SASL authentication methods. This could lead to a\n> false sense of security when channel binding was explicitly requested\n> but not actually enforced. The fix ensures that when channel binding\n> is set to \\\"require\\\", the driver will reject connections that use\n> non-SASL authentication methods or when SASL authentication has not\n> completed properly.\n",
+    "id": "FreeBSD-2025-0180",
+    "modified": "2025-06-12T00:00:00Z",
+    "published": "2025-06-12T00:00:00Z",
+    "references": [
+        {
+            "type": "REPORT",
+            "url": "https://jdbc.postgresql.org/changelogs/2025-06-11-42"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2025-49146"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://nvd.nist.gov/vuln/detail/CVE-2025-49146"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "PostgreSQL JDBC library -- Improper Authentication"
+}

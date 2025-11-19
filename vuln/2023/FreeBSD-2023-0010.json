@@ -1,0 +1,100 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "cassandra3"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "3.11.14"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "cite": [
+            "https://gitbox.apache.org/repos/asf?p=cassandra.git;a=blob_plain;f=CHANGES.txt;hb=refs/tags/cassandra-3.11.14"
+        ],
+        "discovery": "2023-01-11T00:00:00Z",
+        "references": {
+            "cvename": [
+                "CVE-2022-24823",
+                "CVE-2020-7238",
+                "CVE-2019-2684",
+                "CVE-2022-25857",
+                "CVE-2022-42003",
+                "CVE-2022-42004"
+            ]
+        },
+        "vid": "53caf29b-9180-11ed-acbe-b42e991fc52e"
+    },
+    "details": "Cassandra tema reports:\n\n> This release contains 6 security fixes including\n>\n> - CVE-2022-24823: When Netty\\'s multipart decoders are used local\n>   information disclosure can occur via the local system temporary\n>   directory\n> - CVE-2020-7238: Netty 4.1.43.Final allows HTTP Request Smuggling\n>   because it mishandles Transfer-Encoding whitespace (such as a\n>   \\[space\\]Transfer-Encoding:chunked line) and a later Content-Length\n>   header.\n> - CVE-2019-2684: Difficult to exploit vulnerability allows\n>   unauthenticated attacker with network access via multiple protocols\n>   to compromise Java SE\n> - CVE-2022-25857: The package org.yaml:snakeyaml from 0 and before\n>   1.31 are vulnerable to Denial of Service (DoS) due missing to nested\n>   depth limitation for collections.\n> - CVE-2022-42003: In FasterXML jackson-databind, resource exhaustion\n>   can occur because of a lack of a check in primitive value\n>   deserializers to avoid deep wrapper array nesting, when the\n>   UNWRAP_SINGLE_VALUE_ARRAYS feature is enabled.\n> - CVE-2022-42004: In FasterXML jackson-databind, resource exhaustion\n>   can occur because of a lack of a check in\n>   BeanDeserializer.\\_deserializeFromArray to prevent use of deeply\n>   nested arrays.\n",
+    "id": "FreeBSD-2023-0010",
+    "modified": "2023-01-11T00:00:00Z",
+    "published": "2023-01-11T00:00:00Z",
+    "references": [
+        {
+            "type": "REPORT",
+            "url": "https://gitbox.apache.org/repos/asf?p=cassandra.git;a=blob_plain;f=CHANGES.txt;hb=refs/tags/cassandra-3.11.14"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2022-24823"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2022-24823"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2020-7238"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2020-7238"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2019-2684"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2019-2684"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2022-25857"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2022-25857"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2022-42003"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2022-42003"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2022-42004"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2022-42004"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "cassandra3 -- multiple vulnerabilities"
+}

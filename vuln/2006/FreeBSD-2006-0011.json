@@ -1,0 +1,102 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "FreeBSD"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "introduced": "6.0"
+                        },
+                        {
+                            "fixed": "6.0_2"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                },
+                {
+                    "events": [
+                        {
+                            "introduced": "5.4"
+                        },
+                        {
+                            "fixed": "5.4_9"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                },
+                {
+                    "events": [
+                        {
+                            "introduced": "5.3"
+                        },
+                        {
+                            "fixed": "5.3_24"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                },
+                {
+                    "events": [
+                        {
+                            "introduced": "4.11"
+                        },
+                        {
+                            "fixed": "4.11_14"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                },
+                {
+                    "events": [
+                        {
+                            "introduced": "4.10"
+                        },
+                        {
+                            "fixed": "4.10_20"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "discovery": "2006-01-11T00:00:00Z",
+        "references": {
+            "bid": [
+                "16207"
+            ],
+            "cvename": [
+                "CVE-2006-0055"
+            ],
+            "freebsdsa": [
+                "SA-06:02.ee"
+            ]
+        },
+        "vid": "726dd9bd-8f25-11da-8c1d-000e0c2e438a"
+    },
+    "details": "Problem description\n\nThe ispell_op function used by ee(1) while executing spell check\noperations employs an insecure method of temporary file generation. This\nmethod produces predictable file names based on the process ID and fails\nto confirm which path will be over written with the user.\\\nIt should be noted that ispell does not have to be installed in order\nfor this to be exploited. The option simply needs to be selected.\n\nImpact\n\nThese predictable temporary file names are problematic because they\nallow an attacker to take advantage of a race condition in order to\nexecute a symlink attack, which could allow them to overwrite files on\nthe system in the context of the user running the ee(1) editor.\n\nWorkaround\n\nInstead of invoking ispell through ee(1), invoke it directly.\n",
+    "id": "FreeBSD-2006-0011",
+    "modified": "2006-01-27T00:00:00Z",
+    "published": "2006-01-27T00:00:00Z",
+    "references": [
+        {
+            "type": "ADVISORY",
+            "url": "https://www.securityfocus.com/bid/16207/info"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2006-0055"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://www.freebsd.org/security/advisories/FreeBSD-SA-06:02.ee.asc"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "ee -- temporary file privilege escalation"
+}

@@ -1,0 +1,55 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "couchdb"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "3.1.2,2"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "cite": [
+            "https://docs.couchdb.org/en/stable/cve/2021-38295.html"
+        ],
+        "discovery": "2021-08-09T00:00:00Z",
+        "references": {
+            "cvename": [
+                "CVE-2021-39205"
+            ]
+        },
+        "vid": "a7dd4c2d-77e4-46de-81a2-c453c317f9de"
+    },
+    "details": "Cory Sabol reports:\n\n> A malicious user with permission to create documents in a database is\n> able to attach a HTML attachment to a document. If a CouchDB admin\n> opens that attachment in a browser, e.g. via the CouchDB admin\n> interface Fauxton, any JavaScript code embedded in that HTML\n> attachment will be executed within the security context of that admin.\n> A similar route is available with the already deprecated \\_show and\n> \\_list functionality.\n",
+    "id": "FreeBSD-2021-0255",
+    "modified": "2021-10-12T00:00:00Z",
+    "published": "2021-10-12T00:00:00Z",
+    "references": [
+        {
+            "type": "REPORT",
+            "url": "https://docs.couchdb.org/en/stable/cve/2021-38295.html"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2021-39205"
+        },
+        {
+            "type": "WEB",
+            "url": "https://docs.couchdb.org/en/stable/cve/2021-38295.html"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "couchdb -- user privilege escalation"
+}

@@ -1,0 +1,55 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "nss"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "3.73"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "cite": [
+            "https://www.mozilla.org/en-US/security/advisories/mfsa2021-51/"
+        ],
+        "discovery": "2021-12-01T00:00:00Z",
+        "references": {
+            "cvename": [
+                "CVE-2021-43527"
+            ]
+        },
+        "vid": "47695a9c-5377-11ec-8be6-d4c9ef517024"
+    },
+    "details": "The Mozilla project reports:\n\n> Memory corruption in NSS via DER-encoded DSA and RSA-PSS signatures\n> (Critical)\n>\n> NSS (Network Security Services) versions prior to 3.73 or 3.68.1 ESR\n> are vulnerable to a heap overflow when handling DER-encoded DSA or\n> RSA-PSS signatures. Applications using NSS for handling signatures\n> encoded within CMS, S/MIME, PKCS #7, or PKCS #12 are likely to be\n> impacted. Applications using NSS for certificate validation or other\n> TLS, X.509, OCSP or CRL functionality may be impacted, depending on\n> how they configure NSS.\n",
+    "id": "FreeBSD-2021-0283",
+    "modified": "2021-12-02T00:00:00Z",
+    "published": "2021-12-02T00:00:00Z",
+    "references": [
+        {
+            "type": "REPORT",
+            "url": "https://www.mozilla.org/en-US/security/advisories/mfsa2021-51/"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2021-43527"
+        },
+        {
+            "type": "WEB",
+            "url": "https://www.mozilla.org/en-US/security/advisories/mfsa2021-51/"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "NSS -- Memory corruption"
+}

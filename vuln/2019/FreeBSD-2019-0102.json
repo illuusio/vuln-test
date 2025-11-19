@@ -1,0 +1,55 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "rust"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "introduced": "1.34.0"
+                        },
+                        {
+                            "fixed": "1.34.2"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "cite": [
+            "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2019-12083"
+        ],
+        "discovery": "2019-05-09T00:00:00Z",
+        "references": {
+            "cvename": [
+                "CVE-2019-12083"
+            ]
+        },
+        "vid": "37528379-76a8-11e9-a4fd-00012e582166"
+    },
+    "details": "Sean McArthur reports:\n\n> The Rust Programming Language Standard Library 1.34.x before 1.34.2\n> contains a stabilized method which, if overridden, can violate Rust\\'s\n> safety guarantees and cause memory unsafety. If the Error::type_id\n> method is overridden then any type can be safely cast to any other\n> type, causing memory safety vulnerabilities in safe code (e.g.,\n> out-of-bounds write or read). Code that does not manually implement\n> Error::type_id is unaffected.\n",
+    "id": "FreeBSD-2019-0102",
+    "modified": "2019-05-15T00:00:00Z",
+    "published": "2019-05-15T00:00:00Z",
+    "references": [
+        {
+            "type": "REPORT",
+            "url": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2019-12083"
+        },
+        {
+            "type": "WEB",
+            "url": "https://blog.rust-lang.org/2019/05/13/Security-advisory.html"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2019-12083"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "Rust -- violation of Rust's safety guarantees"
+}

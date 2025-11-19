@@ -1,0 +1,109 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "linux_base-c6"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "6.7_1"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        },
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "linux_base-c6_64"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "6.7_1"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        },
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "linux_base-f10"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "cite": [
+            "https://bugzilla.redhat.com/show_bug.cgi?id=CVE-2015-7547"
+        ],
+        "discovery": "2016-02-16T00:00:00Z",
+        "references": {
+            "cvename": [
+                "CVE-2015-7547"
+            ],
+            "freebsdpr": [
+                "ports/207272"
+            ]
+        },
+        "vid": "2dd7e97e-d5e8-11e5-bcbd-bc5ff45d0f28"
+    },
+    "details": "Fabio Olive Leite reports:\n\n> A stack-based buffer overflow was found in libresolv when invoked from\n> nss_dns, allowing specially crafted DNS responses to seize control of\n> EIP in the DNS client. The buffer overflow occurs in the functions\n> send_dg (send datagram) and send_vc (send TCP) for the NSS module\n> libnss_dns.so.2 when calling getaddrinfo with AF_UNSPEC family, or in\n> some cases AF_INET6 family. The use of AF_UNSPEC (or AF_INET6 in some\n> cases) triggers the low-level resolver code to send out two parallel\n> queries for A and AAAA. A mismanagement of the buffers used for those\n> queries could result in the response of a query writing beyond the\n> alloca allocated buffer created by \\_\\_res_nquery.\n",
+    "id": "FreeBSD-2016-0108",
+    "modified": "2016-02-18T00:00:00Z",
+    "published": "2016-02-18T00:00:00Z",
+    "references": [
+        {
+            "type": "REPORT",
+            "url": "https://bugzilla.redhat.com/show_bug.cgi?id=CVE-2015-7547"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2015-7547"
+        },
+        {
+            "type": "REPORT",
+            "url": "https://bugs.freebsd.org/bugzilla/show_bug.cgi?id=207272"
+        },
+        {
+            "type": "REPORT",
+            "url": "https://bugzilla.redhat.com/show_bug.cgi?id=CVE-2015-7547"
+        },
+        {
+            "type": "WEB",
+            "url": "https://blog.des.no/2016/02/freebsd-and-cve-2015-7547/"
+        },
+        {
+            "type": "WEB",
+            "url": "https://googleonlinesecurity.blogspot.no/2016/02/cve-2015-7547-glibc-getaddrinfo-stack.html"
+        },
+        {
+            "type": "WEB",
+            "url": "https://sourceware.org/ml/libc-alpha/2016-02/msg00416.html"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "glibc -- getaddrinfo stack-based buffer overflow"
+}

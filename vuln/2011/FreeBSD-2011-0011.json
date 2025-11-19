@@ -1,0 +1,87 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "subversion"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "1.6.15"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        },
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "subversion-freebsd"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "1.6.15"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "cite": [
+            "http://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2010-4539",
+            "http://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2010-4644"
+        ],
+        "discovery": "2011-01-02T00:00:00Z",
+        "references": {
+            "bid": [
+                "45655"
+            ],
+            "cvename": [
+                "CVE-2010-4539",
+                "CVE-2010-4644"
+            ]
+        },
+        "vid": "71612099-1e93-11e0-a587-001b77d09812"
+    },
+    "details": "Entry for CVE-2010-4539 says:\n\n> The walk function in repos.c in the mod_dav_svn module for the Apache\n> HTTP Server, as distributed in Apache Subversion before 1.6.15, allows\n> remote authenticated users to cause a denial of service (NULL pointer\n> dereference and daemon crash) via vectors that trigger the walking of\n> SVNParentPath collections.\n\nEntry for CVE-2010-4644 says:\n\n> Multiple memory leaks in rev_hunt.c in Apache Subversion before 1.6.15\n> allow remote authenticated users to cause a denial of service (memory\n> consumption and daemon crash) via the -g option to the blame command.\n",
+    "id": "FreeBSD-2011-0011",
+    "modified": "2011-01-13T00:00:00Z",
+    "published": "2011-01-13T00:00:00Z",
+    "references": [
+        {
+            "type": "REPORT",
+            "url": "http://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2010-4539"
+        },
+        {
+            "type": "REPORT",
+            "url": "http://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2010-4644"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://www.securityfocus.com/bid/45655/info"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2010-4539"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2010-4644"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "subversion -- multiple DoS"
+}

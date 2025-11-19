@@ -1,0 +1,83 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "wordpress"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "2.8.6,1"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        },
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "de-wordpress"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "2.8.6"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "cite": [
+            "http://secunia.com/advisories/37332/"
+        ],
+        "discovery": "2009-11-12T00:00:00Z",
+        "references": {
+            "cvename": [
+                "CVE-2009-3890",
+                "CVE-2009-3891"
+            ]
+        },
+        "vid": "0640198a-d117-11de-b667-0030843d3802"
+    },
+    "details": "secunia reports:\n\n> The security issue is caused due to the wp_check_filetype() function\n> in /wp-includes/functions.php improperly validating uploaded files.\n> This can be exploited to execute arbitrary PHP code by uploading a\n> malicious PHP script with multiple extensions.\n>\n> Successful exploitation of this vulnerability requires that Apache is\n> not configured to handle the mime-type for media files with an e.g.\n> \\\"gif\\\", \\\"jpg\\\", \\\"png\\\", \\\"tif\\\", \\\"wmv\\\" extension.\n>\n> Input passed via certain parameters to press-this.php is not properly\n> sanitised before being displayed to the user. This can be exploited to\n> insert arbitrary HTML and script code, which will be executed in a\n> user\\'s browser session in context of an affected site when the\n> malicious data is being viewed.\n",
+    "id": "FreeBSD-2009-0163",
+    "modified": "2010-05-02T00:00:00Z",
+    "published": "2009-11-14T00:00:00Z",
+    "references": [
+        {
+            "type": "REPORT",
+            "url": "http://secunia.com/advisories/37332/"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2009-3890"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2009-3891"
+        },
+        {
+            "type": "WEB",
+            "url": "http://wordpress.org/development/2009/11/wordpress-2-8-6-security-release/"
+        },
+        {
+            "type": "WEB",
+            "url": "http://secunia.com/advisories/37332/"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "wordpress -- multiple vulnerabilities"
+}

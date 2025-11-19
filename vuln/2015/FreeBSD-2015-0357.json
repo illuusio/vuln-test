@@ -1,0 +1,55 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "xen-kernel"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "introduced": "3.4"
+                        },
+                        {
+                            "fixed": "4.5.1_1"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "cite": [
+            "http://xenbits.xen.org/xsa/advisory-148.html"
+        ],
+        "discovery": "2015-10-29T00:00:00Z",
+        "references": {
+            "cvename": [
+                "CVE-2015-7835"
+            ]
+        },
+        "vid": "3d9f6260-881d-11e5-ab94-002590263bf5"
+    },
+    "details": "The Xen Project reports:\n\n> The code to validate level 2 page table entries is bypassed when\n> certain conditions are satisfied. This means that a PV guest can\n> create writable mappings using super page mappings. Such writable\n> mappings can violate Xen intended invariants for pages which Xen is\n> supposed to keep read-only. This is possible even if the\n> \\\"allowsuperpage\\\" command line option is not used.\n>\n> Malicious PV guest administrators can escalate privilege so as to\n> control the whole system.\n",
+    "id": "FreeBSD-2015-0357",
+    "modified": "2015-11-11T00:00:00Z",
+    "published": "2015-11-11T00:00:00Z",
+    "references": [
+        {
+            "type": "REPORT",
+            "url": "http://xenbits.xen.org/xsa/advisory-148.html"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2015-7835"
+        },
+        {
+            "type": "WEB",
+            "url": "http://xenbits.xen.org/xsa/advisory-148.html"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "xen-kernel -- Uncontrolled creation of large page mappings by PV guests"
+}

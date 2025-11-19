@@ -1,0 +1,76 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "wu-ftpd"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "last_affected": "2.6.2_3"
+                        },
+                        {
+                            "fixed": "2.6.2_3"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        },
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "wu-ftpd+ipv6"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "last_affected": "2.6.2_5"
+                        },
+                        {
+                            "fixed": "2.6.2_5"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "discovery": "2004-02-17T00:00:00Z",
+        "references": {
+            "bid": [
+                "9832"
+            ],
+            "cvename": [
+                "CVE-2004-0148"
+            ]
+        },
+        "vid": "3b7c7f6c-7102-11d8-873f-0020ed76ef5a"
+    },
+    "details": "Glenn Stewart reports a bug in wu-ftpd\\'s ftpaccess\n\\`restricted-uid\\'/\\`restricted-gid\\' directives:\n\n> Users can get around the restriction to their home directory by\n> issuing a simple chmod command on their home directory. On the next\n> ftp log in, the user will have \\'/\\' as their root directory.\n\nMatt Zimmerman discovered that the cause of the bug was a missing check\nfor a restricted user within a code path that is executed only when a\ncertain error is encountered.\n",
+    "id": "FreeBSD-2004-0041",
+    "modified": "2004-03-29T00:00:00Z",
+    "published": "2004-03-08T00:00:00Z",
+    "references": [
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2004-0148"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://www.securityfocus.com/bid/9832/info"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "wu-ftpd ftpaccess `restricted-uid'/`restricted-gid' directive may be bypassed"
+}

@@ -1,0 +1,55 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "xen-tools"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "4.7.0_1"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "cite": [
+            "http://xenbits.xen.org/xsa/advisory-175.html"
+        ],
+        "discovery": "2016-06-02T00:00:00Z",
+        "references": {
+            "cvename": [
+                "CVE-2016-4962"
+            ]
+        },
+        "vid": "e2fca11b-4212-11e6-942d-bc5ff45d0f28"
+    },
+    "details": "The Xen Project reports:\n\n> Various parts of libxl device-handling code inappropriately use\n> information from (partially) guest controlled areas of xenstore.\n>\n> A malicious guest administrator can cause denial of service by\n> resource exhaustion.\n>\n> A malicious guest administrator can confuse and/or deny service to\n> management facilities.\n>\n> A malicious guest administrator of a guest configured with channel\n> devices may be able to escalate their privilege to that of the backend\n> domain (i.e., normally, to that of the host).\n",
+    "id": "FreeBSD-2016-0265",
+    "modified": "2016-07-04T00:00:00Z",
+    "published": "2016-07-04T00:00:00Z",
+    "references": [
+        {
+            "type": "REPORT",
+            "url": "http://xenbits.xen.org/xsa/advisory-175.html"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2016-4962"
+        },
+        {
+            "type": "WEB",
+            "url": "http://xenbits.xen.org/xsa/advisory-175.html"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "xen-tools -- Unsanitised guest input in libxl device handling code"
+}

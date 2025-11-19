@@ -1,0 +1,55 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "messagelib"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "18.08.3_2"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "cite": [
+            "https://www.kde.org/info/security/advisory-20181128-1.txt"
+        ],
+        "discovery": "2018-11-28T00:00:00Z",
+        "references": {
+            "cvename": [
+                "CVE-2018-19516"
+            ]
+        },
+        "vid": "c7b1af20-f34f-11e8-9cde-e0d55e2a8bf9"
+    },
+    "details": "Albert Astals Cid reports:\n\n> messagelib is the library used by KMail to display emails.\n>\n> messagelib by default displays emails as plain text, but gives the\n> user an option to \\\"Prefer HTML to plain text\\\" in the settings and if\n> that option is not enabled there is way to enable HTML display when an\n> email contains HTML.\n>\n> Some HTML emails can trick messagelib into opening a new browser\n> window when displaying said email as HTML.\n>\n> This happens even if the option to allow the HTML emails to access\n> remote servers is disabled in KMail settings.\n>\n> This means that the owners of the servers referred in the email can\n> see in their access logs your IP address.\n",
+    "id": "FreeBSD-2018-0285",
+    "modified": "2018-11-28T00:00:00Z",
+    "published": "2018-11-28T00:00:00Z",
+    "references": [
+        {
+            "type": "REPORT",
+            "url": "https://www.kde.org/info/security/advisory-20181128-1.txt"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2018-19516"
+        },
+        {
+            "type": "WEB",
+            "url": "https://www.kde.org/info/security/advisory-20181128-1.txt"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "messagelib -- HTML email can open browser window automatically"
+}

@@ -1,0 +1,95 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:kernel",
+                "name": "FreeBSD-kernel"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "introduced": "8.4"
+                        },
+                        {
+                            "fixed": "8.4_9"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                },
+                {
+                    "events": [
+                        {
+                            "introduced": "8.3"
+                        },
+                        {
+                            "fixed": "8.3_16"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                },
+                {
+                    "events": [
+                        {
+                            "introduced": "9.2"
+                        },
+                        {
+                            "fixed": "9.2_5"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                },
+                {
+                    "events": [
+                        {
+                            "introduced": "9.1"
+                        },
+                        {
+                            "fixed": "9.1_12"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                },
+                {
+                    "events": [
+                        {
+                            "introduced": "10.0"
+                        },
+                        {
+                            "fixed": "10.0_2"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "discovery": "2014-04-30T00:00:00Z",
+        "references": {
+            "cvename": [
+                "CVE-2014-3000"
+            ],
+            "freebsdsa": [
+                "SA-14:08.tcp"
+            ]
+        },
+        "vid": "6d472244-6007-11e6-a6c3-14dae9d210b8"
+    },
+    "details": "# Problem Description:\n\nFreeBSD may add a reassemble queue entry on the stack into the segment\nlist when the reassembly queue reaches its limit. The memory from the\nstack is undefined after the function returns. Subsequent iterations of\nthe reassembly function will attempt to access this entry.\n\n# Impact:\n\nAn attacker who can send a series of specifically crafted packets with a\nconnection could cause a denial of service situation by causing the\nkernel to crash.\n\nAdditionally, because the undefined on stack memory may be overwritten\nby other kernel threads, while extremely difficult, it may be possible\nfor an attacker to construct a carefully crafted attack to obtain\nportion of kernel memory via a connected socket. This may result in the\ndisclosure of sensitive information such as login credentials, etc.\nbefore or even without crashing the system.\n",
+    "id": "FreeBSD-2016-0311",
+    "modified": "2016-08-11T00:00:00Z",
+    "published": "2016-08-11T00:00:00Z",
+    "references": [
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2014-3000"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://www.freebsd.org/security/advisories/FreeBSD-SA-14:08.tcp.asc"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "FreeBSD -- TCP reassembly vulnerability"
+}

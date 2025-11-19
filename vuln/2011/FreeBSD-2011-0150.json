@@ -1,0 +1,55 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "kdeutils"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "introduced": "4.0.*"
+                        },
+                        {
+                            "fixed": "4.7.3"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "cite": [
+            "http://seclists.org/fulldisclosure/2011/Oct/351"
+        ],
+        "discovery": "2011-10-19T00:00:00Z",
+        "references": {
+            "cvename": [
+                "CVE-2011-2725"
+            ]
+        },
+        "vid": "7fb9e739-0e6d-11e1-87cd-00235a5f2c9a"
+    },
+    "details": "Tim Brown from Nth Dimention reports:\n\n> I recently discovered that the Ark archiving tool is vulnerable to\n> directory traversal via malformed. When attempts are made to view\n> files within the malformed Zip file in Ark\\'s default view, the wrong\n> file may be displayed due to incorrect construction of the temporary\n> file name. Whilst this does not allow the wrong file to be\n> overwritten, after closing the default view, Ark will then attempt to\n> delete the temporary file which could result in the deletion of the\n> incorrect file.\n",
+    "id": "FreeBSD-2011-0150",
+    "modified": "2011-11-14T00:00:00Z",
+    "published": "2011-11-14T00:00:00Z",
+    "references": [
+        {
+            "type": "REPORT",
+            "url": "http://seclists.org/fulldisclosure/2011/Oct/351"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2011-2725"
+        },
+        {
+            "type": "WEB",
+            "url": "http://seclists.org/fulldisclosure/2011/Oct/351"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "kdeutils4 -- Directory traversal vulnerability"
+}

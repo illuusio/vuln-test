@@ -1,0 +1,81 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "privoxy"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "3.0.22"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "cite": [
+            "http://www.privoxy.org/3.0.22/user-manual/whatsnew.html",
+            "http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2015-1201"
+        ],
+        "discovery": "2015-01-10T00:00:00Z",
+        "references": {
+            "cvename": [
+                "CVE-2015-1030",
+                "CVE-2015-1031",
+                "CVE-2015-1201"
+            ],
+            "freebsdpr": [
+                "ports/195468"
+            ]
+        },
+        "vid": "89d4ed09-c3d7-11e5-b5fe-002590263bf5"
+    },
+    "details": "Privoxy Developers reports:\n\n> Fixed a memory leak when rejecting client connections due to the\n> socket limit being reached (CID 66382). This affected Privoxy 3.0.21\n> when compiled with IPv6 support (on most platforms this is the\n> default).\n>\n> Fixed an immediate-use-after-free bug (CID 66394) and two additional\n> unconfirmed use-after-free complaints made by Coverity scan (CID\n> 66391, CID 66376).\n\nMITRE reports:\n\n> Privoxy before 3.0.22 allows remote attackers to cause a denial of\n> service (file descriptor consumption) via unspecified vectors.\n",
+    "id": "FreeBSD-2016-0056",
+    "modified": "2016-01-26T00:00:00Z",
+    "published": "2016-01-26T00:00:00Z",
+    "references": [
+        {
+            "type": "REPORT",
+            "url": "http://www.privoxy.org/3.0.22/user-manual/whatsnew.html"
+        },
+        {
+            "type": "REPORT",
+            "url": "http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2015-1201"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2015-1030"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2015-1031"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2015-1201"
+        },
+        {
+            "type": "REPORT",
+            "url": "https://bugs.freebsd.org/bugzilla/show_bug.cgi?id=195468"
+        },
+        {
+            "type": "WEB",
+            "url": "http://www.privoxy.org/3.0.22/user-manual/whatsnew.html"
+        },
+        {
+            "type": "WEB",
+            "url": "http://www.openwall.com/lists/oss-security/2015/01/11/1"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "privoxy -- multiple vulnerabilities"
+}

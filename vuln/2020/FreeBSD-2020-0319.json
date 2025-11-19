@@ -1,0 +1,59 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "glpi"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "9.5.2,1"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "cite": [
+            "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2020-15177"
+        ],
+        "discovery": "2020-06-25T00:00:00Z",
+        "references": {
+            "cvename": [
+                "CVE-2020-15177"
+            ]
+        },
+        "vid": "09eef008-3b16-11eb-af2a-080027dbe4b7"
+    },
+    "details": "MITRE Corporation reports:\n\n> In GLPI before version 9.5.2, the \\`install/install.php\\` endpoint\n> insecurely stores user input into the database as \\`url_base\\` and\n> \\`url_base_api\\`. These settings are referenced throughout the\n> application and allow for vulnerabilities like Cross-Site Scripting\n> and Insecure Redirection Since authentication is not required to\n> perform these changes,anyone could point these fields at malicious\n> websites or form input in a way to trigger XSS. Leveraging JavaScript\n> it\\'s possible to steal cookies, perform actions as the user, etc. The\n> issue is patched in version 9.5.2.\n",
+    "id": "FreeBSD-2020-0319",
+    "modified": "2024-04-25T00:00:00Z",
+    "published": "2020-06-25T00:00:00Z",
+    "references": [
+        {
+            "type": "REPORT",
+            "url": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2020-15177"
+        },
+        {
+            "type": "WEB",
+            "url": "https://github.com/glpi-project/glpi/commit/a8109d4ee970a222faf48cf48fae2d2f06465796"
+        },
+        {
+            "type": "WEB",
+            "url": "https://github.com/glpi-project/glpi/security/advisories/GHSA-prvh-9m4h-4m79"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2020-15177"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "glpi -- Unauthenticated Stored XSS"
+}

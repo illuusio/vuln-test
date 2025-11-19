@@ -1,0 +1,51 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:kernel",
+                "name": "FreeBSD-kernel"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "introduced": "12.1"
+                        },
+                        {
+                            "fixed": "12.1_3"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "discovery": "2020-03-19T00:00:00Z",
+        "references": {
+            "cvename": [
+                "CVE-2019-15877"
+            ],
+            "freebsdsa": [
+                "SA-20:06.if_ixl_ioctl"
+            ]
+        },
+        "vid": "b2b83761-6a09-11ea-92ab-00163e433440"
+    },
+    "details": "# Problem Description:\n\nThe driver-specific ioctl(2) command handlers in ixl(4) failed to check\nwhether the caller has sufficient privileges to perform the\ncorresponding operation.\n\n# Impact:\n\nThe ixl(4) handler permits unprivileged users to trigger updates to the\ndevice\\'s non-volatile memory (NVM).\n",
+    "id": "FreeBSD-2020-0054",
+    "modified": "2020-03-19T00:00:00Z",
+    "published": "2020-03-19T00:00:00Z",
+    "references": [
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2019-15877"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://www.freebsd.org/security/advisories/FreeBSD-SA-20:06.if_ixl_ioctl.asc"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "FreeBSD -- Insufficient ixl(4) ioctl(2) privilege checking"
+}

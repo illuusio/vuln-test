@@ -1,0 +1,88 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "drupal5"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "5.19"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        },
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "drupal6"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "6.13"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "cite": [
+            "http://drupal.org/node/507572"
+        ],
+        "discovery": "2009-07-01T00:00:00Z",
+        "references": {
+            "cvename": [
+                "CVE-2009-2372",
+                "CVE-2009-2374",
+                "CVE-2009-2373"
+            ]
+        },
+        "vid": "be927298-6f97-11de-b444-001372fd0af2"
+    },
+    "details": "The Drupal Security Team reports:\n\n> Cross-site scripting\n>\n> The Forum module does not correctly handle certain arguments obtained\n> from the URL. By enticing a suitably privileged user to visit a\n> specially crafted URL, a malicious user is able to insert arbitrary\n> HTML and script code into forum pages. Such a cross-site scripting\n> attack may lead to the malicious user gaining administrative access.\n> Wikipedia has more information about cross-site scripting (XSS).\n>\n> User signatures have no separate input format, they use the format of\n> the comment with which they are displayed. A user will no longer be\n> able to edit a comment when an administrator changes the comment\\'s\n> input format to a format that is not accessible to the user. However\n> they will still be able to modify their signature, which will then be\n> processed by the new input format.\n>\n> If the new format is very permissive, via their signature, the user\n> may be able to insert arbitrary HTML and script code into pages or,\n> when the PHP filter is enabled for the new format, execute PHP code.\n> This issue affects Drupal 6.x only.\n>\n> When an anonymous user fails to login due to mistyping his username or\n> password, and the page he is on contains a sortable table, the\n> (incorrect) username and password are included in links on the table.\n> If the user visits these links the password may then be leaked to\n> external sites via the HTTP referer.\n>\n> In addition, if the anonymous user is enticed to visit the site via a\n> specially crafted URL while the Drupal page cache is enabled, a\n> malicious user might be able to retrieve the (incorrect) username and\n> password from the page cache.\n",
+    "id": "FreeBSD-2009-0114",
+    "modified": "2010-05-02T00:00:00Z",
+    "published": "2009-07-13T00:00:00Z",
+    "references": [
+        {
+            "type": "REPORT",
+            "url": "http://drupal.org/node/507572"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2009-2372"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2009-2374"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2009-2373"
+        },
+        {
+            "type": "WEB",
+            "url": "http://drupal.org/node/507572"
+        },
+        {
+            "type": "WEB",
+            "url": "http://secunia.com/advisories/35681"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "drupal -- multiple vulnerabilities"
+}

@@ -1,0 +1,72 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "ark"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "20.04.2_1"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                },
+                {
+                    "events": [
+                        {
+                            "introduced": "20.04.3"
+                        },
+                        {
+                            "last_affected": "20.04.3"
+                        },
+                        {
+                            "fixed": "20.04.3"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ],
+            "versions": [
+                "20.04.3"
+            ]
+        }
+    ],
+    "database_specific": {
+        "cite": [
+            "https://kde.org/info/security/advisory-20200730-1.txt"
+        ],
+        "discovery": "2020-07-30T00:00:00Z",
+        "references": {
+            "cvename": [
+                "CVE-2020-16116"
+            ]
+        },
+        "vid": "d1ef1138-d273-11ea-a757-e0d55e2a8bf9"
+    },
+    "details": "KDE Project Security Advisory reports:\n\n> ### KDE Project Security Advisory\n>\n>   -------------- --------------------------------------------------------------------------------------\n>   Title:         Ark: maliciously crafted archive can install files outside the extraction directory.\n>   Risk Rating:   Important\n>   CVE:           CVE-2020-16116\n>   Versions:      ark \\<= 20.04.3\n>   Author:        Elvis Angelaccio \\<elvis.angelaccio@kde.org\\>\n>   Date:          30 July 2020\n>   -------------- --------------------------------------------------------------------------------------\n>\n> ### Overview\n>\n> A maliciously crafted archive with \\\"../\\\" in the file paths would\n> install files anywhere in the user\\'s home directory upon extraction.\n>\n> ### Proof of concept\n>\n> For testing, an example of malicious archive can be found at\n> https://github.com/jwilk/traversal-archives/releases/download/0/relative2.zip\n>\n> ### Impact\n>\n> Users can unwillingly install files like a modified .bashrc, or a\n> malicious script placed in \\~/.config/autostart\n>\n> ### Workaround\n>\n> Users should not use the \\'Extract\\' context menu from the Dolphin\n> file manager. Before extracting a downloaded archive using the Ark\n> GUI, users should inspect it to make sure it doesn\\'t contain entries\n> with \\\"../\\\" in the file path.\n>\n> ### Solution\n>\n> Ark 20.08.0 prevents loading of malicious archives and shows a warning\n> message to the users.\n>\n> Alternatively,\n> https://invent.kde.org/utilities/ark/-/commit/0df592524fed305d6fbe74ddf8a196bc9ffdb92f\n> can be applied to previous releases.\n>\n> ### Credits\n>\n> Thanks to Dominik Penner for finding and reporting this issue and\n> thanks to Elvis Angelaccio and Albert Astals Cid for fixing it.\n",
+    "id": "FreeBSD-2020-0195",
+    "modified": "2020-07-30T00:00:00Z",
+    "published": "2020-07-30T00:00:00Z",
+    "references": [
+        {
+            "type": "REPORT",
+            "url": "https://kde.org/info/security/advisory-20200730-1.txt"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2020-16116"
+        },
+        {
+            "type": "WEB",
+            "url": "https://kde.org/info/security/advisory-20200730-1.txt"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "ark -- directory traversal"
+}

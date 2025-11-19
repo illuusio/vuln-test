@@ -1,0 +1,73 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "tomcat"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "introduced": "5.5.0,1"
+                        },
+                        {
+                            "fixed": "5.5.30"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                },
+                {
+                    "events": [
+                        {
+                            "introduced": "6.0.0,1"
+                        },
+                        {
+                            "fixed": "6.0.27"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "cite": [
+            "http://seclists.org/bugtraq/2010/Apr/200"
+        ],
+        "discovery": "2010-04-22T00:00:00Z",
+        "references": {
+            "cvename": [
+                "CVE-2010-1157"
+            ],
+            "freebsdpr": [
+                "ports/146022"
+            ]
+        },
+        "vid": "3383e706-4fc3-11df-83fb-0015587e2cc1"
+    },
+    "details": "The Apache software foundation reports:\n\n> The \\\"WWW-Authenticate\\\" header for BASIC and DIGEST authentication\n> includes a realm name. If a \\<realm-name\\> element is specified for\n> the application in web.xml it will be used. However, a \\<realm-name\\>\n> is not specified then Tomcat will generate one.\n>\n> In some circumstances this can expose the local hostname or IP address\n> of the machine running Tomcat.\n",
+    "id": "FreeBSD-2010-0042",
+    "modified": "2010-04-24T00:00:00Z",
+    "published": "2010-04-24T00:00:00Z",
+    "references": [
+        {
+            "type": "REPORT",
+            "url": "http://seclists.org/bugtraq/2010/Apr/200"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2010-1157"
+        },
+        {
+            "type": "REPORT",
+            "url": "https://bugs.freebsd.org/bugzilla/show_bug.cgi?id=146022"
+        },
+        {
+            "type": "WEB",
+            "url": "http://seclists.org/bugtraq/2010/Apr/200"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "tomcat -- information disclosure vulnerability"
+}

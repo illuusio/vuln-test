@@ -1,0 +1,83 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "go"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "1.17.7,1"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "cite": [
+            "https://github.com/golang/go/issues/50974",
+            "https://github.com/golang/go/issues/50699",
+            "https://github.com/golang/go/issues/35671"
+        ],
+        "discovery": "2022-02-10T00:00:00Z",
+        "references": {
+            "cvename": [
+                "CVE-2022-23806",
+                "CVE-2022-23772",
+                "CVE-2022-23773"
+            ]
+        },
+        "vid": "096ab080-907c-11ec-bb14-002324b2fba8"
+    },
+    "details": "The Go project reports:\n\n> crypto/elliptic: fix IsOnCurve for big.Int values that are not valid\n> coordinates\n>\n> Some big.Int values that are not valid field elements (negative or\n> overflowing) might cause Curve.IsOnCurve to incorrectly return true.\n> Operating on those values may cause a panic or an invalid curve\n> operation. Note that Unmarshal will never return such values.\n\n> math/big: prevent large memory consumption in Rat.SetString\n>\n> An attacker can cause unbounded memory growth in a program using\n> (\\*Rat).SetString due to an unhandled overflow.\n\n> cmd/go: prevent branches from materializing into versions\n>\n> A branch whose name resembles a version tag (such as \\\"v1.0.0\\\" or\n> \\\"subdir/v2.0.0-dev\\\") can be considered a valid version by the go\n> command. Materializing versions from branches might be unexpected and\n> bypass ACLs that limit the creation of tags but not branches.\n",
+    "id": "FreeBSD-2022-0033",
+    "modified": "2022-02-18T00:00:00Z",
+    "published": "2022-02-18T00:00:00Z",
+    "references": [
+        {
+            "type": "REPORT",
+            "url": "https://github.com/golang/go/issues/50974"
+        },
+        {
+            "type": "REPORT",
+            "url": "https://github.com/golang/go/issues/50699"
+        },
+        {
+            "type": "REPORT",
+            "url": "https://github.com/golang/go/issues/35671"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2022-23806"
+        },
+        {
+            "type": "WEB",
+            "url": "https://github.com/golang/go/issues/50974"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2022-23772"
+        },
+        {
+            "type": "WEB",
+            "url": "https://github.com/golang/go/issues/50699"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2022-23773"
+        },
+        {
+            "type": "WEB",
+            "url": "https://github.com/golang/go/issues/35671"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "go -- multiple vulnerabilities"
+}

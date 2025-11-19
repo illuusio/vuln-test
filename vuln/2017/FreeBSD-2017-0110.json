@@ -1,0 +1,159 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "openvpn"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "2.3.15"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                },
+                {
+                    "events": [
+                        {
+                            "introduced": "2.4.0"
+                        },
+                        {
+                            "fixed": "2.4.2"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        },
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "openvpn23"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "2.3.15"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        },
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "openvpn-mbedtls"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "introduced": "2.4.0"
+                        },
+                        {
+                            "fixed": "2.4.2"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        },
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "openvpn-polarssl"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "2.3.15"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        },
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "openvpn23-polarssl"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "2.3.15"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "cite": [
+            "https://openvpn.net/index.php/open-source/downloads.html"
+        ],
+        "discovery": "2017-05-10T00:00:00Z",
+        "references": {
+            "cvename": [
+                "CVE-2017-7478",
+                "CVE-2017-7479"
+            ]
+        },
+        "vid": "04cc7bd2-3686-11e7-aa64-080027ef73ec"
+    },
+    "details": "Samuli Sepp\u00e4nen reports:\n\n> OpenVPN v2.4.0 was audited for security vulnerabilities independently\n> by Quarkslabs (funded by OSTIF) and Cryptography Engineering (funded\n> by Private Internet Access) between December 2016 and April 2017. The\n> primary findings were two remote denial-of-service vulnerabilities.\n> Fixes to them have been backported to v2.3.15.\n>\n> An authenticated client can do the \\'three way handshake\\'\n> (P_HARD_RESET, P_HARD_RESET, P_CONTROL), where the P_CONTROL packet is\n> the first that is allowed to carry payload. If that payload is too\n> big, the OpenVPN server process will stop running due to an ASSERT()\n> exception. That is also the reason why servers using\n> tls-auth/tls-crypt are protected against this attack - the P_CONTROL\n> packet is only accepted if it contains the session ID we specified,\n> with a valid HMAC (challenge-response). (CVE-2017-7478)\n>\n> An authenticated client can cause the server\\'s the packet-id counter\n> to roll over, which would lead the server process to hit an ASSERT()\n> and stop running. To make the server hit the ASSERT(), the client must\n> first cause the server to send it 2\\^32 packets (at least 196 GB).\n",
+    "id": "FreeBSD-2017-0110",
+    "modified": "2017-05-11T00:00:00Z",
+    "published": "2017-05-11T00:00:00Z",
+    "references": [
+        {
+            "type": "REPORT",
+            "url": "https://openvpn.net/index.php/open-source/downloads.html"
+        },
+        {
+            "type": "WEB",
+            "url": "https://openvpn.net/index.php/open-source/downloads.html"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2017-7478"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2017-7479"
+        },
+        {
+            "type": "WEB",
+            "url": "https://community.openvpn.net/openvpn/wiki/QuarkslabAndCryptographyEngineerAudits"
+        },
+        {
+            "type": "WEB",
+            "url": "https://ostif.org/?p=870&preview=true"
+        },
+        {
+            "type": "WEB",
+            "url": "https://www.privateinternetaccess.com/blog/2017/05/openvpn-2-4-2-fixes-critical-issues-discovered-openvpn-audit-reports/"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "OpenVPN -- two remote denial-of-service vulnerabilities"
+}

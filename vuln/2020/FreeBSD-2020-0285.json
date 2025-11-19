@@ -1,0 +1,84 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "asterisk13"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "13.37.1"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        },
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "asterisk16"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "16.14.1"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        },
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "asterisk18"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "18.0.1"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "cite": [
+            "https://www.asterisk.org/downloads/security-advisories"
+        ],
+        "discovery": "2020-11-05T00:00:00Z",
+        "vid": "972fe546-1fb6-11eb-b9d4-001999f8d30b"
+    },
+    "details": "The Asterisk project reports:\n\n> Upon receiving a new SIP Invite, Asterisk did not return the created\n> dialog locked or referenced. This caused a gap between the creation of\n> the dialog object, and its next use by the thread that created it.\n> Depending upon some off nominal circumstances, and timing it was\n> possible for another thread to free said dialog in this gap. Asterisk\n> could then crash when the dialog object, or any of its dependent\n> objects were de-referenced, or accessed next by the initial creation\n> thread.\n",
+    "id": "FreeBSD-2020-0285",
+    "modified": "2020-11-05T00:00:00Z",
+    "published": "2020-11-05T00:00:00Z",
+    "references": [
+        {
+            "type": "REPORT",
+            "url": "https://www.asterisk.org/downloads/security-advisories"
+        },
+        {
+            "type": "WEB",
+            "url": "https://downloads.asterisk.org/pub/security/AST-2020-001.html"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "asterisk -- Remote crash in res_pjsip_session"
+}

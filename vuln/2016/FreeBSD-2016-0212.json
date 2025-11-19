@@ -1,0 +1,100 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "expat"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "2.1.1"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        },
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "linux-c6-expat"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "2.0.1_3"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        },
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "linux-c7-expat"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "2.1.0_1"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "cite": [
+            "http://www.openwall.com/lists/oss-security/2016/05/17/12"
+        ],
+        "discovery": "2016-05-17T00:00:00Z",
+        "references": {
+            "cvename": [
+                "CVE-2016-0718"
+            ],
+            "freebsdpr": [
+                "ports/209360"
+            ]
+        },
+        "vid": "57b3aba7-1e25-11e6-8dd3-002590263bf5"
+    },
+    "details": "Gustavo Grieco reports:\n\n> The Expat XML parser mishandles certain kinds of malformed input\n> documents, resulting in buffer overflows during processing and error\n> reporting. The overflows can manifest as a segmentation fault or as\n> memory corruption during a parse operation. The bugs allow for a\n> denial of service attack in many applications by an unauthenticated\n> attacker, and could conceivably result in remote code execution.\n",
+    "id": "FreeBSD-2016-0212",
+    "modified": "2016-11-30T00:00:00Z",
+    "published": "2016-05-20T00:00:00Z",
+    "references": [
+        {
+            "type": "REPORT",
+            "url": "http://www.openwall.com/lists/oss-security/2016/05/17/12"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2016-0718"
+        },
+        {
+            "type": "REPORT",
+            "url": "https://bugs.freebsd.org/bugzilla/show_bug.cgi?id=209360"
+        },
+        {
+            "type": "WEB",
+            "url": "http://www.openwall.com/lists/oss-security/2016/05/17/12"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "expat -- denial of service vulnerability on malformed input"
+}

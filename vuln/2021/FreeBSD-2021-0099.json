@@ -1,0 +1,60 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "maven"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "3.8.1"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "cite": [
+            "http://maven.apache.org/docs/3.8.1/release-notes.html#cve-2021-26291"
+        ],
+        "discovery": "2021-04-04T00:00:00Z",
+        "references": {
+            "cvename": [
+                "CVE-2021-26291",
+                "CVE-2020-13956"
+            ]
+        },
+        "vid": "20006b5f-a0bc-11eb-8ae6-fc4dd43e2b6a"
+    },
+    "details": "The Apache Maven project reports:\n\n> We received a report from Jonathan Leitschuh about a vulnerability of\n> custom repositories in dependency POMs. We\\'ve split this up into\n> three separate issues:\n>\n> - Possible Man-In-The-Middle-Attack due to custom repositories using\n>   HTTP. More and more repositories use HTTPS nowadays, but this\n>   hasn\\'t always been the case. This means that Maven Central contains\n>   POMs with custom repositories that refer to a URL over HTTP. This\n>   makes downloads via such repository a target for a MITM attack. At\n>   the same time, developers are probably not aware that for some\n>   downloads an insecure URL is being used. Because uploaded POMs to\n>   Maven Central are immutable, a change for Maven was required. To\n>   solve this, we extended the mirror configuration with blocked\n>   parameter, and we added a new external:http:\\* mirror selector (like\n>   existing external:\\*), meaning \\\"any external URL using HTTP\\\". The\n>   decision was made to block such external HTTP repositories by\n>   default: this is done by providing a mirror in the conf/settings.xml\n>   blocking insecure HTTP external URLs.\n> - Possible Domain Hijacking due to custom repositories using abandoned\n>   domains Sonatype has analyzed which domains were abandoned and has\n>   claimed these domains.\n> - Possible hijacking of downloads by redirecting to custom\n>   repositories This one was the hardest to analyze and explain. The\n>   short story is: you\\'re safe, dependencies are only downloaded from\n>   repositories within their context. So there are two main questions:\n>   what is the context and what is the order? The order is described on\n>   the Repository Order page. The first group of repositories are\n>   defined in the settings.xml (both user and global). The second group\n>   of repositories are based on inheritence, with ultimately the super\n>   POM containing the URL to Maven Central. The third group is the most\n>   complex one but is important to understand the term context:\n>   repositories from the effective POMs from the dependency path to the\n>   artifact. So if a dependency was defined by another dependency or by\n>   a Maven project, it will also include their repositories. In the end\n>   this is not a bug, but a design feature.\n",
+    "id": "FreeBSD-2021-0099",
+    "modified": "2021-04-19T00:00:00Z",
+    "published": "2021-04-19T00:00:00Z",
+    "references": [
+        {
+            "type": "REPORT",
+            "url": "http://maven.apache.org/docs/3.8.1/release-notes.html#cve-2021-26291"
+        },
+        {
+            "type": "WEB",
+            "url": "http://maven.apache.org/docs/3.8.1/release-notes.html#cve-2021-26291"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2021-26291"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2020-13956"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "Apache Maven -- multiple vulnerabilities"
+}

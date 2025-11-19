@@ -1,0 +1,159 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "postgresql13-client"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "13.23"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        },
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "postgresql14-client"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "14.20"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        },
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "postgresql15-client"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "15.15"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        },
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "postgresql16-client"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "16.11"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        },
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "postgresql17-client"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "17.7"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        },
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "postgresql18-client"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "18.1"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "cite": [
+            "https://www.postgresql.org/support/security/CVE-2025-12818/"
+        ],
+        "discovery": "2025-11-13T00:00:00Z",
+        "references": {
+            "cvename": [
+                "CVE-2025-12818",
+                "CVE-2025-12817"
+            ]
+        },
+        "vid": "364e5fa4-c178-11f0-b614-b42e991fc52e"
+    },
+    "details": "https://www.postgresql.org/support/security/CVE-2025-12818/ reports:\n\n> - Integer wraparound in multiple PostgreSQL libpq client library\n>   functions allows an application input provider or network peer to\n>   cause libpq to undersize an allocation and write out-of-bounds by\n>   hundreds of megabytes. This results in a segmentation fault for the\n>   application using libpq.\n> - Missing authorization in PostgreSQL CREATE STATISTICS command allows\n>   a table owner to achieve denial of service against other CREATE\n>   STATISTICS users by creating in any schema. A later CREATE\n>   STATISTICS for the same name, from a user having the CREATE\n>   privilege, would then fail.\n",
+    "id": "FreeBSD-2025-0385",
+    "modified": "2025-11-14T00:00:00Z",
+    "published": "2025-11-14T00:00:00Z",
+    "references": [
+        {
+            "type": "REPORT",
+            "url": "https://www.postgresql.org/support/security/CVE-2025-12818/"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2025-12818"
+        },
+        {
+            "type": "WEB",
+            "url": "https://cveawg.mitre.org/api/cve/CVE-2025-12818"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2025-12817"
+        },
+        {
+            "type": "WEB",
+            "url": "https://cveawg.mitre.org/api/cve/CVE-2025-12817"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "PostgreSQL -- Multiple vulnerabilities"
+}

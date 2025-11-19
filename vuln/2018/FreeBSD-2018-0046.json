@@ -1,0 +1,97 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "quagga"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "1.2.3"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "cite": [
+            "https://www.quagga.net/security/Quagga-2018-0543.txt",
+            "https://www.quagga.net/security/Quagga-2018-1114.txt",
+            "https://www.quagga.net/security/Quagga-2018-1550.txt",
+            "https://www.quagga.net/security/Quagga-2018-1975.txt"
+        ],
+        "discovery": "2018-01-31T00:00:00Z",
+        "references": {
+            "cvename": [
+                "CVE-2018-5378",
+                "CVE-2018-5379",
+                "CVE-2018-5380",
+                "CVE-2018-5381"
+            ]
+        },
+        "vid": "e15a22ce-f16f-446b-9ca7-6859350c2e75"
+    },
+    "details": "Quagga reports:\n\n> The Quagga BGP daemon, bgpd, does not properly bounds check the data\n> sent with a NOTIFY to a peer, if an attribute length is invalid.\n> Arbitrary data from the bgpd process may be sent over the network to a\n> peer and/or it may crash.\n\n> The Quagga BGP daemon, bgpd, can double-free memory when processing\n> certain forms of UPDATE message, containing cluster-list and/or\n> unknown attributes.\n\n> The Quagga BGP daemon, bgpd, can overrun internal BGP code-to-string\n> conversion tables used for debug by 1 pointer value, based on input.\n\n> The Quagga BGP daemon, bgpd, can enter an infinite loop if sent an\n> invalid OPEN message by a configured peer.\n",
+    "id": "FreeBSD-2018-0046",
+    "modified": "2018-02-15T00:00:00Z",
+    "published": "2018-02-15T00:00:00Z",
+    "references": [
+        {
+            "type": "REPORT",
+            "url": "https://www.quagga.net/security/Quagga-2018-0543.txt"
+        },
+        {
+            "type": "REPORT",
+            "url": "https://www.quagga.net/security/Quagga-2018-1114.txt"
+        },
+        {
+            "type": "REPORT",
+            "url": "https://www.quagga.net/security/Quagga-2018-1550.txt"
+        },
+        {
+            "type": "REPORT",
+            "url": "https://www.quagga.net/security/Quagga-2018-1975.txt"
+        },
+        {
+            "type": "WEB",
+            "url": "https://www.quagga.net/security/Quagga-2018-0543.txt"
+        },
+        {
+            "type": "WEB",
+            "url": "https://www.quagga.net/security/Quagga-2018-1114.txt"
+        },
+        {
+            "type": "WEB",
+            "url": "https://www.quagga.net/security/Quagga-2018-1550.txt"
+        },
+        {
+            "type": "WEB",
+            "url": "https://www.quagga.net/security/Quagga-2018-1975.txt"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2018-5378"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2018-5379"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2018-5380"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2018-5381"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "quagga -- several security issues"
+}

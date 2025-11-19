@@ -1,0 +1,64 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "opensmtpd"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "6.6.4,1"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "cite": [
+            "https://opensmtpd.org/security.html"
+        ],
+        "discovery": "2020-02-22T00:00:00Z",
+        "references": {
+            "cvename": [
+                "CVE-2020-8793",
+                "CVE-2020-8794"
+            ]
+        },
+        "vid": "f0683976-5779-11ea-8a77-1c872ccb1e42"
+    },
+    "details": "OpenSMTPD developers reports:\n\n> An out of bounds read in smtpd allows an attacker to inject arbitrary\n> commands into the envelope file which are then executed as root.\n> Separately, missing privilege revocation in smtpctl allows arbitrary\n> commands to be run with the \\_smtpq group.\n>\n> An unprivileged local attacker can read the first line of an arbitrary\n> file (for example, root\\'s password hash in /etc/master.passwd) or the\n> entire contents of another user\\'s file (if this file and\n> /var/spool/smtpd/ are on the same filesystem).\n",
+    "id": "FreeBSD-2020-0037",
+    "modified": "2020-02-27T00:00:00Z",
+    "published": "2020-02-24T00:00:00Z",
+    "references": [
+        {
+            "type": "REPORT",
+            "url": "https://opensmtpd.org/security.html"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2020-8793"
+        },
+        {
+            "type": "WEB",
+            "url": "https://www.openwall.com/lists/oss-security/2020/02/24/4"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2020-8794"
+        },
+        {
+            "type": "WEB",
+            "url": "https://www.openwall.com/lists/oss-security/2020/02/24/5"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "OpenSMTPd -- LPE and RCE in OpenSMTPD's default install"
+}

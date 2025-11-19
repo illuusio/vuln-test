@@ -1,0 +1,104 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "FreeBSD"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "introduced": "10.3"
+                        },
+                        {
+                            "fixed": "10.3_5"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                },
+                {
+                    "events": [
+                        {
+                            "introduced": "10.2"
+                        },
+                        {
+                            "fixed": "10.2_19"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                },
+                {
+                    "events": [
+                        {
+                            "introduced": "10.1"
+                        },
+                        {
+                            "fixed": "10.1_36"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                },
+                {
+                    "events": [
+                        {
+                            "introduced": "9.3"
+                        },
+                        {
+                            "fixed": "9.3_44"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "discovery": "2016-06-04T00:00:00Z",
+        "references": {
+            "cvename": [
+                "CVE-2016-4953",
+                "CVE-2016-4954",
+                "CVE-2016-4955",
+                "CVE-2016-4956",
+                "CVE-2016-4957"
+            ],
+            "freebsdsa": [
+                "SA-16:24.ntp"
+            ]
+        },
+        "vid": "7cfcea05-600a-11e6-a6c3-14dae9d210b8"
+    },
+    "details": "# Problem Description:\n\nMultiple vulnerabilities have been discovered in the NTP suite:\n\nThe fix for Sec 3007 in ntp-4.2.8p7 contained a bug that could cause\nntpd to crash. \\[CVE-2016-4957, Reported by Nicolas Edet of Cisco\\]\n\nAn attacker who knows the origin timestamp and can send a spoofed packet\ncontaining a CRYPTO-NAK to an ephemeral peer target before any other\nresponse is sent can demobilize that association. \\[CVE-2016-4953,\nReported by Miroslav Lichvar of Red Hat\\]\n\nAn attacker who is able to spoof packets with correct origin timestamps\nfrom enough servers before the expected response packets arrive at the\ntarget machine can affect some peer variables and, for example, cause a\nfalse leap indication to be set. \\[CVE-2016-4954, Reported by Jakub\nProkes of Red Hat\\]\n\nAn attacker who is able to spoof a packet with a correct origin\ntimestamp before the expected response packet arrives at the target\nmachine can send a CRYPTO_NAK or a bad MAC and cause the association\\'s\npeer variables to be cleared. If this can be done often enough, it will\nprevent that association from working. \\[CVE-2016-4955, Reported by\nMiroslav Lichvar of Red Hat\\]\n\nThe fix for NtpBug2978 does not cover broadcast associations, so\nbroadcast clients can be triggered to flip into interleave mode.\n\\[CVE-2016-4956, Reported by Miroslav Lichvar of Red Hat.\\]\n\n# Impact:\n\nMalicious remote attackers may be able to break time synchronization, or\ncause the ntpd(8) daemon to crash.\n",
+    "id": "FreeBSD-2016-0351",
+    "modified": "2016-08-11T00:00:00Z",
+    "published": "2016-08-11T00:00:00Z",
+    "references": [
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2016-4953"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2016-4954"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2016-4955"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2016-4956"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2016-4957"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://www.freebsd.org/security/advisories/FreeBSD-SA-16:24.ntp.asc"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "FreeBSD -- Multiple ntp vulnerabilities"
+}

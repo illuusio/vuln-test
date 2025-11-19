@@ -1,0 +1,59 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "dovecot"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "2.3.5.1"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "cite": [
+            "http://cve.mitre.org/cgi-bin/cvename.cgi?name=2019-7524"
+        ],
+        "discovery": "2019-02-05T00:00:00Z",
+        "references": {
+            "cvename": [
+                "CVE-2019-7524"
+            ]
+        },
+        "vid": "7862213c-5152-11e9-8b26-a4badb296695"
+    },
+    "details": "Aki Tuomi reports:\n\n> Vulnerability Details: When reading FTS or POP3-UIDL header from\n> dovecot index, the input buffer size is not bound, and data is copied\n> to target structure causing stack overflow. Risk: This can be used for\n> local root privilege escalation or executing arbitrary code in dovecot\n> process context. This requires ability to directly modify dovecot\n> indexes. Steps to reproduce: Produce dovecot.index.log entry that\n> creates an FTS header which has more than 12 bytes of data. Trigger\n> dovecot indexer-worker or run doveadm index. Dovecot will crash.\n> Mitigations: Since 2.3.0 dovecot has been compiled with stack smash\n> protection, ASLR, read-only GOT tables and other techniques that make\n> exploiting this bug much harder.\n",
+    "id": "FreeBSD-2019-0067",
+    "modified": "2019-03-28T00:00:00Z",
+    "published": "2019-03-28T00:00:00Z",
+    "references": [
+        {
+            "type": "REPORT",
+            "url": "http://cve.mitre.org/cgi-bin/cvename.cgi?name=2019-7524"
+        },
+        {
+            "type": "WEB",
+            "url": "http://cve.mitre.org/cgi-bin/cvename.cgi?name=2019-7524"
+        },
+        {
+            "type": "WEB",
+            "url": "https://dovecot.org/list/dovecot-news/2019-March/000401.html"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2019-7524"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "dovecot -- Buffer overflow reading extension header"
+}

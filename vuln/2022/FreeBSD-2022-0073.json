@@ -1,0 +1,62 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:kernel",
+                "name": "FreeBSD-kernel"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "introduced": "13.0"
+                        },
+                        {
+                            "fixed": "13.0_11"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                },
+                {
+                    "events": [
+                        {
+                            "introduced": "12.3"
+                        },
+                        {
+                            "fixed": "12.3_5"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "discovery": "2022-04-06T00:00:00Z",
+        "references": {
+            "cvename": [
+                "CVE-2022-23086"
+            ],
+            "freebsdsa": [
+                "SA-22:06.ioctl"
+            ]
+        },
+        "vid": "703c4761-b61d-11ec-9ebc-1c697aa5a594"
+    },
+    "details": "# Problem Description:\n\nHandlers for \\*\\_CFG_PAGE read / write ioctls in the mpr, mps, and mpt\ndrivers allocated a buffer of a caller-specified size, but copied to it\na fixed size header. Other heap content would be overwritten if the\nspecified size was too small.\n\n# Impact:\n\nUsers with access to the mpr, mps or mpt device node may overwrite heap\ndata, potentially resulting in privilege escalation. Note that the\ndevice node is only accessible to root and members of the operator\ngroup.\n",
+    "id": "FreeBSD-2022-0073",
+    "modified": "2022-04-07T00:00:00Z",
+    "published": "2022-04-07T00:00:00Z",
+    "references": [
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2022-23086"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://www.freebsd.org/security/advisories/FreeBSD-SA-22:06.ioctl.asc"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "FreeBSD -- mpr/mps/mpt driver ioctl heap out-of-bounds write"
+}

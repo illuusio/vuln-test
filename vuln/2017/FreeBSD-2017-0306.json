@@ -1,0 +1,60 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "openssl"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "introduced": "1.0.2,1"
+                        },
+                        {
+                            "fixed": "1.0.2n"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "cite": [
+            "https://www.openssl.org/news/secadv/20171207.txt"
+        ],
+        "discovery": "2017-12-07T00:00:00Z",
+        "references": {
+            "cvename": [
+                "CVE-2017-3737",
+                "CVE-2017-3738"
+            ]
+        },
+        "vid": "3bb451fc-db64-11e7-ac58-b499baebfeaf"
+    },
+    "details": "The OpenSSL project reports:\n\n> - Read/write after SSL object in error state (CVE-2017-3737)\\\n>   OpenSSL 1.0.2 (starting from version 1.0.2b) introduced an \\\"error\n>   state\\\" mechanism. The intent was that if a fatal error occurred\n>   during a handshake then OpenSSL would move into the error state and\n>   would immediately fail if you attempted to continue the handshake.\n>   This works as designed for the explicit handshake functions\n>   (SSL_do_handshake(), SSL_accept() and SSL_connect()), however due to\n>   a bug it does not work correctly if SSL_read() or SSL_write() is\n>   called directly. In that scenario, if the handshake fails then a\n>   fatal error will be returned in the initial function call. If\n>   SSL_read()/SSL_write() is subsequently called by the application for\n>   the same SSL object then it will succeed and the data is passed\n>   without being decrypted/encrypted directly from the SSL/TLS record\n>   layer.\n> - rsaz_1024_mul_avx2 overflow bug on x86_64 (CVE-2017-3738)\\\n>   There is an overflow bug in the AVX2 Montgomery multiplication\n>   procedure used in exponentiation with 1024-bit moduli. No EC\n>   algorithms are affected. Analysis suggests that attacks against RSA\n>   and DSA as a result of this defect would be very difficult to\n>   perform and are not believed likely. Attacks against DH1024 are\n>   considered just feasible, because most of the work necessary to\n>   deduce information about a private key may be performed offline. The\n>   amount of resources required for such an attack would be\n>   significant. However, for an attack on TLS to be meaningful, the\n>   server would have to share the DH1024 private key among multiple\n>   clients, which is no longer an option since CVE-2016-0701.\n",
+    "id": "FreeBSD-2017-0306",
+    "modified": "2017-12-07T00:00:00Z",
+    "published": "2017-12-07T00:00:00Z",
+    "references": [
+        {
+            "type": "REPORT",
+            "url": "https://www.openssl.org/news/secadv/20171207.txt"
+        },
+        {
+            "type": "WEB",
+            "url": "https://www.openssl.org/news/secadv/20171207.txt"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2017-3737"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2017-3738"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "OpenSSL -- multiple vulnerabilities"
+}

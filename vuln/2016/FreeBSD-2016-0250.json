@@ -1,0 +1,112 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "tomcat7"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "7.0.70"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        },
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "tomcat8"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "8.0.36"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        },
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "apache-struts"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "2.5.2"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "cite": [
+            "http://mail-archives.apache.org/mod_mbox/tomcat-announce/201606.mbox/%3C6223ece6-2b41-ef4f-22f9-d3481e492832%40apache.org%3E"
+        ],
+        "discovery": "2016-06-20T00:00:00Z",
+        "references": {
+            "cvename": [
+                "CVE-2016-3092"
+            ],
+            "freebsdpr": [
+                "ports/209669"
+            ]
+        },
+        "vid": "cbceeb49-3bc7-11e6-8e82-002590263bf5"
+    },
+    "details": "Mark Thomas reports:\n\n> CVE-2016-3092 is a denial of service vulnerability that has been\n> corrected in the Apache Commons FileUpload component. It occurred when\n> the length of the multipart boundary was just below the size of the\n> buffer (4096 bytes) used to read the uploaded file. This caused the\n> file upload process to take several orders of magnitude longer than if\n> the boundary length was the typical tens of bytes.\n",
+    "id": "FreeBSD-2016-0250",
+    "modified": "2017-08-10T00:00:00Z",
+    "published": "2016-06-26T00:00:00Z",
+    "references": [
+        {
+            "type": "REPORT",
+            "url": "http://mail-archives.apache.org/mod_mbox/tomcat-announce/201606.mbox/%3C6223ece6-2b41-ef4f-22f9-d3481e492832%40apache.org%3E"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2016-3092"
+        },
+        {
+            "type": "REPORT",
+            "url": "https://bugs.freebsd.org/bugzilla/show_bug.cgi?id=209669"
+        },
+        {
+            "type": "WEB",
+            "url": "http://tomcat.apache.org/security-7.html"
+        },
+        {
+            "type": "WEB",
+            "url": "http://tomcat.apache.org/security-8.html"
+        },
+        {
+            "type": "WEB",
+            "url": "http://mail-archives.apache.org/mod_mbox/tomcat-announce/201606.mbox/%3C6223ece6-2b41-ef4f-22f9-d3481e492832%40apache.org%3E"
+        },
+        {
+            "type": "WEB",
+            "url": "http://jvn.jp/en/jp/JVN89379547/index.html"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "Apache Commons FileUpload -- denial of service (DoS) vulnerability"
+}

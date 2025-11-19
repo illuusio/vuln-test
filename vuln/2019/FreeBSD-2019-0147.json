@@ -1,0 +1,93 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "asterisk13"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "13.27.1"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        },
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "asterisk15"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "15.7.3"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        },
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "asterisk16"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "16.4.1"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "cite": [
+            "http://www.asterisk.org/downloads/security-advisories"
+        ],
+        "discovery": "2019-06-28T00:00:00Z",
+        "references": {
+            "cvename": [
+                "CVE-2019-13161"
+            ]
+        },
+        "vid": "e9d2e981-a46d-11e9-bed9-001999f8d30b"
+    },
+    "details": "The Asterisk project reports:\n\n> When T.38 faxing is done in Asterisk a T.38 reinvite may be sent to an\n> endpoint to switch it to T.38. If the endpoint responds with an\n> improperly formatted SDP answer including both a T.38 UDPTL stream and\n> an audio or video stream containing only codecs not allowed on the SIP\n> peer or user a crash will occur. The code incorrectly assumes that\n> there will be at least one common codec when T.38 is also in the SDP\n> answer.\n",
+    "id": "FreeBSD-2019-0147",
+    "modified": "2019-07-12T00:00:00Z",
+    "published": "2019-07-12T00:00:00Z",
+    "references": [
+        {
+            "type": "REPORT",
+            "url": "http://www.asterisk.org/downloads/security-advisories"
+        },
+        {
+            "type": "WEB",
+            "url": "https://downloads.asterisk.org/pub/security/AST-2019-003.html"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2019-13161"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "asterisk -- Remote Crash Vulnerability in chan_sip channel driver"
+}

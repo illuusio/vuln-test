@@ -1,0 +1,51 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "FreeBSD"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "introduced": "10.0"
+                        },
+                        {
+                            "fixed": "10.0_6"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "discovery": "2014-06-24T00:00:00Z",
+        "references": {
+            "cvename": [
+                "CVE-2014-3951"
+            ],
+            "freebsdsa": [
+                "SA-14:15.iconv"
+            ]
+        },
+        "vid": "6f91a709-6007-11e6-a6c3-14dae9d210b8"
+    },
+    "details": "# Problem Description:\n\nA NULL pointer dereference in the initialization code of the HZ module\nand an out of bounds array access in the initialization code of the VIQR\nmodule make iconv_open(3) calls involving HZ or VIQR result in an\napplication crash.\n\n# Impact:\n\nServices where an attacker can control the arguments of an iconv_open(3)\ncall can be caused to crash resulting in a denial-of-service. For\nexample, an email encoded in HZ may cause an email delivery service to\ncrash if it converts emails to a more generic encoding like UTF-8 before\napplying filtering rules.\n",
+    "id": "FreeBSD-2016-0315",
+    "modified": "2016-08-11T00:00:00Z",
+    "published": "2016-08-11T00:00:00Z",
+    "references": [
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2014-3951"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://www.freebsd.org/security/advisories/FreeBSD-SA-14:15.iconv.asc"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "FreeBSD -- iconv(3) NULL pointer dereference and out-of-bounds array access"
+}

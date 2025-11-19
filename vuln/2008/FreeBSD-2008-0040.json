@@ -1,0 +1,79 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "clamav"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "0.93"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        },
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "clamav-devel"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "20080415"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "cite": [
+            "http://secunia.com/advisories/29000"
+        ],
+        "discovery": "2008-04-15T00:00:00Z",
+        "references": {
+            "cvename": [
+                "CVE-2008-1100",
+                "CVE-2008-1387"
+            ]
+        },
+        "vid": "589d8053-0b03-11dd-b4ef-00e07dc4ec84"
+    },
+    "details": "Secunia reports:\n\n> Some vulnerabilities have been reported in ClamAV, which can be\n> exploited by malicious people to cause a DoS (Denial of Service) or to\n> compromise a vulnerable system.\n>\n> 1\\) A boundary error exists within the \\\"cli_scanpe()\\\" function in\n> libclamav/pe.c. This can be exploited to cause a heap-based buffer\n> overflow via a specially crafted \\\"Upack\\\" executable.\n>\n> Successful exploitation allows execution of arbitrary code.\n>\n> 2\\) A boundary error within the processing of PeSpin packed\n> executables in libclamav/spin.c can be exploited to cause a heap-based\n> buffer overflow.\n>\n> Successful exploitation may allow execution of arbitrary code.\n>\n> 3\\) An unspecified error in the processing of ARJ files can be\n> exploited to hang ClamAV.\n",
+    "id": "FreeBSD-2008-0040",
+    "modified": "2008-04-15T00:00:00Z",
+    "published": "2008-04-15T00:00:00Z",
+    "references": [
+        {
+            "type": "REPORT",
+            "url": "http://secunia.com/advisories/29000"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2008-1100"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2008-1387"
+        },
+        {
+            "type": "WEB",
+            "url": "http://secunia.com/advisories/29000"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "clamav -- Multiple Vulnerabilities"
+}

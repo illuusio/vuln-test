@@ -1,0 +1,55 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "ap24-mod_security"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "2.9.10"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "cite": [
+            "https://github.com/owasp-modsecurity/ModSecurity/commit/3a54ccea62d3f7151bb08cb78d60c5e90b53ca2e"
+        ],
+        "discovery": "2025-06-02T00:00:00Z",
+        "references": {
+            "cvename": [
+                "CVE-2025-48866"
+            ]
+        },
+        "vid": "fa1d42c8-42fe-11f0-a9fa-b42e991fc52e"
+    },
+    "details": "security-advisories@github.com reports:\n\n> ModSecurity is an open source, cross platform web application firewall\n> (WAF) engine for Apache, IIS and Nginx. Versions prior to 2.9.10\n> contain a denial of service vulnerability similar to\n> GHSA-859r-vvv8-rm8r/CVE-2025-47947. The \\`sanitiseArg\\` (and\n> \\`sanitizeArg\\` - this is the same action but an alias) is vulnerable\n> to adding an excessive number of arguments, thereby leading to denial\n> of service. Version 2.9.10 fixes the issue. As a workaround, avoid\n> using rules that contain the \\`sanitiseArg\\` (or \\`sanitizeArg\\`)\n> action.\n",
+    "id": "FreeBSD-2025-0179",
+    "modified": "2025-06-06T00:00:00Z",
+    "published": "2025-06-06T00:00:00Z",
+    "references": [
+        {
+            "type": "REPORT",
+            "url": "https://github.com/owasp-modsecurity/ModSecurity/commit/3a54ccea62d3f7151bb08cb78d60c5e90b53ca2e"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2025-48866"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://nvd.nist.gov/vuln/detail/CVE-2025-48866"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "ModSecurity -- possible DoS vulnerability"
+}

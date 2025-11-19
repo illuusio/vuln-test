@@ -1,0 +1,62 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "FreeBSD"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "introduced": "11.0"
+                        },
+                        {
+                            "fixed": "11.0_11"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                },
+                {
+                    "events": [
+                        {
+                            "introduced": "10.3"
+                        },
+                        {
+                            "fixed": "10.3_20"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "discovery": "2017-07-12T00:00:00Z",
+        "references": {
+            "cvename": [
+                "CVE-2017-1110"
+            ],
+            "freebsdsa": [
+                "SA-17:05.heimdal"
+            ]
+        },
+        "vid": "420243e9-a840-11e7-b5af-a4badb2f4699"
+    },
+    "details": "# Problem Description:\n\nThere is a programming error in the Heimdal implementation that used an\nunauthenticated, plain-text version of the KDC-REP service name found in\na ticket.\n\n# Impact:\n\nAn attacker who has control of the network between a client and the\nservice it talks to will be able to impersonate the service, allowing a\nsuccessful man-in-the-middle (MITM) attack that circumvents the mutual\nauthentication.\n",
+    "id": "FreeBSD-2017-0230",
+    "modified": "2017-10-03T00:00:00Z",
+    "published": "2017-10-03T00:00:00Z",
+    "references": [
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2017-1110"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://www.freebsd.org/security/advisories/FreeBSD-SA-17:05.heimdal.asc"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "FreeBSD -- heimdal KDC-REP service name validation vulnerability"
+}

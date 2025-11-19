@@ -1,0 +1,74 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "curl"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "introduced": "7.14.1,1"
+                        },
+                        {
+                            "fixed": "7.15.3"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        },
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "linux-curl"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "introduced": "7.14.1,1"
+                        },
+                        {
+                            "fixed": "7.15.3"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "cite": [
+            "http://curl.haxx.se/docs/adv_20060320.html"
+        ],
+        "discovery": "2006-03-20T00:00:00Z",
+        "references": {
+            "cvename": [
+                "CVE-2006-1061"
+            ]
+        },
+        "vid": "b8e361b8-b7ff-11da-8414-0013d4a4a40e"
+    },
+    "details": "A Project cURL Security Advisory reports:\n\n> libcurl uses the given file part of a TFTP URL in a manner that allows\n> a malicious user to overflow a heap-based memory buffer due to the\n> lack of boundary check.\n>\n> This overflow happens if you pass in a URL with a TFTP protocol prefix\n> (\\\"tftp://\\\"), using a valid host and a path part that is longer than\n> 512 bytes.\n>\n> The affected flaw can be triggered by a redirect, if curl/libcurl is\n> told to follow redirects and an HTTP server points the client to a\n> tftp URL with the characteristics described above.\n",
+    "id": "FreeBSD-2006-0047",
+    "modified": "2006-10-05T00:00:00Z",
+    "published": "2006-03-20T00:00:00Z",
+    "references": [
+        {
+            "type": "REPORT",
+            "url": "http://curl.haxx.se/docs/adv_20060320.html"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2006-1061"
+        },
+        {
+            "type": "WEB",
+            "url": "http://curl.haxx.se/docs/adv_20060320.html"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "curl -- TFTP packet buffer overflow vulnerability"
+}

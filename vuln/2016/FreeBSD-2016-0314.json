@@ -1,0 +1,62 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "FreeBSD"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "introduced": "9.2"
+                        },
+                        {
+                            "fixed": "9.2_7"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                },
+                {
+                    "events": [
+                        {
+                            "introduced": "10.0"
+                        },
+                        {
+                            "fixed": "10.0_4"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "discovery": "2014-06-03T00:00:00Z",
+        "references": {
+            "cvename": [
+                "CVE-2014-3879"
+            ],
+            "freebsdsa": [
+                "SA-14:13.pam"
+            ]
+        },
+        "vid": "6e8f9003-6007-11e6-a6c3-14dae9d210b8"
+    },
+    "details": "# Problem Description:\n\nThe OpenPAM library searches for policy definitions in several\nlocations. While doing so, the absence of a policy file is a soft\nfailure (handled by searching in the next location) while the presence\nof an invalid file is a hard failure (handled by returning an error to\nthe caller).\n\nThe policy parser returns the same error code (ENOENT) when a\nsyntactically valid policy references a non-existent module as when the\nrequested policy file does not exist. The search loop regards this as a\nsoft failure and looks for the next similarly-named policy, without\ndiscarding the partially-loaded configuration.\n\nA similar issue can arise if a policy contains an include directive that\nrefers to a non-existent policy.\n\n# Impact:\n\nIf a module is removed, or the name of a module is misspelled in the\npolicy file, the PAM library will proceed with a partially loaded\nconfiguration. Depending on the exact circumstances, this may result in\na fail-open scenario where users are allowed to log in without a\npassword, or with an incorrect password.\n\nIn particular, if a policy references a module installed by a package or\nport, and that package or port is being reinstalled or upgraded, there\nis a brief window of time during which the module is absent and policies\nthat use it may fail open. This can be especially damaging to\nInternet-facing SSH servers, which are regularly subjected to\nbrute-force scans.\n",
+    "id": "FreeBSD-2016-0314",
+    "modified": "2016-08-11T00:00:00Z",
+    "published": "2016-08-11T00:00:00Z",
+    "references": [
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2014-3879"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://www.freebsd.org/security/advisories/FreeBSD-SA-14:13.pam.asc"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "FreeBSD -- Incorrect error handling in PAM policy parser"
+}

@@ -1,0 +1,55 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "curl"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "introduced": "7.11.1"
+                        },
+                        {
+                            "fixed": "7.50.3"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "cite": [
+            "https://curl.haxx.se/docs/adv_20160914.html"
+        ],
+        "discovery": "2016-09-14T00:00:00Z",
+        "references": {
+            "cvename": [
+                "CVE-2016-7167"
+            ]
+        },
+        "vid": "b018121b-7a4b-11e6-bf52-b499baebfeaf"
+    },
+    "details": "The cURL project reports\n\n> The four libcurl functions curl_escape(), curl_easy_escape(),\n> curl_unescape and curl_easy_unescape perform string URL percent\n> escaping and unescaping. They accept custom string length inputs in\n> signed integer arguments.\n>\n> The provided string length arguments were not properly checked and due\n> to arithmetic in the functions, passing in the length 0xffffffff\n> (2\\^32-1 or UINT_MAX or even just -1) would end up causing an\n> allocation of zero bytes of heap memory that curl would attempt to\n> write gigabytes of data into.\n",
+    "id": "FreeBSD-2016-0375",
+    "modified": "2016-09-14T00:00:00Z",
+    "published": "2016-09-14T00:00:00Z",
+    "references": [
+        {
+            "type": "REPORT",
+            "url": "https://curl.haxx.se/docs/adv_20160914.html"
+        },
+        {
+            "type": "WEB",
+            "url": "https://curl.haxx.se/docs/adv_20160914.html"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2016-7167"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "cURL -- Escape and unescape integer overflows"
+}

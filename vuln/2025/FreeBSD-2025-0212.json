@@ -1,0 +1,100 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "firefox"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "140.0,2"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "cite": [
+            "https://bugzilla.mozilla.org/buglist.cgi?bug_id=1941377%2C1960948%2C1966187%2C1966505%2C1970764"
+        ],
+        "discovery": "2025-06-24T00:00:00Z",
+        "references": {
+            "cvename": [
+                "CVE-2025-6427",
+                "CVE-2025-6432",
+                "CVE-2025-6433",
+                "CVE-2025-6434",
+                "CVE-2025-6435",
+                "CVE-2025-6436"
+            ]
+        },
+        "vid": "a55d2120-58cf-11f0-b4ad-b42e991fc52e"
+    },
+    "details": "security@mozilla.org reports:\n\n> An attacker was able to bypass the \\`connect-src\\` directive of a\n> Content Security Policy by manipulating subdocuments. This would have\n> also hidden the connections from the Network tab in Devtools.\n>\n> When Multi-Account Containers was enabled, DNS requests could have\n> bypassed a SOCKS proxy when the domain name was invalid or the SOCKS\n> proxy was not responding.\n>\n> If a user visited a webpage with an invalid TLS certificate, and\n> granted an exception, the webpage was able to provide a WebAuthn\n> challenge that the user would be prompted to complete. This is in\n> violation of the WebAuthN spec which requires \\\"a secure transport\n> established without errors\\\".\n>\n> The exception page for the HTTPS-Only feature, displayed when a\n> website is opened via HTTP, lacked an anti-clickjacking delay,\n> potentially allowing an attacker to trick a user into granting an\n> exception and loading a webpage over HTTP.\n>\n> If a user saved a response from the Network tab in Devtools using the\n> Save As context menu option, that file may not have been saved with\n> the \\`.download\\` file extension. This could have led to the user\n> inadvertently running a malicious executable.\n>\n> Memory safety bugs present in Firefox 139 and Thunderbird 139. Some of\n> these bugs showed evidence of memory corruption and we presume that\n> with enough effort some of these could have been exploited to run\n> arbitrary code.\n",
+    "id": "FreeBSD-2025-0212",
+    "modified": "2025-07-04T00:00:00Z",
+    "published": "2025-07-04T00:00:00Z",
+    "references": [
+        {
+            "type": "REPORT",
+            "url": "https://bugzilla.mozilla.org/buglist.cgi?bug_id=1941377%2C1960948%2C1966187%2C1966505%2C1970764"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2025-6427"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://nvd.nist.gov/vuln/detail/CVE-2025-6427"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2025-6432"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://nvd.nist.gov/vuln/detail/CVE-2025-6432"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2025-6433"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://nvd.nist.gov/vuln/detail/CVE-2025-6433"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2025-6434"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://nvd.nist.gov/vuln/detail/CVE-2025-6434"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2025-6435"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://nvd.nist.gov/vuln/detail/CVE-2025-6435"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2025-6436"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://nvd.nist.gov/vuln/detail/CVE-2025-6436"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "firefox -- multiple vulnerabilities"
+}

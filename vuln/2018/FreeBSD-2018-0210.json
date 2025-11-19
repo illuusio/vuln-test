@@ -1,0 +1,62 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:kernel",
+                "name": "FreeBSD-kernel"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "introduced": "11.2"
+                        },
+                        {
+                            "fixed": "11.2_2"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                },
+                {
+                    "events": [
+                        {
+                            "introduced": "11.1"
+                        },
+                        {
+                            "fixed": "11.1_13"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "discovery": "2018-08-14T00:00:00Z",
+        "references": {
+            "cvename": [
+                "CVE-2018-6923"
+            ],
+            "freebsdsa": [
+                "SA-18:10.ip"
+            ]
+        },
+        "vid": "359e1548-a652-11e8-805b-a4badb2f4699"
+    },
+    "details": "# Problem Description:\n\nA researcher has notified us of a DoS attack applicable to another\noperating system. While FreeBSD may not be vulnerable to that exact\nattack, we have identified several places where inadequate DoS\nprotection could allow an attacker to consume system resources.\n\nIt is not necessary that the attacker be able to establish two-way\ncommunication to carry out these attacks. These attacks impact both IPv4\nand IPv6 fragment reassembly.\n\n# Impact:\n\nIn the worst case, an attacker could send a stream of crafted fragments\nwith a low packet rate which would consume a substantial amount of CPU.\n\nOther attack vectors allow an attacker to send a stream of crafted\nfragments which could consume a large amount of CPU or all available\nmbuf clusters on the system.\n\nThese attacks could temporarily render a system unreachable through\nnetwork interfaces or temporarily render a system unresponsive. The\neffects of the attack should clear within 60 seconds after the attack\nstops.\n",
+    "id": "FreeBSD-2018-0210",
+    "modified": "2018-08-22T00:00:00Z",
+    "published": "2018-08-22T00:00:00Z",
+    "references": [
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2018-6923"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://www.freebsd.org/security/advisories/FreeBSD-SA-18:10.ip.asc"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "FreeBSD -- Resource exhaustion in IP fragment reassembly"
+}

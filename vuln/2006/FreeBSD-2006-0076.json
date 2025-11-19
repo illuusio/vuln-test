@@ -1,0 +1,117 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "FreeBSD"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "introduced": "6.0"
+                        },
+                        {
+                            "fixed": "6.0_7"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                },
+                {
+                    "events": [
+                        {
+                            "introduced": "5.4"
+                        },
+                        {
+                            "fixed": "5.4_14"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                },
+                {
+                    "events": [
+                        {
+                            "introduced": "5.3"
+                        },
+                        {
+                            "fixed": "5.3_29"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                },
+                {
+                    "events": [
+                        {
+                            "introduced": "5"
+                        },
+                        {
+                            "fixed": "5.3"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                },
+                {
+                    "events": [
+                        {
+                            "introduced": "4.11"
+                        },
+                        {
+                            "fixed": "4.11_17"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                },
+                {
+                    "events": [
+                        {
+                            "introduced": "4.10"
+                        },
+                        {
+                            "fixed": "4.10_23"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                },
+                {
+                    "events": [
+                        {
+                            "fixed": "4.10"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "discovery": "2006-04-19T00:00:00Z",
+        "references": {
+            "cvename": [
+                "CVE-2006-1056"
+            ],
+            "freebsdsa": [
+                "SA-06:14.fpu"
+            ]
+        },
+        "vid": "1fa4c9f1-cfca-11da-a672-000e0c2e438a"
+    },
+    "details": "# Problem Description\n\nOn \\\"7th generation\\\" and \\\"8th generation\\\" processors manufactured by\nAMD, including the AMD Athlon, Duron, Athlon MP, Athlon XP, Athlon64,\nAthlon64 FX, Opteron, Turion, and Sempron, the fxsave and fxrstor\ninstructions do not save and restore the FOP, FIP, and FDP registers\nunless the exception summary bit (ES) in the x87 status word is set to\n1, indicating that an unmasked x87 exception has occurred.\n\nThis behaviour is consistent with documentation provided by AMD, but is\ndifferent from processors from other vendors, which save and restore the\nFOP, FIP, and FDP registers regardless of the value of the ES bit. As a\nresult of this discrepancy remaining unnoticed until now, the FreeBSD\nkernel does not restore the contents of the FOP, FIP, and FDP registers\nbetween context switches.\n\n# Impact\n\nOn affected processors, a local attacker can monitor the execution path\nof a process which uses floating-point operations. This may allow an\nattacker to steal cryptographic keys or other sensitive information.\n\n# Workaround\n\nNo workaround is available, but systems which do not use AMD Athlon,\nDuron, Athlon MP, Athlon XP, Athlon64, Athlon64 FX, Opteron, Turion, or\nSempron processors are not vulnerable.\n",
+    "id": "FreeBSD-2006-0076",
+    "modified": "2016-08-09T00:00:00Z",
+    "published": "2006-04-19T00:00:00Z",
+    "references": [
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2006-1056"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://www.freebsd.org/security/advisories/FreeBSD-SA-06:14.fpu.asc"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "FreeBSD -- FPU information disclosure"
+}

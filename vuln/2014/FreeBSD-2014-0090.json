@@ -1,0 +1,111 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "tomcat"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "6.0.40"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        },
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "tomcat7"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "7.0.53"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        },
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "tomcat8"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "8.0.4"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "cite": [
+            "https://tomcat.apache.org/security-7.html#Fixed_in_Apache_Tomcat_7.0.54"
+        ],
+        "discovery": "2014-05-23T00:00:00Z",
+        "references": {
+            "cvename": [
+                "CVE-2014-0096",
+                "CVE-2014-0099",
+                "CVE-2014-0075"
+            ]
+        },
+        "vid": "81fc1076-1286-11e4-bebd-000c2980a9f3"
+    },
+    "details": "Tomcat Security Team reports:\n\n> Tomcat does not properly restrict XSLT stylesheets, which allows\n> remote attackers to bypass security-manager restrictions and read\n> arbitrary files via a crafted web application that provides an XML\n> external entity declaration in conjunction with an entity reference,\n> related to an XML External Entity (XXE) issue.\n>\n> An integer overflow, when operated behind a reverse proxy, allows\n> remote attackers to conduct HTTP request smuggling attacks via a\n> crafted Content-Length HTTP header.\n>\n> An integer overflow in parseChunkHeader allows remote attackers to\n> cause a denial of service (resource consumption) via a malformed chunk\n> size in chunked transfer coding of a request during the streaming of\n> data.\n",
+    "id": "FreeBSD-2014-0090",
+    "modified": "2017-03-18T00:00:00Z",
+    "published": "2014-07-23T00:00:00Z",
+    "references": [
+        {
+            "type": "REPORT",
+            "url": "https://tomcat.apache.org/security-7.html#Fixed_in_Apache_Tomcat_7.0.54"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2014-0096"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2014-0099"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2014-0075"
+        },
+        {
+            "type": "WEB",
+            "url": "https://tomcat.apache.org/security-6.html"
+        },
+        {
+            "type": "WEB",
+            "url": "https://tomcat.apache.org/security-7.html"
+        },
+        {
+            "type": "WEB",
+            "url": "https://tomcat.apache.org/security-8.html"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "tomcat -- multiple vulnerabilities"
+}

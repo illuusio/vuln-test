@@ -1,0 +1,55 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "openssl-devel"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "introduced": "3.0.4"
+                        },
+                        {
+                            "fixed": "3.0.5"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "cite": [
+            "https://mta.openssl.org/pipermail/openssl-announce/2022-July/000229.html"
+        ],
+        "discovery": "2022-07-01T00:00:00Z",
+        "references": {
+            "cvename": [
+                "CVE-2022-2274"
+            ]
+        },
+        "vid": "f0e45968-faff-11ec-856e-d4c9ef517024"
+    },
+    "details": "The OpenSSL project reports:\n\n> The OpenSSL 3.0.4 release introduced a serious bug in the RSA\n> implementation for X86_64 CPUs supporting the AVX512IFMA instructions.\n> This issue makes the RSA implementation with 2048 bit private keys\n> incorrect on such machines and memory corruption will happen during\n> the computation. As a consequence of the memory corruption an attacker\n> may be able to trigger a remote code execution on the machine\n> performing the computation.\n>\n> SSL/TLS servers or other servers using 2048 bit RSA private keys\n> running on machines supporting AVX512IFMA instructions of the X86_64\n> architecture are affected by this issue.\n",
+    "id": "FreeBSD-2022-0126",
+    "modified": "2022-07-05T00:00:00Z",
+    "published": "2022-07-03T00:00:00Z",
+    "references": [
+        {
+            "type": "REPORT",
+            "url": "https://mta.openssl.org/pipermail/openssl-announce/2022-July/000229.html"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2022-2274"
+        },
+        {
+            "type": "WEB",
+            "url": "https://www.openssl.org/news/secadv/20220705.txt"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "OpenSSL -- Heap memory corruption with RSA private key operation"
+}

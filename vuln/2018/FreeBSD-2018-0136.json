@@ -1,0 +1,171 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "git"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "2.13.7"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                },
+                {
+                    "events": [
+                        {
+                            "introduced": "2.14"
+                        },
+                        {
+                            "fixed": "2.14.4"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                },
+                {
+                    "events": [
+                        {
+                            "introduced": "2.15"
+                        },
+                        {
+                            "fixed": "2.15.2"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                },
+                {
+                    "events": [
+                        {
+                            "introduced": "2.16"
+                        },
+                        {
+                            "fixed": "2.16.4"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                },
+                {
+                    "events": [
+                        {
+                            "introduced": "2.17"
+                        },
+                        {
+                            "fixed": "2.17.1"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        },
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "git-lite"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "2.13.7"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                },
+                {
+                    "events": [
+                        {
+                            "introduced": "2.14"
+                        },
+                        {
+                            "fixed": "2.14.4"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                },
+                {
+                    "events": [
+                        {
+                            "introduced": "2.15"
+                        },
+                        {
+                            "fixed": "2.15.2"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                },
+                {
+                    "events": [
+                        {
+                            "introduced": "2.16"
+                        },
+                        {
+                            "fixed": "2.16.4"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                },
+                {
+                    "events": [
+                        {
+                            "introduced": "2.17"
+                        },
+                        {
+                            "fixed": "2.17.1"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "cite": [
+            "https://marc.info/?l=git&m=152761328506724&=2"
+        ],
+        "discovery": "2018-05-29T00:00:00Z",
+        "references": {
+            "cvename": [
+                "CVE-2018-11233",
+                "CVE-2018-11235"
+            ]
+        },
+        "vid": "c7a135f4-66a4-11e8-9e63-3085a9a47796"
+    },
+    "details": "The Git community reports:\n\n> - In affected versions of Git, code to sanity-check pathnames on NTFS\n>   can result in reading out-of-bounds memory.\n> - In affected versions of Git, remote code execution can occur. With a\n>   crafted .gitmodules file, a malicious project can execute an\n>   arbitrary script on a machine that runs \\\"git clone\n>   \\--recurse-submodules\\\" because submodule \\\"names\\\" are obtained\n>   from this file, and then appended to \\$GIT_DIR/modules, leading to\n>   directory traversal with \\\"../\\\" in a name. Finally, post-checkout\n>   hooks from a submodule are executed, bypassing the intended design\n>   in which hooks are not obtained from a remote server.\n",
+    "id": "FreeBSD-2018-0136",
+    "modified": "2018-06-02T00:00:00Z",
+    "published": "2018-06-02T00:00:00Z",
+    "references": [
+        {
+            "type": "REPORT",
+            "url": "https://marc.info/?l=git&m=152761328506724&=2"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2018-11233"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2018-11233"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2018-11235"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2018-11235"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "Git -- Fix memory out-of-bounds and remote code execution vulnerabilities (CVE-2018-11233 and CVE-2018-11235)"
+}

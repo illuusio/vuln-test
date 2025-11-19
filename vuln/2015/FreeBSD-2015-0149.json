@@ -1,0 +1,59 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "logstash"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "1.4.2"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "cite": [
+            "https://www.elastic.co/blog/logstash-1-4-2"
+        ],
+        "discovery": "2014-06-24T00:00:00Z",
+        "references": {
+            "cvename": [
+                "CVE-2014-4326"
+            ]
+        },
+        "vid": "2184ccad-1a10-11e5-b43d-002590263bf5"
+    },
+    "details": "Elastic reports:\n\n> The vulnerability impacts deployments that use the either the zabbix\n> or the nagios_nsca outputs. In these cases, an attacker with an\n> ability to send crafted events to any source of data for Logstash\n> could execute operating system commands with the permissions of the\n> Logstash process.\n>\n> Deployments that do not use the zabbix or the nagios_nsca outputs are\n> not vulnerable and do not need to upgrade for this reason.\n>\n> We have added this vulnerability to our CVE page and are working on\n> filling out the CVE.\n>\n> We would like to thank Jan Karwowski and Danila Borisiuk for reporting\n> the issue and working with us on the resolution.\n",
+    "id": "FreeBSD-2015-0149",
+    "modified": "2015-06-24T00:00:00Z",
+    "published": "2015-06-24T00:00:00Z",
+    "references": [
+        {
+            "type": "REPORT",
+            "url": "https://www.elastic.co/blog/logstash-1-4-2"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2014-4326"
+        },
+        {
+            "type": "WEB",
+            "url": "https://www.elastic.co/blog/logstash-1-4-2"
+        },
+        {
+            "type": "WEB",
+            "url": "https://www.elastic.co/community/security"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "logstash -- Remote command execution in Logstash zabbix and nagios_nsca outputs"
+}

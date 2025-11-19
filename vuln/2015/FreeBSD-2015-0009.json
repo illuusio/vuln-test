@@ -1,0 +1,55 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "kde-runtime"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "4.12_3"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "cite": [
+            "https://www.kde.org/info/security/advisory-20150109-1.txt"
+        ],
+        "discovery": "2015-01-09T00:00:00Z",
+        "references": {
+            "cvename": [
+                "CVE-2013-7252"
+            ]
+        },
+        "vid": "7a8a74d1-9c34-11e4-a40b-5453ed2e2b49"
+    },
+    "details": "Valentin Rusu reports:\n\n> Until KDE Applications 14.12.0, kwalletd incorrectly handled CBC\n> encryption blocks when encrypting secrets in kwl files. The secrets\n> were still encrypted, but the result binary data corresponded to an\n> ECB encrypted block instead of CBC.\n>\n> The ECB encryption algorithm, even if it\\'ll scramble user data, will\n> produce same encrypted byte sequence for the same input text. As a\n> result, attackers may eventually find-out the encrypted text.\n",
+    "id": "FreeBSD-2015-0009",
+    "modified": "2015-01-14T00:00:00Z",
+    "published": "2015-01-14T00:00:00Z",
+    "references": [
+        {
+            "type": "REPORT",
+            "url": "https://www.kde.org/info/security/advisory-20150109-1.txt"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2013-7252"
+        },
+        {
+            "type": "WEB",
+            "url": "https://www.kde.org/info/security/advisory-20150109-1.txt"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "kde-runtime -- incorrect CBC encryption handling"
+}

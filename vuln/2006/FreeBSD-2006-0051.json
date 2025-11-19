@@ -1,0 +1,95 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "FreeBSD"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "introduced": "6.0"
+                        },
+                        {
+                            "fixed": "6.0_6"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                },
+                {
+                    "events": [
+                        {
+                            "introduced": "5.4"
+                        },
+                        {
+                            "fixed": "5.4_13"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                },
+                {
+                    "events": [
+                        {
+                            "introduced": "5.3"
+                        },
+                        {
+                            "fixed": "5.3_28"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                },
+                {
+                    "events": [
+                        {
+                            "introduced": "4.11"
+                        },
+                        {
+                            "fixed": "4.11_16"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                },
+                {
+                    "events": [
+                        {
+                            "introduced": "4.10"
+                        },
+                        {
+                            "fixed": "4.10_22"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "discovery": "2006-03-22T00:00:00Z",
+        "references": {
+            "cvename": [
+                "CVE-2006-1283"
+            ],
+            "freebsdsa": [
+                "SA-06:12.opie"
+            ]
+        },
+        "vid": "e93bc5b0-bb2e-11da-b2fb-000e0c2e438a"
+    },
+    "details": "# Problem Description\n\nThe opiepasswd(1) program uses getlogin(2) to identify the user calling\nopiepasswd(1). In some circumstances getlogin(2) will return \\\"root\\\"\neven when running as an unprivileged user. This causes opiepasswd(1) to\nallow an unpriviled user to configure OPIE authentication for the root\nuser.\n\n# Impact\n\nIn certain cases an attacker able to run commands as a non privileged\nusers which have not explicitly logged in, for example CGI scripts run\nby a web server, is able to configure OPIE access for the root user. If\nthe attacker is able to authenticate as root using OPIE authentication,\nfor example if \\\"PermitRootLogin\\\" is set to \\\"yes\\\" in sshd_config or\nthe attacker has access to a local user in the \\\"wheel\\\" group, the\nattacker can gain root privileges.\n\n# Workaround\n\nDisable OPIE authentication in PAM:\n\n    # sed -i \"\" -e /opie/s/^/#/ /etc/pam.d/*\n\nor\n\nRemove the setuid bit from opiepasswd:\n\n    # chflags noschg /usr/bin/opiepasswd\n\n    # chmod 555 /usr/bin/opiepasswd\n\n    # chflags schg /usr/bin/opiepasswd\n",
+    "id": "FreeBSD-2006-0051",
+    "modified": "2006-06-09T00:00:00Z",
+    "published": "2006-03-24T00:00:00Z",
+    "references": [
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2006-1283"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://www.freebsd.org/security/advisories/FreeBSD-SA-06:12.opie.asc"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "OPIE -- arbitrary password change"
+}

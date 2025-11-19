@@ -1,0 +1,62 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "FreeBSD"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "introduced": "12.0"
+                        },
+                        {
+                            "fixed": "12.0_7"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                },
+                {
+                    "events": [
+                        {
+                            "introduced": "11.2"
+                        },
+                        {
+                            "fixed": "11.2_11"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "discovery": "2019-07-02T00:00:00Z",
+        "references": {
+            "cvename": [
+                "CVE-2019-5600"
+            ],
+            "freebsdsa": [
+                "SA-19:09.iconv"
+            ]
+        },
+        "vid": "f62bba56-b309-11e9-a87f-a4badb2f4699"
+    },
+    "details": "# Problem Description:\n\nWith certain inputs, iconv may write beyond the end of the output\nbuffer.\n\n# Impact:\n\nDepending on the way in which iconv is used, an attacker may be able to\ncreate a denial of service, provoke incorrect program behavior, or\ninduce a remote code execution. iconv is a libc library function and the\nnature of possible attacks will depend on the way in which iconv is used\nby applications or daemons.\n",
+    "id": "FreeBSD-2019-0161",
+    "modified": "2019-07-30T00:00:00Z",
+    "published": "2019-07-30T00:00:00Z",
+    "references": [
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2019-5600"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://www.freebsd.org/security/advisories/FreeBSD-SA-19:09.iconv.asc"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "FreeBSD -- iconv buffer overflow"
+}

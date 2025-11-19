@@ -1,0 +1,179 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "openssl"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "1.1.1n,1"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        },
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "openssl-devel"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "3.0.2"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        },
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "openssl-quictls"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "3.0.2"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        },
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "libressl"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "3.4.3"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        },
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "libressl-devel"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "3.5.1"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        },
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "FreeBSD"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "introduced": "13.0"
+                        },
+                        {
+                            "fixed": "13.0_8"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                },
+                {
+                    "events": [
+                        {
+                            "introduced": "12.3"
+                        },
+                        {
+                            "fixed": "12.3_3"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                },
+                {
+                    "events": [
+                        {
+                            "introduced": "12.2"
+                        },
+                        {
+                            "fixed": "12.2_14"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "cite": [
+            "https://www.openssl.org/news/secadv/20220315.txt"
+        ],
+        "discovery": "2022-03-15T00:00:00Z",
+        "references": {
+            "cvename": [
+                "CVE-2022-0778"
+            ],
+            "freebsdsa": [
+                "SA-22:03.openssl"
+            ]
+        },
+        "vid": "ea05c456-a4fd-11ec-90de-1c697aa5a594"
+    },
+    "details": "The OpenSSL project reports:\n\n> Infinite loop in BN_mod_sqrt() reachable when parsing certificates\n> (High)\n>\n> The BN_mod_sqrt() function, which computes a modular square root,\n> contains a bug that can cause it to loop forever for non-prime moduli.\n>\n> Internally this function is used when parsing certificates that\n> contain elliptic curve public keys in compressed form or explicit\n> elliptic curve parameters with a base point encoded in compressed\n> form.\n>\n> It is possible to trigger the infinite loop by crafting a certificate\n> that has invalid explicit curve parameters.\n>\n> Since certificate parsing happens prior to verification of the\n> certificate signature, any process that parses an externally supplied\n> certificate may thus be subject to a denial of service attack. The\n> infinite loop can also be reached when parsing crafted private keys as\n> they can contain explicit elliptic curve parameters.\n>\n> Thus vulnerable situations include:\n>\n> - TLS clients consuming server certificates\n> - TLS servers consuming client certificates\n> - Hosting providers taking certificates or private keys from customers\n> - Certificate authorities parsing certification requests from\n>   subscribers\n> - Anything else which parses ASN.1 elliptic curve parameters\n>\n> Also any other applications that use the BN_mod_sqrt() where the\n> attacker can control the parameter values are vulnerable to this DoS\n> issue.\n",
+    "id": "FreeBSD-2022-0054",
+    "modified": "2022-03-16T00:00:00Z",
+    "published": "2022-03-16T00:00:00Z",
+    "references": [
+        {
+            "type": "REPORT",
+            "url": "https://www.openssl.org/news/secadv/20220315.txt"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2022-0778"
+        },
+        {
+            "type": "WEB",
+            "url": "https://www.openssl.org/news/secadv/20220315.txt"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://www.freebsd.org/security/advisories/FreeBSD-SA-22:03.openssl.asc"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "OpenSSL -- Infinite loop in BN_mod_sqrt parsing certificates"
+}

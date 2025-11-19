@@ -1,0 +1,74 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "openssl"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "1.0.2r,1"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        },
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "linux-c6-openssl"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "1.0.1e_16"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "cite": [
+            "https://www.openssl.org/news/secadv/20190226.txt"
+        ],
+        "discovery": "2019-02-19T00:00:00Z",
+        "references": {
+            "cvename": [
+                "CVE-2019-1559"
+            ]
+        },
+        "vid": "7700061f-34f7-11e9-b95c-b499baebfeaf"
+    },
+    "details": "The OpenSSL project reports:\n\n> 0-byte record padding oracle (CVE-2019-1559) (Moderate)\\\n> If an application encounters a fatal protocol error and then calls\n> SSL_shutdown() twice (once to send a close_notify, and once to receive\n> one) then OpenSSL can respond differently to the calling application\n> if a 0 byte record is received with invalid padding compared to if a 0\n> byte record is received with an invalid MAC. If the application then\n> behaves differently based on that in a way that is detectable to the\n> remote peer, then this amounts to a padding oracle that could be used\n> to decrypt data.\n",
+    "id": "FreeBSD-2019-0040",
+    "modified": "2019-03-07T00:00:00Z",
+    "published": "2019-02-20T00:00:00Z",
+    "references": [
+        {
+            "type": "REPORT",
+            "url": "https://www.openssl.org/news/secadv/20190226.txt"
+        },
+        {
+            "type": "WEB",
+            "url": "https://www.openssl.org/news/secadv/20190226.txt"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2019-1559"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "OpenSSL -- Padding oracle vulnerability"
+}

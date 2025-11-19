@@ -1,0 +1,65 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "libraw"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "0.18.7"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "cite": [
+            "https://www.securityfocus.com/archive/1/541732"
+        ],
+        "discovery": "2018-01-16T00:00:00Z",
+        "references": {
+            "cvename": [
+                "CVE-2018-5800",
+                "CVE-2018-5801",
+                "CVE-2018-5802"
+            ]
+        },
+        "vid": "6f0b0cbf-1274-11e8-8b5b-4ccc6adda413"
+    },
+    "details": "Secunia Research reports:\n\n> CVE-2018-5800: An off-by-one error within the\n> \\\"LibRaw::kodak_ycbcr_load_raw()\\\" function\n> (internal/dcraw_common.cpp) can be exploited to cause a heap-based\n> buffer overflow and subsequently cause a crash.\n>\n> CVE-2017-5801: An error within the \\\"LibRaw::unpack()\\\" function\n> (src/libraw_cxx.cpp) can be exploited to trigger a NULL pointer\n> dereference.\n>\n> CVE-2017-5802: An error within the \\\"kodak_radc_load_raw()\\\" function\n> (internal/dcraw_common.cpp) related to the \\\"buf\\\" variable can be\n> exploited to cause an out-of-bounds read memory access and\n> subsequently cause a crash.\n",
+    "id": "FreeBSD-2018-0045",
+    "modified": "2018-02-15T00:00:00Z",
+    "published": "2018-02-15T00:00:00Z",
+    "references": [
+        {
+            "type": "REPORT",
+            "url": "https://www.securityfocus.com/archive/1/541732"
+        },
+        {
+            "type": "WEB",
+            "url": "https://www.securityfocus.com/archive/1/541732"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2018-5800"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2018-5801"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2018-5802"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "libraw -- multiple DoS vulnerabilities"
+}

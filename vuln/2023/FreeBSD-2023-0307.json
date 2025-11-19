@@ -1,0 +1,74 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "curl"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "introduced": "7.69.0,1"
+                        },
+                        {
+                            "fixed": "8.4.0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        },
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "cmake-core"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "3.27.8"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "cite": [
+            "https://curl.se/docs/CVE-2023-38545.html"
+        ],
+        "discovery": "2023-09-30T00:00:00Z",
+        "references": {
+            "cvename": [
+                "CVE-2023-38545"
+            ]
+        },
+        "vid": "d6c19e8c-6806-11ee-9464-b42e991fc52e"
+    },
+    "details": "The curl team reports:\n\n> This flaw makes curl overflow a heap based buffer in the SOCKS5 proxy\n> handshake. When curl is asked to pass along the hostname to the SOCKS5\n> proxy to allow that to resolve the address instead of it getting done\n> by curl itself, the maximum length that hostname can be is 255 bytes.\n> If the hostname is detected to be longer than 255 bytes, curl switches\n> to local name resolving and instead passes on the resolved address\n> only to the proxy. Due to a bug, the local variable that means \\\"let\n> the host resolve the name\\\" could get the wrong value during a slow\n> SOCKS5 handshake, and contrary to the intention, copy the too long\n> hostname to the target buffer instead of copying just the resolved\n> address there.\n",
+    "id": "FreeBSD-2023-0307",
+    "modified": "2023-10-11T00:00:00Z",
+    "published": "2023-10-11T00:00:00Z",
+    "references": [
+        {
+            "type": "REPORT",
+            "url": "https://curl.se/docs/CVE-2023-38545.html"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2023-38545"
+        },
+        {
+            "type": "WEB",
+            "url": "https://curl.se/docs/CVE-2023-38545.html"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "curl -- SOCKS5 heap buffer overflow"
+}

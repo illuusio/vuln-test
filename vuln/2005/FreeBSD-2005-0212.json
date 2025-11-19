@@ -1,0 +1,87 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "bugzilla"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "introduced": "2.17.1"
+                        },
+                        {
+                            "fixed": "2.18.2"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        },
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "ja-bugzilla"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "introduced": "2.17.1"
+                        },
+                        {
+                            "fixed": "2.18.2"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "cite": [
+            "http://www.bugzilla.org/security/2.18.1/"
+        ],
+        "discovery": "2005-07-07T00:00:00Z",
+        "references": {
+            "cvename": [
+                "CVE-2005-2173",
+                "CVE-2005-2174"
+            ]
+        },
+        "vid": "6e33f4ab-efed-11d9-8310-0001020eed82"
+    },
+    "details": "A Bugzilla Security Advisory reports:\n\n> Any user can change any flag on any bug, even if they don\\'t have\n> access to that bug, or even if they can\\'t normally make bug changes.\n> This also allows them to expose the summary of a bug.\n>\n> Bugs are inserted into the database before they are marked as private,\n> in Bugzilla code. Thus, MySQL replication can lag in between the time\n> that the bug is inserted and when it is marked as private (usually\n> less than a second). If replication lags at this point, the bug\n> summary will be accessible to all users until replication catches up.\n> Also, on a very slow machine, there may be a pause longer than a\n> second that allows users to see the title of the newly-filed bug.\n",
+    "id": "FreeBSD-2005-0212",
+    "modified": "2005-07-18T00:00:00Z",
+    "published": "2005-07-08T00:00:00Z",
+    "references": [
+        {
+            "type": "REPORT",
+            "url": "http://www.bugzilla.org/security/2.18.1/"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2005-2173"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2005-2174"
+        },
+        {
+            "type": "WEB",
+            "url": "http://www.bugzilla.org/security/2.18.1/"
+        },
+        {
+            "type": "REPORT",
+            "url": "https://bugzilla.mozilla.org/show_bug.cgi?id=292544"
+        },
+        {
+            "type": "REPORT",
+            "url": "https://bugzilla.mozilla.org/show_bug.cgi?id=293159"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "bugzilla -- multiple vulnerabilities"
+}

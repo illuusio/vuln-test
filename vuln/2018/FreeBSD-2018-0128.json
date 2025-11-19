@@ -1,0 +1,71 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "jenkins"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "last_affected": "2.120"
+                        },
+                        {
+                            "fixed": "2.120"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        },
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "jenkins-lts"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "last_affected": "2.107.2"
+                        },
+                        {
+                            "fixed": "2.107.2"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "cite": [
+            "https://jenkins.io/security/advisory/2018-05-09/"
+        ],
+        "discovery": "2018-05-09T00:00:00Z",
+        "vid": "06ab7724-0fd7-427e-a5ce-fe436302b10c"
+    },
+    "details": "Jenkins developers report:\n\n> The agent to master security subsystem ensures that the Jenkins master\n> is protected from maliciously configured agents. A path traversal\n> vulnerability allowed agents to escape whitelisted directories to read\n> and write to files they should not be able to access.\n>\n> Black Duck Hub Plugin\\'s API endpoint was affected by an XML External\n> Entity (XXE) processing vulnerability. This allowed an attacker with\n> Overall/Read access to have Jenkins parse a maliciously crafted file\n> that uses external entities for extraction of secrets from the Jenkins\n> master, server-side request forgery, or denial-of-service attacks.\n>\n> Several other lower severity issues were reported, see reference url\n> for details.\n",
+    "id": "FreeBSD-2018-0128",
+    "modified": "2018-05-10T00:00:00Z",
+    "published": "2018-05-10T00:00:00Z",
+    "references": [
+        {
+            "type": "REPORT",
+            "url": "https://jenkins.io/security/advisory/2018-05-09/"
+        },
+        {
+            "type": "WEB",
+            "url": "https://jenkins.io/security/advisory/2018-05-09/"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "jenkins -- multiple vulnerabilities"
+}

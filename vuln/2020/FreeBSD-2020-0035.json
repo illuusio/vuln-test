@@ -1,0 +1,55 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "mbedtls"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "2.16.4"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "cite": [
+            "https://tls.mbed.org/tech-updates/security-advisories/mbedtls-security-advisory-2019-12"
+        ],
+        "discovery": "2019-10-25T00:00:00Z",
+        "references": {
+            "cvename": [
+                "CVE-2019-18222"
+            ]
+        },
+        "vid": "b70b880f-5727-11ea-a2f3-001cc0382b2f"
+    },
+    "details": "Janos Follath reports:\n\n> Our bignum implementation is not constant time/constant trace, so side\n> channel attacks can retrieve the blinded value, factor it (as it is\n> smaller than RSA keys and not guaranteed to have only large prime\n> factors), and then, by brute force, recover the key.\n",
+    "id": "FreeBSD-2020-0035",
+    "modified": "2020-02-24T00:00:00Z",
+    "published": "2020-02-24T00:00:00Z",
+    "references": [
+        {
+            "type": "REPORT",
+            "url": "https://tls.mbed.org/tech-updates/security-advisories/mbedtls-security-advisory-2019-12"
+        },
+        {
+            "type": "WEB",
+            "url": "https://tls.mbed.org/tech-updates/security-advisories/mbedtls-security-advisory-2019-12"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2019-18222"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "Mbed TLS -- Side channel attack on ECDSA"
+}

@@ -1,0 +1,103 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "node"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "14.11.0"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        },
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "node12"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "12.18.4"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        },
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "node10"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "10.22.1"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "cite": [
+            "https://nodejs.org/en/blog/vulnerability/september-2020-security-releases/"
+        ],
+        "discovery": "2020-09-08T00:00:00Z",
+        "references": {
+            "cvename": [
+                "CVE-2020-8201",
+                "CVE-2020-8251",
+                "CVE-2020-8252"
+            ]
+        },
+        "vid": "4ca5894c-f7f1-11ea-8ff8-0022489ad614"
+    },
+    "details": "Node.js reports:\n\n> Updates are now available for v10,x, v12.x and v14.x Node.js release\n> lines for the following issues.\n>\n> # HTTP Request Smuggling due to CR-to-Hyphen conversion (High) (CVE-2020-8201)\n>\n> Affected Node.js versions converted carriage returns in HTTP request\n> headers to a hyphen before parsing. This can lead to HTTP Request\n> Smuggling as it is a non-standard interpretation of the header.\n>\n> Impacts:\n>\n> - All versions of the 14.x and 12.x releases line\n>\n> # Denial of Service by resource exhaustion CWE-400 due to unfinished HTTP/1.1 requests (Critical) (CVE-2020-8251)\n>\n> Node.js is vulnerable to HTTP denial of service (DOS) attacks based on\n> delayed requests submission which can make the server unable to accept\n> new connections. The fix a new http.Server option called\n> requestTimeout with a default value of 0 which means it is disabled by\n> default. This should be set when Node.js is used as an edge server,\n> for more details refer to the documentation.\n>\n> Impacts:\n>\n> - All versions of the 14.x release line\n>\n> # fs.realpath.native on may cause buffer overflow (Medium) (CVE-2020-8252)\n>\n> libuv\\'s realpath implementation incorrectly determined the buffer\n> size which can result in a buffer overflow if the resolved path is\n> longer than 256 bytes.\n>\n> Impacts:\n>\n> - All versions of the 10.x release line\n> - All versions of the 12.x release line\n> - All versions of the 14.x release line before 14.9.0\n",
+    "id": "FreeBSD-2020-0250",
+    "modified": "2020-09-16T00:00:00Z",
+    "published": "2020-09-16T00:00:00Z",
+    "references": [
+        {
+            "type": "REPORT",
+            "url": "https://nodejs.org/en/blog/vulnerability/september-2020-security-releases/"
+        },
+        {
+            "type": "WEB",
+            "url": "https://nodejs.org/en/blog/vulnerability/september-2020-security-releases/"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2020-8201"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2020-8251"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2020-8252"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "Node.js -- September 2020 Security Releases"
+}

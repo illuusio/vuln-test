@@ -1,0 +1,64 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "arti"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "1.2.3"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "cite": [
+            "https://blog.torproject.org/arti_1_2_3_released/"
+        ],
+        "discovery": "2024-05-14T00:00:00Z",
+        "references": {
+            "cvename": [
+                "CVE-2024-35313",
+                "CVE-2024-35312"
+            ]
+        },
+        "vid": "f393b5a7-1535-11ef-8064-c5610a6efffb"
+    },
+    "details": "Tor Project reports:\n\n> When building anonymizing circuits to or from an onion service with\n> \\'lite\\' vanguards (the default) enabled, the circuit manager code\n> would build the circuits with one hop too few.\n>\n> When \\'full\\' vanguards are enabled, some circuits are supposed to be\n> built with an extra hop to minimize the linkability of the guard\n> nodes. In some circumstances, the circuit manager would build circuits\n> with one hop too few, making it easier for an adversary to discover\n> the L2 and L3 guards of the affected clients and services.\n",
+    "id": "FreeBSD-2024-0127",
+    "modified": "2024-05-18T00:00:00Z",
+    "published": "2024-05-18T00:00:00Z",
+    "references": [
+        {
+            "type": "REPORT",
+            "url": "https://blog.torproject.org/arti_1_2_3_released/"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2024-35313"
+        },
+        {
+            "type": "WEB",
+            "url": "https://gitlab.torproject.org/tpo/core/arti/-/issues/1400"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2024-35312"
+        },
+        {
+            "type": "WEB",
+            "url": "https://gitlab.torproject.org/tpo/core/arti/-/issues/1409"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "Arti -- Security issues related to circuit construction"
+}

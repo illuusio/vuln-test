@@ -1,0 +1,90 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "subversion"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "1.6.17"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        },
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "subversion-freebsd"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "1.6.17"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "cite": [
+            "http://subversion.apache.org/security/CVE-2011-1752-advisory.txt",
+            "http://subversion.apache.org/security/CVE-2011-1783-advisory.txt",
+            "http://subversion.apache.org/security/CVE-2011-1921-advisory.txt"
+        ],
+        "discovery": "2011-05-28T00:00:00Z",
+        "references": {
+            "cvename": [
+                "CVE-2011-1752",
+                "CVE-2011-1783",
+                "CVE-2011-1921"
+            ]
+        },
+        "vid": "e27a1af3-8d21-11e0-a45d-001e8c75030d"
+    },
+    "details": "Subversion team reports:\n\n> Subversion\\'s mod_dav_svn Apache HTTPD server module will dereference\n> a NULL pointer if asked to deliver baselined WebDAV resources.\n>\n> This can lead to a DoS. An exploit has been tested, and tools or users\n> have been observed triggering this problem in the wild.\n\n> Subversion\\'s mod_dav_svn Apache HTTPD server module may in certain\n> scenarios enter a logic loop which does not exit and which allocates\n> memory in each iteration, ultimately exhausting all the available\n> memory on the server.\n>\n> This can lead to a DoS. There are no known instances of this problem\n> being observed in the wild, but an exploit has been tested.\n\n> Subversion\\'s mod_dav_svn Apache HTTPD server module may leak to\n> remote users the file contents of files configured to be unreadable by\n> those users.\n>\n> There are no known instances of this problem being observed in the\n> wild, but an exploit has been tested.\n",
+    "id": "FreeBSD-2011-0081",
+    "modified": "2011-06-02T00:00:00Z",
+    "published": "2011-06-02T00:00:00Z",
+    "references": [
+        {
+            "type": "REPORT",
+            "url": "http://subversion.apache.org/security/CVE-2011-1752-advisory.txt"
+        },
+        {
+            "type": "REPORT",
+            "url": "http://subversion.apache.org/security/CVE-2011-1783-advisory.txt"
+        },
+        {
+            "type": "REPORT",
+            "url": "http://subversion.apache.org/security/CVE-2011-1921-advisory.txt"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2011-1752"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2011-1783"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2011-1921"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "Subversion -- multiple vulnerabilities"
+}

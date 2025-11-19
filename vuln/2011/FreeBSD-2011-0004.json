@@ -1,0 +1,68 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "pecl-phar"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "cite": [
+            "http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2010-2094"
+        ],
+        "discovery": "2010-12-13T00:00:00Z",
+        "references": {
+            "cvename": [
+                "CVE-2010-2094"
+            ]
+        },
+        "vid": "da3d381b-0ee6-11e0-becc-0022156e8794"
+    },
+    "details": "Entry for CVE-2010-2094 says:\n\n> Multiple format string vulnerabilities in the phar extension in PHP\n> 5.3 before 5.3.2 allow context-dependent attackers to obtain sensitive\n> information (memory contents) and possibly execute arbitrary code via\n> a crafted phar:// URI that is not properly handled by the (1)\n> phar_stream_flush, (2) phar_wrapper_unlink, (3) phar_parse_url, or (4)\n> phar_wrapper_open_url functions in ext/phar/stream.c; and the (5)\n> phar_wrapper_open_dir function in ext/phar/dirstream.c, which triggers\n> errors in the php_stream_wrapper_log_error function.\n\nPECL source code for PHAR extension shares the same code, so it is\nvulnerable too.\n",
+    "id": "FreeBSD-2011-0004",
+    "modified": "2011-01-13T00:00:00Z",
+    "published": "2011-01-13T00:00:00Z",
+    "references": [
+        {
+            "type": "REPORT",
+            "url": "http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2010-2094"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2010-2094"
+        },
+        {
+            "type": "WEB",
+            "url": "http://php-security.org/2010/05/14/mops-2010-024-php-phar_stream_flush-format-string-vulnerability/index.html"
+        },
+        {
+            "type": "WEB",
+            "url": "http://php-security.org/2010/05/14/mops-2010-025-php-phar_wrapper_open_dir-format-string-vulnerability/index.htm"
+        },
+        {
+            "type": "WEB",
+            "url": "http://php-security.org/2010/05/14/mops-2010-026-php-phar_wrapper_unlink-format-string-vulnerability/index.htm"
+        },
+        {
+            "type": "WEB",
+            "url": "http://php-security.org/2010/05/14/mops-2010-027-php-phar_parse_url-format-string-vulnerabilities/index.htm"
+        },
+        {
+            "type": "WEB",
+            "url": "http://php-security.org/2010/05/14/mops-2010-028-php-phar_wrapper_open_url-format-string-vulnerabilities/index.html"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "pecl-phar -- format string vulnerability"
+}

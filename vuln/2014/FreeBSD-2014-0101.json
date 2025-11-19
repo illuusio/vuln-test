@@ -1,0 +1,113 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "subversion16"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "introduced": "1.0.0"
+                        },
+                        {
+                            "fixed": "1.7.18"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        },
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "subversion17"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "introduced": "1.0.0"
+                        },
+                        {
+                            "fixed": "1.7.18"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        },
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "subversion"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "introduced": "1.0.0"
+                        },
+                        {
+                            "fixed": "1.7.18"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                },
+                {
+                    "events": [
+                        {
+                            "introduced": "1.8.0"
+                        },
+                        {
+                            "fixed": "1.8.10"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "cite": [
+            "http://subversion.apache.org/security/CVE-2014-3522-advisory.txt"
+        ],
+        "discovery": "2014-08-06T00:00:00Z",
+        "references": {
+            "cvename": [
+                "CVE-2014-3522",
+                "CVE-2014-3528"
+            ]
+        },
+        "vid": "83a418cc-2182-11e4-802c-20cf30e32f6d"
+    },
+    "details": "Subversion Project reports:\n\n> Using the Serf RA layer of Subversion for HTTPS uses the apr_fnmatch\n> API to handle matching wildcards in certificate Common Names and\n> Subject Alternate Names. However, apr_fnmatch is not designed for this\n> purpose. Instead it is designed to behave like common shell globbing.\n> In particular this means that \\'\\*\\' is not limited to a single label\n> within a hostname (i.e. it will match \\'.\\'). But even further\n> apr_fnmatch supports \\'?\\' and character classes (neither of which are\n> part of the RFCs defining how certificate validation works).\n>\n> Subversion stores cached credentials by an MD5 hash based on the URL\n> and the authentication realm of the server the credentials are cached\n> for. MD5 has been shown to be subject to chosen plaintext hash\n> collisions. This means it may be possible to generate an\n> authentication realm which results in the same MD5 hash for a\n> different URL.\n",
+    "id": "FreeBSD-2014-0101",
+    "modified": "2014-08-11T00:00:00Z",
+    "published": "2014-08-11T00:00:00Z",
+    "references": [
+        {
+            "type": "REPORT",
+            "url": "http://subversion.apache.org/security/CVE-2014-3522-advisory.txt"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2014-3522"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2014-3528"
+        },
+        {
+            "type": "WEB",
+            "url": "http://subversion.apache.org/security/CVE-2014-3522-advisory.txt"
+        },
+        {
+            "type": "WEB",
+            "url": "http://subversion.apache.org/security/CVE-2014-3528-advisory.txt"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "subversion -- several vulnerabilities"
+}

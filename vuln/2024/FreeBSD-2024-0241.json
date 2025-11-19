@@ -1,0 +1,84 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "cups-filters"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "1.28.17_6"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        },
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "cups"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "2.4.11"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "cite": [
+            "https://github.com/OpenPrinting/cups-browsed/security/advisories/GHSA-rj88-6mr5-rcw8"
+        ],
+        "discovery": "2024-09-26T00:00:00Z",
+        "references": {
+            "cvename": [
+                "CVE-2024-47076",
+                "CVE-2024-47175",
+                "CVE-2024-47176"
+            ]
+        },
+        "vid": "24375796-7cbc-11ef-a3a9-001cc0382b2f"
+    },
+    "details": "OpenPrinting reports:\n\n> Due to the service binding to \\*:631 ( INADDR_ANY ), multiple bugs in\n> cups-browsed can be exploited in sequence to introduce a malicious\n> printer to the system. This chain of exploits ultimately enables an\n> attacker to execute arbitrary commands remotely on the target machine\n> without authentication when a print job is started. Posing a\n> significant security risk over the network. Notably, this\n> vulnerability is particularly concerning as it can be exploited from\n> the public internet, potentially exposing a vast number of systems to\n> remote attacks if their CUPS services are enabled.\n\nThe vulnerability allows an attacker on the internet to create a new\nprinter device with arbitrary commands in the PPD file of the printer.\nAttacks using mDNS on the local network can also replace an existing\nprinter. The commands are executed when a user attempts to print on the\nmalicious device. They run with the privileges of the user \\\"cups\\\".\n\nIt is recommended to disable the cups_browsed service until patches\nbecome available. On FreeBSD this is the default. You can check the\nstatus and disable the service with the following commands:\n\n`# service cups_browsed status`\\\n`# service cups_browsed stop`\\\n`# service cups_browsed disable`\n\nIf you choose to leave the service enabled, attacks from the internet\ncan be blocked by removing the \\\"cups\\\" protocol from the\nBrowseRemoteProtocols and BrowseProtocols directives in\n/usr/local/etc/cups/cups-browsed.conf. Attacks using mDNS can be blocked\nby removing the \\\"dnssd\\\" protocol as well. Access can be limited to\nspecific IP addresses using BrowseAllow, BrowseDeny, and BrowseOrder\ndirectives as documented in cups-browsed.conf(5). Then restart the\nservice with the following command:\n\n`# service cups_browsed restart`\n",
+    "id": "FreeBSD-2024-0241",
+    "modified": "2024-10-02T00:00:00Z",
+    "published": "2024-09-27T00:00:00Z",
+    "references": [
+        {
+            "type": "REPORT",
+            "url": "https://github.com/OpenPrinting/cups-browsed/security/advisories/GHSA-rj88-6mr5-rcw8"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2024-47076"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2024-47175"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2024-47176"
+        },
+        {
+            "type": "WEB",
+            "url": "https://github.com/OpenPrinting/cups-browsed/security/advisories/GHSA-rj88-6mr5-rcw8"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "cups-filters -- remote code execution"
+}

@@ -1,0 +1,102 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "FreeBSD"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "introduced": "7.4"
+                        },
+                        {
+                            "fixed": "7.4_10"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                },
+                {
+                    "events": [
+                        {
+                            "introduced": "8.1"
+                        },
+                        {
+                            "fixed": "8.1_13"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                },
+                {
+                    "events": [
+                        {
+                            "introduced": "8.2"
+                        },
+                        {
+                            "fixed": "8.2_10"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                },
+                {
+                    "events": [
+                        {
+                            "introduced": "8.3"
+                        },
+                        {
+                            "fixed": "8.3_4"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                },
+                {
+                    "events": [
+                        {
+                            "introduced": "9.0"
+                        },
+                        {
+                            "fixed": "9.0_4"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "cite": [
+            "http://security.freebsd.org/advisories/FreeBSD-SA-12:05.bind.asc"
+        ],
+        "discovery": "2012-07-24T00:00:00Z",
+        "references": {
+            "cvename": [
+                "CVE-2012-3817"
+            ],
+            "freebsdsa": [
+                "SA-12:05.bind"
+            ]
+        },
+        "vid": "0f020b7b-e033-11e1-90a2-000c299b62e1"
+    },
+    "details": "Problem description:\n\n> BIND 9 stores a cache of query names that are known to be failing due\n> to misconfigured name servers or a broken chain of trust. Under high\n> query loads, when DNSSEC validation is active, it is possible for a\n> condition to arise in which data from this cache of failing queries\n> could be used before it was fully initialized, triggering an assertion\n> failure.\n",
+    "id": "FreeBSD-2012-0137",
+    "modified": "2012-08-07T00:00:00Z",
+    "published": "2012-08-07T00:00:00Z",
+    "references": [
+        {
+            "type": "REPORT",
+            "url": "http://security.freebsd.org/advisories/FreeBSD-SA-12:05.bind.asc"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://www.freebsd.org/security/advisories/FreeBSD-SA-12:05.bind.asc"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2012-3817"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "FreeBSD -- named(8) DNSSEC validation Denial of Service"
+}

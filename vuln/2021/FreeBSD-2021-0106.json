@@ -1,0 +1,46 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "shibboleth-sp"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "introduced": "3.0.0"
+                        },
+                        {
+                            "fixed": "3.2.1_1"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "cite": [
+            "https://shibboleth.net/community/advisories/secadv_20210426.txt"
+        ],
+        "discovery": "2021-04-23T00:00:00Z",
+        "vid": "e4403051-a667-11eb-b9c9-6cc21735f730"
+    },
+    "details": "Shibboleth project reports:\n\n> Session recovery feature contains a null pointer deference.\n>\n> The cookie-based session recovery feature added in V3.0 contains a\n> flaw that is exploitable on systems \\*not\\* using the feature if a\n> specially crafted cookie is supplied.\n>\n> This manifests as a crash in the shibd daemon/service process.\n>\n> Because it is very simple to trigger this condition remotely, it\n> results in a potential denial of service condition exploitable by a\n> remote, unauthenticated attacker.\n",
+    "id": "FreeBSD-2021-0106",
+    "modified": "2021-04-26T00:00:00Z",
+    "published": "2021-04-26T00:00:00Z",
+    "references": [
+        {
+            "type": "REPORT",
+            "url": "https://shibboleth.net/community/advisories/secadv_20210426.txt"
+        },
+        {
+            "type": "WEB",
+            "url": "https://shibboleth.net/community/advisories/secadv_20210426.txt"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "sbibboleth-sp -- denial of service vulnerability"
+}

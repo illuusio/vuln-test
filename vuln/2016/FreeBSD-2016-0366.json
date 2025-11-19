@@ -1,0 +1,46 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "asterisk13"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "introduced": "13.10.0"
+                        },
+                        {
+                            "fixed": "13.11.1"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "cite": [
+            "http://www.asterisk.org/downloads/security-advisories"
+        ],
+        "discovery": "2016-08-03T00:00:00Z",
+        "vid": "7fda7920-7603-11e6-b362-001999f8d30b"
+    },
+    "details": "The Asterisk project reports:\n\n> Asterisk can be crashed remotely by sending an ACK to it from an\n> endpoint username that Asterisk does not recognize. Most SIP request\n> types result in an \\\"artificial\\\" endpoint being looked up, but ACKs\n> bypass this lookup. The resulting NULL pointer results in a crash when\n> attempting to determine if ACLs should be applied.\n>\n> This issue was introduced in the Asterisk 13.10 release and only\n> affects that release.\n>\n> This issue only affects users using the PJSIP stack with Asterisk.\n> Those users that use chan_sip are unaffected.\n",
+    "id": "FreeBSD-2016-0366",
+    "modified": "2016-09-08T00:00:00Z",
+    "published": "2016-09-08T00:00:00Z",
+    "references": [
+        {
+            "type": "REPORT",
+            "url": "http://www.asterisk.org/downloads/security-advisories"
+        },
+        {
+            "type": "WEB",
+            "url": "http://downloads.asterisk.org/pub/security/AST-2016-006.html"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "asterisk -- Crash on ACK from unknown endpoint"
+}

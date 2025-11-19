@@ -1,0 +1,82 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "firefox"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "129.0,2"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "cite": [
+            "https://bugzilla.mozilla.org/show_bug.cgi?id=1909241"
+        ],
+        "discovery": "2024-08-06T00:00:00Z",
+        "references": {
+            "cvename": [
+                "CVE-2024-7524",
+                "CVE-2024-6610",
+                "CVE-2024-6609",
+                "CVE-2024-6608"
+            ]
+        },
+        "vid": "5e4d7172-66b8-11ef-b104-b42e991fc52e"
+    },
+    "details": "security@mozilla.org reports:\n\n> - Firefox adds web-compatibility shims in place of some tracking\n>   scripts blocked by Enhanced Tracking Protection. On a site protected\n>   by Content Security Policy in \\\"strict-dynamic\\\" mode, an attacker\n>   able to inject an HTML element could have used a DOM Clobbering\n>   attack on some of the shims and achieved XSS, bypassing the CSP\n>   strict-dynamic protection.\n> - Form validation popups could capture escape key presses. Therefore,\n>   spamming form validation messages could be used to prevent users\n>   from exiting full-screen mode.\n> - When almost out-of-memory an elliptic curve key which was never\n>   allocated could have been freed again.\n> - It was possible to move the cursor using pointerlock from an iframe.\n>   This allowed moving the cursor outside of the viewport and the\n>   Firefox window.\n",
+    "id": "FreeBSD-2024-0205",
+    "modified": "2024-08-30T00:00:00Z",
+    "published": "2024-08-30T00:00:00Z",
+    "references": [
+        {
+            "type": "REPORT",
+            "url": "https://bugzilla.mozilla.org/show_bug.cgi?id=1909241"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2024-7524"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://nvd.nist.gov/vuln/detail/CVE-2024-7524"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2024-6610"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://nvd.nist.gov/vuln/detail/CVE-2024-6610"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2024-6609"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://nvd.nist.gov/vuln/detail/CVE-2024-6609"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2024-6608"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://nvd.nist.gov/vuln/detail/CVE-2024-6608"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "firefox -- multiple vulnerabilities"
+}

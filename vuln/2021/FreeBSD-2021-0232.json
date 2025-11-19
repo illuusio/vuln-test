@@ -1,0 +1,89 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "node14"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "14.17.2"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        },
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "node"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "16.4.1"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "cite": [
+            "https://nodejs.org/en/blog/vulnerability/july-2021-security-releases/"
+        ],
+        "discovery": "2021-07-01T00:00:00Z",
+        "references": {
+            "cvename": [
+                "CVE-2021-22918",
+                "CVE-2021-22921",
+                "CVE-2021-27290",
+                "CVE-2021-23362"
+            ]
+        },
+        "vid": "c174118e-1b11-11ec-9d9d-0022489ad614"
+    },
+    "details": "Node.js reports:\n\n> # libuv upgrade - Out of bounds read (Medium) (CVE-2021-22918)\n>\n> Node.js is vulnerable to out-of-bounds read in libuv\\'s\n> uv\\_\\_idna_toascii() function which is used to convert strings to\n> ASCII. This is called by Node\\'s dns module\\'s lookup() function and\n> can lead to information disclosures or crashes.\n>\n> # Windows installer - Node Installer Local Privilege Escalation (Medium) (CVE-2021-22921)\n>\n> Node.js is vulnerable to local privilege escalation attacks under\n> certain conditions on Windows platforms. More specifically, improper\n> configuration of permissions in the installation directory allows an\n> attacker to perform two different escalation attacks: PATH and DLL\n> hijacking.\n>\n> # npm upgrade - ssri Regular Expression Denial of Service (ReDoS) (High) (CVE-2021-27290)\n>\n> This is a vulnerability in the ssri npm module which may be vulnerable\n> to denial of service attacks.\n>\n> # npm upgrade - hosted-git-info Regular Expression Denial of Service (ReDoS) (Medium) (CVE-2021-23362)\n>\n> This is a vulnerability in the hosted-git-info npm module which may be\n> vulnerable to denial of service attacks.\n",
+    "id": "FreeBSD-2021-0232",
+    "modified": "2021-09-21T00:00:00Z",
+    "published": "2021-09-21T00:00:00Z",
+    "references": [
+        {
+            "type": "REPORT",
+            "url": "https://nodejs.org/en/blog/vulnerability/july-2021-security-releases/"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2021-22918"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2021-22921"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2021-27290"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2021-23362"
+        },
+        {
+            "type": "WEB",
+            "url": "https://nodejs.org/en/blog/vulnerability/july-2021-security-releases/"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "Node.js -- July 2021 Security Releases"
+}

@@ -1,0 +1,74 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "samba"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "introduced": "3.0.6,1"
+                        },
+                        {
+                            "fixed": "3.0.24,1"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        },
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "ja-samba"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "introduced": "3.0.6,1"
+                        },
+                        {
+                            "fixed": "3.0.24,1"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "cite": [
+            "http://www.samba.org/samba/security/CVE-2007-0452.html"
+        ],
+        "discovery": "2007-02-05T00:00:00Z",
+        "references": {
+            "cvename": [
+                "CVE-2007-0452"
+            ]
+        },
+        "vid": "f235fe7a-b9ca-11db-bf0f-0013720b182d"
+    },
+    "details": "The Samba Team reports:\n\n> Internally Samba\\'s file server daemon, smbd, implements support for\n> deferred file open calls in an attempt to serve client requests that\n> would otherwise fail due to a share mode violation. When renaming a\n> file under certain circumstances it is possible that the request is\n> never removed from the deferred open queue. smbd will then become\n> stuck is a loop trying to service the open request.\n>\n> This bug may allow an authenticated user to exhaust resources such as\n> memory and CPU on the server by opening multiple CIFS sessions, each\n> of which will normally spawn a new smbd process, and sending each\n> connection into an infinite loop.\n",
+    "id": "FreeBSD-2007-0026",
+    "modified": "2007-03-16T00:00:00Z",
+    "published": "2007-03-16T00:00:00Z",
+    "references": [
+        {
+            "type": "REPORT",
+            "url": "http://www.samba.org/samba/security/CVE-2007-0452.html"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2007-0452"
+        },
+        {
+            "type": "WEB",
+            "url": "http://www.samba.org/samba/security/CVE-2007-0452.html"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "samba -- potential Denial of Service bug in smbd"
+}

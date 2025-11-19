@@ -1,0 +1,101 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "asterisk10"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "10.12.4"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        },
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "asterisk11"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "11.6.1"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        },
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "asterisk18"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "1.8.24.1"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "cite": [
+            "https://www.asterisk.org/security"
+        ],
+        "discovery": "2013-12-16T00:00:00Z",
+        "references": {
+            "cvename": [
+                "CVE-2013-7100"
+            ]
+        },
+        "vid": "0c39bafc-6771-11e3-868f-0025905a4771"
+    },
+    "details": "The Asterisk project reports:\n\n> A 16 bit SMS message that contains an odd message length value will\n> cause the message decoding loop to run forever. The message buffer is\n> not on the stack but will be overflowed resulting in corrupted memory\n> and an immediate crash.\n>\n> External control protocols, such as the Asterisk Manager Interface,\n> often have the ability to get and set channel variables; this allows\n> the execution of dialplan functions. Dialplan functions within\n> Asterisk are incredibly powerful, which is wonderful for building\n> applications using Asterisk. But during the read or write execution,\n> certain diaplan functions do much more. For example, reading the\n> SHELL() function can execute arbitrary commands on the system Asterisk\n> is running on. Writing to the FILE() function can change any file that\n> Asterisk has write access to. When these functions are executed from\n> an external protocol, that execution could result in a privilege\n> escalation.\n",
+    "id": "FreeBSD-2013-0189",
+    "modified": "2013-12-17T00:00:00Z",
+    "published": "2013-12-17T00:00:00Z",
+    "references": [
+        {
+            "type": "REPORT",
+            "url": "https://www.asterisk.org/security"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2013-7100"
+        },
+        {
+            "type": "WEB",
+            "url": "http://downloads.asterisk.org/pub/security/AST-2013-006.pdf"
+        },
+        {
+            "type": "WEB",
+            "url": "http://downloads.asterisk.org/pub/security/AST-2013-007.pdf"
+        },
+        {
+            "type": "WEB",
+            "url": "https://www.asterisk.org/security"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "asterisk -- multiple vulnerabilities"
+}

@@ -1,0 +1,89 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "drupal6"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "6.36"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        },
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "drupal7"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "7.38"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "cite": [
+            "https://www.drupal.org/SA-CORE-2015-002"
+        ],
+        "discovery": "2015-06-17T00:00:00Z",
+        "references": {
+            "cvename": [
+                "CVE-2015-3231",
+                "CVE-2015-3232",
+                "CVE-2015-3233",
+                "CVE-2015-3234"
+            ]
+        },
+        "vid": "d605edb1-1616-11e5-a000-d050996490d0"
+    },
+    "details": "Drupal development team reports:\n\n> ### Impersonation (OpenID module - Drupal 6 and 7 - Critical)\n>\n> A vulnerability was found in the OpenID module that allows a malicious\n> user to log in as other users on the site, including administrators,\n> and hijack their accounts.\n>\n> This vulnerability is mitigated by the fact that the victim must have\n> an account with an associated OpenID identity from a particular set of\n> OpenID providers (including, but not limited to, Verisign,\n> LiveJournal, or StackExchange).\n>\n> ### Open redirect (Field UI module - Drupal 7 - Less critical)\n>\n> The Field UI module uses a \\\"destinations\\\" query string parameter in\n> URLs to redirect users to new destinations after completing an action\n> on a few administration pages. Under certain circumstances, malicious\n> users can use this parameter to construct a URL that will trick users\n> into being redirected to a 3rd party website, thereby exposing the\n> users to potential social engineering attacks.\n>\n> This vulnerability is mitigated by the fact that only sites with the\n> Field UI module enabled are affected.\n>\n> Drupal 6 core is not affected, but see the similar advisory for the\n> Drupal 6 contributed CCK module:\n> [SA-CONTRIB-2015-126](https://www.drupal.org/node/2507753)\n>\n> ### Open redirect (Overlay module - Drupal 7 - Less critical)\n>\n> The Overlay module displays administrative pages as a layer over the\n> current page (using JavaScript), rather than replacing the page in the\n> browser window. The Overlay module does not sufficiently validate URLs\n> prior to displaying their contents, leading to an open redirect\n> vulnerability.\n>\n> This vulnerability is mitigated by the fact that it can only be used\n> against site users who have the \\\"Access the administrative overlay\\\"\n> permission, and that the Overlay module must be enabled.\n>\n> ### Information disclosure (Render cache system - Drupal 7 - Less critical)\n>\n> On sites utilizing Drupal 7\\'s render cache system to cache content on\n> the site by user role, private content viewed by user 1 may be\n> included in the cache and exposed to non-privileged users.\n>\n> This vulnerability is mitigated by the fact that render caching is not\n> used in Drupal 7 core itself (it requires custom code or the\n> contributed [Render\n> Cache](https://www.drupal.org/project/render_cache) module to enable)\n> and that it only affects sites that have user 1 browsing the live\n> site. Exposure is also limited if an administrative role has been\n> assigned to the user 1 account (which is done, for example, by the\n> Standard install profile that ships with Drupal core).\n",
+    "id": "FreeBSD-2015-0136",
+    "modified": "2015-06-19T00:00:00Z",
+    "published": "2015-06-19T00:00:00Z",
+    "references": [
+        {
+            "type": "REPORT",
+            "url": "https://www.drupal.org/SA-CORE-2015-002"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2015-3231"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2015-3232"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2015-3233"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2015-3234"
+        },
+        {
+            "type": "WEB",
+            "url": "https://www.drupal.org/SA-CORE-2015-002"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "drupal -- multiple vulnerabilities"
+}

@@ -1,0 +1,55 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "openvpn"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "2.0.1"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "cite": [
+            "http://openvpn.net/changelog.html"
+        ],
+        "discovery": "2005-08-03T00:00:00Z",
+        "references": {
+            "cvename": [
+                "CVE-2005-2534"
+            ]
+        },
+        "vid": "5ad3e437-e527-4514-b9ed-280b2ca1a8c9"
+    },
+    "details": "James Yonan reports:\n\n> If two or more client machines try to connect to the server at the\n> same time via TCP, using the same client certificate, and when\n> \\--duplicate-cn is not enabled on the server, a race condition can\n> crash the server with \\\"Assertion failed at mtcp.c:411\\\"\n",
+    "id": "FreeBSD-2005-0259",
+    "modified": "2005-08-19T00:00:00Z",
+    "published": "2005-08-19T00:00:00Z",
+    "references": [
+        {
+            "type": "REPORT",
+            "url": "http://openvpn.net/changelog.html"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2005-2534"
+        },
+        {
+            "type": "WEB",
+            "url": "http://openvpn.net/changelog.html"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "openvpn -- multiple TCP clients connecting with the same certificate at the same time can crash the server"
+}

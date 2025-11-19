@@ -1,0 +1,122 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "python37"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "3.7.16"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        },
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "python38"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "3.8.16"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        },
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "python39"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "3.9.16"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        },
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "python310"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "3.10.9"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        },
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "python311"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "3.11.1"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "cite": [
+            "https://docs.python.org/3/whatsnew/changelog.html#changelog"
+        ],
+        "discovery": "2022-09-28T00:00:00Z",
+        "vid": "050eba46-7638-11ed-820d-080027d3a315"
+    },
+    "details": "Python reports:\n\n> gh-100001: python -m http.server no longer allows terminal control\n> characters sent within a garbage request to be printed to the stderr\n> server log. This is done by changing the http.server\n> BaseHTTPRequestHandler .log_message method to replace control\n> characters with a \\\\xHH hex escape before printing.\n>\n> gh-87604: Avoid publishing list of active per-interpreter audit hooks\n> via the gc module.\n>\n> gh-98433: The IDNA codec decoder used on DNS hostnames by socket or\n> asyncio related name resolution functions no longer involves a\n> quadratic algorithm. This prevents a potential CPU denial of service\n> if an out-of-spec excessive length hostname involving bidirectional\n> characters were decoded. Some protocols such as urllib http 3xx\n> redirects potentially allow for an attacker to supply such a name.\n>\n> gh-98739: Update bundled libexpat to 2.5.0.\n>\n> gh-97612: Fix a shell code injection vulnerability in the\n> get-remote-certificate.py example script. The script no longer uses a\n> shell to run openssl commands. Issue reported and initial fix by Caleb\n> Shortt. Patch by Victor Stinner.\n",
+    "id": "FreeBSD-2022-0239",
+    "modified": "2022-12-07T00:00:00Z",
+    "published": "2022-12-07T00:00:00Z",
+    "references": [
+        {
+            "type": "REPORT",
+            "url": "https://docs.python.org/3/whatsnew/changelog.html#changelog"
+        },
+        {
+            "type": "WEB",
+            "url": "https://docs.python.org/3/whatsnew/changelog.html#changelog"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "Python -- multiple vulnerabilities"
+}

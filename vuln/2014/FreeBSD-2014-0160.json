@@ -1,0 +1,89 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "ntp"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "4.2.8"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        },
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "ntp-devel"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "4.2.8"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "cite": [
+            "http://www.kb.cert.org/vuls/id/852879"
+        ],
+        "discovery": "2014-12-19T00:00:00Z",
+        "references": {
+            "cvename": [
+                "CVE-2014-9293",
+                "CVE-2014-9294",
+                "CVE-2014-9295",
+                "CVE-2014-9296"
+            ]
+        },
+        "vid": "4033d826-87dd-11e4-9079-3c970e169bc2"
+    },
+    "details": "CERT reports:\n\n> The Network Time Protocol (NTP) provides networked systems with a way\n> to synchronize time for various services and applications. ntpd\n> version 4.2.7 and previous versions allow attackers to overflow\n> several buffers in a way that may allow malicious code to be executed.\n> ntp-keygen prior to version 4.2.7p230 also uses a non-cryptographic\n> random number generator when generating symmetric keys.\n>\n> The buffer overflow vulnerabilities in ntpd may allow a remote\n> unauthenticated attacker to execute arbitrary malicious code with the\n> privilege level of the ntpd process. The weak default key and\n> non-cryptographic random number generator in ntp-keygen may allow an\n> attacker to gain information regarding the integrity checking and\n> authentication encryption schemes.\n",
+    "id": "FreeBSD-2014-0160",
+    "modified": "2014-12-20T00:00:00Z",
+    "published": "2014-12-20T00:00:00Z",
+    "references": [
+        {
+            "type": "REPORT",
+            "url": "http://www.kb.cert.org/vuls/id/852879"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2014-9293"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2014-9294"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2014-9295"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2014-9296"
+        },
+        {
+            "type": "WEB",
+            "url": "http://www.kb.cert.org/vuls/id/852879"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "ntp -- multiple vulnerabilities"
+}

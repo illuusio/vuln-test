@@ -1,0 +1,62 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:kernel",
+                "name": "FreeBSD-kernel"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "introduced": "14.3"
+                        },
+                        {
+                            "fixed": "14.3_5"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                },
+                {
+                    "events": [
+                        {
+                            "introduced": "13.5"
+                        },
+                        {
+                            "fixed": "13.5_6"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "discovery": "2025-10-22T00:00:00Z",
+        "references": {
+            "cvename": [
+                "CVE-2025-24934"
+            ],
+            "freebsdsa": [
+                "SA-25:09.netinet"
+            ]
+        },
+        "vid": "114cc98b-afad-11f0-af12-bc241121aa0a"
+    },
+    "details": "# Problem Description:\n\nConnected sockets are not intended to belong to load-balancing groups.\nHowever, the kernel failed to check the connection state of sockets when\nadding them to load-balancing groups. Furthermore, when looking up the\ndestination socket for an incoming packet, the kernel will match a\nsocket belonging to a load-balancing group even if it is connected.\n\nConnected sockets are only supposed to receive packets originating from\nthe connected host. The above behavior violates this contract.\n\n# Impact:\n\nSoftware which sets SO_REUSEPORT_LB on a socket and then connects it to\na host will not observe any problems. However, due to its membership in\na load-balancing group, that socket will receive packets originating\nfrom any host. This breaks the contract of the connect(2) and implied\nconnect via sendto(2), and may leave the application vulnerable to\nspoofing attacks.\n",
+    "id": "FreeBSD-2025-0345",
+    "modified": "2025-10-23T00:00:00Z",
+    "published": "2025-10-23T00:00:00Z",
+    "references": [
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2025-24934"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://www.freebsd.org/security/advisories/FreeBSD-SA-25:09.netinet.asc"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "FreeBSD -- SO_REUSEPORT_LB breaks connect(2) for UDP sockets"
+}

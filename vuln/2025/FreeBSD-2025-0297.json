@@ -1,0 +1,66 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "dnsdist"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "1.9.11"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                },
+                {
+                    "events": [
+                        {
+                            "introduced": "2.0.0"
+                        },
+                        {
+                            "fixed": "2.0.1"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "cite": [
+            "https://dnsdist.org/security-advisories/powerdns-advisory-for-dnsdist-2025-05.html"
+        ],
+        "discovery": "2025-09-18T00:00:00Z",
+        "references": {
+            "cvename": [
+                "CVE-2025-30187"
+            ]
+        },
+        "vid": "c2253bff-9952-11f0-b6e2-6805ca2fa271"
+    },
+    "details": "security@open-xchange.com reports:\n\n> In some circumstances, when DNSdist is configured to use the nghttp2\n> library to process incoming DNS over HTTPS queries, an attacker might\n> be able to cause a denial of service by crafting a DoH exchange that\n> triggers an unbounded I/O read loop, causing an unexpected consumption\n> of CPU resources. The offending code was introduced in DNSdist\n> 1.9.0-alpha1 so previous versions are not affected.\n",
+    "id": "FreeBSD-2025-0297",
+    "modified": "2025-09-26T00:00:00Z",
+    "published": "2025-09-24T00:00:00Z",
+    "references": [
+        {
+            "type": "REPORT",
+            "url": "https://dnsdist.org/security-advisories/powerdns-advisory-for-dnsdist-2025-05.html"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2025-30187"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://nvd.nist.gov/vuln/detail/CVE-2025-30187"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "dnsdist -- Denial of service via crafted DoH exchange"
+}

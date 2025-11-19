@@ -1,0 +1,57 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "mono"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "3.10.1"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                },
+                {
+                    "events": [
+                        {
+                            "introduced": "3.12"
+                        },
+                        {
+                            "fixed": "3.12.1"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "cite": [
+            "http://www.mono-project.com/docs/about-mono/vulnerabilities/#tls-bugs"
+        ],
+        "discovery": "2015-03-06T00:00:00Z",
+        "vid": "c0cae920-c4e9-11e4-898e-90e6ba741e35"
+    },
+    "details": "The Mono project reports:\n\n> Mono's implementation of the SSL/TLS stack failed to check the order\n> of the handshake messages. Which would allow various attacks on the\n> protocol to succeed. Details of this vulnerability are discussed in\n> [SKIP-TLS post](https://www.smacktls.com/#skip).\n>\n> Mono's implementation of SSL/TLS also contained support for the weak\n> EXPORT cyphers and was susceptible to the\n> [FREAK](https://www.smacktls.com/#freak) attack.\n",
+    "id": "FreeBSD-2015-0045",
+    "modified": "2015-03-07T00:00:00Z",
+    "published": "2015-03-07T00:00:00Z",
+    "references": [
+        {
+            "type": "REPORT",
+            "url": "http://www.mono-project.com/docs/about-mono/vulnerabilities/#tls-bugs"
+        },
+        {
+            "type": "WEB",
+            "url": "http://www.mono-project.com/docs/about-mono/vulnerabilities/#tls-bugs"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "mono -- TLS bugs"
+}

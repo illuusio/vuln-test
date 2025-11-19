@@ -1,0 +1,131 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "postgresql17-client"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "17.3"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        },
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "postgresql16-client"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "16.7"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        },
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "postgresql15-client"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "15.11"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        },
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "postgresql14-client"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "14.16"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        },
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "postgresql13-client"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "13.19"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "cite": [
+            "https://www.postgresql.org/support/security/CVE-2025-1094/"
+        ],
+        "discovery": "2025-02-13T00:00:00Z",
+        "references": {
+            "cvename": [
+                "CVE-2025-1094"
+            ]
+        },
+        "vid": "fadf3b41-ea19-11ef-a540-6cc21735f730"
+    },
+    "details": "The PostgreSQL Project reports:\n\n> Improper neutralization of quoting syntax in PostgreSQL libpq\n> functions PQescapeLiteral(), PQescapeIdentifier(), PQescapeString(),\n> and PQescapeStringConn() allows a database input provider to achieve\n> SQL injection in certain usage patterns. Specifically, SQL injection\n> requires the application to use the function result to construct input\n> to psql, the PostgreSQL interactive terminal. Similarly, improper\n> neutralization of quoting syntax in PostgreSQL command line utility\n> programs allows a source of command line arguments to achieve SQL\n> injection when client_encoding is BIG5 and server_encoding is one of\n> EUC_TW or MULE_INTERNAL. Versions before PostgreSQL 17.3, 16.7, 15.11,\n> 14.16, and 13.19 are affected.\n",
+    "id": "FreeBSD-2025-0043",
+    "modified": "2025-02-13T00:00:00Z",
+    "published": "2025-02-13T00:00:00Z",
+    "references": [
+        {
+            "type": "REPORT",
+            "url": "https://www.postgresql.org/support/security/CVE-2025-1094/"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2025-1094"
+        },
+        {
+            "type": "WEB",
+            "url": "https://www.postgresql.org/support/security/CVE-2025-1094/"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "PostgreSQL -- PostgreSQL quoting APIs miss neutralizing quoting syntax in text that fails encoding validation"
+}

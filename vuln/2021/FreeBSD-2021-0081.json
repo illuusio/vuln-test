@@ -1,0 +1,51 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:kernel",
+                "name": "FreeBSD-kernel"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "introduced": "12.2"
+                        },
+                        {
+                            "fixed": "12.2_6"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "discovery": "2021-04-06T00:00:00Z",
+        "references": {
+            "cvename": [
+                "CVE-2021-29627"
+            ],
+            "freebsdsa": [
+                "SA-21:09.accept_filter"
+            ]
+        },
+        "vid": "f8e1e2a6-9791-11eb-b87a-901b0ef719ab"
+    },
+    "details": "# Problem Description:\n\nAn unprivileged process can configure an accept filter on a listening\nsocket. This is done using the setsockopt(2) system call. The process\nsupplies the name of the accept filter which is to be attached to the\nsocket, as well as a string containing filter-specific information.\n\nIf the filter implements the accf_create callback, the socket option\nhandler attempts to preserve the process-supplied argument string. A bug\nin the socket option handler caused this string to be freed prematurely,\nleaving a dangling pointer. Additional operations on the socket can turn\nthis into a double free or a use-after-free.\n\n# Impact:\n\nThe bug may be exploited to trigger local privilege escalation or kernel\nmemory disclosure.\n",
+    "id": "FreeBSD-2021-0081",
+    "modified": "2021-04-07T00:00:00Z",
+    "published": "2021-04-07T00:00:00Z",
+    "references": [
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2021-29627"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://www.freebsd.org/security/advisories/FreeBSD-SA-21:09.accept_filter.asc"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "FreeBSD -- double free in accept_filter(9) socket configuration interface"
+}

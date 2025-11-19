@@ -1,0 +1,73 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:kernel",
+                "name": "FreeBSD-kernel"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "introduced": "12.0"
+                        },
+                        {
+                            "fixed": "12.0_9"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                },
+                {
+                    "events": [
+                        {
+                            "introduced": "11.3"
+                        },
+                        {
+                            "fixed": "11.3_2"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                },
+                {
+                    "events": [
+                        {
+                            "introduced": "11.2"
+                        },
+                        {
+                            "fixed": "11.2_13"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "discovery": "2019-08-06T00:00:00Z",
+        "references": {
+            "cvename": [
+                "CVE-2019-5609"
+            ],
+            "freebsdsa": [
+                "SA-19:21.bhyve"
+            ]
+        },
+        "vid": "499b22a3-f680-11e9-a87f-a4badb2f4699"
+    },
+    "details": "# Problem Description:\n\nThe e1000 network adapters permit a variety of modifications to an\nEthernet packet when it is being transmitted. These include the\ninsertion of IP and TCP checksums, insertion of an Ethernet VLAN header,\nand TCP segmentation offload (\\\"TSO\\\"). The e1000 device model uses an\non-stack buffer to generate the modified packet header when simulating\nthese modifications on transmitted packets.\n\nWhen TCP segmentation offload is requested for a transmitted packet, the\ne1000 device model used a guest-provided value to determine the size of\nthe on-stack buffer without validation. The subsequent header generation\ncould overflow an incorrectly sized buffer or indirect a pointer\ncomposed of stack garbage.\n\n# Impact:\n\nA misbehaving bhyve guest could overwrite memory in the bhyve process on\nthe host.\n",
+    "id": "FreeBSD-2019-0241",
+    "modified": "2019-10-24T00:00:00Z",
+    "published": "2019-10-24T00:00:00Z",
+    "references": [
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2019-5609"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://www.freebsd.org/security/advisories/FreeBSD-SA-19:21.bhyve.asc"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "FreeBSD -- Insufficient validation of guest-supplied data (e1000 device)"
+}

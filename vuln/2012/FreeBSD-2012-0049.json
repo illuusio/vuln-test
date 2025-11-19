@@ -1,0 +1,43 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "portaudit"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "0.6.0"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "discovery": "2012-03-11T00:00:00Z",
+        "vid": "6d329b64-6bbb-11e1-9166-001e4f0fb9b1"
+    },
+    "details": "Michael Gmelin and J\u00f6rg Scheinert has reported a remote command\nexecution vulnerability in portaudit.\n\nAn attacker who can get the user to use a specially crafted audit file\nwill be able to run commands on the users system, with the privileges of\nthe user running running portaudit (often root).\n\nThe attack could e.g. happen through DNS hijacking or a man in the\nmiddle attack.\n\nNote that if the user has set up portaudit to run from periodic this\nattack could happen without direct user interaction.\n\nIn the FreeBSD Ports Collection (bsd.port.mk) the check for vulnerable\nports at install-time directly operates on the auditfile and has the\nsame vulnerability as portaudit. As the Ports Collection infrastructure\ndoes not have a version number just be sure to have a Ports Collection\nnew enough to contain the fix for portaudit. Note that this is *only* a\nproblem for users which has portaudit installed, as they will not have\nthe audit database installed or downloaded otherwise.\n",
+    "id": "FreeBSD-2012-0049",
+    "modified": "2012-03-11T00:00:00Z",
+    "published": "2012-03-11T00:00:00Z",
+    "references": [
+        {
+            "type": "WEB",
+            "url": "http://cvsweb.FreeBSD.org/ports/ports-mgmt/portaudit/Makefile#rev1.30"
+        },
+        {
+            "type": "WEB",
+            "url": "http://cvsweb.FreeBSD.org/ports/Mk/bsd.port.mk#rev1.707"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "portaudit -- auditfile remote code execution"
+}

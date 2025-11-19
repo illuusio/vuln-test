@@ -1,0 +1,55 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "opensmtpd"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "5.7.2,1"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "cite": [
+            "https://www.opensmtpd.org/announces/release-5.7.2.txt"
+        ],
+        "discovery": "2015-10-02T00:00:00Z",
+        "references": {
+            "cvename": [
+                "CVE-2015-7687"
+            ]
+        },
+        "vid": "ee7bdf7f-11bb-4eea-b054-c692ab848c20"
+    },
+    "details": "OpenSMTPD developers report:\n\n> an oversight in the portable version of fgetln() that allows attackers\n> to read and write out-of-bounds memory\n>\n> multiple denial-of-service vulnerabilities that allow local users to\n> kill or hang OpenSMTPD\n>\n> a stack-based buffer overflow that allows local users to crash\n> OpenSMTPD, or execute arbitrary code as the non-chrooted \\_smtpd user\n>\n> a hardlink attack (or race-conditioned symlink attack) that allows\n> local users to unset the chflags() of arbitrary files\n>\n> a hardlink attack that allows local users to read the first line of\n> arbitrary files (for example, root\\'s hash from /etc/master.passwd)\n>\n> a denial-of-service vulnerability that allows remote attackers to fill\n> OpenSMTPD\\'s queue or mailbox hard-disk partition\n>\n> an out-of-bounds memory read that allows remote attackers to crash\n> OpenSMTPD, or leak information and defeat the ASLR protection\n>\n> a use-after-free vulnerability that allows remote attackers to crash\n> OpenSMTPD, or execute arbitrary code as the non-chrooted \\_smtpd user\n",
+    "id": "FreeBSD-2015-0311",
+    "modified": "2015-10-06T00:00:00Z",
+    "published": "2015-10-04T00:00:00Z",
+    "references": [
+        {
+            "type": "REPORT",
+            "url": "https://www.opensmtpd.org/announces/release-5.7.2.txt"
+        },
+        {
+            "type": "WEB",
+            "url": "https://www.opensmtpd.org/announces/release-5.7.2.txt"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2015-7687"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "OpenSMTPD -- multiple vulnerabilities"
+}

@@ -1,0 +1,70 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "apache"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "introduced": "2.0"
+                        },
+                        {
+                            "last_affected": "2.0.48_3"
+                        },
+                        {
+                            "fixed": "2.0.48_3"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "discovery": "2004-02-20T00:00:00Z",
+        "references": {
+            "bid": [
+                "9826"
+            ],
+            "cvename": [
+                "CVE-2004-0113"
+            ]
+        },
+        "vid": "492f8896-70fa-11d8-873f-0020ed76ef5a"
+    },
+    "details": "Joe Orton reports a memory leak in Apache 2\\'s mod_ssl. A remote\nattacker may issue HTTP requests on an HTTPS port, causing an error. Due\nto a bug in processing this condition, memory associated with the\nconnection is not freed. Repeated requests can result in consuming all\navailable memory resources, probably resulting in termination of the\nApache process.\n",
+    "id": "FreeBSD-2004-0077",
+    "modified": "2004-05-19T00:00:00Z",
+    "published": "2004-03-08T00:00:00Z",
+    "references": [
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2004-0113"
+        },
+        {
+            "type": "WEB",
+            "url": "http://www.apacheweek.com/features/security-20"
+        },
+        {
+            "type": "WEB",
+            "url": "http://cvs.apache.org/viewcvs.cgi/httpd-2.0/modules/ssl/ssl_engine_io.c?r1=1.100.2.11&r2=1.100.2.12"
+        },
+        {
+            "type": "DISCUSSION",
+            "url": "http://marc.theaimsgroup.com/?l=apache-cvs&m=107869699329638"
+        },
+        {
+            "type": "WEB",
+            "url": "http://nagoya.apache.org/bugzilla/show_bug.cgi?id=27106"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://www.securityfocus.com/bid/9826/info"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "Apache 2 mod_ssl denial-of-service"
+}

@@ -1,0 +1,46 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "python38"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "3.8.12"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "cite": [
+            "https://docs.python.org/3.8/whatsnew/changelog.html#changelog"
+        ],
+        "discovery": "2021-08-30T00:00:00Z",
+        "vid": "145ce848-1165-11ec-ac7e-08002789875b"
+    },
+    "details": "Python reports:\n\n> bpo-42278: Replaced usage of tempfile.mktemp() with TemporaryDirectory\n> to avoid a potential race condition.\n>\n> bpo-44394: Update the vendored copy of libexpat to 2.4.1 (from 2.2.8)\n> to get the fix for the CVE-2013-0340 \\\"Billion Laughs\\\" vulnerability.\n> This copy is most used on Windows and macOS.\n>\n> bpo-43124: Made the internal putcmd function in smtplib sanitize input\n> for presence of \\\\r and \\\\n characters to avoid (unlikely) command\n> injection.\n>\n> bpo-36384: ipaddress module no longer accepts any leading zeros in\n> IPv4 address strings. Leading zeros are ambiguous and interpreted as\n> octal notation by some libraries. For example the legacy function\n> socket.inet_aton() treats leading zeros as octal notation. glibc\n> implementation of modern inet_pton() does not accept any leading\n> zeros. For a while the ipaddress module used to accept ambiguous\n> leading zeros.\n",
+    "id": "FreeBSD-2021-0221",
+    "modified": "2021-09-09T00:00:00Z",
+    "published": "2021-09-09T00:00:00Z",
+    "references": [
+        {
+            "type": "REPORT",
+            "url": "https://docs.python.org/3.8/whatsnew/changelog.html#changelog"
+        },
+        {
+            "type": "WEB",
+            "url": "https://docs.python.org/3.8/whatsnew/changelog.html#changelog"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "Python -- multiple vulnerabilities"
+}

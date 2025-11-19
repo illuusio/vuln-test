@@ -1,0 +1,163 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "py27-twisted"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "20.3.0"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        },
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "py35-twisted"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "20.3.0"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        },
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "py36-twisted"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "20.3.0"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        },
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "py37-twisted"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "20.3.0"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        },
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "py38-twisted"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "20.3.0"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "cite": [
+            "https://github.com/twisted/twisted/blob/twisted-20.3.0/NEWS.rst"
+        ],
+        "discovery": "2019-03-01T00:00:00Z",
+        "references": {
+            "cvename": [
+                "CVE-2019-12387",
+                "CVE-2019-9512",
+                "CVE-2019-9514",
+                "CVE-2019-9515",
+                "CVE-2020-10108",
+                "CVE-2020-10109"
+            ],
+            "freebsdpr": [
+                "ports/245252"
+            ]
+        },
+        "vid": "9fbaefb3-837e-11ea-b5b4-641c67a117d8"
+    },
+    "details": "Twisted developers reports:\n\n> All HTTP clients in twisted.web.client now raise a ValueError when\n> called with a method and/or URL that contain invalid characters. This\n> mitigates CVE-2019-12387. Thanks to Alex Brasetvik for reporting this\n> vulnerability.\n>\n> The HTTP/2 server implementation now enforces TCP flow control on\n> control frame messages and times out clients that send invalid data\n> without reading responses. This closes CVE-2019-9512 (Ping Flood),\n> CVE-2019-9514 (Reset Flood), and CVE-2019-9515 (Settings Flood).\n> Thanks to Jonathan Looney and Piotr Sikora.\n>\n> twisted.web.http was subject to several request smuggling attacks.\n> Requests with multiple Content-Length headers were allowed\n> (CVE-2020-10108, thanks to Jake Miller from Bishop Fox and ZeddYu Lu\n> for reporting this) and now fail with a 400; requests with a\n> Content-Length header and a Transfer-Encoding header honored the first\n> header (CVE-2020-10109, thanks to Jake Miller from Bishop Fox for\n> reporting this) and now fail with a 400; requests whose\n> Transfer-Encoding header had a value other than \\\"chunked\\\" and\n> \\\"identity\\\" (thanks to ZeddYu Lu) were allowed and now fail with a\n> 400.\n",
+    "id": "FreeBSD-2020-0082",
+    "modified": "2020-04-21T00:00:00Z",
+    "published": "2020-04-21T00:00:00Z",
+    "references": [
+        {
+            "type": "REPORT",
+            "url": "https://github.com/twisted/twisted/blob/twisted-20.3.0/NEWS.rst"
+        },
+        {
+            "type": "WEB",
+            "url": "https://github.com/twisted/twisted/blob/twisted-20.3.0/NEWS.rst"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2019-12387"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2019-9512"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2019-9514"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2019-9515"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2020-10108"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2020-10109"
+        },
+        {
+            "type": "REPORT",
+            "url": "https://bugs.freebsd.org/bugzilla/show_bug.cgi?id=245252"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "py-twisted -- multiple vulnerabilities"
+}

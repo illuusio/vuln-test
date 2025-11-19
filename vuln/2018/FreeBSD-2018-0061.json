@@ -1,0 +1,74 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "xmltooling"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "1.6.4"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        },
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "xerces-c3"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "3.1.4"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "cite": [
+            "https://shibboleth.net/community/advisories/secadv_20180227.txt"
+        ],
+        "discovery": "2018-02-27T00:00:00Z",
+        "references": {
+            "cvename": [
+                "CVE-2018-0489"
+            ]
+        },
+        "vid": "22438240-1bd0-11e8-a2ec-6cc21735f730"
+    },
+    "details": "Shibboleth consortium reports:\n\n> Shibboleth SP software vulnerable to additional data forgery flaws\n>\n> The XML processing performed by the Service Provider software has been\n> found to be vulnerable to new flaws similar in nature to the one\n> addressed in an advisory last month.\n>\n> These bugs involve the use of other XML constructs rather than entity\n> references, and therefore required additional mitigation once\n> discovered. As with the previous issue, this flaw allows for changes\n> to an XML document that do not break a digital signature but can alter\n> the user data passed through to applications behind the SP and result\n> in impersonation attacks and exposure of protected information.\n>\n> As before, the use of XML Encryption is a significant mitigation, but\n> we have not dismissed the possibility that attacks on the Response\n> \\\"envelope\\\" may be possible, in both the original and this new case.\n> No actual attacks of this nature are known, so deployers should\n> prioritize patching systems that expect to handle unencrypted SAML\n> assertions.\n>\n> An updated version of XMLTooling-C (V1.6.4) is available that protects\n> against these new attacks, and should help prevent similar\n> vulnerabilities in the future.\n>\n> Unlike the previous case, these bugs are NOT prevented by any existing\n> Xerces-C parser version on any platform and cannot be addressed by any\n> means other than the updated XMLTooling-C library.\n>\n> The Service Provider software relies on a generic XML parser to\n> process SAML responses and there are limitations in older versions of\n> the parser that make it impossible to fully disable Document Type\n> Definition (DTD) processing.\n>\n> Through addition/manipulation of a DTD, it\\'s possible to make changes\n> to an XML document that do not break a digital signature but are\n> mishandled by the SP and its libraries. These manipulations can alter\n> the user data passed through to applications behind the SP and result\n> in impersonation attacks and exposure of protected information.\n>\n> While newer versions of the xerces-c3 parser are configured by the SP\n> into disallowing the use of a DTD via an environment variable, this\n> feature is not present in the xerces-c3 parser before version 3.1.4,\n> so an additional fix is being provided now that an actual DTD exploit\n> has been identified. Xerces-c3-3.1.4 was committed to the ports tree\n> already on 2016-07-26.\n",
+    "id": "FreeBSD-2018-0061",
+    "modified": "2018-02-27T00:00:00Z",
+    "published": "2018-02-27T00:00:00Z",
+    "references": [
+        {
+            "type": "REPORT",
+            "url": "https://shibboleth.net/community/advisories/secadv_20180227.txt"
+        },
+        {
+            "type": "WEB",
+            "url": "https://shibboleth.net/community/advisories/secadv_20180227.txt"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2018-0489"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "shibboleth-sp -- vulnerable to forged user attribute data"
+}

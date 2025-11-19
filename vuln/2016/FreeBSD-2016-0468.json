@@ -1,0 +1,84 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "FreeBSD"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "introduced": "11.0"
+                        },
+                        {
+                            "fixed": "11.0_4"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                },
+                {
+                    "events": [
+                        {
+                            "introduced": "10.3"
+                        },
+                        {
+                            "fixed": "10.3_13"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                },
+                {
+                    "events": [
+                        {
+                            "introduced": "10.2"
+                        },
+                        {
+                            "fixed": "10.2_26"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                },
+                {
+                    "events": [
+                        {
+                            "introduced": "10.1"
+                        },
+                        {
+                            "fixed": "10.1_43"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "discovery": "2016-12-06T00:00:00Z",
+        "references": {
+            "cvename": [
+                "CVE-2016-1889"
+            ],
+            "freebsdsa": [
+                "SA-16:38.bhyve"
+            ]
+        },
+        "vid": "e722e3c6-bbee-11e6-b1cf-14dae9d210b8"
+    },
+    "details": "# Problem Description:\n\nThe bounds checking of accesses to guest memory greater than 4GB by\ndevice emulations is subject to integer overflow.\n\n# Impact:\n\nFor a bhyve virtual machine with more than 3GB of guest memory\nconfigured, a malicious guest could craft device descriptors that could\ngive it access to the heap of the bhyve process. Since the bhyve process\nis running as root, this may allow guests to obtain full control of the\nhosts they\\'re running on.\n",
+    "id": "FreeBSD-2016-0468",
+    "modified": "2016-12-06T00:00:00Z",
+    "published": "2016-12-06T00:00:00Z",
+    "references": [
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2016-1889"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://www.freebsd.org/security/advisories/FreeBSD-SA-16:38.bhyve.asc"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "FreeBSD -- bhyve(8) virtual machine escape"
+}

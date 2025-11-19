@@ -1,0 +1,67 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "haproxy"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "1.4.21"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "cite": [
+            "http://haproxy.1wt.eu/news.html"
+        ],
+        "discovery": "2012-05-21T00:00:00Z",
+        "references": {
+            "cvename": [
+                "CVE-2012-2391"
+            ]
+        },
+        "vid": "617959ce-a5f6-11e1-a284-0023ae8e59f0"
+    },
+    "details": "HAProxy reports:\n\n> A flaw was reported in HAProxy where, due to a boundary error when\n> copying data into the trash buffer, an external attacker could cause a\n> buffer overflow. Exploiting this flaw could lead to the execution of\n> arbitrary code, however it requires non-default settings for the\n> global.tune.bufsize configuration option (must be set to a value\n> greater than the default), and also that header rewriting is enabled\n> (via, for example, the regrep or rsprep directives). This flaw is\n> reported against 1.4.20, prior versions may also be affected.\n",
+    "id": "FreeBSD-2012-0099",
+    "modified": "2012-05-29T00:00:00Z",
+    "published": "2012-05-24T00:00:00Z",
+    "references": [
+        {
+            "type": "REPORT",
+            "url": "http://haproxy.1wt.eu/news.html"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2012-2391"
+        },
+        {
+            "type": "WEB",
+            "url": "https://secunia.com/advisories/49261/"
+        },
+        {
+            "type": "WEB",
+            "url": "http://haproxy.1wt.eu/download/1.4/src/CHANGELOG"
+        },
+        {
+            "type": "WEB",
+            "url": "http://haproxy.1wt.eu/git?p=haproxy-1.4.git;a=commit;h=30297cb17147a8d339eb160226bcc08c91d9530b"
+        },
+        {
+            "type": "WEB",
+            "url": "http://haproxy.1wt.eu/news.html"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "haproxy -- buffer overflow"
+}

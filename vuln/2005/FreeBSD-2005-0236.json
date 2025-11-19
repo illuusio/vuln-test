@@ -1,0 +1,112 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "vim"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "introduced": "6.3"
+                        },
+                        {
+                            "fixed": "6.3.82"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        },
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "vim-console"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "introduced": "6.3"
+                        },
+                        {
+                            "fixed": "6.3.82"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        },
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "vim-lite"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "introduced": "6.3"
+                        },
+                        {
+                            "fixed": "6.3.82"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        },
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "vim+ruby"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "introduced": "6.3"
+                        },
+                        {
+                            "fixed": "6.3.82"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "discovery": "2005-07-25T00:00:00Z",
+        "references": {
+            "bid": [
+                "14374"
+            ],
+            "cvename": [
+                "CVE-2005-2368"
+            ]
+        },
+        "vid": "81f127a8-0038-11da-86bc-000e0c2e438a"
+    },
+    "details": "Georgi Guninski discovered a way to construct Vim modelines that execute\narbitrary shell commands. The vulnerability can be exploited by\nincluding shell commands in modelines that call the glob() or expand()\nfunctions. An attacker could trick an user to read or edit a trojaned\nfile with modelines enabled, after which the attacker is able to execute\narbitrary commands with the privileges of the user.\n\n**Note:** It is generally recommended that VIM users use\n`set nomodeline` in `~/.vimrc` to avoid the possibility of trojaned text\nfiles.\n",
+    "id": "FreeBSD-2005-0236",
+    "modified": "2005-07-31T00:00:00Z",
+    "published": "2005-07-31T00:00:00Z",
+    "references": [
+        {
+            "type": "ADVISORY",
+            "url": "https://www.securityfocus.com/bid/14374/info"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2005-2368"
+        },
+        {
+            "type": "WEB",
+            "url": "http://www.guninski.com/where_do_you_want_billg_to_go_today_5.html"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "vim -- vulnerabilities in modeline handling: glob, expand"
+}

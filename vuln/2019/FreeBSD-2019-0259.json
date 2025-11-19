@@ -1,0 +1,59 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "squid"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "4.9"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "cite": [
+            "http://www.squid-cache.org/Advisories/SQUID-2019_11.txt"
+        ],
+        "discovery": "2019-11-05T00:00:00Z",
+        "references": {
+            "cvename": [
+                "CVE-2019-18679"
+            ]
+        },
+        "vid": "620685d6-0aa3-11ea-9673-4c72b94353b5"
+    },
+    "details": "Squid Team reports:\n\n> Problem Description: Due to incorrect data management Squid is\n> vulnerable to a information disclosure when processing HTTP Digest\n> Authentication.\n>\n> Severity: Nonce tokens contain the raw byte value of a pointer which\n> sits within heap memory allocation. This information reduces ASLR\n> protections and may aid attackers isolating memory areas to target for\n> remote code execution attacks.\n",
+    "id": "FreeBSD-2019-0259",
+    "modified": "2019-11-19T00:00:00Z",
+    "published": "2019-11-19T00:00:00Z",
+    "references": [
+        {
+            "type": "REPORT",
+            "url": "http://www.squid-cache.org/Advisories/SQUID-2019_11.txt"
+        },
+        {
+            "type": "WEB",
+            "url": "http://www.squid-cache.org/Advisories/SQUID-2019_11.txt"
+        },
+        {
+            "type": "WEB",
+            "url": "http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2019-18679"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2019-18679"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "squid -- Vulnerable to HTTP Digest Authentication"
+}

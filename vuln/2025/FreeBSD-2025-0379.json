@@ -1,0 +1,55 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "privatebin"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "2.0.3"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "cite": [
+            "https://privatebin.info/reports/vulnerability-2025-11-12-drag-drop.html"
+        ],
+        "discovery": "2025-11-09T00:00:00Z",
+        "references": {
+            "cvename": [
+                "CVE-2025-62796"
+            ]
+        },
+        "vid": "6e1105d8-bfc2-11f0-bb2b-ecf4bbefc954"
+    },
+    "details": "privatebin reports:\n\n> Dragging a file whose filename contains HTML is reflected verbatim\n> into the page via the drag-and-drop helper, so any user who drops a\n> crafted file on PrivateBin will execute arbitrary JavaScript within\n> their own session (self-XSS). This allows an attacker who can entice a\n> victim to drag or otherwise attach such a file to exfiltrate\n> plaintext, encryption keys, or stored pastes before they are encrypted\n> or sent.\n",
+    "id": "FreeBSD-2025-0379",
+    "modified": "2025-11-12T00:00:00Z",
+    "published": "2025-11-12T00:00:00Z",
+    "references": [
+        {
+            "type": "REPORT",
+            "url": "https://privatebin.info/reports/vulnerability-2025-11-12-drag-drop.html"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2025-62796"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://nvd.nist.gov/vuln/detail/CVE-2025-62796"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "privatebin XSS"
+}

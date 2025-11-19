@@ -1,0 +1,73 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "FreeBSD"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "introduced": "12.1"
+                        },
+                        {
+                            "fixed": "12.1_9"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                },
+                {
+                    "events": [
+                        {
+                            "introduced": "11.4"
+                        },
+                        {
+                            "fixed": "11.4_3"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                },
+                {
+                    "events": [
+                        {
+                            "introduced": "11.3"
+                        },
+                        {
+                            "fixed": "11.3_13"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "discovery": "2020-09-02T00:00:00Z",
+        "references": {
+            "cvename": [
+                "CVE-2020-7461"
+            ],
+            "freebsdsa": [
+                "SA-20:26.dhclient"
+            ]
+        },
+        "vid": "762b7d4a-ec19-11ea-88f8-901b0ef719ab"
+    },
+    "details": "# Problem Description:\n\nWhen parsing option 119 data, dhclient(8) computes the uncompressed\ndomain list length so that it can allocate an appropriately sized buffer\nto store the uncompressed list. The code to compute the length failed to\nhandle certain malformed input, resulting in a heap overflow when the\nuncompressed list is copied into in inadequately sized buffer.\n\n# Impact:\n\nThe heap overflow could in principle be exploited to achieve remote code\nexecution. The affected process runs with reduced privileges in a\nCapsicum sandbox, limiting the immediate impact of an exploit. However,\nit is possible the bug could be combined with other vulnerabilities to\nescape the sandbox.\n",
+    "id": "FreeBSD-2020-0236",
+    "modified": "2020-09-02T00:00:00Z",
+    "published": "2020-09-02T00:00:00Z",
+    "references": [
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2020-7461"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://www.freebsd.org/security/advisories/FreeBSD-SA-20:26.dhclient.asc"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "FreeBSD -- dhclient heap overflow"
+}

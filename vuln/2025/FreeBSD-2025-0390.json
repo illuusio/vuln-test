@@ -1,0 +1,55 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "openvpn-devel"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "g20251117,1"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "cite": [
+            "https://github.com/OpenVPN/openvpn/commit/f1b851dae60eb1e277315dfe6265e3a58660b16a"
+        ],
+        "discovery": "2025-10-18T00:00:00Z",
+        "references": {
+            "cvename": [
+                "CVE-2025-12106"
+            ]
+        },
+        "vid": "50a0c266-c3ff-11f0-b513-0da7be77c170"
+    },
+    "details": "Mikhail Khachaiants reports:\n\n> socket: reject mismatched address family in get_addr_generic.\n>\n> Add a family check to prevent copying address data of the wrong type,\n> which could cause buffer over-read when parsing routes or endpoints.\n",
+    "id": "FreeBSD-2025-0390",
+    "modified": "2025-11-17T00:00:00Z",
+    "published": "2025-11-17T00:00:00Z",
+    "references": [
+        {
+            "type": "REPORT",
+            "url": "https://github.com/OpenVPN/openvpn/commit/f1b851dae60eb1e277315dfe6265e3a58660b16a"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2025-12106"
+        },
+        {
+            "type": "WEB",
+            "url": "https://github.com/OpenVPN/openvpn/commit/f1b851dae60eb1e277315dfe6265e3a58660b16a"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "OpenVPN -- avoid buffer overread parsing routes or endpoints"
+}

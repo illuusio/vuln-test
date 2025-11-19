@@ -1,0 +1,62 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "pcre"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "8.38_1"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "cite": [
+            "http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2016-1283"
+        ],
+        "discovery": "2016-02-27T00:00:00Z",
+        "references": {
+            "cvename": [
+                "CVE-2016-1283"
+            ],
+            "freebsdpr": [
+                "ports/208260"
+            ]
+        },
+        "vid": "497b82e0-f9a0-11e5-92ce-002590263bf5"
+    },
+    "details": "Mitre reports:\n\n> The pcre_compile2 function in pcre_compile.c in PCRE 8.38 mishandles\n> the\n> /((?:F?+(?:\\^(?(R)a+\\\\\\\"){99}-))(?J)(?\\'R\\'(?\\'R\\'\\<((?\\'RR\\'(?\\'R\\'\\\\){97)?J)?J)(?\\'R\\'(?\\'R\\'\\\\){99\\|(:(?\\|(?\\'R\\')(\\\\k\\'R\\')\\|((?\\'R\\')))H\\'R\\'R)(H\\'R))))))/\n> pattern and related patterns with named subgroups, which allows remote\n> attackers to cause a denial of service (heap-based buffer overflow) or\n> possibly have unspecified other impact via a crafted regular\n> expression, as demonstrated by a JavaScript RegExp object encountered\n> by Konqueror.\n",
+    "id": "FreeBSD-2016-0176",
+    "modified": "2016-04-03T00:00:00Z",
+    "published": "2016-04-03T00:00:00Z",
+    "references": [
+        {
+            "type": "REPORT",
+            "url": "http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2016-1283"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2016-1283"
+        },
+        {
+            "type": "REPORT",
+            "url": "https://bugs.freebsd.org/bugzilla/show_bug.cgi?id=208260"
+        },
+        {
+            "type": "WEB",
+            "url": "https://bugs.exim.org/show_bug.cgi?id=1767"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "pcre -- heap overflow vulnerability"
+}

@@ -1,0 +1,93 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "mongodb34"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "3.4.22"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        },
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "mongodb36"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "3.6.14"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        },
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "mongodb40"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "4.0.11"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "cite": [
+            "https://jira.mongodb.org/browse/SERVER-40563"
+        ],
+        "discovery": "2019-08-06T00:00:00Z",
+        "references": {
+            "cvename": [
+                "CVE-2019-2389"
+            ]
+        },
+        "vid": "273c6c43-e3ad-11e9-8af7-08002720423d"
+    },
+    "details": "Sicheng Liu of Beijing DBSEC Technology Co., Ltd reports:\n\n> Incorrect scoping of kill operations in MongoDB Server\\'s packaged\n> SysV init scripts allow users with write access to the PID file to\n> insert arbitrary PIDs to be killed when the root user stops the\n> MongoDB process via SysV init.\n",
+    "id": "FreeBSD-2019-0231",
+    "modified": "2019-09-30T00:00:00Z",
+    "published": "2019-09-30T00:00:00Z",
+    "references": [
+        {
+            "type": "REPORT",
+            "url": "https://jira.mongodb.org/browse/SERVER-40563"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2019-2389"
+        },
+        {
+            "type": "WEB",
+            "url": "https://jira.mongodb.org/browse/SERVER-40563"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "mongodb -- Our init scripts check /proc/[pid]/stat should validate that `(${procname})` is the process' command name."
+}

@@ -1,0 +1,59 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "libXcursor"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "1.1.15"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "cite": [
+            "http://seclists.org/oss-sec/2017/q4/339"
+        ],
+        "discovery": "2017-11-28T00:00:00Z",
+        "references": {
+            "cvename": [
+                "CVE-2017-16612"
+            ]
+        },
+        "vid": "ddecde18-e33b-11e7-a293-54e1ad3d6335"
+    },
+    "details": "The freedesktop.org project reports:\n\n> It is possible to trigger heap overflows due to an integer overflow\n> while parsing images and a signedness issue while parsing comments.\n>\n> The integer overflow occurs because the chosen limit 0x10000 for\n> dimensions is too large for 32 bit systems, because each pixel takes 4\n> bytes. Properly chosen values allow an overflow which in turn will\n> lead to less allocated memory than needed for subsequent reads.\n>\n> The signedness bug is triggered by reading the length of a comment as\n> unsigned int, but casting it to int when calling the function\n> XcursorCommentCreate. Turning length into a negative value allows the\n> check against XCURSOR_COMMENT_MAX_LEN to pass, and the following\n> addition of sizeof (XcursorComment) + 1 makes it possible to allocate\n> less memory than needed for subsequent reads.\n",
+    "id": "FreeBSD-2017-0316",
+    "modified": "2017-12-17T00:00:00Z",
+    "published": "2017-12-17T00:00:00Z",
+    "references": [
+        {
+            "type": "REPORT",
+            "url": "http://seclists.org/oss-sec/2017/q4/339"
+        },
+        {
+            "type": "WEB",
+            "url": "http://seclists.org/oss-sec/2017/q4/339"
+        },
+        {
+            "type": "WEB",
+            "url": "https://cgit.freedesktop.org/xorg/lib/libXcursor/commit/?id=4794b5dd34688158fb51a2943032569d3780c4b8"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2017-16612"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "libXcursor -- integer overflow that can lead to heap buffer overflow"
+}

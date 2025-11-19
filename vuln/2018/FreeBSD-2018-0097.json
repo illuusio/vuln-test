@@ -1,0 +1,122 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "node4"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "4.9.0"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        },
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "node6"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "6.14.0"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        },
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "node8"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "8.11.0"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        },
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "node"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "9.10.0"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "cite": [
+            "https://nodejs.org/en/blog/vulnerability/march-2018-security-releases/"
+        ],
+        "discovery": "2018-03-21T00:00:00Z",
+        "references": {
+            "cvename": [
+                "CVE-2018-7158",
+                "CVE-2018-7159",
+                "CVE-2018-7160"
+            ]
+        },
+        "vid": "5a9bbb6e-32d3-11e8-a769-6daaba161086"
+    },
+    "details": "Node.js reports:\n\n> # Node.js Inspector DNS rebinding vulnerability (CVE-2018-7160)\n>\n> Node.js 6.x and later include a debugger protocol (also known as\n> \\\"inspector\\\") that can be activated by the \\--inspect and related\n> command line flags. This debugger service was vulnerable to a DNS\n> rebinding attack which could be exploited to perform remote code\n> execution.\n>\n> # \\'path\\' module regular expression denial of service (CVE-2018-7158)\n>\n> The \\'path\\' module in the Node.js 4.x release line contains a\n> potential regular expression denial of service (ReDoS) vector. The\n> code in question was replaced in Node.js 6.x and later so this\n> vulnerability only impacts all versions of Node.js 4.x.\n>\n> # Spaces in HTTP Content-Length header values are ignored (CVE-2018-7159)\n>\n> The HTTP parser in all current versions of Node.js ignores spaces in\n> the Content-Length header, allowing input such as Content-Length: 1 2\n> to be interpreted as having a value of 12. The HTTP specification does\n> not allow for spaces in the Content-Length value and the Node.js HTTP\n> parser has been brought into line on this particular difference.\n",
+    "id": "FreeBSD-2018-0097",
+    "modified": "2018-03-28T00:00:00Z",
+    "published": "2018-03-28T00:00:00Z",
+    "references": [
+        {
+            "type": "REPORT",
+            "url": "https://nodejs.org/en/blog/vulnerability/march-2018-security-releases/"
+        },
+        {
+            "type": "WEB",
+            "url": "https://nodejs.org/en/blog/vulnerability/march-2018-security-releases/"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2018-7158"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2018-7159"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2018-7160"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "node.js -- multiple vulnerabilities"
+}

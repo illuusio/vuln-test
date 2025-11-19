@@ -1,0 +1,63 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "graylog"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "4.2.4"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "cite": [
+            "https://logging.apache.org/log4j/2.x/security.html"
+        ],
+        "discovery": "2021-11-14T00:00:00Z",
+        "references": {
+            "cvename": [
+                "CVE-2021-45046"
+            ]
+        },
+        "vid": "650734b2-7665-4170-9a0a-eeced5e10a5e"
+    },
+    "details": "Apache Software Foundation reports:\n\n> It was found that the fix to address CVE-2021-44228 in Apache Log4j\n> 2.15.0 was incomplete in certain non-default configurations. This\n> could allows attackers with control over Thread Context Map (MDC)\n> input data when the logging configuration uses a non-default Pattern\n> Layout with either a Context Lookup (for example, \\$\\${ctx:loginId})\n> or a Thread Context Map pattern (%X, %mdc, or %MDC) to craft malicious\n> input data using a JNDI Lookup pattern resulting in a denial of\n> service (DOS) attack. Log4j 2.15.0 makes a best-effort attempt to\n> restrict JNDI LDAP lookups to localhost by default. Log4j 2.16.0 fixes\n> this issue by removing support for message lookup patterns and\n> disabling JNDI functionality by default.\n",
+    "id": "FreeBSD-2021-0304",
+    "modified": "2021-12-17T00:00:00Z",
+    "published": "2021-12-17T00:00:00Z",
+    "references": [
+        {
+            "type": "REPORT",
+            "url": "https://logging.apache.org/log4j/2.x/security.html"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2021-45046"
+        },
+        {
+            "type": "WEB",
+            "url": "https://github.com/Graylog2/graylog2-server/commit/d3e441f"
+        },
+        {
+            "type": "WEB",
+            "url": "https://github.com/Graylog2/graylog2-server/commit/dd24b85"
+        },
+        {
+            "type": "WEB",
+            "url": "https://logging.apache.org/log4j/2.x/security.html"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "graylog -- remote code execution in log4j from user-controlled log input"
+}

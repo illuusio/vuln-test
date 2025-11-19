@@ -1,0 +1,46 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "dokuwiki"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "20101107a"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "cite": [
+            "http://bugs.dokuwiki.org/index.php?do=details&task_id=2136"
+        ],
+        "discovery": "2011-01-16T00:00:00Z",
+        "vid": "7580f00e-280c-11e0-b7c8-00215c6a37bb"
+    },
+    "details": "Dokuwiki reports:\n\n> This security update fixes problems in the XMLRPC interface where ACLs\n> where not checked correctly sometimes, making it possible to access\n> and write information that should not have been accessible/writable.\n> This only affects users who have enabled the XMLRPC interface (default\n> is off) and have enabled XMLRPC access for users who can\\'t\n> access/write all content anyway (default is nobody, see\n> <http://www.dokuwiki.org/config:xmlrpcuser> for details).\n>\n> This update also includes a fix for a problem in the general ACL\n> checking function that could be exploited to gain access to restricted\n> pages and media files in rare conditions (when you had rights for an\n> id you could get the same rights on ids where one character has been\n> replaced by a \\\".\\\").\n",
+    "id": "FreeBSD-2011-0017",
+    "modified": "2011-01-24T00:00:00Z",
+    "published": "2011-01-24T00:00:00Z",
+    "references": [
+        {
+            "type": "REPORT",
+            "url": "http://bugs.dokuwiki.org/index.php?do=details&task_id=2136"
+        },
+        {
+            "type": "WEB",
+            "url": "http://bugs.dokuwiki.org/index.php?do=details&task_id=2136"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "dokuwiki -- multiple privilege escalation vulnerabilities"
+}

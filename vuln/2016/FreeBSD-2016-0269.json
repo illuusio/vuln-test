@@ -1,0 +1,55 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "xen-tools"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "4.7.0_2"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "cite": [
+            "http://xenbits.xen.org/xsa/advisory-180.html"
+        ],
+        "discovery": "2016-05-23T00:00:00Z",
+        "references": {
+            "cvename": [
+                "CVE-2014-3672"
+            ]
+        },
+        "vid": "e800cd4b-4212-11e6-942d-bc5ff45d0f28"
+    },
+    "details": "The Xen Project reports:\n\n> When the libxl toolstack launches qemu for HVM guests, it pipes the\n> output of stderr to a file in /var/log/xen. This output is not\n> rate-limited in any way. The guest can easily cause qemu to print\n> messages to stderr, causing this file to become arbitrarily large.\n>\n> The disk containing the logfile can be exhausted, possibly causing a\n> denial-of-service (DoS).\n",
+    "id": "FreeBSD-2016-0269",
+    "modified": "2016-07-04T00:00:00Z",
+    "published": "2016-07-04T00:00:00Z",
+    "references": [
+        {
+            "type": "REPORT",
+            "url": "http://xenbits.xen.org/xsa/advisory-180.html"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2014-3672"
+        },
+        {
+            "type": "WEB",
+            "url": "http://xenbits.xen.org/xsa/advisory-180.html"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "xen-tools -- Unrestricted qemu logging"
+}

@@ -1,0 +1,83 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "cryptopp"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "5.6.5"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "cite": [
+            "https://eprint.iacr.org/2015/368",
+            "https://github.com/weidai11/cryptopp/issues/146",
+            "https://github.com/weidai11/cryptopp/issues/277"
+        ],
+        "discovery": "2015-02-27T00:00:00Z",
+        "references": {
+            "cvename": [
+                "CVE-2015-2141",
+                "CVE-2016-3995",
+                "CVE-2016-7420"
+            ]
+        },
+        "vid": "eab68cff-bc0c-11e6-b2ca-001b3856973b"
+    },
+    "details": "Multiple sources report:\n\n> CVE-2015-2141: The InvertibleRWFunction::CalculateInverse function in\n> rw.cpp in libcrypt++ 5.6.2 does not properly blind private key\n> operations for the Rabin-Williams digital signature algorithm, which\n> allows remote attackers to obtain private keys via a timing attack.\n> Fixed in 5.6.3.\n\n> CVE-2016-3995: Incorrect implementation of Rijndael timing attack\n> countermeasure. Fixed in 5.6.4.\n\n> CVE-2016-7420: Library built without -DNDEBUG could egress sensitive\n> information to the filesystem via a core dump if an assert was\n> triggered. Fixed in 5.6.5.\n",
+    "id": "FreeBSD-2016-0469",
+    "modified": "2016-12-06T00:00:00Z",
+    "published": "2016-12-06T00:00:00Z",
+    "references": [
+        {
+            "type": "REPORT",
+            "url": "https://eprint.iacr.org/2015/368"
+        },
+        {
+            "type": "REPORT",
+            "url": "https://github.com/weidai11/cryptopp/issues/146"
+        },
+        {
+            "type": "REPORT",
+            "url": "https://github.com/weidai11/cryptopp/issues/277"
+        },
+        {
+            "type": "WEB",
+            "url": "https://eprint.iacr.org/2015/368"
+        },
+        {
+            "type": "WEB",
+            "url": "https://github.com/weidai11/cryptopp/issues/146"
+        },
+        {
+            "type": "WEB",
+            "url": "https://github.com/weidai11/cryptopp/issues/277"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2015-2141"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2016-3995"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2016-7420"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "cryptopp -- multiple vulnerabilities"
+}

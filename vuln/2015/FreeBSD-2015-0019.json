@@ -1,0 +1,110 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "linux_base-c6"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "6.6_2"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        },
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "linux_base-f10"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        },
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "linux-c6-devtools"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "6.6_3"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        },
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "linux-f10-devtools"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "cite": [
+            "https://access.redhat.com/discussions/1332403"
+        ],
+        "discovery": "2015-01-27T00:00:00Z",
+        "references": {
+            "cvename": [
+                "CVE-2015-0235"
+            ]
+        },
+        "vid": "0765de84-a6c1-11e4-a0c1-c485083ca99c"
+    },
+    "details": "Robert Kr\u00e1tk\u00fd reports:\n\n> GHOST is a \\'buffer overflow\\' bug affecting the gethostbyname() and\n> gethostbyname2() function calls in the glibc library. This\n> vulnerability allows a remote attacker that is able to make an\n> application call to either of these functions to execute arbitrary\n> code with the permissions of the user running the application. The\n> gethostbyname() function calls are used for DNS resolving, which is a\n> very common event. To exploit this vulnerability, an attacker must\n> trigger a buffer overflow by supplying an invalid hostname argument to\n> an application that performs a DNS resolution.\n",
+    "id": "FreeBSD-2015-0019",
+    "modified": "2015-02-02T00:00:00Z",
+    "published": "2015-01-28T00:00:00Z",
+    "references": [
+        {
+            "type": "REPORT",
+            "url": "https://access.redhat.com/discussions/1332403"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2015-0235"
+        },
+        {
+            "type": "WEB",
+            "url": "https://access.redhat.com/articles/1332213"
+        },
+        {
+            "type": "WEB",
+            "url": "http://www.openwall.com/lists/oss-security/2015/01/27/9"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "glibc -- gethostbyname buffer overflow"
+}

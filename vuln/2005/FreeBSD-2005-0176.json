@@ -1,0 +1,55 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "kdeedu"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "3.3.2_1"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "cite": [
+            "http://www.kde.org/info/security/advisory-20050215-1.txt"
+        ],
+        "discovery": "2005-01-05T00:00:00Z",
+        "references": {
+            "cvename": [
+                "CVE-2005-0011"
+            ]
+        },
+        "vid": "0512b761-70fb-40d3-9954-aa4565528fa8"
+    },
+    "details": "A KDE Security Advisory explains:\n\n> # Overview\n>\n> KStars includes support for the Instrument Neutral Distributed\n> Interface (INDI). The build system of this extra 3rd party software\n> contained an installation hook to install fliccd (part of INDI) as\n> SUID root application.\n>\n> Erik Sj\u00f6lund discovered that the code contains several vulnerabilities\n> that allow stack based buffer overflows.\n>\n> # Impact\n>\n> If the fliccd binary is installed as suid root, it enables root\n> privilege escalation for local users, or, if the daemon is actually\n> running (which it does not by default) and is running as root, remote\n> root privilege escalation.\n",
+    "id": "FreeBSD-2005-0176",
+    "modified": "2005-06-17T00:00:00Z",
+    "published": "2005-06-17T00:00:00Z",
+    "references": [
+        {
+            "type": "REPORT",
+            "url": "http://www.kde.org/info/security/advisory-20050215-1.txt"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2005-0011"
+        },
+        {
+            "type": "WEB",
+            "url": "http://www.kde.org/info/security/advisory-20050215-1.txt"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "kstars -- exploitable set-user-ID application fliccd"
+}

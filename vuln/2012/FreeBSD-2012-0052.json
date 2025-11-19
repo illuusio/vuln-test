@@ -1,0 +1,55 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "openssl"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "1.0.0_10"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "cite": [
+            "http://www.openssl.org/news/secadv_20120312.txt"
+        ],
+        "discovery": "2012-03-12T00:00:00Z",
+        "references": {
+            "cvename": [
+                "CVE-2012-0884"
+            ]
+        },
+        "vid": "60eb344e-6eb1-11e1-8ad7-00e0815b8da8"
+    },
+    "details": "The OpenSSL Team reports:\n\n> A weakness in the OpenSSL CMS and PKCS #7 code can be exploited using\n> Bleichenbacher\\'s attack on PKCS #1 v1.5 RSA padding also known as the\n> million message attack (MMA).\n>\n> Only users of CMS, PKCS #7, or S/MIME decryption operations are\n> affected. A successful attack needs on average 2\\^20 messages. In\n> practice only automated systems will be affected as humans will not be\n> willing to process this many messages.\n>\n> SSL/TLS applications are \\*NOT\\* affected by this problem since the\n> SSL/TLS code does not use the PKCS#7 or CMS decryption code.\n",
+    "id": "FreeBSD-2012-0052",
+    "modified": "2012-03-15T00:00:00Z",
+    "published": "2012-03-15T00:00:00Z",
+    "references": [
+        {
+            "type": "REPORT",
+            "url": "http://www.openssl.org/news/secadv_20120312.txt"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2012-0884"
+        },
+        {
+            "type": "WEB",
+            "url": "http://www.openssl.org/news/secadv_20120312.txt"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "OpenSSL -- CMS and S/MIME Bleichenbacher attack"
+}

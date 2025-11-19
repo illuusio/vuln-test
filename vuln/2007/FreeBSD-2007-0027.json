@@ -1,0 +1,55 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "sql-ledger"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "2.6.26"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "cite": [
+            "http://www.securityfocus.com/archive/1/462375"
+        ],
+        "discovery": "2007-03-09T00:00:00Z",
+        "references": {
+            "freebsdpr": [
+                "ports/110350"
+            ]
+        },
+        "vid": "8e02441d-d39c-11db-a6da-0003476f14d3"
+    },
+    "details": "Chris Travers reports:\n\n> George Theall of Tenable Security notified the LedgerSMB core team\n> today of an authentication bypass vulnerability allowing full access\n> to the administrator interface of LedgerSMB 1.1 and SQL-Ledger 2.x.\n> The problem is caused by the password checking routine failing to\n> enforce a password check under certain circumstances. The user can\n> then create accounts or effect denial of service attacks.\n>\n> This is not related to any previous CVE.\n>\n> We have coordinated with the SQL-Ledger vendor and today both of us\n> released security patches correcting the problem. SQL-Ledger users who\n> can upgrade to 2.6.26 should do so, and LedgerSMB 1.1 or 1.0 users\n> should upgrade to 1.1.9. Users who cannot upgrade should configure\n> their web servers to use http authentication for the admin.pl script\n> in the main root directory.\n",
+    "id": "FreeBSD-2007-0027",
+    "modified": "2007-03-16T00:00:00Z",
+    "published": "2007-03-16T00:00:00Z",
+    "references": [
+        {
+            "type": "REPORT",
+            "url": "http://www.securityfocus.com/archive/1/462375"
+        },
+        {
+            "type": "REPORT",
+            "url": "https://bugs.freebsd.org/bugzilla/show_bug.cgi?id=110350"
+        },
+        {
+            "type": "WEB",
+            "url": "http://www.securityfocus.com/archive/1/462375"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "sql-ledger -- security bypass vulnerability"
+}

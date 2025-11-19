@@ -1,0 +1,55 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "ruby"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "introduced": "1.9"
+                        },
+                        {
+                            "fixed": "1.9.3.327"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "cite": [
+            "http://www.ruby-lang.org/en/news/2012/11/09/ruby19-hashdos-cve-2012-5371/"
+        ],
+        "discovery": "2012-11-10T00:00:00Z",
+        "references": {
+            "cvename": [
+                "CVE-2012-5371"
+            ]
+        },
+        "vid": "5e647ca3-2aea-11e2-b745-001fd0af1a4c"
+    },
+    "details": "The official ruby site reports:\n\n> Carefully crafted sequence of strings can cause a denial of service\n> attack on the service that parses the sequence to create a Hash object\n> by using the strings as keys. For instance, this vulnerability affects\n> web application that parses the JSON data sent from untrusted entity.\n>\n> This vulnerability is similar to CVS-2011-4815 for ruby 1.8.7. ruby\n> 1.9 versions were using modified MurmurHash function but it\\'s\n> reported that there is a way to create sequence of strings that\n> collide their hash values each other. This fix changes the Hash\n> function of String object from the MurmurHash to SipHash 2-4.\n",
+    "id": "FreeBSD-2012-0206",
+    "modified": "2012-11-10T00:00:00Z",
+    "published": "2012-11-10T00:00:00Z",
+    "references": [
+        {
+            "type": "REPORT",
+            "url": "http://www.ruby-lang.org/en/news/2012/11/09/ruby19-hashdos-cve-2012-5371/"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2012-5371"
+        },
+        {
+            "type": "WEB",
+            "url": "http://www.ruby-lang.org/en/news/2012/11/09/ruby19-hashdos-cve-2012-5371/"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "ruby -- Hash-flooding DoS vulnerability for ruby 1.9"
+}

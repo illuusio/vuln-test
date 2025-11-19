@@ -1,0 +1,127 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "jasper"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "1.900.1_16"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "cite": [
+            "http://www.ocert.org/advisories/ocert-2014-012.html",
+            "http://www.ocert.org/advisories/ocert-2015-001.html",
+            "http://www.ocert.org/advisories/ocert-2014-009.html",
+            "http://seclists.org/oss-sec/2016/q1/233"
+        ],
+        "discovery": "2014-12-10T00:00:00Z",
+        "references": {
+            "cvename": [
+                "CVE-2014-8137",
+                "CVE-2014-8138",
+                "CVE-2014-8157",
+                "CVE-2014-8158",
+                "CVE-2014-9029",
+                "CVE-2016-2089"
+            ]
+        },
+        "vid": "006e3b7c-d7d7-11e5-b85f-0018fe623f2b"
+    },
+    "details": "oCERT reports:\n\n> The library is affected by a double-free vulnerability in function\n> jas_iccattrval_destroy() as well as a heap-based buffer overflow in\n> function jp2_decode(). A specially crafted jp2 file can be used to\n> trigger the vulnerabilities.\n\noCERT reports:\n\n> The library is affected by an off-by-one error in a buffer boundary\n> check in jpc_dec_process_sot(), leading to a heap based buffer\n> overflow, as well as multiple unrestricted stack memory use issues in\n> jpc_qmfb.c, leading to stack overflow. A specially crafted jp2 file\n> can be used to trigger the vulnerabilities.\n\noCERT reports:\n\n> Multiple off-by-one flaws, leading to heap-based buffer overflows,\n> were found in the way JasPer decoded JPEG 2000 files. A specially\n> crafted file could cause an application using JasPer to crash or,\n> possibly, execute arbitrary code.\n\nlimingxing reports:\n\n> A vulnerability was found in the way the JasPer\\'s jas_matrix_clip()\n> function parses certain JPEG 2000 image files. A specially crafted\n> file could cause an application using JasPer to crash.\n",
+    "id": "FreeBSD-2016-0110",
+    "modified": "2016-02-24T00:00:00Z",
+    "published": "2016-02-20T00:00:00Z",
+    "references": [
+        {
+            "type": "REPORT",
+            "url": "http://www.ocert.org/advisories/ocert-2014-012.html"
+        },
+        {
+            "type": "REPORT",
+            "url": "http://www.ocert.org/advisories/ocert-2015-001.html"
+        },
+        {
+            "type": "REPORT",
+            "url": "http://www.ocert.org/advisories/ocert-2014-009.html"
+        },
+        {
+            "type": "REPORT",
+            "url": "http://seclists.org/oss-sec/2016/q1/233"
+        },
+        {
+            "type": "WEB",
+            "url": "http://www.ocert.org/advisories/ocert-2014-012.html"
+        },
+        {
+            "type": "REPORT",
+            "url": "https://bugzilla.redhat.com/show_bug.cgi?id=1173157"
+        },
+        {
+            "type": "REPORT",
+            "url": "https://bugzilla.redhat.com/show_bug.cgi?id=1173162"
+        },
+        {
+            "type": "WEB",
+            "url": "http://www.ocert.org/advisories/ocert-2015-001.html"
+        },
+        {
+            "type": "REPORT",
+            "url": "https://bugzilla.redhat.com/show_bug.cgi?id=1179282"
+        },
+        {
+            "type": "WEB",
+            "url": "http://www.ocert.org/advisories/ocert-2014-009.html"
+        },
+        {
+            "type": "REPORT",
+            "url": "https://bugzilla.redhat.com/show_bug.cgi?id=1167537"
+        },
+        {
+            "type": "WEB",
+            "url": "http://seclists.org/oss-sec/2016/q1/233"
+        },
+        {
+            "type": "REPORT",
+            "url": "https://bugzilla.redhat.com/show_bug.cgi?id=1302636"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2014-8137"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2014-8138"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2014-8157"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2014-8158"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2014-9029"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2016-2089"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "jasper -- multiple vulnerabilities"
+}

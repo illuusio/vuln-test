@@ -1,0 +1,55 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "redis"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "introduced": "7.0.0"
+                        },
+                        {
+                            "fixed": "7.0.5"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "cite": [
+            "https://github.com/redis/redis/releases/tag/7.0.5"
+        ],
+        "discovery": "2022-09-21T00:00:00Z",
+        "references": {
+            "cvename": [
+                "CVE-2022-35951"
+            ]
+        },
+        "vid": "f1f637d1-39eb-11ed-ab44-080027f5fec9"
+    },
+    "details": "The Redis core team reports:\n\n> Executing a XAUTOCLAIM command on a stream key in a specific state,\n> with a specially crafted COUNT argument, may cause an integer\n> overflow, a subsequent heap overflow, and potentially lead to remote\n> code execution. The problem affects Redis versions 7.0.0 or newer.\n",
+    "id": "FreeBSD-2022-0179",
+    "modified": "2022-09-21T00:00:00Z",
+    "published": "2022-09-21T00:00:00Z",
+    "references": [
+        {
+            "type": "REPORT",
+            "url": "https://github.com/redis/redis/releases/tag/7.0.5"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2022-35951"
+        },
+        {
+            "type": "WEB",
+            "url": "https://github.com/redis/redis/releases/tag/7.0.5"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "redis -- Potential remote code execution vulnerability"
+}

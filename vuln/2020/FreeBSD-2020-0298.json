@@ -1,0 +1,55 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "nomad"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "0.12.6"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "cite": [
+            "https://github.com/hashicorp/nomad/blob/master/CHANGELOG.md"
+        ],
+        "discovery": "2020-10-21T00:00:00Z",
+        "references": {
+            "cvename": [
+                "CVE-2020-27195"
+            ]
+        },
+        "vid": "618010ff-3044-11eb-8112-000c292ee6b8"
+    },
+    "details": "The HashiCorp team reports:\n\n> - artifact: Fixed a bug where interpolation can be used in the\n>   artifact destination field to write artifact payloads outside the\n>   allocation directory.\n> - template: Fixed a bug where interpolation can be used in the\n>   template source and destination fields to read or write files\n>   outside the allocation directory even when disable_file_sandbox was\n>   set to false (the default).\n> - template: Fixed a bug where the disable_file_sandbox configuration\n>   was only respected for the template file function and not the\n>   template source and destination fields.\n",
+    "id": "FreeBSD-2020-0298",
+    "modified": "2020-11-27T00:00:00Z",
+    "published": "2020-11-27T00:00:00Z",
+    "references": [
+        {
+            "type": "REPORT",
+            "url": "https://github.com/hashicorp/nomad/blob/master/CHANGELOG.md"
+        },
+        {
+            "type": "WEB",
+            "url": "https://github.com/hashicorp/nomad/blob/master/CHANGELOG.md"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2020-27195"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "nomad -- multiple vulnerabilities"
+}

@@ -1,0 +1,63 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "sudo"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "1.7.2.4"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "discovery": "2010-01-29T00:00:00Z",
+        "references": {
+            "bid": [
+                "38362"
+            ],
+            "cvename": [
+                "CVE-2010-0426"
+            ]
+        },
+        "vid": "018a84d0-2548-11df-b4a3-00e0815b8da8"
+    },
+    "details": "Todd Miller reports:\n\n> When sudo performs its command matching, there is a special case for\n> pseudo-commands in the sudoers file (currently, the only\n> pseudo-command is sudoedit). Unlike a regular command, pseudo-commands\n> do not begin with a slash (\\'/\\'). The flaw is that sudo\\'s the\n> matching code would only check against the list of pseudo-commands if\n> the user-specified command also contained no slashes. As a result, if\n> the user ran \\\"sudo ./sudoedit\\\" the normal matching code path was\n> followed, which uses stat(2) to verify that the user-specified command\n> matches the one in sudoers. In this case, it would compare the\n> \\\"./sudoedit\\\" specified by the user with \\\"sudoedit\\\" from the\n> sudoers file, resulting in a positive match.\n",
+    "id": "FreeBSD-2010-0018",
+    "modified": "2010-03-01T00:00:00Z",
+    "published": "2010-03-01T00:00:00Z",
+    "references": [
+        {
+            "type": "WEB",
+            "url": "http://www.sudo.ws/pipermail/sudo-announce/2010-February/000092.html"
+        },
+        {
+            "type": "WEB",
+            "url": "http://www.sudo.ws/sudo/alerts/sudoedit_escalate.html"
+        },
+        {
+            "type": "WEB",
+            "url": "http://secunia.com/advisories/38659"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2010-0426"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://www.securityfocus.com/bid/38362/info"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "sudo -- Privilege escalation with sudoedit"
+}

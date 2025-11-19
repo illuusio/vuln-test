@@ -1,0 +1,67 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "xen-kernel"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "4.5.2_1"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "cite": [
+            "http://xenbits.xen.org/xsa/advisory-159.html"
+        ],
+        "discovery": "2015-12-08T00:00:00Z",
+        "references": {
+            "cvename": [
+                "CVE-2015-8339",
+                "CVE-2015-8340"
+            ],
+            "freebsdpr": [
+                "ports/205841"
+            ]
+        },
+        "vid": "bcad3faa-b40c-11e5-9728-002590263bf5"
+    },
+    "details": "The Xen Project reports:\n\n> Error handling in the operation may involve handing back pages to the\n> domain. This operation may fail when in parallel the domain gets torn\n> down. So far this failure unconditionally resulted in the host being\n> brought down due to an internal error being assumed. This is\n> CVE-2015-8339.\n>\n> Furthermore error handling so far wrongly included the release of a\n> lock. That lock, however, was either not acquired or already released\n> on all paths leading to the error handling sequence. This is\n> CVE-2015-8340.\n>\n> A malicious guest administrator may be able to deny service by\n> crashing the host or causing a deadlock.\n",
+    "id": "FreeBSD-2016-0026",
+    "modified": "2016-01-06T00:00:00Z",
+    "published": "2016-01-06T00:00:00Z",
+    "references": [
+        {
+            "type": "REPORT",
+            "url": "http://xenbits.xen.org/xsa/advisory-159.html"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2015-8339"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2015-8340"
+        },
+        {
+            "type": "REPORT",
+            "url": "https://bugs.freebsd.org/bugzilla/show_bug.cgi?id=205841"
+        },
+        {
+            "type": "WEB",
+            "url": "http://xenbits.xen.org/xsa/advisory-159.html"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "xen-kernel -- XENMEM_exchange error handling issues"
+}

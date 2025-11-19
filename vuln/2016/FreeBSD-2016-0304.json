@@ -1,0 +1,73 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:kernel",
+                "name": "FreeBSD-kernel"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "introduced": "9.1"
+                        },
+                        {
+                            "fixed": "9.1_6"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                },
+                {
+                    "events": [
+                        {
+                            "introduced": "8.4"
+                        },
+                        {
+                            "fixed": "8.4_3"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                },
+                {
+                    "events": [
+                        {
+                            "introduced": "8.3"
+                        },
+                        {
+                            "fixed": "8.3_10"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "discovery": "2013-08-22T00:00:00Z",
+        "references": {
+            "cvename": [
+                "CVE-2013-5209"
+            ],
+            "freebsdsa": [
+                "SA-13:10.sctp"
+            ]
+        },
+        "vid": "dd48d9b9-5e7e-11e6-a6c3-14dae9d210b8"
+    },
+    "details": "Problem Description:\n\nWhen initializing the SCTP state cookie being sent in INIT-ACK chunks, a\nbuffer allocated from the kernel stack is not completely initialized.\n\nImpact:\n\nFragments of kernel memory may be included in SCTP packets and\ntransmitted over the network. For each SCTP session, there are two\nseparate instances in which a 4-byte fragment may be transmitted.\n\nThis memory might contain sensitive information, such as portions of the\nfile cache or terminal buffers. This information might be directly\nuseful, or it might be leveraged to obtain elevated privileges in some\nway. For example, a terminal buffer might include a user-entered\npassword.\n",
+    "id": "FreeBSD-2016-0304",
+    "modified": "2016-08-09T00:00:00Z",
+    "published": "2016-08-09T00:00:00Z",
+    "references": [
+        {
+            "type": "ADVISORY",
+            "url": "https://www.freebsd.org/security/advisories/FreeBSD-SA-13:10.sctp.asc"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2013-5209"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "FreeBSD -- Kernel memory disclosure in sctp(4)"
+}

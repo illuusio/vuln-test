@@ -1,0 +1,62 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "FreeBSD"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "introduced": "13.1"
+                        },
+                        {
+                            "fixed": "13.1_1"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                },
+                {
+                    "events": [
+                        {
+                            "introduced": "13.0"
+                        },
+                        {
+                            "fixed": "13.0_12"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "discovery": "2022-08-09T00:00:00Z",
+        "references": {
+            "cvename": [
+                "CVE-2022-23092"
+            ],
+            "freebsdsa": [
+                "SA-22:12.lib9p"
+            ]
+        },
+        "vid": "8eaaf135-1893-11ed-9b22-002590c1f29c"
+    },
+    "details": "# Problem Description:\n\nThe implementation of lib9p\\'s handling of RWALK messages was missing a\nbounds check needed when unpacking the message contents. The missing\ncheck means that the receipt of a specially crafted message will cause\nlib9p to overwrite unrelated memory.\n\n# Impact:\n\nThe bug can be triggered by a malicious bhyve guest kernel to overwrite\nmemory in the bhyve(8) process. This could potentially lead to user-mode\ncode execution on the host, subject to bhyve\\'s Capsicum sandbox.\n",
+    "id": "FreeBSD-2022-0154",
+    "modified": "2022-08-10T00:00:00Z",
+    "published": "2022-08-10T00:00:00Z",
+    "references": [
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2022-23092"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://www.freebsd.org/security/advisories/FreeBSD-SA-22:12.lib9p.asc"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "FreeBSD -- Missing bounds check in 9p message handling"
+}

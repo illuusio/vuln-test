@@ -1,0 +1,148 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "subversion"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "introduced": "1.10.0"
+                        },
+                        {
+                            "fixed": "1.10.8"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                },
+                {
+                    "events": [
+                        {
+                            "introduced": "1.11.0"
+                        },
+                        {
+                            "fixed": "1.14.2"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        },
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "mod_dav_svn"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "introduced": "1.10.0"
+                        },
+                        {
+                            "fixed": "1.10.8"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                },
+                {
+                    "events": [
+                        {
+                            "introduced": "1.11.0"
+                        },
+                        {
+                            "fixed": "1.14.2"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        },
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "subversion-lts"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "introduced": "1.10.0"
+                        },
+                        {
+                            "fixed": "1.10.8"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        },
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "mod_dav_svn-lts"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "introduced": "1.10.0"
+                        },
+                        {
+                            "fixed": "1.10.8"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "cite": [
+            "https://subversion.apache.org/security/CVE-2021-28544-advisory.txt",
+            "https://subversion.apache.org/security/CVE-2022-24070-advisory.txt"
+        ],
+        "discovery": "2022-04-12T00:00:00Z",
+        "references": {
+            "cvename": [
+                "CVE-2021-28544",
+                "CVE-2022-24070"
+            ]
+        },
+        "vid": "3a1dc8c8-bb27-11ec-98d1-d43d7eed0ce2"
+    },
+    "details": "Subversion project reports:\n\n> Subversion servers reveal \\'copyfrom\\' paths that should be hidden\n> according to configured path-based authorization (authz) rules. When a\n> node has been copied from a protected location, users with access to\n> the copy can see the \\'copyfrom\\' path of the original. This also\n> reveals the fact that the node was copied. Only the \\'copyfrom\\' path\n> is revealed; not its contents. Both httpd and svnserve servers are\n> vulnerable.\n\n> While looking up path-based authorization rules, mod_dav_svn servers\n> may attempt to use memory which has already been freed.\n",
+    "id": "FreeBSD-2022-0081",
+    "modified": "2022-04-13T00:00:00Z",
+    "published": "2022-04-13T00:00:00Z",
+    "references": [
+        {
+            "type": "REPORT",
+            "url": "https://subversion.apache.org/security/CVE-2021-28544-advisory.txt"
+        },
+        {
+            "type": "REPORT",
+            "url": "https://subversion.apache.org/security/CVE-2022-24070-advisory.txt"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2021-28544"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2022-24070"
+        },
+        {
+            "type": "WEB",
+            "url": "https://subversion.apache.org/security/CVE-2021-28544-advisory.txt"
+        },
+        {
+            "type": "WEB",
+            "url": "https://subversion.apache.org/security/CVE-2022-24070-advisory.txt"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "Subversion -- Multiple vulnerabilities in server code"
+}

@@ -1,0 +1,55 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "xen-tools"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "introduced": "4.1"
+                        },
+                        {
+                            "fixed": "4.5.1_1"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "cite": [
+            "http://xenbits.xen.org/xsa/advisory-142.html"
+        ],
+        "discovery": "2015-09-22T00:00:00Z",
+        "references": {
+            "cvename": [
+                "CVE-2015-7311"
+            ]
+        },
+        "vid": "301b04d7-881c-11e5-ab94-002590263bf5"
+    },
+    "details": "The Xen Project reports:\n\n> Callers of libxl can specify that a disk should be read-only to the\n> guest. However, there is no code in libxl to pass this information to\n> qemu-xen (the upstream-based qemu); and indeed there is no way in qemu\n> to make a disk read-only.\n>\n> The vulnerability is exploitable only via devices emulated by the\n> device model, not the parallel PV devices for supporting PVHVM.\n> Normally the PVHVM device unplug protocol renders the emulated devices\n> inaccessible early in boot.\n>\n> Malicious guest administrators or (in some situations) users may be\n> able to write to supposedly read-only disk images.\n>\n> CDROM devices (that is, devices specified to be presented to the guest\n> as CDROMs, regardless of the nature of the backing storage on the\n> host) are not affected.\n",
+    "id": "FreeBSD-2015-0356",
+    "modified": "2015-11-11T00:00:00Z",
+    "published": "2015-11-11T00:00:00Z",
+    "references": [
+        {
+            "type": "REPORT",
+            "url": "http://xenbits.xen.org/xsa/advisory-142.html"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2015-7311"
+        },
+        {
+            "type": "WEB",
+            "url": "http://xenbits.xen.org/xsa/advisory-142.html"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "xen-tools -- libxl fails to honour readonly flag on disks with qemu-xen"
+}

@@ -1,0 +1,61 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "freeradius"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "introduced": "1.0.0"
+                        },
+                        {
+                            "last_affected": "1.0.4"
+                        },
+                        {
+                            "fixed": "1.0.4"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "cite": [
+            "http://www.freeradius.org/security.html"
+        ],
+        "discovery": "2005-09-09T00:00:00Z",
+        "references": {
+            "bid": [
+                "17171"
+            ],
+            "cvename": [
+                "CVE-2005-4744"
+            ]
+        },
+        "vid": "ec2f2ff5-f710-11da-9156-000e0c2e438a"
+    },
+    "details": "The freeradious development team reports:\n\n> Multiple issues exist with version 1.0.4, and all prior versions of\n> the server. Externally exploitable vulnerabilities exist only for\n> sites that use the rlm_sqlcounter module. Those sites may be\n> vulnerable to SQL injection attacks, similar to the issues noted\n> below. All sites that have not deployed the rlm_sqlcounter module are\n> not vulnerable to external exploits.\n>\n> The issues are:\\\n> SQL Injection attack in the rlm_sqlcounter module.\\\n> Buffer overflow in the rlm_sqlcounter module, that may cause a server\n> crash.\\\n> Buffer overflow while expanding %t, that may cause a server crash.\n",
+    "id": "FreeBSD-2006-0110",
+    "modified": "2006-06-08T00:00:00Z",
+    "published": "2006-06-08T00:00:00Z",
+    "references": [
+        {
+            "type": "REPORT",
+            "url": "http://www.freeradius.org/security.html"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://www.securityfocus.com/bid/17171/info"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2005-4744"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "freeradius -- multiple vulnerabilities"
+}

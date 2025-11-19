@@ -1,0 +1,75 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "dbus"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "1.8.8"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "cite": [
+            "http://lists.freedesktop.org/archives/dbus/2014-September/016343.html"
+        ],
+        "discovery": "2014-09-16T00:00:00Z",
+        "references": {
+            "cvename": [
+                "CVE-2014-3635",
+                "CVE-2014-3636",
+                "CVE-2014-3637",
+                "CVE-2014-3638",
+                "CVE-2014-3639"
+            ]
+        },
+        "vid": "38242d51-3e58-11e4-ac2f-bcaec565249c"
+    },
+    "details": "Simon McVittie reports:\n\n> Do not accept an extra fd in the padding of a cmsg message, which\n> could lead to a 4-byte heap buffer overrun (CVE-2014-3635).\n>\n> Reduce default for maximum Unix file descriptors passed per message\n> from 1024 to 16, preventing a uid with the default maximum number of\n> connections from exhausting the system bus\\' file descriptors under\n> Linux\\'s default rlimit (CVE-2014-3636).\n>\n> Disconnect connections that still have a fd pending unmarshalling\n> after a new configurable limit, pending_fd_timeout (defaulting to 150\n> seconds), removing the possibility of creating an abusive connection\n> that cannot be disconnected by setting up a circular reference to a\n> connection\\'s file descriptor (CVE-2014-3637).\n>\n> Reduce default for maximum pending replies per connection from 8192 to\n> 128, mitigating an algorithmic complexity denial-of-service attack\n> (CVE-2014-3638).\n>\n> Reduce default for authentication timeout on the system bus from 30\n> seconds to 5 seconds, avoiding denial of service by using up all\n> unauthenticated connection slots; and when all unauthenticated\n> connection slots are used up, make new connection attempts block\n> instead of disconnecting them (CVE-2014-3639).\n",
+    "id": "FreeBSD-2014-0111",
+    "modified": "2014-09-17T00:00:00Z",
+    "published": "2014-09-17T00:00:00Z",
+    "references": [
+        {
+            "type": "REPORT",
+            "url": "http://lists.freedesktop.org/archives/dbus/2014-September/016343.html"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2014-3635"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2014-3636"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2014-3637"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2014-3638"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2014-3639"
+        },
+        {
+            "type": "WEB",
+            "url": "http://lists.freedesktop.org/archives/dbus/2014-September/016343.html"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "dbus -- multiple vulnerabilities"
+}

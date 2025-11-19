@@ -1,0 +1,107 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "php81-composer"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "2.7.7"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        },
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "php82-composer"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "2.7.7"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        },
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "php83-composer"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "2.7.7"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "cite": [
+            "https://github.com/composer/composer/security/advisories/GHSA-47f6-5gq3-vx9c",
+            "https://github.com/composer/composer/security/advisories/GHSA-v9qv-c7wm-wgmf"
+        ],
+        "discovery": "2024-06-10T00:00:00Z",
+        "references": {
+            "cvename": [
+                "CVE-2024-35241",
+                "CVE-2024-35242"
+            ]
+        },
+        "vid": "5f608c68-276c-11ef-8caa-0897988a1c07"
+    },
+    "details": "Composer project reports:\n\n> The status, reinstall and remove commands with packages installed from\n> source via git containing specially crafted branch names in the\n> repository can be used to execute code.\n\n> The composer install command running inside a git/hg repository which\n> has specially crafted branch names can lead to command injection. So\n> this requires cloning untrusted repositories.\n",
+    "id": "FreeBSD-2024-0142",
+    "modified": "2024-06-10T00:00:00Z",
+    "published": "2024-06-10T00:00:00Z",
+    "references": [
+        {
+            "type": "REPORT",
+            "url": "https://github.com/composer/composer/security/advisories/GHSA-47f6-5gq3-vx9c"
+        },
+        {
+            "type": "REPORT",
+            "url": "https://github.com/composer/composer/security/advisories/GHSA-v9qv-c7wm-wgmf"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2024-35241"
+        },
+        {
+            "type": "WEB",
+            "url": "https://github.com/composer/composer/security/advisories/GHSA-47f6-5gq3-vx9c"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2024-35242"
+        },
+        {
+            "type": "WEB",
+            "url": "https://github.com/composer/composer/security/advisories/GHSA-v9qv-c7wm-wgmf"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "Composer -- Multiple command injections via malicious git/hg branch names"
+}

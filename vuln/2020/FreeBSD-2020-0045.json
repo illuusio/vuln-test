@@ -1,0 +1,103 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "node"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "13.8.0"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        },
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "node12"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "12.15.0"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        },
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "node10"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "10.19.0"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "cite": [
+            "https://nodejs.org/en/blog/vulnerability/february-2020-security-releases/"
+        ],
+        "discovery": "2020-02-06T00:00:00Z",
+        "references": {
+            "cvename": [
+                "CVE-2019-15605",
+                "CVE-2019-15606",
+                "CVE-2019-15604"
+            ]
+        },
+        "vid": "0032400f-624f-11ea-b495-000d3ab229d6"
+    },
+    "details": "Node.js reports:\n\n> Updates are now available for all active Node.js release lines for the\n> following issues.\n>\n> # HTTP request smuggling using malformed Transfer-Encoding header (Critical) (CVE-2019-15605)HTTP request smuggling using malformed Transfer-Encoding header (Critical) (CVE-2019-15605)\n>\n> Affected Node.js versions can be exploited to perform HTTP desync\n> attacks and deliver malicious payloads to unsuspecting users. The\n> payloads can be crafted by an attacker to hijack user sessions, poison\n> cookies, perform clickjacking, and a multitude of other attacks\n> depending on the architecture of the underlying system.\n>\n> # HTTP header values do not have trailing OWS trimmed (High) (CVE-2019-15606)\n>\n> Optional whitespace should be trimmed from HTTP header values. Its\n> presence may allow attackers to bypass security checks based on HTTP\n> header values.\n>\n> # Remotely trigger an assertion on a TLS server with a malformed certificate string (High) (CVE-2019-15604)\n>\n> Connecting to a NodeJS TLS server with a client certificate that has a\n> type 19 string in its subjectAltName will crash the TLS server if it\n> tries to read the peer certificate.\n>\n> # Strict HTTP header parsing (None)\n>\n> Increase the strictness of HTTP header parsing. There are no known\n> vulnerabilities addressed, but lax HTTP parsing has historically been\n> a source of problems. Some commonly used sites are known to generate\n> invalid HTTP headers, a \\--insecure-http-parser CLI option or\n> insecureHTTPParser http option can be used if necessary for\n> interoperability, but is not recommended.\n",
+    "id": "FreeBSD-2020-0045",
+    "modified": "2020-03-09T00:00:00Z",
+    "published": "2020-03-09T00:00:00Z",
+    "references": [
+        {
+            "type": "REPORT",
+            "url": "https://nodejs.org/en/blog/vulnerability/february-2020-security-releases/"
+        },
+        {
+            "type": "WEB",
+            "url": "https://nodejs.org/en/blog/vulnerability/february-2020-security-releases/"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2019-15605"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2019-15606"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2019-15604"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "Node.js -- multiple vulnerabilities"
+}

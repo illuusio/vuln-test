@@ -1,0 +1,59 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "spamdyke"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "4.3.0"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "cite": [
+            "http://www.spamdyke.org/documentation/Changelog.txt"
+        ],
+        "discovery": "2012-01-15T00:00:00Z",
+        "references": {
+            "cvename": [
+                "CVE-2012-0802"
+            ]
+        },
+        "vid": "7d2336c2-4607-11e1-9f47-00e0815b8da8"
+    },
+    "details": "Secunia reports:\n\n> Fixed a number of very serious errors in the usage of\n> snprintf()/vsnprintf().\n>\n> The return value was being used as the length of the string printed\n> into the buffer, but the return value really indicates the length of\n> the string that \\*could\\* be printed if the buffer were of infinite\n> size. Because the returned value could be larger than the buffer\\'s\n> size, this meant remotely exploitable buffer overflows were possible,\n> depending on spamdyke\\'s configuration.\n",
+    "id": "FreeBSD-2012-0015",
+    "modified": "2012-01-23T00:00:00Z",
+    "published": "2012-01-23T00:00:00Z",
+    "references": [
+        {
+            "type": "REPORT",
+            "url": "http://www.spamdyke.org/documentation/Changelog.txt"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2012-0802"
+        },
+        {
+            "type": "WEB",
+            "url": "https://secunia.com/advisories/47548/"
+        },
+        {
+            "type": "WEB",
+            "url": "http://www.spamdyke.org/documentation/Changelog.txt"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "spamdyke -- Buffer Overflow Vulnerabilities"
+}

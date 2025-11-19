@@ -1,0 +1,55 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "powerdns-recursor"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "4.1.1"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "cite": [
+            "https://doc.powerdns.com/recursor/security-advisories/powerdns-advisory-2018-01.html"
+        ],
+        "discovery": "2018-01-22T00:00:00Z",
+        "references": {
+            "cvename": [
+                "CVE-2018-1000003"
+            ]
+        },
+        "vid": "24a82876-002e-11e8-9a95-0cc47a02c232"
+    },
+    "details": "PowerDNS Security Advisory reports:\n\n> An issue has been found in the DNSSEC validation component of PowerDNS\n> Recursor, allowing an ancestor delegation NSEC or NSEC3 record to be\n> used to wrongfully prove the non-existence of a RR below the owner\n> name of that record. This would allow an attacker in position of\n> man-in-the-middle to send a NXDOMAIN answer for a name that does\n> exist.\n",
+    "id": "FreeBSD-2018-0015",
+    "modified": "2018-01-23T00:00:00Z",
+    "published": "2018-01-23T00:00:00Z",
+    "references": [
+        {
+            "type": "REPORT",
+            "url": "https://doc.powerdns.com/recursor/security-advisories/powerdns-advisory-2018-01.html"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2018-1000003"
+        },
+        {
+            "type": "WEB",
+            "url": "https://doc.powerdns.com/recursor/security-advisories/powerdns-advisory-2018-01.html"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "powerdns-recursor -- insufficient validation of DNSSEC signatures"
+}

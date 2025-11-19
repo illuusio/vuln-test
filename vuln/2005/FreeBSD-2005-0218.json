@@ -1,0 +1,62 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "net-snmp"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "5.2.1.2"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "cite": [
+            "http://www.gentoo.org/security/en/glsa/glsa-200505-18.xml"
+        ],
+        "discovery": "2005-05-23T00:00:00Z",
+        "references": {
+            "bid": [
+                "13715"
+            ],
+            "cvename": [
+                "CVE-2005-1740"
+            ]
+        },
+        "vid": "3e0072d4-d05b-11d9-9aed-000e0c2e438a"
+    },
+    "details": "A Gentoo advisory reports:\n\n> Net-SNMP creates temporary files in an insecure manner, possibly\n> allowing the execution of arbitrary code.\n>\n> A malicious local attacker could exploit a race condition to change\n> the content of the temporary files before they are executed by\n> fixproc, possibly leading to the execution of arbitrary code. A local\n> attacker could also create symbolic links in the temporary files\n> directory, pointing to a valid file somewhere on the filesystem. When\n> fixproc is executed, this would result in the file being overwritten.\n",
+    "id": "FreeBSD-2005-0218",
+    "modified": "2005-07-13T00:00:00Z",
+    "published": "2005-07-09T00:00:00Z",
+    "references": [
+        {
+            "type": "REPORT",
+            "url": "http://www.gentoo.org/security/en/glsa/glsa-200505-18.xml"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://www.securityfocus.com/bid/13715/info"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2005-1740"
+        },
+        {
+            "type": "WEB",
+            "url": "http://security.gentoo.org/glsa/glsa-200505-18.xml"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "net-snmp -- fixproc insecure temporary file creation"
+}

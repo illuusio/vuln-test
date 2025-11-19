@@ -1,0 +1,55 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "openvpn"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "introduced": "2.0"
+                        },
+                        {
+                            "fixed": "2.0.4"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "cite": [
+            "http://openvpn.net/changelog.html"
+        ],
+        "discovery": "2005-11-01T00:00:00Z",
+        "references": {
+            "cvename": [
+                "CVE-2005-3409"
+            ]
+        },
+        "vid": "3de49331-0dec-422c-93e5-e4719e9869c5"
+    },
+    "details": "James Yonan reports:\n\n> If the TCP server accept() call returns an error status, the resulting\n> exception handler may attempt to indirect through a NULL pointer,\n> causing a segfault. Affects all OpenVPN 2.0 versions.\n",
+    "id": "FreeBSD-2005-0300",
+    "modified": "2005-11-04T00:00:00Z",
+    "published": "2005-11-01T00:00:00Z",
+    "references": [
+        {
+            "type": "REPORT",
+            "url": "http://openvpn.net/changelog.html"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2005-3409"
+        },
+        {
+            "type": "WEB",
+            "url": "http://openvpn.net/changelog.html"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "openvpn -- potential denial-of-service on servers in TCP mode"
+}

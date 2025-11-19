@@ -1,0 +1,55 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "sudo"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "introduced": "1.7.0"
+                        },
+                        {
+                            "fixed": "1.7.4.4"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "cite": [
+            "http://www.sudo.ws/sudo/alerts/runas_group.html"
+        ],
+        "discovery": "2010-09-07T00:00:00Z",
+        "references": {
+            "cvename": [
+                "CVE-2010-2956"
+            ]
+        },
+        "vid": "67b514c3-ba8f-11df-8f6e-000c29a67389"
+    },
+    "details": "Todd Miller reports:\n\n> Beginning with sudo version 1.7.0 it has been possible to grant\n> permission to run a command using a specified group via sudo -g option\n> (run as group). A flaw exists in the logic that matches Runas groups\n> in the sudoers file when the -u option is also specified (run as\n> user). This flaw results in a positive match for the user specified\n> via -u so long as the group specified via -g is allowed by the sudoers\n> file.\n>\n> Exploitation of the flaw requires that Sudo be configured with sudoers\n> entries that contain a Runas group. Entries that do not contain a\n> Runas group, or only contain a Runas user are not affected.\n",
+    "id": "FreeBSD-2010-0093",
+    "modified": "2010-09-07T00:00:00Z",
+    "published": "2010-09-07T00:00:00Z",
+    "references": [
+        {
+            "type": "REPORT",
+            "url": "http://www.sudo.ws/sudo/alerts/runas_group.html"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2010-2956"
+        },
+        {
+            "type": "WEB",
+            "url": "http://www.sudo.ws/sudo/alerts/runas_group.html"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "sudo -- Flaw in Runas group matching"
+}

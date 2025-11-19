@@ -1,0 +1,74 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "openldap24-client"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "2.4.18"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        },
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "linux-f10-openldap"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "2.4.18"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "cite": [
+            "https://bugzilla.redhat.com/show_bug.cgi?id=CVE-2009-3767"
+        ],
+        "discovery": "2009-08-07T00:00:00Z",
+        "references": {
+            "cvename": [
+                "CVE-2009-3767"
+            ]
+        },
+        "vid": "abad20bf-c1b4-11e3-a5ac-001b21614864"
+    },
+    "details": "Jan Lieskovsky reports:\n\n> OpenLDAP does not properly handle a \\'\\\\0\\' character in a domain name\n> in the subject\\'s Common Name (CN) field of an X.509 certificate,\n> which allows man-in-the-middle attackers to spoof arbitrary SSL\n> servers via a crafted certificate issued by a legitimate Certification\n> Authority\n",
+    "id": "FreeBSD-2014-0053",
+    "modified": "2014-04-11T00:00:00Z",
+    "published": "2014-04-11T00:00:00Z",
+    "references": [
+        {
+            "type": "REPORT",
+            "url": "https://bugzilla.redhat.com/show_bug.cgi?id=CVE-2009-3767"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2009-3767"
+        },
+        {
+            "type": "REPORT",
+            "url": "https://bugzilla.redhat.com/show_bug.cgi?id=CVE-2009-3767"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "OpenLDAP -- incorrect handling of NULL in certificate Common Name"
+}

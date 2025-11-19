@@ -1,0 +1,55 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "mutt"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "2.2.3"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "cite": [
+            "https://gitlab.com/muttmua/mutt/-/issues/404"
+        ],
+        "discovery": "2022-04-04T00:00:00Z",
+        "references": {
+            "cvename": [
+                "CVE-2022-1328"
+            ]
+        },
+        "vid": "6eb9cf14-bab0-11ec-8f59-4437e6ad11c4"
+    },
+    "details": "Tavis Ormandy reports:\n\n> mutt_decode_uuencoded(), the line length is read from the untrusted\n> uuencoded part without validation. This could result in including\n> private memory in message parts, for example fragments of other\n> messages, passphrases or keys in replys\n",
+    "id": "FreeBSD-2022-0078",
+    "modified": "2022-04-12T00:00:00Z",
+    "published": "2022-04-12T00:00:00Z",
+    "references": [
+        {
+            "type": "REPORT",
+            "url": "https://gitlab.com/muttmua/mutt/-/issues/404"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2022-1328"
+        },
+        {
+            "type": "WEB",
+            "url": "https://gitlab.com/muttmua/mutt/-/issues/404"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "mutt -- mutt_decode_uuencoded() can read past the of the input line"
+}

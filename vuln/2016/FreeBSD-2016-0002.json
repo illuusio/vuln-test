@@ -1,0 +1,120 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "qemu"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "2.4.0"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        },
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "qemu-devel"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "2.4.0"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        },
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "qemu-sbruno"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "2.4.50.g20150814"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        },
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "qemu-user-static"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "2.4.50.g20150814"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "cite": [
+            "http://openwall.com/lists/oss-security/2015/07/23/6"
+        ],
+        "discovery": "2015-07-23T00:00:00Z",
+        "references": {
+            "cvename": [
+                "CVE-2015-5158"
+            ]
+        },
+        "vid": "a267cd6c-b0c4-11e5-8d13-bc5ff45d0f28"
+    },
+    "details": "Prasad J Pandit, Red Hat Product Security Team, reports:\n\n> Qemu emulator built with the SCSI device emulation support is\n> vulnerable to a stack buffer overflow issue. It could occur while\n> parsing SCSI command descriptor block with an invalid operation code.\n>\n> A privileged(CAP_SYS_RAWIO) user inside guest could use this flaw to\n> crash the Qemu instance resulting in DoS.\n",
+    "id": "FreeBSD-2016-0002",
+    "modified": "2016-01-01T00:00:00Z",
+    "published": "2016-01-01T00:00:00Z",
+    "references": [
+        {
+            "type": "REPORT",
+            "url": "http://openwall.com/lists/oss-security/2015/07/23/6"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2015-5158"
+        },
+        {
+            "type": "WEB",
+            "url": "http://openwall.com/lists/oss-security/2015/07/23/6"
+        },
+        {
+            "type": "WEB",
+            "url": "http://git.qemu.org/?p=qemu.git;a=commit;h=c170aad8b057223b1139d72e5ce7acceafab4fa9"
+        },
+        {
+            "type": "WEB",
+            "url": "https://github.com/seanbruno/qemu-bsd-user/commit/c170aad8b057223b1139d72e5ce7acceafab4fa9"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "qemu -- stack buffer overflow while parsing SCSI commands"
+}

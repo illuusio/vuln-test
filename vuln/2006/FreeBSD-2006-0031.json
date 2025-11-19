@@ -1,0 +1,55 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "gnupg"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "1.4.2.1"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "cite": [
+            "http://marc.theaimsgroup.com/?l=gnupg-devel&m=113999098729114"
+        ],
+        "discovery": "2006-02-15T00:00:00Z",
+        "references": {
+            "cvename": [
+                "CVE-2006-0455"
+            ]
+        },
+        "vid": "63fe4189-9f97-11da-ac32-0001020eed82"
+    },
+    "details": "Werner Koch reports:\n\n> The Gentoo project identified a security related bug in GnuPG. When\n> using any current version of GnuPG for unattended signature\n> verification (e.g. by scripts and mail programs), false positive\n> signature verification of detached signatures may occur.\n>\n> This problem affects the tool \\*gpgv\\*, as well as using \\\"gpg\n> \\--verify\\\" to imitate gpgv, if only the exit code of the process is\n> used to decide whether a detached signature is valid. This is a\n> plausible mode of operation for gpgv.\n>\n> If, as suggested, the \\--status-fd generated output is used to decide\n> whether a signature is valid, no problem exists. In particular\n> applications making use of the GPGME library\\[2\\] are not affected.\n",
+    "id": "FreeBSD-2006-0031",
+    "modified": "2006-02-17T00:00:00Z",
+    "published": "2006-02-17T00:00:00Z",
+    "references": [
+        {
+            "type": "REPORT",
+            "url": "http://marc.theaimsgroup.com/?l=gnupg-devel&m=113999098729114"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2006-0455"
+        },
+        {
+            "type": "DISCUSSION",
+            "url": "http://marc.theaimsgroup.com/?l=gnupg-devel&m=113999098729114"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "gnupg -- false positive signature verification"
+}

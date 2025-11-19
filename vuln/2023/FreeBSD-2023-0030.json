@@ -1,0 +1,46 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "zeek"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "5.0.6"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "cite": [
+            "https://github.com/zeek/zeek/releases/tag/v5.0.6"
+        ],
+        "discovery": "2023-02-01T00:00:00Z",
+        "vid": "2b5fc9c4-eaca-46e0-83d0-9b10c51c4b1b"
+    },
+    "details": "Tim Wojtulewicz of Corelight reports:\n\n> A missing field in the SMB FSControl script-land record could cause a\n> heap buffer overflow when receiving packets containing those header\n> types.\n>\n> Receiving a series of packets that start with HTTP/1.0 and then switch\n> to HTTP/0.9 could cause Zeek to spend a large amount of time\n> processing the packets.\n>\n> Receiving large numbers of FTP commands sequentially from the network\n> with bad data in them could cause Zeek to spend a large amount of time\n> processing the packets, and generate a large amount of events.\n",
+    "id": "FreeBSD-2023-0030",
+    "modified": "2023-02-01T00:00:00Z",
+    "published": "2023-02-01T00:00:00Z",
+    "references": [
+        {
+            "type": "REPORT",
+            "url": "https://github.com/zeek/zeek/releases/tag/v5.0.6"
+        },
+        {
+            "type": "WEB",
+            "url": "https://github.com/zeek/zeek/releases/tag/v5.0.6"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "zeek -- potential DoS vulnerabilities"
+}

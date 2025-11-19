@@ -1,0 +1,65 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "mbedtls"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "2.4.2"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        },
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "polarssl13"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "1.3.19"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "cite": [
+            "https://tls.mbed.org/tech-updates/security-advisories/mbedtls-security-advisory-2017-01"
+        ],
+        "discovery": "2017-03-11T00:00:00Z",
+        "vid": "f41e3e54-076b-11e7-a9f2-0011d823eebd"
+    },
+    "details": "Janos Follath reports:\n\n> - If a malicious peer supplies a certificate with a specially crafted\n>   secp224k1 public key, then an attacker can cause the server or\n>   client to attempt to free block of memory held on stack. Depending\n>   on the platform, this could result in a Denial of Service (client\n>   crash) or potentially could be exploited to allow remote code\n>   execution with the same privileges as the host application.\n> - If the client and the server both support MD5 and the client can be\n>   tricked to authenticate to a malicious server, then the malicious\n>   server can impersonate the client. To launch this man in the middle\n>   attack, the adversary has to compute a chosen-prefix MD5 collision\n>   in real time. This is very expensive computationally, but can be\n>   practical. Depending on the platform, this could result in a Denial\n>   of Service (client crash) or potentially could be exploited to allow\n>   remote code execution with the same privileges as the host\n>   application.\n> - A bug in the logic of the parsing of a PEM encoded Certificate\n>   Revocation List in mbedtls_x509_crl_parse() can result in an\n>   infinite loop. In versions before 1.3.10 the same bug results in an\n>   infinite recursion stack overflow that usually crashes the\n>   application. Methods and means of acquiring the CRLs is not part of\n>   the TLS handshake and in the strict TLS setting this vulnerability\n>   cannot be triggered remotely. The vulnerability cannot be triggered\n>   unless the application explicitly calls mbedtls_x509_crl_parse() or\n>   mbedtls_x509_crl_parse_file()on a PEM formatted CRL of untrusted\n>   origin. In which case the vulnerability can be exploited to launch a\n>   denial of service attack against the application.\n",
+    "id": "FreeBSD-2017-0068",
+    "modified": "2017-03-12T00:00:00Z",
+    "published": "2017-03-12T00:00:00Z",
+    "references": [
+        {
+            "type": "REPORT",
+            "url": "https://tls.mbed.org/tech-updates/security-advisories/mbedtls-security-advisory-2017-01"
+        },
+        {
+            "type": "WEB",
+            "url": "https://tls.mbed.org/tech-updates/security-advisories/mbedtls-security-advisory-2017-01"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "mbed TLS (PolarSSL) -- multiple vulnerabilities"
+}

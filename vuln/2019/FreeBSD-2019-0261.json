@@ -1,0 +1,74 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "asterisk13"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "13.29.2"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        },
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "asterisk16"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "16.6.2"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "cite": [
+            "https://www.asterisk.org/downloads/security-advisories"
+        ],
+        "discovery": "2019-10-17T00:00:00Z",
+        "references": {
+            "cvename": [
+                "CVE-2019-18790"
+            ]
+        },
+        "vid": "a8d94711-0d03-11ea-87ca-001999f8d30b"
+    },
+    "details": "The Asterisk project reports:\n\n> A SIP request can be sent to Asterisk that can change a SIP peers IP\n> address. A REGISTER does not need to occur, and calls can be hijacked\n> as a result. The only thing that needs to be known is the peers name;\n> authentication details such as passwords do not need to be known. This\n> vulnerability is only exploitable when the nat option is set to the\n> default, or auto_force_rport.\n",
+    "id": "FreeBSD-2019-0261",
+    "modified": "2019-11-22T00:00:00Z",
+    "published": "2019-11-22T00:00:00Z",
+    "references": [
+        {
+            "type": "REPORT",
+            "url": "https://www.asterisk.org/downloads/security-advisories"
+        },
+        {
+            "type": "WEB",
+            "url": "https://downloads.asterisk.org/pub/security/AST-2019-006.html"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2019-18790"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "asterisk -- SIP request can change address of a SIP peer"
+}

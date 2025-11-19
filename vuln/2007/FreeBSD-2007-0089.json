@@ -1,0 +1,55 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "fetchmail"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "introduced": "4.6.8"
+                        },
+                        {
+                            "fixed": "6.3.8_4"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "cite": [
+            "http://www.fetchmail.info/fetchmail-SA-2007-02.txt"
+        ],
+        "discovery": "2007-07-29T00:00:00Z",
+        "references": {
+            "cvename": [
+                "CVE-2007-4565"
+            ]
+        },
+        "vid": "45500f74-5947-11dc-87c1-000e2e5785ad"
+    },
+    "details": "Matthias Andree reports:\n\n> fetchmail will generate warning messages in certain circumstances (for\n> instance, when leaving oversized messages on the server or login to\n> the upstream fails) and send them to the local postmaster or the user\n> running it.\n>\n> If this warning message is then refused by the SMTP listener that\n> fetchmail is forwarding the message to, fetchmail crashes and does not\n> collect further messages until it is restarted.\n",
+    "id": "FreeBSD-2007-0089",
+    "modified": "2007-09-02T00:00:00Z",
+    "published": "2007-09-02T00:00:00Z",
+    "references": [
+        {
+            "type": "REPORT",
+            "url": "http://www.fetchmail.info/fetchmail-SA-2007-02.txt"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2007-4565"
+        },
+        {
+            "type": "WEB",
+            "url": "http://www.fetchmail.info/fetchmail-SA-2007-02.txt"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "fetchmail -- denial of service on reject of local warning message"
+}

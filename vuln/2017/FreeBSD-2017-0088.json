@@ -1,0 +1,143 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "bind99"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "9.9.9P8"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        },
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "bind910"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "9.10.4P8"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        },
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "bind911"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "9.11.0P5"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        },
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "bind9-devel"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "last_affected": "9.12.0.a.2017.03.25"
+                        },
+                        {
+                            "fixed": "9.12.0.a.2017.03.25"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "cite": [
+            "https://kb.isc.org/article/AA-01465/0",
+            "https://kb.isc.org/article/AA-01466/0",
+            "https://kb.isc.org/article/AA-01471/0"
+        ],
+        "discovery": "2017-04-12T00:00:00Z",
+        "references": {
+            "cvename": [
+                "CVE-2017-3136",
+                "CVE-2017-3137",
+                "CVE-2017-3138"
+            ]
+        },
+        "vid": "c6861494-1ffb-11e7-934d-d05099c0ae8c"
+    },
+    "details": "ISC reports:\n\n> A query with a specific set of characteristics could cause a server\n> using DNS64 to encounter an assertion failure and terminate.\n>\n> An attacker could deliberately construct a query, enabling\n> denial-of-service against a server if it was configured to use the\n> DNS64 feature and other preconditions were met.\n\n> Mistaken assumptions about the ordering of records in the answer\n> section of a response containing CNAME or DNAME resource records could\n> lead to a situation in which named would exit with an assertion\n> failure when processing a response in which records occurred in an\n> unusual order.\n\n> named contains a feature which allows operators to issue commands to a\n> running server by communicating with the server process over a control\n> channel, using a utility program such as rndc.\n>\n> A regression introduced in a recent feature change has created a\n> situation under which some versions of named can be caused to exit\n> with a REQUIRE assertion failure if they are sent a null command\n> string.\n",
+    "id": "FreeBSD-2017-0088",
+    "modified": "2017-04-13T00:00:00Z",
+    "published": "2017-04-13T00:00:00Z",
+    "references": [
+        {
+            "type": "REPORT",
+            "url": "https://kb.isc.org/article/AA-01465/0"
+        },
+        {
+            "type": "REPORT",
+            "url": "https://kb.isc.org/article/AA-01466/0"
+        },
+        {
+            "type": "REPORT",
+            "url": "https://kb.isc.org/article/AA-01471/0"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2017-3136"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2017-3137"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2017-3138"
+        },
+        {
+            "type": "WEB",
+            "url": "https://kb.isc.org/article/AA-01465/0"
+        },
+        {
+            "type": "WEB",
+            "url": "https://kb.isc.org/article/AA-01466/0"
+        },
+        {
+            "type": "WEB",
+            "url": "https://kb.isc.org/article/AA-01471/0"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "BIND -- multiple vulnerabilities"
+}

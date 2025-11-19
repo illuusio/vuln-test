@@ -1,0 +1,82 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "varnish6"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "6.6.2"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        },
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "varnish4"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "4.1.11r6"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "cite": [
+            "https://varnish-cache.org/security/VSV00008.html"
+        ],
+        "discovery": "2022-01-25T00:00:00Z",
+        "references": {
+            "cvename": [
+                "CVE-2022-23959"
+            ]
+        },
+        "vid": "b0c83e1a-8153-11ec-84f9-641c67a117d8"
+    },
+    "details": "Varnish Cache Project reports:\n\n> A request smuggling attack can be performed on HTTP/1 connections on\n> Varnish Cache servers. The smuggled request would be treated as an\n> additional request by the Varnish server, go through normal VCL\n> processing, and injected as a spurious response on the client\n> connection.\n",
+    "id": "FreeBSD-2022-0019",
+    "modified": "2022-01-29T00:00:00Z",
+    "published": "2022-01-29T00:00:00Z",
+    "references": [
+        {
+            "type": "REPORT",
+            "url": "https://varnish-cache.org/security/VSV00008.html"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2022-23959"
+        },
+        {
+            "type": "WEB",
+            "url": "https://varnish-cache.org/security/VSV00008.html"
+        },
+        {
+            "type": "WEB",
+            "url": "https://docs.varnish-software.com/security/VSV00008/"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2022-23959"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "varnish -- Request Smuggling Vulnerability"
+}

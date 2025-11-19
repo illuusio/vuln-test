@@ -1,0 +1,100 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "libXfont"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "1.4.7_3"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        },
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "linux-c6-xorg-libs"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "7.4_2"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        },
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "linux-f10-xorg-libs"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "cite": [
+            "http://lists.x.org/archives/xorg-announce/2014-May/002431.html"
+        ],
+        "discovery": "2014-05-13T00:00:00Z",
+        "references": {
+            "cvename": [
+                "CVE-2014-0209",
+                "CVE-2014-0210",
+                "CVE-2014-0211"
+            ]
+        },
+        "vid": "b060ee50-daba-11e3-99f2-bcaec565249c"
+    },
+    "details": "Alan Coopersmith reports:\n\n> Ilja van Sprundel, a security researcher with IOActive, has discovered\n> several issues in the way the libXfont library handles the responses\n> it receives from xfs servers, and has worked with X.Org\\'s security\n> team to analyze, confirm, and fix these issues.\n>\n> Most of these issues stem from libXfont trusting the font server to\n> send valid protocol data, and not verifying that the values will not\n> overflow or cause other damage. This code is commonly called from the\n> X server when an X Font Server is active in the font path, so may be\n> running in a setuid-root process depending on the X server in use.\n> Exploits of this path could be used by a local, authenticated user to\n> attempt to raise privileges; or by a remote attacker who can control\n> the font server to attempt to execute code with the privileges of the\n> X server.\n",
+    "id": "FreeBSD-2014-0064",
+    "modified": "2015-07-15T00:00:00Z",
+    "published": "2014-05-13T00:00:00Z",
+    "references": [
+        {
+            "type": "REPORT",
+            "url": "http://lists.x.org/archives/xorg-announce/2014-May/002431.html"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2014-0209"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2014-0210"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2014-0211"
+        },
+        {
+            "type": "WEB",
+            "url": "http://lists.x.org/archives/xorg-announce/2014-May/002431.html"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "libXfont -- X Font Service Protocol and Font metadata file handling issues"
+}

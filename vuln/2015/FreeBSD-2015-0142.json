@@ -1,0 +1,63 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "rubygem-paperclip"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "4.2.2"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "cite": [
+            "https://github.com/thoughtbot/paperclip/commit/9aee4112f36058cd28d5fe4a006d6981bd1eda57"
+        ],
+        "discovery": "2015-06-05T00:00:00Z",
+        "references": {
+            "cvename": [
+                "CVE-2015-2963"
+            ]
+        },
+        "vid": "0f154810-16e4-11e5-a1cf-002590263bf5"
+    },
+    "details": "Jon Yurek reports:\n\n> Thanks to MORI Shingo of DeNA Co., Ltd. for reporting this.\n>\n> There is an issue where if an HTML file is uploaded with a .html\n> extension, but the content type is listed as being \\`image/jpeg\\`,\n> this will bypass a validation checking for images. But it will also\n> pass the spoof check, because a file named .html and containing actual\n> HTML passes the spoof check.\n>\n> This change makes it so that we also check the supplied content type.\n> So even if the file contains HTML and ends with .html, it doesn\\'t\n> match the content type of \\`image/jpeg\\` and so it fails.\n",
+    "id": "FreeBSD-2015-0142",
+    "modified": "2015-06-22T00:00:00Z",
+    "published": "2015-06-22T00:00:00Z",
+    "references": [
+        {
+            "type": "REPORT",
+            "url": "https://github.com/thoughtbot/paperclip/commit/9aee4112f36058cd28d5fe4a006d6981bd1eda57"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2015-2963"
+        },
+        {
+            "type": "WEB",
+            "url": "https://github.com/thoughtbot/paperclip/commit/9aee4112f36058cd28d5fe4a006d6981bd1eda57"
+        },
+        {
+            "type": "WEB",
+            "url": "https://robots.thoughtbot.com/paperclip-security-release"
+        },
+        {
+            "type": "WEB",
+            "url": "http://jvn.jp/en/jp/JVN83881261/index.html"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "rubygem-paperclip -- validation bypass vulnerability"
+}

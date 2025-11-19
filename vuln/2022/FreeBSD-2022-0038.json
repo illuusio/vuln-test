@@ -1,0 +1,146 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "py37-tuf"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "last_affected": "0.18.1"
+                        },
+                        {
+                            "fixed": "0.18.1"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        },
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "py38-tuf"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "last_affected": "0.18.1"
+                        },
+                        {
+                            "fixed": "0.18.1"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        },
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "py39-tuf"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "last_affected": "0.18.1"
+                        },
+                        {
+                            "fixed": "0.18.1"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        },
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "py310-tuf"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "last_affected": "0.18.1"
+                        },
+                        {
+                            "fixed": "0.18.1"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        },
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "py311-tuf"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "last_affected": "0.18.1"
+                        },
+                        {
+                            "fixed": "0.18.1"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "cite": [
+            "https://nvd.nist.gov/vuln/detail/CVE-2021-41131"
+        ],
+        "discovery": "2021-10-22T00:00:00Z",
+        "references": {
+            "cvename": [
+                "CVE-2021-41131"
+            ]
+        },
+        "vid": "85d976be-93e3-11ec-aaad-14dae9d5a9d2"
+    },
+    "details": "NVD reports:\n\n> python-tuf is a Python reference implementation of The Update\n> Framework (TUF). In both clients (\\`tuf/client\\` and\n> \\`tuf/ngclient\\`), there is a path traversal vulnerability that in the\n> worst case can overwrite files ending in \\`.json\\` anywhere on the\n> client system on a call to \\`get_one_valid_targetinfo()\\`. It occurs\n> because the rolename is used to form the filename, and may contain\n> path traversal characters (ie \\`../../name.json\\`). The impact is\n> mitigated by a few facts: It only affects implementations that allow\n> arbitrary rolename selection for delegated targets metadata, The\n> attack requires the ability to A) insert new metadata for the\n> path-traversing role and B) get the role delegated by an existing\n> targets metadata, The written file content is heavily restricted since\n> it needs to be a valid, signed targets file. The file extension is\n> always .json. A fix is available in version 0.19 or newer. There are\n> no workarounds that do not require code changes. Clients can restrict\n> the allowed character set for rolenames, or they can store metadata in\n> files named in a way that is not vulnerable: neither of these\n> approaches is possible without modifying python-tuf.\n",
+    "id": "FreeBSD-2022-0038",
+    "modified": "2022-02-22T00:00:00Z",
+    "published": "2022-02-22T00:00:00Z",
+    "references": [
+        {
+            "type": "REPORT",
+            "url": "https://nvd.nist.gov/vuln/detail/CVE-2021-41131"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2021-41131"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://nvd.nist.gov/vuln/detail/CVE-2021-41131"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "The Update Framwork -- path traversal vulnerability"
+}

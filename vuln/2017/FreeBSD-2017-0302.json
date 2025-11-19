@@ -1,0 +1,84 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:kernel",
+                "name": "FreeBSD-kernel"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "introduced": "11.1"
+                        },
+                        {
+                            "fixed": "11.1_4"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                },
+                {
+                    "events": [
+                        {
+                            "introduced": "11.0"
+                        },
+                        {
+                            "fixed": "11.0_15"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                },
+                {
+                    "events": [
+                        {
+                            "introduced": "10.4"
+                        },
+                        {
+                            "fixed": "10.4_3"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                },
+                {
+                    "events": [
+                        {
+                            "introduced": "10.3"
+                        },
+                        {
+                            "fixed": "10.3_24"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "discovery": "2017-11-15T00:00:00Z",
+        "references": {
+            "cvename": [
+                "CVE-2017-1086"
+            ],
+            "freebsdsa": [
+                "SA-17:08.ptrace"
+            ]
+        },
+        "vid": "34a3f9b5-dab3-11e7-b5af-a4badb2f4699"
+    },
+    "details": "# Problem Description:\n\nNot all information in the struct ptrace_lwpinfo is relevant for the\nstate of any thread, and the kernel does not fill the irrelevant bytes\nor short strings. Since the structure filled by the kernel is allocated\non the kernel stack and copied to userspace, a leak of information of\nthe kernel stack of the thread is possible from the debugger.\n\n# Impact:\n\nSome bytes from the kernel stack of the thread using ptrace(PT_LWPINFO)\ncall can be observed in userspace.\n",
+    "id": "FreeBSD-2017-0302",
+    "modified": "2017-12-06T00:00:00Z",
+    "published": "2017-12-06T00:00:00Z",
+    "references": [
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2017-1086"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://www.freebsd.org/security/advisories/FreeBSD-SA-17:08.ptrace.asc"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "FreeBSD -- Kernel data leak via ptrace(PT_LWPINFO)"
+}

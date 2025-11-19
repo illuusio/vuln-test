@@ -1,0 +1,55 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "traefik"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "3.4.1"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "cite": [
+            "https://github.com/traefik/traefik/security/advisories/GHSA-vrch-868g-9jx5"
+        ],
+        "discovery": "2025-05-27T00:00:00Z",
+        "references": {
+            "cvename": [
+                "CVE-2025-47952"
+            ]
+        },
+        "vid": "67dd7a9e-3cd8-11f0-b601-5404a68ad561"
+    },
+    "details": "The traefik project reports:\n\n> There is a potential vulnerability in Traefik managing the requests\n> using a PathPrefix, Path or PathRegex matcher. When Traefik is\n> configured to route the requests to a backend using a matcher based on\n> the path, if the URL contains a URL encoded string in its path, it\\'s\n> possible to target a backend, exposed using another router, by-passing\n> the middlewares chain.\n",
+    "id": "FreeBSD-2025-0156",
+    "modified": "2025-05-29T00:00:00Z",
+    "published": "2025-05-29T00:00:00Z",
+    "references": [
+        {
+            "type": "REPORT",
+            "url": "https://github.com/traefik/traefik/security/advisories/GHSA-vrch-868g-9jx5"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2025-47952"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://nvd.nist.gov/vuln/detail/CVE-2025-47952"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "traefik -- Path traversal vulnerability"
+}

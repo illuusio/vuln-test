@@ -1,0 +1,67 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "strongswan"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "introduced": "4.4.0"
+                        },
+                        {
+                            "last_affected": "5.5.2"
+                        },
+                        {
+                            "fixed": "5.5.2"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "cite": [
+            "https://www.strongswan.org/blog/2017/05/30/strongswan-5.5.3-released.html"
+        ],
+        "discovery": "2017-05-30T00:00:00Z",
+        "references": {
+            "cvename": [
+                "CVE-2017-9022",
+                "CVE-2017-9023"
+            ]
+        },
+        "vid": "e6ccaf8a-6c63-11e7-9b01-2047478f2f70"
+    },
+    "details": "strongSwan security team reports:\n\n> - RSA public keys passed to the gmp plugin aren\\'t validated\n>   sufficiently before attempting signature verification, so that\n>   invalid input might lead to a floating point exception.\n>   \\[CVE-2017-9022\\]\n> - ASN.1 CHOICE types are not correctly handled by the ASN.1 parser\n>   when parsing X.509 certificates with extensions that use such types.\n>   This could lead to infinite looping of the thread parsing a\n>   specifically crafted certificate.\n",
+    "id": "FreeBSD-2017-0159",
+    "modified": "2017-07-19T00:00:00Z",
+    "published": "2017-07-19T00:00:00Z",
+    "references": [
+        {
+            "type": "REPORT",
+            "url": "https://www.strongswan.org/blog/2017/05/30/strongswan-5.5.3-released.html"
+        },
+        {
+            "type": "WEB",
+            "url": "https://www.strongswan.org/blog/2017/05/30/strongswan-vulnerability-(cve-2017-9022).html"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2017-9022"
+        },
+        {
+            "type": "WEB",
+            "url": "https://www.strongswan.org/blog/2017/05/30/strongswan-vulnerability-(cve-2017-9023).html"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2017-9023"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "strongswan -- multiple vulnerabilities"
+}

@@ -1,0 +1,76 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "openafs"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "1.6.17"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "cite": [
+            "http://www.openafs.org/pages/security/OPENAFS-SA-2016-001.txt",
+            "http://www.openafs.org/pages/security/OPENAFS-SA-2016-002.txt"
+        ],
+        "discovery": "2016-03-16T00:00:00Z",
+        "references": {
+            "cvename": [
+                "CVE-2016-2860",
+                "CVE-2016-4536"
+            ],
+            "freebsdpr": [
+                "ports/209534"
+            ]
+        },
+        "vid": "bcbd3fe0-2b46-11e6-ae88-002590263bf5"
+    },
+    "details": "The OpenAFS development team reports:\n\n> Foreign users can bypass access controls to create groups as\n> system:administrators, including in the user namespace and the system:\n> namespace.\n\n> The contents of uninitialized memory are sent on the wire when clients\n> perform certain RPCs. Depending on the RPC, the information leaked may\n> come from kernel memory or userspace.\n",
+    "id": "FreeBSD-2016-0226",
+    "modified": "2016-06-05T00:00:00Z",
+    "published": "2016-06-05T00:00:00Z",
+    "references": [
+        {
+            "type": "REPORT",
+            "url": "http://www.openafs.org/pages/security/OPENAFS-SA-2016-001.txt"
+        },
+        {
+            "type": "REPORT",
+            "url": "http://www.openafs.org/pages/security/OPENAFS-SA-2016-002.txt"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2016-2860"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2016-4536"
+        },
+        {
+            "type": "REPORT",
+            "url": "https://bugs.freebsd.org/bugzilla/show_bug.cgi?id=209534"
+        },
+        {
+            "type": "WEB",
+            "url": "http://www.openafs.org/pages/security/OPENAFS-SA-2016-001.txt"
+        },
+        {
+            "type": "WEB",
+            "url": "http://www.openafs.org/pages/security/OPENAFS-SA-2016-002.txt"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "openafs -- multiple vulnerabilities"
+}

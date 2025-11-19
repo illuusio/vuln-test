@@ -1,0 +1,73 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "FreeBSD"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "introduced": "13.0"
+                        },
+                        {
+                            "fixed": "13.0_4"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                },
+                {
+                    "events": [
+                        {
+                            "introduced": "12.2"
+                        },
+                        {
+                            "fixed": "12.2_10"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                },
+                {
+                    "events": [
+                        {
+                            "introduced": "11.4"
+                        },
+                        {
+                            "fixed": "11.4_13"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "discovery": "2021-08-24T00:00:00Z",
+        "references": {
+            "cvename": [
+                "CVE-2021-29631"
+            ],
+            "freebsdsa": [
+                "SA-21:13.bhyve"
+            ]
+        },
+        "vid": "a6d5d4c1-0564-11ec-b69d-4062311215d5"
+    },
+    "details": "# Problem Description:\n\nCertain VirtIO-based device models failed to handle errors when fetching\nI/O descriptors. Such errors could be triggered by a malicious guest. As\na result, the device model code could be tricked into operating on\nuninitialized I/O vectors, leading to memory corruption.\n\n# Impact:\n\nA malicious guest may be able to crash the bhyve process. It may be\npossible to exploit the memory corruption bugs to achieve arbitrary code\nexecution in the bhyve process.\n",
+    "id": "FreeBSD-2021-0209",
+    "modified": "2021-08-25T00:00:00Z",
+    "published": "2021-08-25T00:00:00Z",
+    "references": [
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2021-29631"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://www.freebsd.org/security/advisories/FreeBSD-SA-21:13.bhyve.asc"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "FreeBSD -- Missing error handling in bhyve(8) device models"
+}

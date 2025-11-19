@@ -1,0 +1,108 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "net-snmp"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "introduced": "5.7.0"
+                        },
+                        {
+                            "last_affected": "5.7.2.1"
+                        },
+                        {
+                            "fixed": "5.7.2.1"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                },
+                {
+                    "events": [
+                        {
+                            "introduced": "5.6.0"
+                        },
+                        {
+                            "last_affected": "5.6.2.1"
+                        },
+                        {
+                            "fixed": "5.6.2.1"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                },
+                {
+                    "events": [
+                        {
+                            "introduced": "5.5.0"
+                        },
+                        {
+                            "last_affected": "5.5.2.1"
+                        },
+                        {
+                            "fixed": "5.5.2.1"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                },
+                {
+                    "events": [
+                        {
+                            "introduced": "5.4.0"
+                        },
+                        {
+                            "last_affected": "5.4.4"
+                        },
+                        {
+                            "fixed": "5.4.4"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "cite": [
+            "http://seclists.org/oss-sec/2014/q3/473"
+        ],
+        "discovery": "2014-07-31T00:00:00Z",
+        "references": {
+            "cvename": [
+                "CVE-2014-3565"
+            ]
+        },
+        "vid": "4622635f-37a1-11e5-9970-14dae9d210b8"
+    },
+    "details": "Murray McAllister reports:\n\n> A remote denial-of-service flaw was found in the way snmptrapd handled\n> certain SNMP traps when started with the \\\"-OQ\\\" option. If an\n> attacker sent an SNMP trap containing a variable with a NULL type\n> where an integer variable type was expected, it would cause snmptrapd\n> to crash.\n",
+    "id": "FreeBSD-2015-0229",
+    "modified": "2015-07-31T00:00:00Z",
+    "published": "2015-07-31T00:00:00Z",
+    "references": [
+        {
+            "type": "REPORT",
+            "url": "http://seclists.org/oss-sec/2014/q3/473"
+        },
+        {
+            "type": "WEB",
+            "url": "http://seclists.org/oss-sec/2014/q3/473"
+        },
+        {
+            "type": "WEB",
+            "url": "http://sourceforge.net/p/net-snmp/code/ci/7f4a7b891332899cea26e95be0337aae01648742/"
+        },
+        {
+            "type": "WEB",
+            "url": "https://sourceforge.net/p/net-snmp/official-patches/48/"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2014-3565"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "net-snmp -- snmptrapd crash"
+}

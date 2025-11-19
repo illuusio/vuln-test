@@ -1,0 +1,73 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "FreeBSD"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "introduced": "13.2"
+                        },
+                        {
+                            "fixed": "13.2_2"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                },
+                {
+                    "events": [
+                        {
+                            "introduced": "13.1"
+                        },
+                        {
+                            "fixed": "13.1_9"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                },
+                {
+                    "events": [
+                        {
+                            "introduced": "12.4"
+                        },
+                        {
+                            "fixed": "12.4_4"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "discovery": "2023-08-01T00:00:00Z",
+        "references": {
+            "cvename": [
+                "CVE-2023-38408"
+            ],
+            "freebsdsa": [
+                "SA-23:08.ssh"
+            ]
+        },
+        "vid": "291d0953-47c1-11ee-8e38-002590c1f29c"
+    },
+    "details": "# Problem Description:\n\nThe server may cause ssh-agent to load shared libraries other than those\nrequired for PKCS#11 support. These shared libraries may have side\neffects that occur on load and unload (dlopen and dlclose).\n\n# Impact:\n\nAn attacker with access to a server that accepts a forwarded ssh-agent\nconnection may be able to execute code on the machine running ssh-agent.\nNote that the attack relies on properties of operating system-provided\nlibraries. This has been demonstrated on other operating systems; it is\nunknown whether this attack is possible using the libraries provided by\na FreeBSD installation.\n",
+    "id": "FreeBSD-2023-0246",
+    "modified": "2023-08-31T00:00:00Z",
+    "published": "2023-08-31T00:00:00Z",
+    "references": [
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2023-38408"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://www.freebsd.org/security/advisories/FreeBSD-SA-23:08.ssh.asc"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "FreeBSD -- Potential remote code execution via ssh-agent forwarding"
+}

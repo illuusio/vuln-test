@@ -1,0 +1,148 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "py27-urllib3"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "1.24.3,1"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        },
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "py35-urllib3"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "1.24.3,1"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        },
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "py36-urllib3"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "1.24.3,1"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        },
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "py37-urllib3"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "1.24.3,1"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        },
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "py38-urllib3"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "1.24.3,1"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "cite": [
+            "https://nvd.nist.gov/vuln/search/results?form_type=Advanced&results_type=overview&query=urllib3&search_type=all&pub_start_date=01%2F01%2F2018&pub_end_date=11%2F10%2F2019"
+        ],
+        "discovery": "2018-12-11T00:00:00Z",
+        "references": {
+            "cvename": [
+                "CVE-2018-20060",
+                "CVE-2019-11236",
+                "CVE-2019-11324"
+            ],
+            "freebsdpr": [
+                "ports/229322"
+            ]
+        },
+        "vid": "87270ba5-03d3-11ea-b81f-3085a9a95629"
+    },
+    "details": "NIST reports: (by search in the range 2018/01/01 - 2019/11/10):\n\n> urllib3 before version 1.23 does not remove the Authorization HTTP\n> header when following a cross-origin redirect (i.e., a redirect that\n> differs in host, port, or scheme). This can allow for credentials in\n> the Authorization header to be exposed to unintended hosts or\n> transmitted in cleartext.\n>\n> In the urllib3 library through 1.24.1 for Python, CRLF injection is\n> possible if the attacker controls the request parameter.\n>\n> The urllib3 library before 1.24.2 for Python mishandles certain cases\n> where the desired set of CA certificates is different from the OS\n> store of CA certificates, which results in SSL connections succeeding\n> in situations where a verification failure is the correct outcome.\n> This is related to use of the ssl_context, ca_certs, or ca_certs_dir\n> argument.\n",
+    "id": "FreeBSD-2019-0269",
+    "modified": "2019-11-26T00:00:00Z",
+    "published": "2019-11-26T00:00:00Z",
+    "references": [
+        {
+            "type": "REPORT",
+            "url": "https://nvd.nist.gov/vuln/search/results?form_type=Advanced&results_type=overview&query=urllib3&search_type=all&pub_start_date=01%2F01%2F2018&pub_end_date=11%2F10%2F2019"
+        },
+        {
+            "type": "WEB",
+            "url": "https://nvd.nist.gov/vuln/search/results?form_type=Advanced&results_type=overview&query=urllib3&search_type=all&pub_start_date=01%2F01%2F2018&pub_end_date=11%2F10%2F2019"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2018-20060"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2019-11236"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2019-11324"
+        },
+        {
+            "type": "REPORT",
+            "url": "https://bugs.freebsd.org/bugzilla/show_bug.cgi?id=229322"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "urllib3 -- multiple vulnerabilities"
+}

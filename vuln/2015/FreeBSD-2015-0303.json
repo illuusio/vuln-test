@@ -1,0 +1,55 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "codeigniter"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "2.0.3"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "cite": [
+            "https://codeigniter.com/userguide2/changelog.html"
+        ],
+        "discovery": "2011-08-20T00:00:00Z",
+        "references": {
+            "freebsdpr": [
+                "ports/156486"
+            ]
+        },
+        "vid": "b7d785ea-656d-11e5-9909-002590263bf5"
+    },
+    "details": "The CodeIgniter changelog reports:\n\n> An improvement was made to the MySQL and MySQLi drivers to prevent\n> exposing a potential vector for SQL injection on sites using\n> multi-byte character sets in the database client connection.\n>\n> An incompatibility in PHP versions \\< 5.2.3 and MySQL \\> 5.0.7 with\n> mysql_set_charset() creates a situation where using multi-byte\n> character sets on these environments may potentially expose a SQL\n> injection attack vector. Latin-1, UTF-8, and other \\\"low ASCII\\\"\n> character sets are unaffected on all environments.\n>\n> If you are running or considering running a multi-byte character set\n> for your database connection, please pay close attention to the server\n> environment you are deploying on to ensure you are not vulnerable.\n",
+    "id": "FreeBSD-2015-0303",
+    "modified": "2015-09-28T00:00:00Z",
+    "published": "2015-09-28T00:00:00Z",
+    "references": [
+        {
+            "type": "REPORT",
+            "url": "https://codeigniter.com/userguide2/changelog.html"
+        },
+        {
+            "type": "REPORT",
+            "url": "https://bugs.freebsd.org/bugzilla/show_bug.cgi?id=156486"
+        },
+        {
+            "type": "WEB",
+            "url": "https://codeigniter.com/userguide2/changelog.html"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "codeigniter -- SQL injection vulnerability"
+}

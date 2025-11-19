@@ -1,0 +1,107 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "gitlab"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "introduced": "8.10.0"
+                        },
+                        {
+                            "last_affected": "8.10.12"
+                        },
+                        {
+                            "fixed": "8.10.12"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                },
+                {
+                    "events": [
+                        {
+                            "introduced": "8.11.0"
+                        },
+                        {
+                            "last_affected": "8.11.9"
+                        },
+                        {
+                            "fixed": "8.11.9"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                },
+                {
+                    "events": [
+                        {
+                            "introduced": "8.12.0"
+                        },
+                        {
+                            "last_affected": "8.12.7"
+                        },
+                        {
+                            "fixed": "8.12.7"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                },
+                {
+                    "events": [
+                        {
+                            "introduced": "8.13.0"
+                        },
+                        {
+                            "last_affected": "8.13.2"
+                        },
+                        {
+                            "fixed": "8.13.2"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "cite": [
+            "https://about.gitlab.com/2016/11/02/cve-2016-9086-patches/"
+        ],
+        "discovery": "2016-11-02T00:00:00Z",
+        "references": {
+            "cvename": [
+                "CVE-2016-9086"
+            ],
+            "freebsdpr": [
+                "ports/214360"
+            ]
+        },
+        "vid": "10968dfd-a687-11e6-b2d3-60a44ce6887b"
+    },
+    "details": "GitLab reports:\n\n> The import/export feature did not properly check for symbolic links in\n> user-provided archives and therefore it was possible for an\n> authenticated user to retrieve the contents of any file accessible to\n> the GitLab service account. This included sensitive files such as\n> those that contain secret tokens used by the GitLab service to\n> authenticate users.\n",
+    "id": "FreeBSD-2016-0425",
+    "modified": "2017-05-18T00:00:00Z",
+    "published": "2016-11-09T00:00:00Z",
+    "references": [
+        {
+            "type": "REPORT",
+            "url": "https://about.gitlab.com/2016/11/02/cve-2016-9086-patches/"
+        },
+        {
+            "type": "WEB",
+            "url": "https://about.gitlab.com/2016/11/02/cve-2016-9086-patches/"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2016-9086"
+        },
+        {
+            "type": "REPORT",
+            "url": "https://bugs.freebsd.org/bugzilla/show_bug.cgi?id=214360"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "gitlab -- Directory traversal via \"import/export\" feature"
+}

@@ -1,0 +1,127 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "openssl"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "1.0.2_7"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        },
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "mingw32-openssl"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "introduced": "1.0.1"
+                        },
+                        {
+                            "fixed": "1.0.2f"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        },
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "FreeBSD"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "introduced": "10.2"
+                        },
+                        {
+                            "fixed": "10.2_12"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                },
+                {
+                    "events": [
+                        {
+                            "introduced": "10.1"
+                        },
+                        {
+                            "fixed": "10.1_29"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                },
+                {
+                    "events": [
+                        {
+                            "introduced": "9.3"
+                        },
+                        {
+                            "fixed": "9.3_36"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "cite": [
+            "https://www.openssl.org/news/secadv/20160128.txt"
+        ],
+        "discovery": "2016-01-22T00:00:00Z",
+        "references": {
+            "cvename": [
+                "CVE-2016-0701",
+                "CVE-2015-3197"
+            ],
+            "freebsdsa": [
+                "SA-16:11.openssl"
+            ]
+        },
+        "vid": "3679fd10-c5d1-11e5-b85f-0018fe623f2b"
+    },
+    "details": "OpenSSL project reports:\n\n> 1.  Historically OpenSSL only ever generated DH parameters based on\n>     \\\"safe\\\" primes. More recently (in version 1.0.2) support was\n>     provided for generating X9.42 style parameter files such as those\n>     required for RFC 5114 support. The primes used in such files may\n>     not be \\\"safe\\\". Where an application is using DH configured with\n>     parameters based on primes that are not \\\"safe\\\" then an attacker\n>     could use this fact to find a peer\\'s private DH exponent. This\n>     attack requires that the attacker complete multiple handshakes in\n>     which the peer uses the same private DH exponent. For example this\n>     could be used to discover a TLS server\\'s private DH exponent if\n>     it\\'s reusing the private DH exponent or it\\'s using a static DH\n>     ciphersuite. OpenSSL provides the option SSL_OP_SINGLE_DH_USE for\n>     ephemeral DH (DHE) in TLS. It is not on by default. If the option\n>     is not set then the server reuses the same private DH exponent for\n>     the life of the server process and would be vulnerable to this\n>     attack. It is believed that many popular applications do set this\n>     option and would therefore not be at risk. (CVE-2016-0701)\n> 2.  A malicious client can negotiate SSLv2 ciphers that have been\n>     disabled on the server and complete SSLv2 handshakes even if all\n>     SSLv2 ciphers have been disabled, provided that the SSLv2 protocol\n>     was not also disabled via SSL_OP_NO_SSLv2. (CVE-2015-3197)\n",
+    "id": "FreeBSD-2016-0061",
+    "modified": "2016-08-09T00:00:00Z",
+    "published": "2016-01-28T00:00:00Z",
+    "references": [
+        {
+            "type": "REPORT",
+            "url": "https://www.openssl.org/news/secadv/20160128.txt"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://www.freebsd.org/security/advisories/FreeBSD-SA-16:11.openssl.asc"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2016-0701"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2015-3197"
+        },
+        {
+            "type": "WEB",
+            "url": "https://www.openssl.org/news/secadv/20160128.txt"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "openssl -- multiple vulnerabilities"
+}

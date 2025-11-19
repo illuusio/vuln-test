@@ -1,0 +1,73 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:kernel",
+                "name": "FreeBSD-kernel"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "introduced": "11.2"
+                        },
+                        {
+                            "fixed": "11.2_1"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                },
+                {
+                    "events": [
+                        {
+                            "introduced": "11.1"
+                        },
+                        {
+                            "fixed": "11.1_12"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                },
+                {
+                    "events": [
+                        {
+                            "introduced": "10.4"
+                        },
+                        {
+                            "fixed": "10.4_10"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "discovery": "2018-08-06T00:00:00Z",
+        "references": {
+            "cvename": [
+                "CVE-2018-6922"
+            ],
+            "freebsdsa": [
+                "SA-18:08.tcp"
+            ]
+        },
+        "vid": "3c2eea8c-99bf-11e8-8bee-a4badb2f4699"
+    },
+    "details": "# Problem Description:\n\nOne of the data structures that holds TCP segments uses an inefficient\nalgorithm to reassemble the data. This causes the CPU time spent on\nsegment processing to grow linearly with the number of segments in the\nreassembly queue.\n\n# Impact:\n\nAn attacker who has the ability to send TCP traffic to a victim system\ncan degrade the victim system\\'s network performance and/or consume\nexcessive CPU by exploiting the inefficiency of TCP reassembly handling,\nwith relatively small bandwidth cost.\n",
+    "id": "FreeBSD-2018-0193",
+    "modified": "2018-08-06T00:00:00Z",
+    "published": "2018-08-06T00:00:00Z",
+    "references": [
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2018-6922"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://www.freebsd.org/security/advisories/FreeBSD-SA-18:08.tcp.asc"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "FreeBSD -- Resource exhaustion in TCP reassembly"
+}

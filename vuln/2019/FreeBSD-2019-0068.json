@@ -1,0 +1,116 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "py27-notebook"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "5.7.8"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        },
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "py35-notebook"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "5.7.8"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        },
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "py36-notebook"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "5.7.8"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        },
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "py37-notebook"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "5.7.8"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "cite": [
+            "https://blog.jupyter.org/open-redirect-vulnerability-in-jupyter-jupyterhub-adf43583f1e4"
+        ],
+        "discovery": "2019-03-28T00:00:00Z",
+        "references": {
+            "cvename": [
+                "CVE-2019-10255"
+            ]
+        },
+        "vid": "fe7e322f-522d-11e9-98b5-216e512dad89"
+    },
+    "details": "Jupyter blog:\n\n> Login pages tend to take a parameter for redirecting back to a page\n> after successful login, e.g. /login?next=/notebooks/mynotebook.ipynb,\n> so that you aren\\'t disrupted too much if you try to visit a page, but\n> have to authenticate first. An Open Redirect Vulnerability is when a\n> malicious person crafts a link pointing to the login page of a trusted\n> site, but setting the \\\"redirect after successful login\\\" parameter to\n> send the user to their own site, instead of a page on the\n> authenticated site (the notebook or JupyterHub server), e.g.\n> /login?next=http://badwebsite.biz. This doesn\\'t necessarily\n> compromise anything immediately, but it enables phishing if users\n> don\\'t notice that the domain has changed, e.g. by showing a fake\n> \\\"re-enter your password\\\" page. Servers generally have to validate\n> the redirect URL to avoid this. Both JupyterHub and Notebook already\n> do this, but the validation didn\\'t take into account all possible\n> ways to redirect to other sites, so some malicious URLs could still be\n> crafted to redirect away from the server (the above example does not\n> work in any recent version of either package). Only certain browsers\n> (Chrome and Firefox, not Safari) could be redirected from the\n> JupyterHub login page, but all browsers could be redirected away from\n> a standalone notebook server.\n",
+    "id": "FreeBSD-2019-0068",
+    "modified": "2019-04-06T00:00:00Z",
+    "published": "2019-03-29T00:00:00Z",
+    "references": [
+        {
+            "type": "REPORT",
+            "url": "https://blog.jupyter.org/open-redirect-vulnerability-in-jupyter-jupyterhub-adf43583f1e4"
+        },
+        {
+            "type": "WEB",
+            "url": "https://blog.jupyter.org/open-redirect-vulnerability-in-jupyter-jupyterhub-adf43583f1e4"
+        },
+        {
+            "type": "WEB",
+            "url": "https://github.com/jupyter/notebook/blob/master/docs/source/changelog.rst"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2019-10255"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "Jupyter notebook -- open redirect vulnerability"
+}

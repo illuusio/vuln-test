@@ -1,0 +1,107 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "py27-pillow"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "2.9.0_1"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        },
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "py33-pillow"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "2.9.0_1"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        },
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "py34-pillow"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "2.9.0_1"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        },
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "py35-pillow"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "2.9.0_1"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "cite": [
+            "https://pillow.readthedocs.org/en/3.1.x/releasenotes/3.1.1.html"
+        ],
+        "discovery": "2016-02-05T00:00:00Z",
+        "vid": "0519db18-cf15-11e5-805c-5453ed2e2b49"
+    },
+    "details": "The Pillow maintainers report:\n\n> If a large value was passed into the new size for an image, it is\n> possible to overflow an int32 value passed into malloc, leading the\n> malloc'd buffer to be undersized. These allocations are followed by a\n> loop that writes out of bounds. This can lead to corruption on the\n> heap of the Python process with attacker controlled float data.\n>\n> This issue was found by Ned Williamson.\n",
+    "id": "FreeBSD-2016-0089",
+    "modified": "2016-02-09T00:00:00Z",
+    "published": "2016-02-09T00:00:00Z",
+    "references": [
+        {
+            "type": "REPORT",
+            "url": "https://pillow.readthedocs.org/en/3.1.x/releasenotes/3.1.1.html"
+        },
+        {
+            "type": "WEB",
+            "url": "https://github.com/python-pillow/Pillow/commit/41fae6d9e2da741d2c5464775c7f1a609ea03798"
+        },
+        {
+            "type": "WEB",
+            "url": "https://github.com/python-pillow/Pillow/issues/1710"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "py-pillow -- Integer overflow in Resample.c"
+}

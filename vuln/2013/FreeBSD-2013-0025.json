@@ -1,0 +1,70 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "rubygem18-activemodel"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "3.2.12"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        },
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "rubygem19-activemodel"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "3.2.12"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "cite": [
+            "https://groups.google.com/forum/?fromgroups=#!topic/rubyonrails-security/AFBKNY7VSH8"
+        ],
+        "discovery": "2013-02-11T00:00:00Z",
+        "references": {
+            "cvename": [
+                "CVE-2013-0276"
+            ]
+        },
+        "vid": "beab40bf-c1ca-4d2b-ad46-2f14bac8a968"
+    },
+    "details": "Aaron Patterson reports:\n\n> The attr_protected method allows developers to specify a blacklist of\n> model attributes which users should not be allowed to assign to. By\n> using a specially crafted request, attackers could circumvent this\n> protection and alter values that were meant to be protected.\n>\n> All users running an affected release should either upgrade or use one\n> of the work arounds immediately. Users should also consider switching\n> from attr_protected to the whitelist method attr_accessible which is\n> not vulnerable to this attack.\n",
+    "id": "FreeBSD-2013-0025",
+    "modified": "2013-02-17T00:00:00Z",
+    "published": "2013-02-17T00:00:00Z",
+    "references": [
+        {
+            "type": "REPORT",
+            "url": "https://groups.google.com/forum/?fromgroups=#!topic/rubyonrails-security/AFBKNY7VSH8"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2013-0276"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "Ruby Activemodel Gem -- Circumvention of attr_protected"
+}

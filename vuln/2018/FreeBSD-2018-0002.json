@@ -1,0 +1,77 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "irssi"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "1.0.6,1"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "cite": [
+            "https://irssi.org/security/irssi_sa_2018_01.txt"
+        ],
+        "discovery": "2018-01-03T00:00:00Z",
+        "references": {
+            "cvename": [
+                "CVE-2018-5205",
+                "CVE-2018-5206",
+                "CVE-2018-5207",
+                "CVE-2018-5208"
+            ],
+            "freebsdpr": [
+                "ports/224954"
+            ]
+        },
+        "vid": "a3764767-f31e-11e7-95f2-005056925db4"
+    },
+    "details": "Irssi reports:\n\n> When the channel topic is set without specifying a sender, Irssi may\n> dereference NULL pointer. Found by Joseph Bisch.\n>\n> When using incomplete escape codes, Irssi may access data beyond the\n> end of the string. Found by Joseph Bisch.\n>\n> A calculation error in the completion code could cause a heap buffer\n> overflow when completing certain strings. Found by Joseph Bisch.\n>\n> When using an incomplete variable argument, Irssi may access data\n> beyond the end of the string. Found by Joseph Bisch.\n",
+    "id": "FreeBSD-2018-0002",
+    "modified": "2018-01-06T00:00:00Z",
+    "published": "2018-01-06T00:00:00Z",
+    "references": [
+        {
+            "type": "REPORT",
+            "url": "https://irssi.org/security/irssi_sa_2018_01.txt"
+        },
+        {
+            "type": "WEB",
+            "url": "https://irssi.org/security/irssi_sa_2018_01.txt"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2018-5205"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2018-5206"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2018-5207"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2018-5208"
+        },
+        {
+            "type": "REPORT",
+            "url": "https://bugs.freebsd.org/bugzilla/show_bug.cgi?id=224954"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "irssi -- multiple vulnerabilities"
+}

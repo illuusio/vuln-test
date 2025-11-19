@@ -1,0 +1,89 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "rssh"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "last_affected": "2.2.2"
+                        },
+                        {
+                            "fixed": "2.2.2"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        },
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "scponly"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "4.0"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "cite": [
+            "http://marc.theaimsgroup.com/?l=bugtraq&m=110202047507273"
+        ],
+        "discovery": "2004-11-28T00:00:00Z",
+        "references": {
+            "bid": [
+                "11791",
+                "11792"
+            ],
+            "freebsdpr": [
+                "ports/74633"
+            ]
+        },
+        "vid": "f11b219a-44b6-11d9-ae2f-021106004fd6"
+    },
+    "details": "Jason Wies identified both rssh & scponly have a vulnerability that\nallows arbitrary command execution. He reports:\n\n> The problem is compounded when you recognize that the main use of rssh\n> and scponly is to allow file transfers, which in turn allows a\n> malicious user to transfer and execute entire custom scripts on the\n> remote machine.\n",
+    "id": "FreeBSD-2004-0260",
+    "modified": "2004-12-12T00:00:00Z",
+    "published": "2004-12-02T00:00:00Z",
+    "references": [
+        {
+            "type": "REPORT",
+            "url": "http://marc.theaimsgroup.com/?l=bugtraq&m=110202047507273"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://www.securityfocus.com/bid/11791/info"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://www.securityfocus.com/bid/11792/info"
+        },
+        {
+            "type": "REPORT",
+            "url": "https://bugs.freebsd.org/bugzilla/show_bug.cgi?id=74633"
+        },
+        {
+            "type": "DISCUSSION",
+            "url": "http://marc.theaimsgroup.com/?l=bugtraq&m=110202047507273"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "rssh & scponly -- arbitrary command execution"
+}

@@ -1,0 +1,69 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "phpMyAdmin"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "introduced": "3.5"
+                        },
+                        {
+                            "fixed": "3.5.3"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "cite": [
+            "http://www.phpmyadmin.net/home_page/security/PMASA-2012-6.php",
+            "http://www.phpmyadmin.net/home_page/security/PMASA-2012-7.php"
+        ],
+        "discovery": "2012-10-08T00:00:00Z",
+        "references": {
+            "cvename": [
+                "CVE-2012-5339",
+                "CVE-2012-5368"
+            ]
+        },
+        "vid": "ef417da3-1640-11e2-999b-e0cb4e266481"
+    },
+    "details": "The phpMyAdmin development team reports:\n\n> When creating/modifying a trigger, event or procedure with a crafted\n> name, it is possible to trigger an XSS.\n\n> To display information about the current phpMyAdmin version on the\n> main page, a piece of JavaScript is fetched from the phpmyadmin.net\n> website in non-SSL mode. A man-in-the-middle could modify this script\n> on the wire to cause mischief.\n",
+    "id": "FreeBSD-2012-0186",
+    "modified": "2012-10-14T00:00:00Z",
+    "published": "2012-10-14T00:00:00Z",
+    "references": [
+        {
+            "type": "REPORT",
+            "url": "http://www.phpmyadmin.net/home_page/security/PMASA-2012-6.php"
+        },
+        {
+            "type": "REPORT",
+            "url": "http://www.phpmyadmin.net/home_page/security/PMASA-2012-7.php"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2012-5339"
+        },
+        {
+            "type": "WEB",
+            "url": "http://www.phpmyadmin.net/home_page/security/PMASA-2012-6.php"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2012-5368"
+        },
+        {
+            "type": "WEB",
+            "url": "http://www.phpmyadmin.net/home_page/security/PMASA-2012-7.php"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "phpMyAdmin -- Multiple XSS due to unescaped HTML output in Trigger, Procedure and Event pages and Fetching the version information from a non-SSL site is vulnerable to a MITM attack"
+}

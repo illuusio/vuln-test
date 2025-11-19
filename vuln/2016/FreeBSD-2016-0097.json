@@ -1,0 +1,132 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "postgresql91-server"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "introduced": "9.1.0"
+                        },
+                        {
+                            "fixed": "9.1.20"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        },
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "postgresql92-server"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "introduced": "9.2.0"
+                        },
+                        {
+                            "fixed": "9.2.15"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        },
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "postgresql93-server"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "introduced": "9.3.0"
+                        },
+                        {
+                            "fixed": "9.3.11"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        },
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "postgresql94-server"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "introduced": "9.4.0"
+                        },
+                        {
+                            "fixed": "9.4.6"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        },
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "postgresql95-server"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "introduced": "9.5.0"
+                        },
+                        {
+                            "fixed": "9.5.1"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "cite": [
+            "http://www.postgresql.org/about/news/1644/"
+        ],
+        "discovery": "2016-02-08T00:00:00Z",
+        "references": {
+            "cvename": [
+                "CVE-2016-0773",
+                "CVE-2016-0766"
+            ]
+        },
+        "vid": "e8b6605b-d29f-11e5-8458-6cc21735f730"
+    },
+    "details": "PostgreSQL project reports:\n\n> Security Fixes for Regular Expressions, PL/Java\n>\n> - CVE-2016-0773: This release closes security hole CVE-2016-0773, an\n>   issue with regular expression (regex) parsing. Prior code allowed\n>   users to pass in expressions which included out-of-range Unicode\n>   characters, triggering a backend crash. This issue is critical for\n>   PostgreSQL systems with untrusted users or which generate regexes\n>   based on user input.\n> - CVE-2016-0766: The update also fixes CVE-2016-0766, a privilege\n>   escalation issue for users of PL/Java. Certain custom configuration\n>   settings (GUCS) for PL/Java will now be modifiable only by the\n>   database superuser\n",
+    "id": "FreeBSD-2016-0097",
+    "modified": "2016-02-12T00:00:00Z",
+    "published": "2016-02-12T00:00:00Z",
+    "references": [
+        {
+            "type": "REPORT",
+            "url": "http://www.postgresql.org/about/news/1644/"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2016-0773"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2016-0766"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "PostgreSQL -- Security Fixes for Regular Expressions, PL/Java."
+}

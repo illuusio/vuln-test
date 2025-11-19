@@ -1,0 +1,55 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "sudo"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "1.8.28"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "cite": [
+            "https://www.sudo.ws/alerts/minus_1_uid.html"
+        ],
+        "discovery": "2019-10-15T00:00:00Z",
+        "references": {
+            "cvename": [
+                "CVE-2019-14287"
+            ]
+        },
+        "vid": "3a1474ba-f646-11e9-b0af-b888e347c638"
+    },
+    "details": "Todd C. Miller reports:\n\n> When sudo is configured to allow a user to run commands as an\n> arbitrary user via the ALL keyword in a Runas specification, it is\n> possible to run commands as root by specifying the user ID -1 or\n> 4294967295.\n>\n> This can be used by a user with sufficient sudo privileges to run\n> commands as root even if the Runas specification explicitly disallows\n> root access as long as the ALL keyword is listed first in the Runas\n> specification.\n>\n> Log entries for commands run this way will list the target user as\n> 4294967295 instead of root. In addition, PAM session modules will not\n> be run for the command.\n",
+    "id": "FreeBSD-2019-0236",
+    "modified": "2019-10-24T00:00:00Z",
+    "published": "2019-10-24T00:00:00Z",
+    "references": [
+        {
+            "type": "REPORT",
+            "url": "https://www.sudo.ws/alerts/minus_1_uid.html"
+        },
+        {
+            "type": "WEB",
+            "url": "https://www.sudo.ws/alerts/minus_1_uid.html"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2019-14287"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "sudo -- Potential bypass of Runas user restrictions"
+}

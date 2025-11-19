@@ -1,0 +1,102 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "FreeBSD"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "introduced": "7.4"
+                        },
+                        {
+                            "fixed": "7.4_9"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                },
+                {
+                    "events": [
+                        {
+                            "introduced": "8.1"
+                        },
+                        {
+                            "fixed": "8.1_11"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                },
+                {
+                    "events": [
+                        {
+                            "introduced": "8.2"
+                        },
+                        {
+                            "fixed": "8.2_9"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                },
+                {
+                    "events": [
+                        {
+                            "introduced": "8.3"
+                        },
+                        {
+                            "fixed": "8.3_3"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                },
+                {
+                    "events": [
+                        {
+                            "introduced": "9.0"
+                        },
+                        {
+                            "fixed": "9.0_3"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "cite": [
+            "http://security.freebsd.org/advisories/FreeBSD-SA-12:03.bind.asc"
+        ],
+        "discovery": "2012-06-12T00:00:00Z",
+        "references": {
+            "cvename": [
+                "CVE-2012-1667"
+            ],
+            "freebsdsa": [
+                "SA-12:03.bind"
+            ]
+        },
+        "vid": "fc5231b6-c066-11e1-b5e0-000c299b62e1"
+    },
+    "details": "Problem description:\n\n> The named(8) server does not properly handle DNS resource records\n> where the RDATA field is zero length, which may cause various issues\n> for the servers handling them.\n>\n> Resolving servers may crash or disclose some portion of memory to the\n> client. Authoritative servers may crash on restart after transferring\n> a zone containing records with zero-length RDATA fields. These would\n> result in a denial of service, or leak of sensitive information.\n",
+    "id": "FreeBSD-2012-0116",
+    "modified": "2012-06-27T00:00:00Z",
+    "published": "2012-06-27T00:00:00Z",
+    "references": [
+        {
+            "type": "REPORT",
+            "url": "http://security.freebsd.org/advisories/FreeBSD-SA-12:03.bind.asc"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://www.freebsd.org/security/advisories/FreeBSD-SA-12:03.bind.asc"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2012-1667"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "FreeBSD -- Incorrect handling of zero-length RDATA fields in named(8)"
+}

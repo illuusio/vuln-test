@@ -1,0 +1,75 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "drupal"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "introduced": "4.7,1"
+                        },
+                        {
+                            "fixed": "4.7.5"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                },
+                {
+                    "events": [
+                        {
+                            "fixed": "4.6.11"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "cite": [
+            "http://drupal.org/files/sa-2007-001/advisory.txt",
+            "http://drupal.org/files/sa-2007-002/advisory.txt"
+        ],
+        "discovery": "2007-01-05T00:00:00Z",
+        "references": {
+            "cvename": [
+                "CVE-2007-0136"
+            ]
+        },
+        "vid": "3d8d3548-9d02-11db-a541-000ae42e9b93"
+    },
+    "details": "The Drupal security team reports:\n\n> A few arguments passed via URLs are not properly sanitized before\n> display. When an attacker is able to entice an administrator to follow\n> a specially crafted link, arbitrary HTML and script code can be\n> injected and executed in the victim\\'s session. Such an attack may\n> lead to administrator access if certain conditions are met.\n\n> The way page caching was implemented allows a denial of service\n> attack. An attacker has to have the ability to post content on the\n> site. He or she would then be able to poison the page cache, so that\n> it returns cached 404 page not found errors for existing pages.\n>\n> If the page cache is not enabled, your site is not vulnerable. The\n> vulnerability only affects sites running on top of MySQL.\n",
+    "id": "FreeBSD-2007-0002",
+    "modified": "2010-05-12T00:00:00Z",
+    "published": "2007-01-05T00:00:00Z",
+    "references": [
+        {
+            "type": "REPORT",
+            "url": "http://drupal.org/files/sa-2007-001/advisory.txt"
+        },
+        {
+            "type": "REPORT",
+            "url": "http://drupal.org/files/sa-2007-002/advisory.txt"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2007-0136"
+        },
+        {
+            "type": "WEB",
+            "url": "http://drupal.org/files/sa-2007-001/advisory.txt"
+        },
+        {
+            "type": "WEB",
+            "url": "http://drupal.org/files/sa-2007-002/advisory.txt"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "drupal -- multiple vulnerabilities"
+}

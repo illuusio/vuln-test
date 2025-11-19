@@ -1,0 +1,71 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "froxlor"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "0.9.33.2"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "cite": [
+            "http://seclists.org/oss-sec/2015/q3/238",
+            "http://forum.froxlor.org/index.php/topic/13054-important-bugfix-release-09332/#entry30025"
+        ],
+        "discovery": "2015-07-29T00:00:00Z",
+        "references": {
+            "cvename": [
+                "CVE-2015-5959"
+            ],
+            "freebsdpr": [
+                "ports/202262"
+            ]
+        },
+        "vid": "9ee72858-4159-11e5-93ad-002590263bf5"
+    },
+    "details": "oss-security-list@demlak.de reports:\n\n> An unauthenticated remote attacker is able to get the database\n> password via webaccess due to wrong file permissions of the /logs/\n> folder in froxlor version 0.9.33.1 and earlier. The plain SQL password\n> and username may be stored in the /logs/sql-error.log file. This\n> directory is publicly reachable under the default configuration/setup.\n\nNote that froxlor 0.9.33.2 prevents future logging of passwords but does\nnot retroactively remove passwords already logged. Michael Kaufmann, the\nFroxlor lead developer reports:\n\n> Removing all .log files from the directory should do the job,\n> alternatively just use the class.ConfigIO.php from Github\n",
+    "id": "FreeBSD-2015-0244",
+    "modified": "2015-08-13T00:00:00Z",
+    "published": "2015-08-13T00:00:00Z",
+    "references": [
+        {
+            "type": "REPORT",
+            "url": "http://seclists.org/oss-sec/2015/q3/238"
+        },
+        {
+            "type": "REPORT",
+            "url": "http://forum.froxlor.org/index.php/topic/13054-important-bugfix-release-09332/#entry30025"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2015-5959"
+        },
+        {
+            "type": "REPORT",
+            "url": "https://bugs.freebsd.org/bugzilla/show_bug.cgi?id=202262"
+        },
+        {
+            "type": "WEB",
+            "url": "http://seclists.org/oss-sec/2015/q3/238"
+        },
+        {
+            "type": "WEB",
+            "url": "https://forum.froxlor.org/index.php/topic/13054-important-bugfix-release-09332/"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "froxlor -- database password information leak"
+}

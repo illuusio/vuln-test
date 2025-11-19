@@ -1,0 +1,55 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "nginx-devel"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "1.29.1"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "cite": [
+            "https://my.f5.com/manage/s/article/K000152786"
+        ],
+        "discovery": "2025-08-13T00:00:00Z",
+        "references": {
+            "cvename": [
+                "CVE-2025-53859"
+            ]
+        },
+        "vid": "eb03714d-79f0-11f0-b4c1-ac5afc632ba3"
+    },
+    "details": "F5 reports:\n\n> NGINX Open Source and NGINX Plus have a vulnerability in the\n> ngx_mail_smtp_module that might allow an unauthenticated attacker to\n> over-read NGINX SMTP authentication process memory; as a result, the\n> server side may leak arbitrary bytes sent in a request to the\n> authentication server. This issue happens during the NGINX SMTP\n> authentication process and requires the attacker to make preparations\n> against the target system to extract the leaked data. The issue\n> affects NGINX only if (1) it is built with the ngx_mail_smtp_module,\n> (2) the smtp_auth directive is configured with method \\\"none,\\\" and\n> (3) the authentication server returns the \\\"Auth-Wait\\\" response\n> header.\n",
+    "id": "FreeBSD-2025-0268",
+    "modified": "2025-08-15T00:00:00Z",
+    "published": "2025-08-15T00:00:00Z",
+    "references": [
+        {
+            "type": "REPORT",
+            "url": "https://my.f5.com/manage/s/article/K000152786"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2025-53859"
+        },
+        {
+            "type": "WEB",
+            "url": "https://www.cve.org/CVERecord?id=CVE-2025-53859"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "nginx -- worker process memory disclosure"
+}

@@ -1,0 +1,67 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "rsync"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "2.6.2_2"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "cite": [
+            "http://samba.org/rsync/#security_aug04"
+        ],
+        "discovery": "2004-08-12T00:00:00Z",
+        "references": {
+            "cvename": [
+                "CVE-2004-0792"
+            ]
+        },
+        "vid": "2689f4cb-ec4c-11d8-9440-000347a4fa7d"
+    },
+    "details": "An rsync security advisory reports:\n\n> There is a path-sanitizing bug that affects daemon mode in all recent\n> rsync versions (including 2.6.2) but only if chroot is disabled.\n\nThe bug may allow a remote user to access files outside of an rsync\nmodule\\'s configured path with the privileges configured for that\nmodule.\n",
+    "id": "FreeBSD-2004-0131",
+    "modified": "2004-08-26T00:00:00Z",
+    "published": "2004-08-26T00:00:00Z",
+    "references": [
+        {
+            "type": "REPORT",
+            "url": "http://samba.org/rsync/#security_aug04"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2004-0792"
+        },
+        {
+            "type": "WEB",
+            "url": "http://samba.org/rsync/#security_aug04"
+        },
+        {
+            "type": "DISCUSSION",
+            "url": "http://lists.samba.org/archive/rsync-announce/2004/000017.html"
+        },
+        {
+            "type": "WEB",
+            "url": "http://secunia.com/advisories/12294"
+        },
+        {
+            "type": "WEB",
+            "url": "http://www.osvdb.org/8829"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "rsync -- path sanitizing vulnerability"
+}

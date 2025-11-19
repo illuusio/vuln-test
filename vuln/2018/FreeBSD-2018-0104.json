@@ -1,0 +1,71 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "jenkins"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "last_affected": "2.115"
+                        },
+                        {
+                            "fixed": "2.115"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        },
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "jenkins-lts"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "last_affected": "2.107.1"
+                        },
+                        {
+                            "fixed": "2.107.1"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "cite": [
+            "https://jenkins.io/security/advisory/2018-04-11/"
+        ],
+        "discovery": "2018-04-11T00:00:00Z",
+        "vid": "aaba17aa-782e-4843-8a79-7756cfa2bf89"
+    },
+    "details": "Jenkins developers report:\n\n> The Jenkins CLI sent different error responses for commands with view\n> and agent arguments depending on the existence of the specified views\n> or agents to unauthorized users. This allowed attackers to determine\n> whether views or agents with specified names exist.\n>\n> The Jenkins CLI now returns the same error messages to unauthorized\n> users independent of the existence of specified view or agent names\n>\n> Some JavaScript confirmation dialogs included the item name in an\n> unsafe manner, resulting in a possible cross-site scripting\n> vulnerability exploitable by users with permission to create or\n> configure items.\n>\n> JavaScript confirmation dialogs that include the item name now\n> properly escape it, so it can be safely displayed.\n",
+    "id": "FreeBSD-2018-0104",
+    "modified": "2018-04-12T00:00:00Z",
+    "published": "2018-04-12T00:00:00Z",
+    "references": [
+        {
+            "type": "REPORT",
+            "url": "https://jenkins.io/security/advisory/2018-04-11/"
+        },
+        {
+            "type": "WEB",
+            "url": "https://jenkins.io/security/advisory/2018-04-11/"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "jenkins -- multiple vulnerabilities"
+}

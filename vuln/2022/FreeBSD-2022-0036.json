@@ -1,0 +1,55 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "qt5-core"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "5.15.2p263_1"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "cite": [
+            "https://lists.qt-project.org/pipermail/announce/2022-February/000333.html"
+        ],
+        "discovery": "2022-02-17T00:00:00Z",
+        "references": {
+            "cvename": [
+                "CVE-2022-25255"
+            ]
+        },
+        "vid": "43ae57f6-92ab-11ec-81b4-2cf05d620ecc"
+    },
+    "details": "The Qt Company reports:\n\n> Recently, the Qt Project\\'s security team was made aware of an issue\n> regarding QProcess and determined it to be a security issue on\n> Unix-based platforms only. We do not believe this to be a considerable\n> risk for applications as the likelihood of it being triggered is\n> minimal.\n>\n> Specifically, the problem is around using QProcess to start an\n> application without having an absolute path, and as a result, it\n> depends on it finding it in the PATH environment variable. As a\n> result, it may be possible for an attacker to place their copy of the\n> executable in question inside the working/current directory for the\n> QProcess and have it invoked that instead.\n",
+    "id": "FreeBSD-2022-0036",
+    "modified": "2022-02-21T00:00:00Z",
+    "published": "2022-02-21T00:00:00Z",
+    "references": [
+        {
+            "type": "REPORT",
+            "url": "https://lists.qt-project.org/pipermail/announce/2022-February/000333.html"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2022-25255"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2022-25255"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "Qt5 -- QProcess unexpected search path"
+}

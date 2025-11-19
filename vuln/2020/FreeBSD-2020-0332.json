@@ -1,0 +1,65 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "powerdns"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "4.4.0"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "cite": [
+            "https://doc.powerdns.com/authoritative/security-advisories/powerdns-advisory-2020-06.html"
+        ],
+        "discovery": "2020-08-27T00:00:00Z",
+        "references": {
+            "cvename": [
+                "CVE-2020-24696",
+                "CVE-2020-24697",
+                "CVE-2020-24698"
+            ]
+        },
+        "vid": "61d89849-43cb-11eb-aba5-00a09858faf5"
+    },
+    "details": "PowerDNS developers report:\n\n> A remote, unauthenticated attacker can trigger a race condition\n> leading to a crash, or possibly arbitrary code execution, by sending\n> crafted queries with a GSS-TSIG signature.\n>\n> A remote, unauthenticated attacker can cause a denial of service by\n> sending crafted queries with a GSS-TSIG signature.\n>\n> A remote, unauthenticated attacker might be able to cause a\n> double-free, leading to a crash or possibly arbitrary code execution\n> by sending crafted queries with a GSS-TSIG signature.\n",
+    "id": "FreeBSD-2020-0332",
+    "modified": "2020-12-21T00:00:00Z",
+    "published": "2020-12-21T00:00:00Z",
+    "references": [
+        {
+            "type": "REPORT",
+            "url": "https://doc.powerdns.com/authoritative/security-advisories/powerdns-advisory-2020-06.html"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2020-24696"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2020-24697"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2020-24698"
+        },
+        {
+            "type": "WEB",
+            "url": "https://doc.powerdns.com/authoritative/security-advisories/powerdns-advisory-2020-06.html"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "powerdns -- Various issues in GSS-TSIG support"
+}

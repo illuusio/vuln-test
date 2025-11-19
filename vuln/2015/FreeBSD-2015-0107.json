@@ -1,0 +1,88 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "cassandra"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "introduced": "1.2.0"
+                        },
+                        {
+                            "last_affected": "1.2.19"
+                        },
+                        {
+                            "fixed": "1.2.19"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        },
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "cassandra2"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "introduced": "2.0.0"
+                        },
+                        {
+                            "fixed": "2.0.14"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                },
+                {
+                    "events": [
+                        {
+                            "introduced": "2.1.0"
+                        },
+                        {
+                            "fixed": "2.1.4"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "cite": [
+            "http://mail-archives.apache.org/mod_mbox/cassandra-dev/201504.mbox/raw/%3CCALamADJu4yo=cO8HgA6NpgFc1wQN_VNqpkMn-3SZwhPq9foLBw@mail.gmail.com%3E/"
+        ],
+        "discovery": "2015-04-01T00:00:00Z",
+        "references": {
+            "cvename": [
+                "CVE-2015-0225"
+            ]
+        },
+        "vid": "607f4d44-0158-11e5-8fda-002590263bf5"
+    },
+    "details": "Jake Luciani reports:\n\n> Under its default configuration, Cassandra binds an unauthenticated\n> JMX/RMI interface to all network interfaces. As RMI is an API for the\n> transport and remote execution of serialized Java, anyone with access\n> to this interface can execute arbitrary code as the running user.\n>\n> Mitigation:\n>\n> 1.2.x has reached EOL, so users of \\<= 1.2.x are recommended to\n> upgrade to a supported version of Cassandra, or manually configure\n> encryption and authentication of JMX, (see\n> https://wiki.apache.org/cassandra/JmxSecurity).\n>\n> 2.0.x users should upgrade to 2.0.14\n>\n> 2.1.x users should upgrade to 2.1.4\n>\n> Alternately, users of any version not wishing to upgrade can\n> reconfigure JMX/RMI to enable encryption and authentication according\n> to https://wiki.apache.org/cassandra/JmxSecurityor\n> http://docs.oracle.com/javase/7/docs/technotes/guides/management/agent.html\n>\n> Credit:\n>\n> This issue was discovered by Georgi Geshev of MWR InfoSecurity\n",
+    "id": "FreeBSD-2015-0107",
+    "modified": "2015-05-24T00:00:00Z",
+    "published": "2015-05-24T00:00:00Z",
+    "references": [
+        {
+            "type": "REPORT",
+            "url": "http://mail-archives.apache.org/mod_mbox/cassandra-dev/201504.mbox/raw/%3CCALamADJu4yo=cO8HgA6NpgFc1wQN_VNqpkMn-3SZwhPq9foLBw@mail.gmail.com%3E/"
+        },
+        {
+            "type": "WEB",
+            "url": "http://mail-archives.apache.org/mod_mbox/cassandra-dev/201504.mbox/raw/%3CCALamADJu4yo=cO8HgA6NpgFc1wQN_VNqpkMn-3SZwhPq9foLBw@mail.gmail.com%3E/"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2015-0225"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "cassandra -- remote execution of arbitrary code"
+}

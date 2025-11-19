@@ -1,0 +1,66 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "libzmq4"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "4.3.3"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "cite": [
+            "https://github.com/zeromq/libzmq/releases/tag/v4.3.3"
+        ],
+        "discovery": "2020-09-07T00:00:00Z",
+        "references": {
+            "cvename": [
+                "CVE-2020-15166"
+            ],
+            "freebsdpr": [
+                "ports/255102"
+            ]
+        },
+        "vid": "21ec4428-bdaa-11eb-a04e-641c67a117d8"
+    },
+    "details": "Google\\'s oss-fuzz project reports:\n\n> Denial-of-Service on CURVE/ZAP-protected servers by unauthenticated\n> clients. If a raw TCP socket is opened and connected to an endpoint\n> that is fully configured with CURVE/ZAP, legitimate clients will not\n> be able to exchange any message. Handshakes complete successfully, and\n> messages are delivered to the library, but the server application\n> never receives them.\n",
+    "id": "FreeBSD-2021-0135",
+    "modified": "2021-05-25T00:00:00Z",
+    "published": "2021-05-25T00:00:00Z",
+    "references": [
+        {
+            "type": "REPORT",
+            "url": "https://github.com/zeromq/libzmq/releases/tag/v4.3.3"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2020-15166"
+        },
+        {
+            "type": "WEB",
+            "url": "https://github.com/zeromq/libzmq/releases/tag/v4.3.3"
+        },
+        {
+            "type": "WEB",
+            "url": "https://github.com/zeromq/libzmq/security/advisories/GHSA-25wp-cf8g-938m"
+        },
+        {
+            "type": "REPORT",
+            "url": "https://bugs.freebsd.org/bugzilla/show_bug.cgi?id=255102"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "libzmq4 -- Denial of Service"
+}

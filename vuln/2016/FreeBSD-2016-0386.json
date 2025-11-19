@@ -1,0 +1,188 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "libX11"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "1.6.4,1"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        },
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "libXfixes"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "5.0.3"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        },
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "libXi"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "1.7.7,1"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        },
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "libXrandr"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "1.5.1"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        },
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "libXrender"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "0.9.10"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        },
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "libXtst"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "1.2.3"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        },
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "libXv"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "1.0.11,1"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        },
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "libXvMC"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "1.0.10"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "cite": [
+            "https://lists.x.org/archives/xorg-announce/2016-October/002720.html"
+        ],
+        "discovery": "2016-10-04T00:00:00Z",
+        "references": {
+            "cvename": [
+                "CVE-2016-5407"
+            ]
+        },
+        "vid": "1cf65085-a760-41d2-9251-943e1af62eb8"
+    },
+    "details": "Matthieu Herrb reports:\n\n> Tobias Stoeckmann from the OpenBSD project has discovered a number of\n> issues in the way various X client libraries handle the responses they\n> receive from servers, and has worked with X.Org\\'s security team to\n> analyze, confirm, and fix these issues. These issue come in addition\n> to the ones discovered by Ilja van Sprundel in 2013.\n>\n> Most of these issues stem from the client libraries trusting the\n> server to send correct protocol data, and not verifying that the\n> values will not overflow or cause other damage. Most of the time X\n> clients and servers are run by the same user, with the server more\n> privileged than the clients, so this is not a problem, but there are\n> scenarios in which a privileged client can be connected to an\n> unprivileged server, for instance, connecting a setuid X client (such\n> as a screen lock program) to a virtual X server (such as Xvfb or\n> Xephyr) which the user has modified to return invalid data,\n> potentially allowing the user to escalate their privileges.\n",
+    "id": "FreeBSD-2016-0386",
+    "modified": "2016-10-10T00:00:00Z",
+    "published": "2016-10-07T00:00:00Z",
+    "references": [
+        {
+            "type": "REPORT",
+            "url": "https://lists.x.org/archives/xorg-announce/2016-October/002720.html"
+        },
+        {
+            "type": "WEB",
+            "url": "https://lists.x.org/archives/xorg-announce/2016-October/002720.html"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2016-5407"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "X.org libraries -- multiple vulnerabilities"
+}

@@ -1,0 +1,80 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "ImageMagick6"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "6.9.12.12,1"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        },
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "ImageMagick6-nox11"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "6.9.12.12,1"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "cite": [
+            "https://cve.mitre.org/cgi-bin/cvekey.cgi?keyword=ImageMagick"
+        ],
+        "discovery": "2020-12-17T00:00:00Z",
+        "references": {
+            "cvename": [
+                "CVE-2020-29599",
+                "CVE-2021-20176",
+                "CVE-2021-20309"
+            ]
+        },
+        "vid": "3e0ca488-b3f6-11eb-a5f7-a0f3c100ae18"
+    },
+    "details": "CVE reports:\n\n> Several vulnerabilities have been discovered in ImageMagick:\n>\n> - CVE-2021-20309: A flaw was found in ImageMagick in versions before\n>   6.9.12, where a division by zero in WaveImage() of\n>   MagickCore/visual-effects.c may trigger undefined behavior via a\n>   crafted image file submitted to an application using ImageMagick.\n> - CVE-2021-20176: A divide-by-zero flaw was found in ImageMagick\n>   6.9.11-57 in gem.c. This flaw allows an attacker who submits a\n>   crafted file that is processed by ImageMagick to trigger undefined\n>   behavior through a division by zero.\n> - CVE-2020-29599: ImageMagick before 6.9.11-40 mishandles the\n>   -authenticate option, which allows setting a password for\n>   password-protected PDF files.\n> - And maybe some others...\n",
+    "id": "FreeBSD-2021-0126",
+    "modified": "2021-05-13T00:00:00Z",
+    "published": "2021-05-13T00:00:00Z",
+    "references": [
+        {
+            "type": "REPORT",
+            "url": "https://cve.mitre.org/cgi-bin/cvekey.cgi?keyword=ImageMagick"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2020-29599"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2021-20176"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2021-20309"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "ImageMagick6 -- multiple vulnerabilities"
+}

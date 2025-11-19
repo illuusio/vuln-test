@@ -1,0 +1,81 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "syslog-ng2"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "2.0.9_2"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        },
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "syslog-ng"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "last_affected": "1.6.12_1"
+                        },
+                        {
+                            "fixed": "1.6.12_1"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "cite": [
+            "http://bugs.debian.org/cgi-bin/bugreport.cgi?bug=505791"
+        ],
+        "discovery": "2008-11-15T00:00:00Z",
+        "references": {
+            "cvename": [
+                "CVE-2008-5110"
+            ]
+        },
+        "vid": "75f2382e-b586-11dd-95f9-00e0815b8da8"
+    },
+    "details": "Florian Grandel reports:\n\n> I have not had the time to analyze all of syslog-ng code. But by\n> reading the code section near the chroot call and looking at strace\n> results I believe that syslog-ng does not chdir to the chroot jail\\'s\n> location before chrooting into it.\n>\n> This opens up ways to work around the chroot jail.\n",
+    "id": "FreeBSD-2008-0139",
+    "modified": "2009-07-01T00:00:00Z",
+    "published": "2008-11-18T00:00:00Z",
+    "references": [
+        {
+            "type": "REPORT",
+            "url": "http://bugs.debian.org/cgi-bin/bugreport.cgi?bug=505791"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2008-5110"
+        },
+        {
+            "type": "WEB",
+            "url": "http://bugs.debian.org/cgi-bin/bugreport.cgi?bug=505791"
+        },
+        {
+            "type": "WEB",
+            "url": "http://www.openwall.com/lists/oss-security/2008/11/17/3"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "syslog-ng2 -- startup directory leakage in the chroot environment"
+}

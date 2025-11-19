@@ -1,0 +1,64 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "lynx"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "2.8.8.2_5,1"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "discovery": "2016-10-26T00:00:00Z",
+        "references": {
+            "cvename": [
+                "CVE-2014-3566",
+                "CVE-2016-9179"
+            ],
+            "freebsdpr": [
+                "ports/215464"
+            ]
+        },
+        "vid": "03532a19-d68e-11e6-9171-14dae9d210b8"
+    },
+    "details": "Oracle reports:\n\n> Lynx is vulnerable to POODLE by still supporting vulnerable version of\n> SSL. Lynx is also vulnerable to URL attacks by incorrectly parsing\n> hostnames ending with an \\'?\\'.\n",
+    "id": "FreeBSD-2017-0012",
+    "modified": "2017-01-09T00:00:00Z",
+    "published": "2017-01-09T00:00:00Z",
+    "references": [
+        {
+            "type": "WEB",
+            "url": "https://hg.java.net/hg/solaris-userland~gate/file/bc5351dcb9ac/components/lynx/patches/02-init-openssl.patch"
+        },
+        {
+            "type": "WEB",
+            "url": "https://hg.java.net/hg/solaris-userland~gate/file/0a979060f73b/components/lynx/patches/05-fix-CVE-2016-9179.patch"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2014-3566"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2016-9179"
+        },
+        {
+            "type": "REPORT",
+            "url": "https://bugs.freebsd.org/bugzilla/show_bug.cgi?id=215464"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "lynx -- multiple vulnerabilities"
+}

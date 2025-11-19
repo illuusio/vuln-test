@@ -1,0 +1,108 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "emacs"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "29.3,3"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        },
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "emacs-canna"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "29.3,3"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        },
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "emacs-nox"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "29.3,3"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "cite": [
+            "https://git.savannah.gnu.org/cgit/emacs.git/tree/etc/NEWS?h=emacs-29.3"
+        ],
+        "discovery": "2024-03-24T00:00:00Z",
+        "references": {
+            "cvename": [
+                "CVE-2024-30202",
+                "CVE-2024-30203",
+                "CVE-2024-30204",
+                "CVE-2024-30205"
+            ]
+        },
+        "vid": "f661184a-eb90-11ee-92fc-1c697a616631"
+    },
+    "details": "GNU Emacs developers report:\n\n> Emacs 29.3 is an emergency bugfix release intended to fix several\n> security vulnerabilities.\n>\n> - Arbitrary Lisp code is no longer evaluated as part of turning on Org\n>   mode. This is for security reasons, to avoid evaluating malicious\n>   Lisp code.\n> - New buffer-local variable \\'untrusted-content\\'. When this is\n>   non-nil, Lisp programs should treat buffer contents with extra\n>   caution.\n> - Gnus now treats inline MIME contents as untrusted. To get back\n>   previous insecure behavior, \\'untrusted-content\\' should be reset to\n>   nil in the buffer.\n> - LaTeX preview is now by default disabled for email attachments. To\n>   get back previous insecure behavior, set the variable\n>   \\'org\\--latex-preview-when-risky\\' to a non-nil value.\n> - Org mode now considers contents of remote files to be untrusted.\n>   Remote files are recognized by calling \\'file-remote-p\\'.\n",
+    "id": "FreeBSD-2024-0074",
+    "modified": "2024-03-26T00:00:00Z",
+    "published": "2024-03-26T00:00:00Z",
+    "references": [
+        {
+            "type": "REPORT",
+            "url": "https://git.savannah.gnu.org/cgit/emacs.git/tree/etc/NEWS?h=emacs-29.3"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2024-30202"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2024-30203"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2024-30204"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2024-30205"
+        },
+        {
+            "type": "WEB",
+            "url": "https://git.savannah.gnu.org/cgit/emacs.git/tree/etc/NEWS?h=emacs-29.3"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "emacs -- multiple vulnerabilities"
+}

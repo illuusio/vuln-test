@@ -1,0 +1,55 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "postgresql-server"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "introduced": "8.1.0"
+                        },
+                        {
+                            "fixed": "8.1.3"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "cite": [
+            "http://www.postgresql.org/docs/8.1/static/release.html#RELEASE-8-1-3"
+        ],
+        "discovery": "2006-02-14T00:00:00Z",
+        "references": {
+            "cvename": [
+                "CVE-2006-0553"
+            ]
+        },
+        "vid": "0b2b4b4d-a07c-11da-be0a-000c6ec775d9"
+    },
+    "details": "The PostgreSQL team reports:\n\n> Due to inadequate validity checking, a user could exploit the special\n> case that SET ROLE normally uses to restore the previous role setting\n> after an error. This allowed ordinary users to acquire superuser\n> status, for example.\n",
+    "id": "FreeBSD-2006-0032",
+    "modified": "2006-08-13T00:00:00Z",
+    "published": "2006-02-18T00:00:00Z",
+    "references": [
+        {
+            "type": "REPORT",
+            "url": "http://www.postgresql.org/docs/8.1/static/release.html#RELEASE-8-1-3"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2006-0553"
+        },
+        {
+            "type": "WEB",
+            "url": "http://www.postgresql.org/docs/8.1/static/release.html#RELEASE-8-1-3"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "postgresql81-server -- SET ROLE privilege escalation"
+}

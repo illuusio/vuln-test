@@ -1,0 +1,59 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "dbus"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "1.12.18"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "cite": [
+            "https://gitlab.freedesktop.org/dbus/dbus/-/issues/294"
+        ],
+        "discovery": "2020-04-09T00:00:00Z",
+        "references": {
+            "cvename": [
+                "CVE-2020-12049"
+            ]
+        },
+        "vid": "27616957-b084-11ea-937b-b42e99a1b9c3"
+    },
+    "details": "GitHub Security Lab reports:\n\n> D-Bus has a file descriptor leak, which can lead to denial of service\n> when the dbus-daemon runs out of file descriptors. An unprivileged\n> local attacker can use this to attack the system dbus-daemon, leading\n> to denial of service for all users of the machine.\n",
+    "id": "FreeBSD-2020-0169",
+    "modified": "2020-07-03T00:00:00Z",
+    "published": "2020-07-03T00:00:00Z",
+    "references": [
+        {
+            "type": "REPORT",
+            "url": "https://gitlab.freedesktop.org/dbus/dbus/-/issues/294"
+        },
+        {
+            "type": "WEB",
+            "url": "https://gitlab.freedesktop.org/dbus/dbus/-/issues/294"
+        },
+        {
+            "type": "WEB",
+            "url": "https://www.openwall.com/lists/oss-security/2020/06/04/3"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2020-12049"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "dbus file descriptor leak"
+}

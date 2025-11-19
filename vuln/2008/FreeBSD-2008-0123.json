@@ -1,0 +1,75 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "flyspray"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "0.9.9.5.1"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "cite": [
+            "http://www.flyspray.org/fsa:2",
+            "http://www.flyspray.org/fsa:3",
+            "http://secunia.com/advisories/29215"
+        ],
+        "discovery": "2008-02-24T00:00:00Z",
+        "references": {
+            "cvename": [
+                "CVE-2007-6461",
+                "CVE-2008-1165",
+                "CVE-2008-1166"
+            ]
+        },
+        "vid": "9d3020e4-a2c4-11dd-a9f9-0030843d3802"
+    },
+    "details": "The Flyspray Project reports:\n\n> Flyspray is affected by a Cross Site scripting Vulnerability due to an\n> error escaping PHP\\'s \\$\\_SERVER\\[\\'QUERY_STRING\\'\\] superglobal, that\n> can be maliciously used to inject arbitrary code into the savesearch()\n> javascript function.\n>\n> There is an XSS problem in the history tab, the application fails to\n> sanitize the \\\"details\\\" parameter correctly, leading to the\n> possibility of arbitrary code injection into the getHistory()\n> javascript function.\n\n> Flyspray is affected by a Cross Site scripting Vulnerability due\n> missing escaping of SQL error messages. By including HTML code in a\n> query and at the same time causing it to fail by submitting invalid\n> data, an XSS hole can be exploited.\n>\n> There is an XSS problem in the task history attached to comments,\n> since the application fails to sanitize the old_value and new_value\n> database fields for changed task summaries.\n\n> Input passed via the \\\"item_summary\\\" parameter to\n> \\\"index.php?do=details\\\" is not properly sanitised before being\n> returned to the user. This can be exploited to execute arbitrary HTML\n> and script code in a user\\'s browser session in context of an affected\n> site.\n",
+    "id": "FreeBSD-2008-0123",
+    "modified": "2008-10-25T00:00:00Z",
+    "published": "2008-10-25T00:00:00Z",
+    "references": [
+        {
+            "type": "REPORT",
+            "url": "http://www.flyspray.org/fsa:2"
+        },
+        {
+            "type": "REPORT",
+            "url": "http://www.flyspray.org/fsa:3"
+        },
+        {
+            "type": "REPORT",
+            "url": "http://secunia.com/advisories/29215"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2007-6461"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2008-1165"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2008-1166"
+        },
+        {
+            "type": "WEB",
+            "url": "http://secunia.com/advisories/29215"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "flyspray -- multiple vulnerabilities"
+}

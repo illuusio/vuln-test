@@ -1,0 +1,66 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "FreeBSD"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "introduced": "6.3"
+                        },
+                        {
+                            "fixed": "6.3_7"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                },
+                {
+                    "events": [
+                        {
+                            "introduced": "6.4"
+                        },
+                        {
+                            "fixed": "6.4_1"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                },
+                {
+                    "events": [
+                        {
+                            "introduced": "7.0"
+                        },
+                        {
+                            "fixed": "7.0_7"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "discovery": "2008-12-23T00:00:00Z",
+        "references": {
+            "freebsdsa": [
+                "SA-08:13.protosw"
+            ]
+        },
+        "vid": "c702944a-db0f-11dd-aa56-000bcdf0a03b"
+    },
+    "details": "# Problem Description:\n\nSome function pointers for netgraph and bluetooth sockets are not\nproperly initialized.\n\n# Impact:\n\nA local user can cause the FreeBSD kernel to execute arbitrary code.\nThis could be used by an attacker directly; or it could be used to gain\nroot privilege or to escape from a jail.\n\n# Workaround:\n\nNo workaround is available, but systems without local untrusted users\nare not vulnerable. Furthermore, systems are not vulnerable if they have\nneither the ng_socket nor ng_bluetooth kernel modules loaded or compiled\ninto the kernel.\n\nSystems with the security.jail.socket_unixiproute_only sysctl set to 1\n(the default) are only vulnerable if they have local untrusted users\noutside of jails.\n\nIf the command\n\n`# kldstat -v | grep ng_`\n\nproduces no output, the system is not vulnerable.\n",
+    "id": "FreeBSD-2009-0009",
+    "modified": "2016-08-09T00:00:00Z",
+    "published": "2009-01-05T00:00:00Z",
+    "references": [
+        {
+            "type": "ADVISORY",
+            "url": "https://www.freebsd.org/security/advisories/FreeBSD-SA-08:13.protosw.asc"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "FreeBSD -- netgraph / bluetooth privilege escalation"
+}

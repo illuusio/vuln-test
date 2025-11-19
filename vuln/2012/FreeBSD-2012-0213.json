@@ -1,0 +1,51 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "lighttpd"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "introduced": "1.4.30,1"
+                        },
+                        {
+                            "fixed": "1.4.32"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "cite": [
+            "http://download.lighttpd.net/lighttpd/security/lighttpd_sa_2012_01.txt"
+        ],
+        "discovery": "2012-11-17T00:00:00Z",
+        "references": {
+            "cvename": [
+                "CVE-2012-5533"
+            ]
+        },
+        "vid": "1cd3ca42-33e6-11e2-a255-5404a67eef98"
+    },
+    "details": "Lighttpd security advisory reports:\n\n> Certain Connection header values will trigger an endless loop, for\n> example: \\\"Connection: TE,,Keep-Alive\\\"\n>\n> On receiving such value, lighttpd will enter an endless loop,\n> detecting an empty token but not incrementing the current string\n> position, and keep reading the \\',\\' again and again.\n>\n> This bug was introduced in 1.4.31, when we fixed an \\\"invalid read\\\"\n> bug (it would try to read the byte before the string if it started\n> with \\',\\', although the value wasn\\'t actually used).\n",
+    "id": "FreeBSD-2012-0213",
+    "modified": "2012-11-21T00:00:00Z",
+    "published": "2012-11-21T00:00:00Z",
+    "references": [
+        {
+            "type": "REPORT",
+            "url": "http://download.lighttpd.net/lighttpd/security/lighttpd_sa_2012_01.txt"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2012-5533"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "lighttpd -- remote DoS in header parsing"
+}

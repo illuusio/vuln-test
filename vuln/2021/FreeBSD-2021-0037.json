@@ -1,0 +1,121 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "openssl"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "1.1.1j,1"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        },
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "openssl-devel"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "3.0.0.a12"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        },
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "FreeBSD"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "introduced": "12.2"
+                        },
+                        {
+                            "fixed": "12.2_10"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                },
+                {
+                    "events": [
+                        {
+                            "introduced": "11.4"
+                        },
+                        {
+                            "fixed": "11.4_13"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "cite": [
+            "https://www.openssl.org/news/secadv/20210216.txt"
+        ],
+        "discovery": "2021-02-16T00:00:00Z",
+        "references": {
+            "cvename": [
+                "CVE-2021-23841",
+                "CVE-2021-23840",
+                "CVE-2021-23839"
+            ],
+            "freebsdsa": [
+                "SA-21:17.openssl"
+            ]
+        },
+        "vid": "96a21236-707b-11eb-96d8-d4c9ef517024"
+    },
+    "details": "The OpenSSL project reports:\n\n> Null pointer deref in X509_issuer_and_serial_hash() CVE-2021-23841\\\n> (Moderate) The OpenSSL public API function\n> X509_issuer_and_serial_hash() attempts to create a unique hash value\n> based on the issuer and serial number data contained within an X509\n> certificate. However it fails to correctly handle any errors that may\n> occur while parsing the issuer field (which might occur if the issuer\n> field is maliciously constructed). This may subsequently result in a\n> NULL pointer deref and a crash leading to a potential denial of\n> service attack.\n>\n> Integer overflow in CipherUpdate CVE-2021-23840\\\n> (Low) Calls to EVP_CipherUpdate, EVP_EncryptUpdate and\n> EVP_DecryptUpdate may overflow the output length argument in some\n> cases where the input length is close to the maximum permissable\n> length for an integer on the platform. In such cases the return value\n> from the function call will be 1 (indicating success), but the output\n> length value will be negative. This could cause applications to behave\n> incorrectly or crash.\n",
+    "id": "FreeBSD-2021-0037",
+    "modified": "2021-08-25T00:00:00Z",
+    "published": "2021-02-16T00:00:00Z",
+    "references": [
+        {
+            "type": "REPORT",
+            "url": "https://www.openssl.org/news/secadv/20210216.txt"
+        },
+        {
+            "type": "WEB",
+            "url": "https://www.openssl.org/news/secadv/20210216.txt"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2021-23841"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2021-23840"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2021-23839"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://www.freebsd.org/security/advisories/FreeBSD-SA-21:17.openssl.asc"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "OpenSSL -- Multiple vulnerabilities"
+}

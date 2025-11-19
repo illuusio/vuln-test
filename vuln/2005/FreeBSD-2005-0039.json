@@ -1,0 +1,66 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "squid"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "2.5.7_7"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "cite": [
+            "http://www.squid-cache.org/Versions/v2/2.5/bugs/#squid-2.5.STABLE7-ldap_spaces"
+        ],
+        "discovery": "2005-01-10T00:00:00Z",
+        "references": {
+            "certvu": [
+                "924198"
+            ],
+            "cvename": [
+                "CVE-2005-0173"
+            ]
+        },
+        "vid": "7a921e9e-68b1-11d9-9e1e-c296ac722cb3"
+    },
+    "details": "The LDAP authentication helper did not strip leading or trailing spaces\nfrom the login name. According to the squid patches page:\n\n> LDAP is very forgiving about spaces in search filters and this could\n> be abused to log in using several variants of the login name, possibly\n> bypassing explicit access controls or confusing accounting.\n>\n> Workaround: Block logins with spaces\n>\n>\n>             acl login_with_spaces proxy_auth_regex [:space:]\n>                 http_access deny login_with_spaces\n>             \n",
+    "id": "FreeBSD-2005-0039",
+    "modified": "2005-02-08T00:00:00Z",
+    "published": "2005-01-19T00:00:00Z",
+    "references": [
+        {
+            "type": "REPORT",
+            "url": "http://www.squid-cache.org/Versions/v2/2.5/bugs/#squid-2.5.STABLE7-ldap_spaces"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2005-0173"
+        },
+        {
+            "type": "WEB",
+            "url": "http://www.squid-cache.org/Versions/v2/2.5/bugs/#squid-2.5.STABLE7-ldap_spaces"
+        },
+        {
+            "type": "WEB",
+            "url": "http://www.squid-cache.org/bugs/show_bug.cgi?id=1187"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://www.kb.cert.org/vuls/id/924198"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "squid -- no sanity check of usernames in squid_ldap_auth"
+}

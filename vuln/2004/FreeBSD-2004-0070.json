@@ -1,0 +1,81 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "heimdal"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "0.6.1_1"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        },
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "FreeBSD"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "introduced": "4.9"
+                        },
+                        {
+                            "fixed": "4.9_7"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                },
+                {
+                    "events": [
+                        {
+                            "introduced": "4.0"
+                        },
+                        {
+                            "fixed": "4.8_20"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "discovery": "2004-05-05T00:00:00Z",
+        "references": {
+            "cvename": [
+                "CVE-2004-0434"
+            ],
+            "freebsdsa": [
+                "SA-04:09.kadmind"
+            ]
+        },
+        "vid": "446dbecb-9edc-11d8-9366-0020ed76ef5a"
+    },
+    "details": "An input validation error was discovered in the kadmind code that\nhandles the framing of Kerberos 4 compatibility administration requests.\nThe code assumed that the length given in the framing was always two or\nmore bytes. Smaller lengths will cause kadmind to read an arbitrary\namount of data into a minimally-sized buffer on the heap.\n\nA remote attacker may send a specially formatted message to kadmind,\ncausing it to crash or possibly resulting in arbitrary code execution.\n\nThe kadmind daemon is part of Kerberos 5 support. However, this bug will\nonly be present if kadmind was built with additional Kerberos 4 support.\nThus, only systems that have \\*both\\* Heimdal Kerberos 5 and Kerberos 4\ninstalled might be affected.\n\n*NOTE:* On FreeBSD 4 systems, \\`kadmind\\' may be installed as\n\\`k5admind\\'.\n",
+    "id": "FreeBSD-2004-0070",
+    "modified": "2004-05-05T00:00:00Z",
+    "published": "2004-05-05T00:00:00Z",
+    "references": [
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2004-0434"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://www.freebsd.org/security/advisories/FreeBSD-SA-04:09.kadmind.asc"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "heimdal kadmind remote heap buffer overflow"
+}

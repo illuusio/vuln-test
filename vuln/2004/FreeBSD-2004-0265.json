@@ -1,0 +1,59 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "mod_access_referer"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "1.0.2_1"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "discovery": "2003-04-16T00:00:00Z",
+        "references": {
+            "bid": [
+                "7375"
+            ],
+            "cvename": [
+                "CVE-2003-1054"
+            ]
+        },
+        "vid": "af747389-42ba-11d9-bd37-00065be4b5b6"
+    },
+    "details": "A malformed \"Referer\" header field causes the Apache\nap_parse_uri_components function to discard it with the result that a\npointer is not initialized. The mod_access_referer module does not take\nthis into account with the result that it may use such a pointer.\n\nThe null pointer vulnerability may possibly be used in a remote denial\nof service attack against affected Apache servers.\n",
+    "id": "FreeBSD-2004-0265",
+    "modified": "2005-01-19T00:00:00Z",
+    "published": "2004-12-11T00:00:00Z",
+    "references": [
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2003-1054"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://www.securityfocus.com/bid/7375/info"
+        },
+        {
+            "type": "WEB",
+            "url": "http://secunia.com/advisories/8612/"
+        },
+        {
+            "type": "DISCUSSION",
+            "url": "http://marc.theaimsgroup.com/?l=full-disclosure&m=105053485515811"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "mod_access_referer -- null pointer dereference vulnerability"
+}

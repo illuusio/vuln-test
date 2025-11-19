@@ -1,0 +1,76 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "squid"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "3.5.16"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "cite": [
+            "http://www.squid-cache.org/Advisories/SQUID-2016_3.txt",
+            "http://www.squid-cache.org/Advisories/SQUID-2016_4.txt"
+        ],
+        "discovery": "2016-03-28T00:00:00Z",
+        "references": {
+            "cvename": [
+                "CVE-2016-3947",
+                "CVE-2016-3948"
+            ],
+            "freebsdpr": [
+                "ports/208463"
+            ]
+        },
+        "vid": "297117ba-f92d-11e5-92ce-002590263bf5"
+    },
+    "details": "Squid security advisory 2016:3 reports:\n\n> Due to a buffer overrun Squid pinger binary is vulnerable to denial of\n> service or information leak attack when processing ICMPv6 packets.\n>\n> This bug also permits the server response to manipulate other ICMP and\n> ICMPv6 queries processing to cause information leak.\n>\n> This bug allows any remote server to perform a denial of service\n> attack on the Squid service by crashing the pinger. This may affect\n> Squid HTTP routing decisions. In some configurations, sub-optimal\n> routing decisions may result in serious service degradation or even\n> transaction failures.\n>\n> If the system does not contain buffer-overrun protection leading to\n> that crash this bug will instead allow attackers to leak arbitrary\n> amounts of information from the heap into Squid log files. This is of\n> higher importance than usual because the pinger process operates with\n> root priviliges.\n\nSquid security advisory 2016:4 reports:\n\n> Due to incorrect bounds checking Squid is vulnerable to a denial of\n> service attack when processing HTTP responses.\n>\n> This problem allows a malicious client script and remote server\n> delivering certain unusual HTTP response syntax to trigger a denial of\n> service for all clients accessing the Squid service.\n",
+    "id": "FreeBSD-2016-0173",
+    "modified": "2016-04-02T00:00:00Z",
+    "published": "2016-04-02T00:00:00Z",
+    "references": [
+        {
+            "type": "REPORT",
+            "url": "http://www.squid-cache.org/Advisories/SQUID-2016_3.txt"
+        },
+        {
+            "type": "REPORT",
+            "url": "http://www.squid-cache.org/Advisories/SQUID-2016_4.txt"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2016-3947"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2016-3948"
+        },
+        {
+            "type": "REPORT",
+            "url": "https://bugs.freebsd.org/bugzilla/show_bug.cgi?id=208463"
+        },
+        {
+            "type": "WEB",
+            "url": "http://www.squid-cache.org/Advisories/SQUID-2016_3.txt"
+        },
+        {
+            "type": "WEB",
+            "url": "http://www.squid-cache.org/Advisories/SQUID-2016_4.txt"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "squid -- multiple vulnerabilities"
+}

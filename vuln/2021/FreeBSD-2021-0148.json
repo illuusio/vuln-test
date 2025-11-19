@@ -1,0 +1,97 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "go"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "1.16.5,1"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "cite": [
+            "https://github.com/golang/go/issues/45910",
+            "https://github.com/golang/go/issues/46313",
+            "https://github.com/golang/go/issues/46241",
+            "https://github.com/golang/go/issues/46242"
+        ],
+        "discovery": "2021-05-01T00:00:00Z",
+        "references": {
+            "cvename": [
+                "CVE-2021-33198",
+                "CVE-2021-33197",
+                "CVE-2021-33195",
+                "CVE-2021-33196"
+            ]
+        },
+        "vid": "079b3641-c4bd-11eb-a22a-693f0544ae52"
+    },
+    "details": "The Go project reports:\n\n> The SetString and UnmarshalText methods of math/big.Rat may cause a\n> panic or an unrecoverable fatal error if passed inputs with very large\n> exponents.\n\n> ReverseProxy in net/http/httputil could be made to forward certain\n> hop-by-hop headers, including Connection. In case the target of the\n> ReverseProxy was itself a reverse proxy, this would let an attacker\n> drop arbitrary headers, including those set by the\n> ReverseProxy.Director.\n\n> The LookupCNAME, LookupSRV, LookupMX, LookupNS, and LookupAddr\n> functions in net, and their respective methods on the Resolver type\n> may return arbitrary values retrieved from DNS which do not follow the\n> established RFC 1035 rules for domain names. If these names are used\n> without further sanitization, for instance unsafely included in HTML,\n> they may allow for injection of unexpected content. Note that\n> LookupTXT may still return arbitrary values that could require\n> sanitization before further use.\n\n> The NewReader and OpenReader functions in archive/zip can cause a\n> panic or an unrecoverable fatal error when reading an archive that\n> claims to contain a large number of files, regardless of its actual\n> size.\n",
+    "id": "FreeBSD-2021-0148",
+    "modified": "2021-06-03T00:00:00Z",
+    "published": "2021-06-03T00:00:00Z",
+    "references": [
+        {
+            "type": "REPORT",
+            "url": "https://github.com/golang/go/issues/45910"
+        },
+        {
+            "type": "REPORT",
+            "url": "https://github.com/golang/go/issues/46313"
+        },
+        {
+            "type": "REPORT",
+            "url": "https://github.com/golang/go/issues/46241"
+        },
+        {
+            "type": "REPORT",
+            "url": "https://github.com/golang/go/issues/46242"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2021-33198"
+        },
+        {
+            "type": "WEB",
+            "url": "https://github.com/golang/go/issues/45910"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2021-33197"
+        },
+        {
+            "type": "WEB",
+            "url": "https://github.com/golang/go/issues/46313"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2021-33195"
+        },
+        {
+            "type": "WEB",
+            "url": "https://github.com/golang/go/issues/46241"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2021-33196"
+        },
+        {
+            "type": "WEB",
+            "url": "https://github.com/golang/go/issues/46242"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "go -- multiple vulnerabilities"
+}

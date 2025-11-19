@@ -1,0 +1,68 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "curl"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "7.60.0"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "cite": [
+            "https://curl.haxx.se/docs/security.html"
+        ],
+        "discovery": "2018-05-16T00:00:00Z",
+        "references": {
+            "cvename": [
+                "CVE-2018-1000300",
+                "CVE-2018-1000301"
+            ]
+        },
+        "vid": "04fe6c8d-2a34-4009-a81e-e7a7e759b5d2"
+    },
+    "details": "cURL security problems:\n\n> CVE-2018-1000300: FTP shutdown response buffer overflow\n>\n> curl might overflow a heap based memory buffer when closing down an\n> FTP connection with very long server command replies.\n>\n> When doing FTP transfers, curl keeps a spare \\\"closure handle\\\" around\n> internally that will be used when an FTP connection gets shut down\n> since the original curl easy handle is then already removed.\n>\n> FTP server response data that gets cached from the original transfer\n> might then be larger than the default buffer size (16 KB) allocated in\n> the \\\"closure handle\\\", which can lead to a buffer overwrite. The\n> contents and size of that overwrite is controllable by the server.\n>\n> This situation was detected by an assert() in the code, but that was\n> of course only preventing bad stuff in debug builds. This bug is very\n> unlikely to trigger with non-malicious servers.\n>\n> We are not aware of any exploit of this flaw.\n>\n> CVE-2018-1000301: RTSP bad headers buffer over-read\n>\n> curl can be tricked into reading data beyond the end of a heap based\n> buffer used to store downloaded content.\n>\n> When servers send RTSP responses back to curl, the data starts out\n> with a set of headers. curl parses that data to separate it into a\n> number of headers to deal with those appropriately and to find the end\n> of the headers that signal the start of the \\\"body\\\" part.\n>\n> The function that splits up the response into headers is called\n> Curl_http_readwrite_headers() and in situations where it can\\'t find a\n> single header in the buffer, it might end up leaving a pointer\n> pointing into the buffer instead of to the start of the buffer which\n> then later on may lead to an out of buffer read when code assumes that\n> pointer points to a full buffer size worth of memory to use.\n>\n> This could potentially lead to information leakage but most likely a\n> crash/denial of service for applications if a server triggers this\n> flaw.\n>\n> We are not aware of any exploit of this flaw.\n",
+    "id": "FreeBSD-2018-0131",
+    "modified": "2018-05-16T00:00:00Z",
+    "published": "2018-05-16T00:00:00Z",
+    "references": [
+        {
+            "type": "REPORT",
+            "url": "https://curl.haxx.se/docs/security.html"
+        },
+        {
+            "type": "WEB",
+            "url": "https://curl.haxx.se/docs/security.html"
+        },
+        {
+            "type": "WEB",
+            "url": "https://curl.haxx.se/docs/adv_2018-82c2.html"
+        },
+        {
+            "type": "WEB",
+            "url": "https://curl.haxx.se/docs/adv_2018-b138.html"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2018-1000300"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2018-1000301"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "cURL -- multiple vulnerabilities"
+}

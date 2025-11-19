@@ -1,0 +1,87 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "asterisk11"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "11.10.1"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        },
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "asterisk18"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "1.8.28.1"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "cite": [
+            "https://www.asterisk.org/security"
+        ],
+        "discovery": "2014-06-12T00:00:00Z",
+        "references": {
+            "cvename": [
+                "CVE-2014-4046",
+                "CVE-2014-4047"
+            ]
+        },
+        "vid": "f109b02f-f5a4-11e3-82e9-00a098b18457"
+    },
+    "details": "The Asterisk project reports:\n\n> Asterisk Manager User Unauthorized Shell Access. Manager users can\n> execute arbitrary shell commands with the MixMonitor manager action.\n> Asterisk does not require system class authorization for a manager\n> user to use the MixMonitor action, so any manager user who is\n> permitted to use manager commands can potentially execute shell\n> commands as the user executing the Asterisk process.\n>\n> Exhaustion of Allowed Concurrent HTTP Connections. Establishing a TCP\n> or TLS connection to the configured HTTP or HTTPS port respectively in\n> http.conf and then not sending or completing a HTTP request will tie\n> up a HTTP session. By doing this repeatedly until the maximum number\n> of open HTTP sessions is reached, legitimate requests are blocked.\n",
+    "id": "FreeBSD-2014-0074",
+    "modified": "2014-06-17T00:00:00Z",
+    "published": "2014-06-17T00:00:00Z",
+    "references": [
+        {
+            "type": "REPORT",
+            "url": "https://www.asterisk.org/security"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2014-4046"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2014-4047"
+        },
+        {
+            "type": "WEB",
+            "url": "http://downloads.asterisk.org/pub/security/AST-2014-006.pdf"
+        },
+        {
+            "type": "WEB",
+            "url": "http://downloads.asterisk.org/pub/security/AST-2014-007.pdf"
+        },
+        {
+            "type": "WEB",
+            "url": "https://www.asterisk.org/security"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "asterisk -- multiple vulnerabilities"
+}

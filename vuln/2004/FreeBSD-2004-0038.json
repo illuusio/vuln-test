@@ -1,0 +1,62 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "xboing"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "2.4_2"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "cite": [
+            "http://bugs.debian.org/cgi-bin/bugreport.cgi?bug=174924"
+        ],
+        "discovery": "2003-01-01T00:00:00Z",
+        "references": {
+            "bid": [
+                "9764"
+            ],
+            "cvename": [
+                "CVE-2004-0149"
+            ]
+        },
+        "vid": "e25566d5-6d3f-11d8-83a4-000a95bc6fae"
+    },
+    "details": "Steve Kemp reports (in a Debian bug submission):\n\n> Due to improper bounds checking it is possible for a malicious user to\n> gain a shell with membership group \\'games\\'. (The binary is installed\n> setgid games).\n>\n> Environmental variables are used without being bounds-checked in any\n> way, from the source code:\n>\n>\n>     highscore.c:\n>        /* Use the environment variable if it exists */\n>        if ((str = getenv(\"XBOING_SCORE_FILE\")) != NULL)\n>         strcpy(filename, str);\n>        else\n>         strcpy(filename, HIGH_SCORE_FILE);\n>\n>     misc.c:\n>         if ((ptr = getenv(\"HOME\")) != NULL)\n>         (void) strcpy(dest, ptr);\n>\n> Neither of these checks are boundschecked, and will allow arbitary\n> shell code to be run.\n",
+    "id": "FreeBSD-2004-0038",
+    "modified": "2004-03-29T00:00:00Z",
+    "published": "2004-03-05T00:00:00Z",
+    "references": [
+        {
+            "type": "REPORT",
+            "url": "http://bugs.debian.org/cgi-bin/bugreport.cgi?bug=174924"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2004-0149"
+        },
+        {
+            "type": "WEB",
+            "url": "http://bugs.debian.org/cgi-bin/bugreport.cgi?bug=174924"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://www.securityfocus.com/bid/9764/info"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "multiple buffer overflows in xboing"
+}

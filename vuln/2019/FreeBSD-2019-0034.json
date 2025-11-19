@@ -1,0 +1,62 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:kernel",
+                "name": "FreeBSD-kernel"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "introduced": "12.0"
+                        },
+                        {
+                            "fixed": "12.0_3"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                },
+                {
+                    "events": [
+                        {
+                            "introduced": "11.2"
+                        },
+                        {
+                            "fixed": "11.2_9"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "discovery": "2019-02-05T00:00:00Z",
+        "references": {
+            "cvename": [
+                "CVE-2019-5595"
+            ],
+            "freebsdsa": [
+                "SA-19:01.syscall"
+            ]
+        },
+        "vid": "683c714d-2d91-11e9-bf3e-a4badb2f4699"
+    },
+    "details": "# Problem Description:\n\nThe callee-save registers are used by kernel and for some of them (%r8,\n%r10, and for non-PTI configurations, %r9) the content is not sanitized\nbefore return from syscalls, potentially leaking sensitive information.\n\n# Impact:\n\nTypically an address of some kernel data structure used in the syscall\nimplementation, is exposed.\n",
+    "id": "FreeBSD-2019-0034",
+    "modified": "2019-02-11T00:00:00Z",
+    "published": "2019-02-11T00:00:00Z",
+    "references": [
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2019-5595"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://www.freebsd.org/security/advisories/FreeBSD-SA-19:01.syscall.asc"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "FreeBSD -- System call kernel data register leak"
+}

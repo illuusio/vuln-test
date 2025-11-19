@@ -1,0 +1,55 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "xrdb"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "1.0.6_1"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "cite": [
+            "http://lists.freedesktop.org/archives/xorg-announce/2011-April/001636.html"
+        ],
+        "discovery": "2011-04-05T00:00:00Z",
+        "references": {
+            "cvename": [
+                "CVE-2011-0465"
+            ]
+        },
+        "vid": "2eccb24f-61c0-11e0-b199-0015f2db7bde"
+    },
+    "details": "Matthias Hopf reports:\n\n> By crafting hostnames with shell escape characters, arbitrary commands\n> can be executed in a root environment when a display manager reads in\n> the resource database via xrdb.\n>\n> These specially crafted hostnames can occur in two environments:\n>\n> Systems are affected are: systems set their hostname via DHCP, and the\n> used DHCP client allows setting of hostnames with illegal characters.\n> And systems that allow remote logins via xdmcp.\n",
+    "id": "FreeBSD-2011-0056",
+    "modified": "2011-04-14T00:00:00Z",
+    "published": "2011-04-14T00:00:00Z",
+    "references": [
+        {
+            "type": "REPORT",
+            "url": "http://lists.freedesktop.org/archives/xorg-announce/2011-April/001636.html"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2011-0465"
+        },
+        {
+            "type": "WEB",
+            "url": "http://lists.freedesktop.org/archives/xorg-announce/2011-April/001636.html"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "xrdb -- root hole via rogue hostname"
+}

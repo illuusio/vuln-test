@@ -1,0 +1,64 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "traefik"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "2.9.9_1"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "cite": [
+            "https://pkg.go.dev/vuln/GO-2023-1704"
+        ],
+        "discovery": "2023-03-10T00:00:00Z",
+        "references": {
+            "cvename": [
+                "CVE-2023-24534",
+                "CVE-2023-29013"
+            ]
+        },
+        "vid": "02e51cb3-d7e4-11ed-9f7a-5404a68ad561"
+    },
+    "details": "The Go project reports:\n\n> HTTP and MIME header parsing can allocate large amounts of memory,\n> even when parsing small inputs, potentially leading to a denial of\n> service. Certain unusual patterns of input data can cause the common\n> function used to parse HTTP and MIME headers to allocate substantially\n> more memory than required to hold the parsed headers. An attacker can\n> exploit this behavior to cause an HTTP server to allocate large\n> amounts of memory from a small request, potentially leading to memory\n> exhaustion and a denial of service. With fix, header parsing now\n> correctly allocates only the memory required to hold parsed headers.\n",
+    "id": "FreeBSD-2023-0120",
+    "modified": "2023-04-07T00:00:00Z",
+    "published": "2023-04-07T00:00:00Z",
+    "references": [
+        {
+            "type": "REPORT",
+            "url": "https://pkg.go.dev/vuln/GO-2023-1704"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2023-24534"
+        },
+        {
+            "type": "WEB",
+            "url": "https://www.cve.org/CVERecord?id=CVE-2023-24534"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2023-29013"
+        },
+        {
+            "type": "WEB",
+            "url": "https://www.cve.org/CVERecord?id=CVE-2023-29013"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "traefik -- Use of vulnerable Go modules net/http, net/textproto"
+}

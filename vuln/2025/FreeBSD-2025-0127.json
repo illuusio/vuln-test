@@ -1,0 +1,55 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "null"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "null"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "cite": [
+            "https://dnsdist.org/security-advisories/powerdns-advisory-for-dnsdist-2025-02.html"
+        ],
+        "discovery": "2025-04-29T00:00:00Z",
+        "references": {
+            "cvename": [
+                "CVE-2025-30194"
+            ]
+        },
+        "vid": "7e7a32e7-2901-11f0-ab20-b42e991fc52e"
+    },
+    "details": "security@open-xchange.com reports:\n\n> When DNSdist is configured to provide DoH via the nghttp2provider, an\n> attacker can cause a denial of service by crafting a DoH exchange that\n> triggers an illegal memory access (double-free) and crash of DNSdist,\n> causing a denial of service. The remedy is: upgrade to the patched\n> 1.9.9 version. A workaround is to temporarily switch to the h2o\n> provider until DNSdist has been upgraded to a fixed version. We would\n> like to thank Charles Howes for bringing this issue to our attention.\n",
+    "id": "FreeBSD-2025-0127",
+    "modified": "2025-05-04T00:00:00Z",
+    "published": "2025-05-04T00:00:00Z",
+    "references": [
+        {
+            "type": "REPORT",
+            "url": "https://dnsdist.org/security-advisories/powerdns-advisory-for-dnsdist-2025-02.html"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2025-30194"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://nvd.nist.gov/vuln/detail/CVE-2025-30194"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "dnsdist -- Denial of service via crafted DoH exchange"
+}

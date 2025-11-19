@@ -1,0 +1,147 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "node6"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "6.15.0"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        },
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "node8"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "8.14.0"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        },
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "node10"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "10.14.0"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        },
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "node"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "11.3.0"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "cite": [
+            "https://nodejs.org/en/blog/vulnerability/november-2018-security-releases/"
+        ],
+        "discovery": "2018-11-27T00:00:00Z",
+        "references": {
+            "cvename": [
+                "CVE-2018-12120",
+                "CVE-2018-12121",
+                "CVE-2018-12122",
+                "CVE-2018-12123",
+                "CVE-2018-12116",
+                "CVE-2018-0735",
+                "CVE-2018-0734",
+                "CVE-2018-5407"
+            ]
+        },
+        "vid": "2a86f45a-fc3c-11e8-a414-00155d006b02"
+    },
+    "details": "Node.js reports:\n\n> Updates are now available for all active Node.js release lines. These\n> include fixes for the vulnerabilities identified in the initial\n> announcement. They also include upgrades of Node.js 6 and 8 to OpenSSL\n> 1.0.2q, and upgrades of Node.js 10 and 11 to OpenSSL 1.1.0j.\n>\n> We recommend that all Node.js users upgrade to a version listed below\n> as soon as possible.\n>\n> # Debugger port 5858 listens on any interface by default (CVE-2018-12120)\n>\n> All versions of Node.js 6 are vulnerable and the severity is HIGH.\n> When the debugger is enabled with `node --debug` or `node debug`, it\n> listens to port 5858 on all interfaces by default. This may allow\n> remote computers to attach to the debug port and evaluate arbitrary\n> JavaScript. The default interface is now localhost. It has always been\n> possible to start the debugger on a specific interface, such as\n> `node --debug=localhost`. The debugger was removed in Node.js 8 and\n> replaced with the inspector, so no versions from 8 and later are\n> vulnerable.\n>\n> # Denial of Service with large HTTP headers (CVE-2018-12121)\n>\n> All versions of 6 and later are vulnerable and the severity is HIGH.\n> By using a combination of many requests with maximum sized headers\n> (almost 80 KB per connection), and carefully timed completion of the\n> headers, it is possible to cause the HTTP server to abort from heap\n> allocation failure. Attack potential is mitigated by the use of a load\n> balancer or other proxy layer.\n>\n> The total size of HTTP headers received by Node.js now must not exceed\n> 8192 bytes.\n>\n> # \\\"Slowloris\\\" HTTP Denial of Service (CVE-2018-12122)\n>\n> All versions of Node.js 6 and later are vulnerable and the severity is\n> LOW. An attacker can cause a Denial of Service (DoS) by sending\n> headers very slowly keeping HTTP or HTTPS connections and associated\n> resources alive for a long period of time. Attack potential is\n> mitigated by the use of a load balancer or other proxy layer.\n>\n> A timeout of 40 seconds now applies to servers receiving HTTP headers.\n> This value can be adjusted with `server.headersTimeout`. Where headers\n> are not completely received within this period, the socket is\n> destroyed on the next received chunk. In conjunction with\n> `server.setTimeout()`, this aids in protecting against excessive\n> resource retention and possible Denial of Service.\n>\n> # Hostname spoofing in URL parser for javascript protocol (CVE-2018-12123)\n>\n> All versions of Node.js 6 and later are vulnerable and the severity is\n> LOW. If a Node.js application is using `url.parse()` to determine the\n> URL hostname, that hostname can be spoofed by using a mixed case\n> \\\"javascript:\\\" (e.g. \\\"javAscript:\\\") protocol (other protocols are\n> not affected). If security decisions are made about the URL based on\n> the hostname, they may be incorrect.\n>\n> # HTTP request splitting (CVE-2018-12116)\n>\n> Node.js 6 and 8 are vulnerable and the severity is MEDIUM. If Node.js\n> can be convinced to use unsanitized user-provided Unicode data for the\n> `path` option of an HTTP request, then data can be provided which will\n> trigger a second, unexpected, and user-defined HTTP request to made to\n> the same server.\n>\n> # OpenSSL Timing vulnerability in ECDSA signature generation (CVE-2018-0735)\n>\n> The OpenSSL ECDSA signature algorithm has been shown to be vulnerable\n> to a timing side-channel attack. An attacker could use variations in\n> the signing algorithm to recover the private key.\n>\n> # OpenSSL Timing vulnerability in DSA signature generation (CVE-2018-0734)\n>\n> The OpenSSL DSA signature algorithm has been shown to be vulnerable to\n> a timing side-channel attack. An attacker could use variations in the\n> signing algorithm to recover the private key.\n>\n> # OpenSSL Microarchitecture timing vulnerability in ECC scalar multiplication (CVE-2018-5407)\n>\n> OpenSSL ECC scalar multiplication, used in e.g. ECDSA and ECDH, has\n> been shown to be vulnerable to a microarchitecture timing side-channel\n> attack. An attacker with sufficient access to mount local timing\n> attacks during ECDSA signature generation could recover the private\n> key.\n",
+    "id": "FreeBSD-2018-0294",
+    "modified": "2018-12-10T00:00:00Z",
+    "published": "2018-12-10T00:00:00Z",
+    "references": [
+        {
+            "type": "REPORT",
+            "url": "https://nodejs.org/en/blog/vulnerability/november-2018-security-releases/"
+        },
+        {
+            "type": "WEB",
+            "url": "https://nodejs.org/en/blog/vulnerability/november-2018-security-releases/"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2018-12120"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2018-12121"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2018-12122"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2018-12123"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2018-12116"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2018-0735"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2018-0734"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2018-5407"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "node.js -- multiple vulnerabilities"
+}

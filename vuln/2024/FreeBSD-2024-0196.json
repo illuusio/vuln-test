@@ -1,0 +1,112 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "py38-Jinja2"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "3.1.4"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        },
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "py39-Jinja2"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "3.1.4"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        },
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "py310-Jinja2"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "3.1.4"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        },
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "py311-Jinja2"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "3.1.4"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "cite": [
+            "https://github.com/pallets/jinja/commit/0668239dc6b44ef38e7a6c9f91f312fd4ca581cb"
+        ],
+        "discovery": "2024-05-06T00:00:00Z",
+        "references": {
+            "cvename": [
+                "CVE-2024-34064"
+            ]
+        },
+        "vid": "04c9c3f8-5ed3-11ef-8262-b0416f0c4c67"
+    },
+    "details": "security-advisories@github.com reports:\n\n> Jinja is an extensible templating engine. The \\`xmlattr\\` filter in\n> affected versions of Jinja accepts keys containing non-attribute\n> characters. XML/HTML attributes cannot contain spaces, \\`/\\`, \\`\\>\\`,\n> or \\`=\\`, as each would then be interpreted as starting a separate\n> attribute. If an application accepts keys (as opposed to only values)\n> as user input, and renders these in pages that other users see as\n> well, an attacker could use this to inject other attributes and\n> perform XSS. The fix for CVE-2024-22195 only addressed spaces but not\n> other characters. Accepting keys as user input is now explicitly\n> considered an unintended use case of the \\`xmlattr\\` filter, and code\n> that does so without otherwise validating the input should be flagged\n> as insecure, regardless of Jinja version. Accepting \\_values\\_ as user\n> input continues to be safe. This vulnerability is fixed in 3.1.4.\n",
+    "id": "FreeBSD-2024-0196",
+    "modified": "2024-08-20T00:00:00Z",
+    "published": "2024-08-20T00:00:00Z",
+    "references": [
+        {
+            "type": "REPORT",
+            "url": "https://github.com/pallets/jinja/commit/0668239dc6b44ef38e7a6c9f91f312fd4ca581cb"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2024-34064"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://nvd.nist.gov/vuln/detail/CVE-2024-34064"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "Jinja2 -- Vulnerable to HTML attribute injection when passing user input as keys to xmlattr filter"
+}

@@ -1,0 +1,108 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "tomcat85"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "introduced": "8.5.64"
+                        },
+                        {
+                            "last_affected": "8.5.64"
+                        },
+                        {
+                            "fixed": "8.5.64"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ],
+            "versions": [
+                "8.5.64"
+            ]
+        },
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "tomcat9"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "introduced": "9.0.44"
+                        },
+                        {
+                            "last_affected": "9.0.44"
+                        },
+                        {
+                            "fixed": "9.0.44"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ],
+            "versions": [
+                "9.0.44"
+            ]
+        },
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "tomcat10"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "introduced": "10.0.3"
+                        },
+                        {
+                            "last_affected": "10.0.4"
+                        },
+                        {
+                            "fixed": "10.0.4"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "cite": [
+            "https://tomcat.apache.org/security.html"
+        ],
+        "discovery": "2021-03-24T00:00:00Z",
+        "references": {
+            "cvename": [
+                "CVE-2021-30639"
+            ]
+        },
+        "vid": "cc7c85d9-f30a-11eb-b12b-fc4dd43e2b6a"
+    },
+    "details": "rbeaudry reports:\n\n> A vulnerability in Apache Tomcat allows an attacker to remotely\n> trigger a denial of service. An error introduced as part of a change\n> to improve error handling during non-blocking I/O meant that the error\n> flag associated with the Request object was not reset between\n> requests. This meant that once a non-blocking I/O error occurred, all\n> future requests handled by that request object would fail. Users were\n> able to trigger non-blocking I/O errors, e.g. by dropping a\n> connection, thereby creating the possibility of triggering a DoS.\n>\n> Applications that do not use non-blocking I/O are not exposed to this\n> vulnerability. This issue affects Apache Tomcat 10.0.3 to 10.0.4;\n> 9.0.44; 8.5.64.\n",
+    "id": "FreeBSD-2021-0190",
+    "modified": "2021-08-01T00:00:00Z",
+    "published": "2021-08-01T00:00:00Z",
+    "references": [
+        {
+            "type": "REPORT",
+            "url": "https://tomcat.apache.org/security.html"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2021-30639"
+        },
+        {
+            "type": "WEB",
+            "url": "http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2021-30639"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "tomcat -- Remote Denial of Service in multiple versions"
+}

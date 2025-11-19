@@ -1,0 +1,59 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "erlang"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "r14b03"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "cite": [
+            "http://www.kb.cert.org/vuls/id/178990"
+        ],
+        "discovery": "2011-05-25T00:00:00Z",
+        "references": {
+            "cvename": [
+                "CVE-2011-0766"
+            ]
+        },
+        "vid": "e4833927-86e5-11e0-a6b4-000a5e1e33c6"
+    },
+    "details": "US-CERT reports:\n\n> The Erlang/OTP ssh library implements a number of cryptographic\n> operations that depend on cryptographically strong random numbers.\n> Unfortunately the RNG used by the library is not cryptographically\n> strong, and is further weakened by the use of predictable seed\n> material. The RNG (Wichman-Hill) is not mixed with an entropy source.\n",
+    "id": "FreeBSD-2011-0079",
+    "modified": "2011-05-25T00:00:00Z",
+    "published": "2011-05-25T00:00:00Z",
+    "references": [
+        {
+            "type": "REPORT",
+            "url": "http://www.kb.cert.org/vuls/id/178990"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2011-0766"
+        },
+        {
+            "type": "WEB",
+            "url": "http://www.erlang.org/download/otp_src_R14B03.readme"
+        },
+        {
+            "type": "WEB",
+            "url": "https://github.com/erlang/otp/commit/f228601de45c5b53241b103af6616453c50885a5"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "Erlang -- ssh library uses a weak random number generator"
+}

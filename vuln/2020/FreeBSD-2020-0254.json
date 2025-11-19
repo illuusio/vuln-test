@@ -1,0 +1,71 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "python35"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "3.5.10"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "cite": [
+            "https://docs.python.org/3.5/whatsnew/changelog.html#python-3-5-10"
+        ],
+        "discovery": "2020-08-19T00:00:00Z",
+        "references": {
+            "cvename": [
+                "CVE-2020-15523",
+                "CVE-2020-14422",
+                "CVE-2019-18348",
+                "CVE-2020-8492",
+                "CVE-2019-20907"
+            ]
+        },
+        "vid": "2cb21232-fb32-11ea-a929-a4bf014bf5f7"
+    },
+    "details": "Python reports:\n\n> bpo-39603: Prevent http header injection by rejecting control\n> characters in http.client.putrequest(...).\n>\n> bpo-29778: Ensure python3.dll is loaded from correct locations when\n> Python is embedded (CVE-2020-15523).\n>\n> bpo-41004: CVE-2020-14422: The \\_\\_hash\\_\\_() methods of\n> ipaddress.IPv4Interface and ipaddress.IPv6Interface incorrectly\n> generated constant hash values of 32 and 128 respectively. This\n> resulted in always causing hash collisions. The fix uses hash() to\n> generate hash values for the tuple of (address, mask length, network\n> address).\n>\n> bpo-39073: Disallow CR or LF in email.headerregistry.Address arguments\n> to guard against header injection attacks.\n>\n> bpo-38576: Disallow control characters in hostnames in http.client,\n> addressing CVE-2019-18348. Such potentially malicious header injection\n> URLs now cause a InvalidURL to be raised.\n>\n> bpo-39503: CVE-2020-8492: The AbstractBasicAuthHandler class of the\n> urllib.request module uses an inefficient regular expression which can\n> be exploited by an attacker to cause a denial of service. Fix the\n> regex to prevent the catastrophic backtracking. Vulnerability reported\n> by Ben Caller and Matt Schwager.\n>\n> bpo-38945: Newline characters have been escaped when performing uu\n> encoding to prevent them from overflowing into to content section of\n> the encoded file. This prevents malicious or accidental modification\n> of data during the decoding process.\n>\n> bpo-38804: Fixes a ReDoS vulnerability in http.cookiejar. Patch by Ben\n> Caller.\n>\n> bpo-39017: Avoid infinite loop when reading specially crafted TAR\n> files using the tarfile module (CVE-2019-20907).\n>\n> bpo-41183: Use 3072 RSA keys and SHA-256 signature for test certs and\n> keys.\n>\n> bpo-39503: AbstractBasicAuthHandler of urllib.request now parses all\n> WWW-Authenticate HTTP headers and accepts multiple challenges per\n> header: use the realm of the first Basic challenge.\n",
+    "id": "FreeBSD-2020-0254",
+    "modified": "2020-09-20T00:00:00Z",
+    "published": "2020-09-20T00:00:00Z",
+    "references": [
+        {
+            "type": "REPORT",
+            "url": "https://docs.python.org/3.5/whatsnew/changelog.html#python-3-5-10"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2020-15523"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2020-14422"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2019-18348"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2020-8492"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2019-20907"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "Python -- multiple vulnerabilities"
+}

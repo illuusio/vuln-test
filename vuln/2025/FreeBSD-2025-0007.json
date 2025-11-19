@@ -1,0 +1,112 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "redis"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "introduced": "7.0.0"
+                        },
+                        {
+                            "fixed": "7.4.2"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        },
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "redis72"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "7.2.7"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        },
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "redis-devel"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "7.4.2.20250201"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        },
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "valkey"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "8.0.2"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "cite": [
+            "https://github.com/redis/redis/security/advisories/GHSA-prpq-rh5h-46g9"
+        ],
+        "discovery": "2025-01-06T00:00:00Z",
+        "references": {
+            "cvename": [
+                "CVE-2024-51741"
+            ]
+        },
+        "vid": "4d79fd1a-cc93-11ef-abed-08002784c58d"
+    },
+    "details": "Redis core team reports:\n\n> An authenticated with sufficient privileges may create a malformed ACL\n> selector which, when accessed, triggers a server panic and subsequent\n> denial of service.The problem exists in Redis 7.0.0 or newer.\n",
+    "id": "FreeBSD-2025-0007",
+    "modified": "2025-01-10T00:00:00Z",
+    "published": "2025-01-10T00:00:00Z",
+    "references": [
+        {
+            "type": "REPORT",
+            "url": "https://github.com/redis/redis/security/advisories/GHSA-prpq-rh5h-46g9"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2024-51741"
+        },
+        {
+            "type": "WEB",
+            "url": "https://github.com/redis/redis/security/advisories/GHSA-prpq-rh5h-46g9"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "redis,valkey -- Denial-of-service valnerability due to malformed ACL selectors"
+}

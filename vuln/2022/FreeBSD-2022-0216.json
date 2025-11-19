@@ -1,0 +1,46 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "varnish7"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "7.2.1"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "cite": [
+            "https://varnish-cache.org/security/VSV00010.html"
+        ],
+        "discovery": "2022-11-08T00:00:00Z",
+        "vid": "b10d1afa-6087-11ed-8c5e-641c67a117d8"
+    },
+    "details": "Varnish Cache Project reports:\n\n> A request smuggling attack can be performed on Varnish Cache servers\n> by requesting that certain headers are made hop-by-hop, preventing the\n> Varnish Cache servers from forwarding critical headers to the backend.\n> Among the headers that can be filtered this way are both\n> Content-Length and Host, making it possible for an attacker to both\n> break the HTTP/1 protocol framing, and bypass request to host routing\n> in VCL.\n",
+    "id": "FreeBSD-2022-0216",
+    "modified": "2022-11-09T00:00:00Z",
+    "published": "2022-11-09T00:00:00Z",
+    "references": [
+        {
+            "type": "REPORT",
+            "url": "https://varnish-cache.org/security/VSV00010.html"
+        },
+        {
+            "type": "WEB",
+            "url": "https://varnish-cache.org/security/VSV00010.html"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "varnish -- Request Smuggling Vulnerability"
+}

@@ -1,0 +1,89 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "libtasn1"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "2.12"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        },
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "gnutls"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "2.12.18"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        },
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "gnutls-devel"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "introduced": "2.99,1"
+                        },
+                        {
+                            "fixed": "3.0.16"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "cite": [
+            "http://article.gmane.org/gmane.comp.encryption.gpg.gnutls.devel/5959"
+        ],
+        "discovery": "2012-03-20T00:00:00Z",
+        "references": {
+            "cvename": [
+                "CVE-2012-1569"
+            ]
+        },
+        "vid": "2e7e9072-73a0-11e1-a883-001cc0a36e12"
+    },
+    "details": "Mu Dynamics, Inc. reports:\n\n> Various functions using the ASN.1 length decoding logic in Libtasn1\n> were incorrectly assuming that the return value from\n> asn1_get_length_der is always less than the length of the enclosing\n> ASN.1 structure, which is only true for valid structures and not for\n> intentionally corrupt or otherwise buggy structures.\n",
+    "id": "FreeBSD-2012-0055",
+    "modified": "2012-03-24T00:00:00Z",
+    "published": "2012-03-21T00:00:00Z",
+    "references": [
+        {
+            "type": "REPORT",
+            "url": "http://article.gmane.org/gmane.comp.encryption.gpg.gnutls.devel/5959"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2012-1569"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "libtasn1 -- ASN.1 length decoding vulnerability"
+}

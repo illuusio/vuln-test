@@ -1,0 +1,87 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "phpMyAdmin"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "3.4.3.2"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "cite": [
+            "http://www.phpmyadmin.net/home_page/security/PMASA-2011-9.php",
+            "http://www.phpmyadmin.net/home_page/security/PMASA-2011-10.php",
+            "http://www.phpmyadmin.net/home_page/security/PMASA-2011-11.php",
+            "http://www.phpmyadmin.net/home_page/security/PMASA-2011-12.php"
+        ],
+        "discovery": "2011-07-23T00:00:00Z",
+        "references": {
+            "cvename": [
+                "CVE-2011-2642",
+                "CVE-2011-2643"
+            ]
+        },
+        "vid": "d79fc873-b5f9-11e0-89b4-001ec9578670"
+    },
+    "details": "The phpMyAdmin development team reports:\n\n> XSS in table Print view.\n\n> Via a crafted MIME-type transformation parameter, an attacker can\n> perform a local file inclusion.\n\n> In the \\'relational schema\\' code a parameter was not sanitized before\n> being used to concatenate a class name.\n>\n> The end result is a local file inclusion vulnerability and code\n> execution.\n\n> It was possible to manipulate the PHP session superglobal using some\n> of the Swekey authentication code.\n>\n> This is very similar to PMASA-2011-5, documented in\n> 7e4e5c53-a56c-11e0-b180-00216aa06fc2\n",
+    "id": "FreeBSD-2011-0099",
+    "modified": "2011-07-28T00:00:00Z",
+    "published": "2011-07-24T00:00:00Z",
+    "references": [
+        {
+            "type": "REPORT",
+            "url": "http://www.phpmyadmin.net/home_page/security/PMASA-2011-9.php"
+        },
+        {
+            "type": "REPORT",
+            "url": "http://www.phpmyadmin.net/home_page/security/PMASA-2011-10.php"
+        },
+        {
+            "type": "REPORT",
+            "url": "http://www.phpmyadmin.net/home_page/security/PMASA-2011-11.php"
+        },
+        {
+            "type": "REPORT",
+            "url": "http://www.phpmyadmin.net/home_page/security/PMASA-2011-12.php"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2011-2642"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2011-2643"
+        },
+        {
+            "type": "WEB",
+            "url": "http://www.phpmyadmin.net/home_page/security/PMASA-2011-9.php"
+        },
+        {
+            "type": "WEB",
+            "url": "http://www.phpmyadmin.net/home_page/security/PMASA-2011-10.php"
+        },
+        {
+            "type": "WEB",
+            "url": "http://www.phpmyadmin.net/home_page/security/PMASA-2011-11.php"
+        },
+        {
+            "type": "WEB",
+            "url": "http://www.phpmyadmin.net/home_page/security/PMASA-2011-12.php"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "phpmyadmin -- multiple vulnerabilities"
+}

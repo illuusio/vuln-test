@@ -1,0 +1,92 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "isc-dhcp41-server"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "4.1.e_5,2"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        },
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "isc-dhcp42-server"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "4.2.4_1"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "cite": [
+            "https://www.isc.org/announcement/bind-and-dhcp-security-updates-released"
+        ],
+        "discovery": "2012-07-24T00:00:00Z",
+        "references": {
+            "cvename": [
+                "CVE-2012-3570",
+                "CVE-2012-3571",
+                "CVE-2012-3954"
+            ]
+        },
+        "vid": "c7fa3618-d5ff-11e1-90a2-000c299b62e1"
+    },
+    "details": "ISC reports:\n\n> An unexpected client identifier parameter can cause the ISC DHCP\n> daemon to segmentation fault when running in DHCPv6 mode, resulting in\n> a denial of service to further client requests. In order to exploit\n> this condition, an attacker must be able to send requests to the DHCP\n> server.\n>\n> An error in the handling of malformed client identifiers can cause a\n> DHCP server running affected versions (see \\\"Impact\\\") to enter a\n> state where further client requests are not processed and the server\n> process loops endlessly, consuming all available CPU cycles. Under\n> normal circumstances this condition should not be triggered, but a\n> non-conforming or malicious client could deliberately trigger it in a\n> vulnerable server. In order to exploit this condition an attacker must\n> be able to send requests to the DHCP server.\n>\n> Two memory leaks have been found and fixed in ISC DHCP. Both are\n> reproducible when running in DHCPv6 mode (with the -6 command-line\n> argument.) The first leak is confirmed to only affect servers\n> operating in DHCPv6 mode, but based on initial code analysis the\n> second may theoretically affect DHCPv4 servers (though this has not\n> been demonstrated.)\n",
+    "id": "FreeBSD-2012-0128",
+    "modified": "2012-07-25T00:00:00Z",
+    "published": "2012-07-25T00:00:00Z",
+    "references": [
+        {
+            "type": "REPORT",
+            "url": "https://www.isc.org/announcement/bind-and-dhcp-security-updates-released"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2012-3570"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2012-3571"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2012-3954"
+        },
+        {
+            "type": "WEB",
+            "url": "https://kb.isc.org/article/AA-00714"
+        },
+        {
+            "type": "WEB",
+            "url": "https://kb.isc.org/article/AA-00712"
+        },
+        {
+            "type": "WEB",
+            "url": "https://kb.isc.org/article/AA-00737"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "isc-dhcp -- multiple vulnerabilities"
+}

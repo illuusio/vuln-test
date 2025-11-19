@@ -1,0 +1,78 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "ruby"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "introduced": "1.8.*,1"
+                        },
+                        {
+                            "fixed": "1.8.2_3"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        },
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "ruby_static"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "introduced": "1.8.*,1"
+                        },
+                        {
+                            "fixed": "1.8.2_3"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "cite": [
+            "http://blade.nagaokaut.ac.jp/cgi-bin/scat.rb/ruby/ruby-core/5237"
+        ],
+        "discovery": "2005-06-22T00:00:00Z",
+        "references": {
+            "cvename": [
+                "CVE-2005-1992"
+            ]
+        },
+        "vid": "594eb447-e398-11d9-a8bd-000cf18bbe54"
+    },
+    "details": "Nobuhiro IMAI reports:\n\n> the default value modification on Module#public_instance_methods (from\n> false to true) breaks s.add_handler(XMLRPC::iPIMethods(\\\"sample\\\"),\n> MyHandler.new) style security protection.\n>\n> This problem could allow a remote attacker to execute arbitrary\n> commands on XMLRPC server of libruby.\n",
+    "id": "FreeBSD-2005-0193",
+    "modified": "2005-11-06T00:00:00Z",
+    "published": "2005-06-23T00:00:00Z",
+    "references": [
+        {
+            "type": "REPORT",
+            "url": "http://blade.nagaokaut.ac.jp/cgi-bin/scat.rb/ruby/ruby-core/5237"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2005-1992"
+        },
+        {
+            "type": "WEB",
+            "url": "http://blade.nagaokaut.ac.jp/cgi-bin/scat.rb/ruby/ruby-core/5237"
+        },
+        {
+            "type": "WEB",
+            "url": "http://bugs.debian.org/cgi-bin/bugreport.cgi?bug=315064"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "ruby -- arbitrary command execution on XMLRPC server"
+}

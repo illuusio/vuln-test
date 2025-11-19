@@ -1,0 +1,97 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "named"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "9.3.4"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        },
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "FreeBSD"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "introduced": "6.2"
+                        },
+                        {
+                            "fixed": "6.2_1"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                },
+                {
+                    "events": [
+                        {
+                            "introduced": "6.1"
+                        },
+                        {
+                            "fixed": "6.1_13"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                },
+                {
+                    "events": [
+                        {
+                            "introduced": "5.5"
+                        },
+                        {
+                            "fixed": "5.5_11"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "discovery": "2007-02-09T00:00:00Z",
+        "references": {
+            "cvename": [
+                "CVE-2007-0493",
+                "CVE-2007-0494"
+            ],
+            "freebsdsa": [
+                "SA-07:02.bind"
+            ]
+        },
+        "vid": "3cb6f059-c69d-11db-9f82-000e0c2e438a"
+    },
+    "details": "# Problem Description:\n\nA type \\* (ANY) query response containing multiple RRsets can trigger an\nassertion failure.\n\nCertain recursive queries can cause the nameserver to crash by using\nmemory which has already been freed.\n\n# Impact:\n\nA remote attacker sending a type \\* (ANY) query to an authoritative DNS\nserver for a DNSSEC signed zone can cause the named(8) daemon to exit,\nresulting in a Denial of Service.\n\nA remote attacker sending recursive queries can cause the nameserver to\ncrash, resulting in a Denial of Service.\n\n# Workaround:\n\nThere is no workaround available, but systems which are not\nauthoritative servers for DNSSEC signed zones are not affected by the\nfirst issue; and systems which do not permit untrusted users to perform\nrecursive DNS resolution are not affected by the second issue. Note that\nthe default configuration for named(8) in FreeBSD allows local access\nonly (which on many systems is equivalent to refusing access to\nuntrusted users).\n",
+    "id": "FreeBSD-2007-0020",
+    "modified": "2016-08-09T00:00:00Z",
+    "published": "2007-02-27T00:00:00Z",
+    "references": [
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2007-0493"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2007-0494"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://www.freebsd.org/security/advisories/FreeBSD-SA-07:02.bind.asc"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "bind -- Multiple Denial of Service vulnerabilities"
+}

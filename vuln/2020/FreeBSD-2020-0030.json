@@ -1,0 +1,73 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "FreeBSD"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "introduced": "12.1"
+                        },
+                        {
+                            "fixed": "12.1_2"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                },
+                {
+                    "events": [
+                        {
+                            "introduced": "12.0"
+                        },
+                        {
+                            "fixed": "12.0_13"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                },
+                {
+                    "events": [
+                        {
+                            "introduced": "11.3"
+                        },
+                        {
+                            "fixed": "11.3_6"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "discovery": "2020-01-28T00:00:00Z",
+        "references": {
+            "cvename": [
+                "CVE-2020-7450"
+            ],
+            "freebsdsa": [
+                "SA-20:01.libfetch"
+            ]
+        },
+        "vid": "22b41bc5-4279-11ea-b184-f8b156ac3ff9"
+    },
+    "details": "# Problem Description:\n\nA programming error allows an attacker who can specify a URL with a\nusername and/or password components to overflow libfetch(3) buffers.\n\n# Impact:\n\nAn attacker in control of the URL to be fetched (possibly via HTTP\nredirect) may cause a heap buffer overflow, resulting in program\nmisbehavior or malicious code execution.\n",
+    "id": "FreeBSD-2020-0030",
+    "modified": "2020-01-29T00:00:00Z",
+    "published": "2020-01-29T00:00:00Z",
+    "references": [
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2020-7450"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://www.freebsd.org/security/advisories/FreeBSD-SA-20:01.libfetch.asc"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "FreeBSD -- libfetch buffer overflow"
+}

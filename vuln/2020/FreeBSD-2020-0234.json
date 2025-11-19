@@ -1,0 +1,51 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:kernel",
+                "name": "FreeBSD-kernel"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "introduced": "11.3"
+                        },
+                        {
+                            "fixed": "11.3_13"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "discovery": "2020-09-02T00:00:00Z",
+        "references": {
+            "cvename": [
+                "CVE-2020-7462"
+            ],
+            "freebsdsa": [
+                "SA-20:24.ipv6"
+            ]
+        },
+        "vid": "74bbde13-ec17-11ea-88f8-901b0ef719ab"
+    },
+    "details": "# Problem Description:\n\nDue to improper mbuf handling in the kernel, a use-after-free bug might\nbe triggered by sending IPv6 Hop-by-Hop options over the loopback\ninterface.\n\n# Impact:\n\nTriggering the use-after-free situation may result in unintended kernel\nbehaviour including a kernel panic.\n",
+    "id": "FreeBSD-2020-0234",
+    "modified": "2020-09-02T00:00:00Z",
+    "published": "2020-09-02T00:00:00Z",
+    "references": [
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2020-7462"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://www.freebsd.org/security/advisories/FreeBSD-SA-20:24.ipv6.asc"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "FreeBSD -- IPv6 Hop-by-Hop options use-after-free bug"
+}

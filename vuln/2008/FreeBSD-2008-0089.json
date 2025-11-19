@@ -1,0 +1,99 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "drupal5"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "5.10"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        },
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "drupal6"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "6.4"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "cite": [
+            "http://drupal.org/node/295053"
+        ],
+        "discovery": "2008-08-13T00:00:00Z",
+        "references": {
+            "cvename": [
+                "CVE-2008-3740",
+                "CVE-2008-3741",
+                "CVE-2008-3742",
+                "CVE-2008-3743",
+                "CVE-2008-3744",
+                "CVE-2008-3745"
+            ]
+        },
+        "vid": "070b5b22-6d74-11dd-aa18-0030843d3802"
+    },
+    "details": "The Drupal Project reports:\n\n> A bug in the output filter employed by Drupal makes it possible for\n> malicious users to insert script code into pages (cross site scripting\n> or XSS). A bug in the private filesystem trusts the MIME type sent by\n> the browser, enabling malicious users with the ability to upload files\n> to execute cross site scripting attacks.\n>\n> The BlogAPI module does not validate the extension of uploaded files,\n> enabling users with the \\\"administer content with blog api\\\"\n> permission to upload harmful files. This bug affects both Drupal 5.x\n> and 6.x.\n>\n> Drupal forms contain a token to protect against cross site request\n> forgeries (CSRF). The token may not be validated properly for cached\n> forms and forms containing AHAH elements. This bug affects Drupal 6.x.\n>\n> User access rules can be added or deleted upon accessing a properly\n> formatted URL, making such modifications vulnerable to cross site\n> request forgeries (CSRF). This may lead to unintended addition or\n> deletion of an access rule when a sufficiently privileged user visits\n> a page or site created by a malicious person. This bug affects both\n> Drupal 5.x and 6.x.\n>\n> The Upload module in Drupal 6 contains privilege escalation\n> vulnerabilities for users with the \\\"upload files\\\" permission. This\n> can lead to users being able to edit nodes which they are normally not\n> allowed to, delete any file to which the webserver has sufficient\n> rights, and download attachments of nodes to which they have no\n> access. Harmful files may also be uploaded via cross site request\n> forgeries (CSRF). These bugs affect Drupal 6.x.\n",
+    "id": "FreeBSD-2008-0089",
+    "modified": "2010-05-12T00:00:00Z",
+    "published": "2008-08-18T00:00:00Z",
+    "references": [
+        {
+            "type": "REPORT",
+            "url": "http://drupal.org/node/295053"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2008-3740"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2008-3741"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2008-3742"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2008-3743"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2008-3744"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2008-3745"
+        },
+        {
+            "type": "WEB",
+            "url": "http://secunia.com/advisories/31462/"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "drupal -- multiple vulnerabilities"
+}

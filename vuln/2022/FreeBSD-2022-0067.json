@@ -1,0 +1,74 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "dnsmasq"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "2.86_4,1"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        },
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "dnsmasq-devel"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "2.86_4,1"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "cite": [
+            "https://lists.thekelleys.org.uk/pipermail/dnsmasq-discuss/2022q1/016272.html"
+        ],
+        "discovery": "2022-03-31T00:00:00Z",
+        "references": {
+            "cvename": [
+                "CVE-2022-0934"
+            ]
+        },
+        "vid": "3f321a5a-b33b-11ec-80c2-1bb2c6a00592"
+    },
+    "details": "Petr Men\u0161\u00edk reports:\n\n> Possible vulnerability \\[\\...\\] found in latest dnsmasq. It \\[was\\]\n> found with help of oss-fuzz Google project by me and short after that\n> independently also by Richard Johnson of Trellix Threat Labs.\n>\n> It is affected only by DHCPv6 requests, which could be crafted to\n> modify already freed memory. \\[\\...\\] We think it might be triggered\n> remotely, but we do not think it could be used to execute remote code.\n",
+    "id": "FreeBSD-2022-0067",
+    "modified": "2022-04-03T00:00:00Z",
+    "published": "2022-04-03T00:00:00Z",
+    "references": [
+        {
+            "type": "REPORT",
+            "url": "https://lists.thekelleys.org.uk/pipermail/dnsmasq-discuss/2022q1/016272.html"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2022-0934"
+        },
+        {
+            "type": "WEB",
+            "url": "https://lists.thekelleys.org.uk/pipermail/dnsmasq-discuss/2022q1/016272.html"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "dnsmasq -- heap use-after-free in dhcp6_no_relay"
+}

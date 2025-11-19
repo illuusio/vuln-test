@@ -1,0 +1,55 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "amavisd-new"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "2.12.3"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "cite": [
+            "https://gitlab.com/amavis/amavis/-/raw/v2.12.3/README_FILES/README.CVE-2024-28054"
+        ],
+        "discovery": "2024-03-14T00:00:00Z",
+        "references": {
+            "cvename": [
+                "CVE-2024-28054"
+            ]
+        },
+        "vid": "0a48e552-e470-11ee-99b3-589cfc0f81b0"
+    },
+    "details": "The Amavis project reports:\n\n> Emails which consist of multiple parts (\\`Content-Type:\n> multipart/\\*\\`) incorporate boundary information stating at which\n> point one part ends and the next part begins.\n>\n> A boundary is announced by an Content-Type header\\'s \\`boundary\\`\n> parameter. To our current knowledge, RFC2046 and RFC2045 do not\n> explicitly specify how a parser should handle multiple boundary\n> parameters that contain conflicting values. As a result, there is no\n> canonical choice which of the values should or should not be used for\n> mime part decomposition.\n",
+    "id": "FreeBSD-2024-0068",
+    "modified": "2024-03-17T00:00:00Z",
+    "published": "2024-03-17T00:00:00Z",
+    "references": [
+        {
+            "type": "REPORT",
+            "url": "https://gitlab.com/amavis/amavis/-/raw/v2.12.3/README_FILES/README.CVE-2024-28054"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2024-28054"
+        },
+        {
+            "type": "WEB",
+            "url": "https://gitlab.com/amavis/amavis/-/raw/v2.12.3/README_FILES/README.CVE-2024-28054"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "amavisd-new -- multipart boundary confusion"
+}

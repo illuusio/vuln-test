@@ -1,0 +1,108 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "FreeBSD"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "introduced": "10.2"
+                        },
+                        {
+                            "fixed": "10.2_13"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                },
+                {
+                    "events": [
+                        {
+                            "introduced": "10.1"
+                        },
+                        {
+                            "fixed": "10.1_30"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                },
+                {
+                    "events": [
+                        {
+                            "introduced": "9.3"
+                        },
+                        {
+                            "fixed": "9.3_38"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "discovery": "2016-03-10T00:00:00Z",
+        "references": {
+            "cvename": [
+                "CVE-2016-0702",
+                "CVE-2016-0703",
+                "CVE-2016-0704",
+                "CVE-2016-0705",
+                "CVE-2016-0797",
+                "CVE-2016-0798",
+                "CVE-2016-0799",
+                "CVE-2016-0800"
+            ],
+            "freebsdsa": [
+                "SA-16:12.openssl"
+            ]
+        },
+        "vid": "7b1a4a27-600a-11e6-a6c3-14dae9d210b8"
+    },
+    "details": "# Problem Description:\n\nA cross-protocol attack was discovered that could lead to decryption of\nTLS sessions by using a server supporting SSLv2 and EXPORT cipher suites\nas a Bleichenbacher RSA padding oracle. Note that traffic between\nclients and non-vulnerable servers can be decrypted provided another\nserver supporting SSLv2 and EXPORT ciphers (even with a different\nprotocol such as SMTP, IMAP or POP3) shares the RSA keys of the\nnon-vulnerable server. This vulnerability is known as DROWN.\n\\[CVE-2016-0800\\]\n\nA double free bug was discovered when OpenSSL parses malformed DSA\nprivate keys and could lead to a DoS attack or memory corruption for\napplications that receive DSA private keys from untrusted sources. This\nscenario is considered rare. \\[CVE-2016-0705\\]\n\nThe SRP user database lookup method SRP_VBASE_get_by_user had confusing\nmemory management semantics; the returned pointer was sometimes newly\nallocated, and sometimes owned by the callee. The calling code has no\nway of distinguishing these two cases. \\[CVE-2016-0798\\]\n\nIn the BN_hex2bn function, the number of hex digits is calculated using\nan int value \\|i\\|. Later \\|bn_expand\\| is called with a value of \\|i \\*\n4\\|. For large values of \\|i\\| this can result in \\|bn_expand\\| not\nallocating any memory because \\|i \\* 4\\| is negative. This can leave the\ninternal BIGNUM data field as NULL leading to a subsequent NULL pointer\ndereference. For very large values of \\|i\\|, the calculation \\|i \\* 4\\|\ncould be a positive value smaller than \\|i\\|. In this case memory is\nallocated to the internal BIGNUM data field, but it is insufficiently\nsized leading to heap corruption. A similar issue exists in BN_dec2bn.\nThis could have security consequences if BN_hex2bn/BN_dec2bn is ever\ncalled by user applications with very large untrusted hex/dec data. This\nis anticipated to be a rare occurrence. \\[CVE-2016-0797\\]\n\nThe internal \\|fmtstr\\| function used in processing a \\\"%s\\\" formatted\nstring in the BIO\\_\\*printf functions could overflow while calculating\nthe length of a string and cause an out-of-bounds read when printing\nvery long strings. \\[CVE-2016-0799\\]\n\nA side-channel attack was found which makes use of cache-bank conflicts\non the Intel Sandy-Bridge microarchitecture which could lead to the\nrecovery of RSA keys. \\[CVE-2016-0702\\]\n\ns2_srvr.c did not enforce that clear-key-length is 0 for non-export\nciphers. If clear-key bytes are present for these ciphers, they displace\nencrypted-key bytes. \\[CVE-2016-0703\\]\n\ns2_srvr.c overwrites the wrong bytes in the master key when applying\nBleichenbacher protection for export cipher suites. \\[CVE-2016-0704\\]\n\n# Impact:\n\nServers that have SSLv2 protocol enabled are vulnerable to the \\\"DROWN\\\"\nattack which allows a remote attacker to fast attack many recorded TLS\nconnections made to the server, even when the client did not make any\nSSLv2 connections themselves.\n\nAn attacker who can supply malformed DSA private keys to OpenSSL\napplications may be able to cause memory corruption which would lead to\na Denial of Service condition. \\[CVE-2016-0705\\]\n\nAn attacker connecting with an invalid username can cause memory leak,\nwhich could eventually lead to a Denial of Service condition.\n\\[CVE-2016-0798\\]\n\nAn attacker who can inject malformed data into an application may be\nable to cause memory corruption which would lead to a Denial of Service\ncondition. \\[CVE-2016-0797, CVE-2016-0799\\]\n\nA local attacker who has control of code in a thread running on the same\nhyper-threaded core as the victim thread which is performing decryptions\ncould recover RSA keys. \\[CVE-2016-0702\\]\n\nAn eavesdropper who can intercept SSLv2 handshake can conduct an\nefficient divide-and-conquer key recovery attack and use the server as\nan oracle to determine the SSLv2 master-key, using only 16 connections\nto the server and negligible computation. \\[CVE-2016-0703\\]\n\nAn attacker can use the Bleichenbacher oracle, which enables more\nefficient variant of the DROWN attack. \\[CVE-2016-0704\\]\n",
+    "id": "FreeBSD-2016-0345",
+    "modified": "2016-08-11T00:00:00Z",
+    "published": "2016-08-11T00:00:00Z",
+    "references": [
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2016-0702"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2016-0703"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2016-0704"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2016-0705"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2016-0797"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2016-0798"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2016-0799"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2016-0800"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://www.freebsd.org/security/advisories/FreeBSD-SA-16:12.openssl.asc"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "FreeBSD -- Multiple OpenSSL vulnerabilities"
+}

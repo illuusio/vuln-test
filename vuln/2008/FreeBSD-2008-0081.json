@@ -1,0 +1,69 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "FreeBSD"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "introduced": "6.3"
+                        },
+                        {
+                            "fixed": "6.3_3"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                },
+                {
+                    "events": [
+                        {
+                            "introduced": "7.0"
+                        },
+                        {
+                            "fixed": "7.0_3"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "discovery": "2008-07-08T00:00:00Z",
+        "references": {
+            "certvu": [
+                "800113"
+            ],
+            "cvename": [
+                "CVE-2008-1447"
+            ],
+            "freebsdsa": [
+                "SA-08:06.bind"
+            ]
+        },
+        "vid": "655ee1ec-511b-11dd-80ba-000bcdf0a03b"
+    },
+    "details": "# Problem Description:\n\nThe BIND DNS implementation does not randomize the UDP source port when\ndoing remote queries, and the query id alone does not provide adequate\nrandomization.\n\n# Impact:\n\nThe lack of source port randomization reduces the amount of data the\nattacker needs to guess in order to successfully execute a DNS cache\npoisoning attack. This allows the attacker to influence or control the\nresults of DNS queries being returned to users from target systems.\n\n# Workaround:\n\nLimiting the group of machines that can do recursive queries on the DNS\nserver will make it more difficult, but not impossible, for this\nvulnerability to be exploited.\n\nTo limit the machines able to perform recursive queries, add an ACL in\nnamed.conf and limit recursion like the following:\n\n    acl example-acl {\n\n       192.0.2.0/24;\n\n    };\n\n    options {\n\n       recursion yes;\n\n       allow-recursion { example-acl; };\n\n    };\n",
+    "id": "FreeBSD-2008-0081",
+    "modified": "2016-08-09T00:00:00Z",
+    "published": "2008-07-13T00:00:00Z",
+    "references": [
+        {
+            "type": "ADVISORY",
+            "url": "https://www.kb.cert.org/vuls/id/800113"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2008-1447"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://www.freebsd.org/security/advisories/FreeBSD-SA-08:06.bind.asc"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "FreeBSD -- DNS cache poisoning"
+}

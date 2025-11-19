@@ -1,0 +1,132 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "bind99"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "9.9.7P3"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        },
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "bind910"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "introduced": "9.10.2"
+                        },
+                        {
+                            "fixed": "9.10.2P4"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        },
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "bind910-base"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "introduced": "0,1"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        },
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "bind99-base"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "introduced": "0,1"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        },
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "FreeBSD"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "introduced": "9.3"
+                        },
+                        {
+                            "fixed": "9.3_25"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "cite": [
+            "https://www.isc.org/blogs/cve-2015-5722-parsing-malformed-keys-may-cause-bind-to-exit-due-to-a-failed-assertion-in-buffer-c/"
+        ],
+        "discovery": "2015-08-19T00:00:00Z",
+        "references": {
+            "cvename": [
+                "CVE-2015-5722"
+            ],
+            "freebsdsa": [
+                "SA-15:23.bind"
+            ]
+        },
+        "vid": "eaf3b255-5245-11e5-9ad8-14dae9d210b8"
+    },
+    "details": "ISC reports:\n\n> Parsing a malformed DNSSEC key can cause a validating resolver to exit\n> due to a failed assertion in buffer.c. It is possible for a remote\n> attacker to deliberately trigger this condition, for example by using\n> a query which requires a response from a zone containing a\n> deliberately malformed key.\n",
+    "id": "FreeBSD-2015-0276",
+    "modified": "2016-08-09T00:00:00Z",
+    "published": "2015-09-03T00:00:00Z",
+    "references": [
+        {
+            "type": "REPORT",
+            "url": "https://www.isc.org/blogs/cve-2015-5722-parsing-malformed-keys-may-cause-bind-to-exit-due-to-a-failed-assertion-in-buffer-c/"
+        },
+        {
+            "type": "WEB",
+            "url": "https://www.isc.org/blogs/cve-2015-5722-parsing-malformed-keys-may-cause-bind-to-exit-due-to-a-failed-assertion-in-buffer-c/"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2015-5722"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://www.freebsd.org/security/advisories/FreeBSD-SA-15:23.bind.asc"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "bind -- denial of service vulnerability"
+}

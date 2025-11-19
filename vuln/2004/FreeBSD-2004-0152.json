@@ -1,0 +1,55 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "apache"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "introduced": "2.0"
+                        },
+                        {
+                            "fixed": "2.0.50_3"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "cite": [
+            "http://lists.netsys.com/pipermail/full-disclosure/2004-September/026463.html"
+        ],
+        "discovery": "2004-09-15T00:00:00Z",
+        "references": {
+            "cvename": [
+                "CVE-2004-0747"
+            ]
+        },
+        "vid": "4d49f4ba-071f-11d9-b45d-000c41e2cdad"
+    },
+    "details": "SITIC discovered a vulnerability in Apache 2\\'s handling of\nenvironmental variable settings in the httpd configuration files (the\nmain \\`httpd.conf\\' and \\`.htaccess\\' files). According to a SITIC\nadvisory:\n\n> The buffer overflow occurs when expanding \\${ENVVAR} constructs in\n> .htaccess or httpd.conf files. The function ap_resolve_env() in\n> server/util.c copies data from environment variables to the character\n> array tmp with strcat(3), leading to a buffer overflow.\n",
+    "id": "FreeBSD-2004-0152",
+    "modified": "2004-09-15T00:00:00Z",
+    "published": "2004-09-15T00:00:00Z",
+    "references": [
+        {
+            "type": "REPORT",
+            "url": "http://lists.netsys.com/pipermail/full-disclosure/2004-September/026463.html"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2004-0747"
+        },
+        {
+            "type": "DISCUSSION",
+            "url": "http://lists.netsys.com/pipermail/full-disclosure/2004-September/026463.html"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "apache -- ap_resolve_env buffer overflow"
+}

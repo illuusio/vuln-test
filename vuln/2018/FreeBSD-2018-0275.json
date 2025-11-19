@@ -1,0 +1,60 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "powerdns"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "4.1.5"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "cite": [
+            "https://doc.powerdns.com/authoritative/changelog/4.1.html"
+        ],
+        "discovery": "2018-11-06T00:00:00Z",
+        "references": {
+            "cvename": [
+                "CVE-2018-10851",
+                "CVE-2018-14626"
+            ]
+        },
+        "vid": "0aee2f13-ec1d-11e8-8c92-6805ca2fa271"
+    },
+    "details": "PowerDNS Team reports:\n\n> CVE-2018-10851: An issue has been found in PowerDNS Authoritative\n> Server allowing an authorized user to cause a memory leak by inserting\n> a specially crafted record in a zone under their control, then sending\n> a DNS query for that record. The issue is due to the fact that some\n> memory is allocated before the parsing and is not always properly\n> released if the record is malformed. When the PowerDNS Authoritative\n> Server is run inside the guardian (\\--guardian), or inside a\n> supervisor like supervisord or systemd, an out-of-memory crash will\n> lead to an automatic restart, limiting the impact to a somewhat\n> degraded service.\n>\n> CVE-2018-14626: An issue has been found in PowerDNS Authoritative\n> Server allowing a remote user to craft a DNS query that will cause an\n> answer without DNSSEC records to be inserted into the packet cache and\n> be returned to clients asking for DNSSEC records, thus hiding the\n> presence of DNSSEC signatures for a specific qname and qtype. For a\n> DNSSEC-signed domain, this means that DNSSEC validating clients will\n> consider the answer to be bogus until it expires from the packet\n> cache, leading to a denial of service.\n",
+    "id": "FreeBSD-2018-0275",
+    "modified": "2018-11-19T00:00:00Z",
+    "published": "2018-11-19T00:00:00Z",
+    "references": [
+        {
+            "type": "REPORT",
+            "url": "https://doc.powerdns.com/authoritative/changelog/4.1.html"
+        },
+        {
+            "type": "WEB",
+            "url": "https://doc.powerdns.com/authoritative/changelog/4.1.html"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2018-10851"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2018-14626"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "powerdns -- Multiple vulnerabilities"
+}

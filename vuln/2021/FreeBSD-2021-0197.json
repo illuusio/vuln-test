@@ -1,0 +1,55 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "go"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "1.16.7,1"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "cite": [
+            "https://github.com/golang/go/issues/46866"
+        ],
+        "discovery": "2021-06-21T00:00:00Z",
+        "references": {
+            "cvename": [
+                "CVE-2021-36221"
+            ]
+        },
+        "vid": "880552c4-f63f-11eb-9d56-7186043316e9"
+    },
+    "details": "The Go project reports:\n\n> A net/http/httputil ReverseProxy can panic due to a race condition if\n> its Handler aborts with ErrAbortHandler, for example due to an error\n> in copying the response body. An attacker might be able to force the\n> conditions leading to the race condition.\n",
+    "id": "FreeBSD-2021-0197",
+    "modified": "2021-08-05T00:00:00Z",
+    "published": "2021-08-05T00:00:00Z",
+    "references": [
+        {
+            "type": "REPORT",
+            "url": "https://github.com/golang/go/issues/46866"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2021-36221"
+        },
+        {
+            "type": "WEB",
+            "url": "https://github.com/golang/go/issues/46866"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "go -- net/http: panic due to racy read of persistConn after handler panic"
+}

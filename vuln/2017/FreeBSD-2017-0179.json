@@ -1,0 +1,46 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "freeradius3"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "3.0.15"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "cite": [
+            "http://freeradius.org/security/fuzzer-2017.html"
+        ],
+        "discovery": "2017-06-17T00:00:00Z",
+        "vid": "79bbec7e-8141-11e7-b5af-a4badb2f4699"
+    },
+    "details": "Guido Vranken reports:\n\n> Multiple vulnerabilities found via fuzzing: FR-GV-201 (v2,v3) Read /\n> write overflow in make_secret() FR-GV-202 (v2) Write overflow in\n> rad_coalesce() FR-GV-203 (v2) DHCP - Memory leak in decode_tlv()\n> FR-GV-204 (v2) DHCP - Memory leak in fr_dhcp_decode() FR-GV-205 (v2)\n> DHCP - Buffer over-read in fr_dhcp_decode_options() FR-GV-206 (v2,v3)\n> DHCP - Read overflow when decoding option 63 FR-GV-207 (v2)\n> Zero-length malloc in data2vp() FR-GV-301 (v3) Write overflow in\n> data2vp_wimax() FR-GV-302 (v3) Infinite loop and memory exhaustion\n> with \\'concat\\' attributes FR-GV-303 (v3) DHCP - Infinite read in\n> dhcp_attr2vp() FR-GV-304 (v3) DHCP - Buffer over-read in\n> fr_dhcp_decode_suboptions() FR-GV-305 (v3) Decode \\'signed\\'\n> attributes correctly FR-AD-001 (v2,v3) Use strncmp() instead of\n> memcmp() for string data FR-AD-002 (v3) String lifetime issues in\n> rlm_python FR-AD-003 (v3) Incorrect statement length passed into\n> sqlite3_prepare\n",
+    "id": "FreeBSD-2017-0179",
+    "modified": "2017-08-14T00:00:00Z",
+    "published": "2017-08-14T00:00:00Z",
+    "references": [
+        {
+            "type": "REPORT",
+            "url": "http://freeradius.org/security/fuzzer-2017.html"
+        },
+        {
+            "type": "WEB",
+            "url": "http://freeradius.org/security/fuzzer-2017.html"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "FreeRadius -- Multiple vulnerabilities"
+}

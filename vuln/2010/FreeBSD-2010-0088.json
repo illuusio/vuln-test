@@ -1,0 +1,86 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "bugzilla"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "introduced": "2.17.1,1"
+                        },
+                        {
+                            "fixed": "3.6.2"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "cite": [
+            "http://www.bugzilla.org/security/3.2.7/"
+        ],
+        "discovery": "2010-08-05T00:00:00Z",
+        "references": {
+            "cvename": [
+                "CVE-2010-2756",
+                "CVE-2010-2757",
+                "CVE-2010-2758",
+                "CVE-2010-2759"
+            ]
+        },
+        "vid": "8cbf4d65-af9a-11df-89b8-00151735203a"
+    },
+    "details": "A Bugzilla Security Advisory reports:\n\n> - Remote Information Disclosure: An unprivileged user is normally not\n>   allowed to view other users\\' group membership. But boolean charts\n>   let the user use group-based pronouns, indirectly disclosing group\n>   membership. This security fix restricts the use of pronouns to\n>   groups the user belongs to.\n> - Notification Bypass: Normally, when a user is impersonated, he\n>   receives an email informing him that he is being impersonated,\n>   containing the identity of the impersonator. However, it was\n>   possible to impersonate a user without this notification being sent.\n> - Remote Information Disclosure: An error message thrown by the\n>   \\\"Reports\\\" and \\\"Duplicates\\\" page confirmed the non-existence of\n>   products, thus allowing users to guess confidential product names.\n>   (Note that the \\\"Duplicates\\\" page was not vulnerable in Bugzilla\n>   3.6rc1 and above though.)\n> - Denial of Service: If a comment contained the phrases \\\"bug X\\\" or\n>   \\\"attachment X\\\", where X was an integer larger than the maximum\n>   32-bit signed integer size, PostgreSQL would throw an error, and any\n>   page containing that comment would not be viewable. On most\n>   Bugzillas, any user can enter a comment on any bug, so any user\n>   could have used this to deny access to one or all bugs. Bugzillas\n>   running on databases other than PostgreSQL are not affected.\n",
+    "id": "FreeBSD-2010-0088",
+    "modified": "2010-08-24T00:00:00Z",
+    "published": "2010-08-24T00:00:00Z",
+    "references": [
+        {
+            "type": "REPORT",
+            "url": "http://www.bugzilla.org/security/3.2.7/"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2010-2756"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2010-2757"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2010-2758"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2010-2759"
+        },
+        {
+            "type": "REPORT",
+            "url": "https://bugzilla.mozilla.org/show_bug.cgi?id=417048"
+        },
+        {
+            "type": "REPORT",
+            "url": "https://bugzilla.mozilla.org/show_bug.cgi?id=450013"
+        },
+        {
+            "type": "REPORT",
+            "url": "https://bugzilla.mozilla.org/show_bug.cgi?id=577139"
+        },
+        {
+            "type": "REPORT",
+            "url": "https://bugzilla.mozilla.org/show_bug.cgi?id=519835"
+        },
+        {
+            "type": "REPORT",
+            "url": "https://bugzilla.mozilla.org/show_bug.cgi?id=583690"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "bugzilla -- information disclosure, denial of service"
+}

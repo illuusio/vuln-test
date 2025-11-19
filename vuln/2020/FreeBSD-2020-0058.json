@@ -1,0 +1,112 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "puppetdb5"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "5.2.13"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        },
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "puppetdb6"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "6.9.1"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        },
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "puppetserver5"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "5.3.12"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        },
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "puppetserver6"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "6.9.2"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "cite": [
+            "https://puppet.com/security/cve/CVE-2020-7943/"
+        ],
+        "discovery": "2020-03-10T00:00:00Z",
+        "references": {
+            "cvename": [
+                "CVE-2020-7943"
+            ]
+        },
+        "vid": "36def7ba-6d2b-11ea-b115-643150d3111d"
+    },
+    "details": "Puppetlabs reports:\n\n> Puppet Server and PuppetDB provide useful performance and debugging\n> information via their metrics API endpoints. For PuppetDB this may\n> contain things like hostnames. Puppet Server reports resource names\n> and titles for defined types (which may contain sensitive information)\n> as well as function names and class names. Previously, these endpoints\n> were open to the local network.\n>\n> PE 2018.1.13 & 2019.4.0, Puppet Server 6.9.1 & 5.3.12, and PuppetDB\n> 6.9.1 & 5.2.13 disable trapperkeeper-metrics /v1 metrics API and only\n> allows /v2 access on localhost by default.\n",
+    "id": "FreeBSD-2020-0058",
+    "modified": "2020-03-23T00:00:00Z",
+    "published": "2020-03-23T00:00:00Z",
+    "references": [
+        {
+            "type": "REPORT",
+            "url": "https://puppet.com/security/cve/CVE-2020-7943/"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2020-7943"
+        },
+        {
+            "type": "WEB",
+            "url": "https://puppet.com/security/cve/CVE-2020-7943/"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "puppetserver and puppetdb -- Puppet Server and PuppetDB may leak sensitive information via metrics API"
+}

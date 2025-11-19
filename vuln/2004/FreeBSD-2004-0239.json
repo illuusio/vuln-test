@@ -1,0 +1,73 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "samba"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "introduced": "3.*,1"
+                        },
+                        {
+                            "fixed": "3.0.8"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                },
+                {
+                    "events": [
+                        {
+                            "introduced": "3.*,1,1"
+                        },
+                        {
+                            "fixed": "3.0.8,1"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "cite": [
+            "http://us4.samba.org/samba/security/CAN-2004-0930.html"
+        ],
+        "discovery": "2004-09-30T00:00:00Z",
+        "references": {
+            "cvename": [
+                "CVE-2004-0930"
+            ],
+            "freebsdpr": [
+                "ports/73701"
+            ]
+        },
+        "vid": "ba13dc13-340d-11d9-ac1b-000d614f7fad"
+    },
+    "details": "Karol Wiesek at iDEFENSE reports:\n\n> A remote attacker could cause an smbd process to consume abnormal\n> amounts of system resources due to an input validation error when\n> matching filenames containing wildcard characters.\n\nAlthough samba.org classifies this as a DoS vulnerability, several\nmembers of the security community believe it may be exploitable for\narbitrary code execution.\n",
+    "id": "FreeBSD-2004-0239",
+    "modified": "2008-09-26T00:00:00Z",
+    "published": "2004-11-12T00:00:00Z",
+    "references": [
+        {
+            "type": "REPORT",
+            "url": "http://us4.samba.org/samba/security/CAN-2004-0930.html"
+        },
+        {
+            "type": "REPORT",
+            "url": "https://bugs.freebsd.org/bugzilla/show_bug.cgi?id=73701"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2004-0930"
+        },
+        {
+            "type": "WEB",
+            "url": "http://us4.samba.org/samba/security/CAN-2004-0930.html"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "samba -- potential remote DoS vulnerability"
+}

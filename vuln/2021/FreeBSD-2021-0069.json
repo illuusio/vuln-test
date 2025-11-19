@@ -1,0 +1,93 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "openssh-portable"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "introduced": "8.2.p1,1"
+                        },
+                        {
+                            "fixed": "8.4.p1_4,1"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        },
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "openssh-portable-hpn"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "introduced": "8.2.p1,1"
+                        },
+                        {
+                            "fixed": "8.4.p1_4,1"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        },
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "openssh-portable-gssapi"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "introduced": "8.2.p1,1"
+                        },
+                        {
+                            "fixed": "8.4.p1_4,1"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "cite": [
+            "https://www.openssh.com/txt/release-8.5"
+        ],
+        "discovery": "2021-03-03T00:00:00Z",
+        "references": {
+            "cvename": [
+                "CVE-2021-28041"
+            ]
+        },
+        "vid": "76b5068c-8436-11eb-9469-080027f515ea"
+    },
+    "details": "OpenBSD Project reports:\n\n> ssh-agent(1): fixed a double-free memory corruption that was\n> introduced in OpenSSH 8.2 . We treat all such memory faults as\n> potentially exploitable. This bug could be reached by an attacker with\n> access to the agent socket.\n>\n> On modern operating systems where the OS can provide information about\n> the user identity connected to a socket, OpenSSH ssh-agent and sshd\n> limit agent socket access only to the originating user and root.\n> Additional mitigation may be afforded by the system\\'s\n> malloc(3)/free(3) implementation, if it detects double-free\n> conditions.\n>\n> The most likely scenario for exploitation is a user forwarding an\n> agent either to an account shared with a malicious user or to a host\n> with an attacker holding root access.\n",
+    "id": "FreeBSD-2021-0069",
+    "modified": "2021-04-20T00:00:00Z",
+    "published": "2021-03-13T00:00:00Z",
+    "references": [
+        {
+            "type": "REPORT",
+            "url": "https://www.openssh.com/txt/release-8.5"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2021-28041"
+        },
+        {
+            "type": "WEB",
+            "url": "https://www.openssh.com/txt/release-8.5"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "OpenSSH -- Double-free memory corruption in ssh-agent"
+}

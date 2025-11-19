@@ -1,0 +1,73 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "FreeBSD"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "introduced": "12.2"
+                        },
+                        {
+                            "fixed": "12.2_1"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                },
+                {
+                    "events": [
+                        {
+                            "introduced": "12.1"
+                        },
+                        {
+                            "fixed": "12.1_11"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                },
+                {
+                    "events": [
+                        {
+                            "introduced": "11.4"
+                        },
+                        {
+                            "fixed": "11.4_5"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "discovery": "2020-12-01T00:00:00Z",
+        "references": {
+            "cvename": [
+                "CVE-2020-25577"
+            ],
+            "freebsdsa": [
+                "SA-20:32.rtsold"
+            ]
+        },
+        "vid": "e2748c9d-3483-11eb-b87a-901b0ef719ab"
+    },
+    "details": "# Problem Description:\n\nTwo bugs exist in rtsold(8)\\'s RDNSS and DNSSL option handling. First,\nrtsold(8) failed to perform sufficient bounds checking on the extent of\nthe option. In particular, it does not verify that the option does not\nextend past the end of the received packet before processing its\ncontents. The kernel currently ignores such malformed packets but still\npasses them to userspace programs.\n\nSecond, when processing a DNSSL option, rtsold(8) decodes domain name\nlabels per an encoding specified in RFC 1035 in which the first octet of\neach label contains the label\\'s length. rtsold(8) did not validate\nlabel lengths correctly and could overflow the destination buffer.\n\n# Impact:\n\nIt is believed that these bugs could be exploited to gain remote code\nexecution within the rtsold(8) daemon, which runs as root. Note that\nrtsold(8) only processes messages received from hosts attached to the\nsame physical link as the interface(s) on which rtsold(8) is listening.\n\nIn FreeBSD 12.2 rtsold(8) runs in a Capsicum sandbox, limiting the scope\nof a compromised rtsold(8) process.\n",
+    "id": "FreeBSD-2020-0301",
+    "modified": "2020-12-02T00:00:00Z",
+    "published": "2020-12-02T00:00:00Z",
+    "references": [
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2020-25577"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://www.freebsd.org/security/advisories/FreeBSD-SA-20:32.rtsold.asc"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "FreeBSD -- Multiple vulnerabilities in rtsold"
+}

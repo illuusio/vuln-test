@@ -1,0 +1,74 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "xorg-server"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "1.14.7_2,1"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        },
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "xorg-server"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "introduced": "1.15.0,1"
+                        },
+                        {
+                            "fixed": "1.16.4,1"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "cite": [
+            "http://lists.freedesktop.org/archives/xorg/2015-February/057158.html"
+        ],
+        "discovery": "2015-02-10T00:00:00Z",
+        "references": {
+            "cvename": [
+                "CVE-2015-0255"
+            ]
+        },
+        "vid": "54a69cf7-b2ef-11e4-b1f1-bcaec565249c"
+    },
+    "details": "Peter Hutterer reports:\n\n> Olivier Fourdan from Red Hat has discovered a protocol handling issue\n> in the way the X server code base handles the XkbSetGeometry request.\n>\n> The issue stems from the server trusting the client to send valid\n> string lengths in the request data. A malicious client with string\n> lengths exceeding the request length can cause the server to copy\n> adjacent memory data into the XKB structs. This data is then available\n> to the client via the XkbGetGeometry request. The data length is at\n> least up to 64k, it is possible to obtain more data by chaining\n> strings, each string length is then determined by whatever happens to\n> be in that 16-bit region of memory.\n>\n> A similarly crafted request can likely cause the X server to crash.\n",
+    "id": "FreeBSD-2015-0030",
+    "modified": "2015-02-12T00:00:00Z",
+    "published": "2015-02-12T00:00:00Z",
+    "references": [
+        {
+            "type": "REPORT",
+            "url": "http://lists.freedesktop.org/archives/xorg/2015-February/057158.html"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2015-0255"
+        },
+        {
+            "type": "WEB",
+            "url": "http://lists.freedesktop.org/archives/xorg/2015-February/057158.html"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "xorg-server -- Information leak in the XkbSetGeometry request of X servers."
+}

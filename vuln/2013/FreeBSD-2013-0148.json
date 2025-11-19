@@ -1,0 +1,77 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "subversion"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "introduced": "1.4.0"
+                        },
+                        {
+                            "fixed": "1.6.23_2"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                },
+                {
+                    "events": [
+                        {
+                            "introduced": "1.7.0"
+                        },
+                        {
+                            "fixed": "1.7.13"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                },
+                {
+                    "events": [
+                        {
+                            "introduced": "1.8.0"
+                        },
+                        {
+                            "fixed": "1.8.3"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "cite": [
+            "http://subversion.apache.org/security/CVE-2013-4277-advisory.txt"
+        ],
+        "discovery": "2013-08-30T00:00:00Z",
+        "references": {
+            "cvename": [
+                "CVE-2013-4277"
+            ]
+        },
+        "vid": "f8a913cc-1322-11e3-8ffa-20cf30e32f6d"
+    },
+    "details": "Subversion Project reports:\n\n> svnserve takes a \\--pid-file option which creates a file containing\n> the process id it is running as. It does not take steps to ensure that\n> the file it has been directed at is not a symlink. If the pid file is\n> in a directory writeable by unprivileged users, the destination could\n> be replaced by a symlink allowing for privilege escalation. svnserve\n> does not create a pid file by default.\n>\n> All versions are only vulnerable when the \\--pid-file=ARG option is\n> used.\n",
+    "id": "FreeBSD-2013-0148",
+    "modified": "2013-09-02T00:00:00Z",
+    "published": "2013-09-02T00:00:00Z",
+    "references": [
+        {
+            "type": "REPORT",
+            "url": "http://subversion.apache.org/security/CVE-2013-4277-advisory.txt"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2013-4277"
+        },
+        {
+            "type": "WEB",
+            "url": "http://subversion.apache.org/security/CVE-2013-4277-advisory.txt"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "svnserve is vulnerable to a local privilege escalation vulnerability via symlink attack."
+}

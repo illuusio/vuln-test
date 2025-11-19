@@ -1,0 +1,55 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "phpMyAdmin"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "introduced": "3.4,1"
+                        },
+                        {
+                            "fixed": "3.4.10.2"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "cite": [
+            "http://www.phpmyadmin.net/home_page/security/PMASA-2012-2.php"
+        ],
+        "discovery": "2012-03-28T00:00:00Z",
+        "references": {
+            "cvename": [
+                "CVE-2012-1902"
+            ]
+        },
+        "vid": "a81161d2-790f-11e1-ac16-e0cb4e266481"
+    },
+    "details": "The phpMyAdmin development team reports:\n\n> The show_config_errors.php scripts did not validate the presence of\n> the configuration file, so an error message shows the full path of\n> this file, leading to possible further attacks. For the error messages\n> to be displayed, php.ini\\'s error_reporting must be set to E_ALL and\n> display_errors must be On (these settings are not recommended on a\n> production server in the PHP manual).\n",
+    "id": "FreeBSD-2012-0059",
+    "modified": "2012-03-28T00:00:00Z",
+    "published": "2012-03-28T00:00:00Z",
+    "references": [
+        {
+            "type": "REPORT",
+            "url": "http://www.phpmyadmin.net/home_page/security/PMASA-2012-2.php"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2012-1902"
+        },
+        {
+            "type": "WEB",
+            "url": "http://www.phpmyadmin.net/home_page/security/PMASA-2012-2.php"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "phpMyAdmin -- Path disclosure due to missing verification of file presence"
+}

@@ -1,0 +1,59 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "json-c"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "0.14"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "cite": [
+            "https://github.com/json-c/json-c/pull/592"
+        ],
+        "discovery": "2020-05-02T00:00:00Z",
+        "references": {
+            "cvename": [
+                "CVE-2020-12762"
+            ]
+        },
+        "vid": "abc3ef37-95d4-11ea-9004-25fadb81abf4"
+    },
+    "details": "Tobias St\u00f6ckmann reports:\n\n> I have discovered a way to trigger an out of boundary write while\n> parsing a huge json file through a malicious input source. It can be\n> triggered if an attacker has control over the input stream or if a\n> huge load during filesystem operations can be triggered.\n",
+    "id": "FreeBSD-2020-0113",
+    "modified": "2020-05-17T00:00:00Z",
+    "published": "2020-05-14T00:00:00Z",
+    "references": [
+        {
+            "type": "REPORT",
+            "url": "https://github.com/json-c/json-c/pull/592"
+        },
+        {
+            "type": "WEB",
+            "url": "https://github.com/json-c/json-c/pull/592"
+        },
+        {
+            "type": "WEB",
+            "url": "https://github.com/json-c/json-c/pull/599"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2020-12762"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "json-c -- integer overflow and out-of-bounds write via a large JSON file"
+}

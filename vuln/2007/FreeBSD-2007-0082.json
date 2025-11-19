@@ -1,0 +1,92 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "tcpdump"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "3.9.6"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        },
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "FreeBSD"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "introduced": "6.2"
+                        },
+                        {
+                            "fixed": "6.2_7"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                },
+                {
+                    "events": [
+                        {
+                            "introduced": "6.1"
+                        },
+                        {
+                            "fixed": "6.1_19"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                },
+                {
+                    "events": [
+                        {
+                            "introduced": "5.5"
+                        },
+                        {
+                            "fixed": "5.5_15"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "discovery": "2007-08-01T00:00:00Z",
+        "references": {
+            "cvename": [
+                "CVE-2007-3798"
+            ],
+            "freebsdsa": [
+                "SA-07:06.tcpdump"
+            ]
+        },
+        "vid": "2dc764fa-40c0-11dc-aeac-02e0185f8d72"
+    },
+    "details": "# Problem Description:\n\nAn un-checked return value in the BGP dissector code can result in an\ninteger overflow. This value is used in subsequent buffer management\noperations, resulting in a stack based buffer overflow under certain\ncircumstances.\n\n# Impact:\n\nBy crafting malicious BGP packets, an attacker could exploit this\nvulnerability to execute code or crash the tcpdump process on the target\nsystem. This code would be executed in the context of the user running\ntcpdump(1). It should be noted that tcpdump(1) requires privileges in\norder to open live network interfaces.\n\n# Workaround:\n\nNo workaround is available.\n",
+    "id": "FreeBSD-2007-0082",
+    "modified": "2016-08-09T00:00:00Z",
+    "published": "2007-08-02T00:00:00Z",
+    "references": [
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2007-3798"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://www.freebsd.org/security/advisories/FreeBSD-SA-07:06.tcpdump.asc"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "FreeBSD -- Buffer overflow in tcpdump(1)"
+}

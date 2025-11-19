@@ -1,0 +1,73 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "cacti"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "last_affected": "0.8.7e4"
+                        },
+                        {
+                            "fixed": "0.8.7e4"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "cite": [
+            "http://www.bonsai-sec.com/en/research/vulnerability.php"
+        ],
+        "discovery": "2010-04-21T00:00:00Z",
+        "references": {
+            "cvename": [
+                "CVE-2010-1431"
+            ],
+            "freebsdpr": [
+                "ports/146021"
+            ]
+        },
+        "vid": "5198ef84-4fdc-11df-83fb-0015587e2cc1"
+    },
+    "details": "Bonsai information security reports:\n\n> A Vulnerability has been discovered in Cacti, which can be exploited\n> by any user to conduct SQL Injection attacks. Input passed via the\n> \\\"export_item_id\\\" parameter to \\\"templates_export.php\\\" script is not\n> properly sanitized before being used in a SQL query.\n\nThe same source also reported a command execution vulnerability. This\nsecond issue can be exploited by Cacti users who have the rights to\nmodify device or graph configurations.\n",
+    "id": "FreeBSD-2010-0044",
+    "modified": "2013-06-16T00:00:00Z",
+    "published": "2010-04-24T00:00:00Z",
+    "references": [
+        {
+            "type": "REPORT",
+            "url": "http://www.bonsai-sec.com/en/research/vulnerability.php"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2010-1431"
+        },
+        {
+            "type": "REPORT",
+            "url": "https://bugs.freebsd.org/bugzilla/show_bug.cgi?id=146021"
+        },
+        {
+            "type": "WEB",
+            "url": "http://www.bonsai-sec.com/en/research/vulnerabilities/cacti-os-command-injection-0105.php"
+        },
+        {
+            "type": "WEB",
+            "url": "http://www.bonsai-sec.com/en/research/vulnerabilities/cacti-sql-injection-0104.php"
+        },
+        {
+            "type": "WEB",
+            "url": "http://www.debian.org/security/2010/dsa-2039"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "cacti -- SQL injection and command execution vulnerabilities"
+}

@@ -1,0 +1,65 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "icedtea-web"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "1.2.1"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "cite": [
+            "https://bugzilla.redhat.com/show_bug.cgi?id=840592",
+            "https://bugzilla.redhat.com/show_bug.cgi?id=841345"
+        ],
+        "discovery": "2012-07-31T00:00:00Z",
+        "references": {
+            "cvename": [
+                "CVE-2012-3422",
+                "CVE-2012-3423"
+            ]
+        },
+        "vid": "55b498e2-e56c-11e1-bbd5-001c25e46b1d"
+    },
+    "details": "The IcedTea project team reports:\n\n> CVE-2012-3422: Use of uninitialized instance pointers\n>\n> An uninitialized pointer use flaw was found in IcedTea-Web web browser\n> plugin. A malicious web page could use this flaw make IcedTea-Web\n> browser plugin pass invalid pointer to a web browser. Depending on the\n> browser used, it may cause the browser to crash or possibly execute\n> arbitrary code.\n>\n> The get_cookie_info() and get_proxy_info() call\n> getFirstInTableInstance() with the instance_to_id_map hash as a\n> parameter. If instance_to_id_map is empty (which can happen when\n> plugin was recently removed), getFirstInTableInstance() returns an\n> uninitialized pointer.\n\n> CVE-2012-3423: Incorrect handling of non 0-terminated strings\n>\n> It was discovered that the IcedTea-Web web browser plugin incorrectly\n> assumed that all strings provided by browser are NUL terminated, which\n> is not guaranteed by the NPAPI (Netscape Plugin Application\n> Programming Interface). When used in a browser that does not NUL\n> terminate NPVariant NPStrings, this could lead to buffer over-read or\n> over-write, resulting in possible information leak, crash, or code\n> execution.\n>\n> Mozilla browsers currently NUL terminate strings, however recent\n> Chrome versions are known not to provide NUL terminated data.\n",
+    "id": "FreeBSD-2012-0142",
+    "modified": "2012-08-13T00:00:00Z",
+    "published": "2012-08-13T00:00:00Z",
+    "references": [
+        {
+            "type": "REPORT",
+            "url": "https://bugzilla.redhat.com/show_bug.cgi?id=840592"
+        },
+        {
+            "type": "REPORT",
+            "url": "https://bugzilla.redhat.com/show_bug.cgi?id=841345"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2012-3422"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2012-3423"
+        },
+        {
+            "type": "DISCUSSION",
+            "url": "http://mail.openjdk.java.net/pipermail/distro-pkg-dev/2012-July/019580.html"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "Several vulnerabilities found in IcedTea-Web"
+}

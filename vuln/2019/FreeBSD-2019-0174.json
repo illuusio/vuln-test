@@ -1,0 +1,50 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "doas"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "6.1"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "cite": [
+            "https://github.com/slicer69/doas/releases/tag/6.1"
+        ],
+        "discovery": "2019-08-03T00:00:00Z",
+        "vid": "7f7d6412-bae5-11e9-be92-3085a9a95629"
+    },
+    "details": "Jesse Smith (upstream author of the doas program) reported:\n\n> Previous versions of \\\"doas\\\" transferred most environment variables,\n> such as USER, HOME, and PATH from the original user to the target\n> user. Passing these variables could cause files in the wrong path or\n> home directory to be read (or written to), which resulted in potential\n> security problems.\n>\n> Many thanks to Sander Bos for reporting this issue and explaining how\n> it can be exploited.\n",
+    "id": "FreeBSD-2019-0174",
+    "modified": "2019-08-15T00:00:00Z",
+    "published": "2019-08-09T00:00:00Z",
+    "references": [
+        {
+            "type": "REPORT",
+            "url": "https://github.com/slicer69/doas/releases/tag/6.1"
+        },
+        {
+            "type": "DISCUSSION",
+            "url": "https://marc.info/?l=openbsd-tech&m=156105665713340&w=2"
+        },
+        {
+            "type": "WEB",
+            "url": "https://github.com/slicer69/doas/releases/tag/6.1"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "doas -- Prevent passing of environment variables"
+}

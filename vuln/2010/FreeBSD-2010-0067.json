@@ -1,0 +1,64 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "bugzilla"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "introduced": "2.17.1,1"
+                        },
+                        {
+                            "fixed": "3.6.1"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "cite": [
+            "http://www.bugzilla.org/security/3.2.6/"
+        ],
+        "discovery": "2010-06-24T00:00:00Z",
+        "references": {
+            "cvename": [
+                "CVE-2010-1204",
+                "CVE-2010-0180"
+            ]
+        },
+        "vid": "f1331504-8849-11df-89b8-00151735203a"
+    },
+    "details": "A Bugzilla Security Advisory reports:\n\n> - Normally, information about time-tracking (estimated hours, actual\n>   hours, hours worked, and deadlines) is restricted to users in the\n>   \\\"time-tracking group\\\". However, any user was able, by crafting\n>   their own search URL, to search for bugs based using those fields as\n>   criteria, thus possibly exposing sensitive time-tracking information\n>   by a user seeing that a bug matched their search.\n> - If \\$use_suexec was set to \\\"1\\\" in the localconfig file, then the\n>   localconfig file\\'s permissions were set as world-readable by\n>   checksetup.pl. This allowed any user with local shell access to see\n>   the contents of the file, including the database password and the\n>   site_wide_secret variable used for CSRF protection.\n",
+    "id": "FreeBSD-2010-0067",
+    "modified": "2010-07-05T00:00:00Z",
+    "published": "2010-07-05T00:00:00Z",
+    "references": [
+        {
+            "type": "REPORT",
+            "url": "http://www.bugzilla.org/security/3.2.6/"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2010-1204"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2010-0180"
+        },
+        {
+            "type": "REPORT",
+            "url": "https://bugzilla.mozilla.org/show_bug.cgi?id=309952"
+        },
+        {
+            "type": "REPORT",
+            "url": "https://bugzilla.mozilla.org/show_bug.cgi?id=561797"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "bugzilla -- information disclosure"
+}

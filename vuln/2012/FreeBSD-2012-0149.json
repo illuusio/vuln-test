@@ -1,0 +1,55 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "libotr"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "3.2.1"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "cite": [
+            "http://lists.cypherpunks.ca/pipermail/otr-dev/2012-July/001347.html"
+        ],
+        "discovery": "2012-07-27T00:00:00Z",
+        "references": {
+            "cvename": [
+                "CVE-2012-3461"
+            ]
+        },
+        "vid": "c651c898-e90d-11e1-b230-0024e830109b"
+    },
+    "details": "OTR developers report:\n\n> The otrl_base64_otr_decode() function and similar functions within OTR\n> suffer from buffer overflows in the case of malformed input;\n> specifically if a message of the format of \\\"?OTR:===.\\\" is received\n> then a zero-byte allocation is performed without a similar correlation\n> between the subsequent base64 decoding write, as such it becomes\n> possible to write between zero and three bytes incorrectly to the\n> heap, albeit only with a value of \\'=\\'.\n>\n> Because this code path is highly utilized, specifically in the\n> reception of instant messages over pidgin or similar, this\n> vulnerability is considered severe even though in many platforms and\n> circumstances the bug would yield an unexploitable state and result\n> simply in denial of service.\n>\n> The developers of OTR promptly fixed the errors and users of OTR are\n> advised to upgrade the software at the next release cycle.\n",
+    "id": "FreeBSD-2012-0149",
+    "modified": "2012-08-18T00:00:00Z",
+    "published": "2012-08-18T00:00:00Z",
+    "references": [
+        {
+            "type": "REPORT",
+            "url": "http://lists.cypherpunks.ca/pipermail/otr-dev/2012-July/001347.html"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2012-3461"
+        },
+        {
+            "type": "WEB",
+            "url": "http://lists.cypherpunks.ca/pipermail/otr-dev/2012-July/001347.html"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "libotr -- buffer overflows"
+}

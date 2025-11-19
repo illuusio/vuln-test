@@ -1,0 +1,66 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "FreeBSD"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "introduced": "7.1"
+                        },
+                        {
+                            "fixed": "7.1_9"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                },
+                {
+                    "events": [
+                        {
+                            "introduced": "7.2"
+                        },
+                        {
+                            "fixed": "7.2_5"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                },
+                {
+                    "events": [
+                        {
+                            "introduced": "8.0"
+                        },
+                        {
+                            "fixed": "8.0_1"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "discovery": "2009-12-03T00:00:00Z",
+        "references": {
+            "freebsdsa": [
+                "SA-09:16.rtld"
+            ]
+        },
+        "vid": "ad08d14b-ca3d-11df-aade-0050568f000c"
+    },
+    "details": "# Problem Description:\n\nWhen running setuid programs rtld will normally remove potentially\ndangerous environment variables. Due to recent changes in FreeBSD\nenvironment variable handling code, a corrupt environment may result in\nattempts to unset environment variables failing.\n",
+    "id": "FreeBSD-2010-0110",
+    "modified": "2016-08-09T00:00:00Z",
+    "published": "2010-10-24T00:00:00Z",
+    "references": [
+        {
+            "type": "ADVISORY",
+            "url": "https://www.freebsd.org/security/advisories/FreeBSD-SA-09:16.rtld.asc"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "FreeBSD -- Improper environment sanitization in rtld(1)"
+}

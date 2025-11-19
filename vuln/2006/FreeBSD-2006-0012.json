@@ -1,0 +1,105 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "FreeBSD"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "introduced": "6.0"
+                        },
+                        {
+                            "fixed": "6.0_2"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                },
+                {
+                    "events": [
+                        {
+                            "introduced": "5.4"
+                        },
+                        {
+                            "fixed": "5.4_9"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                },
+                {
+                    "events": [
+                        {
+                            "introduced": "5.3"
+                        },
+                        {
+                            "fixed": "5.3_24"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                },
+                {
+                    "events": [
+                        {
+                            "introduced": "4.11"
+                        },
+                        {
+                            "fixed": "4.11_14"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                },
+                {
+                    "events": [
+                        {
+                            "introduced": "4.10"
+                        },
+                        {
+                            "fixed": "4.10_20"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "discovery": "2006-01-11T00:00:00Z",
+        "references": {
+            "cvename": [
+                "CVE-2005-1111",
+                "CVE-2005-1229",
+                "CVE-2005-4268"
+            ],
+            "freebsdsa": [
+                "SA-06:03.cpio"
+            ]
+        },
+        "vid": "6b0215ae-8f26-11da-8c1d-000e0c2e438a"
+    },
+    "details": "Problem description:\n\nA number of issues has been discovered in cpio:\n\nWhen creating a new file, cpio closes the file before setting its\npermissions. (CVE-2005-1111)\n\nWhen extracting files cpio does not properly sanitize file names to\nfilter out \\\"..\\\" components, even if the \\--no-absolute-filenames\noption is used. (CVE-2005-1229)\n\nWhen adding large files (larger than 4 GB) to a cpio archive on 64-bit\nplatforms an internal buffer might overflow. (CVE-2005-4268)\n\nImpact\n\nThe first problem can allow a local attacker to change the permissions\nof files owned by the user executing cpio providing that they have write\naccess to the directory in which the file is being extracted.\n(CVE-2005-1111)\n\nThe lack of proper file name sanitation can allow an attacker to\noverwrite arbitrary local files when extracting files from a cpio\narchive. (CVE-2005-1229)\n\nThe buffer-overflow on 64-bit platforms could lead cpio to a\nDenial-of-Service situation (crash) or possibly execute arbitrary code\nwith the permissions of the user running cpio. (CVE-2005-4268)\n\nWorkaround\n\nUse a different utility to create and extract cpio archives, for example\npax(1) or (on FreeBSD 5.3 or later) tar(1). If this is not possible, do\nnot extract untrusted archives and when running on 64-bit platforms do\nnot add untrusted files to cpio archives.\n",
+    "id": "FreeBSD-2006-0012",
+    "modified": "2006-01-27T00:00:00Z",
+    "published": "2006-01-27T00:00:00Z",
+    "references": [
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2005-1111"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2005-1229"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2005-4268"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://www.freebsd.org/security/advisories/FreeBSD-SA-06:03.cpio.asc"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "cpio -- multiple vulnerabilities"
+}

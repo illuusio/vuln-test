@@ -1,0 +1,62 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:kernel",
+                "name": "FreeBSD-kernel"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "introduced": "12.2"
+                        },
+                        {
+                            "fixed": "12.2_4"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                },
+                {
+                    "events": [
+                        {
+                            "introduced": "11.4"
+                        },
+                        {
+                            "fixed": "11.4_8"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "discovery": "2021-02-24T00:00:00Z",
+        "references": {
+            "cvename": [
+                "CVE-2020-25582"
+            ],
+            "freebsdsa": [
+                "SA-21:05.jail_chdir"
+            ]
+        },
+        "vid": "bba850fd-770e-11eb-b87a-901b0ef719ab"
+    },
+    "details": "# Problem Description:\n\nWhen a process, such as jexec(8) or killall(1), calls jail_attach(2) to\nenter a jail, the jailed root can attach to it using ptrace(2) before\nthe current working directory is changed.\n\n# Impact:\n\nA process with superuser privileges running inside a jail could change\nthe root directory outside of the jail, thereby gaining full read and\nwriting access to all files and directories in the system.\n",
+    "id": "FreeBSD-2021-0050",
+    "modified": "2021-02-25T00:00:00Z",
+    "published": "2021-02-25T00:00:00Z",
+    "references": [
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2020-25582"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://www.freebsd.org/security/advisories/FreeBSD-SA-21:05.jail_chdir.asc"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "FreeBSD -- jail_attach(2) relies on the caller to change the cwd"
+}

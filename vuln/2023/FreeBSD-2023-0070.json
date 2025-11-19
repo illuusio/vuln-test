@@ -1,0 +1,93 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "rubygem-rack"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "3.0.4.2,3"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        },
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "rubygem-rack22"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "2.2.6.3,3"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        },
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "rubygem-rack16"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "1.6.14"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "cite": [
+            "https://discuss.rubyonrails.org/t/cve-2023-27530-possible-dos-vulnerability-in-multipart-mime-parsing/82388"
+        ],
+        "discovery": "2023-03-03T00:00:00Z",
+        "references": {
+            "cvename": [
+                "CVE-2023-27530"
+            ]
+        },
+        "vid": "f0798a6a-bbdb-11ed-ba99-080027f5fec9"
+    },
+    "details": "Aaron Patterson reports:\n\n> The Multipart MIME parsing code in Rack limits the number of file\n> parts, but does not limit the total number of parts that can be\n> uploaded. Carefully crafted requests can abuse this and cause\n> multipart parsing to take longer than expected.\n",
+    "id": "FreeBSD-2023-0070",
+    "modified": "2023-03-06T00:00:00Z",
+    "published": "2023-03-06T00:00:00Z",
+    "references": [
+        {
+            "type": "REPORT",
+            "url": "https://discuss.rubyonrails.org/t/cve-2023-27530-possible-dos-vulnerability-in-multipart-mime-parsing/82388"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2023-27530"
+        },
+        {
+            "type": "WEB",
+            "url": "https://discuss.rubyonrails.org/t/cve-2023-27530-possible-dos-vulnerability-in-multipart-mime-parsing/82388"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "rack -- possible DoS vulnerability in multipart MIME parsing"
+}

@@ -1,0 +1,50 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "tor"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "0.4.7.13"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "cite": [
+            "https://gitlab.torproject.org/tpo/core/tor/-/issues/40730"
+        ],
+        "discovery": "2023-01-12T00:00:00Z",
+        "vid": "847f16e5-9406-11ed-a925-3065ec8fd3ec"
+    },
+    "details": "The Tor Project reports:\n\n> TROVE-2022-002: The SafeSocks option for SOCKS4(a) is inverted leading\n> to SOCKS4 going through\n>\n> This is a report from hackerone:\\\n> We have classified this as medium considering that tor was not\n> defending in-depth for dangerous SOCKS request and so any user relying\n> on SafeSocks 1 to make sure they don\\'t link DNS leak and their Tor\n> traffic wasn\\'t safe afterall for SOCKS4(a). Tor Browser doesn\\'t use\n> SafeSocks 1 and SOCKS4 so at least the likely vast majority of users\n> are not affected.\n",
+    "id": "FreeBSD-2023-0012",
+    "modified": "2023-01-14T00:00:00Z",
+    "published": "2023-01-14T00:00:00Z",
+    "references": [
+        {
+            "type": "REPORT",
+            "url": "https://gitlab.torproject.org/tpo/core/tor/-/issues/40730"
+        },
+        {
+            "type": "WEB",
+            "url": "https://hackerone.com/bugs?subject=torproject&report_id=1784589"
+        },
+        {
+            "type": "WEB",
+            "url": "https://gitlab.torproject.org/tpo/core/tor/-/issues/40730"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "security/tor -- SOCKS4(a) inversion bug"
+}

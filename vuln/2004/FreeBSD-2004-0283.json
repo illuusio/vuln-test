@@ -1,0 +1,59 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "squid"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "2.5.7_5"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "cite": [
+            "http://www.squid-cache.org/bugs/show_bug.cgi?id=1166"
+        ],
+        "discovery": "2004-12-21T00:00:00Z",
+        "references": {
+            "cvename": [
+                "CVE-2005-0194"
+            ]
+        },
+        "vid": "a30e5e44-5440-11d9-9e1e-c296ac722cb3"
+    },
+    "details": "Applying an empty ACL list results in unexpected behavior: anything will\nmatch an empty ACL list. For example,\n\n> The meaning of the configuration gets very confusing when we encounter\n> empty ACLs such as\n>\n> `acl something src \"/path/to/empty_file.txt\"`\\\n> `http_access allow something somewhere`\n>\n> gets parsed (with warnings) as\n>\n> `http_access allow somewhere`\n>\n> And similarily if you are using proxy_auth acls without having any\n> auth schemes defined.\n",
+    "id": "FreeBSD-2004-0283",
+    "modified": "2005-02-08T00:00:00Z",
+    "published": "2004-12-23T00:00:00Z",
+    "references": [
+        {
+            "type": "REPORT",
+            "url": "http://www.squid-cache.org/bugs/show_bug.cgi?id=1166"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2005-0194"
+        },
+        {
+            "type": "WEB",
+            "url": "http://www.squid-cache.org/Versions/v2/2.5/bugs/#squid-2.5.STABLE7-empty_acls"
+        },
+        {
+            "type": "WEB",
+            "url": "http://www.squid-cache.org/bugs/show_bug.cgi?id=1166"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "squid -- confusing results on empty acl declarations"
+}

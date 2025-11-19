@@ -1,0 +1,55 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "phpmyadmin"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "introduced": "4.5.0"
+                        },
+                        {
+                            "fixed": "4.5.4"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "cite": [
+            "https://www.phpmyadmin.net/security/PMASA-2016-3/"
+        ],
+        "discovery": "2016-01-28T00:00:00Z",
+        "references": {
+            "cvename": [
+                "CVE-2016-2040"
+            ]
+        },
+        "vid": "6cc06eec-c60b-11e5-bf36-6805ca0b3d42"
+    },
+    "details": "The phpMyAdmin development team reports:\n\n> - With a crafted table name it is possible to trigger an XSS attack in\n>   the database search page.\n> - With a crafted SET value or a crafted search query, it is possible\n>   to trigger an XSS attacks in the zoom search page.\n> - With a crafted hostname header, it is possible to trigger an XSS\n>   attacks in the home page.\n>\n> We consider these vulnerabilities to be non-critical.\n>\n> These vulnerabilities can be triggered only by someone who is logged\n> in to phpMyAdmin, as the usual token protection prevents non-logged-in\n> users from accessing the required pages.\n",
+    "id": "FreeBSD-2016-0065",
+    "modified": "2016-01-28T00:00:00Z",
+    "published": "2016-01-28T00:00:00Z",
+    "references": [
+        {
+            "type": "REPORT",
+            "url": "https://www.phpmyadmin.net/security/PMASA-2016-3/"
+        },
+        {
+            "type": "WEB",
+            "url": "https://www.phpmyadmin.net/security/PMASA-2016-3/"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2016-2040"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "phpmyadmin -- Multiple XSS vulnerabilities"
+}

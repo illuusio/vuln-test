@@ -1,0 +1,93 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "mongodb60"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "6.0.25"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        },
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "mongodb70"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "7.0.22"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        },
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "mongodb80"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "8.0.12"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "cite": [
+            "https://jira.mongodb.org/browse/SERVER-95524"
+        ],
+        "discovery": "2025-09-05T00:00:00Z",
+        "references": {
+            "cvename": [
+                "CVE-2025-10060"
+            ]
+        },
+        "vid": "6d16b410-a2ca-11f0-8402-b42e991fc52e"
+    },
+    "details": "cna@mongodb.com reports:\n\n> MongoDB Server may allow upsert operations retried within a\n> transaction to violate unique index constraints, potentially causing\n> an invariant failure and server crash during commit. This issue may be\n> triggered by improper WriteUnitOfWork state management.\n",
+    "id": "FreeBSD-2025-0317",
+    "modified": "2025-10-06T00:00:00Z",
+    "published": "2025-10-06T00:00:00Z",
+    "references": [
+        {
+            "type": "REPORT",
+            "url": "https://jira.mongodb.org/browse/SERVER-95524"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2025-10060"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://nvd.nist.gov/vuln/detail/CVE-2025-10060"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "mongodb -- MongoDB may be susceptible to Invariant Failure in Transactions due Upsert Operation"
+}

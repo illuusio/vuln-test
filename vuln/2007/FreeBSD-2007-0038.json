@@ -1,0 +1,73 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "FreeBSD"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "introduced": "6.2"
+                        },
+                        {
+                            "fixed": "6.2_4"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                },
+                {
+                    "events": [
+                        {
+                            "introduced": "6.1"
+                        },
+                        {
+                            "fixed": "6.1_16"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                },
+                {
+                    "events": [
+                        {
+                            "introduced": "5.5"
+                        },
+                        {
+                            "fixed": "5.5_12"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "discovery": "2007-04-26T00:00:00Z",
+        "references": {
+            "cvename": [
+                "CVE-2007-2242"
+            ],
+            "freebsdsa": [
+                "SA-07:03.ipv6"
+            ]
+        },
+        "vid": "275b845e-f56c-11db-8163-000e0c2e438a"
+    },
+    "details": "# Problem Description\n\nThere is no mechanism for preventing IPv6 routing headers from being\nused to route packets over the same link(s) many times.\n\n# Impact\n\nAn attacker can \\\"amplify\\\" a denial of service attack against a link\nbetween two vulnerable hosts; that is, by sending a small volume of\ntraffic the attacker can consume a much larger amount of bandwidth\nbetween the two vulnerable hosts.\n\nAn attacker can use vulnerable hosts to \\\"concentrate\\\" a denial of\nservice attack against a victim host or network; that is, a set of\npackets sent over a period of 30 seconds or more could be constructed\nsuch that they all arrive at the victim within a period of 1 second or\nless over a period of 30 seconds or more could be constructed such that\nthey all arrive at the victim within a period of 1 second or less.\n\nOther attacks may also be possible.\n\n# Workaround\n\nNo workaround is available.\n",
+    "id": "FreeBSD-2007-0038",
+    "modified": "2016-08-09T00:00:00Z",
+    "published": "2007-04-28T00:00:00Z",
+    "references": [
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2007-2242"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://www.freebsd.org/security/advisories/FreeBSD-SA-07:03.ipv6.asc"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "FreeBSD -- IPv6 Routing Header 0 is dangerous"
+}

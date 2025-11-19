@@ -1,0 +1,93 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "openldap-server"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "2.3.25"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        },
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "openldap-sasl-server"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "2.3.25"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "cite": [
+            "http://www.openldap.org/its/index.cgi/Software%20Bugs?id=4587"
+        ],
+        "discovery": "2006-06-14T00:00:00Z",
+        "references": {
+            "bid": [
+                "19832"
+            ],
+            "cvename": [
+                "CVE-2006-4600"
+            ]
+        },
+        "vid": "ae7124ff-547c-11db-8f1a-000a48049292"
+    },
+    "details": "Howard Chu reports:\n\n> An ACL of the form \\'access to dn.subtree=\\\"ou=groups,\n> dc=example,dc=com\\\" attr=member by \\* selfwrite\\' is intended to only\n> allow users to add/delete their own DN to the target attribute.\n> Currently it allows any DNs to be modified.\n",
+    "id": "FreeBSD-2006-0178",
+    "modified": "2006-10-05T00:00:00Z",
+    "published": "2006-10-05T00:00:00Z",
+    "references": [
+        {
+            "type": "REPORT",
+            "url": "http://www.openldap.org/its/index.cgi/Software%20Bugs?id=4587"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://www.securityfocus.com/bid/19832/info"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2006-4600"
+        },
+        {
+            "type": "WEB",
+            "url": "http://www.openldap.org/its/index.cgi/Software%20Bugs?id=4587"
+        },
+        {
+            "type": "WEB",
+            "url": "http://www.openldap.org/lists/openldap-announce/200608/msg00000.html"
+        },
+        {
+            "type": "WEB",
+            "url": "http://secunia.com/advisories/21721"
+        },
+        {
+            "type": "WEB",
+            "url": "http://securitytracker.com/alerts/2006/Sep/1016783.html"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "openldap -- slapd acl selfwrite Security Issue"
+}

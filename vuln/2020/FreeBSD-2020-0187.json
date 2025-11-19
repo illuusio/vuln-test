@@ -1,0 +1,127 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "tomcat7"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "7.0.105"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        },
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "tomcat85"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "8.5.57"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        },
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "tomcat9"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "9.0.37"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        },
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "tomcat-devel"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "10.0.0.M7"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "discovery": "2020-07-05T00:00:00Z",
+        "references": {
+            "cvename": [
+                "CVE-2020-11996",
+                "CVE-2020-13934",
+                "CVE-2020-13935"
+            ]
+        },
+        "vid": "6a72eff7-ccd6-11ea-9172-4c72b94353b5"
+    },
+    "details": "The Apache Software Foundation reports:\n\nAn h2c direct connection did not release the HTTP/1.1 processor after\nthe upgrade to HTTP/2. If a sufficient number of such requests were\nmade, an OutOfMemoryException could occur leading to a denial of\nservice.\n\nThe payload length in a WebSocket frame was not correctly validated.\nInvalid payload lengths could trigger an infinite loop. Multiple\nrequests with invalid payload lengths could lead to a denial of service.\n\nA specially crafted sequence of HTTP/2 requests could trigger high CPU\nusage for several seconds. If a sufficient number of such requests were\nmade on concurrent HTTP/2 connections, the server could become\nunresponsive.\n",
+    "id": "FreeBSD-2020-0187",
+    "modified": "2020-07-23T00:00:00Z",
+    "published": "2020-07-23T00:00:00Z",
+    "references": [
+        {
+            "type": "WEB",
+            "url": "https://tomcat.apache.org/security-7.html"
+        },
+        {
+            "type": "WEB",
+            "url": "https://tomcat.apache.org/security-8.html"
+        },
+        {
+            "type": "WEB",
+            "url": "https://tomcat.apache.org/security-9.html"
+        },
+        {
+            "type": "WEB",
+            "url": "https://tomcat.apache.org/security-10.html"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2020-11996"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2020-13934"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2020-13935"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "Apache Tomcat -- Multiple Vulnerabilities"
+}

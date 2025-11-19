@@ -1,0 +1,123 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "ruby"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "introduced": "2.7.0,1"
+                        },
+                        {
+                            "fixed": "2.7.5,1"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                },
+                {
+                    "events": [
+                        {
+                            "introduced": "3.0.0,1"
+                        },
+                        {
+                            "fixed": "3.0.3,1"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        },
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "ruby27"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "introduced": "2.7.0,1"
+                        },
+                        {
+                            "fixed": "2.7.5,1"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        },
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "ruby30"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "introduced": "3.0.0,1"
+                        },
+                        {
+                            "fixed": "3.0.3,1"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        },
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "rubygem-cgi"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "0.3.1"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "cite": [
+            "https://www.ruby-lang.org/en/news/2021/11/24/buffer-overrun-in-cgi-escape_html-cve-2021-41816/"
+        ],
+        "discovery": "2021-11-24T00:00:00Z",
+        "references": {
+            "cvename": [
+                "CVE-2021-41816"
+            ]
+        },
+        "vid": "2c6af5c3-4d36-11ec-a539-0800270512f4"
+    },
+    "details": "chamal reports:\n\n> A security vulnerability that causes buffer overflow when you pass a\n> very large string (\\> 700 MB) to `CGI.escape_html` on a platform where\n> `long` type takes 4 bytes, typically, Windows.\n",
+    "id": "FreeBSD-2021-0280",
+    "modified": "2021-11-24T00:00:00Z",
+    "published": "2021-11-24T00:00:00Z",
+    "references": [
+        {
+            "type": "REPORT",
+            "url": "https://www.ruby-lang.org/en/news/2021/11/24/buffer-overrun-in-cgi-escape_html-cve-2021-41816/"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2021-41816"
+        },
+        {
+            "type": "WEB",
+            "url": "https://www.ruby-lang.org/en/news/2021/11/24/buffer-overrun-in-cgi-escape_html-cve-2021-41816/"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "rubygem-cgi -- buffer overrun in CGI.escape_html"
+}

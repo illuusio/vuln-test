@@ -1,0 +1,114 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "putty"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "introduced": "0.68"
+                        },
+                        {
+                            "fixed": "0.81"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        },
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "putty-nogtk"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "introduced": "0.68"
+                        },
+                        {
+                            "fixed": "0.81"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        },
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "filezilla"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "3.67.0"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "cite": [
+            "https://lists.tartarus.org/pipermail/putty-announce/2024/000038.html",
+            "https://nvd.nist.gov/vuln/detail/CVE-2024-31497"
+        ],
+        "discovery": "2024-04-01T00:00:00Z",
+        "references": {
+            "cvename": [
+                "CVE-2024-31497"
+            ]
+        },
+        "vid": "080936ba-fbb7-11ee-abc8-6960f2492b1d"
+    },
+    "details": "Simon Tatham reports:\n\n> ECDSA signatures using 521-bit keys (the NIST P521 curve, otherwise\n> known as ecdsa-sha2-nistp521) were generated with biased random\n> numbers. This permits an attacker in possession of a few dozen\n> signatures to RECOVER THE PRIVATE KEY.\n>\n> Any 521-bit ECDSA private key that PuTTY or Pageant has used to sign\n> anything should be considered compromised.\n>\n> Additionally, if you have any 521-bit ECDSA private keys that you\\'ve\n> used with PuTTY, you should consider them to be compromised: generate\n> new keys, and remove the old public keys from any authorized_keys\n> files.\n\n> A second, independent scenario is that the adversary is an operator of\n> an SSH server to which the victim authenticates (for remote login or\n> file copy), \\[\\...\\] and the victim uses the same private key for SSH\n> connections to other services operated by other entities. Here, the\n> rogue server operator (who would otherwise have no way to determine\n> the victim\\'s private key) can derive the victim\\'s private key, and\n> then use it for unauthorized access to those other services. If the\n> other services include Git services, then again it may be possible to\n> conduct supply-chain attacks on software maintained in Git. This also\n> affects, for example, FileZilla before 3.67.0, WinSCP before 6.3.3,\n> TortoiseGit before 2.15.0.1, and TortoiseSVN through 1.14.6.\n",
+    "id": "FreeBSD-2024-0091",
+    "modified": "2024-04-16T00:00:00Z",
+    "published": "2024-04-16T00:00:00Z",
+    "references": [
+        {
+            "type": "REPORT",
+            "url": "https://lists.tartarus.org/pipermail/putty-announce/2024/000038.html"
+        },
+        {
+            "type": "REPORT",
+            "url": "https://nvd.nist.gov/vuln/detail/CVE-2024-31497"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2024-31497"
+        },
+        {
+            "type": "WEB",
+            "url": "https://lists.tartarus.org/pipermail/putty-announce/2024/000038.html"
+        },
+        {
+            "type": "WEB",
+            "url": "https://www.chiark.greenend.org.uk/~sgtatham/putty/wishlist/vuln-p521-bias.html"
+        },
+        {
+            "type": "WEB",
+            "url": "https://git.tartarus.org/?h=c193fe9848f50a88a4089aac647fecc31ae96d27&p=simon/putty.git"
+        },
+        {
+            "type": "WEB",
+            "url": "https://filezilla-project.org/versions.php"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://nvd.nist.gov/vuln/detail/CVE-2024-31497"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "PuTTY and embedders (f.i., filezilla) -- biased RNG with NIST P521/ecdsa-sha2-nistp521 signatures permits recovering private key"
+}

@@ -1,0 +1,93 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "FreeBSD"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "introduced": "12.0"
+                        },
+                        {
+                            "fixed": "12.0_3"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                },
+                {
+                    "events": [
+                        {
+                            "introduced": "11.2"
+                        },
+                        {
+                            "fixed": "11.2_9"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        },
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "wpa_supplicant"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "2.8"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        },
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "hostapd"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "2.8"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "discovery": "2019-04-10T00:00:00Z",
+        "references": {
+            "cvename": [
+                "CVE-2019-9496"
+            ]
+        },
+        "vid": "98b71436-656d-11e9-8e67-206a8a720317"
+    },
+    "details": "# Problem Description:\n\nWhen hostapd is used to operate an access point with SAE (Simultaneous\nAuthentication of Equals; also known as WPA3-Personal), an invalid\nauthentication sequence could result in the hostapd process terminating\ndue to a NULL pointer dereference when processing SAE confirm message.\nThis was caused by missing state validation steps when processing the\nSAE confirm message in hostapd/AP mode.\n\nSee\nhttps://w1.fi/security/2019-3/sae-confirm-missing-state-validation.txt\nfor a detailed description of the bug.\n\n# Impact:\n\nAll hostapd versions with SAE support (CONFIG_SAE=y in the build\nconfiguration and SAE being enabled in the runtime configuration).\n",
+    "id": "FreeBSD-2019-0087",
+    "modified": "2019-04-23T00:00:00Z",
+    "published": "2019-04-23T00:00:00Z",
+    "references": [
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2019-9496"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "FreeBSD -- SAE confirm missing state validation"
+}

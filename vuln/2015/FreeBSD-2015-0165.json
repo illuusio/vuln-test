@@ -1,0 +1,69 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "ansible"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "1.2.3"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "cite": [
+            "http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2013-4259",
+            "http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2013-4260"
+        ],
+        "discovery": "2013-08-21T00:00:00Z",
+        "references": {
+            "cvename": [
+                "CVE-2013-4259",
+                "CVE-2013-4260"
+            ]
+        },
+        "vid": "a6a9f9d5-205c-11e5-a4a5-002590263bf5"
+    },
+    "details": "MITRE reports:\n\n> runner/connection_plugins/ssh.py in Ansible before 1.2.3, when using\n> ControlPersist, allows local users to redirect a ssh session via a\n> symlink attack on a socket file with a predictable name in /tmp/.\n\n> lib/ansible/playbook/\\_\\_init\\_\\_.py in Ansible 1.2.x before 1.2.3,\n> when playbook does not run due to an error, allows local users to\n> overwrite arbitrary files via a symlink attack on a retry file with a\n> predictable name in /var/tmp/ansible/.\n",
+    "id": "FreeBSD-2015-0165",
+    "modified": "2015-07-02T00:00:00Z",
+    "published": "2015-07-02T00:00:00Z",
+    "references": [
+        {
+            "type": "REPORT",
+            "url": "http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2013-4259"
+        },
+        {
+            "type": "REPORT",
+            "url": "http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2013-4260"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2013-4259"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2013-4260"
+        },
+        {
+            "type": "WEB",
+            "url": "http://www.ansible.com/security"
+        },
+        {
+            "type": "WEB",
+            "url": "https://groups.google.com/forum/#!topic/ansible-project/UVDYW0HGcNg"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "ansible -- local symlink exploits"
+}

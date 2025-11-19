@@ -1,0 +1,112 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "postgresql11-server"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "11.3"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        },
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "postgresql10-server"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "10.8"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        },
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "postgresql96-server"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "9.6.13"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        },
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "postgresql95-server"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "9.5.17"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "cite": [
+            "https://www.postgresql.org/about/news/1939/"
+        ],
+        "discovery": "2019-05-09T00:00:00Z",
+        "references": {
+            "cvename": [
+                "CVE-2019-10130"
+            ]
+        },
+        "vid": "065890c3-725e-11e9-b0e1-6cc21735f730"
+    },
+    "details": "The PostgreSQL project reports:\n\n> PostgreSQL maintains statistics for tables by sampling data available\n> in columns; this data is consulted during the query planning process.\n> Prior to this release, a user able to execute SQL queries with\n> permissions to read a given column could craft a leaky operator that\n> could read whatever data had been sampled from that column. If this\n> happened to include values from rows that the user is forbidden to see\n> by a row security policy, the user could effectively bypass the\n> policy. This is fixed by only allowing a non-leakproof operator to use\n> this data if there are no relevant row security policies for the\n> table.\n",
+    "id": "FreeBSD-2019-0099",
+    "modified": "2019-05-09T00:00:00Z",
+    "published": "2019-05-09T00:00:00Z",
+    "references": [
+        {
+            "type": "REPORT",
+            "url": "https://www.postgresql.org/about/news/1939/"
+        },
+        {
+            "type": "WEB",
+            "url": "https://www.postgresql.org/about/news/1939/"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2019-10130"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "PostgreSQL -- Selectivity estimators bypass row security policies"
+}

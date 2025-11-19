@@ -1,0 +1,131 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "py37-wagtail"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "introduced": "4.2.0"
+                        },
+                        {
+                            "fixed": "4.2.2"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        },
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "py38-wagtail"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "introduced": "4.2.0"
+                        },
+                        {
+                            "fixed": "4.2.2"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        },
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "py39-wagtail"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "introduced": "4.2.0"
+                        },
+                        {
+                            "fixed": "4.2.2"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        },
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "py310-wagtail"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "introduced": "4.2.0"
+                        },
+                        {
+                            "fixed": "4.2.2"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        },
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "py311-wagtail"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "introduced": "4.2.0"
+                        },
+                        {
+                            "fixed": "4.2.2"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "cite": [
+            "https://osv.dev/vulnerability/GHSA-33pv-vcgh-jfg9"
+        ],
+        "discovery": "2023-04-03T00:00:00Z",
+        "references": {
+            "cvename": [
+                "CVE-2023-28837"
+            ]
+        },
+        "vid": "2def7c4b-736f-4754-9f03-236fcb586d91"
+    },
+    "details": "> A memory exhaustion bug exists in Wagtail\\'s handling of uploaded\n> images and documents.\n>\n> For both images and documents, files are loaded into memory during\n> upload for additional processing.\n>\n> A user with access to upload images or documents through the Wagtail\n> admin interface could upload a file so large that it results in a\n> crash or denial of service.\n>\n> The vulnerability is not exploitable by an ordinary site visitor\n> without access to the Wagtail admin.\n>\n> It can only be exploited by admin users with permission to upload\n> images or documents.\n>\n> Image uploads are restricted to 10MB by default, however this\n> validation only happens on the frontend and on the backend after the\n> vulnerable code.\n",
+    "id": "FreeBSD-2023-0263",
+    "modified": "2023-08-31T00:00:00Z",
+    "published": "2023-08-31T00:00:00Z",
+    "references": [
+        {
+            "type": "REPORT",
+            "url": "https://osv.dev/vulnerability/GHSA-33pv-vcgh-jfg9"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2023-28837"
+        },
+        {
+            "type": "WEB",
+            "url": "https://osv.dev/vulnerability/GHSA-33pv-vcgh-jfg9"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "py-wagtail -- DoS vulnerability"
+}

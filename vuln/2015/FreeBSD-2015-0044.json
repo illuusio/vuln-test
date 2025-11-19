@@ -1,0 +1,55 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "putty"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "0.64"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "cite": [
+            "http://www.chiark.greenend.org.uk/~sgtatham/putty/wishlist/private-key-not-wiped-2.html"
+        ],
+        "discovery": "2015-02-28T00:00:00Z",
+        "references": {
+            "cvename": [
+                "CVE-2015-2157"
+            ]
+        },
+        "vid": "92fc2e2b-c383-11e4-8ef7-080027ef73ec"
+    },
+    "details": "Simon Tatham reports:\n\n> When PuTTY has sensitive data in memory and has no further need for\n> it, it should wipe the data out of its memory, in case malware later\n> gains access to the PuTTY process or the memory is swapped out to disk\n> or written into a crash dump file. An obvious example of this is the\n> password typed during SSH login; other examples include obsolete\n> session keys, public-key passphrases, and the private halves of public\n> keys.\n>\n> PuTTY 0.63 and earlier versions, after loading a private key from a\n> disk file, mistakenly leak a memory buffer containing a copy of the\n> private key, in the function ssh2_load_userkey. The companion function\n> ssh2_save_userkey (only called by PuTTYgen) can also leak a copy, but\n> only in the case where the file it tried to save to could not be\n> created.\n",
+    "id": "FreeBSD-2015-0044",
+    "modified": "2015-03-05T00:00:00Z",
+    "published": "2015-03-05T00:00:00Z",
+    "references": [
+        {
+            "type": "REPORT",
+            "url": "http://www.chiark.greenend.org.uk/~sgtatham/putty/wishlist/private-key-not-wiped-2.html"
+        },
+        {
+            "type": "WEB",
+            "url": "http://www.chiark.greenend.org.uk/~sgtatham/putty/wishlist/private-key-not-wiped-2.html"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2015-2157"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "PuTTY -- fails to scrub private keys from memory after use"
+}

@@ -1,0 +1,59 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "net-snmp"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "5.7.1_7"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "cite": [
+            "https://bugzilla.redhat.com/show_bug.cgi?id=815813"
+        ],
+        "discovery": "2012-04-26T00:00:00Z",
+        "references": {
+            "cvename": [
+                "CVE-2012-2141"
+            ]
+        },
+        "vid": "5d85976a-9011-11e1-b5e0-000c299b62e1"
+    },
+    "details": "The Red Hat Security Response Team reports:\n\n> An array index error, leading to out-of heap-based buffer read flaw\n> was found in the way the net-snmp agent performed lookups in the\n> extension table. When certain MIB subtrees were handled by the extend\n> directive, a remote attacker (having read privileges to the subntree)\n> could use this flaw to cause a denial of service condition via an SNMP\n> GET request involving a non-existent extension table entry.\n",
+    "id": "FreeBSD-2012-0077",
+    "modified": "2012-04-27T00:00:00Z",
+    "published": "2012-04-27T00:00:00Z",
+    "references": [
+        {
+            "type": "REPORT",
+            "url": "https://bugzilla.redhat.com/show_bug.cgi?id=815813"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2012-2141"
+        },
+        {
+            "type": "REPORT",
+            "url": "https://bugzilla.redhat.com/show_bug.cgi?id=815813"
+        },
+        {
+            "type": "WEB",
+            "url": "http://www.openwall.com/lists/oss-security/2012/04/26/2"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "net-snmp -- Remote DoS"
+}

@@ -1,0 +1,104 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "cvs+ipv6"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "last_affected": "1.11.5_1"
+                        },
+                        {
+                            "fixed": "1.11.5_1"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        },
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "FreeBSD"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "introduced": "5.2"
+                        },
+                        {
+                            "fixed": "5.2.1_5"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                },
+                {
+                    "events": [
+                        {
+                            "introduced": "4.9"
+                        },
+                        {
+                            "fixed": "4.9_5"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                },
+                {
+                    "events": [
+                        {
+                            "introduced": "4.8"
+                        },
+                        {
+                            "fixed": "4.8_18"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "discovery": "2004-04-14T00:00:00Z",
+        "references": {
+            "cvename": [
+                "CVE-2004-0180",
+                "CVE-2004-0405"
+            ],
+            "freebsdsa": [
+                "SA-04:07.cvs"
+            ]
+        },
+        "vid": "0792e7a7-8e37-11d8-90d1-0020ed76ef5a"
+    },
+    "details": "Two programming errors were discovered in which path names handled by\nCVS were not properly validated. In one case, the CVS client accepts\nabsolute path names from the server when determining which files to\nupdate. In another case, the CVS server accepts relative path names from\nthe client when determining which files to transmit, including those\ncontaining references to parent directories (\\`../\\').\n\nThese programming errors generally only have a security impact when\ndealing with remote CVS repositories.\n\nA malicious CVS server may cause a CVS client to overwrite arbitrary\nfiles on the client\\'s system.\n\nA CVS client may request RCS files from a remote system other than those\nin the repository specified by \\$CVSROOT. These RCS files need not be\npart of any CVS repository themselves.\n",
+    "id": "FreeBSD-2004-0069",
+    "modified": "2004-05-05T00:00:00Z",
+    "published": "2004-04-14T00:00:00Z",
+    "references": [
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2004-0180"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2004-0405"
+        },
+        {
+            "type": "WEB",
+            "url": "http://ccvs.cvshome.org/servlets/NewsItemView?newsID=102"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://www.freebsd.org/security/advisories/FreeBSD-SA-04:07.cvs.asc"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "CVS path validation errors"
+}

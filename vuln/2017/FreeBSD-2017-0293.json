@@ -1,0 +1,84 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "curl"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "introduced": "7.21.0"
+                        },
+                        {
+                            "fixed": "7.57.0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        },
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "linux-c7-curl"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "introduced": "7.21.0"
+                        },
+                        {
+                            "fixed": "7.29.0_4"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "cite": [
+            "https://curl.haxx.se/changes.html"
+        ],
+        "discovery": "2017-11-29T00:00:00Z",
+        "references": {
+            "cvename": [
+                "CVE-2017-8816",
+                "CVE-2017-8817",
+                "CVE-2017-8818"
+            ]
+        },
+        "vid": "301a01b7-d50e-11e7-ac58-b499baebfeaf"
+    },
+    "details": "The cURL project reports:\n\n> - NTLM buffer overflow via integer overflow (CVE-2017-8816)\\\n>   libcurl contains a buffer overrun flaw in the NTLM authentication\n>   code. The internal function Curl_ntlm_core_mk_ntlmv2_hash sums up\n>   the lengths of the user name + password (= SUM) and multiplies the\n>   sum by two (= SIZE) to figure out how large storage to allocate from\n>   the heap.\n> - FTP wildcard out of bounds read (CVE-2017-8817)\\\n>   libcurl contains a read out of bounds flaw in the FTP wildcard\n>   function. libcurl\\'s FTP wildcard matching feature, which is enabled\n>   with the CURLOPT_WILDCARDMATCH option can use a built-in wildcard\n>   function or a user provided one. The built-in wildcard function has\n>   a flaw that makes it not detect the end of the pattern string if it\n>   ends with an open bracket (\\[) but instead it will continue reading\n>   the heap beyond the end of the URL buffer that holds the wildcard.\n> - SSL out of buffer access (CVE-2017-8818)\\\n>   libcurl contains an out boundary access flaw in SSL related code.\n>   When allocating memory for a connection (the internal struct called\n>   connectdata), a certain amount of memory is allocated at the end of\n>   the struct to be used for SSL related structs. Those structs are\n>   used by the particular SSL library libcurl is built to use. The\n>   application can also tell libcurl which specific SSL library to use\n>   if it was built to support more than one.\n",
+    "id": "FreeBSD-2017-0293",
+    "modified": "2017-12-11T00:00:00Z",
+    "published": "2017-11-29T00:00:00Z",
+    "references": [
+        {
+            "type": "REPORT",
+            "url": "https://curl.haxx.se/changes.html"
+        },
+        {
+            "type": "WEB",
+            "url": "https://curl.haxx.se/changes.html"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2017-8816"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2017-8817"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2017-8818"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "cURL -- Multiple vulnerabilities"
+}

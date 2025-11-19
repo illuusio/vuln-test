@@ -1,0 +1,105 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "putty"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "0.74"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        },
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "putty-gtk2"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "0.74"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        },
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "putty-nogtk"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "0.74"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "cite": [
+            "https://lists.tartarus.org/pipermail/putty-announce/2020/000030.html"
+        ],
+        "discovery": "2020-06-27T00:00:00Z",
+        "references": {
+            "cvename": [
+                "CVE-2020-14002"
+            ]
+        },
+        "vid": "6190c0cd-b945-11ea-9401-2dcf562daa69"
+    },
+    "details": "Simon Tatham reports:\n\n> \\[Release 0.74\\] fixes the following security issues:\n>\n> - New configuration option to disable PuTTY\\'s default policy of\n>   changing its host key algorithm preferences to prefer keys it\n>   already knows. (There is a theoretical information leak in this\n>   policy.) \\[CVE-2020-14002\\]\n> - In some situations an SSH server could cause PuTTY to access freed\n>   mdmory by pretending to accept an SSH key and then refusing the\n>   actual signature. It can only happen if you\\'re using an SSH agent.\n",
+    "id": "FreeBSD-2020-0161",
+    "modified": "2020-06-28T00:00:00Z",
+    "published": "2020-06-28T00:00:00Z",
+    "references": [
+        {
+            "type": "REPORT",
+            "url": "https://lists.tartarus.org/pipermail/putty-announce/2020/000030.html"
+        },
+        {
+            "type": "WEB",
+            "url": "https://lists.tartarus.org/pipermail/putty-announce/2020/000030.html"
+        },
+        {
+            "type": "WEB",
+            "url": "https://www.chiark.greenend.org.uk/~sgtatham/putty/wishlist/vuln-dynamic-hostkey-info-leak.html"
+        },
+        {
+            "type": "WEB",
+            "url": "https://www.fzi.de/en/news/news/detail-en/artikel/fsa-2020-2-ausnutzung-eines-informationslecks-fuer-gezielte-mitm-angriffe-auf-ssh-clients/"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2020-14002"
+        },
+        {
+            "type": "WEB",
+            "url": "https://www.chiark.greenend.org.uk/~sgtatham/putty/wishlist/vuln-agent-keylist-used-after-free.html"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "PuTTY -- Release 0.74 fixes two security vulnerabilities"
+}

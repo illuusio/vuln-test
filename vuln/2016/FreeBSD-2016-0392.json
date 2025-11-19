@@ -1,0 +1,64 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "openjpeg"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "2.1.1_1"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "cite": [
+            "http://www.openwall.com/lists/oss-security/2016/09/08/2"
+        ],
+        "discovery": "2016-09-08T00:00:00Z",
+        "references": {
+            "cvename": [
+                "CVE-2016-5157",
+                "CVE-2016-7163"
+            ]
+        },
+        "vid": "b7d56d0b-7a11-11e6-af78-589cfc0654e1"
+    },
+    "details": "Tencent\\'s Xuanwu LAB reports:\n\n> A Heap Buffer Overflow (Out-of-Bounds Write) issue was found in\n> function opj_dwt_interleave_v of dwt.c. This vulnerability allows\n> remote attackers to execute arbitrary code on vulnerable installations\n> of OpenJPEG.\n>\n> An integer overflow issue exists in function opj_pi_create_decode of\n> pi.c. It can lead to Out-Of-Bounds Read and Out-Of-Bounds Write in\n> function opj_pi_next_cprl of pi.c (function opj_pi_next_lrcp,\n> opj_pi_next_rlcp, opj_pi_next_rpcl, opj_pi_next_pcrl may also be\n> vulnerable). This vulnerability allows remote attackers to execute\n> arbitrary code on vulnerable installations of OpenJPEG.\n",
+    "id": "FreeBSD-2016-0392",
+    "modified": "2016-10-11T00:00:00Z",
+    "published": "2016-10-11T00:00:00Z",
+    "references": [
+        {
+            "type": "REPORT",
+            "url": "http://www.openwall.com/lists/oss-security/2016/09/08/2"
+        },
+        {
+            "type": "WEB",
+            "url": "\"http://www.openwall.com/lists/oss-security/2016/09/08/2\""
+        },
+        {
+            "type": "WEB",
+            "url": "\"http://www.openwall.com/lists/oss-security/2016/09/08/3\""
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2016-5157"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2016-7163"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "openjpeg -- multiple vulnerabilities"
+}

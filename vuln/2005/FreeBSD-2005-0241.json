@@ -1,0 +1,78 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "proftpd"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "1.3.0.rc2"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        },
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "proftpd-mysql"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "1.3.0.rc2"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "cite": [
+            "http://www.proftpd.org/docs/RELEASE_NOTES-1.3.0rc2"
+        ],
+        "discovery": "2005-07-26T00:00:00Z",
+        "references": {
+            "cvename": [
+                "CVE-2005-2390"
+            ]
+        },
+        "vid": "c28f4705-043f-11da-bc08-0001020eed82"
+    },
+    "details": "The ProFTPD release notes states:\n\n> sean \\<infamous42md at hotpop.com\\> found two format string\n> vulnerabilities, one in mod_sql\\'s SQLShowInfo directive, and one\n> involving the \\'ftpshut\\' utility. Both can be considered low risk, as\n> they require active involvement on the part of the site administrator\n> in order to be exploited.\n\nThese vulnerabilities could potentially lead to information disclosure,\na denial-of-server situation, or execution of arbitrary code with the\npermissions of the user running ProFTPD.\n",
+    "id": "FreeBSD-2005-0241",
+    "modified": "2005-08-03T00:00:00Z",
+    "published": "2005-08-03T00:00:00Z",
+    "references": [
+        {
+            "type": "REPORT",
+            "url": "http://www.proftpd.org/docs/RELEASE_NOTES-1.3.0rc2"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2005-2390"
+        },
+        {
+            "type": "WEB",
+            "url": "http://www.gentoo.org/security/en/glsa/glsa-200508-02.xml"
+        },
+        {
+            "type": "WEB",
+            "url": "http://www.proftpd.org/docs/RELEASE_NOTES-1.3.0rc2"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "proftpd -- format string vulnerabilities"
+}

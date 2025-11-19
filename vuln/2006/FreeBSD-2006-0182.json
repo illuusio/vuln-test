@@ -1,0 +1,95 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "python+ipv6"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        },
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "python"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "2.4.3_1"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                },
+                {
+                    "events": [
+                        {
+                            "introduced": "2.5.*,1"
+                        },
+                        {
+                            "fixed": "2.5.c2"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "cite": [
+            "https://launchpad.net/distros/ubuntu/+source/python2.4/+bug/56633",
+            "http://www.ubuntu.com/usn/usn-359-1"
+        ],
+        "discovery": "2006-08-15T00:00:00Z",
+        "references": {
+            "cvename": [
+                "CVE-2006-4980"
+            ]
+        },
+        "vid": "fe83eb5b-55e1-11db-a5ae-00508d6a62df"
+    },
+    "details": "Benjamin C. Wiley Sittler reports:\n\n> I discovered a \\[buffer overrun in repr() for unicode strings\\]. This\n> causes an unpatched non-debug wide (UTF-32/UCS-4) build of python to\n> abort.\n\nUbuntu security team reports:\n\n> If an application uses repr() on arbitrary untrusted data, this\n> \\[bug\\] could be exploited to execute arbitrary code with the\n> privileges of the python application.\n",
+    "id": "FreeBSD-2006-0182",
+    "modified": "2006-10-08T00:00:00Z",
+    "published": "2006-10-07T00:00:00Z",
+    "references": [
+        {
+            "type": "REPORT",
+            "url": "https://launchpad.net/distros/ubuntu/+source/python2.4/+bug/56633"
+        },
+        {
+            "type": "REPORT",
+            "url": "http://www.ubuntu.com/usn/usn-359-1"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2006-4980"
+        },
+        {
+            "type": "WEB",
+            "url": "https://launchpad.net/distros/ubuntu/+source/python2.4/+bug/56633"
+        },
+        {
+            "type": "WEB",
+            "url": "http://www.ubuntu.com/usn/usn-359-1"
+        },
+        {
+            "type": "WEB",
+            "url": "http://secunia.com/advisories/22276/"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "python -- buffer overrun in repr() for unicode strings"
+}

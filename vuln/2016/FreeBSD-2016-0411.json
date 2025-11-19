@@ -1,0 +1,55 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "node"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "introduced": "6.0.0"
+                        },
+                        {
+                            "fixed": "6.9.0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "cite": [
+            "https://nodejs.org/en/blog/vulnerability/october-2016-security-releases/"
+        ],
+        "discovery": "2016-10-18T00:00:00Z",
+        "references": {
+            "cvename": [
+                "CVE-2016-5172"
+            ]
+        },
+        "vid": "27180c99-9b5c-11e6-b799-19bef72f4b7c"
+    },
+    "details": "Node.js v6.9.0 LTS contains the following security fixes, specific to\nv6.x:\n\n> Disable auto-loading of openssl.cnf: Don\\'t automatically attempt to\n> load an OpenSSL configuration file, from the OPENSSL_CONF environment\n> variable or from the default location for the current platform. Always\n> triggering a configuration file load attempt may allow an attacker to\n> load compromised OpenSSL configuration into a Node.js process if they\n> are able to place a file in a default location.\n>\n> Patched V8 arbitrary memory read (CVE-2016-5172): The V8 parser\n> mishandled scopes, potentially allowing an attacker to obtain\n> sensitive information from arbitrary memory locations via crafted\n> JavaScript code. This vulnerability would require an attacker to be\n> able to execute arbitrary JavaScript code in a Node.js process.\n>\n> Create a unique v8_inspector WebSocket address: Generate a UUID for\n> each execution of the inspector. This provides additional security to\n> prevent unauthorized clients from connecting to the Node.js process\n> via the v8_inspector port when running with \\--inspect. Since the\n> debugging protocol allows extensive access to the internals of a\n> running process, and the execution of arbitrary code, it is important\n> to limit connections to authorized tools only. Note that the\n> v8_inspector protocol in Node.js is still considered an experimental\n> feature. Vulnerability originally reported by Jann Horn.\n>\n> All of these vulnerabilities are considered low-severity for Node.js\n> users, however, users of Node.js v6.x should upgrade at their earliest\n> convenience.\n",
+    "id": "FreeBSD-2016-0411",
+    "modified": "2016-10-28T00:00:00Z",
+    "published": "2016-10-28T00:00:00Z",
+    "references": [
+        {
+            "type": "REPORT",
+            "url": "https://nodejs.org/en/blog/vulnerability/october-2016-security-releases/"
+        },
+        {
+            "type": "WEB",
+            "url": "https://nodejs.org/en/blog/vulnerability/october-2016-security-releases/"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2016-5172"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "node.js -- multiple vulnerabilities"
+}

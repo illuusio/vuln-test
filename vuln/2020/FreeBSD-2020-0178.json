@@ -1,0 +1,51 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "FreeBSD"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "introduced": "11.4"
+                        },
+                        {
+                            "fixed": "11.4_1"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "discovery": "2020-07-09T00:00:00Z",
+        "references": {
+            "cvename": [
+                "CVE-2020-7458"
+            ],
+            "freebsdsa": [
+                "SA-20:18.posix_spawnp"
+            ]
+        },
+        "vid": "f8b46415-c264-11ea-8659-901b0ef719ab"
+    },
+    "details": "# Problem Description:\n\nposix_spawnp spawns a new thread with a limited stack allocated on the\nheap before delegating to execvp for the final execution within that\nthread.\n\nexecvp would previously make unbounded allocations on the stack,\ndirectly proportional to the length of the user-controlled PATH\nenvironment variable.\n\n# Impact:\n\nLong values in the user-controlled PATH environment variable cause\nposix_spawnp to write beyond the end of stack that was allocated,\nultimately overflowing the heap-allocated stack with a direct copy of\nthe value stored in PATH.\n",
+    "id": "FreeBSD-2020-0178",
+    "modified": "2020-07-10T00:00:00Z",
+    "published": "2020-07-10T00:00:00Z",
+    "references": [
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2020-7458"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://www.freebsd.org/security/advisories/FreeBSD-SA-20:18.posix_spawnp.asc"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "FreeBSD -- posix_spawnp(3) buffer overflow"
+}

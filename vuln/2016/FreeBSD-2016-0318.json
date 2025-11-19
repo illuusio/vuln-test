@@ -1,0 +1,95 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:kernel",
+                "name": "FreeBSD-kernel"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "introduced": "10.0"
+                        },
+                        {
+                            "fixed": "10.0_9"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                },
+                {
+                    "events": [
+                        {
+                            "introduced": "9.3"
+                        },
+                        {
+                            "fixed": "9.3_2"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                },
+                {
+                    "events": [
+                        {
+                            "introduced": "9.2"
+                        },
+                        {
+                            "fixed": "9.2_12"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                },
+                {
+                    "events": [
+                        {
+                            "introduced": "9.1"
+                        },
+                        {
+                            "fixed": "9.1_19"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                },
+                {
+                    "events": [
+                        {
+                            "introduced": "8.4"
+                        },
+                        {
+                            "fixed": "8.4_16"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "discovery": "2014-09-16T00:00:00Z",
+        "references": {
+            "cvename": [
+                "CVE-2004-0230"
+            ],
+            "freebsdsa": [
+                "SA-14:19.tcp"
+            ]
+        },
+        "vid": "729c4a9f-6007-11e6-a6c3-14dae9d210b8"
+    },
+    "details": "# Problem Description:\n\nWhen a segment with the SYN flag for an already existing connection\narrives, the TCP stack tears down the connection, bypassing a check that\nthe sequence number in the segment is in the expected window.\n\n# Impact:\n\nAn attacker who has the ability to spoof IP traffic can tear down a TCP\nconnection by sending only 2 packets, if they know both TCP port\nnumbers. In case one of the two port numbers is unknown, a successful\nattack requires less than 2\\*\\*17 packets spoofed, which can be\ngenerated within less than a second on a decent connection to the\nInternet.\n",
+    "id": "FreeBSD-2016-0318",
+    "modified": "2016-08-11T00:00:00Z",
+    "published": "2016-08-11T00:00:00Z",
+    "references": [
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2004-0230"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://www.freebsd.org/security/advisories/FreeBSD-SA-14:19.tcp.asc"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "FreeBSD -- Denial of Service in TCP packet processing"
+}

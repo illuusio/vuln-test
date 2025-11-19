@@ -1,0 +1,55 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "asterisk13"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "13.18.1"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "cite": [
+            "http://www.asterisk.org/downloads/security-advisories"
+        ],
+        "discovery": "2017-10-09T00:00:00Z",
+        "references": {
+            "cvename": [
+                "CVE-2017-16671"
+            ]
+        },
+        "vid": "ab04cb0b-c533-11e7-8da5-001999f8d30b"
+    },
+    "details": "The Asterisk project reports:\n\n> No size checking is done when setting the user field for Party B on a\n> CDR. Thus, it is possible for someone to use an arbitrarily large\n> string and write past the end of the user field storage buffer. The\n> earlier AST-2017-001 advisory for the CDR user field overflow was for\n> the Party A buffer.\n",
+    "id": "FreeBSD-2017-0272",
+    "modified": "2017-12-13T00:00:00Z",
+    "published": "2017-11-09T00:00:00Z",
+    "references": [
+        {
+            "type": "REPORT",
+            "url": "http://www.asterisk.org/downloads/security-advisories"
+        },
+        {
+            "type": "WEB",
+            "url": "https://downloads.asterisk.org/pub/security/AST-2017-010.html"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2017-16671"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "asterisk -- Buffer overflow in CDR's set user"
+}

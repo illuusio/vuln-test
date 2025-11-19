@@ -1,0 +1,46 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "minio"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "2021.01.30.00.20.58"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "cite": [
+            "https://github.com/minio/minio/security/advisories/GHSA-m4qq-5f7c-693q"
+        ],
+        "discovery": "2021-01-29T00:00:00Z",
+        "vid": "8ec7d426-055d-46bc-8f5a-a9d73a5a71ab"
+    },
+    "details": "Minio developers report:\n\n> Thanks to \\@phith0n from our community upon a code review, discovered\n> an SSRF (Server Side Request Forgery) in our Browser API\n> implementation. We have not observed this report/attack in the wild or\n> reported elsewhere in the community at large.\n>\n> All users are advised to upgrade ASAP.\n>\n> The target application may have functionality for importing data from\n> a URL, publishing data to a URL, or otherwise reading data from a URL\n> that can be tampered with. The attacker modifies the calls to this\n> functionality by supplying a completely different URL or by\n> manipulating how URLs are built (path traversal etc.).\n>\n> In a Server-Side Request Forgery (SSRF) attack, the attacker can abuse\n> functionality on the server to read or update internal resources. The\n> attacker can supply or modify a URL which the code running on the\n> server will read or submit data, and by carefully selecting the URLs,\n> the attacker may be able to read server configuration such as AWS\n> metadata, connect to internal services like HTTP enabled databases, or\n> perform post requests towards internal services which are not intended\n> to be exposed.\n",
+    "id": "FreeBSD-2021-0028",
+    "modified": "2021-01-31T00:00:00Z",
+    "published": "2021-01-31T00:00:00Z",
+    "references": [
+        {
+            "type": "REPORT",
+            "url": "https://github.com/minio/minio/security/advisories/GHSA-m4qq-5f7c-693q"
+        },
+        {
+            "type": "WEB",
+            "url": "https://github.com/minio/minio/security/advisories/GHSA-m4qq-5f7c-693q"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "minio -- Server Side Request Forgery"
+}

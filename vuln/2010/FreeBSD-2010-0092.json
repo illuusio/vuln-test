@@ -1,0 +1,48 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "lftp"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "4.0.6"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "discovery": "2010-06-09T00:00:00Z",
+        "references": {
+            "cvename": [
+                "CVE-2010-2251"
+            ]
+        },
+        "vid": "29b7e3f4-b6a9-11df-ae63-f255a795cb21"
+    },
+    "details": "The get1 command, as used by lftpget, in LFTP before 4.0.6 does not\nproperly validate a server-provided filename before determining the\ndestination filename of a download, which allows remote servers to\ncreate or overwrite arbitrary files via a Content-Disposition header\nthat suggests a crafted filename, and possibly execute arbitrary code as\na consequence of writing to a dotfile in a home directory.\n",
+    "id": "FreeBSD-2010-0092",
+    "modified": "2010-09-03T00:00:00Z",
+    "published": "2010-09-03T00:00:00Z",
+    "references": [
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2010-2251"
+        },
+        {
+            "type": "REPORT",
+            "url": "https://bugzilla.redhat.com/show_bug.cgi?id=591580"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "lftp -- multiple HTTP client download filename vulnerability"
+}

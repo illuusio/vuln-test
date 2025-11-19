@@ -1,0 +1,86 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "gitlab"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "introduced": "8.7.0"
+                        },
+                        {
+                            "last_affected": "8.15.7"
+                        },
+                        {
+                            "fixed": "8.15.7"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                },
+                {
+                    "events": [
+                        {
+                            "introduced": "8.16.0"
+                        },
+                        {
+                            "last_affected": "8.16.7"
+                        },
+                        {
+                            "fixed": "8.16.7"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                },
+                {
+                    "events": [
+                        {
+                            "introduced": "8.17.0"
+                        },
+                        {
+                            "last_affected": "8.17.3"
+                        },
+                        {
+                            "fixed": "8.17.3"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "cite": [
+            "https://about.gitlab.com/2017/03/20/gitlab-8-dot-17-dot-4-security-release/"
+        ],
+        "discovery": "2017-03-20T00:00:00Z",
+        "references": {
+            "cvename": [
+                "CVE-2017-0882"
+            ]
+        },
+        "vid": "5d62950f-3bb5-11e7-93f7-d43d7e971a1b"
+    },
+    "details": "GitLab reports:\n\n> # Information Disclosure in Issue and Merge Request Trackers\n>\n> During an internal code review a critical vulnerability in the GitLab\n> Issue and Merge Request trackers was discovered. This vulnerability\n> could allow a user with access to assign ownership of an issue or\n> merge request to another user to disclose that user\\'s private token,\n> email token, email address, and encrypted OTP secret. Reporter-level\n> access to a GitLab project is required to exploit this flaw.\n>\n> # SSRF when importing a project from a Repo by URL\n>\n> GitLab instances that have enabled project imports using \\\"Repo by\n> URL\\\" were vulnerable to Server-Side Request Forgery attacks. By\n> specifying a project import URL of localhost an attacker could target\n> services that are bound to the local interface of the server. These\n> services often do not require authentication. Depending on the service\n> an attacker might be able craft an attack using the project import\n> request URL.\n>\n> # Links in Environments tab vulnerable to tabnabbing\n>\n> edio via HackerOne reported that user-configured Environment links\n> include target=\\_blank but do not also include rel: noopener\n> noreferrer. Anyone clicking on these links may therefore be subjected\n> to tabnabbing attacks where a link back to the requesting page is\n> maintained and can be manipulated by the target server.\n>\n> # Accounts with email set to \\\"Do not show on profile\\\" have addresses exposed in public atom feed\n>\n> Several GitLab users reported that even with \\\"Do not show on\n> profile\\\" configured for their email addresses those addresses were\n> still being leaked in Atom feeds if they commented on a public\n> project.\n",
+    "id": "FreeBSD-2017-0112",
+    "modified": "2017-05-30T00:00:00Z",
+    "published": "2017-05-18T00:00:00Z",
+    "references": [
+        {
+            "type": "REPORT",
+            "url": "https://about.gitlab.com/2017/03/20/gitlab-8-dot-17-dot-4-security-release/"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2017-0882"
+        },
+        {
+            "type": "WEB",
+            "url": "https://about.gitlab.com/2017/03/20/gitlab-8-dot-17-dot-4-security-release/"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "gitlab -- Various security issues"
+}

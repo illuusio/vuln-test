@@ -1,0 +1,116 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "vim"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "6.3.45"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        },
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "vim-console"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "6.3.45"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        },
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "vim-lite"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "6.3.45"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        },
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "vim+ruby"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "6.3.45"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "cite": [
+            "ftp://ftp.vim.org/pub/vim/patches/6.3/6.3.045"
+        ],
+        "discovery": "2004-12-09T00:00:00Z",
+        "references": {
+            "cvename": [
+                "CVE-2004-1138"
+            ]
+        },
+        "vid": "bd9fc2bf-5ffe-11d9-a11a-000a95bc6fae"
+    },
+    "details": "Ciaran McCreesh discovered news ways in which a VIM modeline can be used\nto trojan a text file. The patch by Bram Moolenaar reads:\n\n> Problem: Unusual characters in an option value may cause unexpected\n> behavior, especially for a modeline. (Ciaran McCreesh)\n>\n> Solution: Don\\'t allow setting termcap options or \\'printdevice\\' or\n> \\'titleold\\' in a modeline. Don\\'t list options for \\\"termcap\\\" and\n> \\\"all\\\" in a modeline. Don\\'t allow unusual characters in\n> \\'filetype\\', \\'syntax\\', \\'backupext\\', \\'keymap\\', \\'patchmode\\' and\n> \\'langmenu\\'.\n\n**Note:** It is generally recommended that VIM users use\n`set nomodeline` in `~/.vimrc` to avoid the possibility of trojaned text\nfiles.\n",
+    "id": "FreeBSD-2005-0013",
+    "modified": "2005-01-13T00:00:00Z",
+    "published": "2005-01-06T00:00:00Z",
+    "references": [
+        {
+            "type": "REPORT",
+            "url": "ftp://ftp.vim.org/pub/vim/patches/6.3/6.3.045"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2004-1138"
+        },
+        {
+            "type": "WEB",
+            "url": "ftp://ftp.vim.org/pub/vim/patches/6.3/6.3.045"
+        },
+        {
+            "type": "DISCUSSION",
+            "url": "http://groups.yahoo.com/group/vimdev/message/38084"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "vim -- vulnerabilities in modeline handling"
+}

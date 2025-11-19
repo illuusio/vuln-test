@@ -1,0 +1,55 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "py39-unicorn"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "2.0.0rc1"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "cite": [
+            "https://osv.dev/vulnerability/PYSEC-2021-868"
+        ],
+        "discovery": "2021-12-26T00:00:00Z",
+        "references": {
+            "cvename": [
+                "CVE-2021-44078"
+            ]
+        },
+        "vid": "17083017-d993-43eb-8aaf-7138f4486d1c"
+    },
+    "details": "jwang-a reports:\n\n> An issue was discovered in split_region in uc.c in Unicorn Engine\n> before 2.0.0-rc5.\n>\n> It allows local attackers to escape the sandbox.\n>\n> An attacker must first obtain the ability to execute crafted code in\n> the target sandbox in order to exploit this vulnerability.\n>\n> The specific flaw exists within the virtual memory manager.\n>\n> The issue results from the faulty comparison of GVA and GPA while\n> calling uc_mem_map_ptr to free part of a claimed memory block.\n>\n> An attacker can leverage this vulnerability to escape the sandbox and\n> execute arbitrary code on the host machine.\n",
+    "id": "FreeBSD-2023-0117",
+    "modified": "2023-04-09T00:00:00Z",
+    "published": "2023-04-09T00:00:00Z",
+    "references": [
+        {
+            "type": "REPORT",
+            "url": "https://osv.dev/vulnerability/PYSEC-2021-868"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2021-44078"
+        },
+        {
+            "type": "WEB",
+            "url": "https://osv.dev/vulnerability/PYSEC-2021-868"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "py39-unicorn -- sandbox escape and arbitrary code execution vulnerability"
+}

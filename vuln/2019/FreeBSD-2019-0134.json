@@ -1,0 +1,60 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "powerdns"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "4.1.10"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "cite": [
+            "https://doc.powerdns.com/authoritative/changelog/4.1.html#change-4.1.10"
+        ],
+        "discovery": "2019-06-21T00:00:00Z",
+        "references": {
+            "cvename": [
+                "CVE-2019-10162",
+                "CVE-2019-10163"
+            ]
+        },
+        "vid": "1c21f6a3-9415-11e9-95ec-6805ca2fa271"
+    },
+    "details": "PowerDNS Team reports:\n\n> CVE-2019-10162: An issue has been found in PowerDNS Authoritative\n> Server allowing an authorized user to cause the server to exit by\n> inserting a crafted record in a MASTER type zone under their control.\n> The issue is due to the fact that the Authoritative Server will exit\n> when it runs into a parsing error while looking up the NS/A/AAAA\n> records it is about to use for an outgoing notify.\n>\n> CVE-2019-10163: An issue has been found in PowerDNS Authoritative\n> Server allowing a remote, authorized master server to cause a high CPU\n> load or even prevent any further updates to any slave zone by sending\n> a large number of NOTIFY messages. Note that only servers configured\n> as slaves are affected by this issue.\n",
+    "id": "FreeBSD-2019-0134",
+    "modified": "2019-06-21T00:00:00Z",
+    "published": "2019-06-21T00:00:00Z",
+    "references": [
+        {
+            "type": "REPORT",
+            "url": "https://doc.powerdns.com/authoritative/changelog/4.1.html#change-4.1.10"
+        },
+        {
+            "type": "WEB",
+            "url": "https://doc.powerdns.com/authoritative/changelog/4.1.html#change-4.1.10"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2019-10162"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2019-10163"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "powerdns -- multiple vulnerabilities"
+}

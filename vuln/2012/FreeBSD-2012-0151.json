@@ -1,0 +1,46 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "rssh"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "2.3.3"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "cite": [
+            "http://www.pizzashack.org/rssh/security.shtml"
+        ],
+        "discovery": "2010-08-01T00:00:00Z",
+        "vid": "a4598875-ec91-11e1-8bd8-0022156e8794"
+    },
+    "details": "Derek Martin (rssh maintainer) reports:\n\n> John Barber reported a problem where, if the system administrator\n> misconfigures rssh by providing too few access bits in the\n> configuration file, the user will be given default permissions (scp)\n> to the entire system, potentially circumventing any configured chroot.\n> Fixing this required a behavior change: in the past, using rssh\n> without a config file would give all users default access to use scp\n> on an unchrooted system. In order to correct the reported bug, this\n> feature has been eliminated, and you must now have a valid\n> configuration file. If no config file exists, all users will be locked\n> out.\n",
+    "id": "FreeBSD-2012-0151",
+    "modified": "2012-08-22T00:00:00Z",
+    "published": "2012-08-22T00:00:00Z",
+    "references": [
+        {
+            "type": "REPORT",
+            "url": "http://www.pizzashack.org/rssh/security.shtml"
+        },
+        {
+            "type": "WEB",
+            "url": "http://www.pizzashack.org/rssh/security.shtml"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "rssh -- configuration restrictions bypass"
+}

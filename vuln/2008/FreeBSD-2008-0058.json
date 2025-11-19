@@ -1,0 +1,100 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "qemu"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "0.9.1_6"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                },
+                {
+                    "events": [
+                        {
+                            "introduced": "0.9.1s.20070101*"
+                        },
+                        {
+                            "fixed": "0.9.1s.20080302_6"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        },
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "qemu-devel"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "0.9.1_6"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                },
+                {
+                    "events": [
+                        {
+                            "introduced": "0.9.1s.20070101*"
+                        },
+                        {
+                            "fixed": "0.9.1s.20080302_6"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "cite": [
+            "http://secunia.com/advisories/30111/"
+        ],
+        "discovery": "2008-04-28T00:00:00Z",
+        "references": {
+            "cvename": [
+                "CVE-2008-2004"
+            ]
+        },
+        "vid": "8950ac62-1d30-11dd-9388-0211060005df"
+    },
+    "details": "Secunia reports:\n\n> A vulnerability has been reported in QEMU, which can be exploited by\n> malicious, local users to bypass certain security restrictions.\n>\n> The vulnerability is caused due to the \\\"drive_init()\\\" function in\n> vl.c determining the format of a disk from data contained in the\n> disk\\'s header. This can be exploited by a malicious user in a guest\n> system to e.g. read arbitrary files on the host by writing a fake\n> header to a raw formatted disk image.\n",
+    "id": "FreeBSD-2008-0058",
+    "modified": "2008-05-08T00:00:00Z",
+    "published": "2008-05-08T00:00:00Z",
+    "references": [
+        {
+            "type": "REPORT",
+            "url": "http://secunia.com/advisories/30111/"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2008-2004"
+        },
+        {
+            "type": "WEB",
+            "url": "http://secunia.com/advisories/30111/"
+        },
+        {
+            "type": "DISCUSSION",
+            "url": "http://lists.gnu.org/archive/html/qemu-devel/2008-04/msg00675.html"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "qemu -- \"drive_init()\" Disk Format Security Bypass"
+}

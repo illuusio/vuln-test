@@ -1,0 +1,59 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "vscode"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "1.100.1"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "cite": [
+            "https://github.com/microsoft/vscode/security/advisories/GHSA-742r-ggwg-vqxm"
+        ],
+        "discovery": "2025-05-13T00:00:00Z",
+        "references": {
+            "cvename": [
+                "CVE-2025-21264"
+            ]
+        },
+        "vid": "6f10b49d-07b1-4be4-8abf-edf880b16ad2"
+    },
+    "details": "VSCode developers report:\n\n> A security feature bypass vulnerability exists in VS Code 1.100.0 and\n> earlier versions where a maliciously crafted URL could be considered\n> trusted when it should not have due to how VS Code handled glob\n> patterns in the trusted domains feature. When paired with the #fetch\n> tool in Chat, this scenario would require the attacker to convince an\n> LLM (via prompt injection) to fetch the maliciously crafted URL but\n> when fetched, the user would have no moment to confirm the flighting\n> of the request.\n",
+    "id": "FreeBSD-2025-0141",
+    "modified": "2025-05-14T00:00:00Z",
+    "published": "2025-05-14T00:00:00Z",
+    "references": [
+        {
+            "type": "REPORT",
+            "url": "https://github.com/microsoft/vscode/security/advisories/GHSA-742r-ggwg-vqxm"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2025-21264"
+        },
+        {
+            "type": "WEB",
+            "url": "https://github.com/microsoft/vscode/security/advisories/GHSA-742r-ggwg-vqxm"
+        },
+        {
+            "type": "WEB",
+            "url": "https://msrc.microsoft.com/update-guide/vulnerability/CVE-2025-21264"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "vscode -- security feature bypass vulnerability"
+}

@@ -1,0 +1,55 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "xen-kernel"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "4.5.2_1"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "cite": [
+            "http://xenbits.xen.org/xsa/advisory-166.html"
+        ],
+        "discovery": "2015-12-17T00:00:00Z",
+        "references": {
+            "freebsdpr": [
+                "ports/205841"
+            ]
+        },
+        "vid": "6aa2d135-b40e-11e5-9728-002590263bf5"
+    },
+    "details": "The Xen Project reports:\n\n> Single memory accesses in source code can be translated to multiple\n> ones in machine code by the compiler, requiring special caution when\n> accessing shared memory. Such precaution was missing from the\n> hypervisor code inspecting the state of I/O requests sent to the\n> device model for assistance.\n>\n> Due to the offending field being a bitfield, it is however believed\n> that there is no issue in practice, since compilers, at least when\n> optimizing (which is always the case for non-debug builds), should\n> find it more expensive to extract the bit field value twice than to\n> keep the calculated value in a register.\n>\n> This vulnerability is exposed to malicious device models. In\n> conventional Xen systems this means the qemu which service an HVM\n> domain. On such systems this vulnerability can only be exploited if\n> the attacker has gained control of the device model qemu via another\n> vulnerability.\n>\n> Privilege escalation, host crash (Denial of Service), and leaked\n> information all cannot be excluded.\n",
+    "id": "FreeBSD-2016-0029",
+    "modified": "2016-01-06T00:00:00Z",
+    "published": "2016-01-06T00:00:00Z",
+    "references": [
+        {
+            "type": "REPORT",
+            "url": "http://xenbits.xen.org/xsa/advisory-166.html"
+        },
+        {
+            "type": "REPORT",
+            "url": "https://bugs.freebsd.org/bugzilla/show_bug.cgi?id=205841"
+        },
+        {
+            "type": "WEB",
+            "url": "http://xenbits.xen.org/xsa/advisory-166.html"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "xen-kernel -- ioreq handling possibly susceptible to multiple read issue"
+}

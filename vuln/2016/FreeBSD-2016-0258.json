@@ -1,0 +1,109 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "python27"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "2.7.12"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        },
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "python33"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "introduced": "0,1"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        },
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "python34"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "3.4.5"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        },
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "python35"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "3.5.2"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "cite": [
+            "https://bugzilla.redhat.com/show_bug.cgi?id=CVE-2016-0772"
+        ],
+        "discovery": "2016-06-14T00:00:00Z",
+        "references": {
+            "cvename": [
+                "CVE-2016-0772"
+            ]
+        },
+        "vid": "8d5368ef-40fe-11e6-b2ec-b499baebfeaf"
+    },
+    "details": "Red Hat reports:\n\n> A vulnerability in smtplib allowing MITM attacker to perform a\n> startTLS stripping attack. smtplib does not seem to raise an exception\n> when the remote end (smtp server) is capable of negotiating starttls\n> but fails to respond with 220 (ok) to an explicit call of\n> SMTP.starttls(). This may allow a malicious MITM to perform a startTLS\n> stripping attack if the client code does not explicitly check the\n> response code for startTLS.\n",
+    "id": "FreeBSD-2016-0258",
+    "modified": "2016-07-03T00:00:00Z",
+    "published": "2016-07-03T00:00:00Z",
+    "references": [
+        {
+            "type": "REPORT",
+            "url": "https://bugzilla.redhat.com/show_bug.cgi?id=CVE-2016-0772"
+        },
+        {
+            "type": "REPORT",
+            "url": "https://bugzilla.redhat.com/show_bug.cgi?id=CVE-2016-0772"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2016-0772"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "Python -- smtplib StartTLS stripping vulnerability"
+}

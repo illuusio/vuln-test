@@ -1,0 +1,73 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "websvn"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "2.1.0"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "cite": [
+            "http://secunia.com/advisories/32338/"
+        ],
+        "discovery": "2008-10-23T00:00:00Z",
+        "references": {
+            "cvename": [
+                "CVE-2008-5918",
+                "CVE-2008-5919",
+                "CVE-2009-0240"
+            ]
+        },
+        "vid": "71597e3e-f6b8-11dd-94d9-0030843d3802"
+    },
+    "details": "Secunia reports:\n\n> Some vulnerabilities have been reported in WebSVN, which can be\n> exploited by malicious users to disclose sensitive information, and by\n> malicious people to conduct cross-site scripting attacks and\n> manipulate data.\n>\n> Input passed in the URL to index.php is not properly sanitised before\n> being returned to the user. This can be exploited to execute arbitrary\n> HTML and script code in a user\\'s browser session in context of an\n> affected site.\n>\n> Input passed to the \\\"rev\\\" parameter in rss.php is not properly\n> sanitised before being used. This can be exploited to overwrite\n> arbitrary files via directory traversal attacks.\n>\n> Access to restricted repositories is not properly enforced, which can\n> be exploited to disclose potentially sensitive information by\n> accessing the repository via \\\"listing.php\\\" and using the \\\"compare\n> with previous\\\" and \\\"show changed files\\\" links.\n",
+    "id": "FreeBSD-2009-0038",
+    "modified": "2009-02-09T00:00:00Z",
+    "published": "2009-02-09T00:00:00Z",
+    "references": [
+        {
+            "type": "REPORT",
+            "url": "http://secunia.com/advisories/32338/"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2008-5918"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2008-5919"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2009-0240"
+        },
+        {
+            "type": "WEB",
+            "url": "http://secunia.com/advisories/32338/"
+        },
+        {
+            "type": "WEB",
+            "url": "http://bugs.debian.org/cgi-bin/bugreport.cgi?bug=512191"
+        },
+        {
+            "type": "WEB",
+            "url": "http://www.gulftech.org/?node=research&article_id=00132-10202008"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "websvn -- multiple vulnerabilities"
+}

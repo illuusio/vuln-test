@@ -1,0 +1,60 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "pcre"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "8.37"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "cite": [
+            "http://www.pcre.org/original/changelog.txt"
+        ],
+        "discovery": "2015-04-28T00:00:00Z",
+        "references": {
+            "cvename": [
+                "CVE-2015-2325",
+                "CVE-2015-2326"
+            ]
+        },
+        "vid": "4a88e3ed-00d3-11e5-a072-d050996490d0"
+    },
+    "details": "PCRE development team reports:\n\n> A pattern such as \\\"((?2){0,1999}())?\\\", which has a group containing\n> a forward reference repeated a large (but limited) number of times\n> within a repeated outer group that has a zero minimum quantifier,\n> caused incorrect code to be compiled, leading to the error \\\"internal\n> error: previously-checked referenced subpattern not found\\\" when an\n> incorrect memory address was read. This bug was reported as \\\"heap\n> overflow\\\", discovered by Kai Lu of Fortinet\\'s FortiGuard Labs and\n> given the CVE number CVE-2015-2325.\n>\n> A pattern such as \\\"((?+1)(\\\\1))/\\\" containing a forward reference\n> subroutine call within a group that also contained a recursive back\n> reference caused incorrect code to be compiled. This bug was reported\n> as \\\"heap overflow\\\", discovered by Kai Lu of Fortinet\\'s FortiGuard\n> Labs, and given the CVE number CVE-2015-2326.\n",
+    "id": "FreeBSD-2015-0102",
+    "modified": "2015-06-07T00:00:00Z",
+    "published": "2015-05-22T00:00:00Z",
+    "references": [
+        {
+            "type": "REPORT",
+            "url": "http://www.pcre.org/original/changelog.txt"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2015-2325"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2015-2326"
+        },
+        {
+            "type": "WEB",
+            "url": "http://www.pcre.org/original/changelog.txt"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "pcre -- multiple vulnerabilities"
+}

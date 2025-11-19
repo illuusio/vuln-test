@@ -1,0 +1,101 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "squirrelmail"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "1.4.4"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        },
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "ja-squirrelmail"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "1.4.4"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "cite": [
+            "http://marc.theaimsgroup.com/?l=bugtraq&m=110702772714662"
+        ],
+        "discovery": "2005-01-29T00:00:00Z",
+        "references": {
+            "cvename": [
+                "CVE-2004-1036",
+                "CVE-2005-0075",
+                "CVE-2005-0103",
+                "CVE-2005-0104"
+            ]
+        },
+        "vid": "79630c0c-8dcc-45d0-9908-4087fe1d618c"
+    },
+    "details": "A SquirrelMail Security Advisory reports:\n\n> SquirrelMail 1.4.4 has been released to resolve a number of security\n> issues disclosed below. It is strongly recommended that all running\n> SquirrelMail prior to 1.4.4 upgrade to the latest release.\n>\n> # Remote File Inclusion\n>\n> Manoel Zaninetti reported an issue in src/webmail.php which would\n> allow a crafted URL to include a remote web page. This was assigned\n> CAN-2005-0103 by the Common Vulnerabilities and Exposures.\n>\n> # Cross Site Scripting Issues\n>\n> A possible cross site scripting issue exists in src/webmail.php that\n> is only accessible when the PHP installation is running with\n> register_globals set to On. This issue was uncovered internally by the\n> SquirrelMail Development team. This isssue was assigned CAN-2005-0104\n> by the Common Vulnerabilities and Exposures.\n>\n> A second issue which was resolved in the 1.4.4-rc1 release was\n> uncovered and assigned CAN-2004-1036 by the Common Vulnerabilities and\n> Exposures. This issue could allow a remote user to send a specially\n> crafted header and cause execution of script (such as javascript) in\n> the client browser.\n>\n> # Local File Inclusion\n>\n> A possible local file inclusion issue was uncovered by one of our\n> developers involving custom preference handlers. This issue is only\n> active if the PHP installation is running with register_globals set to\n> On.\n",
+    "id": "FreeBSD-2005-0162",
+    "modified": "2005-06-01T00:00:00Z",
+    "published": "2005-06-01T00:00:00Z",
+    "references": [
+        {
+            "type": "REPORT",
+            "url": "http://marc.theaimsgroup.com/?l=bugtraq&m=110702772714662"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2004-1036"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2005-0075"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2005-0103"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2005-0104"
+        },
+        {
+            "type": "DISCUSSION",
+            "url": "http://marc.theaimsgroup.com/?l=bugtraq&m=110702772714662"
+        },
+        {
+            "type": "WEB",
+            "url": "http://www.squirrelmail.org/security/issue/2005-01-14"
+        },
+        {
+            "type": "WEB",
+            "url": "http://www.squirrelmail.org/security/issue/2005-01-19"
+        },
+        {
+            "type": "WEB",
+            "url": "http://www.squirrelmail.org/security/issue/2005-01-20"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "squirrelmail -- XSS and remote code injection vulnerabilities"
+}

@@ -1,0 +1,55 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "sudo"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "introduced": "1.6.8"
+                        },
+                        {
+                            "fixed": "1.8.18p1"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "cite": [
+            "https://www.sudo.ws/alerts/noexec_wordexp.html"
+        ],
+        "discovery": "2016-10-28T00:00:00Z",
+        "references": {
+            "cvename": [
+                "CVE-2016-7076"
+            ]
+        },
+        "vid": "2e4fbc9a-9d23-11e6-a298-14dae9d210b8"
+    },
+    "details": "Todd C. Miller reports:\n\n> A flaw exists in sudo\\'s noexec functionality that may allow a user\n> with sudo privileges to run additional commands even when the NOEXEC\n> tag has been applied to a command that uses the wordexp() function.\n",
+    "id": "FreeBSD-2016-0414",
+    "modified": "2016-10-28T00:00:00Z",
+    "published": "2016-10-28T00:00:00Z",
+    "references": [
+        {
+            "type": "REPORT",
+            "url": "https://www.sudo.ws/alerts/noexec_wordexp.html"
+        },
+        {
+            "type": "WEB",
+            "url": "https://www.sudo.ws/alerts/noexec_wordexp.html"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2016-7076"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "sudo -- Potential bypass of sudo_noexec.so via wordexp()"
+}

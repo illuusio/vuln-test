@@ -1,0 +1,62 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "nsd"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "3.2.11_2"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "cite": [
+            "http://www.nlnetlabs.nl/downloads/CVE-2012-2978.txt"
+        ],
+        "discovery": "2012-07-19T00:00:00Z",
+        "references": {
+            "cvename": [
+                "CVE-2012-2978"
+            ],
+            "freebsdpr": [
+                "ports/170024"
+            ]
+        },
+        "vid": "ce82bfeb-d276-11e1-92c6-14dae938ec40"
+    },
+    "details": "Marek Vavrusa and Lubos Slovak report:\n\n> It is possible to crash (SIGSEGV) a NSD child server process by\n> sending it a non-standard DNS packet from any host on the internet. A\n> crashed child process will automatically be restarted by the parent\n> process, but an attacker may keep the NSD server occupied restarting\n> child processes by sending it a stream of such packets effectively\n> preventing the NSD server to serve.\n",
+    "id": "FreeBSD-2012-0124",
+    "modified": "2012-07-21T00:00:00Z",
+    "published": "2012-07-20T00:00:00Z",
+    "references": [
+        {
+            "type": "REPORT",
+            "url": "http://www.nlnetlabs.nl/downloads/CVE-2012-2978.txt"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2012-2978"
+        },
+        {
+            "type": "REPORT",
+            "url": "https://bugs.freebsd.org/bugzilla/show_bug.cgi?id=170024"
+        },
+        {
+            "type": "WEB",
+            "url": "http://www.nlnetlabs.nl/downloads/CVE-2012-2978.txt"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "dns/nsd -- DoS vulnerability from non-standard DNS packet"
+}

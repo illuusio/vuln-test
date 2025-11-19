@@ -1,0 +1,73 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:kernel",
+                "name": "FreeBSD-kernel"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "introduced": "12.1"
+                        },
+                        {
+                            "fixed": "12.1_8"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                },
+                {
+                    "events": [
+                        {
+                            "introduced": "11.4"
+                        },
+                        {
+                            "fixed": "11.4_2"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                },
+                {
+                    "events": [
+                        {
+                            "introduced": "11.3"
+                        },
+                        {
+                            "fixed": "11.3_12"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "discovery": "2020-08-05T00:00:00Z",
+        "references": {
+            "cvename": [
+                "CVE-2020-7459"
+            ],
+            "freebsdsa": [
+                "SA-20:21.usb_net"
+            ]
+        },
+        "vid": "9eb01384-d793-11ea-88f8-901b0ef719ab"
+    },
+    "details": "# Problem Description:\n\nA missing length validation code common to these three drivers means\nthat a malicious USB device could write beyond the end of an allocated\nnetwork packet buffer.\n\n# Impact:\n\nAn attacker with physical access to a USB port and the ability to bring\na network interface up may be able to use a specially crafted USB device\nto gain kernel or user-space code execution.\n",
+    "id": "FreeBSD-2020-0200",
+    "modified": "2020-08-06T00:00:00Z",
+    "published": "2020-08-06T00:00:00Z",
+    "references": [
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2020-7459"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://www.freebsd.org/security/advisories/FreeBSD-SA-20:21.usb_net.asc"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "FreeBSD -- Potential memory corruption in USB network device drivers"
+}

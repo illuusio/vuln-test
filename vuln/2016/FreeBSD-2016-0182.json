@@ -1,0 +1,62 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "dhcpcd"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "6.10.2"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "cite": [
+            "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2014-7913"
+        ],
+        "discovery": "2016-01-22T00:00:00Z",
+        "references": {
+            "cvename": [
+                "CVE-2014-7913"
+            ],
+            "freebsdpr": [
+                "ports/208702"
+            ]
+        },
+        "vid": "6ec9f210-0404-11e6-9aee-bc5ff4fb5ea1"
+    },
+    "details": "MITRE reports:\n\n> The print_option function in dhcp-common.c in dhcpcd through 6.9.1, as\n> used in dhcp.c in dhcpcd 5.x in Android before 5.1 and other products,\n> misinterprets the return value of the snprintf function, which allows\n> remote DHCP servers to execute arbitrary code or cause a denial of\n> service (memory corruption) via a crafted message.\n",
+    "id": "FreeBSD-2016-0182",
+    "modified": "2016-04-17T00:00:00Z",
+    "published": "2016-04-17T00:00:00Z",
+    "references": [
+        {
+            "type": "REPORT",
+            "url": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2014-7913"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2014-7913"
+        },
+        {
+            "type": "REPORT",
+            "url": "https://bugs.freebsd.org/bugzilla/show_bug.cgi?id=208702"
+        },
+        {
+            "type": "WEB",
+            "url": "http://roy.marples.name/projects/dhcpcd/info/528541c4c619520e"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "dhcpcd -- remote code execution/denial of service"
+}

@@ -1,0 +1,62 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "sudo"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "1.6.8.10"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "cite": [
+            "http://www.courtesan.com/sudo/alerts/bash_env.html"
+        ],
+        "discovery": "2005-10-25T00:00:00Z",
+        "references": {
+            "bid": [
+                "15191"
+            ],
+            "cvename": [
+                "CVE-2005-2959"
+            ]
+        },
+        "vid": "1b725079-9ef6-11da-b410-000e0c2e438a"
+    },
+    "details": "Tavis Ormandy reports:\n\n> The bash shell uses the value of the PS4 environment variable (after\n> expansion) as a prefix for commands run in execution trace mode.\n> Execution trace mode (xtrace) is normally set via bash\\'s -x command\n> line option or interactively by running \\\"set -o xtrace\\\". However, it\n> may also be enabled by placing the string \\\"xtrace\\\" in the SHELLOPTS\n> environment variable before bash is started.\n>\n> A malicious user with sudo access to a shell script that uses bash can\n> use this feature to run arbitrary commands for each line of the\n> script.\n",
+    "id": "FreeBSD-2006-0028",
+    "modified": "2006-02-16T00:00:00Z",
+    "published": "2006-02-16T00:00:00Z",
+    "references": [
+        {
+            "type": "REPORT",
+            "url": "http://www.courtesan.com/sudo/alerts/bash_env.html"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://www.securityfocus.com/bid/15191/info"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2005-2959"
+        },
+        {
+            "type": "WEB",
+            "url": "http://www.courtesan.com/sudo/alerts/bash_env.html"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "sudo -- arbitrary command execution"
+}

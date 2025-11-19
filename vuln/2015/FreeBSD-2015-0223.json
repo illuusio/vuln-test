@@ -1,0 +1,93 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "xmltooling"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "1.5.5"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        },
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "opensaml2"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "2.5.5"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        },
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "shibboleth-sp"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "2.5.5"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "cite": [
+            "http://shibboleth.net/community/advisories/secadv_20150721.txt"
+        ],
+        "discovery": "2015-07-21T00:00:00Z",
+        "references": {
+            "cvename": [
+                "CVE-2015-2684"
+            ]
+        },
+        "vid": "b202e4ce-3114-11e5-aa32-0026551a22dc"
+    },
+    "details": "Shibboleth consortium reports:\n\n> Shibboleth SP software crashes on well-formed but invalid XML.\n>\n> The Service Provider software contains a code path with an uncaught\n> exception that can be triggered by an unauthenticated attacker by\n> supplying well-formed but schema-invalid XML in the form of SAML\n> metadata or SAML protocol messages. The result is a crash and so\n> causes a denial of service.\n>\n> You must rebuild opensaml and shibboleth with xmltooling-1.5.5 or\n> later. The easiest way to do so is to update the whole chain including\n> shibboleth-2.5.5 an opensaml2.5.5.\n",
+    "id": "FreeBSD-2015-0223",
+    "modified": "2015-07-23T00:00:00Z",
+    "published": "2015-07-23T00:00:00Z",
+    "references": [
+        {
+            "type": "REPORT",
+            "url": "http://shibboleth.net/community/advisories/secadv_20150721.txt"
+        },
+        {
+            "type": "WEB",
+            "url": "http://shibboleth.net/community/advisories/secadv_20150721.txt"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2015-2684"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "shibboleth-sp -- DoS vulnerability"
+}

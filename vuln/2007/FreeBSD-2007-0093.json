@@ -1,0 +1,77 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "apache"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "introduced": "2.2.0,1"
+                        },
+                        {
+                            "fixed": "2.2.6"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                },
+                {
+                    "events": [
+                        {
+                            "introduced": "2.0.0,1"
+                        },
+                        {
+                            "fixed": "2.0.61"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "cite": [
+            "http://www.apache.org/dist/httpd/Announcement2.2.html"
+        ],
+        "discovery": "2007-09-07T00:00:00Z",
+        "references": {
+            "cvename": [
+                "CVE-2007-3847",
+                "CVE-2007-1863",
+                "CVE-2006-5752",
+                "CVE-2007-3304"
+            ]
+        },
+        "vid": "c115271d-602b-11dc-898c-001921ab2fa4"
+    },
+    "details": "Apache HTTP server project reports:\n\n> The following potential security flaws are addressed:\n>\n> - CVE-2007-3847: mod_proxy: Prevent reading past the end of a buffer\n>   when parsing date-related headers.\n> - CVE-2007-1863: mod_cache: Prevent a segmentation fault if attributes\n>   are listed in a Cache-Control header without any value.\n> - CVE-2007-3304: prefork, worker, event MPMs: Ensure that the parent\n>   process cannot be forced to kill processes outside its process\n>   group.\n> - CVE-2006-5752: mod_status: Fix a possible XSS attack against a site\n>   with a public server-status page and ExtendedStatus enabled, for\n>   browsers which perform charset \\\"detection\\\". Reported by Stefan\n>   Esser.\n> - CVE-2006-1862: mod_mem_cache: Copy headers into longer lived\n>   storage; header names and values could previously point to cleaned\n>   up storage.\n",
+    "id": "FreeBSD-2007-0093",
+    "modified": "2007-09-11T00:00:00Z",
+    "published": "2007-09-11T00:00:00Z",
+    "references": [
+        {
+            "type": "REPORT",
+            "url": "http://www.apache.org/dist/httpd/Announcement2.2.html"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2007-3847"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2007-1863"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2006-5752"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2007-3304"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "apache -- multiple vulnerabilities"
+}

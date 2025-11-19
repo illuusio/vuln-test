@@ -1,0 +1,51 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "grub2-bhyve"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "0.40_8"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "cite": [
+            "https://www.voidsecurity.in/",
+            "https://www.voidsecurity.in/"
+        ],
+        "discovery": "2019-12-09T00:00:00Z",
+        "vid": "9d6a48a7-4dad-11ea-8a1d-7085c25400ea"
+    },
+    "details": "Reno Robert reports:\n\n> FreeBSD uses a two-process model for running a VM. For booting\n> non-FreeBSD guests, a modified grub-emu is used (grub-bhyve).\n> Grub-bhyve executes command from guest grub.cfg file. This is a\n> security problem because grub was never written to handle inputs from\n> OS as untrusted. In the current design, grub and guest OS works across\n> trust boundaries. This exposes a grub to untrusted inputs from guest.\n>\n> grub-bhyve (emu) is built without SDL graphics support which reduces\n> lot of gfx attack surface, however font loading code is still\n> accessible. Guest can provide arbitrary font file, which is parsed by\n> grub-bhyve running as root.\n>\n> In grub-core/font/font.c, `read_section_as_string()` allocates\n> `section->length + 1` bytes of memory. However, untrusted\n> `section->length` is an unsigned 32-bit number, and the result can\n> overflow to `malloc(0)`. This can result in a controlled buffer\n> overflow via the \\'loadfont\\' command in a guest VM grub2.cfg,\n> eventually leading to privilege escalation from guest to host.\n\nReno Robert also reports:\n\n> GRUB supports commands to read and write addresses of choice. In\n> grub-bhyve, these commands provide a way to write to arbitrary virtual\n> addresses within the grub-bhyve process. This is another way for a\n> guest grub2.cfg, run by the host, to eventually escalate privileges.\n\nThese vulnerabilities are mitigated by disabling the \\'loadfont\\',\n\\'write_dword\\', \\'read_dword\\', \\'inl\\', \\'outl\\', and other width\nvariants of the same functionality in grub2-bhyve.\n\nThere is also work in progress to sandbox the grub-bhyve utility such\nthat an escaped guest ends up with nobody:nobody in a Capsium sandbox.\nIt is not included in 0.40_8.\n",
+    "id": "FreeBSD-2020-0027",
+    "modified": "2020-02-12T00:00:00Z",
+    "published": "2020-02-12T00:00:00Z",
+    "references": [
+        {
+            "type": "REPORT",
+            "url": "https://www.voidsecurity.in/"
+        },
+        {
+            "type": "REPORT",
+            "url": "https://www.voidsecurity.in/"
+        },
+        {
+            "type": "WEB",
+            "url": "https://www.voidsecurity.in/"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "grub2-bhyve -- multiple privilege escalations"
+}

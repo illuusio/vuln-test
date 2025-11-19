@@ -1,0 +1,71 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "greed"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "last_affected": "0.81p"
+                        },
+                        {
+                            "fixed": "0.81p"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "cite": [
+            "http://tigger.uic.edu/~jlongs2/holes/greed.txt"
+        ],
+        "discovery": "2004-12-15T00:00:00Z",
+        "references": {
+            "cvename": [
+                "CVE-2004-1273",
+                "CVE-2004-1274"
+            ]
+        },
+        "vid": "bd579366-5290-11d9-ac20-00065be4b5b6"
+    },
+    "details": "A buffer overflow vulnerability has been detected in the greed URL\nhandling code. This bug can especially be a problem when greed is used\nto process GRX (GetRight) files that originate from untrusted sources.\n\nThe bug finder, Manigandan Radhakrishnan, gave the following\ndescription:\n\n> Here are the bugs. First, in main.c, DownloadLoop() uses strcat() to\n> copy an input filename to the end of a 128-byte COMMAND array. Second,\n> DownloadLoop() passes the input filename to system() without checking\n> for special characters such as semicolons.\n",
+    "id": "FreeBSD-2005-0009",
+    "modified": "2005-01-13T00:00:00Z",
+    "published": "2005-01-03T00:00:00Z",
+    "references": [
+        {
+            "type": "REPORT",
+            "url": "http://tigger.uic.edu/~jlongs2/holes/greed.txt"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2004-1273"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2004-1274"
+        },
+        {
+            "type": "WEB",
+            "url": "http://tigger.uic.edu/~jlongs2/holes/greed.txt"
+        },
+        {
+            "type": "WEB",
+            "url": "http://secunia.com/advisories/13534/"
+        },
+        {
+            "type": "DISCUSSION",
+            "url": "http://marc.theaimsgroup.com/?l=bugtraq&m=110321888413132"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "greed -- insecure GRX file processing"
+}

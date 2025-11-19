@@ -1,0 +1,67 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "p5-Imager"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "0.57"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "discovery": "2007-04-04T00:00:00Z",
+        "references": {
+            "cvename": [
+                "CVE-2007-1942",
+                "CVE-2007-1943",
+                "CVE-2007-1946",
+                "CVE-2007-1948"
+            ]
+        },
+        "vid": "632c98be-aad2-4af2-849f-41a6862afd6a"
+    },
+    "details": "Imager 0.56 and all earlier versions with BMP support have a security\nissue when reading compressed 8-bit per pixel BMP files where either a\ncompressed run of data or a literal run of data overflows the scan-line.\n\nSuch an overflow causes a buffer overflow in a malloc() allocated memory\nbuffer, possibly corrupting the memory arena headers.\n\nThe effect depends on your system memory allocator, with glibc this\ntypically results in an abort, but with other memory allocators it may\nbe possible to cause local code execution.\n",
+    "id": "FreeBSD-2007-0039",
+    "modified": "2010-05-12T00:00:00Z",
+    "published": "2007-04-30T00:00:00Z",
+    "references": [
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2007-1942"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2007-1943"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2007-1946"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2007-1948"
+        },
+        {
+            "type": "WEB",
+            "url": "https://rt.cpan.org/Public/Bug/Display.html?id=26811"
+        },
+        {
+            "type": "WEB",
+            "url": "http://ifsec.blogspot.com/2007/04/several-windows-image-viewers.html"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "p5-Imager -- possibly exploitable buffer overflow"
+}

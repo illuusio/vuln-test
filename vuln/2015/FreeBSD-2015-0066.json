@@ -1,0 +1,93 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "asterisk"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "1.8.32.3"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        },
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "asterisk11"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "11.17.1"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        },
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "asterisk13"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "13.3.2"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "cite": [
+            "http://www.asterisk.org/downloads/security-advisories"
+        ],
+        "discovery": "2015-04-04T00:00:00Z",
+        "references": {
+            "cvename": [
+                "CVE-2015-3008"
+            ]
+        },
+        "vid": "5fee3f02-de37-11e4-b7c3-001999f8d30b"
+    },
+    "details": "The Asterisk project reports:\n\n> When Asterisk registers to a SIP TLS device and and verifies the\n> server, Asterisk will accept signed certificates that match a common\n> name other than the one Asterisk is expecting if the signed\n> certificate has a common name containing a null byte after the portion\n> of the common name that Asterisk expected. For example, if Asterisk is\n> trying to register to www.domain.com, Asterisk will accept\n> certificates of the form www.domain.com\\\\x00www.someotherdomain.com\n",
+    "id": "FreeBSD-2015-0066",
+    "modified": "2015-04-08T00:00:00Z",
+    "published": "2015-04-08T00:00:00Z",
+    "references": [
+        {
+            "type": "REPORT",
+            "url": "http://www.asterisk.org/downloads/security-advisories"
+        },
+        {
+            "type": "WEB",
+            "url": "http://downloads.asterisk.org/pub/security/AST-2015-003.html"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2015-3008"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "asterisk -- TLS Certificate Common name NULL byte exploit"
+}

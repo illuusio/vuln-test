@@ -1,0 +1,55 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "p7zip"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "15.14_1"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "cite": [
+            "http://www.talosintelligence.com/reports/TALOS-2016-0094/"
+        ],
+        "discovery": "2016-05-11T00:00:00Z",
+        "references": {
+            "cvename": [
+                "CVE-2016-2335"
+            ]
+        },
+        "vid": "d706a3a3-4a7c-11e6-97f7-5453ed2e2b49"
+    },
+    "details": "Cisco Talos reports:\n\n> An out-of-bounds read vulnerability exists in the way 7-Zip handles\n> Universal Disk Format (UDF) files.\n>\n> Central to 7-Zip's processing of UDF files is the\n> CInArchive::ReadFileItem method. Because volumes can have more than\n> one partition map, their objects are kept in an object vector. To\n> start looking for an item, this method tries to reference the proper\n> object using the partition map's object vector and the\n> \\\"PartitionRef\\\" field from the Long Allocation Descriptor. Lack of\n> checking whether the \\\"PartitionRef\\\" field is bigger than the\n> available amount of partition map objects causes a read out-of-bounds\n> and can lead, in some circumstances, to arbitrary code execution.\n",
+    "id": "FreeBSD-2016-0275",
+    "modified": "2016-07-15T00:00:00Z",
+    "published": "2016-07-15T00:00:00Z",
+    "references": [
+        {
+            "type": "REPORT",
+            "url": "http://www.talosintelligence.com/reports/TALOS-2016-0094/"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2016-2335"
+        },
+        {
+            "type": "WEB",
+            "url": "http://blog.talosintel.com/2016/05/multiple-7-zip-vulnerabilities.html"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "p7zip -- out-of-bounds read vulnerability"
+}

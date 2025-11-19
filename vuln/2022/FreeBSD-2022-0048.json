@@ -1,0 +1,92 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "asterisk16"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "16.24.1"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        },
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "asterisk18"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "18.10.1"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "cite": [
+            "https://www.asterisk.org/downloads/security-advisories/"
+        ],
+        "discovery": "2022-03-03T00:00:00Z",
+        "references": {
+            "cvename": [
+                "CVE-2021-37706",
+                "CVE-2022-23608",
+                "CVE-2022-21723"
+            ]
+        },
+        "vid": "964c5460-9c66-11ec-ad3a-001999f8d30b"
+    },
+    "details": "The Asterisk project reports:\n\n> AST-2022-004 - The header length on incoming STUN messages that\n> contain an ERROR-CODE attribute is not properly checked. This can\n> result in an integer underflow. Note, this requires ICE or WebRTC\n> support to be in use with a malicious remote party.\n>\n> AST-2022-005 - When acting as a UAC, and when placing an outgoing call\n> to a target that then forks Asterisk may experience undefined behavior\n> (crashes, hangs, etc) after a dialog set is prematurely freed.\n>\n> AST-2022-006 - If an incoming SIP message contains a malformed\n> multi-part body an out of bounds read access may occur, which can\n> result in undefined behavior. Note, its currently uncertain if there\n> is any externally exploitable vector within Asterisk for this issue,\n> but providing this as a security issue out of caution.\n",
+    "id": "FreeBSD-2022-0048",
+    "modified": "2022-03-05T00:00:00Z",
+    "published": "2022-03-05T00:00:00Z",
+    "references": [
+        {
+            "type": "REPORT",
+            "url": "https://www.asterisk.org/downloads/security-advisories/"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2021-37706"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2022-23608"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2022-21723"
+        },
+        {
+            "type": "WEB",
+            "url": "https://downloads.asterisk.org/pub/security/AST-2022-004.html"
+        },
+        {
+            "type": "WEB",
+            "url": "https://downloads.asterisk.org/pub/security/AST-2022-005.html"
+        },
+        {
+            "type": "WEB",
+            "url": "https://downloads.asterisk.org/pub/security/AST-2022-006.html"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "asterisk -- multiple vulnerabilities"
+}
