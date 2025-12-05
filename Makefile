@@ -25,7 +25,7 @@ endif
 LUA_PATH := "$(TOP)/bin/?.lua;;"
 VUXML_URL := "https://vuxml.freebsd.org/freebsd/vuln.xml.xz"
 
-.PHONY: download-vuxml unpack-vuxml convert-vuxml check-lua check-python
+.PHONY: download-vuxml unpack-vuxml convert-vuxml check-lua check-python merge
 
 check-lua:
 	@[ -x $(LUA_CMD) ] || { echo "Lua not found. Please install FreeBSD Lua or use LUA_CMD global variable on commandline to locate lua intepreter (5.4 recommended)"; exit 1; }
@@ -46,3 +46,5 @@ unpack-vuxml: download-vuxml
 convert-vuxml: check-python unpack-vuxml
 	@$(PYTHON_CMD) bin/convert_vuxml.py -o vuln vuln.xml
 
+merge:
+	@LUA_PATH=$(LUA_PATH) $(LUA_CMD) bin/osvf-tool.lua merge > db/freebsd-osv.json
