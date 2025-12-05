@@ -1,0 +1,55 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "png"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "1.6.52"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "cite": [
+            "https://github.com/pnggroup/libpng/security/advisories/GHSA-9mpm-9pxh-mg4f"
+        ],
+        "discovery": "2025-12-03T00:00:00Z",
+        "references": {
+            "cvename": [
+                "CVE-2025-66293"
+            ]
+        },
+        "vid": "f323f148-d181-11f0-841f-843a4b343614"
+    },
+    "details": "https://github.com/pnggroup/libpng/security/advisories/GHSA-9mpm-9pxh-mg4f\nreports:\n\n> Prior to 1.6.52, an out-of-bounds read vulnerability in libpng\\'s\n> simplified API allows reading up to 1012 bytes beyond the\n> png_sRGB_base\\[512\\] array when processing valid palette PNG images\n> with partial transparency and gamma correction. The PNG files that\n> trigger this vulnerability are valid per the PNG specification; the\n> bug is in libpng\\'s internal state management.\n",
+    "id": "FreeBSD-2025-0404",
+    "modified": "2025-12-05T00:00:00Z",
+    "published": "2025-12-05T00:00:00Z",
+    "references": [
+        {
+            "type": "REPORT",
+            "url": "https://github.com/pnggroup/libpng/security/advisories/GHSA-9mpm-9pxh-mg4f"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2025-66293"
+        },
+        {
+            "type": "WEB",
+            "url": "https://cveawg.mitre.org/api/cve/CVE-2025-66293"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "png -- Out-of-bounds read"
+}

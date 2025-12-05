@@ -1,0 +1,90 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "wolfssl"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "5.8.4"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "cite": [
+            "https://www.wolfssl.com/wolfssl-5-8-4-now-available/"
+        ],
+        "discovery": "2025-11-20T00:00:00Z",
+        "references": {
+            "cvename": [
+                "CVE-2025-12888",
+                "CVE-2025-11936",
+                "CVE-2025-11935",
+                "CVE-2025-11934",
+                "CVE-2025-11933",
+                "CVE-2025-11932",
+                "CVE-2025-11931",
+                "CVE-2025-12889"
+            ]
+        },
+        "vid": "ba02dfb6-ce31-11f0-a327-589cfc01894a"
+    },
+    "details": "wolfSSL blog reports:\n\n> This release includes multiple fixes across TLS 1.2, TLS 1.3, X25519,\n> XChaCha20-Poly1305, and PSK processing. Highlights include:\n>\n> - A timing-side-channel issue in X25519 specifically affecting\n>   Xtensa-based ESP32 devices. Low-memory X25519 implementations are\n>   now the default for Xtensa.\n> - A medium-severity TLS 1.3 server-side DoS risk from repeated\n>   KeyShareEntry values in malicious ClientHello messages.\n> - Several TLS 1.3 downgrade-related issues (PFS downgrades, signature\n>   algorithm downgrades, and duplicate extension parsing).\n> - A memory leak risk in TLS 1.2 certificate digest handling.\n> - XChaCha20-Poly1305 decryption bounds-check fix and constant-time\n>   improvements in PSK binder verification.\n",
+    "id": "FreeBSD-2025-0397",
+    "modified": "2025-11-30T00:00:00Z",
+    "published": "2025-11-30T00:00:00Z",
+    "references": [
+        {
+            "type": "REPORT",
+            "url": "https://www.wolfssl.com/wolfssl-5-8-4-now-available/"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2025-12888"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2025-11936"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2025-11935"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2025-11934"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2025-11933"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2025-11932"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2025-11931"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2025-12889"
+        },
+        {
+            "type": "WEB",
+            "url": "https://github.com/wolfSSL/wolfssl/releases/tag/v5.8.4-stable"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "wolfssl -- multiple issues"
+}

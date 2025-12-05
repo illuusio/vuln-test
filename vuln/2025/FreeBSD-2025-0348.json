@@ -18,6 +18,36 @@
                     "type": "ECOSYSTEM"
                 }
             ]
+        },
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "FreeBSD"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "introduced": "14.3"
+                        },
+                        {
+                            "fixed": "14.3_6"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                },
+                {
+                    "events": [
+                        {
+                            "introduced": "13.5"
+                        },
+                        {
+                            "fixed": "13.5_7"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
         }
     ],
     "database_specific": {
@@ -28,13 +58,16 @@
         "references": {
             "cvename": [
                 "CVE-2025-11411"
+            ],
+            "freebsdsa": [
+                "SA-25:10.unbound"
             ]
         },
         "vid": "ea1c485f-b025-11f0-bce7-bc2411002f50"
     },
     "details": "sep@nlnetlabs.nl reports:\n\n> NLnet Labs Unbound up to and including version 1.24.0 is vulnerable to\n> possible domain hijack attacks. Promiscuous NS RRSets that complement\n> positive DNS replies in the authority section can be used to trick\n> resolvers to update their delegation information for the zone. Usually\n> these RRSets are used to update the resolver\\'s knowledge of the\n> zone\\'s name servers. A malicious actor can exploit the possible\n> poisonous effect by injecting NS RRSets (and possibly their respective\n> address records) in a reply. This could be done for example by trying\n> to spoof a packet or fragmentation attacks. Unbound would then proceed\n> to update the NS RRSet data it already has since the new data has\n> enough trust for it, i.e., in-zone data for the delegation point.\n> Unbound 1.24.1 includes a fix that scrubs unsolicited NS RRSets (and\n> their respective address records) from replies mitigating the possible\n> poison effect.\n",
     "id": "FreeBSD-2025-0348",
-    "modified": "2025-10-23T00:00:00Z",
+    "modified": "2025-11-27T00:00:00Z",
     "published": "2025-10-23T00:00:00Z",
     "references": [
         {
@@ -48,6 +81,10 @@
         {
             "type": "ADVISORY",
             "url": "https://nvd.nist.gov/vuln/detail/CVE-2025-11411"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://www.freebsd.org/security/advisories/FreeBSD-SA-25:10.unbound.asc"
         }
     ],
     "schema_version": "1.7.0",

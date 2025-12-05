@@ -1,0 +1,74 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "mongodb70"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "7.0.26"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        },
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "mongodb80"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "8.0.16"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "cite": [
+            "https://jira.mongodb.org/browse/SERVER-105783"
+        ],
+        "discovery": "2025-11-25T00:00:00Z",
+        "references": {
+            "cvename": [
+                "CVE-2025-12893"
+            ]
+        },
+        "vid": "d2f2c691-cd42-11f0-85d4-b42e991fc52e"
+    },
+    "details": "https://jira.mongodb.org/browse/SERVER-105783 reports:\n\n> Clients may successfully perform a TLS handshake with a MongoDB server\n> despite presenting a client certificate not aligning with the\n> documented Extended Key Usage (EKU) requirements. A certificate that\n> specifies extendedKeyUsage but is missing extendedKeyUsage =\n> clientAuth may still be successfully authenticated via the TLS\n> handshake as a client. This issue is specific to MongoDB servers\n> running on Windows or Apple as the expected validation behavior\n> functions correctly on Linux systems. Additionally, MongoDB servers\n> may successfully establish egress TLS connections with servers that\n> present server certificates not aligning with the documented Extended\n> Key Usage (EKU) requirements. A certificate that specifies\n> extendedKeyUsage but is missing extendedKeyUsage = serverAuth may\n> still be successfully authenticated via the TLS handshake as a server.\n> This issue is specific to MongoDB servers running on Apple as the\n> expected validation behavior functions correctly on both Linux and\n> Windows systems.\n",
+    "id": "FreeBSD-2025-0396",
+    "modified": "2025-11-29T00:00:00Z",
+    "published": "2025-11-29T00:00:00Z",
+    "references": [
+        {
+            "type": "REPORT",
+            "url": "https://jira.mongodb.org/browse/SERVER-105783"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2025-12893"
+        },
+        {
+            "type": "WEB",
+            "url": "https://cveawg.mitre.org/api/cve/CVE-2025-12893"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "MongoDB Server -- Improper Certificate Validation"
+}

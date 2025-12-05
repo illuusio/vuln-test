@@ -1,0 +1,55 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "gnutls"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "3.8.11"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "cite": [
+            "https://gnutls.org/security-new.html#GNUTLS-SA-2025-11-18"
+        ],
+        "discovery": "2025-11-18T00:00:00Z",
+        "references": {
+            "cvename": [
+                "CVE-2025-9820"
+            ]
+        },
+        "vid": "b6835edf-c6c8-11f0-8471-74563cf9e4e9"
+    },
+    "details": "GnuTLS reports:\n\n> When a PKCS#11 token is initialized with gnutls_pkcs11_token_init\n> function and it is passed a token label longer than 32 characters, it\n> may write past the boundary of stack allocated memory.\n",
+    "id": "FreeBSD-2025-0393",
+    "modified": "2025-11-21T00:00:00Z",
+    "published": "2025-11-21T00:00:00Z",
+    "references": [
+        {
+            "type": "REPORT",
+            "url": "https://gnutls.org/security-new.html#GNUTLS-SA-2025-11-18"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2025-9820"
+        },
+        {
+            "type": "WEB",
+            "url": "https://gnutls.org/security-new.html#GNUTLS-SA-2025-11-18"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "GnuTLS -- Stack write buffer overflow"
+}

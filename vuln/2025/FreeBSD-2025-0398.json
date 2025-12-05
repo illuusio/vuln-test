@@ -1,0 +1,74 @@
+{
+    "affected": [
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "mongodb80"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "8.0.13"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        },
+        {
+            "package": {
+                "ecosystem": "FreeBSD:ports",
+                "name": "mongodb70"
+            },
+            "ranges": [
+                {
+                    "events": [
+                        {
+                            "fixed": "7.0.26"
+                        },
+                        {
+                            "introduced": "0"
+                        }
+                    ],
+                    "type": "ECOSYSTEM"
+                }
+            ]
+        }
+    ],
+    "database_specific": {
+        "cite": [
+            "https://jira.mongodb.org/browse/SERVER-101180"
+        ],
+        "discovery": "2025-11-25T00:00:00Z",
+        "references": {
+            "cvename": [
+                "CVE-2025-13644"
+            ]
+        },
+        "vid": "e72ec9c1-ced4-11f0-a958-b42e991fc52e"
+    },
+    "details": "https://jira.mongodb.org/browse/SERVER-101180 reports:\n\n> MongoDB Server may experience an invariant failure during batched\n> delete operations when handling documents. The issue arises when the\n> server mistakenly assumes the presence of multiple documents in a\n> batch based solely on document size exceeding BSONObjMaxSize.\n",
+    "id": "FreeBSD-2025-0398",
+    "modified": "2025-12-01T00:00:00Z",
+    "published": "2025-12-01T00:00:00Z",
+    "references": [
+        {
+            "type": "REPORT",
+            "url": "https://jira.mongodb.org/browse/SERVER-101180"
+        },
+        {
+            "type": "ADVISORY",
+            "url": "https://api.osv.dev/v1/vulns/CVE-2025-13644"
+        },
+        {
+            "type": "WEB",
+            "url": "https://cveawg.mitre.org/api/cve/CVE-2025-13644"
+        }
+    ],
+    "schema_version": "1.7.0",
+    "summary": "MongoDB -- Reachable Assertion"
+}
